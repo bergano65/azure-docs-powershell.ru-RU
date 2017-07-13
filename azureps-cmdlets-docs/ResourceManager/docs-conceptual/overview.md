@@ -10,13 +10,14 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.manager: carmonm
 ms.date: 05/15/2017
-ms.openlocfilehash: f26b204604018449584c1fd2ff199728487b1515
-ms.sourcegitcommit: 226527be7cb647acfe2ea9ab151185053ab3c6db
+ms.openlocfilehash: dbcc818ecc06d3206b8ccd6f8743c670c86cead0
+ms.sourcegitcommit: 5f2c794bfa44ec4ffacdd73f548288874210a498
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/29/2017
+ms.lasthandoff: 07/06/2017
 ---
-# <a name="overview-of-azure-powershell"></a>Общие сведения об Azure PowerShell
+# Общие сведения об Azure PowerShell
+<a id="overview-of-azure-powershell" class="xliff"></a>
 
 В Azure PowerShell доступен набор командлетов, которые используют модель [Azure Resource Manager](/azure/azure-resource-manager/resource-group-overview) для управления ресурсами Azure.
 
@@ -29,19 +30,19 @@ ms.lasthandoff: 06/29/2017
 * [Веб-приложения](/azure/app-service-web/app-service-powershell-samples?toc=/powershell/azure/toc.json)
 * [Базы данных SQL](/azure/sql-database/sql-database-powershell-samples?toc=/powershell/azure/toc.json)
 
-> [!NOTE]
-> При наличии экземпляров, развернутых с помощью классической модели, которая не может быть преобразована, вы можете установить Azure PowerShell для управления службами. Дополнительную информацию см. в разделе
 
-[Установите модуль управления службами Azure PowerShell](/powershell/azure/servicemanagement/install-azure-ps).
+> [!NOTE] При наличии экземпляров, развернутых с помощью классической модели, которая не может быть преобразована, вы можете установить Azure PowerShell для управления службами. Дополнительные сведения см. в статье об [установке модуля управления службами Azure PowerShell](/powershell/azure/servicemanagement/install-azure-ps).
 
 
-### <a name="need-help-with-powershell"></a>Нужна помощь с PowerShell?
+### Нужна помощь с PowerShell?
+<a id="need-help-with-powershell" class="xliff"></a>
 
 Если вы не знакомы с PowerShell, ознакомьтесь с вводными сведениями о PowerShell. Чтобы начать работу с PowerShell, см. статью, посвященную [работе со сценариями в Windows PowerShell](https://technet.microsoft.com/library/bb978526.aspx).
 
 Вы также можете посмотреть этот видеоролик: [PowerShell Basics: (Part 1) Getting Started with PowerShell](https://channel9.msdn.com/Blogs/Taste-of-Premier/PowerShellBasicsPart1) (Основы PowerShell (часть 1). Начало работы с PowerShell).
 
-## <a name="other-azure-powershell-modules"></a>Другие модули Azure PowerShell
+## Другие модули Azure PowerShell
+<a id="other-azure-powershell-modules" class="xliff"></a>
 
 * [Azure Active Directory](/powershell/azure/active-directory/)
 * [Azure Information Protection](/powershell/azure/aip/)
