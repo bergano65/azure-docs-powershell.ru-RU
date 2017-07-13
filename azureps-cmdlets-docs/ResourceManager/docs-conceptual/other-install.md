@@ -1,0 +1,70 @@
+---
+title: "Другие методы установки Azure PowerShell | Документация Майкрософт"
+description: "Как установить Azure PowerShell с помощью пакета MSI или установщика веб-платформы."
+services: azure
+author: sdwheeler
+ms.author: sewhee
+manager: carmonm
+ms.product: azure
+ms.service: azure-powershell
+ms.devlang: powershell
+ms.topic: conceptual
+ms.date: 05/15/2017
+ms.openlocfilehash: 368404bcb5218814b4965bb1bcda1e2876441d2a
+ms.sourcegitcommit: 226527be7cb647acfe2ea9ab151185053ab3c6db
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 06/29/2017
+---
+# <span data-ttu-id="4b043-103">Другие методы установки</span><span class="sxs-lookup"><span data-stu-id="4b043-103">Other installation methods</span></span>
+<a id="other-installation-methods" class="xliff"></a>
+
+<span data-ttu-id="4b043-104">Azure PowerShell можно установить разными способами.</span><span class="sxs-lookup"><span data-stu-id="4b043-104">Azure PowerShell has multiple installation methods.</span></span> <span data-ttu-id="4b043-105">Предпочтительным является использование PowerShellGet с коллекцией PowerShell.</span><span class="sxs-lookup"><span data-stu-id="4b043-105">Using PowerShellGet with the PowerShell Gallery is the preferred method.</span></span> <span data-ttu-id="4b043-106">Azure PowerShell можно установить с помощью установщика веб-платформы (WebPI) или с помощью MSI-файла из [GitHub](https://github.com/Azure/azure-powershell/releases/latest).</span><span class="sxs-lookup"><span data-stu-id="4b043-106">Azure PowerShell can be installed using the Web Platform Installer (WebPI) or by using the MSI file available from [GitHub](https://github.com/Azure/azure-powershell/releases/latest).</span></span>
+
+## <span data-ttu-id="4b043-107">Установка с помощью установщика веб-платформы</span><span class="sxs-lookup"><span data-stu-id="4b043-107">Install using the Web Platform Installer</span></span>
+<a id="install-using-the-web-platform-installer" class="xliff"></a>
+
+<span data-ttu-id="4b043-108">Установка последней версии Azure PowerShell из WebPI выполняется также, как и установка предыдущих версий.</span><span class="sxs-lookup"><span data-stu-id="4b043-108">Installing the latest Azure PowerShell from WebPI is the same as it was for previous versions.</span></span>
+<span data-ttu-id="4b043-109">Скачайте [пакет Azure PowerShell WebPI](http://aka.ms/webpi-azps) и запустите установку.</span><span class="sxs-lookup"><span data-stu-id="4b043-109">Download the [Azure PowerShell WebPI package](http://aka.ms/webpi-azps) and start the install.</span></span>
+
+> [!NOTE]
+> <span data-ttu-id="4b043-110">Если вы ранее установили модули Azure из коллекции PowerShell, то установщик автоматически удаляет их.</span><span class="sxs-lookup"><span data-stu-id="4b043-110">If you have previously installed Azure modules from the PowerShell Gallery, the installer automatically removes them.</span></span> <span data-ttu-id="4b043-111">Это облегчает использование среды за счет установки только одной версии Azure PowerShell.</span><span class="sxs-lookup"><span data-stu-id="4b043-111">This simplifies your environment by ensuring that only one version of Azure PowerShell is installed.</span></span> <span data-ttu-id="4b043-112">Но в некоторых сценариях может потребоваться установить несколько версий одновременно.</span><span class="sxs-lookup"><span data-stu-id="4b043-112">However, there are scenarios where you may need multiple versions installed at the same time.</span></span>
+>
+> <span data-ttu-id="4b043-113">Модули из коллекции PowerShell устанавливают модули в папку `$env:ProgramFiles\WindowsPowerShell\Modules`.</span><span class="sxs-lookup"><span data-stu-id="4b043-113">PowerShell Gallery modules install modules in `$env:ProgramFiles\WindowsPowerShell\Modules`.</span></span> <span data-ttu-id="4b043-114">А установщик WebPI устанавливает модули Azure в другую папку: `$env:ProgramFiles(x86)\Microsoft SDKs\Azure\PowerShell\`.</span><span class="sxs-lookup"><span data-stu-id="4b043-114">In contrast, the WebPI installer installs the Azure modules in `$env:ProgramFiles(x86)\Microsoft SDKs\Azure\PowerShell\`.</span></span>
+>
+> <span data-ttu-id="4b043-115">Если во время установки возникла ошибка, вы можете можно вручную удалить папки Azure* в каталоге `$env:ProgramFiles\WindowsPowerShell\Modules` и повторить попытку установки.</span><span class="sxs-lookup"><span data-stu-id="4b043-115">If an error occurs during install, you can manually remove the Azure* folders in your `$env:ProgramFiles\WindowsPowerShell\Modules` folder, and try the installation again.</span></span>
+
+<span data-ttu-id="4b043-116">По завершении установки ваш параметр `$env:PSModulePath` должен включать каталоги, содержащие командлеты Azure PowerShell.</span><span class="sxs-lookup"><span data-stu-id="4b043-116">Once the installation completes, your `$env:PSModulePath` setting should include the directories containing the Azure PowerShell cmdlets.</span></span> <span data-ttu-id="4b043-117">Используйте следующую команду, чтобы убедиться, что среда Azure PowerShell установлена правильно.</span><span class="sxs-lookup"><span data-stu-id="4b043-117">The following command can be used to verify that the Azure PowerShell is installed properly.</span></span>
+
+```powershell
+# To make sure the Azure PowerShell module is available after you install
+Get-Module -ListAvailable Azure* | Select-Object Name, Version, Path
+```
+
+> [!NOTE]
+> <span data-ttu-id="4b043-118">При установке с помощью WebPI может возникать известная проблема.</span><span class="sxs-lookup"><span data-stu-id="4b043-118">There is a known issue that can occur when installing from WebPI.</span></span> <span data-ttu-id="4b043-119">Если из-за установки обновлений системы или других компонентов потребуется перезагрузка компьютера, это может привести к исключению из `$env:PSModulePath` пути установки Azure PowerShell.</span><span class="sxs-lookup"><span data-stu-id="4b043-119">If your computer requires a restart due to system updates or other installations, it may cause updates to `$env:PSModulePath` to fail to include the path where Azure PowerShell is installed.</span></span>
+
+<span data-ttu-id="4b043-120">При попытке загрузки или выполнения командлетов после установки может появиться следующее сообщение об ошибке:</span><span class="sxs-lookup"><span data-stu-id="4b043-120">When attempting to load or execute cmdlets after installation, you can receive the following error message:</span></span>
+
+```
+PS C:\> Login-AzureRmAccount
+Login-AzureRmAccount : The term 'Login-AzureRmAccount' is not recognized as the name of a cmdlet,
+function, script file, or operable program. Check the spelling of the name, or if a path was
+included, verify that the path is correct and try again.
+At line:1 char:1
++ Login-AzureRmAccount
++ ~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (Login-AzureRmAccount:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+```
+
+<span data-ttu-id="4b043-121">Эту ошибку можно исправить при перезагрузке компьютера или импорте модуля, используя полный путь.</span><span class="sxs-lookup"><span data-stu-id="4b043-121">This error can be corrected by restarting the machine or importing the module using the fully qualified path.</span></span> <span data-ttu-id="4b043-122">Например:</span><span class="sxs-lookup"><span data-stu-id="4b043-122">For example:</span></span>
+
+```powershell
+Import-Module "$env:ProgramFiles(x86)\Microsoft SDKs\Azure\PowerShell\AzureRM.psd1"
+```
+
+## <span data-ttu-id="4b043-123">Установка с помощью пакета MSI</span><span class="sxs-lookup"><span data-stu-id="4b043-123">Install using the MSI Package</span></span>
+<a id="install-using-the-msi-package" class="xliff"></a>
+
+<span data-ttu-id="4b043-124">Azure PowerShell можно установить с помощью MSI-файла из [GitHub](https://github.com/Azure/azure-powershell/releases/latest).</span><span class="sxs-lookup"><span data-stu-id="4b043-124">Azure PowerShell can be installed using the MSI file available from [GitHub](https://github.com/Azure/azure-powershell/releases/latest).</span></span> <span data-ttu-id="4b043-125">Если вы устанавливали предыдущие версии модулей Azure, то установщик автоматически удаляет их.</span><span class="sxs-lookup"><span data-stu-id="4b043-125">If you have installed previous versions of Azure modules, the installer automatically removes them.</span></span> <span data-ttu-id="4b043-126">Пакет MSI устанавливает модули в папку `$env:ProgramFiles\WindowsPowerShell\Modules`, но не создает папки для определенных версий.</span><span class="sxs-lookup"><span data-stu-id="4b043-126">The MSI package installs modules in `$env:ProgramFiles\WindowsPowerShell\Modules` but does not create version-specific folders.</span></span>
