@@ -17,13 +17,11 @@ ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 06/29/2017
 ---
-# <span data-ttu-id="77c40-103">Заметки о выпуске</span><span class="sxs-lookup"><span data-stu-id="77c40-103">Release notes</span></span>
-<a id="release-notes" class="xliff"></a>
+# <a name="release-notes"></a><span data-ttu-id="77c40-103">Заметки о выпуске</span><span class="sxs-lookup"><span data-stu-id="77c40-103">Release notes</span></span>
 
 <span data-ttu-id="77c40-104">Здесь приведен список изменений, внесенных в Azure PowerShell в этом выпуске.</span><span class="sxs-lookup"><span data-stu-id="77c40-104">This is a list of changes made to Azure PowerShell in this release.</span></span>
 
-## <span data-ttu-id="77c40-105">Версия 3.8.0</span><span class="sxs-lookup"><span data-stu-id="77c40-105">Version 3.8.0</span></span>
-<a id="version-380" class="xliff"></a>
+## <a name="version-380"></a><span data-ttu-id="77c40-105">Версия 3.8.0</span><span class="sxs-lookup"><span data-stu-id="77c40-105">Version 3.8.0</span></span>
 * <span data-ttu-id="77c40-106">Среда выполнения приложений</span><span class="sxs-lookup"><span data-stu-id="77c40-106">Compute</span></span>
   - <span data-ttu-id="77c40-107">Исправлена ошибка в командлетах Get-*, чтобы можно было получить несколько страниц данных (более 120 элементов).</span><span class="sxs-lookup"><span data-stu-id="77c40-107">Fix bug in Get-* cmdlets, to allow retrieving multiple pages of data (more than 120 items)</span></span>
 * <span data-ttu-id="77c40-108">Data Lake Analytics</span><span class="sxs-lookup"><span data-stu-id="77c40-108">DataLakeAnalytics</span></span>

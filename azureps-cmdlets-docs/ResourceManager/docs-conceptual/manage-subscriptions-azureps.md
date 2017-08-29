@@ -16,8 +16,7 @@ ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 06/29/2017
 ---
-# <span data-ttu-id="29053-104">Управление несколькими подписками Azure</span><span class="sxs-lookup"><span data-stu-id="29053-104">Manage multiple Azure subscriptions</span></span>
-<a id="manage-multiple-azure-subscriptions" class="xliff"></a>
+# <a name="manage-multiple-azure-subscriptions"></a><span data-ttu-id="29053-104">Управление несколькими подписками Azure</span><span class="sxs-lookup"><span data-stu-id="29053-104">Manage multiple Azure subscriptions</span></span>
 
 <span data-ttu-id="29053-105">Если вы только приступаете к работе с Azure, скорее всего, у вас есть только одна подписка.</span><span class="sxs-lookup"><span data-stu-id="29053-105">If you are brand new to Azure, you probably only have a single subscription.</span></span> <span data-ttu-id="29053-106">Но если вы уже пользуетесь Azure какое-то время, возможно, вы уже успели создать несколько подписок.</span><span class="sxs-lookup"><span data-stu-id="29053-106">But if you have been using Azure for a while, you may have created multiple Azure subscriptions.</span></span> <span data-ttu-id="29053-107">Вы можете настроить Azure PowerShell для выполнения команд, связанных с определенной подпиской.</span><span class="sxs-lookup"><span data-stu-id="29053-107">You can configure Azure PowerShell to execute commands against a particular subscription.</span></span>
 
