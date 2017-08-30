@@ -10,11 +10,11 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.manager: carmonm
 ms.date: 07/26/2017
-ms.openlocfilehash: 3772b68949dc9dba110e6015c8d2a8b944b26528
-ms.sourcegitcommit: 20bcef86db4e4869125bb63085fcffd009c19280
+ms.openlocfilehash: 02bfc15fec83ed4078d9a054b450c5a3cd66b8e2
+ms.sourcegitcommit: db5c50de90764a9bdc7c1f1dbca3aed5bfeb05fa
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/27/2017
+ms.lasthandoff: 08/22/2017
 ---
 # <a name="overview-of-azure-powershell"></a>Общие сведения об Azure PowerShell
 
@@ -29,13 +29,14 @@ ms.lasthandoff: 07/27/2017
 * [Веб-приложения](/azure/app-service-web/app-service-powershell-samples?toc=/powershell/azure/toc.json)
 * [Базы данных SQL](/azure/sql-database/sql-database-powershell-samples?toc=/powershell/azure/toc.json)
 
-
 > [!NOTE] При наличии экземпляров, развернутых с помощью классической модели, которая не может быть преобразована, вы можете установить Azure PowerShell для управления службами. Дополнительные сведения см. в статье об [установке модуля управления службами Azure PowerShell](/powershell/azure/servicemanagement/install-azure-ps).
-
 
 ### <a name="need-help-with-powershell"></a>Нужна помощь с PowerShell?
 
-Если вы не знакомы с PowerShell, ознакомьтесь с вводными сведениями о PowerShell. Чтобы начать работу с PowerShell, см. статью, посвященную [работе со сценариями в Windows PowerShell](https://technet.microsoft.com/library/bb978526.aspx).
+Если вы не знакомы с PowerShell, ознакомьтесь с вводными сведениями о PowerShell.
+
+* [Installing Windows PowerShell](/powershell/scripting/installing-windows-powershell) (Установка Windows PowerShell)
+* [Scripting with Windows PowerShell](/powershell/scripting/scripting-with-windows-powershell) (Написание скриптов с помощью Windows PowerShell)
 
 Вы также можете посмотреть этот видеоролик: [PowerShell Basics: (Part 1) Getting Started with PowerShell](https://channel9.msdn.com/Blogs/Taste-of-Premier/PowerShellBasicsPart1) (Основы PowerShell (часть 1). Начало работы с PowerShell).
 
