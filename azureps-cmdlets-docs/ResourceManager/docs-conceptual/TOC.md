@@ -1,16 +1,22 @@
 # [Azure PowerShell](overview.md)
+
 ## [Установка](install-azurerm-ps.md)
+### [Установка в macOS и Linux](install-azurermps-maclinux.md)
 ### [Другие методы установки](other-install.md)
+
 ## [Приступая к работе](get-started-azureps.md)
 ## [Вход](authenticate-azureps.md)
 ### [Создание субъекта-службы](create-azure-service-principal-azureps.md)
+
 ## [Запросы](queries-azureps.md)
 ## [Форматирование](formatting-output.md)
 ## [Подписки](manage-subscriptions-azureps.md)
+
 ## Развернуть
 ### [Развертывание с помощью шаблонов Resource Manager](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-template-deploy)
 ### [Экспорт шаблонов Resource Manager](https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-export-template-powershell)
 ### [Развертывание частного шаблона Resource Manager с использованием маркера SAS](https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-powershell-sas-token)
+
 ## [Заметки о выпуске](release-notes-azureps.md)
 
 # Примеры сценариев

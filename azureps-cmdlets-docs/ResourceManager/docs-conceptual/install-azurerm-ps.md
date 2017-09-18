@@ -10,13 +10,16 @@ ms.service: azure-powershell
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/17/2017
-ms.openlocfilehash: 8b82de3634a1492baf54ce4d2172af3e3287229c
-ms.sourcegitcommit: db5c50de90764a9bdc7c1f1dbca3aed5bfeb05fa
+ms.openlocfilehash: 8f99855c88240c6c5aeb6dd3b1ba5d9ddc8aefd1
+ms.sourcegitcommit: 202ec2df66c40a60f47ea06b30a6701ad444d229
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2017
+ms.lasthandoff: 09/08/2017
 ---
 # <a name="install-and-configure-azure-powershell"></a>Установка и настройка Azure PowerShell
+
+В этой статье описывается порядок установки модулей Azure PowerShell в среде Windows.
+Если вы хотите использовать Azure PowerShell в macOS или Linux, ознакомьтесь со следующей статьей: [Установка и настройка Azure PowerShell в macOS и Linux](install-azureps-maclinux.md).
 
 Предпочтительный способ установки Azure PowerShell— из коллекции PowerShell.
 
