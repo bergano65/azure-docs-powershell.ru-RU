@@ -9,22 +9,41 @@ ms.product: azure
 ms.service: azure-powershell
 ms.devlang: powershell
 ms.topic: get-started-article
-ms.date: 03/30/2017
-ms.openlocfilehash: f1c13317f0b42b547166a8130dd8c29bed5759c9
-ms.sourcegitcommit: db5c50de90764a9bdc7c1f1dbca3aed5bfeb05fa
+ms.date: 08/31/2017
+ms.openlocfilehash: 2cd3fc8e955ae826471dceee79d5e6b70070d416
+ms.sourcegitcommit: e6b7e20bbd04eda51416c56b13f867102b602d1a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2017
+ms.lasthandoff: 10/07/2017
 ---
 # <a name="getting-started-with-azure-powershell"></a>Начало работы с Azure PowerShell
 
-Модуль Azure PowerShell предназначен для администрирования ресурсов Azure из командной строки, а также для создания скриптов автоматизации, которые работают с Azure Resource Manager. Эта статья поможет приступить к работе с модулем и объяснит основные принципы его работы.
+Модуль Azure PowerShell предназначен для администрирования ресурсов Azure из командной строки, а также для создания скриптов автоматизации, которые работают с Azure Resource Manager. Его можно использовать в браузере с [Azure Cloud Shell](/azure/cloud-shell/overview), а также установить на локальном компьютере и использовать в любом сеансе PowerShell. Эта статья поможет приступить к работе с модулем и объяснит основные принципы его работы.
+
+## <a name="connect"></a>Подключение
+
+Самый простой способ начать работу — [запустить службу Cloud Shell](/azure/cloud-shell/quickstart).
+
+1. Запустите Cloud Shell с верхней панели навигации портала Azure.
+
+   ![Значок оболочки](~/media/get-started-azureps/shell-icon.png)
+
+2. Выберите нужную подписку и создайте учетную запись хранения.
+
+   ![Создайте учетную запись хранения.](~/media/get-started-azureps/storage-prompt.png)
+
+Когда хранилище будет создано, Cloud Shell откроет сеанс PowerShell в браузере.
+
+![Использование Cloud Shell с PowerShell](~/media/get-started-azureps/cloud-powershell.png)
+
+Вы также можете установить Azure PowerShell для локального использования в сеансе PowerShell.
 
 ## <a name="install-azure-powershell"></a>Установка Azure PowerShell
 
 Сначала установите последнюю версию модуля Azure PowerShell. Сведения о последнем выпуске см. в [заметках о выпуске](./release-notes-azureps.md).
 
 1. [Установите Azure PowerShell](install-azurerm-ps.md).
+
 2. Чтобы проверить установку, выполните `Get-Module AzureRM` в командной строке.
 
 ## <a name="log-in-to-azure"></a>Вход в Azure
@@ -51,7 +70,7 @@ ms.lasthandoff: 08/22/2017
 New-AzureRmResourceGroup -Name 'myResourceGroup' -Location 'westeurope'
 ```
 
-```
+```Output
 ResourceGroupName : myResourceGroup
 Location          : westeurope
 ProvisioningState : Succeeded
@@ -123,7 +142,7 @@ New-AzureRmVM -ResourceGroupName $resourceGroup -Location $location -VM $vmConfi
 
 Команда `New-AzureRmVM` выводит результаты, когда виртуальная машина создана и готова к использованию.
 
-```
+```Output
 RequestId IsSuccessStatusCode StatusCode ReasonPhrase
 --------- ------------------- ---------- ------------
                          True         OK OK
@@ -135,7 +154,7 @@ RequestId IsSuccessStatusCode StatusCode ReasonPhrase
 $publicIp | Select-Object Name,IpAddress
 ```
 
-```
+```Output
 Name                  IpAddress
 ----                  ---------
 mypublicdns1400512543 xx.xx.xx.xx
@@ -143,12 +162,11 @@ mypublicdns1400512543 xx.xx.xx.xx
 
 Если вы работаете на компьютере Windows, вы можете отобразить IP-адрес, выполнив команду mstsc в командной строке:
 
-```
+```powershell
 mstsc /v:xx.xxx.xx.xxx
 ```
 
 Для входа укажите те же учетные данные (имя пользователя и пароль), которые вы использовали при создании виртуальной машины.
-
 
 ## <a name="create-a-linux-virtual-machine"></a>Создание виртуальной машины Linux
 
@@ -219,7 +237,7 @@ New-AzureRmVM -ResourceGroupName $resourceGroup -Location $location -VM $vmConfi
 ssh xx.xxx.xxx.xxx
 ```
 
-```
+```Output
 Welcome to Ubuntu 14.04.4 LTS (GNU/Linux 3.19.0-65-generic x86_64)
 
  * Documentation:  https://help.ubuntu.com/
@@ -247,7 +265,7 @@ individual files in /usr/share/doc/*/copyright.
 Ubuntu comes with ABSOLUTELY NO WARRANTY, to the extent permitted by
 applicable law.
 
-my-login@MyLinuxVM:~$
+my-login@MyLinuxVM:../../..$
 ```
 
 ## <a name="creating-other-resources-in-azure"></a>Создание других ресурсов в Azure
@@ -291,7 +309,7 @@ Get-AzureRmResource |
     Select-Object Name,Location,ResourceType
 ```
 
-```
+```Output
 Name                                                  Location   ResourceType
 ----                                                  --------   ------------
 myLinuxVM_OsDisk_1_36ca038791f642ba91270879088c249a   westeurope Microsoft.Compute/disks
@@ -320,7 +338,7 @@ Remove-AzureRmVM -Name myWindowsVM -ResourceGroupName myResourceGroup
 
 Вам будет предложено подтвердить удаление указанных ресурсов.
 
-```
+```Output
 Confirm
 Are you sure you want to remove resource group 'myResourceGroup'
 [Y] Yes  [N] No  [S] Suspend  [?] Help (default is "Y"): Y
@@ -332,7 +350,7 @@ Are you sure you want to remove resource group 'myResourceGroup'
 Remove-AzureRmResourceGroup -Name myResourceGroup
 ```
 
-```
+```Output
 Confirm
 Are you sure you want to remove resource group 'myResourceGroup'
 [Y] Yes  [N] No  [S] Suspend  [?] Help (default is "Y"): Y
@@ -351,5 +369,5 @@ Are you sure you want to remove resource group 'myResourceGroup'
 * [Создание субъектов-служб в Azure с помощью Azure PowerShell](create-azure-service-principal-azureps.md)
 * См. заметки о выпуске, связанные с миграцией из старой версии: [https://github.com/Azure/azure-powershell/tree/dev/documentation/release-notes](https://github.com/Azure/azure-powershell/tree/dev/documentation/release-notes).
 * Помощь от сообщества:
-  + [Форум Azure на MSDN](http://go.microsoft.com/fwlink/p/?LinkId=320212)
-  + [Stackoverflow](http://go.microsoft.com/fwlink/?LinkId=320213)
+  * [Форум Azure на MSDN](http://go.microsoft.com/fwlink/p/?LinkId=320212)
+  * [Stackoverflow](http://go.microsoft.com/fwlink/?LinkId=320213)
