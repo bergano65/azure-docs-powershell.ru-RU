@@ -12,17 +12,17 @@ ms.topic: conceptual
 ms.workload: 
 ms.date: 07/26/2017
 ms.openlocfilehash: d8a891673df343551cbd805016c2d25ee4e31c8c
-ms.sourcegitcommit: e6b7e20bbd04eda51416c56b13f867102b602d1a
+ms.sourcegitcommit: 9d2d35944106bdb6758853b050089bc804e6b9d2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/07/2017
+ms.lasthandoff: 10/17/2017
 ---
 # <a name="release-notes"></a>Заметки о выпуске
 
 Здесь приведен список изменений, внесенных в Azure PowerShell в этом выпуске.
 
 ## <a name="20170925---version-440"></a>25.09.2017: версия 4.4.0
-* Analysis Services
+* Analysis Services:
   * Добавлен новый командлет плоскости данных, который позволяет синхронизировать базы данных при преобразовании из экземпляров для чтения и записи в экземпляры только для чтения.
     - Включен файл справки для командлета.
     - Добавлены выполняющиеся в памяти тесты и тесты скриптов (только динамические).
@@ -102,9 +102,9 @@ ms.lasthandoff: 10/07/2017
   * Добавлен командлет для перечисления служб конечных точек, доступных в определенном расположении:
     - Get-AzureRmVirtualNetworkAvailableEndpointService.
   * Добавлена возможность настройки аутентификации при подключении типа "точка — сеть" к внешнему серверу RADIUS для следующих командлетов:
-    - New-AzureVirtualNetworkGateway;
+    - New-AzureVirtualNetworkGateway
     - Set-AzureVirtualNetworkGateway;
-    - Set-AzureRmVirtualNetworkGatewayVpnClientConfig.
+    - Set-AzureRmVirtualNetworkGatewayVpnClientConfig
   * Добавлен командлет, который разрешает создание профилей VpnProfile для подключений типа "точка — сеть" на основе внешнего сервера RADIUS.
     - New-AzureRmVpnClientConfiguration;
     - Get-AzureRmVpnClientConfiguration.
