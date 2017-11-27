@@ -1,4 +1,4 @@
--- title: Начало работы с Azure PowerShell | Документация Майкрософт description: services: azure author: sdwheeler ms.author: sewhee manager: carmonm ms.product: azure ms.service: azure-powershell ms.devlang: powershell ms.topic: get-started-article ms.date: 08/31/2017
+-- title: Начало работы с Azure PowerShell | Документация Майкрософт description: services: azure author: sdwheeler ms.author: sewhee manager: carmonm ms.product: azure ms.service: azure-powershell ms.devlang: powershell ms.topic: get-started-article ms.date: 15/11/2017
 ---
 # <a name="getting-started-with-azure-powershell"></a>Начало работы с Azure PowerShell
 
@@ -28,7 +28,7 @@
 
 1. [Установите Azure PowerShell](install-azurerm-ps.md).
 
-2. Чтобы проверить установку, выполните `Get-Module AzureRM` в командной строке.
+2. Чтобы проверить установку, выполните `Get-Module AzureRM -ListAvailable` в командной строке.
 
 ## <a name="log-in-to-azure"></a>Вход в Azure
 
