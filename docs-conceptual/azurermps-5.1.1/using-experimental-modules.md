@@ -10,11 +10,11 @@ ms.service: azure-powershell
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 09/05/2017
-ms.openlocfilehash: 7a01957040be7c0498ef4f0e9b8f7297119221a5
-ms.sourcegitcommit: c42c7176276ec4e1cc3360a93e6b15d32083bf9f
+ms.openlocfilehash: c11e4503c07b0a0c4a71021bc511da723098188e
+ms.sourcegitcommit: 42bfd513fe646494d3d9eb0cfc35b049f7e1fbb7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 12/19/2017
 ---
 # <a name="using-experimental-azure-powershell-modules"></a>Использование экспериментальных модулей Azure PowerShell
 
@@ -26,12 +26,7 @@ ms.lasthandoff: 12/14/2017
 
 Эти модули можно установить параллельно с существующими модулями Azure PowerShell. Имена командлетов сокращены для удобства. Также это сделано, чтобы избежать конфликтов с именами существующих командлетов, которые не предназначены для экспериментов.
 
-Для экспериментальных модулей используется следующее соглашение об именовании:
-
-- AzureRM.Compute.Experiments;
-- AzureRM.Websites.Experiments.
-
-Это соглашение об именовании соответствует правилам именования модулей, используемых в режиме предварительной версии: `AzureRM.*.Preview`. Модули, используемые в режиме предварительной версии, отличаются от экспериментальных модулей. В таких модулях реализованы новые функции служб Azure, доступные только в предварительной версии. Модули предварительной версии заменяют существующие модули Azure PowerShell. В них используется те же имена командлетов и параметров.
+Для экспериментальных модулей используется следующее соглашение об именовании: `AzureRM.*.Experiments`. Это соглашение об именовании соответствует правилам именования модулей, используемых в режиме предварительной версии: `AzureRM.*.Preview`. Модули, используемые в режиме предварительной версии, отличаются от экспериментальных модулей. В таких модулях реализованы новые функции служб Azure, доступные только в предварительной версии. Модули предварительной версии заменяют существующие модули Azure PowerShell. В них используется те же имена командлетов и параметров.
 
 ## <a name="how-to-install-an-experimental-module"></a>Как установить экспериментальный модуль
 
@@ -42,10 +37,10 @@ Find-Module AzureRM.*.Experiments
 ```
 
 ```Output
-Version    Name                                Repository           Description
--------    ----                                ----------           -----------
-1.0.0      AzureRM.Websites.Experiments        PSGallery            Create and deploy web applications using Azure Ap...
-1.0.25     AzureRM.Compute.Experiments         PSGallery            Azure Compute experiments for VM creation
+Version Name                         Repository Description
+------- ----                         ---------- -----------
+1.0.25  AzureRM.Compute.Experiments  PSGallery  Azure Compute experiments for VM creation
+1.0.0   AzureRM.Websites.Experiments PSGallery  Create and deploy web applications using Azure App Services.
 ```
 
 Чтобы установить экспериментальный модуль, используйте следующие команды из сеанса PowerShell с повышенными привилегиями:
@@ -74,7 +69,7 @@ Install-Module AzureRM.Websites.Experiments
 
 - Сокращение имен. Это касается имен командлетов (например, `New-AzureRmVM` => `New-AzVm`) и параметров (например, `-ResourceGroupName` => `-Rg`). Чтобы обеспечить совместимость со старыми версиями командлетов, используйте псевдонимы. Обеспечьте _обратную совместимость_ наборов параметров.
 
-- Стандартные интеллектуальные значения. Создайте стандартные интеллектуальные значения для заполнения обязательных полей. Например:
+- Стандартные интеллектуальные значения. Создайте стандартные интеллектуальные значения для заполнения обязательных полей. Например: 
   - Группа ресурсов
   - Расположение
   - Зависимые ресурсы
@@ -101,30 +96,3 @@ Install-Module AzureRM.Websites.Experiments
 - Размер по умолчанию. Размер ресурса может быть затруднительным параметром для пользователя, так как многие поставщики ресурсов используют разные имена (например, Standard\_DS1\_v2 или S1). Но большинство пользователей волнуют затраты. Поэтому есть смысл определить универсальные размеры на основе расценок. Пользователи могут выбрать определенный размер и разрешить Azure PowerShell выбрать _наилучший вариант_ ресурса, исходя из бюджета.
 
 - Формат вывода. Сейчас Azure PowerShell возвращает объекты `PSObject`. Выходные данные консоли при этом незначительны. Azure PowerShell может потребоваться вывести для пользователя некоторые сведения об используемых стандартных интеллектуальных значениях.
-
-## <a name="try-using-the-experiments"></a>Попробуйте использовать эксперименты
-
-### <a name="install"></a>Установить
-
-```powershell
-Install-Module AzureRM.Compute.Experiments
-```
-
-### <a name="create-a-vm"></a>Создание виртуальной машины
-
-```powershell
-$job = New-AzVm -Name MyVm -AsJob
-Receive-Job $job
-```
-
-### <a name="send-us-feedback"></a>Отправка отзыва
-
-```powershell
-Send-Feedback
-```
-
-### <a name="uninstall-the-experimental-modules"></a>Удаление экспериментальных модулей
-
-```powershell
-Uninstall-Module AzureRM.Compute.Experiments
-```
