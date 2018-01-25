@@ -9,41 +9,39 @@ ms.product: azure
 ms.service: azure-powershell
 ms.devlang: powershell
 ms.topic: conceptual
-ms.date: 09/06/2017
-ms.openlocfilehash: 94b39c18acaca7a4b17b5207feed025442665acc
-ms.sourcegitcommit: c42c7176276ec4e1cc3360a93e6b15d32083bf9f
+ms.date: 01/12/2018
+ms.openlocfilehash: 64a86dfd4af7f3f0a91501e9a096ff190f7100cb
+ms.sourcegitcommit: d320fd5a2f468445c9e5aaa8d28dc363ece12ffc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/16/2018
 ---
 # <a name="install-and-configure-azure-powershell-on-macos-and-linux"></a>Установка и настройка Azure PowerShell в macOS и Linux
 
-Теперь можно установить PowerShell 6 (бета-версия) и Azure PowerShell на платформах, отличных от Windows.
-Процесс установки Azure PowerShell в macOS и Linux не отличается от процесса установки в Windows, однако необходимо сначала установить PowerShell 6 (бета-версия).
+Теперь можно установить PowerShell Core версии 6 и Azure PowerShell на платформах, отличных от Windows.
+Процесс установки Azure PowerShell в macOS и Linux не отличается от процесса установки в Windows, но сначала нужно установить PowerShell Core версии 6.
 
 > [!NOTE]
 
-> В настоящее время PowerShell 6 (бета-версия) и Azure PowerShell для .NET Core находятся на этапе бета-версии.
+> Сейчас PowerShell Core версии 6 и Azure PowerShell для .NET Core реализованы в бета-версии.
 > Поддержка этих продуктов ограничена. Если у вас возникнут проблемы или вы обнаружите ошибки, отправьте сведения об этих проблемах на сайт GitHub.
 >
-> * [Проблемы, связанные с PowerShell 6 (бета-версия)](https://github.com/PowerShell/PowerShell/issues)
+> * [Проблемы, связанные с PowerShell Core версии 6](https://github.com/PowerShell/PowerShell/issues)
 > * [Проблемы, связанные с Azure PowerShell](https://github.com/azure/azure-docs-powershell/issues)
 
-## <a name="step-1-install-powershell-6-beta"></a>Шаг 1. Установка PowerShell 6 (бета-версия)
+## <a name="step-1-install-powershell-core-v6"></a>Шаг 1. Установка PowerShell Core версии 6
 
-Процесс установки PowerShell 6 (бета-версия) зависит от целевой операционной системы.
-Хотя PowerShell 6 (бета-версия) можно установить в Windows, эта статья посвящена macOS и Linux. Если вы хотите использовать Azure PowerShell в Windows, ознакомьтесь с разделом [Установка](./install-azurerm-ps.md) статьи для Windows.
+Процесс установки PowerShell Core версии 6 зависит от целевой операционной системы.
+PowerShell Core версии 6 можно установить и в Windows, но эта статья посвящена macOS и Linux. Если вы хотите использовать Azure PowerShell в Windows, ознакомьтесь с разделом [Установка](./install-azurerm-ps.md) статьи для Windows.
 
-Чтобы установить **PowerShell 6** (бета-версия) в Linux или macOS, необходимо:
+Установка **PowerShell Core версии 6** в Linux или macOS зависит от дистрибутива Linux и версии ОС.
+Подробные инструкции можно найти в следующей статье:
 
-1. получить PowerShell для определенного типа и версии операционной системы из [GitHub](https://github.com/powershell/powershell#get-powershell);
-2. выполнить инструкции по установке.
-   - [Linux](https://github.com/PowerShell/PowerShell/blob/master/docs/installation/linux.md)
-   - [macOS](https://github.com/PowerShell/PowerShell/blob/master/docs/installation/linux.md#macos-1012)
+- [Установка PowerShell Core в macOS и Linux](/powershell/scripting/setup/installing-powershell-core-on-macos-and-linux)
 
 ## <a name="step-2-install-azure-powershell-for-net-core"></a>Шаг 2. Установка Azure PowerShell для .NET Core
 
-PowerShell 6 (бета-версия) поставляется с установленным модулем PowerShellGet. Это позволяет легко установить любой модуль, опубликованный в коллекции PowerShell. Чтобы установить Azure PowerShell, откройте новый сеанс PowerShell и выполните следующую команду.
+PowerShell Core версии 6 поставляется с установленным модулем PowerShellGet. Это позволяет легко установить любой модуль, опубликованный в коллекции PowerShell. Чтобы установить Azure PowerShell, откройте новый сеанс PowerShell и выполните следующую команду.
 
 ```powershell
 Install-Module AzureRM.NetCore
@@ -55,6 +53,7 @@ Install-Module AzureRM.NetCore
 
 ```powershell
 Import-Module AzureRM.Netcore
+Import-Module AzureRM.Profile.Netcore
 ```
 
 После завершения импорта можно проверить только что установленный модуль, попытавшись войти в Azure с помощью следующей команды.
