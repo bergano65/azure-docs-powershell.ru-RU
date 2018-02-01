@@ -641,7 +641,7 @@ $namespace = Get-AzureRmServiceBusNamespace <parameters>
 ### <a name="type-queueattribute"></a>**Тип QueueAttribute**
 - Следующие свойства отмечены как устаревшие:
     - EnableBatchedOperations
-    - EntityAvailabilityStatus;
+    - EntityAvailabilityStatus.
     - IsAnonymousAccessible;
     - SupportOrdering.
 
