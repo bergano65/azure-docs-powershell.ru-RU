@@ -1,6 +1,6 @@
 ---
 title: "Установка и настройка Azure PowerShell | Документация Майкрософт"
-description: "Как установить и настроить Azure PowerShell для первого использования."
+description: "Как установить и произвести перевоначальную настройку Azure PowerShell."
 services: azure
 author: sdwheeler
 ms.author: sewhee
@@ -14,21 +14,22 @@ ms.openlocfilehash: 0e560332c87fdcc8b7365f2271de24481003a4d6
 ms.sourcegitcommit: 72f56597f0329d35779a3ea4ccea6293f0fd2502
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 02/11/2018
 ---
 # <a name="install-and-configure-azure-powershell"></a>Установка и настройка Azure PowerShell
 
-В этой статье описывается порядок установки модулей Azure PowerShell в среде Windows.
-Если вы хотите использовать Azure PowerShell в macOS или Linux, ознакомьтесь со следующей статьей: [Установка и настройка Azure PowerShell в macOS и Linux](install-azurermps-maclinux.md).
+В этой статье описывается порядок установки модулей Azure PowerShell в среде Windows.  
+Если вы хотите использовать Azure PowerShell в macOS или Linux, ознакомьтесь со следующей статьей:  
+[Установка и настройка Azure PowerShell в macOS и Linux](install-azurermps-maclinux.md).
 
-Предпочтительный способ установки Azure PowerShell— из коллекции PowerShell.
+Azure PowerShell рекомендуется устанавливать из [PowerShell Gallery](https://www.powershellgallery.com/)
 
-## <a name="step-1-install-powershellget"></a>Шаг 1. Установка PowerShellGet
+## <a name="step-1-install-powershellget"></a>Шаг 1. Проверка установленной версии PowerShellGet
 
-Чтобы установить элементы из коллекции PowerShell, требуется модуль PowerShellGet. Убедитесь, что в системе установлена соответствующая версия PowerShellGet и что выполнены другие требования к системе. Выполните следующую команду, чтобы определить наличие PowerShellGet в вашей системе:
+Для установки модулей из PowerShell Gallery требуется модуль PowerShellGet. Убедитесь, что в системе установлена необходимая версия PowerShellGet и что выполнены другие требования к системе. Выполните следующую команду, чтобы определить наличие PowerShellGet в вашей системе:
 
 ```powershell
-Get-Module PowerShellGet -list | Select-Object Name,Version,Path
+Get-Module powershellget -ListAvailable | Select-Object Name,Version,Path
 ```
 
 Должен отобразиться результат, аналогичный следующему:
@@ -39,21 +40,45 @@ Name          Version Path
 PowerShellGet 1.0.0.1 C:\Program Files\WindowsPowerShell\Modules\PowerShellGet\1.0.0.1\PowerShellGet.psd1
 ```
 
-Если у вас не установлен PowerShellGet, перейдите к разделу [Как получить PowerShellGet](#how-to-get-powershellget) этой статьи.
+Если у вас не установлен PowerShellGet, перейдите к разделу данной статьи: [Как получить PowerShellGet](#how-to-get-powershellget).
 
 > [!NOTE]
-> Чтобы использовать PowerShellGet, необходимо иметь политику выполнения, которая позволяет запускать сценарии. Дополнительные сведения о политике выполнения PowerShell см. в [этой статье](/powershell/module/microsoft.powershell.core/about/about_execution_policies).
+> Чтобы использовать PowerShellGet, для компьютера, учетной записи пользователя или процесса должно быть разрешено выполнение скриптов PowerShell. Дополнительные сведения о политике выполнения PowerShell см. в [этой статье](/powershell/module/microsoft.powershell.core/about/about_execution_policies).
 
-## <a name="step-2-install-azure-powershell"></a>Шаг 2. Установка Azure PowerShell
 
-Для установки Azure PowerShell из коллекции PowerShell требуются повышенные привилегии. Выполните следующую команду в сеансе PowerShell с повышенными правами:
+## <a name="step-2-install-powershellget"></a>Шаг 2. Установка и Обновление PowerShellGet
+
+В случае, если используется одна из следующих версий операционной версии Microsoft Windows, необходимо установить PowerShellGet вручную.
+* Microsoft Windows 7
+* Microsoft Windows 8
+* Microsoft Windows 8.1
+* Microsoft Windows Server 2008
+* Microsoft Windows Server 2008 R2
+* Microsoft Windows Server 2012
+* Microsoft Windows Server 2012 R2
+
+Для установки PowerShellGet, выполните следующую команду:
+```powershell
+Install-Module PowerShellGet
+```
+
+Для обновления PowerShellGet, выполните команду:
+
+```powershell
+Install-Module PowerShellGet -Force
+```
+Данная команда также будет полезна в случае, если существует необходимость в нескольких одновременно устаноленных версиях PowerShellGet.
+
+## <a name="step-3-install-azure-powershell"></a>Шаг 3. Установка Azure PowerShell
+
+Для установки Azure PowerShell из PowerShell Gallery требуются повышенные привилегии. Выполните следующую команду PowerShell от имени администратора:
 
 ```powershell
 # Install the Azure Resource Manager modules from the PowerShell Gallery
 Install-Module AzureRM -AllowClobber
 ```
 
-По умолчанию коллекция PowerShell не настроена как доверенное хранилище для PowerShellGet. При первом использовании PSGallery отображается следующее сообщение:
+По умолчанию PowerShell Gallery не настроена как доверенное хранилище для PowerShellGet. При первом использовании PSGallery отображается следующее сообщение:
 
 ```Output
 Untrusted repository
@@ -65,14 +90,14 @@ Are you sure you want to install the modules from 'PSGallery'?
 [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"): Y
 ```
 
-Ответьте "Да" или "Да для всех", чтобы продолжить установку.
+Ответьте "Yes" или "Yes to All", чтобы продолжить установку.
 
 > [!NOTE]
-> Если установленная версия NuGet предшествует версии 2.8.5.201, то вам будет предложено скачать и установить последнюю версию NuGet.
+> Если установленная версия NuGet предшествует версии 2.8.5.201, вам будет предложено скачать и установить последнюю версию NuGet.
 
-Модуль AzureRM — это модуль свертки для командлетов Azure Resource Manager. При установке модуля AzureRM любой модуль Azure PowerShell, который ранее не был установлен, скачивается из коллекции PowerShell.
+Модуль AzureRM — это набор командлетов для работы с [Azure Resource Manager](https://docs.microsoft.com/ru-ru/azure/azure-resource-manager/resource-group-overview). При установке модуля AzureRM любой модуль Azure PowerShell, который ранее не был установлен, скачивается из PowerShell Gallery.
 
-Если у вас установлена предыдущая версия Azure PowerShell, то может появляться сообщение об ошибке. Для устранения этой проблемы см. раздел [Обновление Azure PowerShell до новой версии](#update-azps) далее в этой статье.
+Если у вас установлена предыдущая версия Azure PowerShell, то может появиться сообщение об ошибке. Для устранения этой проблемы см. раздел [Обновление Azure PowerShell до новой версии](#update-azps) далее в этой статье.
 
 ## <a name="step-3-load-the-azurerm-module"></a>Шаг 3. Загрузка модуля AzureRM
 После установки модуля его необходимо загрузить в сеанс PowerShell. Это необходимо сделать в обычном (без повышенных привилегий) сеансе PowerShell. Модули можно загрузить с помощью командлета `Import-Module` следующим образом:
@@ -93,13 +118,13 @@ Import-Module AzureRM
 
 ## <a name="frequently-asked-questions"></a>Часто задаваемые вопросы
 
-### <a name="how-to-get-powershellget"></a>Как получить PowerShellGet
+### <a name="how-to-get-powershellget"></a>Как устновить PowerShellGet
 
-|Версия ОС|Инструкции по установке|
-|---|---|
-|Используется Windows 10 или Windows Server 2016|Встроены в Windows Management Framework (WMF) 5.0, которая входит в состав ОС|
-|Необходимо выполнить обновление до версии PowerShell 5|[Установите последнюю версию WMF](https://www.microsoft.com/en-us/download/details.aspx?id=54616)|
-|Используется версия Windows с PowerShell 3 или PowerShell 4|[Скачайте модули PackageManagement](http://go.microsoft.com/fwlink/?LinkID=746217)|
+|Сценарий|Инструкции по установке|
+|:---|:---|
+|Microsoft Windows 10<br/>Microsoft Windows Server 2016|Дополнительные действия не требуются. PowerShellGet устанавливается вместе с Microsoft Windows 10 и Microsoft Windows Server 2016|
+|PowerShell 5.0|<ol><li>[Установите последнюю версию WMF](https://www.microsoft.com/en-us/download/details.aspx?id=54616)</li><li>Выполните команду:<br/>```Install-Module PowerShellGet -Force```</li></ol>|
+|Используется версия Windows с PowerShell 3 или PowerShell 4|<ol><li>[Скачайте модули PackageManagement](http://go.microsoft.com/fwlink/?LinkID=746217)</li><li>Выполните команду:<br/>```Install-Module PowerShellGet -Force```</li></ol>|
 
 <a id="helpmechoose"></a>
 ### <a name="checking-the-version-of-azure-powershell"></a>Проверка версии Azure PowerShell
@@ -116,7 +141,7 @@ Get-Module AzureRM -list | Select-Object Name,Version,Path
 
 ### <a id="update-azps"></a>Обновление Azure PowerShell до новой версии
 
-Если у вас установлена предыдущая версия Azure PowerShell, включающая модуль управления службами, то может появляться следующее сообщение об ошибке:
+Если у вас установлена предыдущая версия Azure PowerShell, включающая модуль управления службами, то может появиться следующее сообщение об ошибке:
 
 ```Output
 PackageManagement\Install-Package : A command with name 'Get-AzureStorageContainerAcl' is already
@@ -130,7 +155,7 @@ At C:\Program Files\WindowsPowerShell\Modules\PowerShellGet\1.0.0.1\PSModule.psm
     + FullyQualifiedErrorId : CommandAlreadyAvailable,Validate-ModuleCommandAlreadyAvailable,Microsoft.PowerShell.PackageManagement.Cmdlets.InstallPackage
 ```
 
-Как указано в сообщении об ошибке, для установки модуля необходимо использовать параметр -AllowClobber. Используйте следующую команду:
+Как указано в сообщении об ошибке, для установки модуля предлагается использовать параметр -AllowClobber. Используйте следующую команду:
 
 ```powershell
 # Install the Azure Resource Manager modules from the PowerShell Gallery
@@ -141,7 +166,7 @@ Install-Module AzureRM -AllowClobber
 
 ### <a name="installing-module-versions-side-by-side"></a>Установка версий модуля без замены
 
-Метод установки PowerShellGet — это единственный метод, поддерживающий установку нескольких версий. Например, вы можете использовать скрипты, написанные с помощью предыдущих версий Azure PowerShell, которые вы не можете обновить из-за отсутствия времени или ресурсов. Чтобы установить несколько версий Azure PowerShell, выполните следующие команды:
+PowerShellGet — это единственный метод, поддерживающий установку нескольких версий. Например, вы можете использовать скрипты, написанные с помощью предыдущих версий Azure PowerShell, которые невозможно обновить из-за отсутствия времени или ресурсов. Для этих целей у командлета Install-Module есть параметр RequiredVersion (принимает только одно значение). Для установки нескольких версий Azure PowerShell, выполните следующие команды:
 
 ```powershell
 Install-Module -Name AzureRM -RequiredVersion 3.7.0
@@ -155,7 +180,7 @@ Import-Module AzureRM -RequiredVersion 1.2.9
 ```
 
 > [!NOTE]
-> Версии 2.1.0 и 1.2.6 — это первые версии модуля, предназначенные для установки и использования без удаления предыдущей версии. Если загрузить более раннюю версию модуля Azure PowerShell, то загрузится несовместимая версия модуля **AzureRM.Profile**. Это приведет к тому, что командлеты будут запрашивать выполнить вход при каждом выполнении командлета.
+> Версии 2.1.0 и 1.2.6 — это первые версии модуля, предназначенные для установки и использования без удаления предыдущей версии. Если загрузить более раннюю версию модуля Azure PowerShell, то загрузится несовместимая версия модуля **AzureRM.Profile**. Это приведет к тому, что командлеты будут запрашивать авторизацию при каждом выполнении командлета.
 
 ### <a name="other-installation-methods"></a>Другие методы установки
 
