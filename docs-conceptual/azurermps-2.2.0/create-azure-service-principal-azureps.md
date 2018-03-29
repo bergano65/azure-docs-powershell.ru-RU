@@ -1,6 +1,6 @@
 ---
-title: "Создание субъекта-службы Azure с помощью Azure PowerShell"
-description: "Создание субъекта-службы для приложения или службы с помощью Azure PowerShell."
+title: Создание субъекта-службы Azure с помощью Azure PowerShell
+description: Создание субъекта-службы для приложения или службы с помощью Azure PowerShell.
 keywords: Azure PowerShell, Azure Active Directory, Azure Active Directory, AD, RBAC
 services: azure
 author: sdwheeler
@@ -12,10 +12,10 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/15/2017
 ms.openlocfilehash: 6eda2d2a729331b212938aa2681d0188a25b734a
-ms.sourcegitcommit: 20af779cd523c758d40e23d60eb989a4ef982d5c
+ms.sourcegitcommit: 15bf69bf95eceb936b3a429e741add95c308826a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="create-an-azure-service-principal-with-azure-powershell"></a>Создание субъекта-службы Azure с помощью Azure PowerShell
 
