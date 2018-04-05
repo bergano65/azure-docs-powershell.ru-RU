@@ -10,11 +10,11 @@ ms.service: azure-powershell
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 12/11/2017
-ms.openlocfilehash: 0a445a7db84c8deb6518b826b4096983669c5961
-ms.sourcegitcommit: 15bf69bf95eceb936b3a429e741add95c308826a
+ms.openlocfilehash: dfc1efa752c9c9fa42ad5904adacd83c2dc333b8
+ms.sourcegitcommit: 8376e0bc5f862d382d7283ba72990e3707591e7b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 03/30/2018
 ---
 # <a name="running-cmdlets-in-parallel-using-powershell-jobs"></a>Выполнение командлетов в параллельном режиме с помощью заданий PowerShell
 
@@ -23,7 +23,7 @@ Azure PowerShell в значительной степени зависит от 
 
 ## <a name="context-persistence-and-psjobs"></a>Сохранение контекста и PSJobs
 
-Задания PSJobs выполняются в рамках отдельных процессов. Это означает, что сведения о подключении к Azure необходимо правильно передавать в задания, которые вы создаете. При подключении учетной записи Azure к сеансу PowerShell с помощью `Login-AzureRmAccount` можно передать заданию контекст.
+Задания PSJobs выполняются в рамках отдельных процессов. Это означает, что сведения о подключении к Azure необходимо правильно передавать в задания, которые вы создаете. При подключении учетной записи Azure к сеансу PowerShell с помощью `Connect-AzureRmAccount` можно передать заданию контекст.
 
 ```powershell
 $creds = Get-Credential
