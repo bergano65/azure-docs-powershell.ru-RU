@@ -1,6 +1,6 @@
 ---
-title: "Начало работы с модулем Azure PowerShell | Документация Майкрософт"
-description: 
+title: Начало работы с модулем Azure PowerShell | Документация Майкрософт
+description: ''
 services: azure
 author: sdwheeler
 ms.author: sewhee
@@ -9,12 +9,12 @@ ms.product: azure
 ms.service: azure-powershell
 ms.devlang: powershell
 ms.topic: get-started-article
-ms.date: 08/31/2017
-ms.openlocfilehash: 2cd3fc8e955ae826471dceee79d5e6b70070d416
-ms.sourcegitcommit: e6b7e20bbd04eda51416c56b13f867102b602d1a
+ms.date: 11/15/2017
+ms.openlocfilehash: 5f1bd0c780b027b2b5779c70fa3145c5dfdc3bb4
+ms.sourcegitcommit: 4ebdeea3c472d94c1aedb10b9d85bf2e76826e83
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/07/2017
+ms.lasthandoff: 01/09/2018
 ---
 # <a name="getting-started-with-azure-powershell"></a>Начало работы с Azure PowerShell
 
@@ -38,13 +38,13 @@ ms.lasthandoff: 10/07/2017
 
 Вы также можете установить Azure PowerShell для локального использования в сеансе PowerShell.
 
-## <a name="install-azure-powershell"></a>Установка Azure PowerShell
+## <a name="install-azure-powershell"></a>Установите Azure PowerShell
 
 Сначала установите последнюю версию модуля Azure PowerShell. Сведения о последнем выпуске см. в [заметках о выпуске](./release-notes-azureps.md).
 
 1. [Установите Azure PowerShell](install-azurerm-ps.md).
 
-2. Чтобы проверить установку, выполните `Get-Module AzureRM` в командной строке.
+2. Чтобы проверить установку, выполните `Get-Module AzureRM -ListAvailable` в командной строке.
 
 ## <a name="log-in-to-azure"></a>Вход в Azure
 
@@ -362,7 +362,7 @@ Are you sure you want to remove resource group 'myResourceGroup'
 
 Дополнительные сведения о способах использования Azure PowerShell см. в примерах популярных сценариев для [виртуальных машин Linux](/azure/virtual-machines/virtual-machines-linux-powershell-samples?toc=%2fpowershell%2fazure%%2ftoc.json), [виртуальных машин Windows](/azure/virtual-machines/virtual-machines-windows-powershell-samples?toc=%2fpowershell%2fazure%%2ftoc.json), [веб-приложений](/azure/app-service-web/app-service-powershell-samples?toc=%2fpowershell%2fazure%%2ftoc.json) и [баз данных SQL](/azure/sql-database/sql-database-powershell-samples?toc=%2fpowershell%2fazure%%2ftoc.json).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 * [Вход с помощью Azure PowerShell](authenticate-azureps.md)
 * [Управление подписками Azure с помощью Azure PowerShell](manage-subscriptions-azureps.md)

@@ -10,11 +10,11 @@ ms.service: azure-powershell
 ms.devlang: powershell
 ms.topic: get-started-article
 ms.date: 11/15/2017
-ms.openlocfilehash: 5f1bd0c780b027b2b5779c70fa3145c5dfdc3bb4
-ms.sourcegitcommit: 4ebdeea3c472d94c1aedb10b9d85bf2e76826e83
+ms.openlocfilehash: 12446697e57cc0a76b94309c2338239c16c7f580
+ms.sourcegitcommit: 5f0013981fcea1d689649b9a2b2ffe84ae842e56
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="getting-started-with-azure-powershell"></a>Начало работы с Azure PowerShell
 
@@ -50,19 +50,109 @@ ms.lasthandoff: 01/09/2018
 
 Войдите в интерактивном режиме:
 
-1. Введите `Login-AzureRmAccount`. Появится диалоговое окно с запросом на ввод учетных данных Azure. С помощью параметра -EnvironmentName можно войти в Azure для Китая или Azure для Германии.
+1. Введите `Connect-AzureRmAccount`. Появится диалоговое окно с запросом на ввод учетных данных Azure. С помощью параметра -Environment можно войти в Azure для Китая или Azure для Германии.
 
-   Пример: Login-AzureRmAccount -EnvironmentName AzureChinaCloud
+   Пример: Connect-AzureRmAccount -Environment AzureChinaCloud
 
 2. Введите электронный адрес и пароль, связанные с вашей учетной записью. Azure выполняет проверку подлинности и сохраняет учетные данные, а затем закрывает окно.
 
 После входа в учетную запись Azure вы можете использовать командлеты Azure PowerShell для доступа к ресурсам в подписке и управления ими.
 
-## <a name="create-a-resource-group"></a>Создание группы ресурсов
+## <a name="create-a-windows-virtual-machine-using-simple-defaults"></a>Создание виртуальной машины Windows с помощью простых значений по умолчанию
 
-Теперь, когда все настроено, вы можете создавать ресурсы в Azure с помощью Azure PowerShell.
+У командлета `New-AzureRmVM` упрощенный синтаксис, что облегчает создание виртуальной машины. Вам нужно указать только два значения параметров: имя виртуальной машины и учетные данные локального администратора виртуальной машины.
 
-Сначала создайте группу ресурсов. Группы ресурсов в Azure позволяют управлять разными ресурсами, которые вы хотите логически сгруппировать. Например, вы можете создать группу ресурсов для приложения или проекта, а затем добавить в эту группу виртуальную машину, базу данных и службу CDN.
+Сначала мы создадим объект учетных данных.
+
+```powershell
+$cred = Get-Credential -Message "Enter a username and password for the virtual machine."
+```
+
+```Output
+Windows PowerShell credential request.
+Enter a username and password for the virtual machine.
+User: localAdmin
+Password for user localAdmin: *********
+```
+Затем — виртуальную машину.
+
+```powershell
+New-AzureRmVM -Name SampleVM -Credential $cred
+```
+
+```Output
+ResourceGroupName        : SampleVM
+Id                       : /subscriptions/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX/resourceGroups/SampleVM/providers/Microsoft.Compute/virtualMachines/SampleVM
+VmId                     : 43f6275d-ce50-49c8-a831-5d5974006e63
+Name                     : SampleVM
+Type                     : Microsoft.Compute/virtualMachines
+Location                 : eastus
+Tags                     : {}
+HardwareProfile          : {VmSize}
+NetworkProfile           : {NetworkInterfaces}
+OSProfile                : {ComputerName, AdminUsername, WindowsConfiguration, Secrets}
+ProvisioningState        : Succeeded
+StorageProfile           : {ImageReference, OsDisk, DataDisks}
+FullyQualifiedDomainName : samplevm-2c0867.eastus.cloudapp.azure.com
+```
+
+Это достаточно просто. Но может возникнуть вопрос, что при этом еще создается, а также как настроена виртуальная машина. Сначала посмотрим на наши группы ресурсов.
+
+```powershell
+Get-AzureRmResourceGroup | Select-Object ResourceGroupName,Location
+```
+
+```Output
+ResourceGroupName          Location
+-----------------          --------
+cloud-shell-storage-westus westus
+SampleVM                   eastus
+```
+
+Группа ресурсов **cloud-shell-storage-westus** создается при первом использовании Cloud Shell. Группа ресурсов **SampleVM** создается командлетом `New-AzureRmVM`.
+
+Но какие же ресурсы созданы в этой новой группе ресурсов?
+
+```powershell
+Get-AzureRmResource |
+  Where ResourceGroupName -eq SampleVM |
+    Select-Object ResourceGroupName,Location,ResourceType,Name
+```
+
+```Output
+ResourceGroupName          Location ResourceType                            Name
+-----------------          -------- ------------                            ----
+SAMPLEVM                   eastus   Microsoft.Compute/disks                 SampleVM_OsDisk_1_9b286c54b168457fa1f8c47...
+SampleVM                   eastus   Microsoft.Compute/virtualMachines       SampleVM
+SampleVM                   eastus   Microsoft.Network/networkInterfaces     SampleVM
+SampleVM                   eastus   Microsoft.Network/networkSecurityGroups SampleVM
+SampleVM                   eastus   Microsoft.Network/publicIPAddresses     SampleVM
+SampleVM                   eastus   Microsoft.Network/virtualNetworks       SampleVM
+```
+
+Давайте получим дополнительные сведения о виртуальной машине. В этих примерах показано, как получить сведения об образе операционной системы, используемом для создания виртуальной машины.
+
+```powershell
+Get-AzureRmVM -Name SampleVM -ResourceGroupName SampleVM |
+  Select-Object -ExpandProperty StorageProfile |
+    Select-Object -ExpandProperty ImageReference
+```
+
+```Output
+Publisher : MicrosoftWindowsServer
+Offer     : WindowsServer
+Sku       : 2016-Datacenter
+Version   : latest
+Id        :
+```
+
+## <a name="create-a-fully-configured-linux-virtual-machine"></a>Создание полностью настроенной виртуальной машины Linux
+
+В предыдущем примере для создания виртуальной машины Windows используется упрощенный синтаксис и значения параметров по умолчанию. В этом примере мы предоставляем значения для всех параметров виртуальной машины.
+
+### <a name="create-a-resource-group"></a>Создание группы ресурсов
+
+В этом примере мы создадим группу ресурсов. Группы ресурсов в Azure позволяют управлять разными ресурсами, которые вы хотите логически сгруппировать. Например, вы можете создать группу ресурсов для приложения или проекта, а затем добавить в эту группу виртуальную машину, базу данных и службу CDN.
 
 Создайте группу ресурсов с именем MyResourceGroup в регионе Azure "Западная Европа". Используйте для этого следующую команду:
 
@@ -78,101 +168,9 @@ Tags              :
 ResourceId        : /subscriptions/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX/resourceGroups/myResourceGroup
 ```
 
-## <a name="create-a-windows-virtual-machine"></a>Создание виртуальной машины Windows
+Эта новая группа ресурсов будет использоваться для размещения всех ресурсов, необходимых для создаваемой виртуальной машины. Чтобы создать виртуальную машину Linux, сначала нужно создать необходимые ресурсы и назначить их в качестве конфигурации. Затем эту конфигурацию можно использовать для создания виртуальной машины. Кроме того, вам потребуется открытый ключ SSH `id_rsa.pub` в каталоге формата SSH вашего профиля пользователя.
 
-Теперь, когда у вас есть группа ресурсов, создайте в ней виртуальную машину Windows. Чтобы создать виртуальную машину, сначала нужно создать необходимые ресурсы и назначить их в качестве конфигурации. Затем эту конфигурацию можно использовать для создания виртуальной машины.
-
-### <a name="create-the-required-network-resources"></a>Создание необходимых сетевых ресурсов
-
-Сначала создайте конфигурацию подсети, которая будет использоваться для создания виртуальной сети. Также нужно создать общедоступный IP-адрес, чтобы можно было подключаться к этой виртуальной машине. Создайте группу безопасности сети для защиты доступа к общедоступному адресу. Наконец, создайте виртуальный сетевой адаптер, используя все предыдущие ресурсы.
-
-```powershell
-# Variables for common values
-$resourceGroup = "myResourceGroup"
-$location = "westeurope"
-$vmName = "myWindowsVM"
-
-# Create a subnet configuration
-$subnetConfig = New-AzureRmVirtualNetworkSubnetConfig -Name mySubnet1 -AddressPrefix 192.168.1.0/24
-
-# Create a virtual network
-$vnet = New-AzureRmVirtualNetwork -ResourceGroupName $resourceGroup -Location $location `
-  -Name MYvNET1 -AddressPrefix 192.168.0.0/16 -Subnet $subnetConfig
-
-# Create a public IP address and specify a DNS name
-$publicIp = New-AzureRmPublicIpAddress -ResourceGroupName $resourceGroup -Location $location `
-  -Name "mypublicdns$(Get-Random)" -AllocationMethod Static -IdleTimeoutInMinutes 4
-$publicIp | Select-Object Name,IpAddress
-
-# Create an inbound network security group rule for port 3389
-$nsgRuleRDP = New-AzureRmNetworkSecurityRuleConfig -Name myNetworkSecurityGroupRuleRDP  -Protocol Tcp `
-  -Direction Inbound -Priority 1000 -SourceAddressPrefix * -SourcePortRange * -DestinationAddressPrefix * `
-  -DestinationPortRange 3389 -Access Allow
-
-# Create a network security group
-$nsg = New-AzureRmNetworkSecurityGroup -ResourceGroupName $resourceGroup -Location $location `
-  -Name myNetworkSecurityGroup1 -SecurityRules $nsgRuleRDP
-
-# Create a virtual network card and associate with public IP address and NSG
-$nic = New-AzureRmNetworkInterface -Name myNic1 -ResourceGroupName $resourceGroup -Location $location `
-  -SubnetId $vnet.Subnets[0].Id -PublicIpAddressId $publicIp.Id -NetworkSecurityGroupId $nsg.Id
-```
-
-### <a name="create-the-virtual-machine"></a>Создание виртуальной машины
-
-Сначала укажите учетные данные для операционной системы.
-
-```powershell
-# Create user object
-$cred = Get-Credential -Message "Enter a username and password for the virtual machine."
-```
-
-Теперь, когда у вас есть необходимые ресурсы, можно создать виртуальную машину. На этом шаге создайте объект конфигурации виртуальной машины. Потом эту конфигурацию можно использовать для создания виртуальной машины.
-
-```powershell
-# Create a virtual machine configuration
-$vmConfig = New-AzureRmVMConfig -VMName $vmName -VMSize Standard_D1 |
-  Set-AzureRmVMOperatingSystem -Windows -ComputerName $vmName -Credential $cred |
-  Set-AzureRmVMSourceImage -PublisherName MicrosoftWindowsServer -Offer WindowsServer -Skus 2016-Datacenter -Version latest |
-  Add-AzureRmVMNetworkInterface -Id $nic.Id
-
-# Create a virtual machine
-New-AzureRmVM -ResourceGroupName $resourceGroup -Location $location -VM $vmConfig
-```
-
-Команда `New-AzureRmVM` выводит результаты, когда виртуальная машина создана и готова к использованию.
-
-```Output
-RequestId IsSuccessStatusCode StatusCode ReasonPhrase
---------- ------------------- ---------- ------------
-                         True         OK OK
-```
-
-Теперь войдите на созданную виртуальную машину Windows Server, используя протокол RDP и общедоступный IP-адрес этой виртуальной машины. Следующая команда отображает общедоступный IP-адрес, созданный в предыдущем скрипте.
-
-```powershell
-$publicIp | Select-Object Name,IpAddress
-```
-
-```Output
-Name                  IpAddress
-----                  ---------
-mypublicdns1400512543 xx.xx.xx.xx
-```
-
-Если вы работаете на компьютере Windows, вы можете отобразить IP-адрес, выполнив команду mstsc в командной строке:
-
-```powershell
-mstsc /v:xx.xxx.xx.xxx
-```
-
-Для входа укажите те же учетные данные (имя пользователя и пароль), которые вы использовали при создании виртуальной машины.
-
-## <a name="create-a-linux-virtual-machine"></a>Создание виртуальной машины Linux
-
-Чтобы создать виртуальную машину Linux, сначала нужно создать необходимые ресурсы и назначить их в качестве конфигурации. Затем эту конфигурацию можно использовать для создания виртуальной машины. Предполагается, что вы уже создали группу ресурсов, как описано в предыдущем разделе. Кроме того, вам потребуется открытый ключ SSH `id_rsa.pub` в каталоге формата SSH вашего профиля пользователя.
-
-### <a name="create-the-required-network-resources"></a>Создание необходимых сетевых ресурсов
+#### <a name="create-the-required-network-resources"></a>Создание необходимых сетевых ресурсов
 
 Сначала создайте конфигурацию подсети, которая будет использоваться для создания виртуальной сети. Также нужно создать общедоступный IP-адрес, чтобы можно было подключаться к этой виртуальной машине. Создайте группу безопасности сети для защиты доступа к общедоступному адресу. Наконец, создайте виртуальный сетевой адаптер, используя все предыдущие ресурсы.
 
@@ -183,7 +181,7 @@ $location = "westeurope"
 $vmName = "myLinuxVM"
 
 # Definer user name and blank password
-$securePassword = ConvertTo-SecureString ' ' -AsPlainText -Force
+$securePassword = ConvertTo-SecureString 'azurepassword' -AsPlainText -Force
 $cred = New-Object System.Management.Automation.PSCredential ("azureuser", $securePassword)
 
 # Create a subnet configuration
@@ -212,9 +210,9 @@ $nic = New-AzureRmNetworkInterface -Name myNic2 -ResourceGroupName $resourceGrou
   -SubnetId $vnet.Subnets[0].Id -PublicIpAddressId $publicIp.Id -NetworkSecurityGroupId $nsg.Id
 ```
 
-### <a name="create-the-virtual-machine"></a>Создание виртуальной машины
+### <a name="create-the-vm-configuration"></a>Создание конфигурации виртуальной машины
 
-Теперь, когда у вас есть необходимые ресурсы, можно создать виртуальную машину. На этом шаге создайте объект конфигурации виртуальной машины. Потом эту конфигурацию можно использовать для создания виртуальной машины.
+Теперь, когда у вас есть необходимые ресурсы, можно создать объект конфигурации виртуальной машины.
 
 ```powershell
 # Create a virtual machine configuration
@@ -226,8 +224,13 @@ $vmConfig = New-AzureRmVMConfig -VMName $vmName -VMSize Standard_D1 |
 # Configure SSH Keys
 $sshPublicKey = Get-Content "$env:USERPROFILE\.ssh\id_rsa.pub"
 Add-AzureRmVMSshPublicKey -VM $vmConfig -KeyData $sshPublicKey -Path "/home/azureuser/.ssh/authorized_keys"
+```
 
-# Create a virtual machine
+### <a name="create-the-virtual-machine"></a>Создание виртуальной машины
+
+Теперь мы можем создать виртуальную машину, используя объект конфигурации.
+
+```powershell
 New-AzureRmVM -ResourceGroupName $resourceGroup -Location $location -VM $vmConfig
 ```
 
@@ -367,7 +370,7 @@ Are you sure you want to remove resource group 'myResourceGroup'
 * [Вход с помощью Azure PowerShell](authenticate-azureps.md)
 * [Управление подписками Azure с помощью Azure PowerShell](manage-subscriptions-azureps.md)
 * [Создание субъектов-служб в Azure с помощью Azure PowerShell](create-azure-service-principal-azureps.md)
-* См. заметки о выпуске, связанные с миграцией из старой версии: [https://github.com/Azure/azure-powershell/tree/dev/documentation/release-notes](https://github.com/Azure/azure-powershell/tree/dev/documentation/release-notes).
+* Ознакомьтесь с заметками о выпуске, касающимися миграции с более ранней версии: [https://github.com/Azure/azure-powershell/tree/dev/documentation/release-notes](https://github.com/Azure/azure-powershell/tree/dev/documentation/release-notes).
 * Помощь от сообщества:
   * [Форум Azure на MSDN](http://go.microsoft.com/fwlink/p/?LinkId=320212)
   * [Stackoverflow](http://go.microsoft.com/fwlink/?LinkId=320213)
