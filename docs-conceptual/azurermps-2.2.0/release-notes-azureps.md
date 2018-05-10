@@ -1,6 +1,6 @@
 ---
-title: "Журнал изменений Azure PowerShell | Документация Майкрософт"
-description: "Это руководство содержит историю изменений Azure PowerShell, внесенных в новом выпуске."
+title: Журнал изменений Azure PowerShell | Документация Майкрософт
+description: Это руководство содержит историю изменений Azure PowerShell, внесенных в новом выпуске.
 services: azure
 author: sdwheeler
 ms.author: sewhee
@@ -9,20 +9,20 @@ ms.service: azure-powershell
 ms.product: azure
 ms.devlang: powershell
 ms.topic: conceptual
-ms.workload: 
+ms.workload: ''
 ms.date: 05/18/2017
 ms.openlocfilehash: 143d92384fd270711378f6741ba59e88c12833d1
-ms.sourcegitcommit: 226527be7cb647acfe2ea9ab151185053ab3c6db
+ms.sourcegitcommit: 37bfbf11fd0967a8e7977c692ab829d286baf88a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/29/2017
+ms.lasthandoff: 05/08/2018
 ---
 # <a name="release-notes"></a>Заметки о выпуске
 
 Здесь приведен список изменений, внесенных в Azure PowerShell в этом выпуске.
 
 ## <a name="version-220"></a>Версия 2.2.0
-* Среда выполнения приложений
+* Службы вычислений
   - Добавлена поддержка для запроса состояния шифрования из расширения AzureDiskEncryptionForLinux.
 * Фабрика данных
   - Добавлен новый командлет для перечисления окон действий:

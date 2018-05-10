@@ -12,10 +12,10 @@ ms.topic: conceptual
 ms.workload: ''
 ms.date: 2/20/2018
 ms.openlocfilehash: 2e80d314991539cb630a0f2a96048bb2e70a05b6
-ms.sourcegitcommit: 5f0013981fcea1d689649b9a2b2ffe84ae842e56
+ms.sourcegitcommit: 37bfbf11fd0967a8e7977c692ab829d286baf88a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 05/08/2018
 ---
 # <a name="release-notes"></a>Заметки о выпуске
 
@@ -46,10 +46,10 @@ Update-Module -Name AzureRM
 #### <a name="general"></a>Общие сведения
 * Обновление до последней версии Azure ClientRuntime.
 
-#### <a name="azurestorage"></a>Azure.Storage
+#### <a name="azurestorage"></a>Azure.Storage;
 * Устранена проблема, когда командлеты для отправки файлов и BLOB-объектов выдают ошибку на машинах с включенной политикой FIPS.
-    - Set-AzureStorageBlobContent.
-    - Set-AzureStorageFileContent.
+    - Set-AzureStorageBlobContent
+    - Set-AzureStorageFileContent
 
 #### <a name="azurermbilling"></a>AzureRM.Billing
 * Добавлен новый командлет Get-AzureRmEnrollmentAccount.
@@ -619,9 +619,9 @@ Update-Module -Name AzureRM
 * Служба автоматизации
   - Обновлен командлет Import-AzureRMAutomationRunbook.
     - Добавлена поддержка модулей runbook Python2.
-* пакетная служба;
+* Пакетная служба Azure
   - Исправлена ошибка, из-за которой при операциях с учетными записями без группы ресурсов не удавалось автоматически определить группу ресурсов.
-* Среда выполнения приложений
+* Службы вычислений
   - С помощью командлета Get-AzureRmComputeResourceSku отображаются сведения о зоне.
   - Обновлен командлет Disable-AzureRmVmssDiskEncryption для устранения проблемы, описанной здесь: https://github.com/Azure/azure-powershell/issues/5038.
   - Добавлена поддержка параметра -AsJob в командлетах для длительных вычислений. Благодаря этому выбранные командлеты могут выполняться в фоновом режиме и возвращать задание для отслеживания и контроля хода выполнения.
@@ -784,7 +784,7 @@ Update-Module -Name AzureRM
   * Добавлена поддержка аутентификации на основе Azure Active Directory.
     - Чтобы использовать аутентификацию Azure Active Directory, необходимо получить объект `BatchAccountContext` с помощью командлета `Get-AzureRmBatchAccount` и передать `BatchAccountContext` параметру `-BatchContext` командлета пакетной службы. Аутентификация Azure Active Directory является обязательной для учетных записей с `PoolAllocationMode = UserSubscription`.
     - Для существующих или новых учетных записей, созданных с помощью `PoolAllocationMode = BatchService`, можно продолжать использовать аутентификацию на основе общих ключей, получая объект `BatchAccountContext` с помощью командлета `Get-AzureRmBatchAccoutKeys`.
-* Среда выполнения приложений
+* Службы вычислений
   * Команды расширения шифрования диска Azure
     - Добавлен параметр -EncryptFormatAll для командлета Set-AzureRmVmDiskEncryptionExtension для шифрования дисков данных.
     - Добавлены параметры -ExtensionPublisherName и -ExtensionType для командлета Set-AzureRmVmDiskEncryptionExtension для переключения на другие версии расширения.

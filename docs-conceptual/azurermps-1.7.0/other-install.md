@@ -1,6 +1,6 @@
 ---
-title: "Другие методы установки Azure PowerShell | Документация Майкрософт"
-description: "Как установить Azure PowerShell с помощью пакета MSI или установщика веб-платформы."
+title: Другие методы установки Azure PowerShell | Документация Майкрософт
+description: Как установить Azure PowerShell с помощью пакета MSI или установщика веб-платформы.
 services: azure
 author: sdwheeler
 ms.author: sewhee
@@ -11,10 +11,10 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 09/06/2017
 ms.openlocfilehash: 73c099375cecc8abdd5d6179109513946e7e793b
-ms.sourcegitcommit: c42c7176276ec4e1cc3360a93e6b15d32083bf9f
+ms.sourcegitcommit: 37bfbf11fd0967a8e7977c692ab829d286baf88a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 05/08/2018
 ---
 # <a name="other-installation-methods"></a>Другие методы установки
 
@@ -56,7 +56,7 @@ At line:1 char:1
     + FullyQualifiedErrorId : CommandNotFoundException
 ```
 
-Эту ошибку можно исправить при перезагрузке компьютера или импорте модуля, используя полный путь. Например:
+Эту ошибку можно исправить при перезагрузке компьютера или импорте модуля, используя полный путь. Например: 
 
 ```powershell
 Import-Module "$env:ProgramFiles(x86)\Microsoft SDKs\Azure\PowerShell\AzureRM.psd1"

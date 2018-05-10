@@ -1,6 +1,6 @@
 ---
-title: "Общие сведения о PowerShell для Azure Stack | Документация Майкрософт"
-description: "Обзор установки и настройки модуля PowerShell для Azure Stack"
+title: Общие сведения о PowerShell для Azure Stack | Документация Майкрософт
+description: Обзор установки и настройки модуля PowerShell для Azure Stack
 author: SnehaGunda
 manager: Byronr
 ms.product: azure-stack
@@ -10,10 +10,10 @@ ms.topic: reference
 ms.author: sngun
 ms.manager: byronr
 ms.openlocfilehash: f895992b4200f260189b3dbc541452e73a377b00
-ms.sourcegitcommit: 8446ae373ac6928871ec8f10d3a4918b4601d5b2
+ms.sourcegitcommit: 37bfbf11fd0967a8e7977c692ab829d286baf88a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 05/08/2018
 ---
 # <a name="azure-stack-powershell"></a>PowerShell для Azure Stack
 
