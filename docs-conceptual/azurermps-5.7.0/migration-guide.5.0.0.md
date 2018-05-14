@@ -1,22 +1,22 @@
-# <a name="breaking-changes-for-microsoft-azure-powershell-500"></a><span data-ttu-id="7dfbf-101">Критические изменения для Microsoft Azure PowerShell 5.0.0</span><span class="sxs-lookup"><span data-stu-id="7dfbf-101">Breaking changes for Microsoft Azure PowerShell 5.0.0</span></span>
+# <a name="breaking-changes-for-microsoft-azure-powershell-500"></a>Критические изменения для Microsoft Azure PowerShell 5.0.0
 
-<span data-ttu-id="7dfbf-102">Этот документ предназначен для уведомления о критических изменениях и является руководством по миграции для пользователей командлетов Microsoft Azure PowerShell.</span><span class="sxs-lookup"><span data-stu-id="7dfbf-102">This document serves as both a breaking change notification and migration guide for consumers of the Microsoft Azure PowerShell cmdlets.</span></span> <span data-ttu-id="7dfbf-103">В каждом разделе описана причина критического изменения и самый простой путь миграции.</span><span class="sxs-lookup"><span data-stu-id="7dfbf-103">Each section describes both the impetus for the breaking change and the migration path of least resistance.</span></span> <span data-ttu-id="7dfbf-104">Подробное описание см. в запросах на вытягивание для каждого изменения.</span><span class="sxs-lookup"><span data-stu-id="7dfbf-104">For in-depth context, please refer to the pull request associated with each change.</span></span>
+Этот документ предназначен для уведомления о критических изменениях и является руководством по миграции для пользователей командлетов Microsoft Azure PowerShell. В каждом разделе описана причина критического изменения и самый простой путь миграции. Подробное описание см. в запросах на вытягивание для каждого изменения.
 
-## <a name="table-of-contents"></a><span data-ttu-id="7dfbf-105">Оглавление</span><span class="sxs-lookup"><span data-stu-id="7dfbf-105">Table of Contents</span></span>
+## <a name="table-of-contents"></a>Оглавление
 
-- [<span data-ttu-id="7dfbf-106">Критические изменения в командлетах ApiManagement</span><span class="sxs-lookup"><span data-stu-id="7dfbf-106">Breaking changes to ApiManagement cmdlets</span></span>](#breaking-changes-to-apimanagement-cmdlets)
-- [<span data-ttu-id="7dfbf-107">Критические изменения в командлетах Batch</span><span class="sxs-lookup"><span data-stu-id="7dfbf-107">Breaking changes to Batch cmdlets</span></span>](#breaking-changes-to-batch-cmdlets)
-- [<span data-ttu-id="7dfbf-108">Критические изменения в командлетах Compute</span><span class="sxs-lookup"><span data-stu-id="7dfbf-108">Breaking changes to Compute cmdlets</span></span>](#breaking-changes-to-compute-cmdlets)
-- [<span data-ttu-id="7dfbf-109">Критические изменения в командлетах EventHub</span><span class="sxs-lookup"><span data-stu-id="7dfbf-109">Breaking changes to EventHub cmdlets</span></span>](#breaking-changes-to-eventhub-cmdlets)
-- [<span data-ttu-id="7dfbf-110">Критические изменения в командлетах Insights</span><span class="sxs-lookup"><span data-stu-id="7dfbf-110">Breaking changes to Insights cmdlets</span></span>](#breaking-changes-to-insights-cmdlets)
-- [<span data-ttu-id="7dfbf-111">Критические изменения в командлетах Network</span><span class="sxs-lookup"><span data-stu-id="7dfbf-111">Breaking changes to Network cmdlets</span></span>](#breaking-changes-to-network-cmdlets)
-- [<span data-ttu-id="7dfbf-112">Критические изменения в командлетах Resources</span><span class="sxs-lookup"><span data-stu-id="7dfbf-112">Breaking changes to Resources cmdlets</span></span>](#breaking-changes-to-resources-cmdlets)
-- [<span data-ttu-id="7dfbf-113">Критические изменения в командлетах ServiceBus</span><span class="sxs-lookup"><span data-stu-id="7dfbf-113">Breaking Changes to ServiceBus Cmdlets</span></span>](#breaking-changes-to-servicebus-cmdlets)
+- [Критические изменения в командлетах ApiManagement](#breaking-changes-to-apimanagement-cmdlets)
+- [Критические изменения в командлетах Batch](#breaking-changes-to-batch-cmdlets)
+- [Критические изменения в командлетах Compute](#breaking-changes-to-compute-cmdlets)
+- [Критические изменения в командлетах EventHub](#breaking-changes-to-eventhub-cmdlets)
+- [Критические изменения в командлетах Insights](#breaking-changes-to-insights-cmdlets)
+- [Критические изменения в командлетах Network](#breaking-changes-to-network-cmdlets)
+- [Критические изменения в командлетах Resources](#breaking-changes-to-resources-cmdlets)
+- [Критические изменения в командлетах ServiceBus](#breaking-changes-to-servicebus-cmdlets)
 
-## <a name="breaking-changes-to-apimanagement-cmdlets"></a><span data-ttu-id="7dfbf-114">Критические изменения в командлетах ApiManagement</span><span class="sxs-lookup"><span data-stu-id="7dfbf-114">Breaking changes to ApiManagement cmdlets</span></span>
+## <a name="breaking-changes-to-apimanagement-cmdlets"></a>Критические изменения в командлетах ApiManagement
 
-### <a name="new-azurermapimanagementbackendproxy"></a><span data-ttu-id="7dfbf-115">**New-AzureRmApiManagementBackendProxy**</span><span class="sxs-lookup"><span data-stu-id="7dfbf-115">**New-AzureRmApiManagementBackendProxy**</span></span>
-- <span data-ttu-id="7dfbf-116">Параметры UserName и Password заменены на PSCredential.</span><span class="sxs-lookup"><span data-stu-id="7dfbf-116">Parameters "UserName" and "Password" are being replaced in favor of a PSCredential</span></span>
+### <a name="new-azurermapimanagementbackendproxy"></a>**New-AzureRmApiManagementBackendProxy**
+- Параметры UserName и Password заменены на PSCredential.
 
 ```powershell
 # Old
@@ -26,8 +26,8 @@ New-AzureRmApiManagementBackendProxy [other required parameters] -UserName "plai
 New-AzureRmApiManagementBackendProxy [other required parameters] -Credential $PSCredentialVariable
 ```
 
-### <a name="new-azurermapimanagementuser"></a><span data-ttu-id="7dfbf-117">**New-AzureRmApiManagementUser**</span><span class="sxs-lookup"><span data-stu-id="7dfbf-117">**New-AzureRmApiManagementUser**</span></span>
-- <span data-ttu-id="7dfbf-118">Параметр Password заменен на SecureString.</span><span class="sxs-lookup"><span data-stu-id="7dfbf-118">Parameter "Password" being replaced in favor of a SecureString</span></span>
+### <a name="new-azurermapimanagementuser"></a>**New-AzureRmApiManagementUser**
+- Параметр Password заменен на SecureString.
 
 ```powershell
 # Old
@@ -37,8 +37,8 @@ New-AzureRmApiManagementUser [other required parameters] -Password "plain-text s
 New-AzureRmApiManagementUser [other required parameters] -Password $SecureStringVariable
 ```
 
-### <a name="set-azurermapimanagementuser"></a><span data-ttu-id="7dfbf-119">**Set-AzureRmApiManagementUser**</span><span class="sxs-lookup"><span data-stu-id="7dfbf-119">**Set-AzureRmApiManagementUser**</span></span>
-- <span data-ttu-id="7dfbf-120">Параметр Password заменен на SecureString.</span><span class="sxs-lookup"><span data-stu-id="7dfbf-120">Parameter "Password" being replaced in favor of a SecureString</span></span>
+### <a name="set-azurermapimanagementuser"></a>**Set-AzureRmApiManagementUser**
+- Параметр Password заменен на SecureString.
 
 ```powershell
 # Old
@@ -48,10 +48,10 @@ Set-AzureRmApiManagementUser [other required parameters] -Password "plain-text s
 Set-AzureRmApiManagementUser [other required parameters] -Password $SecureStringVariable
 ```
 
-## <a name="breaking-changes-to-batch-cmdlets"></a><span data-ttu-id="7dfbf-121">Критические изменения в командлетах Batch</span><span class="sxs-lookup"><span data-stu-id="7dfbf-121">Breaking changes to Batch cmdlets</span></span>
+## <a name="breaking-changes-to-batch-cmdlets"></a>Критические изменения в командлетах Batch
 
-### <a name="new-azurebatchcertificate"></a><span data-ttu-id="7dfbf-122">**New-AzureBatchCertificate**</span><span class="sxs-lookup"><span data-stu-id="7dfbf-122">**New-AzureBatchCertificate**</span></span>
-- <span data-ttu-id="7dfbf-123">Параметр `Password` заменен на SecureString.</span><span class="sxs-lookup"><span data-stu-id="7dfbf-123">Parameter `Password` being replaced in favor of a Secure string</span></span>
+### <a name="new-azurebatchcertificate"></a>**New-AzureBatchCertificate**
+- Параметр `Password` заменен на SecureString.
 
 ```powershell
 # Old
@@ -61,8 +61,8 @@ New-AzureBatchCertificate [other required parameters] -Password "plain-text stri
 New-AzureBatchCertificate [other required parameters] -Password $SecureStringVariable
 ```
 
-### <a name="new-azurebatchcomputenodeuser"></a><span data-ttu-id="7dfbf-124">**New-AzureBatchComputeNodeUser**</span><span class="sxs-lookup"><span data-stu-id="7dfbf-124">**New-AzureBatchComputeNodeUser**</span></span>
-- <span data-ttu-id="7dfbf-125">Параметр `Password` заменен на SecureString.</span><span class="sxs-lookup"><span data-stu-id="7dfbf-125">Parameter `Password` being replaced in favor of a Secure string</span></span>
+### <a name="new-azurebatchcomputenodeuser"></a>**New-AzureBatchComputeNodeUser**
+- Параметр `Password` заменен на SecureString.
 
 ```powershell
 # Old
@@ -72,8 +72,8 @@ New-AzureBatchComputeNodeUser [other required parameters] -Password "plain-text 
 New-AzureBatchComputeNodeUser [other required parameters] -Password $SecureStringVariable
 ```
 
-### <a name="set-azurermbatchcomputenodeuser"></a><span data-ttu-id="7dfbf-126">**Set-AzureRmBatchComputeNodeUser**</span><span class="sxs-lookup"><span data-stu-id="7dfbf-126">**Set-AzureRmBatchComputeNodeUser**</span></span>
-- <span data-ttu-id="7dfbf-127">Параметр `Password` заменен на SecureString.</span><span class="sxs-lookup"><span data-stu-id="7dfbf-127">Parameter `Password` being replaced in favor of a Secure string</span></span>
+### <a name="set-azurermbatchcomputenodeuser"></a>**Set-AzureRmBatchComputeNodeUser**
+- Параметр `Password` заменен на SecureString.
 
 ```powershell
 # Old
@@ -83,8 +83,8 @@ Set-AzureRmBatchComputeNodeUser [other required parameters] -Password "plain-tex
 Set-AzureRmBatchComputeNodeUser [other required parameters] -Password $SecureStringVariable
 ```
 
-### <a name="new-azurebatchtask"></a><span data-ttu-id="7dfbf-128">**New-AzureBatchTask**</span><span class="sxs-lookup"><span data-stu-id="7dfbf-128">**New-AzureBatchTask**</span></span>
- - <span data-ttu-id="7dfbf-129">Переключатель `RunElevated` удален и заменен на `UserIdentity`.</span><span class="sxs-lookup"><span data-stu-id="7dfbf-129">Removed the `RunElevated` switch and replaced it with `UserIdentity`.</span></span>
+### <a name="new-azurebatchtask"></a>**New-AzureBatchTask**
+ - Переключатель `RunElevated` удален и заменен на `UserIdentity`.
 
 ```powershell
 # Old
@@ -96,11 +96,11 @@ $userIdentity = New-Object Microsoft.Azure.Commands.Batch.Models.PSUserIdentity 
 New-AzureBatchTask -Id $taskId1 -JobId $jobId -CommandLine "cmd /c echo hello" -UserIdentity $userIdentity
 ```
 
-<span data-ttu-id="7dfbf-130">Это также касается свойства `RunElevated` в `PSCloudTask`, `PSStartTask`, `PSJobManagerTask`, `PSJobPreparationTask` и `PSJobReleaseTask`.</span><span class="sxs-lookup"><span data-stu-id="7dfbf-130">This additionally impacts the `RunElevated` property on `PSCloudTask`, `PSStartTask`, `PSJobManagerTask`, `PSJobPreparationTask`, and `PSJobReleaseTask`.</span></span>
+Это также касается свойства `RunElevated` в `PSCloudTask`, `PSStartTask`, `PSJobManagerTask`, `PSJobPreparationTask` и `PSJobReleaseTask`.
 
-### <a name="psmultiinstancesettings"></a><span data-ttu-id="7dfbf-131">**PSMultiInstanceSettings**</span><span class="sxs-lookup"><span data-stu-id="7dfbf-131">**PSMultiInstanceSettings**</span></span>
+### <a name="psmultiinstancesettings"></a>**PSMultiInstanceSettings**
 
-- <span data-ttu-id="7dfbf-132">Конструктор `PSMultiInstanceSettings` больше не принимает обязательный параметр `numberOfInstances`. Вместо него он принимает обязательный параметр `coordinationCommandLine`.</span><span class="sxs-lookup"><span data-stu-id="7dfbf-132">`PSMultiInstanceSettings` constructor no longer takes a required `numberOfInstances` parameter, instead it takes a required `coordinationCommandLine` parameter.</span></span>
+- Конструктор `PSMultiInstanceSettings` больше не принимает обязательный параметр `numberOfInstances`. Вместо него он принимает обязательный параметр `coordinationCommandLine`.
 
 ```powershell
 # Old
@@ -113,8 +113,8 @@ $settings = New-Object Microsoft.Azure.Commands.Batch.Models.PSMultiInstanceSett
 New-AzureBatchTask [other parameters] -MultiInstanceSettings $settings
 ```
 
-### <a name="get-azurebatchtask"></a><span data-ttu-id="7dfbf-133">**Get-AzureBatchTask**</span><span class="sxs-lookup"><span data-stu-id="7dfbf-133">**Get-AzureBatchTask**</span></span>
- - <span data-ttu-id="7dfbf-134">Удалено свойство `RunElevated` в `PSCloudTask`.</span><span class="sxs-lookup"><span data-stu-id="7dfbf-134">Removed the `RunElevated` property on `PSCloudTask`.</span></span> <span data-ttu-id="7dfbf-135">Добавлено свойство `UserIdentity` для замены `RunElevated`.</span><span class="sxs-lookup"><span data-stu-id="7dfbf-135">The `UserIdentity` property has been added to replace `RunElevated`.</span></span>
+### <a name="get-azurebatchtask"></a>**Get-AzureBatchTask**
+ - Удалено свойство `RunElevated` в `PSCloudTask`. Добавлено свойство `UserIdentity` для замены `RunElevated`.
 
 ```powershell
 # Old
@@ -126,11 +126,11 @@ $task = Get-AzureBatchTask [parameters]
 $task.UserIdentity.AutoUser.ElevationLevel
 ```
 
-<span data-ttu-id="7dfbf-136">Это также касается свойства `RunElevated` в `PSCloudTask`, `PSStartTask`, `PSJobManagerTask`, `PSJobPreparationTask` и `PSJobReleaseTask`.</span><span class="sxs-lookup"><span data-stu-id="7dfbf-136">This additionally impacts the `RunElevated` property on `PSCloudTask`, `PSStartTask`, `PSJobManagerTask`, `PSJobPreparationTask`, and `PSJobReleaseTask`.</span></span>
+Это также касается свойства `RunElevated` в `PSCloudTask`, `PSStartTask`, `PSJobManagerTask`, `PSJobPreparationTask` и `PSJobReleaseTask`.
 
-### <a name="multiple-types"></a><span data-ttu-id="7dfbf-137">**Несколько типов**</span><span class="sxs-lookup"><span data-stu-id="7dfbf-137">**Multiple types**</span></span>
+### <a name="multiple-types"></a>**Несколько типов**
 
-- <span data-ttu-id="7dfbf-138">Свойство `SchedulingError` в `PSExitConditions` переименовано в `PreProcessingError`.</span><span class="sxs-lookup"><span data-stu-id="7dfbf-138">Renamed the `SchedulingError` property on `PSExitConditions` to `PreProcessingError`.</span></span>
+- Свойство `SchedulingError` в `PSExitConditions` переименовано в `PreProcessingError`.
 
 ```powershell
 # Old
@@ -142,11 +142,11 @@ $task = Get-AzureBatchTask [parameters]
 $task.ExitConditions.PreProcessingError
 ```
 
-### <a name="multiple-types"></a><span data-ttu-id="7dfbf-139">**Несколько типов**</span><span class="sxs-lookup"><span data-stu-id="7dfbf-139">**Multiple types**</span></span>
+### <a name="multiple-types"></a>**Несколько типов**
 
-- <span data-ttu-id="7dfbf-140">Свойство `SchedulingError` в `PSJobPreparationTaskExecutionInformation`, `PSJobReleaseTaskExecutionInformation`, `PSStartTaskInformation`, `PSSubtaskInformation` и `PSTaskExecutionInformation` переименовано в `FailureInformation`.</span><span class="sxs-lookup"><span data-stu-id="7dfbf-140">Renamed the `SchedulingError` property on `PSJobPreparationTaskExecutionInformation`, `PSJobReleaseTaskExecutionInformation`, `PSStartTaskInformation`, `PSSubtaskInformation`, and `PSTaskExecutionInformation` to `FailureInformation`.</span></span>
-  - <span data-ttu-id="7dfbf-141">`FailureInformation` возвращается при каждом сбое задачи.</span><span class="sxs-lookup"><span data-stu-id="7dfbf-141">`FailureInformation` is returned any time there is a task failure.</span></span> <span data-ttu-id="7dfbf-142">Сюда входят все предыдущие случаи ошибок планирования, а также коды завершения задач со значением, отличным от нуля, и ошибки передачи файлов из новой функции выходных файлов.</span><span class="sxs-lookup"><span data-stu-id="7dfbf-142">This includes all previous scheduling error cases, as well as nonzero task exit codes, and file upload failures from the new output files feature.</span></span>
-  - <span data-ttu-id="7dfbf-143">Структура не изменилась, поэтому при использовании этого типа не нужно преобразовывать код.</span><span class="sxs-lookup"><span data-stu-id="7dfbf-143">This is structured the same as before, so no code change is needed when using this type.</span></span>
+- Свойство `SchedulingError` в `PSJobPreparationTaskExecutionInformation`, `PSJobReleaseTaskExecutionInformation`, `PSStartTaskInformation`, `PSSubtaskInformation` и `PSTaskExecutionInformation` переименовано в `FailureInformation`.
+  - `FailureInformation` возвращается при каждом сбое задачи. Сюда входят все предыдущие случаи ошибок планирования, а также коды завершения задач со значением, отличным от нуля, и ошибки передачи файлов из новой функции выходных файлов.
+  - Структура не изменилась, поэтому при использовании этого типа не нужно преобразовывать код.
 
 ```powershell
 # Old
@@ -158,11 +158,11 @@ $task = Get-AzureBatchTask [parameters]
 $task.ExecutionInformation.FailureInformation
 ```
 
-<span data-ttu-id="7dfbf-144">Это также касается Get-AzureBatchPool, Get-AzureBatchSubtask и Get-AzureBatchJobPreparationAndReleaseTaskStatus.</span><span class="sxs-lookup"><span data-stu-id="7dfbf-144">This additionally impacts: Get-AzureBatchPool, Get-AzureBatchSubtask, and Get-AzureBatchJobPreparationAndReleaseTaskStatus</span></span>
+Это также касается Get-AzureBatchPool, Get-AzureBatchSubtask и Get-AzureBatchJobPreparationAndReleaseTaskStatus.
 
-### <a name="new-azurebatchpool"></a><span data-ttu-id="7dfbf-145">**New-AzureBatchPool**</span><span class="sxs-lookup"><span data-stu-id="7dfbf-145">**New-AzureBatchPool**</span></span>
- - <span data-ttu-id="7dfbf-146">Параметр `TargetDedicated` удален и заменен на `TargetDedicatedComputeNodes` и `TargetLowPriorityComputeNodes`.</span><span class="sxs-lookup"><span data-stu-id="7dfbf-146">Removed `TargetDedicated` and replaced it with `TargetDedicatedComputeNodes` and `TargetLowPriorityComputeNodes`.</span></span>
- - <span data-ttu-id="7dfbf-147">Псевдоним `TargetDedicatedComputeNodes` — `TargetDedicated`.</span><span class="sxs-lookup"><span data-stu-id="7dfbf-147">`TargetDedicatedComputeNodes` has an alias `TargetDedicated`.</span></span>
+### <a name="new-azurebatchpool"></a>**New-AzureBatchPool**
+ - Параметр `TargetDedicated` удален и заменен на `TargetDedicatedComputeNodes` и `TargetLowPriorityComputeNodes`.
+ - Псевдоним `TargetDedicatedComputeNodes` — `TargetDedicated`.
 
 ```powershell
 # Old
@@ -172,10 +172,10 @@ New-AzureBatchPool [other parameters] [-TargetDedicated <Int32>]
 New-AzureBatchPool [other parameters] [-TargetDedicatedComputeNodes <Int32>] [-TargetLowPriorityComputeNodes <Int32>]
 ```
 
-<span data-ttu-id="7dfbf-148">Это также касается Start AzureBatchPoolResize.</span><span class="sxs-lookup"><span data-stu-id="7dfbf-148">This also impacts: Start-AzureBatchPoolResize</span></span>
+Это также касается Start AzureBatchPoolResize.
 
-### <a name="get-azurebatchpool"></a><span data-ttu-id="7dfbf-149">**Get-AzureBatchPool**</span><span class="sxs-lookup"><span data-stu-id="7dfbf-149">**Get-AzureBatchPool**</span></span>
- - <span data-ttu-id="7dfbf-150">Свойства `TargetDedicated` и `CurrentDedicated` в `PSCloudPool` переименованы в `TargetDedicatedComputeNodes` и `CurrentDedicatedComputeNodes`.</span><span class="sxs-lookup"><span data-stu-id="7dfbf-150">Renamed the `TargetDedicated` and `CurrentDedicated` properties on `PSCloudPool` to `TargetDedicatedComputeNodes` and `CurrentDedicatedComputeNodes`.</span></span>
+### <a name="get-azurebatchpool"></a>**Get-AzureBatchPool**
+ - Свойства `TargetDedicated` и `CurrentDedicated` в `PSCloudPool` переименованы в `TargetDedicatedComputeNodes` и `CurrentDedicatedComputeNodes`.
 
 ```powershell
 # Old
@@ -189,9 +189,9 @@ $pool.TargetDedicatedComputeNodes
 $pool.CurrentDedicatedComputeNodes
 ```
 
-### <a name="type-pscloudpool"></a><span data-ttu-id="7dfbf-151">**Тип PSCloudPool**</span><span class="sxs-lookup"><span data-stu-id="7dfbf-151">**Type PSCloudPool**</span></span>
+### <a name="type-pscloudpool"></a>**Тип PSCloudPool**
 
-- <span data-ttu-id="7dfbf-152">Параметр `ResizeError` в `PSCloudPool` переименован в `ResizeErrors` и теперь является коллекцией.</span><span class="sxs-lookup"><span data-stu-id="7dfbf-152">Renamed `ResizeError` to `ResizeErrors` on `PSCloudPool`, and it is now a collection.</span></span>
+- Параметр `ResizeError` в `PSCloudPool` переименован в `ResizeErrors` и теперь является коллекцией.
 
 ```powershell
 # Old
@@ -203,8 +203,8 @@ $pool = Get-AzureBatchPool [parameters]
 $pool.ResizeErrors[0]
 ```
 
-### <a name="new-azurebatchjob"></a><span data-ttu-id="7dfbf-153">**New-AzureBatchJob**</span><span class="sxs-lookup"><span data-stu-id="7dfbf-153">**New-AzureBatchJob**</span></span>
-- <span data-ttu-id="7dfbf-154">Свойство `TargetDedicated` в `PSPoolSpecification` переименовано в `TargetDedicatedComputeNodes`.</span><span class="sxs-lookup"><span data-stu-id="7dfbf-154">Renamed the `TargetDedicated` property on `PSPoolSpecification` to `TargetDedicatedComputeNodes`.</span></span>
+### <a name="new-azurebatchjob"></a>**New-AzureBatchJob**
+- Свойство `TargetDedicated` в `PSPoolSpecification` переименовано в `TargetDedicatedComputeNodes`.
 
 ```powershell
 # Old
@@ -222,9 +222,9 @@ $poolInfo.AutoPoolSpecification.PoolSpecification.TargetDedicatedComputeNodes = 
 New-AzureBatchJob [other parameters] -PoolInformation $poolInfo
 ```
 
-### <a name="get-azurebatchnodefile"></a><span data-ttu-id="7dfbf-155">**Get-AzureBatchNodeFile**</span><span class="sxs-lookup"><span data-stu-id="7dfbf-155">**Get-AzureBatchNodeFile**</span></span>
- - <span data-ttu-id="7dfbf-156">Параметр `Name` удален и заменен на `Path`.</span><span class="sxs-lookup"><span data-stu-id="7dfbf-156">Removed `Name` and replaced it with `Path`.</span></span>
- - <span data-ttu-id="7dfbf-157">Псевдоним `Path` — `Name`.</span><span class="sxs-lookup"><span data-stu-id="7dfbf-157">`Path` has an alias `Name`.</span></span>
+### <a name="get-azurebatchnodefile"></a>**Get-AzureBatchNodeFile**
+ - Параметр `Name` удален и заменен на `Path`.
+ - Псевдоним `Path` — `Name`.
 
 ```powershell
 # Old
@@ -234,11 +234,11 @@ Get-AzureBatchNodeFile [other parameters] [[-Name] <String>]
 Get-AzureBatchNodeFile [other parameters] [[-Path] <String>]
 ```
 
-<span data-ttu-id="7dfbf-158">Это также касается Get-AzureBatchNodeFileContent и Remove-AzureBatchNodeFile.</span><span class="sxs-lookup"><span data-stu-id="7dfbf-158">This also impacts: Get-AzureBatchNodeFileContent, Remove-AzureBatchNodeFile</span></span>
+Это также касается Get-AzureBatchNodeFileContent и Remove-AzureBatchNodeFile.
 
-### <a name="type-psnodefile"></a><span data-ttu-id="7dfbf-159">Тип **PSNodeFile**</span><span class="sxs-lookup"><span data-stu-id="7dfbf-159">Type **PSNodeFile**</span></span>
+### <a name="type-psnodefile"></a>Тип **PSNodeFile**
 
- - <span data-ttu-id="7dfbf-160">Свойство `Name` в `PSNodeFile` переименовано в `Path`.</span><span class="sxs-lookup"><span data-stu-id="7dfbf-160">Renamed the `Name` property on `PSNodeFile` to `Path`.</span></span>
+ - Свойство `Name` в `PSNodeFile` переименовано в `Path`.
 
 ```powershell
 # Old
@@ -250,9 +250,9 @@ $file = Get-AzureBatchNodeFile [parameters]
 $file.Path
 ```
 
-### <a name="get-azurebatchsubtask"></a><span data-ttu-id="7dfbf-161">**Get-AzureBatchSubtask**</span><span class="sxs-lookup"><span data-stu-id="7dfbf-161">**Get-AzureBatchSubtask**</span></span>
-- <span data-ttu-id="7dfbf-162">Свойства `PreviousState` и `State` для `PSSubtaskInformation` больше не относятся к типу `TaskState`. Теперь они относятся к типу `SubtaskState`.</span><span class="sxs-lookup"><span data-stu-id="7dfbf-162">The `PreviousState` and `State` properties of `PSSubtaskInformation` are no longer of type `TaskState`, instead they are of type `SubtaskState`.</span></span>
-  - <span data-ttu-id="7dfbf-163">В отличие от `TaskState`, для `SubtaskState` не устанавливается значение `Active`, так как состояние подзадачи не может иметь значение `Active`.</span><span class="sxs-lookup"><span data-stu-id="7dfbf-163">Unlike `TaskState`, `SubtaskState` has no `Active` value, since it is not possible for subtasks to be in an `Active` state.</span></span>
+### <a name="get-azurebatchsubtask"></a>**Get-AzureBatchSubtask**
+- Свойства `PreviousState` и `State` для `PSSubtaskInformation` больше не относятся к типу `TaskState`. Теперь они относятся к типу `SubtaskState`.
+  - В отличие от `TaskState`, для `SubtaskState` не устанавливается значение `Active`, так как состояние подзадачи не может иметь значение `Active`.
 
 ```powershell
 # Old
@@ -264,10 +264,10 @@ $subtask = Get-AzureBatchSubtask [parameters]
 if ($subtask.State -eq Microsoft.Azure.Batch.Common.SubtaskState.Running) { }
 ```
 
-## <a name="breaking-changes-to-compute-cmdlets"></a><span data-ttu-id="7dfbf-164">Критические изменения в командлетах Compute</span><span class="sxs-lookup"><span data-stu-id="7dfbf-164">Breaking changes to Compute cmdlets</span></span>
+## <a name="breaking-changes-to-compute-cmdlets"></a>Критические изменения в командлетах Compute
 
-### <a name="set-azurermvmaccessextension"></a><span data-ttu-id="7dfbf-165">**Set-AzureRmVMAccessExtension**</span><span class="sxs-lookup"><span data-stu-id="7dfbf-165">**Set-AzureRmVMAccessExtension**</span></span>
-- <span data-ttu-id="7dfbf-166">Параметры UserName и Password заменены на PSCredential.</span><span class="sxs-lookup"><span data-stu-id="7dfbf-166">Parameters "UserName" and "Password" are being replaced in favor of a PSCredential</span></span>
+### <a name="set-azurermvmaccessextension"></a>**Set-AzureRmVMAccessExtension**
+- Параметры UserName и Password заменены на PSCredential.
 
 ```powershell
 # Old
@@ -277,28 +277,28 @@ Set-AzureRmVMAccessExtension [other required parameters] -UserName "plain-text s
 Set-AzureRmVMAccessExtension [other required parameters] -Credential $PSCredential
 ```
 
-## <a name="breaking-changes-to-eventhub-cmdlets"></a><span data-ttu-id="7dfbf-167">Критические изменения в командлетах EventHub</span><span class="sxs-lookup"><span data-stu-id="7dfbf-167">Breaking changes to EventHub cmdlets</span></span>
+## <a name="breaking-changes-to-eventhub-cmdlets"></a>Критические изменения в командлетах EventHub
 
-### <a name="new-azurermeventhubnamespaceauthorizationrule"></a><span data-ttu-id="7dfbf-168">**New-AzureRmEventHubNamespaceAuthorizationRule**</span><span class="sxs-lookup"><span data-stu-id="7dfbf-168">**New-AzureRmEventHubNamespaceAuthorizationRule**</span></span>
-- <span data-ttu-id="7dfbf-169">Командлет New-AzureRmEventHubNamespaceAuthorizationRule удален.</span><span class="sxs-lookup"><span data-stu-id="7dfbf-169">The 'New-AzureRmEventHubNamespaceAuthorizationRule' cmdlet has been removed.</span></span> <span data-ttu-id="7dfbf-170">Используйте командлет New-AzureRmEventHubAuthorizationRule.</span><span class="sxs-lookup"><span data-stu-id="7dfbf-170">Please use the 'New-AzureRmEventHubAuthorizationRule' cmdlet</span></span>
+### <a name="new-azurermeventhubnamespaceauthorizationrule"></a>**New-AzureRmEventHubNamespaceAuthorizationRule**
+- Командлет New-AzureRmEventHubNamespaceAuthorizationRule удален. Используйте командлет New-AzureRmEventHubAuthorizationRule.
     
-### <a name="get-azurermeventhubnamespaceauthorizationrule"></a><span data-ttu-id="7dfbf-171">**Get-AzureRmEventHubNamespaceAuthorizationRule**</span><span class="sxs-lookup"><span data-stu-id="7dfbf-171">**Get-AzureRmEventHubNamespaceAuthorizationRule**</span></span>
-- <span data-ttu-id="7dfbf-172">Командлет Get-AzureRmEventHubNamespaceAuthorizationRule удален.</span><span class="sxs-lookup"><span data-stu-id="7dfbf-172">The 'Get-AzureRmEventHubNamespaceAuthorizationRule' cmdlet has been removed.</span></span> <span data-ttu-id="7dfbf-173">Используйте командлет Get-AzureRmEventHubAuthorizationRule.</span><span class="sxs-lookup"><span data-stu-id="7dfbf-173">Please use the 'Get-AzureRmEventHubAuthorizationRule' cmdlet</span></span>
+### <a name="get-azurermeventhubnamespaceauthorizationrule"></a>**Get-AzureRmEventHubNamespaceAuthorizationRule**
+- Командлет Get-AzureRmEventHubNamespaceAuthorizationRule удален. Используйте командлет Get-AzureRmEventHubAuthorizationRule.
     
-### <a name="set-azurermeventhubnamespaceauthorizationrule"></a><span data-ttu-id="7dfbf-174">**Set-AzureRmEventHubNamespaceAuthorizationRule**</span><span class="sxs-lookup"><span data-stu-id="7dfbf-174">**Set-AzureRmEventHubNamespaceAuthorizationRule**</span></span>
-- <span data-ttu-id="7dfbf-175">Командлет Set-AzureRmEventHubNamespaceAuthorizationRule удален.</span><span class="sxs-lookup"><span data-stu-id="7dfbf-175">The 'Set-AzureRmEventHubNamespaceAuthorizationRule' cmdlet has been removed.</span></span> <span data-ttu-id="7dfbf-176">Используйте командлет Set-AzureRmEventHubAuthorizationRule.</span><span class="sxs-lookup"><span data-stu-id="7dfbf-176">Please use the 'Set-AzureRmEventHubAuthorizationRule' cmdlet</span></span>
+### <a name="set-azurermeventhubnamespaceauthorizationrule"></a>**Set-AzureRmEventHubNamespaceAuthorizationRule**
+- Командлет Set-AzureRmEventHubNamespaceAuthorizationRule удален. Используйте командлет Set-AzureRmEventHubAuthorizationRule.
     
-### <a name="remove-azurermeventhubnamespaceauthorizationrule"></a><span data-ttu-id="7dfbf-177">**Remove-AzureRmEventHubNamespaceAuthorizationRule**</span><span class="sxs-lookup"><span data-stu-id="7dfbf-177">**Remove-AzureRmEventHubNamespaceAuthorizationRule**</span></span>
-- <span data-ttu-id="7dfbf-178">Командлет Remove-AzureRmEventHubNamespaceAuthorizationRule удален.</span><span class="sxs-lookup"><span data-stu-id="7dfbf-178">The 'Remove-AzureRmEventHubNamespaceAuthorizationRule' cmdlet has been removed.</span></span> <span data-ttu-id="7dfbf-179">Используйте командлет Remove-AzureRmEventHubAuthorizationRule.</span><span class="sxs-lookup"><span data-stu-id="7dfbf-179">Please use the 'Remove-AzureRmEventHubAuthorizationRule' cmdlet</span></span>
+### <a name="remove-azurermeventhubnamespaceauthorizationrule"></a>**Remove-AzureRmEventHubNamespaceAuthorizationRule**
+- Командлет Remove-AzureRmEventHubNamespaceAuthorizationRule удален. Используйте командлет Remove-AzureRmEventHubAuthorizationRule.
     
-### <a name="new-azurermeventhubnamespacekey"></a><span data-ttu-id="7dfbf-180">**New-AzureRmEventHubNamespaceKey**</span><span class="sxs-lookup"><span data-stu-id="7dfbf-180">**New-AzureRmEventHubNamespaceKey**</span></span>
-- <span data-ttu-id="7dfbf-181">Командлет New-AzureRmEventHubNamespaceKey удален.</span><span class="sxs-lookup"><span data-stu-id="7dfbf-181">The 'New-AzureRmEventHubNamespaceKey' cmdlet has been removed.</span></span> <span data-ttu-id="7dfbf-182">Используйте командлет New-AzureRmEventHubKey.</span><span class="sxs-lookup"><span data-stu-id="7dfbf-182">Please use the 'New-AzureRmEventHubKey' cmdlet</span></span>
+### <a name="new-azurermeventhubnamespacekey"></a>**New-AzureRmEventHubNamespaceKey**
+- Командлет New-AzureRmEventHubNamespaceKey удален. Используйте командлет New-AzureRmEventHubKey.
     
-### <a name="get-azurermeventhubnamespacekey"></a><span data-ttu-id="7dfbf-183">**Get-AzureRmEventHubNamespaceKey**</span><span class="sxs-lookup"><span data-stu-id="7dfbf-183">**Get-AzureRmEventHubNamespaceKey**</span></span>
-- <span data-ttu-id="7dfbf-184">Командлет Get-AzureRmEventHubNamespaceKey удален.</span><span class="sxs-lookup"><span data-stu-id="7dfbf-184">The 'Get-AzureRmEventHubNamespaceKey' cmdlet has been removed.</span></span> <span data-ttu-id="7dfbf-185">Используйте командлет Get-AzureRmEventHubKey.</span><span class="sxs-lookup"><span data-stu-id="7dfbf-185">Please use the 'Get-AzureRmEventHubKey' cmdlet</span></span>
+### <a name="get-azurermeventhubnamespacekey"></a>**Get-AzureRmEventHubNamespaceKey**
+- Командлет Get-AzureRmEventHubNamespaceKey удален. Используйте командлет Get-AzureRmEventHubKey.
     
-### <a name="new-azurermeventhubnamespace"></a><span data-ttu-id="7dfbf-186">**New-AzureRmEventHubNamespace**</span><span class="sxs-lookup"><span data-stu-id="7dfbf-186">**New-AzureRmEventHubNamespace**</span></span>
-- <span data-ttu-id="7dfbf-187">Свойство Status и Enabled из NamespceAttributes будут удалены.</span><span class="sxs-lookup"><span data-stu-id="7dfbf-187">The property 'Status' and 'Enabled' from the NamespceAttributes will be removed.</span></span> 
+### <a name="new-azurermeventhubnamespace"></a>**New-AzureRmEventHubNamespace**
+- Свойство Status и Enabled из NamespceAttributes будут удалены. 
 
 ```powershell
 # Old
@@ -312,8 +312,8 @@ $namespace.Enabled
 $namespace = Get-AzureRmEventHubNamespace <parameters>
 ```
     
-### <a name="get-azurermeventhubnamespace"></a><span data-ttu-id="7dfbf-188">**Get-AzureRmEventHubNamespace**</span><span class="sxs-lookup"><span data-stu-id="7dfbf-188">**Get-AzureRmEventHubNamespace**</span></span>
-- <span data-ttu-id="7dfbf-189">Свойства Status и Enabled из NamespceAttributes будут удалены.</span><span class="sxs-lookup"><span data-stu-id="7dfbf-189">The property 'Status' and 'Enabled' from the NamespceAttributes will be removed.</span></span> 
+### <a name="get-azurermeventhubnamespace"></a>**Get-AzureRmEventHubNamespace**
+- Свойства Status и Enabled из NamespceAttributes будут удалены. 
 
 ```powershell
 # Old
@@ -327,8 +327,8 @@ $namespace.Enabled
 $namespace = Get-AzureRmEventHubNamespace <parameters>
 ```
     
-### <a name="set-azurermeventhubnamespace"></a><span data-ttu-id="7dfbf-190">**Set-AzureRmEventHubNamespace**</span><span class="sxs-lookup"><span data-stu-id="7dfbf-190">**Set-AzureRmEventHubNamespace**</span></span>
-- <span data-ttu-id="7dfbf-191">Свойства Status и Enabled из NamespceAttributes будут удалены.</span><span class="sxs-lookup"><span data-stu-id="7dfbf-191">The property 'Status' and 'Enabled' from the NamespceAttributes will be removed.</span></span> 
+### <a name="set-azurermeventhubnamespace"></a>**Set-AzureRmEventHubNamespace**
+- Свойства Status и Enabled из NamespceAttributes будут удалены. 
 
 ```powershell
 # Old
@@ -342,8 +342,8 @@ $namespace.Enabled
 $namespace = Set-AzureRmEventHubNamespace <parameters>
 ``` 
   
-### <a name="new-azurermeventhubconsumergroup"></a><span data-ttu-id="7dfbf-192">**New-AzureRmEventHubConsumerGroup**</span><span class="sxs-lookup"><span data-stu-id="7dfbf-192">**New-AzureRmEventHubConsumerGroup**</span></span>
-- <span data-ttu-id="7dfbf-193">Свойство EventHubPath из ConsumerGroupAttributes будет удалено.</span><span class="sxs-lookup"><span data-stu-id="7dfbf-193">The property 'EventHubPath' from the ConsumerGroupAttributes will be removed.</span></span>
+### <a name="new-azurermeventhubconsumergroup"></a>**New-AzureRmEventHubConsumerGroup**
+- Свойство EventHubPath из ConsumerGroupAttributes будет удалено.
 
 ```powershell
 # Old
@@ -356,8 +356,8 @@ $consumergroup.EventHubPath
 $consumergroup = New-AzureRmEventHubConsumerGroup <parameters>
 ```
     
-### <a name="set-azurermeventhubconsumergroup"></a><span data-ttu-id="7dfbf-194">**Set-AzureRmEventHubConsumerGroup**</span><span class="sxs-lookup"><span data-stu-id="7dfbf-194">**Set-AzureRmEventHubConsumerGroup**</span></span>
-- <span data-ttu-id="7dfbf-195">Свойство EventHubPath из ConsumerGroupAttributes будет удалено.</span><span class="sxs-lookup"><span data-stu-id="7dfbf-195">The property 'EventHubPath' from the ConsumerGroupAttributes will be removed.</span></span>
+### <a name="set-azurermeventhubconsumergroup"></a>**Set-AzureRmEventHubConsumerGroup**
+- Свойство EventHubPath из ConsumerGroupAttributes будет удалено.
 
 ```powershell
 # Old
@@ -370,8 +370,8 @@ $consumergroup.EventHubPath
 $consumergroup = Set-AzureRmEventHubConsumerGroup <parameters>
 ```
     
-### <a name="get-azurermeventhubconsumergroup"></a><span data-ttu-id="7dfbf-196">**Get-AzureRmEventHubConsumerGroup**</span><span class="sxs-lookup"><span data-stu-id="7dfbf-196">**Get-AzureRmEventHubConsumerGroup**</span></span>
-- <span data-ttu-id="7dfbf-197">Свойство EventHubPath из ConsumerGroupAttributes будет удалено.</span><span class="sxs-lookup"><span data-stu-id="7dfbf-197">The property 'EventHubPath' from the ConsumerGroupAttributes will be removed.</span></span>
+### <a name="get-azurermeventhubconsumergroup"></a>**Get-AzureRmEventHubConsumerGroup**
+- Свойство EventHubPath из ConsumerGroupAttributes будет удалено.
 
 ```powershell
 # Old
@@ -384,20 +384,20 @@ $consumergroup.EventHubPath
 $consumergroup = Get-AzureRmEventHubConsumerGroup <parameters>
 ```
 
-## <a name="breaking-changes-to-insights-cmdlets"></a><span data-ttu-id="7dfbf-198">Критические изменения в командлетах Insights</span><span class="sxs-lookup"><span data-stu-id="7dfbf-198">Breaking changes to Insights cmdlets</span></span>
+## <a name="breaking-changes-to-insights-cmdlets"></a>Критические изменения в командлетах Insights
 
-### <a name="add-azurermlogalertrule"></a><span data-ttu-id="7dfbf-199">**Add-AzureRMLogAlertRule**</span><span class="sxs-lookup"><span data-stu-id="7dfbf-199">**Add-AzureRMLogAlertRule**</span></span>
-- <span data-ttu-id="7dfbf-200">Командлет **Add-AzureRMLogAlertRule** отмечен как нерекомендуемый.</span><span class="sxs-lookup"><span data-stu-id="7dfbf-200">The **Add-AzureRMLogAlertRule** cmdlet has been deprecated</span></span>
-- <span data-ttu-id="7dfbf-201">Начиная с 1 октября этот командлет не будет действовать, так как эта функция заменена на оповещения журнала действий.</span><span class="sxs-lookup"><span data-stu-id="7dfbf-201">After October 1st using this cmdlet will no longer have any effect as this functionality is being transitioned to Activity Log Alerts.</span></span> <span data-ttu-id="7dfbf-202">Дополнительные сведения см. по адресу https://aka.ms/migratemealerts.</span><span class="sxs-lookup"><span data-stu-id="7dfbf-202">Please see https://aka.ms/migratemealerts for more information.</span></span>
+### <a name="add-azurermlogalertrule"></a>**Add-AzureRMLogAlertRule**
+- Командлет **Add-AzureRMLogAlertRule** отмечен как нерекомендуемый.
+- Начиная с 1 октября этот командлет не будет действовать, так как эта функция заменена на оповещения журнала действий. Дополнительные сведения см. по адресу https://aka.ms/migratemealerts.
 
-### <a name="get-azurermusage"></a><span data-ttu-id="7dfbf-203">**Get-AzureRMUsage**</span><span class="sxs-lookup"><span data-stu-id="7dfbf-203">**Get-AzureRMUsage**</span></span>
-- <span data-ttu-id="7dfbf-204">Командлет **Get AzureRMUsage** отмечен как нерекомендуемый.</span><span class="sxs-lookup"><span data-stu-id="7dfbf-204">The **Get-AzureRMUsage** cmdlet has been deprecated</span></span>
+### <a name="get-azurermusage"></a>**Get-AzureRMUsage**
+- Командлет **Get AzureRMUsage** отмечен как нерекомендуемый.
 
-### <a name="get-azurermalerthistory--get-azurermautoscalehistory--get-azurermlogs"></a><span data-ttu-id="7dfbf-205">**Get-AzureRmAlertHistory** / **Get-AzureRmAutoscaleHistory** / **Get-AzureRmLogs**</span><span class="sxs-lookup"><span data-stu-id="7dfbf-205">**Get-AzureRmAlertHistory** / **Get-AzureRmAutoscaleHistory** / **Get-AzureRmLogs**</span></span>
-- <span data-ttu-id="7dfbf-206">Изменение выходных данных: поле EventChannels из объекта EventData (возвращаемое этими командлетами) отмечено как нерекомендуемое, так как теперь возвращается константа (Admin, Operation).</span><span class="sxs-lookup"><span data-stu-id="7dfbf-206">Output change: The field EventChannels from the EventData object (returned by these cmdlets) is being deprecated since it now returns a constant value (Admin,Operation.)</span></span>
+### <a name="get-azurermalerthistory--get-azurermautoscalehistory--get-azurermlogs"></a>**Get-AzureRmAlertHistory** / **Get-AzureRmAutoscaleHistory** / **Get-AzureRmLogs**
+- Изменение выходных данных: поле EventChannels из объекта EventData (возвращаемое этими командлетами) отмечено как нерекомендуемое, так как теперь возвращается константа (Admin, Operation).
 
-### <a name="get-azurermalertrule"></a><span data-ttu-id="7dfbf-207">**Get-AzureRmAlertRule**</span><span class="sxs-lookup"><span data-stu-id="7dfbf-207">**Get-AzureRmAlertRule**</span></span>
-- <span data-ttu-id="7dfbf-208">Изменение выходных данных: выходные данные командлета будут преобразованы в плоскую структуру, т. е. будет исключено поле свойств, чтобы повысить удобство работы для пользователей.</span><span class="sxs-lookup"><span data-stu-id="7dfbf-208">Output change: The output of this cmdlet will be flattened, i.e. elimination of the properties field, to improve the user experience.</span></span>
+### <a name="get-azurermalertrule"></a>**Get-AzureRmAlertRule**
+- Изменение выходных данных: выходные данные командлета будут преобразованы в плоскую структуру, т. е. будет исключено поле свойств, чтобы повысить удобство работы для пользователей.
 
 ```powershell
 # Old
@@ -426,8 +426,8 @@ if ($rules -and $rules.count -ge 1)
 }
 ```
 
-### <a name="get-azurermautoscalesetting"></a><span data-ttu-id="7dfbf-209">**Get-AzureRmAutoscaleSetting**</span><span class="sxs-lookup"><span data-stu-id="7dfbf-209">**Get-AzureRmAutoscaleSetting**</span></span>
-- <span data-ttu-id="7dfbf-210">Изменение выходных данных: поле AutoscaleSettingResourceName будет отмечено как нерекомендуемое, так как оно всегда будет иметь значение, аналогичное установленному в поле Name.</span><span class="sxs-lookup"><span data-stu-id="7dfbf-210">Output change: The AutoscaleSettingResourceName field will be deprecated since it always equals the Name field.</span></span>
+### <a name="get-azurermautoscalesetting"></a>**Get-AzureRmAutoscaleSetting**
+- Изменение выходных данных: поле AutoscaleSettingResourceName будет отмечено как нерекомендуемое, так как оно всегда будет иметь значение, аналогичное установленному в поле Name.
 
 ```powershell
 # Old
@@ -444,8 +444,8 @@ $s1 = Get-AzureRmAutoscaleSetting -ResourceGroup $resourceGroup -Name MySetting
 Write-Host $s1.Name    
 ```
 
-### <a name="remove-azurermalertrule--remove-azurermlogprofile"></a><span data-ttu-id="7dfbf-211">**Remove-AzureRmAlertRule** / **Remove-AzureRmLogProfile**</span><span class="sxs-lookup"><span data-stu-id="7dfbf-211">**Remove-AzureRmAlertRule** / **Remove-AzureRmLogProfile**</span></span>
-- <span data-ttu-id="7dfbf-212">Изменение выходных данных: тип выходных данных будет изменен. Будет возвращаться один объект с идентификатором запроса и кодом состояния.</span><span class="sxs-lookup"><span data-stu-id="7dfbf-212">Output change: The type of the output will change to return a single object containing the request Id and the status code.</span></span>
+### <a name="remove-azurermalertrule--remove-azurermlogprofile"></a>**Remove-AzureRmAlertRule** / **Remove-AzureRmLogProfile**
+- Изменение выходных данных: тип выходных данных будет изменен. Будет возвращаться один объект с идентификатором запроса и кодом состояния.
 
 ```powershell
 # Old
@@ -462,10 +462,10 @@ $r = $s1.RequestId
 $s = $s1.StatusCode
 ```
 
-## <a name="breaking-changes-to-network-cmdlets"></a><span data-ttu-id="7dfbf-213">Критические изменения в командлетах Network</span><span class="sxs-lookup"><span data-stu-id="7dfbf-213">Breaking changes to Network cmdlets</span></span>
+## <a name="breaking-changes-to-network-cmdlets"></a>Критические изменения в командлетах Network
 
-### <a name="add-azurermapplicationgatewaysslcertificate"></a><span data-ttu-id="7dfbf-214">**Add-AzureRmApplicationGatewaySslCertificate**</span><span class="sxs-lookup"><span data-stu-id="7dfbf-214">**Add-AzureRmApplicationGatewaySslCertificate**</span></span>
-- <span data-ttu-id="7dfbf-215">Параметр Password заменен на SecureString.</span><span class="sxs-lookup"><span data-stu-id="7dfbf-215">Parameter "Password" being replaced in favor of a SecureString</span></span>
+### <a name="add-azurermapplicationgatewaysslcertificate"></a>**Add-AzureRmApplicationGatewaySslCertificate**
+- Параметр Password заменен на SecureString.
 
 ```powershell
 # Old
@@ -475,8 +475,8 @@ Add-AzureRmApplicationGatewaySslCertificate [other required parameters] -Passwor
 Add-AzureRmApplicationGatewaySslCertificate [other required parameters] -Password $SecureStringVariable
 ```
 
-### <a name="new-azurermapplicationgatewaysslcertificate"></a><span data-ttu-id="7dfbf-216">**New-AzureRmApplicationGatewaySslCertificate**</span><span class="sxs-lookup"><span data-stu-id="7dfbf-216">**New-AzureRmApplicationGatewaySslCertificate**</span></span>
-- <span data-ttu-id="7dfbf-217">Параметр Password заменен на SecureString.</span><span class="sxs-lookup"><span data-stu-id="7dfbf-217">Parameter "Password" being replaced in favor of a SecureString</span></span>
+### <a name="new-azurermapplicationgatewaysslcertificate"></a>**New-AzureRmApplicationGatewaySslCertificate**
+- Параметр Password заменен на SecureString.
 
 ```powershell
 # Old
@@ -486,8 +486,8 @@ New-AzureRmApplicationGatewaySslCertificate [other required parameters] -Passwor
 New-AzureRmApplicationGatewaySslCertificate [other required parameters] -Password $SecureStringVariable
 ```
 
-### <a name="set-azurermapplicationgatewaysslcertificate"></a><span data-ttu-id="7dfbf-218">**Set-AzureRmApplicationGatewaySslCertificate**</span><span class="sxs-lookup"><span data-stu-id="7dfbf-218">**Set-AzureRmApplicationGatewaySslCertificate**</span></span>
-- <span data-ttu-id="7dfbf-219">Параметр Password заменен на SecureString.</span><span class="sxs-lookup"><span data-stu-id="7dfbf-219">Parameter "Password" being replaced in favor of a SecureString</span></span>
+### <a name="set-azurermapplicationgatewaysslcertificate"></a>**Set-AzureRmApplicationGatewaySslCertificate**
+- Параметр Password заменен на SecureString.
 
 ```powershell
 # Old
@@ -497,10 +497,10 @@ Set-AzureRmApplicationGatewaySslCertificate [other required parameters] -Passwor
 Set-AzureRmApplicationGatewaySslCertificate [other required parameters] -Password $SecureStringVariable
 ```
 
-## <a name="breaking-changes-to-resources-cmdlets"></a><span data-ttu-id="7dfbf-220">Критические изменения в командлетах Resources</span><span class="sxs-lookup"><span data-stu-id="7dfbf-220">Breaking changes to Resources cmdlets</span></span>
+## <a name="breaking-changes-to-resources-cmdlets"></a>Критические изменения в командлетах Resources
 
-### <a name="new-azurermadappcredential"></a><span data-ttu-id="7dfbf-221">**New-AzureRmADAppCredential**</span><span class="sxs-lookup"><span data-stu-id="7dfbf-221">**New-AzureRmADAppCredential**</span></span>
-- <span data-ttu-id="7dfbf-222">Параметр Password заменен на SecureString.</span><span class="sxs-lookup"><span data-stu-id="7dfbf-222">Parameter "Password" being replaced in favor of a SecureString</span></span>
+### <a name="new-azurermadappcredential"></a>**New-AzureRmADAppCredential**
+- Параметр Password заменен на SecureString.
 
 ```powershell
 # Old
@@ -510,8 +510,8 @@ New-AzureRmADAppCredential [other required parameters] -Password "plain-text str
 New-AzureRmADAppCredential [other required parameters] -Password $SecureStringVariable
 ```
 
-### <a name="new-azurermadapplication"></a><span data-ttu-id="7dfbf-223">**New-AzureRmADApplication**</span><span class="sxs-lookup"><span data-stu-id="7dfbf-223">**New-AzureRmADApplication**</span></span>
-- <span data-ttu-id="7dfbf-224">Параметр Password заменен на SecureString.</span><span class="sxs-lookup"><span data-stu-id="7dfbf-224">Parameter "Password" being replaced in favor of a SecureString</span></span>
+### <a name="new-azurermadapplication"></a>**New-AzureRmADApplication**
+- Параметр Password заменен на SecureString.
 
 ```powershell
 # Old
@@ -521,8 +521,8 @@ New-AzureRmADApplication [other required parameters] -Password "plain-text strin
 New-AzureRmADApplication [other required parameters] -Password $SecureStringVariable
 ```
 
-### <a name="new-azurermadserviceprincipal"></a><span data-ttu-id="7dfbf-225">**New-AzureRmADServicePrincipal**</span><span class="sxs-lookup"><span data-stu-id="7dfbf-225">**New-AzureRmADServicePrincipal**</span></span>
-- <span data-ttu-id="7dfbf-226">Параметр Password заменен на SecureString.</span><span class="sxs-lookup"><span data-stu-id="7dfbf-226">Parameter "Password" being replaced in favor of a SecureString</span></span>
+### <a name="new-azurermadserviceprincipal"></a>**New-AzureRmADServicePrincipal**
+- Параметр Password заменен на SecureString.
 
 ```powershell
 # Old
@@ -532,8 +532,8 @@ New-AzureRmADServicePrincipal [other required parameters] -Password "plain-text 
 New-AzureRmADServicePrincipal [other required parameters] -Password $SecureStringVariable
 ```
 
-### <a name="new-azurermadspcredential"></a><span data-ttu-id="7dfbf-227">**New-AzureRmADSpCredential**</span><span class="sxs-lookup"><span data-stu-id="7dfbf-227">**New-AzureRmADSpCredential**</span></span>
-- <span data-ttu-id="7dfbf-228">Параметр Password заменен на SecureString.</span><span class="sxs-lookup"><span data-stu-id="7dfbf-228">Parameter "Password" being replaced in favor of a SecureString</span></span>
+### <a name="new-azurermadspcredential"></a>**New-AzureRmADSpCredential**
+- Параметр Password заменен на SecureString.
 
 ```powershell
 # Old
@@ -543,8 +543,8 @@ New-AzureRmADSpCredential [other required parameters] -Password "plain-text stri
 New-AzureRmADSpCredential [other required parameters] -Password $SecureStringVariable
 ```
 
-### <a name="new-azurermaduser"></a><span data-ttu-id="7dfbf-229">**New-AzureRmADUser**</span><span class="sxs-lookup"><span data-stu-id="7dfbf-229">**New-AzureRmADUser**</span></span>
-- <span data-ttu-id="7dfbf-230">Параметр Password заменен на SecureString.</span><span class="sxs-lookup"><span data-stu-id="7dfbf-230">Parameter "Password" being replaced in favor of a SecureString</span></span>
+### <a name="new-azurermaduser"></a>**New-AzureRmADUser**
+- Параметр Password заменен на SecureString.
 
 ```powershell
 # Old
@@ -554,8 +554,8 @@ New-AzureRmADUser [other required parameters] -Password "plain-text string"
 New-AzureRmADUser [other required parameters] -Password $SecureStringVariable
 ```
 
-### <a name="set-azurermaduser"></a><span data-ttu-id="7dfbf-231">**Set-AzureRmADUser**</span><span class="sxs-lookup"><span data-stu-id="7dfbf-231">**Set-AzureRmADUser**</span></span>
-- <span data-ttu-id="7dfbf-232">Параметр Password заменен на SecureString.</span><span class="sxs-lookup"><span data-stu-id="7dfbf-232">Parameter "Password" being replaced in favor of a SecureString</span></span>
+### <a name="set-azurermaduser"></a>**Set-AzureRmADUser**
+- Параметр Password заменен на SecureString.
 
 ```powershell
 # Old
@@ -565,66 +565,66 @@ Set-AzureRmADUser [other required parameters] -Password "plain-text string"
 Set-AzureRmADUser [other required parameters] -Password $SecureStringVariable
 ```
 
-## <a name="breaking-changes-to-servicebus-cmdlets"></a><span data-ttu-id="7dfbf-233">Критические изменения в командлетах ServiceBus</span><span class="sxs-lookup"><span data-stu-id="7dfbf-233">Breaking changes to ServiceBus cmdlets</span></span>
+## <a name="breaking-changes-to-servicebus-cmdlets"></a>Критические изменения в командлетах ServiceBus
 
-### <a name="get-azurermservicebustopicauthorizationrule"></a><span data-ttu-id="7dfbf-234">**Get-AzureRmServiceBusTopicAuthorizationRule**</span><span class="sxs-lookup"><span data-stu-id="7dfbf-234">**Get-AzureRmServiceBusTopicAuthorizationRule**</span></span>
-- <span data-ttu-id="7dfbf-235">Командлет Get-AzureRmServiceBusTopicAuthorizationRule удален.</span><span class="sxs-lookup"><span data-stu-id="7dfbf-235">The 'Get-AzureRmServiceBusTopicAuthorizationRule' cmdlet has been removed.</span></span> <span data-ttu-id="7dfbf-236">Используйте командлет Get-AzureRmServiceBusAuthorizationRule.</span><span class="sxs-lookup"><span data-stu-id="7dfbf-236">Please use the 'Get-AzureRmServiceBusAuthorizationRule' cmdlet.</span></span>    
+### <a name="get-azurermservicebustopicauthorizationrule"></a>**Get-AzureRmServiceBusTopicAuthorizationRule**
+- Командлет Get-AzureRmServiceBusTopicAuthorizationRule удален. Используйте командлет Get-AzureRmServiceBusAuthorizationRule.    
 
-### <a name="get-azurermservicebustopickey"></a><span data-ttu-id="7dfbf-237">**Get-AzureRmServiceBusTopicKey**</span><span class="sxs-lookup"><span data-stu-id="7dfbf-237">**Get-AzureRmServiceBusTopicKey**</span></span>
-- <span data-ttu-id="7dfbf-238">Командлет Get-AzureRmServiceBusTopicKey удален.</span><span class="sxs-lookup"><span data-stu-id="7dfbf-238">The 'Get-AzureRmServiceBusTopicKey' cmdlet has been removed.</span></span> <span data-ttu-id="7dfbf-239">Используйте командлет Get-AzureRmServiceBusKey.</span><span class="sxs-lookup"><span data-stu-id="7dfbf-239">Please use the 'Get-AzureRmServiceBusKey' cmdlet.</span></span>
+### <a name="get-azurermservicebustopickey"></a>**Get-AzureRmServiceBusTopicKey**
+- Командлет Get-AzureRmServiceBusTopicKey удален. Используйте командлет Get-AzureRmServiceBusKey.
 
-### <a name="new-azurermservicebustopicauthorizationrule"></a><span data-ttu-id="7dfbf-240">**New-AzureRmServiceBusTopicAuthorizationRule**</span><span class="sxs-lookup"><span data-stu-id="7dfbf-240">**New-AzureRmServiceBusTopicAuthorizationRule**</span></span>
-- <span data-ttu-id="7dfbf-241">Командлет New-AzureRmServiceBusTopicAuthorizationRule удален.</span><span class="sxs-lookup"><span data-stu-id="7dfbf-241">The 'New-AzureRmServiceBusTopicAuthorizationRule' cmdlet has been removed.</span></span> <span data-ttu-id="7dfbf-242">Используйте командлет New-AzureRmServiceBusAuthorizationRule.</span><span class="sxs-lookup"><span data-stu-id="7dfbf-242">Please use the 'New-AzureRmServiceBusAuthorizationRule' cmdlet.</span></span>
+### <a name="new-azurermservicebustopicauthorizationrule"></a>**New-AzureRmServiceBusTopicAuthorizationRule**
+- Командлет New-AzureRmServiceBusTopicAuthorizationRule удален. Используйте командлет New-AzureRmServiceBusAuthorizationRule.
 
-### <a name="new-azurermservicebustopickey"></a><span data-ttu-id="7dfbf-243">**New-AzureRmServiceBusTopicKey**</span><span class="sxs-lookup"><span data-stu-id="7dfbf-243">**New-AzureRmServiceBusTopicKey**</span></span>
-- <span data-ttu-id="7dfbf-244">Командлет New-AzureRmServiceBusTopicKey удален.</span><span class="sxs-lookup"><span data-stu-id="7dfbf-244">The 'New-AzureRmServiceBusTopicKey' cmdlet has been removed.</span></span> <span data-ttu-id="7dfbf-245">Используйте командлет New-AzureRmServiceBusKey.</span><span class="sxs-lookup"><span data-stu-id="7dfbf-245">Please use the 'New-AzureRmServiceBusKey' cmdlet.</span></span>
+### <a name="new-azurermservicebustopickey"></a>**New-AzureRmServiceBusTopicKey**
+- Командлет New-AzureRmServiceBusTopicKey удален. Используйте командлет New-AzureRmServiceBusKey.
 
-### <a name="remove-azurermservicebustopicauthorizationrule"></a><span data-ttu-id="7dfbf-246">**Remove-AzureRmServiceBusTopicAuthorizationRule**</span><span class="sxs-lookup"><span data-stu-id="7dfbf-246">**Remove-AzureRmServiceBusTopicAuthorizationRule**</span></span>
-- <span data-ttu-id="7dfbf-247">Командлет Remove-AzureRmServiceBusTopicAuthorizationRule удален.</span><span class="sxs-lookup"><span data-stu-id="7dfbf-247">The 'Remove-AzureRmServiceBusTopicAuthorizationRule' cmdlet has been removed.</span></span> <span data-ttu-id="7dfbf-248">Используйте командлет Remove-AzureRmServiceBusAuthorizationRule.</span><span class="sxs-lookup"><span data-stu-id="7dfbf-248">Please use the 'Remove-AzureRmServiceBusAuthorizationRule' cmdlet.</span></span>
+### <a name="remove-azurermservicebustopicauthorizationrule"></a>**Remove-AzureRmServiceBusTopicAuthorizationRule**
+- Командлет Remove-AzureRmServiceBusTopicAuthorizationRule удален. Используйте командлет Remove-AzureRmServiceBusAuthorizationRule.
 
-### <a name="set-azurermservicebustopicauthorizationrule"></a><span data-ttu-id="7dfbf-249">**Set-AzureRmServiceBusTopicAuthorizationRule**</span><span class="sxs-lookup"><span data-stu-id="7dfbf-249">**Set-AzureRmServiceBusTopicAuthorizationRule**</span></span>
-- <span data-ttu-id="7dfbf-250">Командлет Set-AzureRmServiceBusTopicAuthorizationRule удален.</span><span class="sxs-lookup"><span data-stu-id="7dfbf-250">The 'Set-AzureRmServiceBusTopicAuthorizationRule' cmdlet has been removed.</span></span> <span data-ttu-id="7dfbf-251">Используйте командлет Set-AzureRmServiceBusAuthorizationRule.</span><span class="sxs-lookup"><span data-stu-id="7dfbf-251">Please use the 'Set-AzureRmServiceBusAuthorizationRule'cmdlet.</span></span>
+### <a name="set-azurermservicebustopicauthorizationrule"></a>**Set-AzureRmServiceBusTopicAuthorizationRule**
+- Командлет Set-AzureRmServiceBusTopicAuthorizationRule удален. Используйте командлет Set-AzureRmServiceBusAuthorizationRule.
 
-### <a name="new-azurermservicebusnamespacekey"></a><span data-ttu-id="7dfbf-252">**New-AzureRmServiceBusNamespaceKey**</span><span class="sxs-lookup"><span data-stu-id="7dfbf-252">**New-AzureRmServiceBusNamespaceKey**</span></span>
-- <span data-ttu-id="7dfbf-253">Командлет New-AzureRmServiceBusNamespaceKey удален.</span><span class="sxs-lookup"><span data-stu-id="7dfbf-253">The 'New-AzureRmServiceBusNamespaceKey' cmdlet has been removed.</span></span> <span data-ttu-id="7dfbf-254">Используйте командлет New-AzureRmServiceBusKey.</span><span class="sxs-lookup"><span data-stu-id="7dfbf-254">Please use the 'New-AzureRmServiceBusKey' cmdlet.</span></span>
+### <a name="new-azurermservicebusnamespacekey"></a>**New-AzureRmServiceBusNamespaceKey**
+- Командлет New-AzureRmServiceBusNamespaceKey удален. Используйте командлет New-AzureRmServiceBusKey.
 
-### <a name="get-azurermservicebusqueueauthorizationrule"></a><span data-ttu-id="7dfbf-255">**Get-AzureRmServiceBusQueueAuthorizationRule**</span><span class="sxs-lookup"><span data-stu-id="7dfbf-255">**Get-AzureRmServiceBusQueueAuthorizationRule**</span></span>
-- <span data-ttu-id="7dfbf-256">Командлет Get-AzureRmServiceBusQueueAuthorizationRule удален.</span><span class="sxs-lookup"><span data-stu-id="7dfbf-256">The 'Get-AzureRmServiceBusQueueAuthorizationRule' cmdlet has been removed.</span></span> <span data-ttu-id="7dfbf-257">Используйте командлет Get-AzureRmServiceBusAuthorizationRule.</span><span class="sxs-lookup"><span data-stu-id="7dfbf-257">Please use the 'Get-AzureRmServiceBusAuthorizationRule' cmdlet.</span></span>
+### <a name="get-azurermservicebusqueueauthorizationrule"></a>**Get-AzureRmServiceBusQueueAuthorizationRule**
+- Командлет Get-AzureRmServiceBusQueueAuthorizationRule удален. Используйте командлет Get-AzureRmServiceBusAuthorizationRule.
 
-### <a name="get-azurermservicebusqueuekey"></a><span data-ttu-id="7dfbf-258">**Get-AzureRmServiceBusQueueKey**</span><span class="sxs-lookup"><span data-stu-id="7dfbf-258">**Get-AzureRmServiceBusQueueKey**</span></span>
-- <span data-ttu-id="7dfbf-259">Командлет Get-AzureRmServiceBusQueueKey удален.</span><span class="sxs-lookup"><span data-stu-id="7dfbf-259">The 'Get-AzureRmServiceBusQueueKey' cmdlet has been removed.</span></span> <span data-ttu-id="7dfbf-260">Используйте командлет Get-AzureRmServiceBusKey.</span><span class="sxs-lookup"><span data-stu-id="7dfbf-260">Please use the 'Get-AzureRmServiceBusKey' cmdlet.</span></span>
+### <a name="get-azurermservicebusqueuekey"></a>**Get-AzureRmServiceBusQueueKey**
+- Командлет Get-AzureRmServiceBusQueueKey удален. Используйте командлет Get-AzureRmServiceBusKey.
 
-### <a name="new-azurermservicebusqueueauthorizationrule"></a><span data-ttu-id="7dfbf-261">**New-AzureRmServiceBusQueueAuthorizationRule**</span><span class="sxs-lookup"><span data-stu-id="7dfbf-261">**New-AzureRmServiceBusQueueAuthorizationRule**</span></span>
-- <span data-ttu-id="7dfbf-262">Командлет New-AzureRmServiceBusQueueAuthorizationRule удален.</span><span class="sxs-lookup"><span data-stu-id="7dfbf-262">The 'New-AzureRmServiceBusQueueAuthorizationRule' cmdlet has been removed.</span></span> <span data-ttu-id="7dfbf-263">Используйте командлет New-AzureRmServiceBusAuthorizationRule.</span><span class="sxs-lookup"><span data-stu-id="7dfbf-263">Please use the 'New-AzureRmServiceBusAuthorizationRule' cmdlet.</span></span>
+### <a name="new-azurermservicebusqueueauthorizationrule"></a>**New-AzureRmServiceBusQueueAuthorizationRule**
+- Командлет New-AzureRmServiceBusQueueAuthorizationRule удален. Используйте командлет New-AzureRmServiceBusAuthorizationRule.
 
-### <a name="new-azurermservicebusqueuekey"></a><span data-ttu-id="7dfbf-264">**New-AzureRmServiceBusQueueKey**</span><span class="sxs-lookup"><span data-stu-id="7dfbf-264">**New-AzureRmServiceBusQueueKey**</span></span>
-- <span data-ttu-id="7dfbf-265">Командлет New-AzureRmServiceBusQueueKey удален.</span><span class="sxs-lookup"><span data-stu-id="7dfbf-265">The 'New-AzureRmServiceBusQueueKey' cmdlet has been removed.</span></span> <span data-ttu-id="7dfbf-266">Используйте командлет New-AzureRmServiceBusKey.</span><span class="sxs-lookup"><span data-stu-id="7dfbf-266">Please use the 'New-AzureRmServiceBusKey' cmdlet.</span></span>
+### <a name="new-azurermservicebusqueuekey"></a>**New-AzureRmServiceBusQueueKey**
+- Командлет New-AzureRmServiceBusQueueKey удален. Используйте командлет New-AzureRmServiceBusKey.
 
-### <a name="remove-azurermservicebusqueueauthorizationrule"></a><span data-ttu-id="7dfbf-267">**Remove-AzureRmServiceBusQueueAuthorizationRule**</span><span class="sxs-lookup"><span data-stu-id="7dfbf-267">**Remove-AzureRmServiceBusQueueAuthorizationRule**</span></span>
-- <span data-ttu-id="7dfbf-268">Командлет Remove-AzureRmServiceBusQueueAuthorizationRule удален.</span><span class="sxs-lookup"><span data-stu-id="7dfbf-268">The 'Remove-AzureRmServiceBusQueueAuthorizationRule' cmdlet has been removed.</span></span> <span data-ttu-id="7dfbf-269">Используйте командлет GRemove-AzureRmServiceBusAuthorizationRule.</span><span class="sxs-lookup"><span data-stu-id="7dfbf-269">Please use the 'GRemove-AzureRmServiceBusAuthorizationRule' cmdlet.</span></span>
+### <a name="remove-azurermservicebusqueueauthorizationrule"></a>**Remove-AzureRmServiceBusQueueAuthorizationRule**
+- Командлет Remove-AzureRmServiceBusQueueAuthorizationRule удален. Используйте командлет GRemove-AzureRmServiceBusAuthorizationRule.
 
-### <a name="set-azurermservicebusqueueauthorizationrule"></a><span data-ttu-id="7dfbf-270">**Set-AzureRmServiceBusQueueAuthorizationRule**</span><span class="sxs-lookup"><span data-stu-id="7dfbf-270">**Set-AzureRmServiceBusQueueAuthorizationRule**</span></span>
-- <span data-ttu-id="7dfbf-271">Командлет Set-AzureRmServiceBusQueueAuthorizationRule удален.</span><span class="sxs-lookup"><span data-stu-id="7dfbf-271">The 'Set-AzureRmServiceBusQueueAuthorizationRule' cmdlet has been removed.</span></span> <span data-ttu-id="7dfbf-272">Используйте командлет Set-AzureRmServiceBusAuthorizationRule.</span><span class="sxs-lookup"><span data-stu-id="7dfbf-272">Please use the 'Set-AzureRmServiceBusAuthorizationRule' cmdlet.</span></span>
+### <a name="set-azurermservicebusqueueauthorizationrule"></a>**Set-AzureRmServiceBusQueueAuthorizationRule**
+- Командлет Set-AzureRmServiceBusQueueAuthorizationRule удален. Используйте командлет Set-AzureRmServiceBusAuthorizationRule.
 
-### <a name="get-azurermservicebusnamespaceauthorizationrule"></a><span data-ttu-id="7dfbf-273">**Get-AzureRmServiceBusNamespaceAuthorizationRule**</span><span class="sxs-lookup"><span data-stu-id="7dfbf-273">**Get-AzureRmServiceBusNamespaceAuthorizationRule**</span></span>
-- <span data-ttu-id="7dfbf-274">Командлет Get-AzureRmServiceBusNamespaceAuthorizationRule удален.</span><span class="sxs-lookup"><span data-stu-id="7dfbf-274">The 'Get-AzureRmServiceBusNamespaceAuthorizationRule' cmdlet has been removed.</span></span> <span data-ttu-id="7dfbf-275">Используйте командлет Get-AzureRmServiceBusAuthorizationRule.</span><span class="sxs-lookup"><span data-stu-id="7dfbf-275">Please use the 'Get-AzureRmServiceBusAuthorizationRule' cmdlet.</span></span>
+### <a name="get-azurermservicebusnamespaceauthorizationrule"></a>**Get-AzureRmServiceBusNamespaceAuthorizationRule**
+- Командлет Get-AzureRmServiceBusNamespaceAuthorizationRule удален. Используйте командлет Get-AzureRmServiceBusAuthorizationRule.
 
-### <a name="get-azurermservicebusnamespacekey"></a><span data-ttu-id="7dfbf-276">**Get-AzureRmServiceBusNamespaceKey**</span><span class="sxs-lookup"><span data-stu-id="7dfbf-276">**Get-AzureRmServiceBusNamespaceKey**</span></span>
-- <span data-ttu-id="7dfbf-277">Командлет Get-AzureRmServiceBusNamespaceKey удален.</span><span class="sxs-lookup"><span data-stu-id="7dfbf-277">The 'Get-AzureRmServiceBusNamespaceKey' cmdlet has been removed.</span></span> <span data-ttu-id="7dfbf-278">Используйте командлет Get-AzureRmServiceBusKey.</span><span class="sxs-lookup"><span data-stu-id="7dfbf-278">Please use the 'Get-AzureRmServiceBusKey' cmdlet.</span></span>
+### <a name="get-azurermservicebusnamespacekey"></a>**Get-AzureRmServiceBusNamespaceKey**
+- Командлет Get-AzureRmServiceBusNamespaceKey удален. Используйте командлет Get-AzureRmServiceBusKey.
 
-### <a name="new-azurermservicebusnamespaceauthorizationrule"></a><span data-ttu-id="7dfbf-279">**New-AzureRmServiceBusNamespaceAuthorizationRule**</span><span class="sxs-lookup"><span data-stu-id="7dfbf-279">**New-AzureRmServiceBusNamespaceAuthorizationRule**</span></span>
-- <span data-ttu-id="7dfbf-280">Командлет New-AzureRmServiceBusNamespaceAuthorizationRule удален.</span><span class="sxs-lookup"><span data-stu-id="7dfbf-280">The 'New-AzureRmServiceBusNamespaceAuthorizationRule' cmdlet has been removed.</span></span> <span data-ttu-id="7dfbf-281">Используйте командлет New-AzureRmServiceBusAuthorizationRule.</span><span class="sxs-lookup"><span data-stu-id="7dfbf-281">Please use the 'New-AzureRmServiceBusAuthorizationRule' cmdlet.</span></span>
+### <a name="new-azurermservicebusnamespaceauthorizationrule"></a>**New-AzureRmServiceBusNamespaceAuthorizationRule**
+- Командлет New-AzureRmServiceBusNamespaceAuthorizationRule удален. Используйте командлет New-AzureRmServiceBusAuthorizationRule.
 
-### <a name="remove-azurermservicebusnamespaceauthorizationrule"></a><span data-ttu-id="7dfbf-282">**Remove-AzureRmServiceBusNamespaceAuthorizationRule**</span><span class="sxs-lookup"><span data-stu-id="7dfbf-282">**Remove-AzureRmServiceBusNamespaceAuthorizationRule**</span></span>
-- <span data-ttu-id="7dfbf-283">Командлет Remove-AzureRmServiceBusNamespaceAuthorizationRule удален.</span><span class="sxs-lookup"><span data-stu-id="7dfbf-283">The 'Remove-AzureRmServiceBusNamespaceAuthorizationRule' cmdlet has been removed.</span></span> <span data-ttu-id="7dfbf-284">Используйте командлет Remove-AzureRmServiceBusAuthorizationRule.</span><span class="sxs-lookup"><span data-stu-id="7dfbf-284">Please use the 'Remove-AzureRmServiceBusAuthorizationRule' cmdlet.</span></span>
+### <a name="remove-azurermservicebusnamespaceauthorizationrule"></a>**Remove-AzureRmServiceBusNamespaceAuthorizationRule**
+- Командлет Remove-AzureRmServiceBusNamespaceAuthorizationRule удален. Используйте командлет Remove-AzureRmServiceBusAuthorizationRule.
 
-### <a name="set-azurermservicebusnamespaceauthorizationrule"></a><span data-ttu-id="7dfbf-285">**Set-AzureRmServiceBusNamespaceAuthorizationRule**</span><span class="sxs-lookup"><span data-stu-id="7dfbf-285">**Set-AzureRmServiceBusNamespaceAuthorizationRule**</span></span>
-- <span data-ttu-id="7dfbf-286">Командлет Set-AzureRmServiceBusNamespaceAuthorizationRule удален.</span><span class="sxs-lookup"><span data-stu-id="7dfbf-286">The 'Set-AzureRmServiceBusNamespaceAuthorizationRule' cmdlet has been removed.</span></span> <span data-ttu-id="7dfbf-287">Используйте командлет Set-AzureRmServiceBusAuthorizationRule.</span><span class="sxs-lookup"><span data-stu-id="7dfbf-287">Please use the 'Set-AzureRmServiceBusAuthorizationRule' cmdlet.</span></span>
+### <a name="set-azurermservicebusnamespaceauthorizationrule"></a>**Set-AzureRmServiceBusNamespaceAuthorizationRule**
+- Командлет Set-AzureRmServiceBusNamespaceAuthorizationRule удален. Используйте командлет Set-AzureRmServiceBusAuthorizationRule.
 
-### <a name="type-namespaceattributes"></a><span data-ttu-id="7dfbf-288">**Тип NamespaceAttributes**</span><span class="sxs-lookup"><span data-stu-id="7dfbf-288">**Type NamespaceAttributes**</span></span>
-- <span data-ttu-id="7dfbf-289">Следующие свойства удалены:</span><span class="sxs-lookup"><span data-stu-id="7dfbf-289">The following properties have been removed</span></span>
-    - <span data-ttu-id="7dfbf-290">Включено</span><span class="sxs-lookup"><span data-stu-id="7dfbf-290">Enabled</span></span>
-    - <span data-ttu-id="7dfbf-291">Status</span><span class="sxs-lookup"><span data-stu-id="7dfbf-291">Status</span></span>
+### <a name="type-namespaceattributes"></a>**Тип NamespaceAttributes**
+- Следующие свойства удалены:
+    - Включено
+    - Status
    
 ```powershell
 # Old
@@ -638,12 +638,12 @@ $namespace.Enabled
 $namespace = Get-AzureRmServiceBusNamespace <parameters>
 ```
 
-### <a name="type-queueattribute"></a><span data-ttu-id="7dfbf-292">**Тип QueueAttribute**</span><span class="sxs-lookup"><span data-stu-id="7dfbf-292">**Type QueueAttribute**</span></span>
-- <span data-ttu-id="7dfbf-293">Следующие свойства отмечены как устаревшие:</span><span class="sxs-lookup"><span data-stu-id="7dfbf-293">The following properties are marked as obsolete:</span></span>
-    - <span data-ttu-id="7dfbf-294">EnableBatchedOperations</span><span class="sxs-lookup"><span data-stu-id="7dfbf-294">EnableBatchedOperations</span></span>
-    - <span data-ttu-id="7dfbf-295">EntityAvailabilityStatus.</span><span class="sxs-lookup"><span data-stu-id="7dfbf-295">EntityAvailabilityStatus</span></span>
-    - <span data-ttu-id="7dfbf-296">IsAnonymousAccessible;</span><span class="sxs-lookup"><span data-stu-id="7dfbf-296">IsAnonymousAccessible</span></span>
-    - <span data-ttu-id="7dfbf-297">SupportOrdering.</span><span class="sxs-lookup"><span data-stu-id="7dfbf-297">SupportOrdering</span></span>
+### <a name="type-queueattribute"></a>**Тип QueueAttribute**
+- Следующие свойства отмечены как устаревшие:
+    - EnableBatchedOperations
+    - EntityAvailabilityStatus.
+    - IsAnonymousAccessible;
+    - SupportOrdering.
 
 ```powershell
 # Old
@@ -659,14 +659,14 @@ $queue.SupportOrdering
 $queue = Get-AzureRmServiceBusQueue <parameters>
 ```
    
-### <a name="type-topicattribute"></a><span data-ttu-id="7dfbf-298">**Тип TopicAttribute**</span><span class="sxs-lookup"><span data-stu-id="7dfbf-298">**Type TopicAttribute**</span></span>
-- <span data-ttu-id="7dfbf-299">Следующие свойства отмечены как устаревшие:</span><span class="sxs-lookup"><span data-stu-id="7dfbf-299">The following properties are marked as obsolete:</span></span>
-    - <span data-ttu-id="7dfbf-300">Расположение</span><span class="sxs-lookup"><span data-stu-id="7dfbf-300">Location</span></span>
-    - <span data-ttu-id="7dfbf-301">IsExpress;</span><span class="sxs-lookup"><span data-stu-id="7dfbf-301">IsExpress</span></span>
-    - <span data-ttu-id="7dfbf-302">IsAnonymousAccessible;</span><span class="sxs-lookup"><span data-stu-id="7dfbf-302">IsAnonymousAccessible</span></span>
-    - <span data-ttu-id="7dfbf-303">FilteringMessagesBeforePublishing;</span><span class="sxs-lookup"><span data-stu-id="7dfbf-303">FilteringMessagesBeforePublishing</span></span>
-    - <span data-ttu-id="7dfbf-304">EnableSubscriptionPartitioning;</span><span class="sxs-lookup"><span data-stu-id="7dfbf-304">EnableSubscriptionPartitioning</span></span>
-    - <span data-ttu-id="7dfbf-305">EntityAvailabilityStatus.</span><span class="sxs-lookup"><span data-stu-id="7dfbf-305">EntityAvailabilityStatus</span></span>
+### <a name="type-topicattribute"></a>**Тип TopicAttribute**
+- Следующие свойства отмечены как устаревшие:
+    - Расположение
+    - IsExpress;
+    - IsAnonymousAccessible;
+    - FilteringMessagesBeforePublishing;
+    - EnableSubscriptionPartitioning;
+    - EntityAvailabilityStatus.
 
 ```powershell
 # Old
@@ -684,12 +684,12 @@ $topic.Location
 $topic = Get-AzureRmServiceBusTopic <parameters>
 ```
    
-### <a name="type-subscriptionattribute"></a><span data-ttu-id="7dfbf-306">**Тип SubscriptionAttribute**</span><span class="sxs-lookup"><span data-stu-id="7dfbf-306">**Type SubscriptionAttribute**</span></span>
-- <span data-ttu-id="7dfbf-307">Следующие свойства отмечены как устаревшие:</span><span class="sxs-lookup"><span data-stu-id="7dfbf-307">The following properties are marked as obsolete</span></span>
-    - <span data-ttu-id="7dfbf-308">DeadLetteringOnFilterEvaluationExceptions;</span><span class="sxs-lookup"><span data-stu-id="7dfbf-308">DeadLetteringOnFilterEvaluationExceptions</span></span>
-    - <span data-ttu-id="7dfbf-309">EntityAvailabilityStatus.</span><span class="sxs-lookup"><span data-stu-id="7dfbf-309">EntityAvailabilityStatus</span></span>
-    - <span data-ttu-id="7dfbf-310">IsReadOnly</span><span class="sxs-lookup"><span data-stu-id="7dfbf-310">IsReadOnly</span></span>
-    - <span data-ttu-id="7dfbf-311">Расположение</span><span class="sxs-lookup"><span data-stu-id="7dfbf-311">Location</span></span>
+### <a name="type-subscriptionattribute"></a>**Тип SubscriptionAttribute**
+- Следующие свойства отмечены как устаревшие:
+    - DeadLetteringOnFilterEvaluationExceptions;
+    - EntityAvailabilityStatus.
+    - IsReadOnly
+    - Расположение
    
 ```powershell
 # Old

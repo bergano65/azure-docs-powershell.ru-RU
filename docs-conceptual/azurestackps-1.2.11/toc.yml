@@ -1,7 +1,7 @@
 - name: PowerShell для Azure Stack
   href: overview.md
   items:
-    - name: Установить
+    - name: Install
       href: 'https://docs.microsoft.com/en-us/azure/azure-stack/azure-stack-powershell-install?toc=/powershell/azure/azure-stack/toc.json'
     - name: Настройка
       href: 'https://docs.microsoft.com/en-us/azure/azure-stack/azure-stack-powershell-configure?toc=/powershell/azure/azure-stack/toc.json?'

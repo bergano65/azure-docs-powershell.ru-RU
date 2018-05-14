@@ -1,7 +1,7 @@
 - name: Azure PowerShell
   href: overview.md
   items:
-    - name: Установить
+    - name: Install
       href: install-azurerm-ps.md
       items:
         - name: Другие методы установки
@@ -19,7 +19,7 @@
       href: formatting-output.md
     - name: Подписки
       href: manage-subscriptions-azureps.md
-    - name: Развернуть
+    - name: Развертывание
       items:
         - name: Развертывание с помощью шаблонов Resource Manager
           href: 'https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-template-deploy'
