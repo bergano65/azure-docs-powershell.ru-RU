@@ -1,6 +1,6 @@
 ---
-title: "Журнал изменений Azure PowerShell | Документация Майкрософт"
-description: "Это руководство содержит историю изменений Azure PowerShell, внесенных в новом выпуске."
+title: Журнал изменений Azure PowerShell | Документация Майкрософт
+description: Это руководство содержит историю изменений Azure PowerShell, внесенных в новом выпуске.
 services: azure
 author: sdwheeler
 ms.author: sewhee
@@ -9,20 +9,20 @@ ms.service: azure-powershell
 ms.product: azure
 ms.devlang: powershell
 ms.topic: conceptual
-ms.workload: 
+ms.workload: ''
 ms.date: 05/18/2017
 ms.openlocfilehash: 04f89e8d47d0825d46cb1b8817efbcc0cafa0acd
-ms.sourcegitcommit: 226527be7cb647acfe2ea9ab151185053ab3c6db
+ms.sourcegitcommit: 37bfbf11fd0967a8e7977c692ab829d286baf88a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/29/2017
+ms.lasthandoff: 05/08/2018
 ---
 # <a name="release-notes"></a>Заметки о выпуске
 
 Здесь приведен список изменений, внесенных в Azure PowerShell в этом выпуске.
 
 ## <a name="version-380"></a>Версия 3.8.0
-* Среда выполнения приложений
+* Службы вычислений
   - Исправлена ошибка в командлетах Get-*, чтобы можно было получить несколько страниц данных (более 120 элементов).
 * Data Lake Analytics
   - Исправлена ошибка в справке некоторых команд для отображения корректной формулировки и примеров.

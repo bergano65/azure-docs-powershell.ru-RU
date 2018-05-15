@@ -1,6 +1,6 @@
 ---
-title: "Журнал изменений Azure PowerShell | Документация Майкрософт"
-description: "Это руководство содержит историю изменений Azure PowerShell, внесенных в новом выпуске."
+title: Журнал изменений Azure PowerShell | Документация Майкрософт
+description: Это руководство содержит историю изменений Azure PowerShell, внесенных в новом выпуске.
 services: azure
 author: sdwheeler
 ms.author: sewhee
@@ -9,13 +9,13 @@ ms.service: azure-powershell
 ms.product: azure
 ms.devlang: powershell
 ms.topic: conceptual
-ms.workload: 
+ms.workload: ''
 ms.date: 07/26/2017
 ms.openlocfilehash: d8a891673df343551cbd805016c2d25ee4e31c8c
-ms.sourcegitcommit: b256bf48e15ee98865de0fae50e7b81878b03a54
+ms.sourcegitcommit: 37bfbf11fd0967a8e7977c692ab829d286baf88a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/03/2017
+ms.lasthandoff: 05/08/2018
 ---
 # <a name="release-notes"></a>Заметки о выпуске
 
@@ -37,7 +37,7 @@ ms.lasthandoff: 11/03/2017
 * Cognitive Services:
   * Реализована интеграция с пакетом SDK для управления Cognitive Services версии 2.0.0.
   * Командлет Get-AzureRmCognitiveServicesAccount теперь поддерживает правильное разбиение на страницы.
-* Среда выполнения приложений
+* Службы вычислений
   * Функция команды запуска:
     - Новый командлет Invoke-AzureRmVMRunCommand вызывает команду запуска на виртуальной машине.
     - Новый командлет Get-AzureRmVMRunCommandDocument позволяет просматривать доступные документы команды запуска.
@@ -220,7 +220,7 @@ ms.lasthandoff: 11/03/2017
   * Устранена проблема, из-за которой подробные потоки прекращали работать после вызова некоторых командлетов службы автоматизации (например, Get-AzureRmAutomationVariable, Get-AzureRmAutomationJob).
   * В StartAzureAutomationDscCompilationJob и ImportAzureAutomationDscNodeConfiguration добавлена поддержка управления версиями сборок NodeConfiguration.
   * Исправлены существующие проблемы: устранена проблема с псевдонимом № 3775, а также исправлены проблемы с псевдонимом runOn и поддержкой HybridWorkers.
-* Среда выполнения приложений
+* Службы вычислений
   * Set-AzureRmVMAEMExtension: добавлена поддержка новых размеров дисков уровня "Премиум".
   * Set-AzureRmVMAEMExtension: добавлена поддержка серии M.
   * В Add-AzureRmVmssExtension добавлен параметр ForceUpdateTag.
@@ -230,7 +230,7 @@ ms.lasthandoff: 11/03/2017
   * Предоставление MaintenanceRedeployStatus в выходных данных Get-AzureRmVM -Status.
   * Предоставление Restriction и Capability в табличном формате Get-AzureRmComputeResourceSku.
 * Data Lake Store
-  * Устранение проблемы: https://github.com/Azure/azure-powershell/issues/4323.
+  * Исправлена проблема с https://github.com/Azure/azure-powershell/issues/4323
 * концентратор событий.
   * В NamespaceAttributes добавлено свойство ResourceGroup.
     - ResourceGroup позволяет получить имя группы ресурсов пространства имен.
@@ -288,7 +288,7 @@ ms.lasthandoff: 11/03/2017
       - Remove-AzureRmSqlDatabaseAuditing
       - Remove-AzureRmSqlServerAuditing
     * При анализе файла схемы для Update-AzureRmSqlSyncGroup теперь не учитывается регистр.
-* Хранилище
+* Служба хранилища
     * Добавлена поддержка NeworkRule в командлетах, предназначенных для учетных записей хранения в режиме ресурсов.
       - New-AzureRmStorageAccount;
       - Set-AzureRmStorageAccount.
@@ -298,16 +298,16 @@ ms.lasthandoff: 11/03/2017
       - Remove-AzureRmStorageAccountNetworkRule.
 
 ## <a name="20170717---version-421"></a>17.07.2017: версия 4.2.1
-* Среда выполнения приложений
-    - Устранена проблема с командлетами создания и обновления диска виртуальной машины и моментального снимка диска виртуальной машины (ссылка) [https://github.com/azure/azure-powershell/issues/4309].
+* Службы вычислений
+    - Устранена проблема с командлетами создания и обновления диска виртуальной машины и моментального снимка диска виртуальной машины (ссылка)[https://github.com/azure/azure-powershell/issues/4309].
       - New-AzureRmDisk
       - New-AzureRmSnapshot
       - Update-AzureRmDisk
       - Update-AzureRmSnapshot
 * Профиль
-    - Устранена проблема с неинтерактивной аутентификацией пользователя в RDFE (ссылка) [https://github.com/Azure/azure-powershell/issues/4299].
+    - Исправлена проблема с неинтерактивной аутентификацией пользователя в RDFE (ссылка)[https://github.com/Azure/azure-powershell/issues/4299].
 * Управление службами
-    - Устранена проблема с неинтерактивной аутентификацией пользователя (ссылка) [https://github.com/Azure/azure-powershell/issues/4299].
+    - Исправлена проблема с неинтерактивной аутентификацией пользователя (ссылка)[https://github.com/Azure/azure-powershell/issues/4299].
 
 ## <a name="2017711---version-420"></a>11.07.2017: версия 4.2.0
 * Analysis Services:
@@ -315,7 +315,7 @@ ms.lasthandoff: 11/03/2017
         - Добавлен API для получения журнала сервера Analysis Services, Export-AzureAnalysisServicesInstanceLog.
 * Служба автоматизации
     * Правильно задано значение часового пояса для еженедельного и ежемесячного расписаний для New-AzureRmAutomationSchedule.
-        - Дополнительные сведения можно найти в этом выпуске: https://github.com/Azure/azure-powershell/issues/3043.
+        - Дополнительные сведения см. здесь: https://github.com/Azure/azure-powershell/issues/3043.
 * AzureBatch
     - Добавлен новый командлет Get-AzureBatchJobPreparationAndReleaseTaskStatus.
     - В параметры Get-AzureBatchNodeFileContent добавлены начало и конец диапазона байтов.
@@ -370,7 +370,7 @@ ms.lasthandoff: 11/03/2017
         - Add-AzureRmDataLakeStoreItemContent
 * DNS:
     * Устранена ошибка канальной передачи для Get-AzureRmDnsZone.
-        - Дополнительные сведения можно найти здесь: https://github.com/Azure/azure-powershell/issues/4203.
+        - Дополнительные сведения см. здесь: https://github.com/Azure/azure-powershell/issues/4203.
 * HDInsight
     * Добавлена поддержка включения и отключения Operations Management Suite (OMS).
     * Новые командлеты
@@ -437,7 +437,7 @@ ms.lasthandoff: 11/03/2017
         - Get-AzureRmVirtualNetworkUsageList.
 * Профиль
     * Исправлена ошибка, возникавшая при использовании командлета Import-AzureRmContext или Save-AzureRmContext.
-        - Дополнительные сведения можно найти в этом выпуске: https://github.com/Azure/azure-powershell/issues/3954.
+        - Дополнительные сведения см. здесь: https://github.com/Azure/azure-powershell/issues/3954.
 * Службы восстановления. Site Recovery
     * Добавлен новый модуль для операций Azure Site Recovery.
         - Все его командлеты начинаются с AzureRmRecoveryServicesAsr*.
@@ -447,7 +447,7 @@ ms.lasthandoff: 11/03/2017
     * Объявлены нерекомендуемыми командлеты для обновления сервера, так как прежняя версия сервера (2.0) больше не существует.
     * В командлеты New-AzureRmSqlServer и Set-AzureRmSqlServer добавлен новый необязательный параметр AssignIdentity для поддержки инициализации удостоверения для ресурса SQL Server.
     * Параметр ResourceGroupName теперь является необязательным для командлета Get-AzureRmSqlServer.
-        - Дополнительные сведения можно найти в этом выпуске: https://github.com/Azure/azure-powershell/issues/635.
+        - Дополнительные сведения см. здесь: https://github.com/Azure/azure-powershell/issues/635.
 * Управление службами для ExpressRoute:
     * В командлет New-AzureBgpPeering добавлены следующие новые возможности:
         - PeerAddressType: можно указать значение IPv4 или IPv6 для создания пиринга BGP соответствующего типа семейства адресов.
@@ -533,7 +533,7 @@ ms.lasthandoff: 11/03/2017
       * Добавлен псевдоним параметра `-EnvironmentName` для обеспечения обратной совместимости с версиями 2.x AzureRM.profile.
 
 ## <a name="20170512---version-401"></a>12.05.2017: версия 4.0.1
- * Устранена проблема с New-AzureStorageContext при использовании вне сети: https://github.com/Azure/azure-powershell/issues/3939.
+ * Исправлена проблема с командлетом New-AzureStorageContext при использовании в автономных сценариях: https://github.com/Azure/azure-powershell/issues/3939.
 
 ## <a name="20170510---version-400"></a>10.05.2017: версия 4.0.0
 
@@ -554,7 +554,7 @@ ms.lasthandoff: 11/03/2017
   - Из объекта виртуальной машины PS удалены повторяющиеся свойства DataDiskNames и NetworkInterfaceIDs.
   - Соответственно, параметры DataDiskNames и NetworkInterfaceIDs стали необязательными в командлетах Remove-AzureRmVMDataDisk и Remove-AzureRmVMNetworkInterface.
   - В командлетах Get исправлена ошибка конвейера при возвращении объекта списка.
-  - Командлеты, конфликтовавшие с командлетами RDFE, были переименованы. Дополнительные сведения см. по этой ссылке: https://github.com/Azure/azure-powershell/issues/2917.
+  - Командлеты, конфликтовавшие с командлетами RDFE, были переименованы. Дополнительные сведения см. здесь: https://github.com/Azure/azure-powershell/issues/2917.
     + `New-AzureVMSqlServerAutoBackupConfig` был переименован в `New-AzureRmVMSqlServerAutoBackupConfig`.
     + `New-AzureVMSqlServerAutoPatchingConfig` был переименован в `New-AzureRmVMSqlServerAutoPatchingConfig`.
     + `New-AzureVMSqlServerKeyVaultCredentialConfig` был переименован в `New-AzureRmVMSqlServerKeyVaultCredentialConfig`.
