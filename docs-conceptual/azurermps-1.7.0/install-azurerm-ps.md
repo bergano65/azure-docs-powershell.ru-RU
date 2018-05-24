@@ -2,27 +2,27 @@
 title: Установка и настройка Azure PowerShell | Документация Майкрософт
 description: Как установить и настроить Azure PowerShell для первого использования.
 services: azure
-author: sdwheeler
-ms.author: sewhee
+author: sptramer
+ms.author: sttramer
 manager: carmonm
 ms.product: azure
 ms.service: azure-powershell
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/17/2017
-ms.openlocfilehash: 0c1500a8748a3aa4546c6ce1e8d16a635b056edb
-ms.sourcegitcommit: 37bfbf11fd0967a8e7977c692ab829d286baf88a
+ms.openlocfilehash: 9f5bcc0b27e68e0016dd9a98db0a887ae6909511
+ms.sourcegitcommit: 5971c92cb023bdd1d71fa2ad0a3b378abfbd092a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2018
+ms.lasthandoff: 05/23/2018
 ---
 # <a name="install-and-configure-azure-powershell"></a>Установка и настройка Azure PowerShell
 
 Предпочтительный способ установки Azure PowerShell— из коллекции PowerShell.
 
-## <a name="step-1-install-powershellget"></a>Шаг 1. Установка PowerShellGet
+## <a name="step-1-install-powershellget"></a>Шаг 1. Проверка установленной версии PowerShellGet
 
-Чтобы установить элементы из коллекции PowerShell, требуется модуль PowerShellGet. Убедитесь, что в системе установлена соответствующая версия PowerShellGet и что выполнены другие требования к системе. Выполните следующую команду, чтобы определить наличие PowerShellGet в вашей системе:
+Чтобы установить элементы из коллекции PowerShell, требуется модуль PowerShellGet. Убедитесь, что в системе установлена необходимая версия PowerShellGet и что выполнены другие требования к системе. Выполните следующую команду, чтобы определить наличие PowerShellGet в вашей системе:
 
 ```powershell
 Get-Module PowerShellGet -list | Select-Object Name,Version,Path
@@ -43,7 +43,7 @@ PowerShellGet 1.0.0.1 C:\Program Files\WindowsPowerShell\Modules\PowerShellGet\1
 
 ## <a name="step-2-install-azure-powershell"></a>Шаг 2. Установка Azure PowerShell
 
-Для установки Azure PowerShell из коллекции PowerShell требуются повышенные привилегии. Выполните следующую команду в сеансе PowerShell с повышенными правами:
+Для установки Azure PowerShell из коллекции PowerShell требуются повышенные привилегии. Выполните следующую команду PowerShell с повышенными правами:
 
 ```powershell
 # Install the Azure Resource Manager modules from the PowerShell Gallery
@@ -65,9 +65,9 @@ Are you sure you want to install the modules from 'PSGallery'?
 Ответьте "Да" или "Да для всех", чтобы продолжить установку.
 
 > [!NOTE]
-> Если установленная версия NuGet предшествует версии 2.8.5.201, то вам будет предложено скачать и установить последнюю версию NuGet.
+> Если установленная версия NuGet предшествует версии 2.8.5.201, вам будет предложено скачать и установить последнюю версию NuGet.
 
-Модуль AzureRM — это модуль свертки для командлетов Azure Resource Manager. При установке модуля AzureRM любой модуль Azure PowerShell, который ранее не был установлен, скачивается из коллекции PowerShell.
+Модуль AzureRM — это набор командлетов для работы с Azure Resource Manager.  При установке модуля AzureRM любой модуль Azure PowerShell, который ранее не был установлен, скачивается из коллекции PowerShell.
 
 Если у вас установлена предыдущая версия Azure PowerShell, то может появляться сообщение об ошибке. Для устранения этой проблемы см. раздел [Обновление Azure PowerShell до новой версии](#update-azps) далее в этой статье.
 
@@ -86,12 +86,12 @@ Import-Module AzureRM
 
 ## <a name="frequently-asked-questions"></a>Часто задаваемые вопросы
 
-### <a name="how-to-get-powershellget"></a>Как получить PowerShellGet
+### <a name="how-to-get-powershellget"></a>Как установить PowerShellGet
 
-|Версия ОС|Инструкции по установке|
+|Сценарий|Инструкции по установке|
 |---|---|
 |Используется Windows 10 или Windows Server 2016|Встроены в Windows Management Framework (WMF) 5.0, которая входит в состав ОС|
-|Необходимо выполнить обновление до версии PowerShell 5|[Установите последнюю версию WMF](https://www.microsoft.com/en-us/download/details.aspx?id=54616)|
+|Обновление до PowerShell 5.0|[Установите последнюю версию WMF](https://www.microsoft.com/en-us/download/details.aspx?id=54616)|
 |Используется версия Windows с PowerShell 3 или PowerShell 4|[Скачайте модули PackageManagement](http://go.microsoft.com/fwlink/?LinkID=746217)|
 
 <a id="helpmechoose"></a>
