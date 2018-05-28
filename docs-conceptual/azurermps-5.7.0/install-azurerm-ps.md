@@ -1,4 +1,4 @@
----
+﻿---
 title: Установка и настройка Azure PowerShell | Документация Майкрософт
 description: Как установить и настроить Azure PowerShell для первого использования.
 services: azure
@@ -169,3 +169,4 @@ Import-Module -Name AzureRM -RequiredVersion 1.2.9
 ### <a name="other-installation-methods"></a>Другие методы установки
 
 Сведения об установке с помощью установщика веб-платформы или пакета MSI см. статье [Other installation methods](other-install.md) (Другие методы установки).
+
