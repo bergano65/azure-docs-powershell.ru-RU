@@ -8,12 +8,12 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.manager: carmonm
 ms.date: 08/31/2017
-ms.openlocfilehash: d36952b38a36a5196ee5b38ed048366da5416f0b
-ms.sourcegitcommit: 2eea03b7ac19ad6d7c8097743d33c7ddb9c4df77
+ms.openlocfilehash: a3481f17bd87e271a107e1373c86c60c62dfadb2
+ms.sourcegitcommit: bcf80dfd7fbe17e82e7ad029802cfe8a2f02b15c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34822148"
+ms.lasthandoff: 06/11/2018
+ms.locfileid: "35323413"
 ---
 # <a name="overview-of-azure-powershell"></a>Общие сведения об Azure PowerShell
 
@@ -30,7 +30,6 @@ ms.locfileid: "34822148"
 
 > [!NOTE]
 > При наличии экземпляров, развернутых с помощью классической модели, которая не может быть преобразована, вы можете установить Azure PowerShell для управления службами. Дополнительные сведения см. в статье об [установке модуля управления службами Azure PowerShell](/powershell/azure/servicemanagement/install-azure-ps).
-
 
 ### <a name="need-help-with-powershell"></a>Нужна помощь с PowerShell?
 
