@@ -17,25 +17,25 @@
       items:
         - name: Создание субъекта-службы
           href: create-azure-service-principal-azureps.md
-        - name: Использование сохраненных учетных данных
+        - name: Сохраненные учетные данные
           href: context-persistence.md
     - name: Запросы
       href: queries-azureps.md
-    - name: Форматирование
+    - name: Форматирование выходных данных
       href: formatting-output.md
-    - name: Подписки
+    - name: Управление подписками
       href: manage-subscriptions-azureps.md
     - name: Развертывание
       items:
-        - name: Развертывание с помощью шаблонов Resource Manager
+        - name: Развертывание шаблонов Resource Manager
           href: /azure/azure-resource-manager/resource-group-template-deploy
         - name: Экспорт шаблонов Resource Manager
           href: /azure/azure-resource-manager/resource-manager-export-template-powershell
-        - name: Развертывание частного шаблона Resource Manager с использованием маркера SAS
+        - name: Развертывание частных шаблонов Resource Manager
           href: /azure/azure-resource-manager/resource-manager-powershell-sas-token
     - name: Основные понятия
       items:
-        - name: Использование экспериментальных модулей
+        - name: Экспериментальные модули
           href: using-experimental-modules.md
     - name: Заметки о выпуске
       href: release-notes-azureps.md

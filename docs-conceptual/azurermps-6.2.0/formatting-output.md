@@ -1,34 +1,33 @@
 ---
-title: Форматирование результатов запроса | Документация Майкрософт
-description: Как обратиться к ресурсам в Azure и форматировать результаты запроса.
-services: azure
+title: Форматирование выходных данных командлетов Azure PowerShell
+description: Сведения о том, как форматировать выходные данные командлетов для Azure PowerShell.
 author: sptramer
 ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.date: 03/30/2017
-ms.openlocfilehash: f407d9e999b405f6c649d5353c39b4225698e88b
-ms.sourcegitcommit: 2eea03b7ac19ad6d7c8097743d33c7ddb9c4df77
+ms.date: 06/07/2018
+ms.openlocfilehash: 833c82903305f99be5ad43f707e22644bb568abe
+ms.sourcegitcommit: bcf80dfd7fbe17e82e7ad029802cfe8a2f02b15c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34820720"
+ms.lasthandoff: 06/11/2018
+ms.locfileid: "35323056"
 ---
-# <a name="formatting-query-results"></a>Форматирование результатов запроса
+# <a name="format-azurepowershell-cmdlet-output"></a>Форматирование выходных данных командлетов Azure PowerShell
 
-По умолчанию каждый командлет PowerShell заранее определяет форматирование выходных данных, что упрощает их чтение.  Среда PowerShell также позволяет гибко настраивать выходные данные или преобразовать выходные данные командлета в другой формат с помощью следующих командлетов:
+По умолчанию каждый командлет Azure PowerShell заранее определяет форматирование выходных данных, что упрощает их чтение.  Среда PowerShell также позволяет гибко настраивать выходные данные или преобразовать выходные данные командлета в другой формат с помощью следующих командлетов:
 
 | Форматирование      | Преобразование       |
 |-----------------|------------------|
-| `Format-Custom` | `ConvertTo-Csv`  |
-| `Format-List`   | `ConvertTo-Html` |
-| `Format-Table`  | `ConvertTo-Json` |
-| `Format-Wide`   | `ConvertTo-Xml`  |
+| [Format-Custom](/powershell/module/microsoft.powershell.utility/format-custom) | [ConvertTo-Csv](/powershell/module/microsoft.powershell.utility/convertto-csv)  |
+| [Format-List](/powershell/module/microsoft.powershell.utility/format-list)   | [ConvertTo-Html](/powershell/module/microsoft.powershell.utility/convertto-html) |
+| [Format-Table](/powershell/module/microsoft.powershell.utility/format-table)  | [ConvertTo-Json](/powershell/module/microsoft.powershell.utility/convertto-json) |
+| [Format-Wide](/powershell/module/microsoft.powershell.utility/format-wide)   | [ConvertTo-Xml](/powershell/module/microsoft.powershell.utility/convertto-xml)  |
 
-## <a name="formatting-examples"></a>Примеры форматирования
+## <a name="format-examples"></a>Примеры форматирования
 
-В этом примере мы получаем список виртуальных машин Azure в нашей подписке по умолчанию.  Стандартные выходные данные команды Get-AzureRmVM в табличном формате.
+В этом примере мы получаем список виртуальных машин Azure в нашей подписке по умолчанию.  По умолчанию выходные данные команды `Get-AzureRmVM` представлены в табличном формате.
 
 ```azurepowershell-interactive
 Get-AzureRmVM
@@ -54,7 +53,7 @@ MyUnbuntu1610 MYWESTEURG        westeurope
 MyWin2016VM   MYWESTEURG        westeurope
 ```
 
-При необходимости вы можете просматривать сведения в формате списка. В следующем примере показано, как использовать командлет `Format-List`.
+Выходные данные также можно отформатировать в виде списка. В следующем примере показано, как использовать командлет `Format-List`.
 
 ```azurepowershell-interactive
 Get-AzureRmVM | Format-List Name,VmId,Location,ResourceGroupName
@@ -72,9 +71,9 @@ Location          : westeurope
 ResourceGroupName : MYWESTEURG
 ```
 
-## <a name="converting-to-other-data-types"></a>Преобразование в другие типы данных
+## <a name="convert-to-other-data-types"></a>Преобразование в другие типы данных
 
-Среда PowerShell также предлагает несколько форматов выходных данных, которые можно использовать в зависимости от ваших потребностей.  В следующем примере мы используем `Select-Object`, чтобы получить атрибуты виртуальных машин в нашей подписке и преобразовать выходные данные в формат CSV, который можно легко импортировать в базу данных или электронную таблицу.
+При помощи PowerShell также можно получить выходные данные команды и преобразовать их в несколько форматов данных. В следующем примере мы используем командлет `Select-Object`, чтобы получить атрибуты виртуальных машин в нашей подписке и преобразовать выходные данные в формат CSV, который можно легко импортировать в базу данных или электронную таблицу.
 
 ```azurepowershell-interactive
 Get-AzureRmVM | Select-Object ResourceGroupName,Id,VmId,Name,Location,ProvisioningState | ConvertTo-Csv -NoTypeInformation
@@ -86,7 +85,7 @@ Get-AzureRmVM | Select-Object ResourceGroupName,Id,VmId,Name,Location,Provisioni
 "MYWESTUERG","/subscriptions/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX/resourceGroups/MYWESTUERG/providers/Microsoft.Compute/virtualMachines/MyWin2016VM","4650c755-fc2b-4fc7-a5bc-298d5c00808f","MyWin2016VM","westeurope","Succeeded"
 ```
 
-Выходные данные также можно преобразовать в формат JSON.  В следующем примере создается тот же список виртуальных машин, но формат выходных данных меняется на JSON.
+Выходные данные можно также преобразовать в формат JSON.  В следующем примере создается тот же список виртуальных машин, но формат выходных данных меняется на JSON.
 
 ```azurepowershell-interactive
 Get-AzureRmVM | Select-Object ResourceGroupName,Id,VmId,Name,Location,ProvisioningState | ConvertTo-Json

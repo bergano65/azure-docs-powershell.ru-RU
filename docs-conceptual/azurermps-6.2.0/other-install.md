@@ -1,25 +1,26 @@
 ---
-title: Другие методы установки Azure PowerShell | Документация Майкрософт
+title: Другие способы установки Azure PowerShell
 description: Как установить Azure PowerShell с помощью пакета MSI или установщика веб-платформы.
-services: azure
 author: sptramer
 ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.date: 09/06/2017
-ms.openlocfilehash: cb4ced3b72b69546594d75e7eb7db822b549a664
-ms.sourcegitcommit: 2eea03b7ac19ad6d7c8097743d33c7ddb9c4df77
+ms.date: 06/06/2018
+ms.openlocfilehash: 0919583d9cb05a75fae3b812eed84109be8b28aa
+ms.sourcegitcommit: bcf80dfd7fbe17e82e7ad029802cfe8a2f02b15c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34821655"
+ms.lasthandoff: 06/11/2018
+ms.locfileid: "35323328"
 ---
 # <a name="other-installation-methods"></a>Другие методы установки
 
-Azure PowerShell можно установить разными способами. Предпочтительным является использование PowerShellGet с коллекцией PowerShell. Azure PowerShell можно установить в Windows с помощью установщика веб-платформы (WebPI) или с помощью MSI-файла из GitHub. Также можно установить Azure PowerShell в контейнер Docker.
+В этой статье описывается, как установить Azure PowerShell с использованием MSI или установщика веб-платформы (WebPI). Вы также можете запустить Azure PowerShell в контейнере Docker. Используйте эти способы установки только в том случае, если это необходимо для вашей системы. Стандартный вариант — установка Azure PowerShell через PowerShellGet. Инструкции по установке Azure PowerShell с помощью PowerShellGet см. в [этой статье](install-azurerm-ps.md).
 
-## <a name="install-on-windows-using-the-web-platform-installer"></a>Установка в Windows с помощью установщика веб-платформы
+Сведения об установке в средах Linux или macOS см. в [этом разделе](install-azurermps-maclinux.md).
+
+## <a name="install-or-update-on-windows-using-the-web-platform-installer"></a>Установка или обновление в Windows с помощью установщика веб-платформы
 
 Установка последней версии Azure PowerShell из WebPI выполняется также, как и установка предыдущих версий.
 Скачайте [пакет Azure PowerShell WebPI](http://aka.ms/webpi-azps) и запустите установку.
@@ -29,9 +30,9 @@ Azure PowerShell можно установить разными способам
 >
 > Модули из коллекции PowerShell устанавливают модули в папку `$env:ProgramFiles\WindowsPowerShell\Modules`. А установщик WebPI устанавливает модули Azure в другую папку: `$env:ProgramFiles(x86)\Microsoft SDKs\Azure\PowerShell\`.
 >
-> Если во время установки возникла ошибка, вы можете можно вручную удалить папки Azure* в каталоге `$env:ProgramFiles\WindowsPowerShell\Modules` и повторить попытку установки.
+> Если во время установки возникла ошибка, вы можете вручную удалить папки `Azure*` в папке `$env:ProgramFiles\WindowsPowerShell\Modules` и повторить попытку установки.
 
-По завершении установки ваш параметр `$env:PSModulePath` должен включать каталоги, содержащие командлеты Azure PowerShell. Используйте следующую команду, чтобы убедиться, что среда Azure PowerShell установлена правильно.
+По завершении установки ваш параметр `$env:PSModulePath` должен включать каталоги, содержащие командлеты Azure PowerShell. Используйте следующую команду, чтобы проверить, правильно ли установлена среда Azure PowerShell.
 
 ```powershell
 # To make sure the Azure PowerShell module is available after you install
@@ -55,38 +56,31 @@ At line:1 char:1
     + FullyQualifiedErrorId : CommandNotFoundException
 ```
 
-Эту ошибку можно исправить при перезагрузке компьютера или импорте модуля, используя полный путь. Например: 
+Эту ошибку можно исправить при перезагрузке компьютера или импорте модуля, используя полный путь.
 
 ```powershell
 Import-Module "$env:ProgramFiles(x86)\Microsoft SDKs\Azure\PowerShell\AzureRM.psd1"
 ```
 
-## <a name="install-on-windows-using-the-msi-package"></a>Установка в Windows с помощью пакета MSI
+## <a name="install-or-update-on-windows-using-the-msi-package"></a>Установка или обновление в Windows с помощью пакета MSI
 
 Azure PowerShell можно установить с помощью MSI-файла из [GitHub](https://aka.ms/azps-release). Если вы устанавливали предыдущие версии модулей Azure, то установщик автоматически удаляет их. Пакет MSI устанавливает модули в папку `$env:ProgramFiles\WindowsPowerShell\Modules`, но не создает папки для определенных версий.
 
-## <a name="install-in-a-docker-container"></a>Установка в контейнер Docker
+## <a name="run-in-a-docker-container"></a>Запуск в контейнере Docker
 
-Мы поддерживаем образ Docker, предварительно настроенный с помощью Azure PowerShell.
+Мы поддерживаем набор образов Docker, предварительно настроенный с помощью Azure PowerShell. Доступны контейнеры двух типов: в одних используется стандартная версия PowerShell в среде Windows, а в других — версия PowerShell Core в среде Windows или Linux.
 
-Запустите контейнер с помощью команды `docker run`.
+| Среда | Образ Docker |
+|-------------|--------------|
+| PowerShell в среде Windows | [azuresdk/azure-powershell](https://hub.docker.com/r/azuresdk/azure-powershell/) |
+| PowerShell Core в среде Windows | [azuresdk/azure-powershell-core:nanoserver](https://hub.docker.com/r/azuresdk/azure-powershell-core/) |
+| PowerShell Core в среде Linux | [azuresdk/azure-powershell-core:latest](https://hub.docker.com/r/azuresdk/azure-powershell-core/) |
 
-```powershell
-docker run azuresdk/azure-powershell
-```
-
-Кроме того, мы поддерживаем подмножество командлетов в виде контейнера PowerShell Core.
-
-Для платформ Mac и Linux используйте образ `latest`.
-
-```bash
-docker run azuresdk/azure-powershell-core:latest
-```
-
-Для платформы Windows используйте образ `nanoserver`.
+Для запуска любого из этих контейнеров используйте `docker run -it $ImageName`, чтобы получить интерактивный терминал. Например, чтобы запустить контейнер с PowerShell Core в среде Linux, используйте следующую команду:
 
 ```powershell
-docker run azuresdk/azure-powershell-core:nanoserver
+docker run -it azuresdk/azure-powershell-core:latest
 ```
 
-Azure PowerShell устанавливается в образ с помощью `Install-Module` из [коллекции PowerShell](https://www.powershellgallery.com/).
+> [!NOTE]
+> Чтобы запустить контейнер Windows в Docker, в качестве ОС узла должна использоваться ОС Windows, а Docker необходимо настроить для запуска контейнеров Windows. Дополнительные сведения о переключении между средами Windows и Linux в Docker см. в документации по Docker [о переключении между контейнерами Windows и Linux](https://docs.docker.com/docker-for-windows/#switch-between-windows-and-linux-containers).

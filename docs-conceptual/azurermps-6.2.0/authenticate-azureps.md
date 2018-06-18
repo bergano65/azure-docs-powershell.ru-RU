@@ -1,66 +1,58 @@
 ---
 title: Вход с помощью Azure PowerShell
-description: Вход с помощью Azure PowerShell
-services: azure
+description: Инструкции по выполнению входа с помощью Azure PowerShell в роли пользователя или субъекта-службы или с помощью MSI.
 author: sptramer
 ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/15/2017
-ms.openlocfilehash: f7ed78f9908517661001cad7b3eeae8b732640cc
-ms.sourcegitcommit: 2eea03b7ac19ad6d7c8097743d33c7ddb9c4df77
+ms.openlocfilehash: e2eb6767d16dd15529b35b7a4134f4dcdd257d60
+ms.sourcegitcommit: bcf80dfd7fbe17e82e7ad029802cfe8a2f02b15c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34819768"
+ms.lasthandoff: 06/11/2018
+ms.locfileid: "35323022"
 ---
-# <a name="log-in-with-azure-powershell"></a>Вход с помощью Azure PowerShell
+# <a name="sign-in-with-azure-powershell"></a>Вход с помощью Azure PowerShell
 
 Azure PowerShell поддерживает разные способы входа в систему. Проще всего начать со входа в интерактивном режиме из командной строки.
 
-## <a name="interactive-log-in"></a>Интерактивный вход
+## <a name="sign-in-interactively"></a>Интерактивный вход
 
-1. Введите `Connect-AzureRmAccount`. Появится диалоговое окно с запросом на ввод учетных данных Azure.
+Чтобы выполнить вход в интерактивном режиме, используйте командлет [Connect-AzureRmAccount](/powershell/module/azurerm.profile/connect-azurermaccount).
 
-2. Введите электронный адрес и пароль, связанные с вашей учетной записью. Azure выполняет проверку подлинности и сохраняет учетные данные, а затем закрывает окно.
+```azurepowershell
+Connect-AzureRmAccount
+```
 
-## <a name="log-in-with-a-service-principal"></a>Вход с использованием субъекта-службы
+При выполнении этого командлета появится диалоговое окно с предложением ввести адрес электронной почты и пароль, связанные с учетной записью Azure. Когда вы проходите проверку подлинности, эти сведения сохраняются в текущем сеансе PowerShell, диалоговое окно закрывается, и вы получаете доступ ко всем командлетам Azure PowerShell.
+
+> [!IMPORTANT]
+> Эта процедура входа касается _только_ текущего сеанса PowerShell. Сведения о том, как сохранить имя входа в нескольких сеансах, см. в статье [Использование учетных данных для входа в разных сеансах PowerShell](context-persistence.md).
+
+## <a name="sign-in-with-a-service-principal"></a>Вход с использованием субъекта-службы
 
 Субъекты-службы позволяют создавать неинтерактивные учетные записи, которые можно использовать для управления ресурсами. Субъекты-службы похожи на учетные записи пользователей, к которым можно применять правила, используя Azure Active Directory. Предоставляя минимальные разрешения, необходимые для субъекта-службы, вы можете обеспечить безопасность скриптов службы автоматизации.
 
-1. Если у вас еще нет субъекта-службы, [создайте](create-azure-service-principal-azureps.md) его.
+Если необходимо создать субъект-службу для использования с помощью Azure PowerShell, см. [эту статью](create-azure-service-principal-azureps.md).
 
-2. Войдите с помощью субъекта-службы.
+Чтобы выполнить вход с помощью субъекта-службы, используйте аргумент `-ServicePrincipal` с командлетом `Connect-AzureRmAccount`. Также потребуется идентификатор приложения субъекта-службы, учетные данные для входа и сопоставление идентификатора клиента с субъектом-службой. Чтобы получить учетные данные субъекта-службы как соответствующий объект, используйте командлет [Get-Credential](/powershell/module/microsoft.powershell.security/get-credential). Этот командлет вызовет диалоговое окно, в котором нужно ввести идентификатор пользователя и пароль субъекта-службы.
 
-    ```azurepowershell-interactive
-    Connect-AzureRmAccount -ServicePrincipal -ApplicationId  "http://my-app" -Credential $pscredential -TenantId $tenantid
-    ```
+```azurepowershell-interactive
+$pscredential = Get-Credential
+Connect-AzureRmAccount -ServicePrincipal -ApplicationId  "http://my-app" -Credential $pscredential -TenantId $tenantid
+```
 
-    Чтобы получить свой идентификатор клиента, войдите в интерактивном режиме, а затем получите идентификатор из подписки.
+## <a name="sign-in-using-an-azure-vm-managed-service-identity"></a>Вход с использованием управляемого удостоверения службы виртуальных машин Azure
 
-    ```azurepowershell-interactive
-    Get-AzureRmSubscription
-    ```
-
-    ```output
-    Environment           : AzureCloud
-    Account               : username@contoso.com
-    TenantId              : XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX
-    SubscriptionId        : XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX
-    SubscriptionName      : My Production Subscription
-    CurrentStorageAccount :
-    ```
-
-### <a name="log-in-using-an-azure-vm-managed-service-identity"></a>Вход с использованием удостоверения управляемой службы виртуальных машин Azure
-
-Удостоверение управляемой службы (MSI) — это функция Azure Active Directory, доступная в режиме предварительной версии. Вы можете использовать субъект-службу MSI для входа и получения маркера доступа только для приложений, обеспечив возможность обращения к другим ресурсам.
+Удостоверение управляемой службы (MSI) — это функция Azure Active Directory, доступная в режиме предварительной версии. Вы можете использовать субъект-службу MSI для входа и получения маркера доступа только для приложений, обеспечив возможность обращения к другим ресурсам. Удостоверение MSI доступно только на виртуальных машинах в облаке Azure.
 
 Дополнительные сведения о MSI см. в руководстве по [использованию удостоверения управляемой службы виртуальных машин Azure (MSI) для входа и получения маркеров](/azure/active-directory/msi-how-to-get-access-token-using-msi).
 
-## <a name="log-in-to-another-cloud"></a>Вход в другое облако
+## <a name="sign-in-to-another-cloud"></a>Вход в другое облако
 
-Облачные службы Azure предоставляют различные среды, которые соответствуют правилам обработки данных, установленным во многих государствах. Если учетная запись Azure находится в одном из облаков для государственных организаций, то при входе необходимо указать среду. Например, если ваша учетная запись находится в облаке Azure China, то для входа необходимо использовать следующую команду:
+Облачные службы Azure предоставляют различные среды, которые соответствуют правилам обработки данных, установленным во многих регионах. Если учетная запись Azure находится в облаке, связанном с одним из этих регионов, то при входе необходимо указать среду. Например, если ваша учетная запись находится в облаке Azure China, то для входа необходимо использовать следующую команду:
 
 ```azurepowershell-interactive
 Connect-AzureRmAccount -Environment AzureChinaCloud
@@ -72,20 +64,11 @@ Connect-AzureRmAccount -Environment AzureChinaCloud
 Get-AzureRmEnvironment | Select-Object Name
 ```
 
-```output
-Name
-----
-AzureCloud
-AzureChinaCloud
-AzureUSGovernment
-AzureGermanCloud
-```
-
 ## <a name="learn-more-about-managing-azure-role-based-access"></a>Узнайте больше об управлении доступом на основе ролей Azure
 
 Дополнительные сведения об аутентификации и управлении подписками в Azure см. в статье [Использование назначений ролей для управления доступом к ресурсам в подписке Azure](/azure/active-directory/role-based-access-control-configure).
 
-Командлеты Azure PowerShell для управления ролями
+Командлеты Azure PowerShell для управления ролями:
 
 * [Get-AzureRmRoleAssignment](/powershell/module/AzureRM.Resources/Get-AzureRmRoleAssignment)
 * [Get-AzureRmRoleDefinition](/powershell/module/AzureRM.Resources/Get-AzureRmRoleDefinition)
