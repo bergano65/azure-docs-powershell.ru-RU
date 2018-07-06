@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 06/06/2018
-ms.openlocfilehash: a779f402fb2b3fccc8269aa30a6fe98a949251d6
+ms.openlocfilehash: a54af4b28642fe7b8623550fb05dff33e5c4a7f6
 ms.sourcegitcommit: 4c775721461210431bd913f28d1f1e6f1976880a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 06/28/2018
-ms.locfileid: "37091509"
+ms.locfileid: "37091339"
 ---
 # <a name="install-azure-powershell-on-macos-or-linux"></a>Установка Azure PowerShell в ОС macOS или Linux
 
@@ -50,7 +50,7 @@ Install-Module AzureRM.NetCore
 > [!IMPORTANT]
 > Модуль `AzureRM`, описанный в других статьях, не предназначен для .NET Core и не будет работать с PowerShell Core. В обоих модулях, `AzureRM` и `AzureRM.NetCore`, используются одинаковые имена командлетов. Единственное отличие заключается в общем модуле и версии .NET, для которой они предназначены.
 
-По умолчанию коллекция PowerShell не используется как доверенный репозиторий для PowerShellGet. При первом использовании PSGallery отображается следующее сообщение:
+По умолчанию коллекция PowerShell не выступает доверенным репозиторием для PowerShellGet. При первом использовании PSGallery отображается следующее сообщение:
 
 ```output
 Untrusted repository
@@ -59,7 +59,7 @@ You are installing the modules from an untrusted repository. If you trust this r
 its InstallationPolicy value by running the Set-PSRepository cmdlet.
 
 Are you sure you want to install the modules from 'PSGallery'?
-[Y] Yes� [A] Yes to All� [N] No� [L] No to All� [S] Suspend� [?] Help (default is "N"):
+[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"):
 ```
 
 Ответьте `Yes` или `Yes to All`, чтобы продолжить установку.
