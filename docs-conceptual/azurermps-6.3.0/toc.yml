@@ -6,7 +6,7 @@
       items:
         - name: Установка в macOS или Linux
           href: install-azurermps-maclinux.md
-        - name: Установка с помощью пакета MSI или установщика веб-платформы
+        - name: Установка с помощью пакета MSI
           href: other-install.md
         - name: Выполнение в Docker
           href: azurerm-ps-in-docker.md
@@ -46,8 +46,8 @@
     - name: Заметки о выпуске
       href: release-notes-azureps.md
       items:
-        - name: Критические изменения для Azure PowerShell 5.x
-          href: migration-guide.5.0.0.md
+        - name: Критически важные изменения для Azure PowerShell 6.x
+          href: migration-guide.6.0.0.md
 - name: Учебники
   items:
     - name: Создание виртуальных машин
