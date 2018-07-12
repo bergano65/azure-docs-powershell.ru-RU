@@ -12,7 +12,7 @@
       href: get-started-azureps.md
     - name: Cloud Shell
       href: 'https://docs.microsoft.com/azure/cloud-shell/overview'
-    - name: Вход в систему
+    - name: Вход
       href: authenticate-azureps.md
       items:
         - name: Создание субъекта-службы
