@@ -1,19 +1,18 @@
 ---
-title: Управление подписками Azure с помощью Azure PowerShell | Документация Майкрософт
+title: Управление подписками Azure с помощью Azure PowerShell
 description: Управление подписками Azure с помощью Azure PowerShell
-keywords: Azure PowerShell, подписка
 author: sptramer
 ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/30/2017
-ms.openlocfilehash: 156ef9c9c7dbb0beda4098cac597b88091ac57d3
-ms.sourcegitcommit: cb1fd248920d7efca67bd6c738a3b47206df7890
+ms.openlocfilehash: fbd2fe315efbdfb2147218229d51e983e2b61361
+ms.sourcegitcommit: 8b882d1c27d9e323447ff85f56d11bbf5e244d7f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/13/2018
-ms.locfileid: "39025112"
+ms.lasthandoff: 07/18/2018
+ms.locfileid: "39110574"
 ---
 # <a name="manage-multiple-azure-subscriptions"></a>Управление несколькими подписками Azure
 
@@ -21,7 +20,7 @@ ms.locfileid: "39025112"
 
 1. Получите список всех подписок в своей учетной записи.
 
-    ```powershell
+    ```azurepowershell-interactive
     Get-AzureRmSubscription
     ```
 
@@ -50,13 +49,13 @@ ms.locfileid: "39025112"
 
 2. Определите подписку по умолчанию.
 
-    ```powershell
+    ```azurepowershell-interactive
     Select-AzureRmSubscription -SubscriptionName "My Demos"
     ```
 
 3. Проверьте изменения, выполнив командлет `Get-AzureRmContext`.
 
-    ```powershell
+    ```azurepowershell-interactive
     Get-AzureRmContext
     ```
 

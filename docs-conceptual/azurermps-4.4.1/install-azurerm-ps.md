@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/27/2018
-ms.openlocfilehash: 2444abc6f6f2280645c77c3effcd02db74f4f997
-ms.sourcegitcommit: 990f82648b0aa2e970f96c02466a7134077c8c56
+ms.openlocfilehash: 3cb6497dd053c7ae5d256ae4b562001ddecaa128
+ms.sourcegitcommit: cb1fd248920d7efca67bd6c738a3b47206df7890
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38100245"
+ms.lasthandoff: 07/13/2018
+ms.locfileid: "39025248"
 ---
 # <a name="install-and-configure-azure-powershell"></a>Установка и настройка Azure PowerShell
 
@@ -50,9 +50,9 @@ Install-Module PowerShellGet -Force
 
 > [!NOTE]
 > Чтобы использовать PowerShellGet, необходимо иметь политику выполнения, которая позволяет запускать сценарии. Дополнительные сведения о политике выполнения PowerShell см. в [этой статье](/powershell/module/microsoft.powershell.core/about/about_execution_policies).
-
+>
 > [!IMPORTANT]
-> Для модуля AzureRM, описанном в этом документе, используется .NET Framework. Из-за этого модуль несовместимым с PowerShell версии 6.0, для которой используется .NET Core. Если вы используете PowerShell 6.0, изучите [инструкции по установке для macOS и Linux](install-azurermps-maclinux.md). 
+> Для модуля AzureRM, описанном в этом документе, используется .NET Framework. Из-за этого модуль несовместимым с PowerShell версии 6.0, для которой используется .NET Core. Если вы используете PowerShell 6.0, изучите [инструкции по установке для macOS и Linux](install-azurermps-maclinux.md).
 
 ## <a name="step-2-install-azure-powershell"></a>Шаг 2. Установка Azure PowerShell
 
@@ -85,6 +85,7 @@ Are you sure you want to install the modules from 'PSGallery'?
 Если у вас установлена предыдущая версия Azure PowerShell, то может появляться сообщение об ошибке. Для устранения этой проблемы см. раздел [Обновление Azure PowerShell до новой версии](#update-azps) далее в этой статье.
 
 ## <a name="step-3-load-the-azurerm-module"></a>Шаг 3. Загрузка модуля AzureRM
+
 После установки модуля его необходимо загрузить в сеанс PowerShell. Это необходимо сделать в обычном (без повышенных привилегий) сеансе PowerShell. Модули можно загрузить с помощью командлета `Import-Module` следующим образом:
 
 ```powershell
@@ -111,8 +112,7 @@ Import-Module -Name AzureRM
 |Обновление до PowerShell 5.0|[Установите последнюю версию WMF](https://www.microsoft.com/en-us/download/details.aspx?id=54616)|
 |Используется версия Windows с PowerShell 3 или PowerShell 4|[Скачайте модули PackageManagement](http://go.microsoft.com/fwlink/?LinkID=746217)|
 
-<a id="helpmechoose"></a>
-### <a name="checking-the-version-of-azure-powershell"></a>Проверка версии Azure PowerShell
+### <a name="div-idhelpmechoosechecking-the-version-of-azure-powershell"></a><div id="helpmechoose"/>Проверка версии Azure PowerShell
 
 Хотя мы советуем выполнить обновление до последней версии как можно скорее, поддерживается несколько версий Azure PowerShell. Чтобы определить, какая версия Azure PowerShell установлена, выполните в командной строке команду `Get-Module AzureRM`.
 
@@ -124,9 +124,9 @@ Get-Module AzureRM -ListAvailable | Select-Object -Property Name,Version,Path
 
 При наличии экземпляров, развернутых с помощью классической модели, вы можете установить Azure PowerShell для управления службами. Дополнительные сведения см. в статье об [установке модуля управления службами Azure PowerShell](/powershell/azure/servicemanagement/install-azure-ps). Модули Azure и AzureRM имеют общие зависимости. При использовании обоих модулей (Azure и AzureRM) необходимо установить одинаковую версию каждого пакета.
 
-### <a id="update-azps"></a>Обновление Azure PowerShell до новой версии
+### <a name="div-idupdate-azpsupdating-to-a-new-version-of-azure-powershell"></a><div id="update-azps"/>Обновление Azure PowerShell до новой версии
 
-Если у вас установлена предыдущая версия Azure PowerShell, включающая модуль управления службами, то может появляться следующее сообщение об ошибке:
+Если у вас установлена предыдущая версия Azure PowerShell, включающая модуль управления службами, то может появиться следующее сообщение об ошибке:
 
 ```Output
 PackageManagement\Install-Package : A command with name 'Get-AzureStorageContainerAcl' is already

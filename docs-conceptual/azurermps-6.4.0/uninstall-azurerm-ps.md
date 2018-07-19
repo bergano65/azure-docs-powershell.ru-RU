@@ -7,21 +7,21 @@ ms.author: sttramer
 ms.manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.openlocfilehash: f19f9fc9fb9afabdddcbfc98864c63762753e6f0
+ms.openlocfilehash: 92af0fdd8db451e2f0f092d66a3e296ad8d6a09e
 ms.sourcegitcommit: cb1fd248920d7efca67bd6c738a3b47206df7890
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 07/13/2018
-ms.locfileid: "39024670"
+ms.locfileid: "39025061"
 ---
 # <a name="uninstall-the-azure-powershell-module"></a>Удаление модуля Azure PowerShell
 
 Из этой статьи вы узнаете, как удалить предыдущую версию Azure PowerShell или полностью удалить этот модуль из системы. Если вы решили полностью удалить Azure PowerShell, отправьте нам отзыв с помощью командлета [Send-Feedback](/powershell/module/azurerm.profile/send-feedback).
 Если возникнет ошибка, мы будем признательны, если вы [сообщите о ней на GitHub](https://github.com/azure/azure-powershell/issues).
 
-## <a name="uninstall-msi-or-web-platform-installer"></a>Удаление пакета MSI или установщика веб-платформы
+## <a name="uninstall-msi"></a>Удаление пакета MSI
 
-Если вы установили Azure PowerShell с помощью пакета MSI или установщика веб-платформы, удалять модуль нужно из системы Windows, а не с помощью PowerShell.
+Если вы установили Azure PowerShell с помощью пакета MSI, удалять модуль нужно через систему Windows, а не PowerShell.
 
 | платформа | Указания |
 |----------|--------------|

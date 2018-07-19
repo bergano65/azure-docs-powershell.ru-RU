@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 06/06/2018
-ms.openlocfilehash: a779f402fb2b3fccc8269aa30a6fe98a949251d6
-ms.sourcegitcommit: 4c775721461210431bd913f28d1f1e6f1976880a
+ms.openlocfilehash: 6e7d447ea9672c174e3f1d103bc56c11a7f37192
+ms.sourcegitcommit: cb1fd248920d7efca67bd6c738a3b47206df7890
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2018
-ms.locfileid: "37091509"
+ms.lasthandoff: 07/13/2018
+ms.locfileid: "39024925"
 ---
 # <a name="install-azure-powershell-on-macos-or-linux"></a>Установка Azure PowerShell в ОС macOS или Linux
 
@@ -30,8 +30,8 @@ ms.locfileid: "37091509"
 Инструкции по установке PowerShell Core отличаются для macOS и большинства дистрибутивов Linux.
 Подробные инструкции можно найти в следующих статьях:
 
-- [Установка PowerShell Core в macOS](/powershell/scripting/setup/installing-powershell-core-on-macos)
-- [Установка PowerShell Core в Linux](/powershell/scripting/setup/installing-powershell-core-on-linux)
+* [Установка PowerShell Core в macOS](/powershell/scripting/setup/installing-powershell-core-on-macos)
+* [Установка PowerShell Core в Linux](/powershell/scripting/setup/installing-powershell-core-on-linux)
 
 ## <a name="install-azure-powershell-for-net-core"></a>Установка Azure PowerShell для .NET Core
 
@@ -59,7 +59,7 @@ You are installing the modules from an untrusted repository. If you trust this r
 its InstallationPolicy value by running the Set-PSRepository cmdlet.
 
 Are you sure you want to install the modules from 'PSGallery'?
-[Y] Yes� [A] Yes to All� [N] No� [L] No to All� [S] Suspend� [?] Help (default is "N"):
+[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"):
 ```
 
 Ответьте `Yes` или `Yes to All`, чтобы продолжить установку.
@@ -75,7 +75,7 @@ Import-Module AzureRM.Netcore
 Connect-AzureRmAccount
 ```
 
-Эти действия нужно повторять для каждого нового сеанса PowerShell. Чтобы автоматически импортировать модуль `AzureRM`, необходимо настроить профиль PowerShell. Подробнее о нем рассказывается [здесь](/powershell/module/microsoft.powershell.core/about/about_profiles).
+Эти действия нужно повторять для каждого нового сеанса PowerShell. Чтобы автоматически импортировать модуль `AzureRM`, необходимо настроить профиль PowerShell. Подробнее об этом рассказывается [здесь](/powershell/module/microsoft.powershell.core/about/about_profiles).
 В macOS и Linux работа с профилем выполняется с использованием переменной среды `$Profile`. Чтобы узнать, как повторно использовать свои данные для входа в Azure в разных сеансах, см. статью [Использование учетных данных пользователя в разных сеансах PowerShell](context-persistence.md).
 
 ## <a name="available-cmdlets"></a>Доступные командлеты
@@ -83,17 +83,17 @@ Connect-AzureRmAccount
 Модули Azure PowerShell для .NET Core еще находятся в разработке. Эти модули не обеспечивают полный набор командлетов, которые доступны в версии модулей для Windows. В модулях AzureRM.Netcore реализованы следующие функции.
 
 * Управление учетными записями
-  - Вход с помощью учетной записи Майкрософт, рабочей или учебной учетной записи или субъекта-службы с помощью Microsoft Azure Active Directory.
-  - Сохранение учетных данных на диск с помощью командлета Save-AzureRmContext и загрузка сохраненных учетных данных с помощью командлета Import-AzureRmContext.
+  * Вход с помощью учетной записи Майкрософт, рабочей или учебной учетной записи или субъекта-службы с помощью Microsoft Azure Active Directory.
+  * Сохранение учетных данных на диск с помощью командлета Save-AzureRmContext и загрузка сохраненных учетных данных с помощью командлета Import-AzureRmContext.
 * Среда
-  - Получение различных стандартных сред Microsoft Azure.
-  - Добавление, настройка и удаление настроенных сред (например, сред Azure Stack или Windows Azure Pack).
+  * Получение различных стандартных сред Microsoft Azure.
+  * Добавление, настройка и удаление настроенных сред (например, сред Azure Stack или Windows Azure Pack).
 * Командлеты плоскости управления для служб Azure, использующих интерфейсы Resource Manager и интерфейсы управления службами.
-  - Виртуальная машина
-  - Служба приложений (веб-сайты)
-  - База данных SQL
-  - Служба хранилища
-  - Сеть
+  * Виртуальная машина
+  * Служба приложений (веб-сайты)
+  * База данных SQL
+  * Служба хранилища
+  * Сеть
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

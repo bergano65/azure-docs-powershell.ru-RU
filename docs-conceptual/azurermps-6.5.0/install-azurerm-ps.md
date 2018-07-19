@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 06/15/2018
-ms.openlocfilehash: 2809d8265af85a786b1b72ab9be3135f166a20e8
-ms.sourcegitcommit: cb1fd248920d7efca67bd6c738a3b47206df7890
+ms.openlocfilehash: 50b05e5f25b6e3e1c815f6b26f1b53b84cd0b7da
+ms.sourcegitcommit: 8b882d1c27d9e323447ff85f56d11bbf5e244d7f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/13/2018
-ms.locfileid: "39025333"
+ms.lasthandoff: 07/18/2018
+ms.locfileid: "39110897"
 ---
 # <a name="install-azure-powershell-on-windows-with-powershellget"></a>Установка Azure PowerShell в ОС Windows с помощью PowerShellGet
 
@@ -24,40 +24,14 @@ ms.locfileid: "39025333"
 
 ## <a name="requirements"></a>Требования
 
-Чтобы установить Azure PowerShell, требуется PowerShellGet начиная с версии 1.1.2.0. Чтобы проверить свою систему на наличие этого компонента, выполните следующую команду:
+Чтобы использовать Azure PowerShell версии 6.0 и выше, требуется установить PowerShell 5.0. Чтобы проверить установленную на своем компьютере версию PowerShell, выполните следующую команду:
 
 ```powershell
-Get-Module -Name PowerShellGet -ListAvailable | Select-Object -Property Name,Version,Path
+$PSVersionTable.PSVersion
 ```
 
-Должен отобразиться результат, аналогичный следующему:
+Если у вас более старая версия, см. раздел [Обновление существующей версии Windows PowerShell](/powershell/scripting/setup/installing-windows-powershell?view=powershell-6#upgrading-existing-windows-powershell).
 
-```output
-Name          Version Path
-----          ------- ----
-Name          Version Path
-----          ------- ----
-PowerShellGet 1.6.0   C:\Program Files\WindowsPowerShell\Modules\PowerShellGet\1.6.0\PowerShellGet.psd1
-PowerShellGet 1.0.0.1 C:\Program Files\WindowsPowerShell\Modules\PowerShellGet\1.0.0.1\PowerShellGet.psd1
-```
-
-Чтобы обновить свою версию PowerShellGet, выполните следующую команду:
-
-```powershell
-Install-Module PowerShellGet -Force
-```
-
-Если компонент PowerShellGet не установлен, следуйте инструкциям для своей системы из таблицы ниже.
-
-|Сценарий|Инструкции по установке|
-|---|---|
-|Windows 10<br/>Windows Server 2016|Встроен в пакет Windows Management Framework (WMF) 5.0, который входит в состав ОС|
-|Обновление до PowerShell 5| <ol><li>[Установите последнюю версию WMF](https://www.microsoft.com/en-us/download/details.aspx?id=54616)</li><li>Выполните следующую команду:<br/>```Install-Module PowerShellGet -Force```</li></ol>|
-|Windows с PowerShell 3 или PowerShell 4|<ol><il>[Получите модули PackageManagement:](http://go.microsoft.com/fwlink/?LinkID=746217)</il><li>Выполните следующую команду:<br/>```Install-Module PowerShellGet -Force```</li></ol>|
-
-> [!NOTE]
-> Чтобы использовать PowerShellGet, необходимо иметь политику выполнения, которая позволяет запускать сценарии. Дополнительные сведения о политике выполнения PowerShell см. в [этой статье](/powershell/module/microsoft.powershell.core/about/about_execution_policies).
->
 > [!IMPORTANT]
 > Для модуля AzureRM, описанном в этом документе, используется .NET Framework. Из-за этого модуль несовместимым с PowerShell версии 6.0, для которой используется .NET Core. Если вы используете PowerShell 6.0, изучите [инструкции по установке для macOS и Linux](install-azurermps-maclinux.md).
 

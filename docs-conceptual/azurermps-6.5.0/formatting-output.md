@@ -1,35 +1,35 @@
 ---
-title: Форматирование результатов запроса | Документация Майкрософт
-description: Как обратиться к ресурсам в Azure и форматировать результаты запроса.
+title: Форматирование выходных данных командлетов Azure PowerShell
+description: Сведения о том, как форматировать выходные данные командлетов для Azure PowerShell.
 author: sptramer
 ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.date: 03/30/2017
-ms.openlocfilehash: 73aa50b75366bc1e095c00c3d25429afdde21835
-ms.sourcegitcommit: cb1fd248920d7efca67bd6c738a3b47206df7890
+ms.date: 06/07/2018
+ms.openlocfilehash: 833c82903305f99be5ad43f707e22644bb568abe
+ms.sourcegitcommit: 8b882d1c27d9e323447ff85f56d11bbf5e244d7f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/13/2018
-ms.locfileid: "39024653"
+ms.lasthandoff: 07/18/2018
+ms.locfileid: "39110727"
 ---
-# <a name="formatting-query-results"></a>Форматирование результатов запроса
+# <a name="format-azurepowershell-cmdlet-output"></a>Форматирование выходных данных командлетов Azure PowerShell
 
-По умолчанию каждый командлет PowerShell заранее определяет форматирование выходных данных, что упрощает их чтение.  Среда PowerShell также позволяет гибко настраивать выходные данные или преобразовать выходные данные командлета в другой формат с помощью следующих командлетов:
+По умолчанию каждый командлет Azure PowerShell заранее определяет форматирование выходных данных, что упрощает их чтение.  Среда PowerShell также позволяет гибко настраивать выходные данные или преобразовать выходные данные командлета в другой формат с помощью следующих командлетов:
 
 | Форматирование      | Преобразование       |
 |-----------------|------------------|
-| `Format-Custom` | `ConvertTo-Csv`  |
-| `Format-List`   | `ConvertTo-Html` |
-| `Format-Table`  | `ConvertTo-Json` |
-| `Format-Wide`   | `ConvertTo-Xml`  |
+| [Format-Custom](/powershell/module/microsoft.powershell.utility/format-custom) | [ConvertTo-Csv](/powershell/module/microsoft.powershell.utility/convertto-csv)  |
+| [Format-List](/powershell/module/microsoft.powershell.utility/format-list)   | [ConvertTo-Html](/powershell/module/microsoft.powershell.utility/convertto-html) |
+| [Format-Table](/powershell/module/microsoft.powershell.utility/format-table)  | [ConvertTo-Json](/powershell/module/microsoft.powershell.utility/convertto-json) |
+| [Format-Wide](/powershell/module/microsoft.powershell.utility/format-wide)   | [ConvertTo-Xml](/powershell/module/microsoft.powershell.utility/convertto-xml)  |
 
-## <a name="formatting-examples"></a>Примеры форматирования
+## <a name="format-examples"></a>Примеры форматирования
 
-В этом примере мы получаем список виртуальных машин Azure в нашей подписке по умолчанию.  Стандартные выходные данные команды Get-AzureRmVM в табличном формате.
+В этом примере мы получаем список виртуальных машин Azure в нашей подписке по умолчанию.  По умолчанию выходные данные команды `Get-AzureRmVM` представлены в табличном формате.
 
-```powershell
+```azurepowershell-interactive
 Get-AzureRmVM
 ```
 
@@ -42,7 +42,7 @@ MYWESTEURG          MyWin2016VM westeurope Standard_DS1_v2 Windows   mywin2016vm
 
 Если вы хотите ограничить число возвращаемых столбцов, используйте командлет `Format-Table`. В следующем примере мы получим тот же список виртуальных машин, но ограничим выходные данные: они будут отображать только имя виртуальной машины, группу ресурсов и расположение виртуальной машины.  Параметр `-Autosize` изменяет размеры столбцов в соответствии с размером данных.
 
-```powershell
+```azurepowershell-interactive
 Get-AzureRmVM | Format-Table Name,ResourceGroupName,Location -AutoSize
 ```
 
@@ -53,9 +53,9 @@ MyUnbuntu1610 MYWESTEURG        westeurope
 MyWin2016VM   MYWESTEURG        westeurope
 ```
 
-При необходимости вы можете просматривать сведения в формате списка. В следующем примере показано, как использовать командлет `Format-List`.
+Выходные данные также можно отформатировать в виде списка. В следующем примере показано, как использовать командлет `Format-List`.
 
-```powershell
+```azurepowershell-interactive
 Get-AzureRmVM | Format-List Name,VmId,Location,ResourceGroupName
 ```
 
@@ -71,11 +71,11 @@ Location          : westeurope
 ResourceGroupName : MYWESTEURG
 ```
 
-## <a name="converting-to-other-data-types"></a>Преобразование в другие типы данных
+## <a name="convert-to-other-data-types"></a>Преобразование в другие типы данных
 
-Среда PowerShell также предлагает несколько форматов выходных данных, которые можно использовать в зависимости от ваших потребностей.  В следующем примере мы используем `Select-Object`, чтобы получить атрибуты виртуальных машин в нашей подписке и преобразовать выходные данные в формат CSV, который можно легко импортировать в базу данных или электронную таблицу.
+При помощи PowerShell также можно получить выходные данные команды и преобразовать их в несколько форматов данных. В следующем примере мы используем командлет `Select-Object`, чтобы получить атрибуты виртуальных машин в нашей подписке и преобразовать выходные данные в формат CSV, который можно легко импортировать в базу данных или электронную таблицу.
 
-```powershell
+```azurepowershell-interactive
 Get-AzureRmVM | Select-Object ResourceGroupName,Id,VmId,Name,Location,ProvisioningState | ConvertTo-Csv -NoTypeInformation
 ```
 
@@ -85,9 +85,9 @@ Get-AzureRmVM | Select-Object ResourceGroupName,Id,VmId,Name,Location,Provisioni
 "MYWESTUERG","/subscriptions/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX/resourceGroups/MYWESTUERG/providers/Microsoft.Compute/virtualMachines/MyWin2016VM","4650c755-fc2b-4fc7-a5bc-298d5c00808f","MyWin2016VM","westeurope","Succeeded"
 ```
 
-Выходные данные также можно преобразовать в формат JSON.  В следующем примере создается тот же список виртуальных машин, но формат выходных данных меняется на JSON.
+Выходные данные можно также преобразовать в формат JSON.  В следующем примере создается тот же список виртуальных машин, но формат выходных данных меняется на JSON.
 
-```powershell
+```azurepowershell-interactive
 Get-AzureRmVM | Select-Object ResourceGroupName,Id,VmId,Name,Location,ProvisioningState | ConvertTo-Json
 ```
 

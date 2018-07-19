@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: get-started-article
 ms.date: 11/15/2017
-ms.openlocfilehash: 0228db32c313626029d1a54b8d5c2c8ddbfae7a8
-ms.sourcegitcommit: cb1fd248920d7efca67bd6c738a3b47206df7890
+ms.openlocfilehash: 5354a75e969e084d6457d0566a516705f365476f
+ms.sourcegitcommit: 8b882d1c27d9e323447ff85f56d11bbf5e244d7f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/13/2018
-ms.locfileid: "39025044"
+ms.lasthandoff: 07/18/2018
+ms.locfileid: "39110710"
 ---
 # <a name="get-started-with-azure-powershell"></a>Начало работы с Azure PowerShell
 
@@ -48,13 +48,13 @@ ms.locfileid: "39025044"
 
 Войдите в интерактивном режиме:
 
-1. Введите `Connect-AzureRmAccount`. Появится диалоговое окно с запросом на ввод учетных данных Azure. С помощью параметра -Environment можно войти в Azure для Китая или Azure для Германии.
+1. Введите `Connect-AzureRmAccount`. Появится диалоговое окно с запросом на ввод учетных данных Azure. С помощью параметра -Environment можно пройти проверку подлинности в Azure для Китая или Azure для Германии.
 
    Пример: Connect-AzureRmAccount -Environment AzureChinaCloud
 
 2. Введите электронный адрес и пароль, связанные с вашей учетной записью. Azure выполняет проверку подлинности и сохраняет учетные данные, а затем закрывает окно.
 
-После входа в учетную запись Azure вы можете использовать командлеты Azure PowerShell для доступа к ресурсам в подписке и управления ими.
+После входа в учетную запись Azure вы можете использовать командлеты Azure PowerShell для работы с ресурсами в подписке и управления ими.
 
 ## <a name="create-a-windows-virtual-machine-using-simple-defaults"></a>Создание виртуальной машины Windows с помощью простых значений по умолчанию
 

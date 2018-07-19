@@ -7,19 +7,19 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 06/20/2018
-ms.openlocfilehash: f6c52b413aa2981dc24c7e60fe832e37dcbc8baa
-ms.sourcegitcommit: 4c775721461210431bd913f28d1f1e6f1976880a
+ms.openlocfilehash: 7c6446a66cd3ab9fe8f5d8adf13fed36ee093340
+ms.sourcegitcommit: cb1fd248920d7efca67bd6c738a3b47206df7890
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2018
-ms.locfileid: "37091458"
+ms.lasthandoff: 07/13/2018
+ms.locfileid: "39025316"
 ---
 # <a name="install-azure-powershell-on-windows-with-msi-or-web-platform-installer"></a>Установка Azure PowerShell в ОС Windows с помощью пакета MSI или установщика веб-платформы
 
 В этой статье описывается, как установить Azure PowerShell в ОС Windows с помощью пакета MSI или установщика веб-платформы.  
 Используйте эти способы установки только в том случае, если это необходимо для вашей системы. Мы рекомендуем устанавливать Azure PowerShell в ОС Windows с помощью PowerShellGet. Инструкции по установке Azure PowerShell с помощью PowerShellGet см. в [этой статье](install-azurerm-ps.md).
 
-Сведения о том, как запустить Azure PowerShell в контейнере Docker, см. в статье [Запуск Azure PowerShell в контейнере Docker](azurerm-ps-in-docker.md).
+См. дополнительные сведения о том, как [запустить Azure PowerShell в контейнере Docker](azurerm-ps-in-docker.md).
 
 Сведения об установке в средах Linux или macOS см. в [этом разделе](install-azurermps-maclinux.md).
 
@@ -39,7 +39,7 @@ Import-Module AzureRM
 Connect-AzureRmAccount
 ```
 
-Эти действия нужно повторять для каждого нового сеанса PowerShell. Чтобы автоматически импортировать модуль `AzureRM`, необходимо настроить профиль PowerShell. Подробнее о нем рассказывается [здесь](/powershell/module/microsoft.powershell.core/about/about_profiles).
+Эти действия нужно повторять для каждого нового сеанса PowerShell. Чтобы автоматически импортировать модуль `AzureRM`, необходимо настроить профиль PowerShell. Подробнее об этом рассказывается [здесь](/powershell/module/microsoft.powershell.core/about/about_profiles).
 Чтобы узнать, как повторно использовать свои данные для входа в Azure в разных сеансах, см. статью [Использование учетных данных пользователя в разных сеансах PowerShell](context-persistence.md).
 
 ## <a name="install-or-update-on-windows-using-the-web-platform-installer"></a>Установка или обновление в Windows с помощью установщика веб-платформы
@@ -58,5 +58,5 @@ Import-Module AzureRM
 Connect-AzureRmAccount
 ```
 
-Эти действия нужно повторять для каждого нового сеанса PowerShell. Чтобы автоматически импортировать модуль `AzureRM`, необходимо настроить профиль PowerShell. Подробнее о нем рассказывается [здесь](/powershell/module/microsoft.powershell.core/about/about_profiles).
+Эти действия нужно повторять для каждого нового сеанса PowerShell. Чтобы автоматически импортировать модуль `AzureRM`, необходимо настроить профиль PowerShell. Подробнее об этом рассказывается [здесь](/powershell/module/microsoft.powershell.core/about/about_profiles).
 Чтобы узнать, как повторно использовать свои данные для входа в Azure в разных сеансах, см. статью [Использование учетных данных пользователя в разных сеансах PowerShell](context-persistence.md).
