@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/15/2017
-ms.openlocfilehash: 6525e41be54c3f6b97812504c436e0ff3f5edf8e
+ms.openlocfilehash: 20194ac2282d602ba61bf130791edac9f4ffae6c
 ms.sourcegitcommit: 990f82648b0aa2e970f96c02466a7134077c8c56
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 07/11/2018
-ms.locfileid: "38100092"
+ms.locfileid: "38100228"
 ---
 # <a name="sign-in-with-azure-powershell"></a>Вход с помощью Azure PowerShell
 
@@ -55,7 +55,7 @@ Connect-AzureRmAccount -ServicePrincipal -ApplicationId  "http://my-app" -Creden
 Облачные службы Azure предоставляют различные среды, которые соответствуют правилам обработки данных, установленным во многих регионах. Если учетная запись Azure находится в облаке, связанном с одним из этих регионов, то при входе необходимо указать среду. Например, если ваша учетная запись находится в облаке Azure China, то для входа необходимо использовать следующую команду:
 
 ```azurepowershell-interactive
-Login-AzureRmAccount -EnvironmentName AzureChinaCloud
+Connect-AzureRmAccount -Environment AzureChinaCloud
 ```
 
 Чтобы получить список доступных сред, используйте следующую команду:

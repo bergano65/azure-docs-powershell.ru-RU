@@ -7,16 +7,16 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/15/2017
-ms.openlocfilehash: e2eb6767d16dd15529b35b7a4134f4dcdd257d60
-ms.sourcegitcommit: bcf80dfd7fbe17e82e7ad029802cfe8a2f02b15c
+ms.openlocfilehash: af39fec226492c9ccf251c996b57e274de783178
+ms.sourcegitcommit: 990f82648b0aa2e970f96c02466a7134077c8c56
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "35323345"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38100279"
 ---
 # <a name="sign-in-with-azure-powershell"></a>Вход с помощью Azure PowerShell
 
-Azure PowerShell поддерживает разные способы входа в систему. Проще всего начать со входа в интерактивном режиме из командной строки.
+Azure PowerShell поддерживает разные методы проверки подлинности. Проще всего начать со входа в интерактивном режиме из командной строки.
 
 ## <a name="sign-in-interactively"></a>Интерактивный вход
 
@@ -29,7 +29,7 @@ Connect-AzureRmAccount
 При выполнении этого командлета появится диалоговое окно с предложением ввести адрес электронной почты и пароль, связанные с учетной записью Azure. Когда вы проходите проверку подлинности, эти сведения сохраняются в текущем сеансе PowerShell, диалоговое окно закрывается, и вы получаете доступ ко всем командлетам Azure PowerShell.
 
 > [!IMPORTANT]
-> Эта процедура входа касается _только_ текущего сеанса PowerShell. Сведения о том, как сохранить имя входа в нескольких сеансах, см. в статье [Использование учетных данных для входа в разных сеансах PowerShell](context-persistence.md).
+> Эта процедура входа касается _только_ текущего сеанса PowerShell. Сведения о том, как сохранить данные о проверке подлинности в нескольких сеансах, см. в статье [Использование учетных данных пользователя в разных сеансах PowerShell](context-persistence.md).
 
 ## <a name="sign-in-with-a-service-principal"></a>Вход с использованием субъекта-службы
 

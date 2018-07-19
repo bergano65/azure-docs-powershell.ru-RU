@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/27/2018
-ms.openlocfilehash: 05dd023b407a46ea9133493a000ad9ff75b08dee
-ms.sourcegitcommit: c98e3a21037ebd82936828bcb544eed902b24212
+ms.openlocfilehash: 2444abc6f6f2280645c77c3effcd02db74f4f997
+ms.sourcegitcommit: 990f82648b0aa2e970f96c02466a7134077c8c56
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "34854449"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38100245"
 ---
 # <a name="install-and-configure-azure-powershell"></a>Установка и настройка Azure PowerShell
 
@@ -50,6 +50,9 @@ Install-Module PowerShellGet -Force
 
 > [!NOTE]
 > Чтобы использовать PowerShellGet, необходимо иметь политику выполнения, которая позволяет запускать сценарии. Дополнительные сведения о политике выполнения PowerShell см. в [этой статье](/powershell/module/microsoft.powershell.core/about/about_execution_policies).
+
+> [!IMPORTANT]
+> Для модуля AzureRM, описанном в этом документе, используется .NET Framework. Из-за этого модуль несовместимым с PowerShell версии 6.0, для которой используется .NET Core. Если вы используете PowerShell 6.0, изучите [инструкции по установке для macOS и Linux](install-azurermps-maclinux.md). 
 
 ## <a name="step-2-install-azure-powershell"></a>Шаг 2. Установка Azure PowerShell
 
@@ -162,7 +165,7 @@ Import-Module -Name AzureRM -RequiredVersion 1.2.9
 ```
 
 > [!NOTE]
-> Версии 2.1.0 и 1.2.6 — это первые версии модуля, предназначенные для установки и использования без удаления предыдущей версии. Если загрузить более раннюю версию модуля Azure PowerShell, то загрузится несовместимая версия модуля **AzureRM.Profile**. Это приведет к тому, что командлеты будут запрашивать выполнить вход при каждом выполнении командлета.
+> Версии 2.1.0 и 1.2.6 — это первые версии модуля, предназначенные для установки и использования без удаления предыдущей версии. Если загрузить более раннюю версию модуля Azure PowerShell, то загрузится несовместимая версия модуля **AzureRM.Profile**. Это приведет к тому, что при каждом выполнении командлета будет отображаться запрос на вход.
 
 ### <a name="other-installation-methods"></a>Другие методы установки
 

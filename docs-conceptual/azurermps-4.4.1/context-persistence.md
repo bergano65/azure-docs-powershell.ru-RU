@@ -1,22 +1,22 @@
 ---
-title: Использование учетных данных для входа в разных сеансах PowerShell
-description: В этой статье описываются новые функции в Azure PowerShell, которые позволяют повторно использовать учетные данные и другие сведения о пользователе в нескольких сеансах PowerShell.
+title: Использование учетных данных пользователя в разных сеансах PowerShell
+description: Узнайте, как использовать учетные данные Azure и другие сведения в нескольких сеансах PowerShell.
 author: sptramer
 ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 08/31/2017
-ms.openlocfilehash: d650cfaae580acd10b3ddb06edec9883f1a32844
-ms.sourcegitcommit: c98e3a21037ebd82936828bcb544eed902b24212
+ms.openlocfilehash: 12a57f9aaf445fe95f731e09a6dcd174b97aa3fe
+ms.sourcegitcommit: 990f82648b0aa2e970f96c02466a7134077c8c56
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "34853973"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38100194"
 ---
-# <a name="persisting-user-logins-across-powershell-sessions"></a>Использование учетных данных для входа в разных сеансах PowerShell
+# <a name="persisting-user-credentials-across-powershell-sessions"></a>Использование учетных данных пользователя в разных сеансах PowerShell
 
-Начиная с выпуска Azure PowerShell за сентябрь 2017 г. для командлетов Azure Resource Manager теперь доступна новая возможность — **автосохранение контекста Azure**. Эта функция позволяет реализовать несколько новых сценариев, включая:
+В Azure PowerShell существует функция **автосохранения контекста Azure**, которая предоставляет следующие возможности:
 
 - хранение учетных данных для входа для повторного использования в новых сеансах PowerShell;
 - упрощенное использование фоновых задач для запуска долго выполняющихся командлетов;
@@ -36,7 +36,7 @@ ms.locfileid: "34853973"
 
 В предыдущих версиях контекст Azure нужно было создавать при каждом открытии нового сеанса PowerShell. Начиная с версии Azure PowerShell 4.4.0 вы можете включить автоматическое сохранение и повторное использование контекстов Azure при каждом открытии нового сеанса PowerShell.
 
-## <a name="automatically-saving-the-context-for-the-next-login"></a>Автоматическое сохранение контекста для следующего входа
+## <a name="automatically-saving-the-context-for-the-next-sign-in"></a>Автоматическое сохранение контекста для следующего входа
 
 По умолчанию Azure PowerShell не хранит данные контекста после закрытия сеанса PowerShell.
 
@@ -71,11 +71,11 @@ ms.locfileid: "34853973"
 
 ## <a name="creating-selecting-renaming-and-removing-contexts"></a>Создание, выбор, переименование и удаление контекстов
 
-Для создания контекста нужно войти в Azure. Командлет `Add-AzureRmAccount` (или его псевдоним `Login-AzureRmAccount`) определяет контекст по умолчанию, который будет использоваться последующими командлетами Azure PowerShell. Он также обеспечивает доступ к любому клиенту или подписке в рамках разрешений, предоставляемых вашими учетными данными для входа.
+Чтобы создать контекст, нужно войти в Azure. Командлет `Add-AzureRmAccount` (или его псевдоним `Login-AzureRmAccount`) определяет контекст по умолчанию, который будет использоваться последующими командлетами Azure PowerShell. Он также обеспечивает доступ к любому клиенту или подписке в рамках разрешений, предоставляемых вашими учетными данными.
 
 Чтобы добавить новый контекст после входа, используйте командлет `Set-AzureRmContext` (или его псевдоним `Select-AzureRmSubscription`).
 
-```powershell
+```azurepowershell-interactive
 PS C:\> Set-AzureRMContext -Subscription "Contoso Subscription 1" -Name "Contoso1"
 ```
 
@@ -83,7 +83,7 @@ PS C:\> Set-AzureRMContext -Subscription "Contoso Subscription 1" -Name "Contoso
 
 Чтобы переименовать существующий контекста, используйте командлет `Rename-AzureRmContext`. Например: 
 
-```powershell
+```azurepowershell-interactive
 PS C:\> Rename-AzureRmContext '[user1@contoso.org; 123456-7890-1234-564321]` 'Contoso2'
 ```
 
@@ -91,7 +91,7 @@ PS C:\> Rename-AzureRmContext '[user1@contoso.org; 123456-7890-1234-564321]` 'Co
 
 Наконец, чтобы удалить контекст, используйте командлет `Remove-AzureRmContext`.  Например: 
 
-```powershell
+```azurepowershell-interactive
 PS C:\> Remove-AzureRmContext Contoso2
 ```
 
@@ -101,7 +101,7 @@ PS C:\> Remove-AzureRmContext Contoso2
 
 Вы можете удалить все учетные данные и связанные контексты пользователя или субъекта-службы с помощью командлета `Remove-AzureRmAccount` (или его псевдонима `Logout-AzureRmAccount`). Выполняемый без параметров командлет `Remove-AzureRmAccount` удаляет все учетные данные и контексты, связанные с пользователем или субъектом-службой в текущем контексте. Чтобы связать с контекстом определенный субъект, вы можете передать имя пользователя, имя субъекта-службы или сам контекст.
 
-```powershell
+```azurepowershell-interactive
 Remove-AzureRmAccount user1@contoso.org
 ```
 
@@ -111,7 +111,7 @@ Remove-AzureRmAccount user1@contoso.org
 
 Например, вот как можно изменить контекст по умолчанию в текущем сеансе PowerShell, не влияя на другие окна, или изменить контекст, который будет использоваться при следующем открытии сеанса:
 
-```powershell
+```azurepowershell-interactive
 PS C:\> Select-AzureRmContext Contoso1 -Scope Process
 ```
 
@@ -119,7 +119,7 @@ PS C:\> Select-AzureRmContext Contoso1 -Scope Process
 
 Параметр автосохранения контекста сохраняется в каталоге пользователя Azure PowerShell (`%AppData%\Roaming\Windows Azure PowerShell`). На некоторых компьютерах учетные записи могут не иметь доступ к этому каталогу. В таких случаях можно использовать переменную среды
 
-```powershell
+```azurepowershell-interactive
 $env:AzureRmContextAutoSave="true" | "false"
 ```
 
@@ -140,7 +140,7 @@ $env:AzureRmContextAutoSave="true" | "false"
 Изменения в существующих командлетах профиля
 
 - [Add-AzureRmAccount][login] — возможность входа на уровне процесса или текущего пользователя.
-  После входа разрешено присваивать имя контексту по умолчанию.
+  После аутентификации разрешено присваивать имя контексту по умолчанию.
 - [Import-AzureRmContext][import] — возможность входа на уровне процесса или текущего пользователя.
 - [Set-AzureRmContext][set-context] — возможность выбора существующих именованных контекстов и применения изменений на уровне процесса или текущего пользователя.
 

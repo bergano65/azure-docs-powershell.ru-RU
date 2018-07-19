@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 08/31/2017
-ms.openlocfilehash: 3107f77987745faa7ec57ea4811c62a38a7b2aa2
+ms.openlocfilehash: 76e08c462bb34bd2b16a11f70f14c4584b72795a
 ms.sourcegitcommit: 990f82648b0aa2e970f96c02466a7134077c8c56
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 07/11/2018
-ms.locfileid: "38100262"
+ms.locfileid: "38100364"
 ---
 # <a name="persisting-user-credentials-across-powershell-sessions"></a>Использование учетных данных пользователя в разных сеансах PowerShell
 
@@ -38,12 +38,10 @@ ms.locfileid: "38100262"
 
 ## <a name="automatically-saving-the-context-for-the-next-sign-in"></a>Автоматическое сохранение контекста для следующего входа
 
-По умолчанию Azure PowerShell не хранит данные контекста после закрытия сеанса PowerShell.
+Начиная с версии Azure PowerShell 6.3.0, данные контекста автоматически сохраняются между сеансами. Чтобы PowerShell не сохранял учетные данные и данные контекста, используйте `Disable-AzureRmContextAutoSave`. Для работы с новым сеансом PowerShell вам нужно будет входить в Azure.
 
 Чтобы разрешить Azure PowerShell запоминать контекст после закрытия сеанса PowerShell, используйте `Enable-AzureRmContextAutosave`. Учетные данные и данные контекста автоматически сохраняются в специальной скрытой папке в каталоге пользователя (`%AppData%\Roaming\Windows Azure PowerShell`).
 Таким образом, каждый новый сеанс PowerShell обращается к контексту, который использовался в ходе последнего сеанса.
-
-Чтобы PowerShell не сохранял учетные данные и данные контекста, используйте `Disable-AzureRmContextAutoSave`. Для работы с новым сеансом PowerShell вам нужно будет входить в Azure.
 
 Командлеты, которые помогают управлять контекстами Azure, также предоставляют удобные средства. С их помощью вы можете применить изменения как для текущего сеанса PowerShell (область `Process`), так и для всех сеансов PowerShell (область `CurrentUser`). Эти параметры будут подробно описаны в разделе [Использование областей контекстов](#Using-Context-Scopes).
 
