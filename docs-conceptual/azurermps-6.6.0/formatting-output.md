@@ -8,26 +8,26 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 06/07/2018
 ms.openlocfilehash: 833c82903305f99be5ad43f707e22644bb568abe
-ms.sourcegitcommit: fd11600079ee3844986552bccc4e274a231332b6
+ms.sourcegitcommit: afae9f2f091b21ed07d5aec1c249cf859a8b89a4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39367843"
+ms.lasthandoff: 08/09/2018
+ms.locfileid: "39653429"
 ---
-# <a name="format-azurepowershell-cmdlet-output"></a><span data-ttu-id="824c0-103">Форматирование выходных данных командлетов Azure PowerShell</span><span class="sxs-lookup"><span data-stu-id="824c0-103">Format AzurePowerShell cmdlet output</span></span>
+# <a name="format-azurepowershell-cmdlet-output"></a><span data-ttu-id="60758-103">Форматирование выходных данных командлетов Azure PowerShell</span><span class="sxs-lookup"><span data-stu-id="60758-103">Format AzurePowerShell cmdlet output</span></span>
 
-<span data-ttu-id="824c0-104">По умолчанию каждый командлет Azure PowerShell заранее определяет форматирование выходных данных, что упрощает их чтение.</span><span class="sxs-lookup"><span data-stu-id="824c0-104">By default each Azure PowerShell cmdlet has predefined formatting of output making it easy to read.</span></span>  <span data-ttu-id="824c0-105">Среда PowerShell также позволяет гибко настраивать выходные данные или преобразовать выходные данные командлета в другой формат с помощью следующих командлетов:</span><span class="sxs-lookup"><span data-stu-id="824c0-105">PowerShell also provides the flexibility to adjust the output or convert the cmdlet output to a different format with the following cmdlets:</span></span>
+<span data-ttu-id="60758-104">По умолчанию каждый командлет Azure PowerShell заранее определяет форматирование выходных данных, что упрощает их чтение.</span><span class="sxs-lookup"><span data-stu-id="60758-104">By default each Azure PowerShell cmdlet has predefined formatting of output making it easy to read.</span></span>  <span data-ttu-id="60758-105">Среда PowerShell также позволяет гибко настраивать выходные данные или преобразовать выходные данные командлета в другой формат с помощью следующих командлетов:</span><span class="sxs-lookup"><span data-stu-id="60758-105">PowerShell also provides the flexibility to adjust the output or convert the cmdlet output to a different format with the following cmdlets:</span></span>
 
-| <span data-ttu-id="824c0-106">Форматирование</span><span class="sxs-lookup"><span data-stu-id="824c0-106">Formatting</span></span>      | <span data-ttu-id="824c0-107">Преобразование</span><span class="sxs-lookup"><span data-stu-id="824c0-107">Conversion</span></span>       |
+| <span data-ttu-id="60758-106">Форматирование</span><span class="sxs-lookup"><span data-stu-id="60758-106">Formatting</span></span>      | <span data-ttu-id="60758-107">Преобразование</span><span class="sxs-lookup"><span data-stu-id="60758-107">Conversion</span></span>       |
 |-----------------|------------------|
-| [<span data-ttu-id="824c0-108">Format-Custom</span><span class="sxs-lookup"><span data-stu-id="824c0-108">Format-Custom</span></span>](/powershell/module/microsoft.powershell.utility/format-custom) | [<span data-ttu-id="824c0-109">ConvertTo-Csv</span><span class="sxs-lookup"><span data-stu-id="824c0-109">ConvertTo-Csv</span></span>](/powershell/module/microsoft.powershell.utility/convertto-csv)  |
-| [<span data-ttu-id="824c0-110">Format-List</span><span class="sxs-lookup"><span data-stu-id="824c0-110">Format-List</span></span>](/powershell/module/microsoft.powershell.utility/format-list)   | [<span data-ttu-id="824c0-111">ConvertTo-Html</span><span class="sxs-lookup"><span data-stu-id="824c0-111">ConvertTo-Html</span></span>](/powershell/module/microsoft.powershell.utility/convertto-html) |
-| [<span data-ttu-id="824c0-112">Format-Table</span><span class="sxs-lookup"><span data-stu-id="824c0-112">Format-Table</span></span>](/powershell/module/microsoft.powershell.utility/format-table)  | [<span data-ttu-id="824c0-113">ConvertTo-Json</span><span class="sxs-lookup"><span data-stu-id="824c0-113">ConvertTo-Json</span></span>](/powershell/module/microsoft.powershell.utility/convertto-json) |
-| [<span data-ttu-id="824c0-114">Format-Wide</span><span class="sxs-lookup"><span data-stu-id="824c0-114">Format-Wide</span></span>](/powershell/module/microsoft.powershell.utility/format-wide)   | [<span data-ttu-id="824c0-115">ConvertTo-Xml</span><span class="sxs-lookup"><span data-stu-id="824c0-115">ConvertTo-Xml</span></span>](/powershell/module/microsoft.powershell.utility/convertto-xml)  |
+| [<span data-ttu-id="60758-108">Format-Custom</span><span class="sxs-lookup"><span data-stu-id="60758-108">Format-Custom</span></span>](/powershell/module/microsoft.powershell.utility/format-custom) | [<span data-ttu-id="60758-109">ConvertTo-Csv</span><span class="sxs-lookup"><span data-stu-id="60758-109">ConvertTo-Csv</span></span>](/powershell/module/microsoft.powershell.utility/convertto-csv)  |
+| [<span data-ttu-id="60758-110">Format-List</span><span class="sxs-lookup"><span data-stu-id="60758-110">Format-List</span></span>](/powershell/module/microsoft.powershell.utility/format-list)   | [<span data-ttu-id="60758-111">ConvertTo-Html</span><span class="sxs-lookup"><span data-stu-id="60758-111">ConvertTo-Html</span></span>](/powershell/module/microsoft.powershell.utility/convertto-html) |
+| [<span data-ttu-id="60758-112">Format-Table</span><span class="sxs-lookup"><span data-stu-id="60758-112">Format-Table</span></span>](/powershell/module/microsoft.powershell.utility/format-table)  | [<span data-ttu-id="60758-113">ConvertTo-Json</span><span class="sxs-lookup"><span data-stu-id="60758-113">ConvertTo-Json</span></span>](/powershell/module/microsoft.powershell.utility/convertto-json) |
+| [<span data-ttu-id="60758-114">Format-Wide</span><span class="sxs-lookup"><span data-stu-id="60758-114">Format-Wide</span></span>](/powershell/module/microsoft.powershell.utility/format-wide)   | [<span data-ttu-id="60758-115">ConvertTo-Xml</span><span class="sxs-lookup"><span data-stu-id="60758-115">ConvertTo-Xml</span></span>](/powershell/module/microsoft.powershell.utility/convertto-xml)  |
 
-## <a name="format-examples"></a><span data-ttu-id="824c0-116">Примеры форматирования</span><span class="sxs-lookup"><span data-stu-id="824c0-116">Format examples</span></span>
+## <a name="format-examples"></a><span data-ttu-id="60758-116">Примеры форматирования</span><span class="sxs-lookup"><span data-stu-id="60758-116">Format examples</span></span>
 
-<span data-ttu-id="824c0-117">В этом примере мы получаем список виртуальных машин Azure в нашей подписке по умолчанию.</span><span class="sxs-lookup"><span data-stu-id="824c0-117">In this example we get a list of Azure VMs in our default subscription.</span></span>  <span data-ttu-id="824c0-118">По умолчанию выходные данные команды `Get-AzureRmVM` представлены в табличном формате.</span><span class="sxs-lookup"><span data-stu-id="824c0-118">The `Get-AzureRmVM` command defaults output into a table format.</span></span>
+<span data-ttu-id="60758-117">В этом примере мы получаем список виртуальных машин Azure в нашей подписке по умолчанию.</span><span class="sxs-lookup"><span data-stu-id="60758-117">In this example we get a list of Azure VMs in our default subscription.</span></span>  <span data-ttu-id="60758-118">По умолчанию выходные данные команды `Get-AzureRmVM` представлены в табличном формате.</span><span class="sxs-lookup"><span data-stu-id="60758-118">The `Get-AzureRmVM` command defaults output into a table format.</span></span>
 
 ```azurepowershell-interactive
 Get-AzureRmVM
@@ -40,7 +40,7 @@ MYWESTEURG        MyUnbuntu1610 westeurope Standard_DS1_v2   Linux myunbuntu1610
 MYWESTEURG          MyWin2016VM westeurope Standard_DS1_v2 Windows   mywin2016vm880         Succeeded
 ```
 
-<span data-ttu-id="824c0-119">Если вы хотите ограничить число возвращаемых столбцов, используйте командлет `Format-Table`.</span><span class="sxs-lookup"><span data-stu-id="824c0-119">If you would like to limit the columns returned you can use the `Format-Table` cmdlet.</span></span> <span data-ttu-id="824c0-120">В следующем примере мы получим тот же список виртуальных машин, но ограничим выходные данные: они будут отображать только имя виртуальной машины, группу ресурсов и расположение виртуальной машины.</span><span class="sxs-lookup"><span data-stu-id="824c0-120">In the following example we get the same list of virtual machines but restrict the output to just the name of the VM, the resource group, and the location of the VM.</span></span>  <span data-ttu-id="824c0-121">Параметр `-Autosize` изменяет размеры столбцов в соответствии с размером данных.</span><span class="sxs-lookup"><span data-stu-id="824c0-121">The `-Autosize` parameter sizes the columns according to the size of the data.</span></span>
+<span data-ttu-id="60758-119">Если вы хотите ограничить число возвращаемых столбцов, используйте командлет `Format-Table`.</span><span class="sxs-lookup"><span data-stu-id="60758-119">If you would like to limit the columns returned you can use the `Format-Table` cmdlet.</span></span> <span data-ttu-id="60758-120">В следующем примере мы получим тот же список виртуальных машин, но ограничим выходные данные: они будут отображать только имя виртуальной машины, группу ресурсов и расположение виртуальной машины.</span><span class="sxs-lookup"><span data-stu-id="60758-120">In the following example we get the same list of virtual machines but restrict the output to just the name of the VM, the resource group, and the location of the VM.</span></span>  <span data-ttu-id="60758-121">Параметр `-Autosize` изменяет размеры столбцов в соответствии с размером данных.</span><span class="sxs-lookup"><span data-stu-id="60758-121">The `-Autosize` parameter sizes the columns according to the size of the data.</span></span>
 
 ```azurepowershell-interactive
 Get-AzureRmVM | Format-Table Name,ResourceGroupName,Location -AutoSize
@@ -53,7 +53,7 @@ MyUnbuntu1610 MYWESTEURG        westeurope
 MyWin2016VM   MYWESTEURG        westeurope
 ```
 
-<span data-ttu-id="824c0-122">Выходные данные также можно отформатировать в виде списка.</span><span class="sxs-lookup"><span data-stu-id="824c0-122">Output can also be formatted into a list.</span></span> <span data-ttu-id="824c0-123">В следующем примере показано, как использовать командлет `Format-List`.</span><span class="sxs-lookup"><span data-stu-id="824c0-123">The following example shows this using the`Format-List` cmdlet.</span></span>
+<span data-ttu-id="60758-122">Выходные данные также можно отформатировать в виде списка.</span><span class="sxs-lookup"><span data-stu-id="60758-122">Output can also be formatted into a list.</span></span> <span data-ttu-id="60758-123">В следующем примере показано, как использовать командлет `Format-List`.</span><span class="sxs-lookup"><span data-stu-id="60758-123">The following example shows this using the`Format-List` cmdlet.</span></span>
 
 ```azurepowershell-interactive
 Get-AzureRmVM | Format-List Name,VmId,Location,ResourceGroupName
@@ -71,9 +71,9 @@ Location          : westeurope
 ResourceGroupName : MYWESTEURG
 ```
 
-## <a name="convert-to-other-data-types"></a><span data-ttu-id="824c0-124">Преобразование в другие типы данных</span><span class="sxs-lookup"><span data-stu-id="824c0-124">Convert to other data types</span></span>
+## <a name="convert-to-other-data-types"></a><span data-ttu-id="60758-124">Преобразование в другие типы данных</span><span class="sxs-lookup"><span data-stu-id="60758-124">Convert to other data types</span></span>
 
-<span data-ttu-id="824c0-125">При помощи PowerShell также можно получить выходные данные команды и преобразовать их в несколько форматов данных.</span><span class="sxs-lookup"><span data-stu-id="824c0-125">PowerShell also allows taking command output and converting it into multiple data formats.</span></span> <span data-ttu-id="824c0-126">В следующем примере мы используем командлет `Select-Object`, чтобы получить атрибуты виртуальных машин в нашей подписке и преобразовать выходные данные в формат CSV, который можно легко импортировать в базу данных или электронную таблицу.</span><span class="sxs-lookup"><span data-stu-id="824c0-126">In the following example the `Select-Object` cmdlet is used to get attributes of the virtual machines in our subscription and convert the output to CSV format for easy import into a database or spreadsheet.</span></span>
+<span data-ttu-id="60758-125">При помощи PowerShell также можно получить выходные данные команды и преобразовать их в несколько форматов данных.</span><span class="sxs-lookup"><span data-stu-id="60758-125">PowerShell also allows taking command output and converting it into multiple data formats.</span></span> <span data-ttu-id="60758-126">В следующем примере мы используем командлет `Select-Object`, чтобы получить атрибуты виртуальных машин в нашей подписке и преобразовать выходные данные в формат CSV, который можно легко импортировать в базу данных или электронную таблицу.</span><span class="sxs-lookup"><span data-stu-id="60758-126">In the following example the `Select-Object` cmdlet is used to get attributes of the virtual machines in our subscription and convert the output to CSV format for easy import into a database or spreadsheet.</span></span>
 
 ```azurepowershell-interactive
 Get-AzureRmVM | Select-Object ResourceGroupName,Id,VmId,Name,Location,ProvisioningState | ConvertTo-Csv -NoTypeInformation
@@ -85,7 +85,7 @@ Get-AzureRmVM | Select-Object ResourceGroupName,Id,VmId,Name,Location,Provisioni
 "MYWESTUERG","/subscriptions/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX/resourceGroups/MYWESTUERG/providers/Microsoft.Compute/virtualMachines/MyWin2016VM","4650c755-fc2b-4fc7-a5bc-298d5c00808f","MyWin2016VM","westeurope","Succeeded"
 ```
 
-<span data-ttu-id="824c0-127">Выходные данные можно также преобразовать в формат JSON.</span><span class="sxs-lookup"><span data-stu-id="824c0-127">Output can also be converted into the JSON format.</span></span>  <span data-ttu-id="824c0-128">В следующем примере создается тот же список виртуальных машин, но формат выходных данных меняется на JSON.</span><span class="sxs-lookup"><span data-stu-id="824c0-128">The following example creates the same list of VMs but changes the output format to JSON.</span></span>
+<span data-ttu-id="60758-127">Выходные данные можно также преобразовать в формат JSON.</span><span class="sxs-lookup"><span data-stu-id="60758-127">Output can also be converted into the JSON format.</span></span>  <span data-ttu-id="60758-128">В следующем примере создается тот же список виртуальных машин, но формат выходных данных меняется на JSON.</span><span class="sxs-lookup"><span data-stu-id="60758-128">The following example creates the same list of VMs but changes the output format to JSON.</span></span>
 
 ```azurepowershell-interactive
 Get-AzureRmVM | Select-Object ResourceGroupName,Id,VmId,Name,Location,ProvisioningState | ConvertTo-Json
