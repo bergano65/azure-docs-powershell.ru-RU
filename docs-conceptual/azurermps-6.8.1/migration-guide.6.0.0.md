@@ -6,13 +6,13 @@ ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.date: 5/1/2018
-ms.openlocfilehash: 4f9c99152fd6ddc23aec005c8e8957e545e65246
-ms.sourcegitcommit: dca906e73e943aac207cee23b79915773419c673
+ms.date: 05/01/2018
+ms.openlocfilehash: 72a0e9ca8562dc06a1fe2718658172ce9ee20f0e
+ms.sourcegitcommit: 971f19181b2cd68b7845bbebdb22858c06541c8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/30/2018
-ms.locfileid: "43250278"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43383946"
 ---
 # <a name="breaking-changes-for-microsoft-azure-powershell-600"></a>Критически важные изменения в Microsoft Azure PowerShell 6.0.0
 
@@ -22,7 +22,7 @@ ms.locfileid: "43250278"
 
 - [Общие критически важные изменения](#general-breaking-changes)
     - [Минимальная требуемая версия изменена на PowerShell 5.0](#minimum-powershell-version-required-bumped-to-50)
-    - [Автосохранение контекста включено по умолчанию](#context-autosaved-enabled-by-default)
+    - [Автосохранение контекста включено по умолчанию](#context-autosave-enabled-by-default)
     - [Удаление псевдонимов Tags](#removal-of-tags-alias)
 - [Критически важные изменения в командлетах AzureRM.Compute](#breaking-changes-to-azurermcompute-cmdlets)
 - [Критически важные изменения в командлетах AzureRM.DataLakeStore](#breaking-changes-to-azurermdatalakestore-cmdlets)
