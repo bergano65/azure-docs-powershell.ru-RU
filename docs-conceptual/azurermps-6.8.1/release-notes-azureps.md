@@ -7,19 +7,68 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.workload: ''
-ms.date: 5/1/2018
-ms.openlocfilehash: 6043d17df1b5e91521bad31e65372c10ee6a5c6a
-ms.sourcegitcommit: dca906e73e943aac207cee23b79915773419c673
+ms.date: 08/28/2018
+ms.openlocfilehash: f4f3141998be14f0b5b223aed1af283534bf061d
+ms.sourcegitcommit: 971f19181b2cd68b7845bbebdb22858c06541c8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/30/2018
-ms.locfileid: "43250103"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43383844"
 ---
 # <a name="release-notes"></a>Заметки о выпуске
 
 Здесь приведен список изменений, внесенных в Azure PowerShell в этом выпуске.
 
 ---
+## <a name="681---august-2018"></a>6.8.1 — август 2018 г.
+#### <a name="general"></a>Общие сведения
+* Исправлена проблема с отсутствием настройки группы ресурсов по умолчанию.
+* Обновлены общие сборки среды выполнения
+
+#### <a name="azurermapimanagement"></a>AzureRM.ApiManagement
+* Исправлена проблема с отсутствием настройки группы ресурсов по умолчанию.
+* Устранена проблема, описанная здесь: https://github.com/Azure/azure-powershell/issues/6603.
+    - Командлеты Import-AzureRmApiManagementApi и *-AzureRmApiManagementCertificate теперь обрабатывают относительные пути.
+* Устранена проблема, описанная здесь: https://github.com/Azure/azure-powershell/issues/6879.
+    - CertificateInformation — это задаваемое свойство, обеспечивающее правильную работу командлета Set-AzureRmApiManagement. Проблема исправлена путем обновления пакета NuGet до версии 4.0.4-preview.
+* Устранена проблема, описанная здесь: https://github.com/Azure/azure-powershell/issues/6853.
+    - Исправлен фильтр OData для поиска по имени продукта.
+* Устранена проблема, описанная здесь: https://github.com/Azure/azure-powershell/issues/6814.
+    - Исправлен фильтр OData для поиска по имени API.
+* Добавлена поддержка средства ведения журнала Azure Monitor.
+
+
+#### <a name="azurermcompute"></a>AzureRM.Compute
+* Исправлена проблема с отсутствием в выходных данных ошибки целевого объекта.
+* Исправлена проблема с типом учетной записи хранения для виртуальной машины с управляемым диском.
+* Исправлена проблема с отсутствием настройки группы ресурсов по умолчанию.
+* Исправлены командлеты расширения AEM для других сред, например Azure для Китая.
+
+#### <a name="azurermnetwork"></a>AzureRM.Network
+* Стандартное представление выходных данных командлетов изменено на представление таблиц.
+
+#### <a name="azurermpowerbiembedded"></a>AzureRM.PowerBIEmbedded
+* Исправлена проблема с Update-AzureRmPowerBIEmbeddedCapacity при попытке масштабировать приостановленную емкость.
+
+
+#### <a name="azurermresources"></a>AzureRM.Resources
+* Исправлена проблема с созданием управляемых приложений из Marketplace.
+
+#### <a name="azurermservicebus"></a>AzureRM.ServiceBus
+* Исправленные проблемы
+    - https://github.com/Azure/azure-powershell/issues/5058
+    - https://github.com/Azure/azure-powershell/issues/5055
+    - https://github.com/Azure/azure-powershell/issues/6891
+
+#### <a name="azurermtrafficmanager"></a>AzureRM.TrafficManager
+* Добавлена поддержка метода маршрутизации MultiValue.
+    - Добавлен новый параметр MaxReturn для маршрутизации MultiValue.
+* Добавлена поддержка метода маршрутизации Subnet.
+    - Добавлена поддержка диапазонов IP-адресов (подсетей) в конечных точках.
+* Добавлена поддержка пользовательских заголовков в профилях.
+* Добавлена поддержка диапазонов кода ожидаемого состояния в профилях.
+* Добавлена поддержка пользовательских заголовков в конечных точках.
+
 ## <a name="680---august-2018"></a>6.8.0 — август 2018 г.
 #### <a name="general"></a>Общие сведения
 * Исправлена проблема с отсутствием настройки группы ресурсов по умолчанию.
