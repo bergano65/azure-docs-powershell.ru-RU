@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/01/2018
-ms.openlocfilehash: 72a0e9ca8562dc06a1fe2718658172ce9ee20f0e
-ms.sourcegitcommit: 971f19181b2cd68b7845bbebdb22858c06541c8c
+ms.openlocfilehash: 227bec0f7eb24b0941e9e21d37524b290c4b83a5
+ms.sourcegitcommit: bc88e64c494337821274d6a66c1edad656c119c5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43383946"
+ms.lasthandoff: 09/20/2018
+ms.locfileid: "46304171"
 ---
 # <a name="breaking-changes-for-microsoft-azure-powershell-600"></a>Критически важные изменения в Microsoft Azure PowerShell 6.0.0
 
@@ -41,11 +41,11 @@ ms.locfileid: "43383946"
 
 ### <a name="minimum-powershell-version-required-bumped-to-50"></a>Минимальная требуемая версия изменена на PowerShell 5.0
 
-Ранее для выполнения любого командлета требовалась версия _не ниже_ Azure PowerShell 3.0. Со временем требуемая версия повысится до PowerShell 5.0. Сведения об обновлении до PowerShell 5.0 см. в [этой таблице](https://docs.microsoft.com/en-us/powershell/scripting/setup/installing-windows-powershell?view=powershell-6#upgrading-existing-windows-powershell).
+Ранее для выполнения любого командлета требовалась версия _не ниже_ Azure PowerShell 3.0. Со временем требуемая версия повысится до PowerShell 5.0. Сведения об обновлении до PowerShell 5.0 см. в [этой таблице](https://docs.microsoft.com/powershell/scripting/setup/installing-windows-powershell?view=powershell-6#upgrading-existing-windows-powershell).
 
 ### <a name="context-autosave-enabled-by-default"></a>Автосохранение контекста включено по умолчанию
 
-Автосохранение контекста подразумевает хранение учетных данных Azure, которые могут использоваться в новых или других сеансах PowerShell. Дополнительные сведения об автосохранении контекста см. в [этом документе](https://docs.microsoft.com/en-us/powershell/azure/context-persistence).
+Автосохранение контекста подразумевает хранение учетных данных Azure, которые могут использоваться в новых или других сеансах PowerShell. Дополнительные сведения об автосохранении контекста см. в [этом документе](https://docs.microsoft.com/powershell/azure/context-persistence).
 
 Ранее эта функция была отключена по умолчанию, то есть сведения об аутентификации пользователей Azure не сохранялись между сеансами. Чтобы включить сохранение контекста пользователи выполняли командлет `Enable-AzureRmContextAutosave`. Со временем сохранение контекста будет включено по умолчанию, то есть контекст будет сохраняться при следующем входе в систему пользователей _без сохраненных настроек автосохранения контекста_. Пользователи смогут отключить эту функцию с помощью командлета `Disable-AzureRmContextAutosave`.
 
@@ -255,8 +255,8 @@ Remove-AzureRmDataLakeStoreItem -Account "ContosoADL" -path /myFolder -Recurse
 - Этот командлет больше не принимает отдельные параметры, из которых состоит маркер доступа. Вместо этого он изменяет такие явные параметры маркеров, как `Service` или `Permissions`, на универсальный параметр `TemplateUri`, который соответствуют примеру маркера доступа, определенному в другом месте (предположительно с помощью командлетов службы хранилища PowerShell или созданных вручную в соответствии с документацией службы хранилища.) В командлете сохранен параметр `ValidityPeriod`.
 
 Дополнительные сведения о создании общих маркеров доступа для службы хранилища Azure см. на страницах соответствующей документации.
-- [Constructing a Service SAS] (https://docs.microsoft.com/en-us/rest/api/storageservices/Constructing-a-Service-SAS) (Создание подписанного URL-адреса уровня службы)
-- [Создание подписанного URL-адреса уровня учетной записи] (https://docs.microsoft.com/en-us/rest/api/storageservices/constructing-an-account-sas)
+- [Constructing a Service SAS] (https://docs.microsoft.com/rest/api/storageservices/Constructing-a-Service-SAS) (Создание подписанного URL-адреса уровня службы)
+- [Создание подписанного URL-адреса уровня учетной записи] (https://docs.microsoft.com/rest/api/storageservices/constructing-an-account-sas)
 
 ```powershell
 # Old
