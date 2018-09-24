@@ -1,18 +1,18 @@
 ---
 title: Вход с помощью Azure PowerShell
-description: Инструкции по выполнению входа с помощью Azure PowerShell в роли пользователя или субъекта-службы или с помощью MSI.
+description: Сведения о том, как с помощью Azure PowerShell выполнить вход в роли пользователя, субъекта-службы или с помощью управляемых удостоверений для ресурсов Azure.
 author: sptramer
 ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/15/2017
-ms.openlocfilehash: af39fec226492c9ccf251c996b57e274de783178
-ms.sourcegitcommit: 990f82648b0aa2e970f96c02466a7134077c8c56
+ms.openlocfilehash: 530eafcd0d14dbfd790a22d80c5922f304f4e0b2
+ms.sourcegitcommit: bc88e64c494337821274d6a66c1edad656c119c5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38100279"
+ms.lasthandoff: 09/20/2018
+ms.locfileid: "46300703"
 ---
 # <a name="sign-in-with-azure-powershell"></a>Вход с помощью Azure PowerShell
 
@@ -44,11 +44,11 @@ $pscredential = Get-Credential
 Connect-AzureRmAccount -ServicePrincipal -ApplicationId  "http://my-app" -Credential $pscredential -TenantId $tenantid
 ```
 
-## <a name="sign-in-using-an-azure-vm-managed-service-identity"></a>Вход с использованием управляемого удостоверения службы виртуальных машин Azure
+## <a name="sign-in-using-managed-identities-for-azure-resources"></a>Вход с использованием управляемых удостоверений для ресурсов Azure
 
-Удостоверение управляемой службы (MSI) — это функция Azure Active Directory, доступная в режиме предварительной версии. Вы можете использовать субъект-службу MSI для входа и получения маркера доступа только для приложений, обеспечив возможность обращения к другим ресурсам. Удостоверение MSI доступно только на виртуальных машинах в облаке Azure.
+Управляемые удостоверения для ресурсов Azure — это функция Azure Active Directory. Вы можете использовать субъект-службу управляемых удостоверений для входа и получения маркера доступа только для приложений, обеспечив возможность обращения к другим ресурсам. Управляемые удостоверения доступны только на виртуальных машинах в облаке Azure.
 
-Дополнительные сведения о MSI см. в руководстве по [использованию удостоверения управляемой службы виртуальных машин Azure (MSI) для входа и получения маркеров](/azure/active-directory/msi-how-to-get-access-token-using-msi).
+Дополнительные сведения об управляемых удостоверениях для ресурсов Azure см. в руководстве по [использованию управляемых удостоверений для ресурсов Azure на виртуальной машине Azure для получения маркера доступа](/azure/active-directory/managed-identities-azure-resources/how-to-use-vm-token).
 
 ## <a name="sign-in-to-another-cloud"></a>Вход в другое облако
 
