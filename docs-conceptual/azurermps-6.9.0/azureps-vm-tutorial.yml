@@ -1,0 +1,376 @@
+### YamlMime:Tutorial
+title: <span data-ttu-id="d66b0-101">Создание виртуальных машин с помощью Azure PowerShell</span><span class="sxs-lookup"><span data-stu-id="d66b0-101">Create virtual machines with the Azure PowerShell</span></span>
+metadata:
+  title: Создание виртуальных машин с помощью Azure PowerShell
+  description: Начните создавать виртуальные машины с помощью Azure PowerShell.
+  audience: Developer
+  level: Beginner
+  displayType: two-column
+  interactive: azurepowershell
+  ms.date: 02/08/2018
+  ms.author: sttramer
+  author: sptramer
+  manager: carmonm
+  ms.devlang: azure-powershell
+  ms.prod: powershell
+  ms.technology: azure-powershell
+  ms.topic: tutorial
+  clicktale: true
+  ms.openlocfilehash: 902613ab544472932affed980b7e602925544a8b
+  ms.sourcegitcommit: 19dffee617477001f98d43e39a50ce1fad087b74
+  ms.translationtype: HT
+  ms.contentlocale: ru-RU
+  ms.lasthandoff: 09/27/2018
+  ms.locfileid: "47178873"
+items:
+- durationInMinutes: 1
+  content: >-
+    <span data-ttu-id="d66b0-104">В этом руководстве описано, как настроить виртуальную машину с помощью Azure PowerShell.</span><span class="sxs-lookup"><span data-stu-id="d66b0-104">In this tutorial, you learn all of the steps involved in setting up a virtual machine with Azure PowerShell.</span></span> <span data-ttu-id="d66b0-105">Вы также узнаете, как создавать запросы выходных данных, повторно использовать ресурсы Azure и очищать ресурсы.</span><span class="sxs-lookup"><span data-stu-id="d66b0-105">The tutorial also covers output queries, Azure resource reuse, and resource cleanup.</span></span>
+
+
+    <span data-ttu-id="d66b0-106">Для работы с этим руководством вам понадобится интерактивная служба Azure Cloud Shell или вы можете [установить Azure PowerShell](install-azurerm-ps.md) локально.</span><span class="sxs-lookup"><span data-stu-id="d66b0-106">This tutorial can be completed with the interactive experience offered through Azure Cloud Shell, or you may [install Azure PowerShell](install-azurerm-ps.md) locally.</span></span>
+
+
+    <span data-ttu-id="d66b0-107">Используйте клавиши __CTRL+SHIFT+V__ (__CMD+SHIFT+V__ в macOS), чтобы вставить текст руководства в Azure Cloud Shell.</span><span class="sxs-lookup"><span data-stu-id="d66b0-107">Use __ctrl-shift-v__ (__cmd-shift-v__ on macOS) to paste tutorial text into Azure Cloud Shell.</span></span>
+- durationInMinutes: 1
+  title: <span data-ttu-id="d66b0-108">Вход</span><span class="sxs-lookup"><span data-stu-id="d66b0-108">Sign in</span></span>
+  content: >-
+    <span data-ttu-id="d66b0-109">Если вы используете локальную установку Azure PowerShell, вам нужно войти, прежде чем выполнять какие-либо действия.</span><span class="sxs-lookup"><span data-stu-id="d66b0-109">If you're using a local install of the Azure PowerShell, you need to sign in before performing any other steps.</span></span>
+
+
+    ```powershell
+
+    Connect-AzureRmAccount
+
+    ```
+
+
+    <span data-ttu-id="d66b0-110">Выполните вход, следуя инструкциям в окне терминала.</span><span class="sxs-lookup"><span data-stu-id="d66b0-110">Complete the sign in process by following the steps displayed in your terminal.</span></span>
+- durationInMinutes: 1
+  title: <span data-ttu-id="d66b0-111">Создание группы ресурсов</span><span class="sxs-lookup"><span data-stu-id="d66b0-111">Create a resource group</span></span>
+  content: >-
+    <span data-ttu-id="d66b0-112">В Azure все ресурсы включаются в одну группу управления ресурсами.</span><span class="sxs-lookup"><span data-stu-id="d66b0-112">In Azure, all resources are allocated in a resource management group.</span></span> <span data-ttu-id="d66b0-113">Эти группы обеспечивают логическое объединение ресурсов, позволяя работать с ними как с коллекцией.</span><span class="sxs-lookup"><span data-stu-id="d66b0-113">Resource groups provide logical groupings of resources that make them easier to work with as a collection.</span></span>
+
+    <span data-ttu-id="d66b0-114">В этом руководстве все созданные ресурсы помещаются в одну группу с именем `TutorialResources`.</span><span class="sxs-lookup"><span data-stu-id="d66b0-114">For this tutorial, all of the created resources go into a single group named `TutorialResources`.</span></span>
+
+
+    ```powershell
+
+    New-AzureRmResourceGroup -Name TutorialResources -Location eastus
+
+    ```
+
+
+    ```Output
+
+    ResourceGroupName : TutorialResources
+
+    Location          : eastus
+
+    ProvisioningState : Succeeded
+
+    Tags              :
+
+    ResourceId        : /subscriptions/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX/resourceGroups/TutorialResources
+
+    ```
+- durationInMinutes: 1
+  title: <span data-ttu-id="d66b0-115">Создание учетных данных администратора для виртуальной машины</span><span class="sxs-lookup"><span data-stu-id="d66b0-115">Create admin credentials for the VM</span></span>
+  content: >-
+    <span data-ttu-id="d66b0-116">Перед созданием виртуальной машины необходимо создать объект учетных данных, содержащий имя пользователя и пароль учетной записи администратора виртуальной машины Windows.</span><span class="sxs-lookup"><span data-stu-id="d66b0-116">Before you can create a new virtual machine, you must create a credential object containing the username and password for the administrator account of the Windows VM.</span></span>
+
+
+    ```powershell
+
+    $cred = Get-Credential -Message "Enter a username and password for the virtual machine."
+
+    ```
+
+
+    <span data-ttu-id="d66b0-117">Когда отобразится запрос, введите имя пользователя и пароль.</span><span class="sxs-lookup"><span data-stu-id="d66b0-117">Enter the username and password when prompted.</span></span> <span data-ttu-id="d66b0-118">Полученный объект учетных данных передается как параметр в следующем шаге.</span><span class="sxs-lookup"><span data-stu-id="d66b0-118">The resulting credential object is passed as a parameter in the next step.</span></span>
+
+
+    ```Output
+
+    Windows PowerShell credential request.
+
+    Enter a username and password for the virtual machine.
+
+    User: tutorAdmin
+
+    Password for user tutorAdmin: *********
+
+    ```
+- durationInMinutes: 4
+  title: <span data-ttu-id="d66b0-119">Создание виртуальной машины</span><span class="sxs-lookup"><span data-stu-id="d66b0-119">Create a virtual machine</span></span>
+  content: >-
+    <span data-ttu-id="d66b0-120">Виртуальные машины в Azure имеют большое число зависимостей.</span><span class="sxs-lookup"><span data-stu-id="d66b0-120">Virtual machines in Azure have a large number of dependencies.</span></span> <span data-ttu-id="d66b0-121">Azure PowerShell создает эти ресурсы на основе указанных аргументов командной строки.</span><span class="sxs-lookup"><span data-stu-id="d66b0-121">The Azure PowerShell creates these resources for you based on the command-line arguments you specify.</span></span> <span data-ttu-id="d66b0-122">Для удобства чтения мы используем [сплаттинг PowerShell](/powershell/module/microsoft.powershell.core/about/about_splatting), чтобы передать параметры в командлеты Azure PowerShell.</span><span class="sxs-lookup"><span data-stu-id="d66b0-122">For readability, we are using [PowerShell splatting](/powershell/module/microsoft.powershell.core/about/about_splatting) to pass parameters to the Azure PowerShell cmdlets.</span></span>
+
+
+    <span data-ttu-id="d66b0-123">Создайте виртуальную машину под управлением Windows.</span><span class="sxs-lookup"><span data-stu-id="d66b0-123">Create a new virtual machine running Windows.</span></span>
+
+
+    ```powershell
+
+    $vmParams = @{
+      ResourceGroupName = 'TutorialResources'
+      Name = 'TutorialVM1'
+      Location = 'eastus'
+      ImageName = 'Win2016Datacenter'
+      PublicIpAddressName = 'tutorialPublicIp'
+      Credential = $cred
+      OpenPorts = 3389
+    }
+
+    $newVM1 = New-AzureRmVM @vmParams
+
+    ```
+
+    <span data-ttu-id="d66b0-124">При создании виртуальной машины отображаются используемые значения параметров и создаваемые ресурсы Azure.</span><span class="sxs-lookup"><span data-stu-id="d66b0-124">As the VM is created, you see the parameter values used and Azure resources being created.</span></span>
+
+    <span data-ttu-id="d66b0-125">PowerShell заменит индикатор хода выполнения, как показано ниже.</span><span class="sxs-lookup"><span data-stu-id="d66b0-125">PowerShell will displace a progress bar as shown below.</span></span>
+
+
+    ```Output
+     Creating Azure resources
+      39% \
+      [ooooooooooooooooooooooooooooooooooo                                                                 ]
+
+      Creating TutorialVM1 virtual machine.
+    ```
+
+
+    <span data-ttu-id="d66b0-126">Когда виртуальная машина будет создана, мы сможем просмотреть результаты на портале Azure или проверить переменную \$newVM1.</span><span class="sxs-lookup"><span data-stu-id="d66b0-126">Once the VM is ready, we can view the results in the Azure Portal or by inspecting the \$newVM1 variable.</span></span>
+
+
+    ```powershell
+
+    $newVM1
+
+    ```
+
+
+    ```Output
+
+    ResourceGroupName : TutorialResources
+
+    Id                : /subscriptions/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX/resourceGroups/TutorialResources/providers/Microsoft.Compute/virtualMachines/TutorialVM1
+
+    VmId              : 12345678-9abc-def0-1234-56789abcedf0
+
+    Name              : TutorialVM1
+
+    Type              : Microsoft.Compute/virtualMachines
+
+    Location          : eastus
+
+    Tags              : {}
+
+    HardwareProfile   : {VmSize}
+
+    NetworkProfile    : {NetworkInterfaces}
+
+    OSProfile         : {ComputerName, AdminUsername, WindowsConfiguration, Secrets}
+
+    ProvisioningState : Succeeded
+
+    StorageProfile    : {ImageReference, OsDisk, DataDisks}
+
+    ```
+
+
+    <span data-ttu-id="d66b0-127">Значения свойств, перечисленные внутри фигурных скобок, — это вложенные объекты.</span><span class="sxs-lookup"><span data-stu-id="d66b0-127">Property values listed inside of braces are nested objects.</span></span> <span data-ttu-id="d66b0-128">В следующем шаге мы просмотрим конкретные значения этих вложенных объектов.</span><span class="sxs-lookup"><span data-stu-id="d66b0-128">In the next step we will show you how to view specific values in these nested objects.</span></span>
+- durationInMinutes: 5
+  title: <span data-ttu-id="d66b0-129">Получение сведений о виртуальной машине с помощью запросов</span><span class="sxs-lookup"><span data-stu-id="d66b0-129">Get VM information with queries</span></span>
+  content: >-
+    <span data-ttu-id="d66b0-130">Давайте получим более подробные сведения о созданной виртуальной машине.</span><span class="sxs-lookup"><span data-stu-id="d66b0-130">Let's get some more detailed information from the VM we just created.</span></span> <span data-ttu-id="d66b0-131">В этом примере мы проверим имя виртуальной машины и созданную учетную запись администратора.</span><span class="sxs-lookup"><span data-stu-id="d66b0-131">In this example, we verify the Name of the VM and the admin account we created.</span></span>
+
+
+    ```powershell
+
+    $newVM1.OSProfile | Select-Object ComputerName,AdminUserName
+
+    ```
+
+
+    ```Output
+
+    ComputerName AdminUsername
+
+    ------------ -------------
+
+    TutorialVM1  tutorialAdmin
+
+    ```
+
+
+    <span data-ttu-id="d66b0-132">Мы можем использовать и другие команды Azure PowerShell, чтобы получить конкретные сведения о конфигурации сети.</span><span class="sxs-lookup"><span data-stu-id="d66b0-132">We can use other Azure PowerShell commands to get specific information about the network configuration.</span></span>
+
+
+    ```powershell
+
+    $newVM1 | Get-AzureRmNetworkInterface |
+      Select-Object -ExpandProperty IpConfigurations |
+        Select-Object Name,PrivateIpAddress
+    ```
+
+
+    <span data-ttu-id="d66b0-133">В этом примере мы используем конвейер PowerShell, чтобы отправить объект \$newVM1 в командлет `Get-AzureRmNetworkInterface`.</span><span class="sxs-lookup"><span data-stu-id="d66b0-133">In this example we are using the PowerShell pipeline to send the \$newVM1 object to the `Get-AzureRmNetworkInterface` cmdlet.</span></span> <span data-ttu-id="d66b0-134">Из результирующего объекта сетевого интерфейса мы выбираем вложенный объект IpConfigurations.</span><span class="sxs-lookup"><span data-stu-id="d66b0-134">From the resulting network interface object we are selecting the nested IpConfigurations object.</span></span> <span data-ttu-id="d66b0-135">Из объекта IpConfigurations мы выбираем свойства Name и PrivateIpAddress.</span><span class="sxs-lookup"><span data-stu-id="d66b0-135">From the IpConfigurations object we are selecting the Name and PrivateIpAddress properties.</span></span>
+
+
+    ```Output
+
+    Name        PrivateIpAddress
+
+    ----        ----------------
+
+    TutorialVM1 192.168.1.4
+
+    ```
+
+
+    <span data-ttu-id="d66b0-136">Чтобы убедиться, что виртуальная машина запущена, необходимо подключиться через удаленный рабочий стол.</span><span class="sxs-lookup"><span data-stu-id="d66b0-136">To confirm that the VM is running, we need to connect via Remote Desktop.</span></span> <span data-ttu-id="d66b0-137">Для этого необходимо знать общедоступный IP-адрес.</span><span class="sxs-lookup"><span data-stu-id="d66b0-137">For that, we need to know the Public IP address.</span></span>
+
+
+    ```powershell
+
+    $publicIp = Get-AzureRmPublicIpAddress -Name tutorialPublicIp -ResourceGroupName TutorialResources
+
+
+    $publicIp | Select-Object Name,IpAddress,@{label='FQDN';expression={$_.DnsSettings.Fqdn}}
+
+    ```
+
+
+    <span data-ttu-id="d66b0-138">В этом примере мы используем `Get-AzureRmPublicIpAddress` и помещаем результаты в переменную \$publicIp.</span><span class="sxs-lookup"><span data-stu-id="d66b0-138">In this example, we use the `Get-AzureRmPublicIpAddress` and store the results in the \$publicIp variable.</span></span> <span data-ttu-id="d66b0-139">Из этой переменной мы выбираем свойства и используем выражение, чтобы получить вложенное свойство Fqdn.</span><span class="sxs-lookup"><span data-stu-id="d66b0-139">From this variable we are selecting properties and using an expression to retrieve the nested Fqdn property.</span></span>
+
+
+    ```Output
+
+    Name             IpAddress           FQDN
+
+    ----             ---------           ----
+
+    tutorialPublicIp <PUBLIC_IP_ADDRESS> tutorialvm1-8a0999.eastus.cloudapp.azure.com
+
+    ```
+
+
+    <span data-ttu-id="d66b0-140">С локального компьютера можно выполнить следующую команду для подключения к виртуальной машине через удаленный рабочий стол.</span><span class="sxs-lookup"><span data-stu-id="d66b0-140">From your local machine you can run the following command to connect to the VM over Remote Desktop.</span></span>
+
+
+    ```powershell
+
+    mstsc.exe /v <PUBLIC_IP_ADDRESS>
+
+    ```
+
+
+    <span data-ttu-id="d66b0-141">См. дополнительные сведения о [запрашивании свойств объектов Azure](./queries-azureps.md).</span><span class="sxs-lookup"><span data-stu-id="d66b0-141">For more information about querying for object properties, see [Querying for Azure resources](./queries-azureps.md).</span></span>
+- durationInMinutes: 4
+  title: <span data-ttu-id="d66b0-142">Создание виртуальной машины в существующей подсети</span><span class="sxs-lookup"><span data-stu-id="d66b0-142">Creating a new VM on the existing subnet</span></span>
+  content: >-
+    <span data-ttu-id="d66b0-143">Вторая виртуальная машина использует существующую подсеть.</span><span class="sxs-lookup"><span data-stu-id="d66b0-143">The second VM uses the existing subnet.</span></span>
+
+
+    ```powershell
+
+    $vm2Params = @{
+      ResourceGroupName = 'TutorialResources'
+      Name = 'TutorialVM2'
+      ImageName = 'Win2016Datacenter'
+      VirtualNetworkName = 'TutorialVM1'
+      SubnetName = 'TutorialVM1'
+      PublicIpAddressName = 'tutorialPublicIp2'
+      Credential = $cred
+      OpenPorts = 3389
+    }
+
+    $newVM2 = New-AzureRmVM @vm2Params
+
+
+    $newVM2
+
+    ```
+
+
+    ```Output
+
+    ResourceGroupName        : TutorialResources
+
+    Id                       : /subscriptions/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX/resourceGroups/TutorialResources/providers/Microsoft.Compute/virtualMachines/TutorialVM2
+
+    VmId                     : 12345678-9abc-def0-1234-56789abcedf1
+
+    Name                     : TutorialVM2
+
+    Type                     : Microsoft.Compute/virtualMachines
+
+    Location                 : eastus
+
+    Tags                     : {}
+
+    HardwareProfile          : {VmSize}
+
+    NetworkProfile           : {NetworkInterfaces}
+
+    OSProfile                : {ComputerName, AdminUsername, WindowsConfiguration, Secrets}
+
+    ProvisioningState        : Succeeded
+
+    StorageProfile           : {ImageReference, OsDisk, DataDisks}
+
+    FullyQualifiedDomainName : tutorialvm2-dfa5af.eastus.cloudapp.azure.com
+
+    ```
+
+
+    <span data-ttu-id="d66b0-144">Вы можете пропустить несколько шагов, чтобы получить общедоступный IP-адрес новой виртуальной машины, так как он возвращается в свойстве FullyQualifiedDomainName объекта \$newVM2.</span><span class="sxs-lookup"><span data-stu-id="d66b0-144">You can skip a few steps to get the public IP address of the new VM since it's returned in the FullyQualifiedDomainName property of the \$newVM2 object.</span></span> <span data-ttu-id="d66b0-145">Используйте следующую команду для подключения с помощью удаленного рабочего стола.</span><span class="sxs-lookup"><span data-stu-id="d66b0-145">Use the following command to connect using Remote Desktop.</span></span>
+
+
+    ```powershell
+
+    mstsc.exe /v $newVM2.FullyQualifiedDomainName
+
+    ```
+- durationInMinutes: 4
+  title: <span data-ttu-id="d66b0-146">Очистка</span><span class="sxs-lookup"><span data-stu-id="d66b0-146">Cleanup</span></span>
+  content: >-
+    <span data-ttu-id="d66b0-147">Теперь, когда вы завершили работу с этим руководством, можно очистить созданные ресурсы.</span><span class="sxs-lookup"><span data-stu-id="d66b0-147">Now that the tutorial is complete, it's time to clean up the created resources.</span></span> <span data-ttu-id="d66b0-148">Вы можете удалить отдельные ресурсы с помощью команды `Remove-AzureRmResource`. Но безопаснее будет удалить все ресурсы в группе ресурсов, удалив саму группу с помощью команды `Remove-AzureRmResourceGroup`.</span><span class="sxs-lookup"><span data-stu-id="d66b0-148">You can delete individual resources with the `Remove-AzureRmResource` command, but the safest way to remove all resources in a resource group is delete the group using the `Remove-AzureRmResourceGroup` command.</span></span>
+
+
+    ```powershell
+
+    $job = Remove-AzureRmResourceGroup -Name TutorialResources -Force -AsJob
+
+
+    $job
+
+    ```
+
+
+    ```Output
+
+    Id     Name            PSJobTypeName   State         HasMoreData     Location             Command
+
+    --     ----            -------------   -----         -----------     --------             -------
+
+    1      Long Running... AzureLongRun... Running       True            localhost            Remove-AzureRmResource...
+
+    ```
+
+
+    <span data-ttu-id="d66b0-149">Эта команда удаляет ресурсы, созданные при работе с руководством, и гарантированно удаляет их в правильном порядке.</span><span class="sxs-lookup"><span data-stu-id="d66b0-149">This command deletes the resources created during the tutorial, and is guaranteed to deallocate them in the correct order.</span></span> <span data-ttu-id="d66b0-150">Параметр `-AsJob` предотвращает блокировку PowerShell в ходе удаления.</span><span class="sxs-lookup"><span data-stu-id="d66b0-150">The `-AsJob` parameter keeps PowerShell from blocking while the deletion takes place.</span></span> <span data-ttu-id="d66b0-151">Чтобы дождаться завершения удаления, используйте следующую команду:</span><span class="sxs-lookup"><span data-stu-id="d66b0-151">To wait until the deletion is complete, use the following command:</span></span>
+
+
+    ```powershell
+
+    Wait-Job -Id $job.Id
+
+    ```
+
+
+    <span data-ttu-id="d66b0-152">Очистка ресурсов — это последнее действие в рамках этого руководства.</span><span class="sxs-lookup"><span data-stu-id="d66b0-152">With cleanup completed, the tutorial is finished.</span></span> <span data-ttu-id="d66b0-153">Теперь еще раз вкратце повторите все, о чем вы узнали. Также вы можете воспользоваться ссылками на ресурсы, которые помогут вам перейти к дальнейшим действиям.</span><span class="sxs-lookup"><span data-stu-id="d66b0-153">Continue on for a summary of everything you learned and links to resources that will help you with your next steps.</span></span>
+- durationInMinutes: 1
+  title: <span data-ttu-id="d66b0-154">Сводка</span><span class="sxs-lookup"><span data-stu-id="d66b0-154">Summary</span></span>
+  content: "\n<span data-ttu-id=\"d66b0-155\">Поздравляем!</span><span class=\"sxs-lookup\"><span data-stu-id=\"d66b0-155\">Congratulations!</span></span> <span data-ttu-id=\"d66b0-156\">Вы узнали, как создавать виртуальные машины с новыми или существующими ресурсами, использовать выражения и другие команды Azure PowerShell для записи данных в переменные оболочки, а также выполнять поиск некоторых ресурсов, которые создаются для виртуальных машин Azure.</span><span class=\"sxs-lookup\"><span data-stu-id=\"d66b0-156\">You learned how to create VMs with new or existing resources, used expressions and other Azure PowerShell commands to to capture data to be stored in shell variables, and looked at some of the resources that get created for Azure VMs.</span></span>\n\n<span data-ttu-id=\"d66b0-157\">Ваши дальнейшие действия будут зависеть от того, для чего вы планируете использовать Azure PowerShell.</span><span class=\"sxs-lookup\"><span data-stu-id=\"d66b0-157\">Where you go from here depends on how you plan to use Azure PowerShell.</span></span> <span data-ttu-id=\"d66b0-158\">Доступно множество материалов, которые подробно описывают использование компонентов, рассматриваемых в этом руководстве.</span><span class=\"sxs-lookup\"><span data-stu-id=\"d66b0-158\">There are a variety of materials that go further in depth on the features covered in this tutorial.</span></span>\n\n### <a name=\"in-depth-azure-powershell-documentation\"></a><span data-ttu-id=\"d66b0-159\">Подробная документация по Azure PowerShell</span><span class=\"sxs-lookup\"><span data-stu-id=\"d66b0-159\">In-depth Azure PowerShell documentation</span></span>\n\n<span data-ttu-id=\"d66b0-160\">Изучение полной [документации по Azure PowerShell](overview.md) может занять какое-то время.</span><span class=\"sxs-lookup\"><span data-stu-id=\"d66b0-160\">You might want to take time to explore the complete [Azure PowerShell documentation](overview.md) set.</span></span>\n\n<span data-ttu-id=\"d66b0-161\">Дополнительные сведения о командах, используемых в этом руководстве, см. в следующих ресурсах.</span><span class=\"sxs-lookup\"><span data-stu-id=\"d66b0-161\">For more information about the commands used in this tutorial, see the following articles.</span></span>\n\n- [<span data-ttu-id=\"d66b0-162\">New-AzureRmResourceGroup</span><span class=\"sxs-lookup\"><span data-stu-id=\"d66b0-162\">New-AzureRmResourceGroup</span></span>](/powershell/module/azurerm.resources/new-azurermresourcegroup)\n- [<span data-ttu-id=\"d66b0-163\">Get-Credential</span><span class=\"sxs-lookup\"><span data-stu-id=\"d66b0-163\">Get-Credential</span></span>](/powershell/module/microsoft.powershell.security/get-credential)\n- [<span data-ttu-id=\"d66b0-164\">New-AzureRmVM</span><span class=\"sxs-lookup\"><span data-stu-id=\"d66b0-164\">New-AzureRmVM</span></span>](/powershell/module/azurerm.compute/new-azurermvm)\n- [<span data-ttu-id=\"d66b0-165\">Select-Object</span><span class=\"sxs-lookup\"><span data-stu-id=\"d66b0-165\">Select-Object</span></span>](/powershell/module/microsoft.powershell.utility/select-object)\n- [<span data-ttu-id=\"d66b0-166\">Get-AzureRmPublicIpAddress</span><span class=\"sxs-lookup\"><span data-stu-id=\"d66b0-166\">Get-AzureRmPublicIpAddress</span></span>](/powershell/module/azurerm.network/get-AzureRmPublicIpAddress)\n- [<span data-ttu-id=\"d66b0-167\">Remove-AzureRmResourceGroup</span><span class=\"sxs-lookup\"><span data-stu-id=\"d66b0-167\">Remove-AzureRmResourceGroup</span></span>](/powershell/module/azurerm.resources/Remove-AzureRmResourceGroup)\n- [<span data-ttu-id=\"d66b0-168\">Wait-Job</span><span class=\"sxs-lookup\"><span data-stu-id=\"d66b0-168\">Wait-Job</span></span>](/powershell/module/microsoft.powershell.core/wait-job)\n\n<span data-ttu-id=\"d66b0-169\">Ниже также приведены ресурсы с подробным описание функций, рассматриваемых в этом руководстве.</span><span class=\"sxs-lookup\"><span data-stu-id=\"d66b0-169\">There are also articles that go deeper into the features that were shown in the tutorial.</span></span>\n\n- [<span data-ttu-id=\"d66b0-170\">Сплаттинг PowerShell</span><span class=\"sxs-lookup\"><span data-stu-id=\"d66b0-170\">PowerShell splatting</span></span>](/powershell/module/microsoft.powershell.core/about/about_splatting)\n- [<span data-ttu-id=\"d66b0-171\">Запросы</span><span class=\"sxs-lookup\"><span data-stu-id=\"d66b0-171\">Queries</span></span>](queries-azureps.md)\n- [<span data-ttu-id=\"d66b0-172\">Форматирование</span><span class=\"sxs-lookup\"><span data-stu-id=\"d66b0-172\">Formatting</span></span>](formatting-output.md)\n- [<span data-ttu-id=\"d66b0-173\">Использование заданий PowerShell</span><span class=\"sxs-lookup\"><span data-stu-id=\"d66b0-173\">Using PowerShell jobs</span></span>](using-psjobs.md)\n\n### <a name=\"sample-scripts\"></a><span data-ttu-id=\"d66b0-174\">Примеры сценариев</span><span class=\"sxs-lookup\"><span data-stu-id=\"d66b0-174\">Sample scripts</span></span>\n\n<span data-ttu-id=\"d66b0-175\">Если вы хотите начать работу с определенными задачами прямо сейчас, изучите некоторые примеры скриптов.</span><span class=\"sxs-lookup\"><span data-stu-id=\"d66b0-175\">If you want to get started right away with specific tasks, look at some sample scripts.</span></span>\n\n- [<span data-ttu-id=\"d66b0-176\">Виртуальные машины Linux</span><span class=\"sxs-lookup\"><span data-stu-id=\"d66b0-176\">Linux Virtual Machines</span></span>](/azure/virtual-machines/linux/powershell-samples?toc=%2fpowershell%2fmodule%2ftoc.json)\n- [<span data-ttu-id=\"d66b0-177\">Виртуальные машины Windows</span><span class=\"sxs-lookup\"><span data-stu-id=\"d66b0-177\">Windows Virtual Machines</span></span>](/azure/virtual-machines/windows/powershell-samples?toc=%2fpowershell%2fmodule%2ftoc.json)\n- [<span data-ttu-id=\"d66b0-178\">Веб-приложения</span><span class=\"sxs-lookup\"><span data-stu-id=\"d66b0-178\">Web Apps</span></span>](/azure/app-service-web/app-service-powershell-samples?toc=%2fpowershell%2fmodule%2ftoc.json)\n- [<span data-ttu-id=\"d66b0-179\">Базы данных SQL</span><span class=\"sxs-lookup\"><span data-stu-id=\"d66b0-179\">SQL Databases</span></span>](/azure/sql-database/sql-database-powershell-samples?toc=%2fpowershell%2fmodule%2ftoc.json)\n- [<span data-ttu-id=\"d66b0-180\">База данных Cosmos</span><span class=\"sxs-lookup\"><span data-stu-id=\"d66b0-180\">Cosmos DB</span></span>](/azure/cosmos-db/powershell-samples?toc=%2fpowershell%2fmodules%2ftoc.json)\n\n### <a name=\"feedback\"></a><span data-ttu-id=\"d66b0-181\">Отзыв</span><span class=\"sxs-lookup\"><span data-stu-id=\"d66b0-181\">Feedback</span></span>\n\n<span data-ttu-id=\"d66b0-182\">Чтобы оставить отзыв, поделиться предложениями или задать вопросы, вы можете связаться с нами разными способами.</span><span class=\"sxs-lookup\"><span data-stu-id=\"d66b0-182\">If you'd like to give feedback, suggestions, or ask questions, there are a number of ways for you to get in touch.</span></span>\n\n* <span data-ttu-id=\"d66b0-183\">`Send-Feedback` — это встроенная команда Azure PowerShell, которая позволяет отправить отзыв команде в свободной форме.</span><span class=\"sxs-lookup\"><span data-stu-id=\"d66b0-183\">`Send-Feedback` is a built-in command for Azure PowerShell that allows you to provide free-form feedback to the team.</span></span>\n* <span data-ttu-id=\"d66b0-184\">Можно оставить запрос функции или сообщение об ошибке в [хранилище Azure PowerShell](https://github.com/Azure/azure-powershell/issues).</span><span class=\"sxs-lookup\"><span data-stu-id=\"d66b0-184\">File a feature request or a bug report in the [Azure PowerShell repository](https://github.com/Azure/azure-powershell/issues).</span></span>\n* <span data-ttu-id=\"d66b0-185\">Кроме того, задать вопрос или получить разъяснение можно в [репозитории с документацией Azure PowerShell](https://github.com/Azure/azure-docs-powershell/issues).</span><span class=\"sxs-lookup\"><span data-stu-id=\"d66b0-185\">Ask a question or get clarification by filing an issue in the [Azure PowerShell documentation repository](https://github.com/Azure/azure-docs-powershell/issues).</span></span>\n\n<span data-ttu-id=\"d66b0-186\">Мы надеемся, что вам понравится работать с Azure PowerShell!</span><span class=\"sxs-lookup\"><span data-stu-id=\"d66b0-186\">We hope that you enjoy using the Azure PowerShell!</span></span>"
