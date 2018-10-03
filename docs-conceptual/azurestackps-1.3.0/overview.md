@@ -1,3 +1,20 @@
+---
+title: Обзор модуля администрирования PowerShell для Azure Stack | Документация Майкрософт
+description: Обзор модуля администрирования PowerShell для Azure Stack с инструкциями по установке и конфигурации.
+author: bganapa
+ms.author: bganapa
+manager: knithinc
+ms.devlang: powershell
+ms.topic: conceptual
+ms.manager: knithinc
+ms.date: 09/21/2018
+ms.openlocfilehash: fb892daeafb1365ea62324392ac806cf9f3d39cf
+ms.sourcegitcommit: 19dffee617477001f98d43e39a50ce1fad087b74
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 09/27/2018
+ms.locfileid: "47179145"
+---
 # <a name="azure-stack-module-130"></a>Модуль Azure Stack 1.3.0
 
 ## <a name="requirements"></a>Требования:
@@ -75,7 +92,7 @@ Install-Module -Name AzureStack -RequiredVersion 1.3.0
 - просматривать выделенные сетевые ресурсы, например общедоступные IP-адреса, виртуальные сети, подсистемы балансировки нагрузки;
 - использовать командлет для отображения общих сведений об администраторе.
 
-### <a name="storage"></a>Служба хранилища
+### <a name="storage"></a>служба хранилища.
 Предварительная версия модуля для администраторов хранилища Azure Stack.  В этом выпуске мы предоставляем следующие функции:
 - управление квотами хранилища;
 - сборка мусора для удаленных ресурсов хранилища;

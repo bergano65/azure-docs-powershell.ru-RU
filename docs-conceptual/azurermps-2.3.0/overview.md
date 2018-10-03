@@ -1,6 +1,6 @@
 ---
-title: Обзор модуля администрирования PowerShell для Azure Stack | Документация Майкрософт
-description: Обзор модуля администрирования PowerShell для Azure Stack с инструкциями по установке и конфигурации.
+title: Общие сведения о PowerShell для Azure Stack | Документация Майкрософт
+description: Обзор PowerShell для Azure Stack с инструкциями по установке и конфигурации.
 author: bganapa
 ms.author: bganapa
 manager: knithinc
@@ -8,75 +8,52 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.manager: knithinc
 ms.date: 09/21/2018
-ms.openlocfilehash: 72d147f5bc9c882083dda6b33b1c89663fd2eb34
+ms.openlocfilehash: d514e43d82bcb51f65831dc506e58e8747db0381
 ms.sourcegitcommit: 19dffee617477001f98d43e39a50ce1fad087b74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 09/27/2018
-ms.locfileid: "47178805"
+ms.locfileid: "47178465"
 ---
-# <a name="azure-stack-module-140"></a>Модуль Azure Stack 1.4.0
+# <a name="azurerm-module-230"></a>Модуль AzureRM, версия 2.3.0
 
 ## <a name="requirements"></a>Требования:
-Минимальная поддерживаемая версия Azure Stack — 1804.
+Минимальная поддерживаемая версия Azure Stack — 1808.
 
 Примечание. Если вы используете более раннюю версию, установите версию 1.2.11.
 
-## <a name="known-issues"></a>Известные проблемы:
-
-- Для закрытия оповещения требуется Azure Stack версии 1803.
-- New-AzsOffer не позволяет создать общедоступное предложение. После него нужно вызвать командлет Set-AzsOffer, чтобы изменить состояние.
-- Нельзя удалить пул IP-адресов без повторного развертывания.
-
-## <a name="breaking-changes"></a>Критические изменения
-Критических изменений по сравнению с версией 1.3.0 нет. Все критические изменения при миграции с 1.2.11 описаны по адресу https://aka.ms/azspowershellmigration
 
 ## <a name="install"></a>Install
-```
+```powershell
 # Remove previous versions of AzureStack modules
 Uninstall-Module -Name AzureStack -Force 
-Uninstall-Module AzureRM.AzureStackAdmin -Force
-Uninstall-Module AzureRM.AzureStackStorage -Force
+Uninstall-Module -Name AzureRM -Force 
+Uninstall-Module AzureRM.AzureStackAdmin -Force -ErrorAction Continue
+Uninstall-Module AzureRM.AzureStackStorage -Force -ErrorAction Continue
 Get-Module Azs.* -ListAvailable | Uninstall-Module -Force
+Get-Module Azure.* -ListAvailable | Uninstall-Module -Force
 
 
 # Install the AzureRM.Bootstrapper module. Select Yes when prompted to install NuGet
 Install-Module -Name AzureRm.BootStrapper
 
 # Install and import the API Version Profile required by Azure Stack into the current PowerShell session.
-Use-AzureRmProfile -Profile 2017-03-09-profile -Force
+Use-AzureRmProfile -Profile 2018-03-01-hybrid -Force
 
-# Install Azure Stack Admin Module
-Install-Module -Name AzureStack -RequiredVersion 1.4.0
 ```
-## <a name="release-notes"></a>Заметки о выпуске
-    * В версии Azurestack 1.4.0 нет критических изменений по сравнению с предыдущим выпуском 1.3.0.
-    * Azs.AzureBridge.Admin
-        - Исправлена ошибка, из-за которой в результатах с разбивкой на страницы возвращалась всего одна страница.
-    * Azs.Backup.Admin
-        - Добавлены новые параметры BackupFrequencyInHours, IsBackupSchedulerEnabled, BackupRetentionPeriodInDays для командлета Set-AzsBackupShare.
-        - Добавлен командлет New-EncyptionKeyBase64, упрощающий создание ключа шифрования.
-        - Исправлена ошибка, из-за которой в результатах с разбивкой на страницы возвращалась всего одна страница.
-    * Azs.Commerce.Admin
-        - Исправлена ошибка, из-за которой в результатах с разбивкой на страницы возвращалась всего одна страница.
-    * Azs.Fabric.Admin
-        - Исправлена ошибка, из-за которой в результатах с разбивкой на страницы возвращалась всего одна страница.
-        - Добавлен командлет Add-AzsScaleUnitNode, позволяющий администратору добавлять к метке azurestack новые узлы единиц масштабирования.
-        - Добавлен командлет New-AzsScaleUnitNodeObject, упрощающий создание объектов параметров единиц масштабирования.
-    * Azs.Gallery.Admin
-        - Исправлена ошибка, из-за которой в результатах с разбивкой на страницы возвращалась всего одна страница.
-    * Azs.InfrastructureInsights.Admin
-        - Исправлена ошибка, из-за которой в результатах с разбивкой на страницы возвращалась всего одна страница.
-    * Azs.Network.Admin
-        - Исправлена ошибка, из-за которой в результатах с разбивкой на страницы возвращалась всего одна страница.
-    * Azs.Update.Admin
-        - Исправлена ошибка, из-за которой в результатах с разбивкой на страницы возвращалась всего одна страница.
-    * Azs.Subscriptions
-        - Исправлена ошибка, из-за которой в результатах с разбивкой на страницы возвращалась всего одна страница.
-    * Azs.Subscriptions.Admin
-        - Добавлен командлет Move-AzsSubscription, позволяющий перемещать подписки между предложениями делегированных поставщиков.
-        - Добавлен командлет Test-AzsMoveSubscription, позволяющий проверить, можно ли перемещать подписки пользователей между предложениями делегированных поставщиков.
-        - Исправлена ошибка, из-за которой в результатах с разбивкой на страницы возвращалась всего одна страница.
+
+##<a name="release-notes"></a>Заметки о выпуске
+* Выпуск 2.3.0 содержит целый ряд критических изменений. Для обновления с версии 1.2.11 мы создали руководство по миграции, доступное по адресу https://aka.ms/azspowershellmigration.
+* Этот выпуск соответствует профилю API Azure Stack 2018-03-01-hybrid.
+* Все модули зависят от модуля AzureRm.Profile такой же или более поздней версии.
+* Версии API, поддерживаемые каждым из модулей, обновлены. 
+    * Compute — 2017-03-30
+    * Network — 2017-10-01
+    * Storage — 2016-01-01
+    * Resources — 2018-02-01
+    * Keyvault — 2016-10-01
+    * DNS — 2016-04-01
+* Полное сопоставление версий API для каждого типа ресурса можно найти в файле https://github.com/Azure/azure-rest-api-specs/blob/master/profile/2018-03-01-hybrid.json.
 
 ## <a name="content"></a>Содержимое:
 ### <a name="azure-bridge"></a>Мост Azure
@@ -92,7 +69,7 @@ Install-Module -Name AzureStack -RequiredVersion 1.4.0
 Предварительная версия модуля для администраторов средства коммерции в Azure Stack, которая позволяет просматривать статистические сведения об использовании данных для всей системы Azure Stack.
 
 ### <a name="compute"></a>Службы вычислений
-Предварительная версия модуля для администраторов вычислительных ресурсов в Azure Stack, которая предоставляет функции управления квотами вычислительных ресурсов, образами платформ и расширениями виртуальных машин.
+Предварительная версия модуля для администраторов вычислительных ресурсов в Azure Stack, которая предоставляет функции управления квотами вычислительных ресурсов, образами платформ, управляемыми дисками и расширениями виртуальных машин.
 
 ### <a name="fabric"></a>Fabric
 Предварительная версия модуля для администраторов Fabric в Azure Stack, которая позволяет администраторам просматривать компоненты инфраструктуры и управлять ими, выполняя следующие задачи:
@@ -102,6 +79,7 @@ Install-Module -Name AzureStack -RequiredVersion 1.4.0
 - перезапуск роли инфраструктуры;
 - остановка, запуск и завершение работы экземпляров роли инфраструктуры;
 - создание пулов IP-адресов.
+
 
 ### <a name="gallery"></a>Коллекция
 Предварительная версия модуля для администраторов коллекций Azure Stack, которая предоставляет функции для управления элементами коллекции в Azure Stack Marketplace.
@@ -120,7 +98,7 @@ Install-Module -Name AzureStack -RequiredVersion 1.4.0
 - просматривать выделенные сетевые ресурсы, например общедоступные IP-адреса, виртуальные сети, подсистемы балансировки нагрузки;
 - использовать командлет для отображения общих сведений об администраторе.
 
-### <a name="storage"></a>служба хранилища.
+### <a name="storage"></a>Хранилище
 Предварительная версия модуля для администраторов хранилища Azure Stack.  В этом выпуске мы предоставляем следующие функции:
 - управление квотами хранилища;
 - сборка мусора для удаленных ресурсов хранилища;
