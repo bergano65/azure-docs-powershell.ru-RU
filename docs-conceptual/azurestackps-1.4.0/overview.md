@@ -9,11 +9,11 @@ ms.topic: conceptual
 ms.manager: knithinc
 ms.date: 09/21/2018
 ms.openlocfilehash: 72d147f5bc9c882083dda6b33b1c89663fd2eb34
-ms.sourcegitcommit: 19dffee617477001f98d43e39a50ce1fad087b74
+ms.sourcegitcommit: 6c38e86e16da99f65cd183c63e34f7176b121ab8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2018
-ms.locfileid: "47178805"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "47424859"
 ---
 # <a name="azure-stack-module-140"></a>Модуль Azure Stack 1.4.0
 
@@ -120,7 +120,7 @@ Install-Module -Name AzureStack -RequiredVersion 1.4.0
 - просматривать выделенные сетевые ресурсы, например общедоступные IP-адреса, виртуальные сети, подсистемы балансировки нагрузки;
 - использовать командлет для отображения общих сведений об администраторе.
 
-### <a name="storage"></a>служба хранилища.
+### <a name="storage"></a>Хранилище
 Предварительная версия модуля для администраторов хранилища Azure Stack.  В этом выпуске мы предоставляем следующие функции:
 - управление квотами хранилища;
 - сборка мусора для удаленных ресурсов хранилища;
