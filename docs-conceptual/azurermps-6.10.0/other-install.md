@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 09/11/2018
-ms.openlocfilehash: 6bf66e312557f047a9393e26b9de736c1c55c261
-ms.sourcegitcommit: a749eb729f583c9d0dd86141bbd04984d77ae9ab
+ms.openlocfilehash: 52fa80542af39a2a768cc54e5b6bd8d0b8246c9f
+ms.sourcegitcommit: f6f5e256143aa6c097de3e57e930d8badea49f30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2018
-ms.locfileid: "48889270"
+ms.lasthandoff: 10/18/2018
+ms.locfileid: "49399031"
 ---
 # <a name="install-azure-powershell-on-windows-with-msi"></a>Установка Azure PowerShell в ОС Windows с помощью пакета MSI
 
@@ -21,8 +21,6 @@ ms.locfileid: "48889270"
 
 > [!NOTE]
 > Для Azure PowerShell 6.x и более новых версий установка с помощью установщика веб-платформы больше не доступна. Если вам нужно использовать установщик веб-платформы, попробуйте вместо него использовать пакет MSI или установите более раннюю версию Azure PowerShell.
-
-См. дополнительные сведения о том, как [запустить Azure PowerShell в контейнере Docker](azurerm-ps-in-docker.md).
 
 Сведения об установке в средах Linux или macOS см. в [этом разделе](install-azurermps-maclinux.md).
 
