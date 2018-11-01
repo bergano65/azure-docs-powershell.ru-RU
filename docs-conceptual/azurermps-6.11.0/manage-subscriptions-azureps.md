@@ -8,17 +8,17 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 09/11/2018
 ms.openlocfilehash: a93461af1dafbf8f2c85ef127ecaefadf3be2f52
-ms.sourcegitcommit: 5f946a535eccca0b3ddf3db8f617b32564a88938
+ms.sourcegitcommit: ff44dec6418a449757bded3c6ebe0a7d4c05ee6e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50001105"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "50737294"
 ---
-# <a name="manage-multiple-azure-subscriptions"></a><span data-ttu-id="a0526-103">Управление несколькими подписками Azure</span><span class="sxs-lookup"><span data-stu-id="a0526-103">Manage multiple Azure subscriptions</span></span>
+# <a name="manage-multiple-azure-subscriptions"></a><span data-ttu-id="9a568-103">Управление несколькими подписками Azure</span><span class="sxs-lookup"><span data-stu-id="9a568-103">Manage multiple Azure subscriptions</span></span>
 
-<span data-ttu-id="a0526-104">Если вы только приступаете к работе с Azure, скорее всего, у вас есть только одна подписка.</span><span class="sxs-lookup"><span data-stu-id="a0526-104">If you're brand new to Azure, you probably only have a single subscription.</span></span> <span data-ttu-id="a0526-105">Но если вы уже пользуетесь Azure какое-то время, возможно, вы уже успели создать несколько подписок.</span><span class="sxs-lookup"><span data-stu-id="a0526-105">But if you have been using Azure for a while, you may have created multiple Azure subscriptions.</span></span> <span data-ttu-id="a0526-106">Вы можете настроить Azure PowerShell для выполнения команд, связанных с определенной подпиской.</span><span class="sxs-lookup"><span data-stu-id="a0526-106">You can configure Azure PowerShell to execute commands against a particular subscription.</span></span>
+<span data-ttu-id="9a568-104">Если вы только приступаете к работе с Azure, скорее всего, у вас есть только одна подписка.</span><span class="sxs-lookup"><span data-stu-id="9a568-104">If you're brand new to Azure, you probably only have a single subscription.</span></span> <span data-ttu-id="9a568-105">Но если вы уже пользуетесь Azure какое-то время, возможно, вы уже успели создать несколько подписок.</span><span class="sxs-lookup"><span data-stu-id="9a568-105">But if you have been using Azure for a while, you may have created multiple Azure subscriptions.</span></span> <span data-ttu-id="9a568-106">Вы можете настроить Azure PowerShell для выполнения команд, связанных с определенной подпиской.</span><span class="sxs-lookup"><span data-stu-id="9a568-106">You can configure Azure PowerShell to execute commands against a particular subscription.</span></span>
 
-1. <span data-ttu-id="a0526-107">Получите список всех подписок в своей учетной записи.</span><span class="sxs-lookup"><span data-stu-id="a0526-107">Get a list of all subscriptions in your account.</span></span>
+1. <span data-ttu-id="9a568-107">Получите список всех подписок в своей учетной записи.</span><span class="sxs-lookup"><span data-stu-id="9a568-107">Get a list of all subscriptions in your account.</span></span>
 
     ```azurepowershell-interactive
     Get-AzureRmSubscription
@@ -47,13 +47,13 @@ ms.locfileid: "50001105"
     CurrentStorageAccount :
     ```
 
-2. <span data-ttu-id="a0526-108">Определите подписку по умолчанию.</span><span class="sxs-lookup"><span data-stu-id="a0526-108">Set the default.</span></span>
+2. <span data-ttu-id="9a568-108">Определите подписку по умолчанию.</span><span class="sxs-lookup"><span data-stu-id="9a568-108">Set the default.</span></span>
 
     ```azurepowershell-interactive
     Select-AzureRmSubscription -Subscription "My Demos"
     ```
 
-3. <span data-ttu-id="a0526-109">Проверьте изменения, выполнив командлет `Get-AzureRmContext`.</span><span class="sxs-lookup"><span data-stu-id="a0526-109">Verify the change by running the `Get-AzureRmContext` cmdlet.</span></span>
+3. <span data-ttu-id="9a568-109">Проверьте изменения, выполнив командлет `Get-AzureRmContext`.</span><span class="sxs-lookup"><span data-stu-id="9a568-109">Verify the change by running the `Get-AzureRmContext` cmdlet.</span></span>
 
     ```azurepowershell-interactive
     Get-AzureRmContext
@@ -68,4 +68,4 @@ ms.locfileid: "50001105"
     CurrentStorageAccount :
     ```
 
-<span data-ttu-id="a0526-110">Когда вы определите подписку по умолчанию, все выполняемые команды Azure PowerShell будут связаны с ней.</span><span class="sxs-lookup"><span data-stu-id="a0526-110">Once you set your default subscription, all Azure PowerShell commands run against this subscription.</span></span>
+<span data-ttu-id="9a568-110">Когда вы определите подписку по умолчанию, все выполняемые команды Azure PowerShell будут связаны с ней.</span><span class="sxs-lookup"><span data-stu-id="9a568-110">Once you set your default subscription, all Azure PowerShell commands run against this subscription.</span></span>
