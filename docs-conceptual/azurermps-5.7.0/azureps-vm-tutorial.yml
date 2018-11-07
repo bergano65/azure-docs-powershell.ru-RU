@@ -16,12 +16,12 @@ metadata:
   ms.technology: azure-powershell
   ms.service: virtual-machines
   clicktale: true
-  ms.openlocfilehash: e6d585d76f507a7959e6e6227aff1effad8fa336
-  ms.sourcegitcommit: f648ac92fafb16cc0e9ca6bc85d00fa327baf396
+  ms.openlocfilehash: 6bf5fdd20d0f9831fc5e7eae9158343c995034b4
+  ms.sourcegitcommit: 06f9206e025afa7207d4657c8f57c94ddb74817a
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 08/24/2018
-  ms.locfileid: "38100075"
+  ms.lasthandoff: 11/07/2018
+  ms.locfileid: "51211712"
 items:
 - durationInMinutes: 1
   content: >-
@@ -38,7 +38,7 @@ items:
     Если вы используете локальную установку Azure PowerShell, вам нужно войти, прежде чем выполнять какие-либо действия.
 
 
-    ```powershell
+    ```powershell-interactive
 
     Connect-AzureRmAccount
 
@@ -54,7 +54,7 @@ items:
     В этом руководстве все созданные ресурсы помещаются в одну группу с именем `TutorialResources`.
 
 
-    ```powershell
+    ```powershell-interactive
 
     New-AzureRmResourceGroup -Name TutorialResources -Location eastus
 
@@ -80,7 +80,7 @@ items:
     Перед созданием виртуальной машины необходимо создать объект учетных данных, содержащий имя пользователя и пароль учетной записи администратора виртуальной машины Windows.
 
 
-    ```powershell
+    ```powershell-interactive
 
     $cred = Get-Credential -Message "Enter a username and password for the virtual machine."
 
@@ -110,7 +110,7 @@ items:
     Создайте виртуальную машину под управлением Windows.
 
 
-    ```powershell
+    ```powershell-interactive
 
     $vmParams = @{
       ResourceGroupName = 'TutorialResources'
@@ -143,7 +143,7 @@ items:
     Когда виртуальная машина будет создана, мы сможем просмотреть результаты на портале Azure или проверить переменную \$newVM1.
 
 
-    ```powershell
+    ```powershell-interactive
 
     $newVM1
 
@@ -186,7 +186,7 @@ items:
     Давайте получим более подробные сведения о созданной виртуальной машине. В этом примере мы проверим имя виртуальной машины и созданную учетную запись администратора.
 
 
-    ```powershell
+    ```powershell-interactive
 
     $newVM1.OSProfile | Select-Object ComputerName,AdminUserName
 
@@ -207,7 +207,7 @@ items:
     Мы можем использовать и другие команды Azure PowerShell, чтобы получить конкретные сведения о конфигурации сети.
 
 
-    ```powershell
+    ```powershell-interactive
 
     $newVM1 | Get-AzureRmNetworkInterface |
       Select-Object -ExpandProperty IpConfigurations |
@@ -232,7 +232,7 @@ items:
     Чтобы убедиться, что виртуальная машина запущена, необходимо подключиться через удаленный рабочий стол. Для этого необходимо знать общедоступный IP-адрес.
 
 
-    ```powershell
+    ```powershell-interactive
 
     $publicIp = Get-AzureRmPublicIpAddress -Name tutorialPublicIp -ResourceGroupName TutorialResources
 
@@ -259,7 +259,7 @@ items:
     С локального компьютера можно выполнить следующую команду для подключения к виртуальной машине через удаленный рабочий стол.
 
 
-    ```powershell
+    ```powershell-interactive
 
     mstsc.exe /v <PUBLIC_IP_ADDRESS>
 
@@ -273,7 +273,7 @@ items:
     Вторая виртуальная машина использует существующую подсеть.
 
 
-    ```powershell
+    ```powershell-interactive
 
     $vm2Params = @{
       ResourceGroupName = 'TutorialResources'
@@ -328,7 +328,7 @@ items:
     Вы можете пропустить несколько шагов, чтобы получить общедоступный IP-адрес новой виртуальной машины, так как он возвращается в свойстве FullyQualifiedDomainName объекта \$newVM2. Используйте следующую команду для подключения с помощью удаленного рабочего стола.
 
 
-    ```powershell
+    ```powershell-interactive
 
     mstsc.exe /v $newVM2.FullyQualifiedDomainName
 
@@ -339,7 +339,7 @@ items:
     Теперь, когда вы завершили работу с этим руководством, можно очистить созданные ресурсы. Вы можете удалить отдельные ресурсы с помощью команды `Remove-AzureRmResource`. Но безопаснее будет удалить все ресурсы в группе ресурсов, удалив саму группу с помощью команды `Remove-AzureRmResourceGroup`.
 
 
-    ```powershell
+    ```powershell-interactive
 
     $job = Remove-AzureRmResourceGroup -Name TutorialResources -Force -AsJob
 
@@ -363,7 +363,7 @@ items:
     Эта команда удаляет ресурсы, созданные при работе с руководством, и гарантированно удаляет их в правильном порядке. Параметр `-AsJob` предотвращает блокировку PowerShell в ходе удаления. Чтобы дождаться завершения удаления, используйте следующую команду:
 
 
-    ```powershell
+    ```powershell-interactive
 
     Wait-Job -Id $job.Id
 

@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 09/06/2017
-ms.openlocfilehash: b23d8071c3c91bee1387c54cce1a34004ecdd9ad
-ms.sourcegitcommit: ff44dec6418a449757bded3c6ebe0a7d4c05ee6e
+ms.openlocfilehash: 5016c7e768aba94308d0e78785481fafbac36c74
+ms.sourcegitcommit: 06f9206e025afa7207d4657c8f57c94ddb74817a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "50737736"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51211780"
 ---
 # <a name="other-installation-methods"></a>Другие методы установки
 
@@ -32,7 +32,7 @@ Azure PowerShell можно установить разными способам
 
 По завершении установки ваш параметр `$env:PSModulePath` должен включать каталоги, содержащие командлеты Azure PowerShell. Используйте следующую команду, чтобы убедиться, что среда Azure PowerShell установлена правильно.
 
-```powershell
+```powershell-interactive
 # To make sure the Azure PowerShell module is available after you install
 Get-Module -ListAvailable Azure* | Select-Object Name, Version, Path
 ```
@@ -56,7 +56,7 @@ At line:1 char:1
 
 Эту ошибку можно исправить при перезагрузке компьютера или импорте модуля, используя полный путь. Например: 
 
-```powershell
+```powershell-interactive
 Import-Module "$env:ProgramFiles(x86)\Microsoft SDKs\Azure\PowerShell\AzureRM.psd1"
 ```
 

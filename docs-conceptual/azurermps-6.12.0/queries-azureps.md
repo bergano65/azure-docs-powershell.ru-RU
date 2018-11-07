@@ -1,30 +1,30 @@
 ---
-title: Обращение к ресурсам Azure и форматирование результатов | Документация Майкрософт
+title: Выходные данные запроса командлетов Azure PowerShell
 description: Как обратиться к ресурсам в Azure и форматировать результаты запроса.
 author: sptramer
 ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.date: 03/30/2017
-ms.openlocfilehash: 9a7627a25f9bbd196b1d615229e45a6e1ce7a7d9
+ms.date: 09/11/2018
+ms.openlocfilehash: 6bd1bea43303e9f5a2b46d63a3ac51b4c4031b9f
 ms.sourcegitcommit: 06f9206e025afa7207d4657c8f57c94ddb74817a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/07/2018
-ms.locfileid: "51213179"
+ms.locfileid: "51213128"
 ---
-# <a name="querying-for-azure-resources"></a>Обращение к ресурсам Azure
+# <a name="query-output-of-azure-powershell-cmdlets"></a>Выходные данные запроса командлетов Azure PowerShell
 
 Вы можете обращаться к ресурсам с помощью встроенных командлетов PowerShell. В PowerShell имена командлетов представлены в формате **_глагол-существительное_**. Командлеты, в которых используется глагол **_Get_** (Получить) — это командлеты запроса. Существительные командлета — это типы ресурсов Azure, к которым будет применено действие командлета.
 
-## <a name="selecting-simple-properties"></a>Выбор простых свойств
+## <a name="select-simple-properties"></a>Выбор простых свойств
 
 Для каждого командлета Azure PowerShell определено форматирование по умолчанию. Самые распространенные свойства каждого типа ресурсов автоматически отображаются в формате таблицы или списка. Дополнительные сведения о форматировании выходных данных см. в статье о [форматировании результатов запроса](formatting-output.md).
 
 Используйте командлет `Get-AzureRmVM`, чтобы получить список виртуальных машин своей учетной записи.
 
-```powershell-interactive
+```azurepowershell-interactive
 Get-AzureRmVM
 ```
 
@@ -39,7 +39,7 @@ MYWESTEURG          MyWin2016VM westeurope Standard_DS1_v2 Windows   mywin2016vm
 
 Командлет `Select-Object` можно использовать для выбора определенных свойств, которые вас интересуют.
 
-```powershell-interactive
+```azurepowershell-interactive
 Get-AzureRmVM | Select Name,ResourceGroupName,Location
 ```
 
@@ -50,11 +50,11 @@ MyUnbuntu1610 MYWESTEURG        westeurope
 MyWin2016VM   MYWESTEURG        westeurope
 ```
 
-## <a name="selecting-complex-nested-properties"></a>Выбор сложных вложенных свойств
+## <a name="select-complex-nested-properties"></a>Выбор сложных вложенных свойств
 
-Если вы хотите выбрать свойства, которые глубоко вложены в выходные данные JSON, необходимо указать полный путь к такому свойству. Следующий пример показывает, как выбрать имя виртуальной машины и тип ОС с помощью командлета `Get-AzureRmVM`.
+Если требуется выбрать свойство, вложенное в выходные данные JSON, укажите полный путь к такому свойству. Следующий пример показывает, как выбрать имя виртуальной машины и тип ОС с помощью командлета `Get-AzureRmVM`.
 
-```powershell-interactive
+```azurepowershell-interactive
 Get-AzureRmVM | Select Name,@{Name='OSType'; Expression={$_.StorageProfile.OSDisk.OSType}}
 ```
 
@@ -65,11 +65,11 @@ MyUnbuntu1610   Linux
 MyWin2016VM   Windows
 ```
 
-## <a name="filter-result-using-the-where-object-cmdlet"></a>Фильтрация результатов с помощью командлета Where-Object
+## <a name="filter-results-with-the-where-object-cmdlet"></a>Фильтрация результатов с помощью командлета Where-Object
 
 Командлет `Where-Object` позволяет фильтровать результаты на основе любого значения свойства. В следующем примере фильтр выбирает только виртуальные машины, имя которых содержит текст RGD.
 
-```powershell-interactive
+```azurepowershell-interactive
 Get-AzureRmVM | Where ResourceGroupName -like RGD* | Select ResourceGroupName,Name
 ```
 
@@ -82,7 +82,7 @@ RGDEMO001          KBDemo020
 
 В следующем примере результаты вернут виртуальные машины размера Standard_DS1_V2.
 
-```powershell-interactive
+```azurepowershell-interactive
 Get-AzureRmVM | Where vmSize -eq Standard_DS1_V2
 ```
 

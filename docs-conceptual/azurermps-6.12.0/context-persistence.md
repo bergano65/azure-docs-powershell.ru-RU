@@ -6,15 +6,15 @@ ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.date: 08/31/2017
-ms.openlocfilehash: 164444b7bacbef202513bfafe2f75bdcd6d027c4
+ms.date: 09/09/2018
+ms.openlocfilehash: a07b5fe8cd532f99038d7f0ce10b3b891c896da1
 ms.sourcegitcommit: 06f9206e025afa7207d4657c8f57c94ddb74817a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/07/2018
-ms.locfileid: "51211304"
+ms.locfileid: "51213073"
 ---
-# <a name="persisting-user-credentials-across-powershell-sessions"></a>Использование учетных данных пользователя в разных сеансах PowerShell
+# <a name="persist-user-credentials-across-powershell-sessions"></a>Использование учетных данных пользователя в разных сеансах PowerShell
 
 В Azure PowerShell существует функция **автосохранения контекста Azure**, которая предоставляет следующие возможности:
 
@@ -28,22 +28,20 @@ ms.locfileid: "51211304"
 *Контекст Azure* — это набор сведений, которые определяют целевой объект для командлетов Azure PowerShell. Контекст состоит из пяти частей:
 
 - *Учетная запись* — имя пользователя или субъекта-службы, которое используется для аутентификации при обмене данными со средой Azure.
-- *Подписка* — подписка Azure, которая содержит используемые ресурсы.
+- *Подписка* — подписка Azure с используемыми ресурсами.
 - *Клиент* — клиент Azure Active Directory, который содержит вашу подписку. Клиенты являются более важными при аутентификации субъекта-службы.
 - *Среда* — определяемое облако Azure (обычно это глобальное облако Azure).
   Кроме того, параметр среды позволяет определять национальные и локальные (Azure Stack) облака, а также облака для государственных организаций.
-- *Учетные данные* — сведения, которые используются в Azure для идентификации и авторизации для доступа к ресурсам в Azure.
+- *Учетные данные* — сведения, которые используются в Azure, чтобы выполнить идентификацию и авторизацию для доступа к ресурсам в Azure.
 
-В предыдущих версиях контекст Azure нужно было создавать при каждом открытии нового сеанса PowerShell. Начиная с версии Azure PowerShell 4.4.0 вы можете включить автоматическое сохранение и повторное использование контекстов Azure при каждом открытии нового сеанса PowerShell.
+В предыдущих выпусках контекст Azure нужно было создавать при каждом открытии нового сеанса PowerShell. Начиная с версии Azure PowerShell 4.4.0, поддерживается автоматическое сохранение контекста Azure при каждом открытии нового сеанса PowerShell.
 
-## <a name="automatically-saving-the-context-for-the-next-sign-in"></a>Автоматическое сохранение контекста для следующего входа
+## <a name="automatically-save-the-context-for-the-next-sign-in"></a>Автоматическое сохранение контекста для следующего входа
 
-По умолчанию Azure PowerShell не хранит данные контекста после закрытия сеанса PowerShell.
+Начиная с версии Azure PowerShell 6.3.0, данные контекста автоматически сохраняются между сеансами. Чтобы PowerShell не сохранял учетные данные и данные контекста, используйте `Disable-AzureRmContextAutoSave`. Для работы с новым сеансом PowerShell вам нужно будет войти в Azure.
 
 Чтобы разрешить Azure PowerShell запоминать контекст после закрытия сеанса PowerShell, используйте `Enable-AzureRmContextAutosave`. Учетные данные и данные контекста автоматически сохраняются в специальной скрытой папке в каталоге пользователя (`%AppData%\Roaming\Windows Azure PowerShell`).
-Таким образом, каждый новый сеанс PowerShell обращается к контексту, который использовался в ходе последнего сеанса.
-
-Чтобы PowerShell не сохранял учетные данные и данные контекста, используйте `Disable-AzureRmContextAutoSave`. Для работы с новым сеансом PowerShell вам нужно будет входить в Azure.
+Каждый новый сеанс PowerShell обращается к контексту, который использовался в последнем сеансе.
 
 Командлеты, которые помогают управлять контекстами Azure, также предоставляют удобные средства. С их помощью вы можете применить изменения как для текущего сеанса PowerShell (область `Process`), так и для всех сеансов PowerShell (область `CurrentUser`). Эти параметры будут подробно описаны в разделе [Использование областей контекстов](#Using-Context-Scopes).
 
@@ -71,7 +69,7 @@ ms.locfileid: "51211304"
 
 ## <a name="creating-selecting-renaming-and-removing-contexts"></a>Создание, выбор, переименование и удаление контекстов
 
-Чтобы создать контекст, нужно войти в Azure. Командлет `Connect-AzureRmAccount` (или его псевдоним `Login-AzureRmAccount`) определяет контекст по умолчанию, который будет использоваться последующими командлетами Azure PowerShell. Он также обеспечивает доступ к любому клиенту или подписке в рамках разрешений, предоставляемых вашими учетными данными.
+Чтобы создать контекст, нужно войти в Azure. Командлет `Connect-AzureRmAccount` (или его псевдоним `Login-AzureRmAccount`) определяет контекст по умолчанию, который будет использоваться командлетами Azure PowerShell. Он также обеспечивает доступ к любому клиенту или подписке в рамках разрешений, предоставляемых вашими учетными данными.
 
 Чтобы добавить новый контекст после входа, используйте командлет `Set-AzureRmContext` (или его псевдоним `Select-AzureRmSubscription`).
 
@@ -95,7 +93,7 @@ PS C:\> Rename-AzureRmContext '[user1@contoso.org; 123456-7890-1234-564321]` 'Co
 PS C:\> Remove-AzureRmContext Contoso2
 ```
 
-Удаление контекста с именем "Contoso2". Впоследствии этот контекст можно создать повторно с помощью командлета `Set-AzureRmContext`.
+Удаление контекста с именем "Contoso2". Этот контекст можно создать повторно с помощью командлета `Set-AzureRmContext`.
 
 ## <a name="removing-credentials"></a>Удаление учетных данных
 
@@ -132,7 +130,7 @@ $env:AzureRmContextAutoSave="true" | "false"
 - [Enable-AzureRmContextAutosave][enable] — включение сохранения контекста для использования в разных сеансах PowerShell.
   Любые изменения влияют на глобальный контекст.
 - [Disable-AzureRmContextAutosave][disable] — отключение автосохранения контекста. Для работы с новым сеансом PowerShell нужно будет выполнить вход.
-- [Select-AzureRmContext][select] — выбор контекста по умолчанию. Все последующие командлеты будут использовать для аутентификации учетные данные из этого контекста.
+- [Select-AzureRmContext][select] — выбор контекста по умолчанию. Все командлеты используют для аутентификации учетные данные из этого контекста.
 - [Disconnect-AzureRmAccount][remove-cred] — удаление всех учетных данных и контекстов, связанных с учетной записью.
 - [Remove-AzureRmContext][remove-context] — удаление именованного контекста.
 - [Rename-AzureRmContext][rename] — переименование существующего контекста.
@@ -154,5 +152,5 @@ $env:AzureRmContextAutoSave="true" | "false"
 
 <!-- Updated cmdlets -->
 [login]: /powershell/module/azurerm.profile/Connect-AzureRmAccount
-[import]: /powershell/module/azurerm.profile/Import-AzureRmAccount
-[set-context]: /powershell/module/azurerm.profile/Import-AzureRmContext
+[import]:  /powershell/module/azurerm.profile/Import-AzureRmContext
+[set-context]: /powershell/module/azurerm.profile/Set-AzureRmContext

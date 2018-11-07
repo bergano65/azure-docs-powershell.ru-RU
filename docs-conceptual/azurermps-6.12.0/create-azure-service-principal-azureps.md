@@ -7,13 +7,13 @@ ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.date: 05/15/2017
-ms.openlocfilehash: 19379a57e2ed369f75b2f02c73c00c1fbe02213e
+ms.date: 09/09/2018
+ms.openlocfilehash: 433a638187f024883c177457e420a759968fed9a
 ms.sourcegitcommit: 06f9206e025afa7207d4657c8f57c94ddb74817a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/07/2018
-ms.locfileid: "51210998"
+ms.locfileid: "51213199"
 ---
 # <a name="create-an-azure-service-principal-with-azure-powershell"></a>Создание субъекта-службы Azure с помощью Azure PowerShell
 
@@ -24,13 +24,13 @@ ms.locfileid: "51210998"
 
 ## <a name="what-is-a-service-principal"></a>Что такое субъект-служба?
 
-Субъект-служба Azure — это идентификатор безопасности, который созданные пользователем приложения, службы и средства автоматизации используют для доступа к определенным ресурсам Azure. Это что-то вроде удостоверения пользователя (имя пользователя и пароль или сертификат) с определенной ролью и строго контролируемыми разрешениями. Субъект-служба должен выполнять только конкретные задачи, в отличие от удостоверений пользователей. Это решение повышает безопасность, если вы предоставите ему минимальный уровень разрешений для выполнения задач управления.
+Субъект-служба Azure — это идентификатор безопасности, который созданные пользователем приложения, службы и средства автоматизации используют для доступа к определенным ресурсам Azure. Это что-то вроде удостоверения пользователя (имя пользователя и пароль или сертификат) с определенной ролью и строго контролируемыми разрешениями. В отличие от удостоверений пользователей субъект-служба должен выполнять только определенные задачи. Это решение повышает безопасность, если вы предоставите ему минимальный уровень разрешений для выполнения задач управления.
 
 ## <a name="verify-your-own-permission-level"></a>Проверка уровня разрешений
 
-Во-первых, у вас должен быть достаточный уровень разрешений в Azure Active Directory и подписке Azure. В частности, у вас должно быть право создавать приложения в Active Directory и назначать роли субъекту-службе.
+Во-первых, у вас должен быть достаточный уровень разрешений в Azure Active Directory и подписке Azure. У вас должно быть право создавать приложения в Active Directory и назначать роли субъекту-службе.
 
-Проверить, есть ли у вас соответствующие разрешения, проще всего на портале. Ознакомьтесь с [проверкой наличия необходимых разрешений на портале](/azure/azure-resource-manager/resource-group-create-service-principal-portal#required-permissions).
+Проверить, есть ли у вас необходимые разрешения, проще всего на портале. Ознакомьтесь с [проверкой наличия необходимых разрешений на портале](/azure/azure-resource-manager/resource-group-create-service-principal-portal#required-permissions).
 
 ## <a name="create-a-service-principal-for-your-app"></a>Создание субъекта-службы для приложения
 
@@ -43,7 +43,7 @@ ms.locfileid: "51210998"
 
 Используйте командлет `Get-AzureRmADApplication`, чтобы получить сведения о приложении.
 
-```powershell-interactive
+```azurepowershell-interactive
 Get-AzureRmADApplication -DisplayNameStartWith MyDemoWebApp
 ```
 
@@ -63,10 +63,11 @@ ReplyUrls               : {}
 
 Используйте командлет `New-AzureRmADServicePrincipal`, чтобы создать субъект-службу.
 
-```powershell-interactive
+```azurepowershell-interactive
 Add-Type -Assembly System.Web
 $password = [System.Web.Security.Membership]::GeneratePassword(16,3)
-New-AzureRmADServicePrincipal -ApplicationId 00c01aaa-1603-49fc-b6df-b78c4e5138b4 -Password $password
+$securePassword = ConvertTo-SecureString -Force -AsPlainText -String $password
+New-AzureRmADServicePrincipal -ApplicationId 00c01aaa-1603-49fc-b6df-b78c4e5138b4 -Password $securePassword
 ```
 
 ```output
@@ -77,7 +78,7 @@ MyDemoWebApp                   ServicePrincipal               698138e7-d7b6-4738
 
 ### <a name="get-information-about-the-service-principal"></a>Получение сведений о субъекте-службе
 
-```powershell-interactive
+```azurepowershell-interactive
 $svcprincipal = Get-AzureRmADServicePrincipal -ObjectId 698138e7-d7b6-4738-a866-b4e3081a69e4
 $svcprincipal | Select-Object *
 ```
@@ -92,14 +93,14 @@ Type                  : ServicePrincipal
 
 ### <a name="sign-in-using-the-service-principal"></a>Вход с помощью субъекта-службы
 
-Вы можете войти как новый субъект-служба для приложения, используя предоставленные *идентификатор приложения* и *пароль*. Укажите идентификатор клиента своей учетной записи. Идентификатор клиента отображается при входе в Azure рядом с вашими учетными данными.
+Вы можете войти как новый субъект-служба для приложения, используя предоставленные *идентификатор приложения* и *пароль*. Для субъекта-службы также нужно указать идентификатор клиента. Идентификатор клиента отображается, если вы вошли в Azure с помощью личных учетных данных. Чтобы выполнить вход с помощью субъекта-службы, используйте следующие команды:
 
-```powershell-interactive
+```azurepowershell-interactive
 $cred = Get-Credential -UserName $svcprincipal.ApplicationId -Message "Enter Password"
-Login-AzureRmAccount -Credential $cred -ServicePrincipal -TenantId XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX
+Connect-AzureRmAccount -Credential $cred -ServicePrincipal -TenantId XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX
 ```
 
-Выполните следующую команду в новом сеансе PowerShell. Выполнив вход, вы увидите что-то похожее:
+После успешного входа вы увидите примерно такие выходные данные:
 
 ```output
 Environment           : AzureCloud
@@ -128,7 +129,7 @@ CurrentStorageAccount :
 
 В этом примере мы назначаем роль **читателя** предыдущему примеру субъекта-службы и удаляем роль **участника**:
 
-```powershell-interactive
+```azurepowershell-interactive
 New-AzureRmRoleAssignment -ResourceGroupName myRG -ObjectId 698138e7-d7b6-4738-a866-b4e3081a69e4 -RoleDefinitionName Reader
 ```
 
@@ -143,13 +144,13 @@ ObjectId           : 698138e7-d7b6-4738-a866-b4e3081a69e4
 ObjectType         : ServicePrincipal
 ```
 
-```powershell-interactive
+```azurepowershell-interactive
 Remove-AzureRmRoleAssignment -ResourceGroupName myRG -ObjectId 698138e7-d7b6-4738-a866-b4e3081a69e4 -RoleDefinitionName Contributor
 ```
 
 Вот как просмотреть текущие назначенные роли:
 
-```powershell-interactive
+```azurepowershell-interactive
 Get-AzureRmRoleAssignment -ResourceGroupName myRG -ObjectId 698138e7-d7b6-4738-a866-b4e3081a69e4
 ```
 
@@ -177,7 +178,7 @@ ObjectType         : ServicePrincipal
 
 ### <a name="add-a-new-password-for-the-service-principal"></a>Добавление нового пароля субъекта-службы
 
-```powershell-interactive
+```azurepowershell-interactive
 $password = [System.Web.Security.Membership]::GeneratePassword(16,3)
 New-AzureRmADSpCredential -ServicePrincipalName http://MyDemoWebApp -Password $password
 ```
@@ -190,7 +191,7 @@ StartDate           EndDate             KeyId                                Typ
 
 ### <a name="get-a-list-of-credentials-for-the-service-principal"></a>Получение списка учетных данных субъекта-службы
 
-```powershell-interactive
+```azurepowershell-interactive
 Get-AzureRmADSpCredential -ServicePrincipalName http://MyDemoWebApp
 ```
 
@@ -203,7 +204,7 @@ StartDate           EndDate             KeyId                                Typ
 
 ### <a name="remove-the-old-password-from-the-service-principal"></a>Удаление старого пароля субъекта-службы
 
-```powershell-interactive
+```azurepowershell-interactive
 Remove-AzureRmADSpCredential -ServicePrincipalName http://MyDemoWebApp -KeyId ca9d4846-4972-4c70-b6f5-a4effa60b9bc
 ```
 
@@ -216,7 +217,7 @@ service principal objectId '698138e7-d7b6-4738-a866-b4e3081a69e4'.
 
 ### <a name="verify-the-list-of-credentials-for-the-service-principal"></a>Проверка списка учетных данных субъекта-службы
 
-```powershell-interactive
+```azurepowershell-interactive
 Get-AzureRmADSpCredential -ServicePrincipalName http://MyDemoWebApp
 ```
 
