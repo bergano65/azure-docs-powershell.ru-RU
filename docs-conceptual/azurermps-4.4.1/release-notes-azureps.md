@@ -8,12 +8,12 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.workload: ''
 ms.date: 07/26/2017
-ms.openlocfilehash: 6f0e304c499fc8bf4909e2825d52cd63b1fcbf5d
-ms.sourcegitcommit: 990f82648b0aa2e970f96c02466a7134077c8c56
+ms.openlocfilehash: 563f84c3af98de066611dd80102e552b31f12883
+ms.sourcegitcommit: ac4b53bb42a25aae013a9d8cd9ae98ada9397274
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38100497"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "51274931"
 ---
 # <a name="release-notes"></a>Заметки о выпуске
 
@@ -262,14 +262,15 @@ ms.locfileid: "38100497"
       - Remove-AzureRMRoleDefinition;
       - Set-AzureRMRoleDefinition.
 * Служебная шина
-    * Ниже приведены новые командлеты для правил авторизации пространств имен, очередей и разделов. Операции с правилом авторизации выполняются в соответствии с заданным параметром.
-     - New-AzureRmServiceBusAuthorizationRule добавляет новое правило авторизации для существующего пространства имен, очереди или раздела служебной шины.
-     - Get-AzureRmServiceBusAuthorizationRule возвращает правило авторизации или список правил авторизации для существующего пространства имен, очереди или раздела служебной шины.
-     - Set-AzureRmServiceBusAuthorizationRule обновляет свойства существующего правила авторизации пространства имен, очереди или раздела служебной шины.
-     - New-AzureRmServiceBusKey создает новый первичный или вторичный ключ для правила авторизации существующего пространства имен, очереди или раздела служебной шины.
-     - Get-AzureRmServiceBusKey создает новый первичный или вторичный ключ для правила авторизации существующего пространства имен, очереди или раздела служебной шины.
-     - Remove-AzureRmServiceBusNamespaceAuthorizationRule удаляет существующее правило авторизации пространства имен, очереди или раздела служебной шины.
-    * В NamespaceAttributes добавлено свойство ResourceGroup.
+  * Ниже приведены новые командлеты для правил авторизации пространств имен, очередей и разделов. Операции с правилом авторизации выполняются в соответствии с заданным параметром.
+    - New-AzureRmServiceBusAuthorizationRule добавляет новое правило авторизации для существующего пространства имен, очереди или раздела служебной шины.
+    - Get-AzureRmServiceBusAuthorizationRule возвращает правило авторизации или список правил авторизации для существующего пространства имен, очереди или раздела служебной шины.
+    - Set-AzureRmServiceBusAuthorizationRule обновляет свойства существующего правила авторизации пространства имен, очереди или раздела служебной шины.
+    - New-AzureRmServiceBusKey создает новый первичный или вторичный ключ для правила авторизации существующего пространства имен, очереди или раздела служебной шины.
+    - Get-AzureRmServiceBusKey создает новый первичный или вторичный ключ для правила авторизации существующего пространства имен, очереди или раздела служебной шины.
+    - Remove-AzureRmServiceBusNamespaceAuthorizationRule удаляет существующее правило авторизации пространства имен, очереди или раздела служебной шины.
+  * В NamespaceAttributes добавлено свойство ResourceGroup.
+
 * SQL
     * Командлет Set-AzureRmSqlServerTransparentDataEncryptionProtector обновлен для отображения предупреждения и запроса подтверждения в случае, если для типа средства защиты шифрования задается значение AzureKeyVault.
     * Добавлены обновленные командлеты для параметров аудита.
@@ -286,7 +287,7 @@ ms.locfileid: "38100497"
       - Remove-AzureRmSqlDatabaseAuditing
       - Remove-AzureRmSqlServerAuditing
     * При анализе файла схемы для Update-AzureRmSqlSyncGroup теперь не учитывается регистр.
-* Служба хранилища
+* Хранилище
     * Добавлена поддержка NeworkRule в командлетах, предназначенных для учетных записей хранения в режиме ресурсов.
       - New-AzureRmStorageAccount;
       - Set-AzureRmStorageAccount.
@@ -297,15 +298,16 @@ ms.locfileid: "38100497"
 
 ## <a name="20170717---version-421"></a>17.07.2017: версия 4.2.1
 * Службы вычислений
-    - Устранена проблема с командлетами создания и обновления диска виртуальной машины и моментального снимка диска виртуальной машины (ссылка)[https://github.com/azure/azure-powershell/issues/4309].
-      - New-AzureRmDisk
-      - New-AzureRmSnapshot
-      - Update-AzureRmDisk
-      - Update-AzureRmSnapshot
+  - Устранена проблема с командлетами создания и обновления диска виртуальной машины и моментального снимка диска виртуальной машины (ссылка)[<https://github.com/azure/azure-powershell/issues/4309>].
+    - New-AzureRmDisk
+    - New-AzureRmSnapshot
+    - Update-AzureRmDisk
+    - Update-AzureRmSnapshot
 * Профиль
-    - Исправлена проблема с неинтерактивной аутентификацией пользователя в RDFE (ссылка)[https://github.com/Azure/azure-powershell/issues/4299].
+  - Исправлена проблема с неинтерактивной аутентификацией пользователя в RDFE (ссылка)[<https://github.com/Azure/azure-powershell/issues/4299>].
+
 * Управление службами
-    - Исправлена проблема с неинтерактивной аутентификацией пользователя (ссылка)[https://github.com/Azure/azure-powershell/issues/4299].
+  - Исправлена проблема с неинтерактивной аутентификацией пользователя (ссылка)[<https://github.com/Azure/azure-powershell/issues/4299>].
 
 ## <a name="2017711---version-420"></a>11.07.2017: версия 4.2.0
 * Analysis Services:
@@ -660,7 +662,7 @@ ms.locfileid: "38100497"
 * Служебная шина
 
   - Исправление ошибки. Свойствам объекта очереди служебной шины были присвоены значения null, а объект используется в качестве входного параметра в командлете Set-AzureRmServiceBusQueue для обновления очереди:
-   - это относится к свойствам LockDuration, EntityAvailabilityStatus, DuplicateDetectionHistoryTimeWindow, MaxDeliveryCount и MessageCount.
+    - это относится к свойствам LockDuration, EntityAvailabilityStatus, DuplicateDetectionHistoryTimeWindow, MaxDeliveryCount и MessageCount.
 * Service Fabric
 
   - Добавлены командлеты для Service Fabric:
