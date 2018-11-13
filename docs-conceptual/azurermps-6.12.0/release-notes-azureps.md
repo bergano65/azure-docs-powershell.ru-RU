@@ -8,12 +8,12 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.workload: ''
 ms.date: 08/28/2018
-ms.openlocfilehash: c60bc9197266cc1da37cc9af7baf03e7ba8fb7ac
-ms.sourcegitcommit: 06f9206e025afa7207d4657c8f57c94ddb74817a
+ms.openlocfilehash: 8a7b184ed06eb078956229fa67d02840014e3aaf
+ms.sourcegitcommit: ac4b53bb42a25aae013a9d8cd9ae98ada9397274
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51213105"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "51275526"
 ---
 # <a name="release-notes"></a>Заметки о выпуске
 
@@ -164,7 +164,7 @@ ms.locfileid: "51213105"
 #### <a name="azurermprofile"></a>AzureRM.Profile
 * Незначительные изменения в общем коде хранилища.
 * Обновлены файлы справки, в которые добавлены полные типы параметров.
-- В наборе параметров ServicePrincipalCertificateWithSubscriptionId параметр -ServicePrincipal теперь стал необязательным. 
+* В наборе параметров ServicePrincipalCertificateWithSubscriptionId параметр -ServicePrincipal теперь стал необязательным. 
 
 #### <a name="azurestorage"></a>Azure.Storage;
 * Поддержка создания контекста хранилища с использованием OAuth. 
@@ -403,7 +403,7 @@ ms.locfileid: "51213105"
 
 #### <a name="azurestorage"></a>Azure.Storage;
 * Удалено ограничение в 5 ТБ для квоты на общую папку Azure.
-- Set-AzureStorageShareQuota
+* Set-AzureStorageShareQuota
 
 #### <a name="azurermanalysisservices"></a>AzureRM.AnalysisServices
 * Обновление до последней версии Azure ClientRuntime.
@@ -680,8 +680,8 @@ ms.locfileid: "51213105"
 
 #### <a name="azurestorage"></a>Azure.Storage;
 * Добавлена поддержка отправки BLOB-объекта или файла с помощью токена SAS, доступного только для записи.
-- Set-AzureStorageBlobContent
-- Set-AzureStorageFileContent
+* Set-AzureStorageBlobContent
+* Set-AzureStorageFileContent
 
 #### <a name="azurermanalysisservices"></a>AzureRM.AnalysisServices
 * Для AS добавлено обязательное свойство ResourceGroupName.
@@ -783,7 +783,7 @@ ms.locfileid: "51213105"
 * Исправлена ошибка, из-за которой при выполнении командлета Get-AzureRmKeyVault с параметром -Tag возвращались все ресурсы.
 
 #### <a name="azurermnetwork"></a>AzureRM.Network
-* Для параметра шлюзов виртуальной вести, избыточных в пределах зоны, предоставлены новые номера SKU.
+* Для параметра шлюзов виртуальной вести, избыточных между зонами, предоставлены новые номера SKU.
 * Добавлены новые команды для функции поддержки партнерских API для ExpressRoute, развертываемых с помощью ARM:
     - добавлена команда Get-AzureRmExpressRouteCrossConnection;
     - добавлена команда Set-AzureRmExpressRouteCrossConnection;
