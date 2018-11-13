@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 09/11/2018
-ms.openlocfilehash: 245d69d3bcee3c502babe82395341efad2bc96d0
-ms.sourcegitcommit: 06f9206e025afa7207d4657c8f57c94ddb74817a
+ms.openlocfilehash: 77d0ce36ae3ab7c7bddd3febef4600fc9652850f
+ms.sourcegitcommit: ac4b53bb42a25aae013a9d8cd9ae98ada9397274
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51213189"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "51274523"
 ---
 # <a name="use-experimental-azure-powershell-modules"></a>Использование экспериментальных модулей Azure PowerShell
 
@@ -63,7 +63,7 @@ Install-Module AzureRM.Websites.Experiments
 
 Основные усовершенствования рассматриваются с точки зрения здравого смысла. Для реализации этих обновлений требуется незначительно число экспериментов.
 
-- Командлеты на основе сценария. **Все* командлеты должны разрабатываться на основе сценария, а не на основе службы Azure REST.
+- Командлеты на основе сценария. <em>*Все</em> командлеты должны разрабатываться на основе сценариев, а не на основе службы Azure REST.
 
 - Сокращение имен. Это касается имен командлетов (например, `New-AzureRmVM` => `New-AzVm`) и параметров (например, `-ResourceGroupName` => `-Rg`). Чтобы обеспечить совместимость со старыми версиями командлетов, используйте псевдонимы. Обеспечьте _обратную совместимость_ наборов параметров.
 
