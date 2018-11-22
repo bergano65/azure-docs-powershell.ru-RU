@@ -8,11 +8,11 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/27/2018
 ms.openlocfilehash: 3acae0cc03e5af34fdf005ea644e0932278d471a
-ms.sourcegitcommit: 4afdba3cd7e1d348876ce59f3503fdcd258f79ab
+ms.sourcegitcommit: 80a3da199954d0ab78765715fb49793e89a30f12
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "51575779"
+ms.lasthandoff: 11/22/2018
+ms.locfileid: "52258474"
 ---
 # <a name="install-and-configure-azure-powershell"></a>Установка и настройка Azure PowerShell
 
@@ -72,7 +72,7 @@ Are you sure you want to install the modules from 'PSGallery'?
 Ответьте "Да" или "Да для всех", чтобы продолжить установку.
 
 > [!NOTE]
-> Если установленная версия NuGet предшествует версии 2.8.5.201, вам будет предложено скачать и установить последнюю версию NuGet.
+>  Если установленная версия NuGet предшествует версии 2.8.5.201, вам будет предложено скачать и установить последнюю версию NuGet.
 
 Модуль AzureRM — это набор командлетов для работы с Azure Resource Manager.  При установке модуля AzureRM любой модуль Azure PowerShell, который ранее не был установлен, скачивается из коллекции PowerShell.
 

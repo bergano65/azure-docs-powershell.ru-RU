@@ -1,19 +1,18 @@
 ---
-title: Управление подписками Azure с помощью Azure PowerShell | Документация Майкрософт
+title: Управление подписками Azure с помощью Azure PowerShell
 description: Управление подписками Azure с помощью Azure PowerShell
-keywords: Azure PowerShell, подписка
 author: sptramer
 ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.date: 03/30/2017
-ms.openlocfilehash: 8869b700e513d6fc07e69de1dbfe852bd2a52df1
+ms.date: 09/11/2018
+ms.openlocfilehash: a93461af1dafbf8f2c85ef127ecaefadf3be2f52
 ms.sourcegitcommit: 80a3da199954d0ab78765715fb49793e89a30f12
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/22/2018
-ms.locfileid: "52258610"
+ms.locfileid: "52260035"
 ---
 # <a name="manage-multiple-azure-subscriptions"></a>Управление несколькими подписками Azure
 
@@ -21,7 +20,7 @@ ms.locfileid: "52258610"
 
 1. Получите список всех подписок в своей учетной записи.
 
-    ```powershell-interactive
+    ```azurepowershell-interactive
     Get-AzureRmSubscription
     ```
 
@@ -50,13 +49,13 @@ ms.locfileid: "52258610"
 
 2. Определите подписку по умолчанию.
 
-    ```powershell-interactive
-    Select-AzureRmSubscription -SubscriptionName "My Demos"
+    ```azurepowershell-interactive
+    Select-AzureRmSubscription -Subscription "My Demos"
     ```
 
 3. Проверьте изменения, выполнив командлет `Get-AzureRmContext`.
 
-    ```powershell-interactive
+    ```azurepowershell-interactive
     Get-AzureRmContext
     ```
 
@@ -69,4 +68,4 @@ ms.locfileid: "52258610"
     CurrentStorageAccount :
     ```
 
-Когда вы определите подписку по умолчанию, все последующие выполняемые команды Azure PowerShell будут связаны с ней.
+Когда вы определите подписку по умолчанию, все выполняемые команды Azure PowerShell будут связаны с ней.
