@@ -6,13 +6,13 @@ ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.date: 11/16/2018
-ms.openlocfilehash: 32e96c6459c9db0c4b9eda0cc170c85ba99a22ca
-ms.sourcegitcommit: 80a3da199954d0ab78765715fb49793e89a30f12
+ms.date: 11/26/2018
+ms.openlocfilehash: 3d52b18750341f220dc8e10d6bf89796457c5a10
+ms.sourcegitcommit: 558436c824d9b59731aa9b963cdc8df4dea932e7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "52260018"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "52588185"
 ---
 # <a name="install-the-azure-powershell-az-module"></a>Установка модуля Az для Azure PowerShell
 
@@ -32,7 +32,9 @@ $PSVersionTable.PSVersion
 
 > [!IMPORTANT]
 >
-> Не рекомендуется одновременно устанавливать модули `AzureRM` и `Az` в системе. Перед установкой модуля `Az` модуль `AzureRM` необходимо удалить. Соответствующие сведения см. в статье [об удалении модуля Azure PowerShell (AzureRM)](uninstall-azurerm-ps.md).
+> Модули `AzureRM` и `Az` могут быть установлены одновременно. Если у вас установлены оба модуля, __не включайте псевдонимы__.
+> Включение псевдонимов приведет к конфликтам между командлетами `AzureRM` и псевдонимами команд `Az` с непредсказуемыми результатами.
+> Рекомендуется перед установкой модуля `Az` удалить `AzureRM`. Вы можете удалить `AzureRM` или включить псевдонимы в любое время. Инструкции по удалению см. в статье [Удаление модуля Azure PowerShell (AzureRM)](uninstall-azurerm-ps.md). 
 
 Чтобы установить модули в глобальной области видимости, необходим более высокий уровень привилегий для установки модулей из коллекции PowerShell. Чтобы установить Azure PowerShell, выполните следующую команду в сеансе с более высоким уровнем привилегий ("Запуск от имени администратора" в Windows или с правами суперпользователя в macOS или Linux):
 
