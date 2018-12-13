@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 11/16/2018
-ms.openlocfilehash: 616a9e14c3944e3151676d89b8a22e35d8f9d406
-ms.sourcegitcommit: 558436c824d9b59731aa9b963cdc8df4dea932e7
+ms.openlocfilehash: 198c9476b06c818fd3f7cb5ac3ac465497cac9cf
+ms.sourcegitcommit: 087c588169786c005a3c177624fb3ac6c8870125
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/29/2018
-ms.locfileid: "52586434"
+ms.lasthandoff: 12/13/2018
+ms.locfileid: "53216591"
 ---
 # <a name="install-azure-powershell-on-windows-with-powershellget"></a>Установка Azure PowerShell в ОС Windows с помощью PowerShellGet
 
@@ -95,7 +95,7 @@ Update-Module -Name AzureRM
 Вы можете установить несколько версий Azure PowerShell. Чтобы проверить наличие нескольких установленных версий Azure PowerShell, используйте следующую команду:
 
 ```powershell-interactive
-Get-Module -Name AzureRM -List | select Name,Version
+Get-Module -Name AzureRM -ListAvailable | select Name,Version
 ```
 
 Сведения о том, как удалить версию Azure PowerShell, см. в статье [Удаление модуля Azure PowerShell](uninstall-azurerm-ps.md).
