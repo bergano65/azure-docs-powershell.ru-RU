@@ -8,11 +8,11 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/27/2018
 ms.openlocfilehash: ef796bcb81e24b1942c644aad2b4ec7705916b02
-ms.sourcegitcommit: 558436c824d9b59731aa9b963cdc8df4dea932e7
+ms.sourcegitcommit: 087c588169786c005a3c177624fb3ac6c8870125
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/29/2018
-ms.locfileid: "52588151"
+ms.lasthandoff: 12/13/2018
+ms.locfileid: "53217751"
 ---
 # <a name="install-and-configure-azure-powershell"></a>Установка и настройка Azure PowerShell
 
@@ -21,7 +21,7 @@ ms.locfileid: "52588151"
 
 Azure PowerShell рекомендуется устанавливать из коллекции PowerShell.
 
-## <a name="step-1-install-powershellget"></a>Шаг 1. Проверка установленной версии PowerShellGet
+## <a name="step-1-install-powershellget"></a>Шаг 1. Установка PowerShellGet
 
 Чтобы установить элементы из коллекции PowerShell, требуется модуль PowerShellGet. Убедитесь, что в системе установлена необходимая версия PowerShellGet и что выполнены другие требования к системе. Выполните следующую команду, чтобы определить наличие PowerShellGet в вашей системе:
 
@@ -54,9 +54,9 @@ Install-Module PowerShellGet -Force
 > [!IMPORTANT]
 > Для модуля AzureRM, описанном в этом документе, используется .NET Framework. Из-за этого модуль несовместимым с PowerShell версии 6.0, для которой используется .NET Core. Если вы используете PowerShell 6.0, изучите [инструкции по установке для macOS и Linux](install-azurermps-maclinux.md).
 
-## <a name="step-2-install-azure-powershell"></a>Шаг 2. Установка Azure PowerShell
+## <a name="step-2-install-azure-powershell"></a>Шаг 2. Установите Azure PowerShell
 
-Для установки Azure PowerShell из коллекции PowerShell требуются повышенные привилегии. Выполните следующую команду PowerShell с повышенными правами:
+Для установки Azure PowerShell из коллекции PowerShell требуются повышенные права. Выполните следующую команду PowerShell с повышенными правами:
 
 ```powershell-interactive
 # Install the Azure Resource Manager modules from the PowerShell Gallery
