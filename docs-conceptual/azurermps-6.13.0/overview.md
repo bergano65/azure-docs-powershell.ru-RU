@@ -7,15 +7,17 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.manager: carmonm
-ms.date: 09/11/2018
-ms.openlocfilehash: bdd8e69a2ea9df8b4fff100e1f3cc4c82d2d9d9d
-ms.sourcegitcommit: 087c588169786c005a3c177624fb3ac6c8870125
+ms.date: 12/20/2018
+ms.openlocfilehash: eaa4e3ccd2b53304aeaf9cb184814b83f4f88608
+ms.sourcegitcommit: 4acddc7026522c4fe39de2c4424917d88ee01b7e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/13/2018
-ms.locfileid: "53217819"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "53736398"
 ---
 # <a name="overview-of-azure-powershell"></a>Общие сведения об Azure PowerShell
+
+[!INCLUDE[az-replacing-azurerm](../includes/az-replacing-azurerm.md)]
 
 В Azure PowerShell доступен набор командлетов, которые используют модель [Azure Resource Manager](/azure/azure-resource-manager/resource-group-overview) для управления ресурсами Azure. Его можно использовать в браузере с [Azure Cloud Shell](/azure/cloud-shell/overview), а также установить на локальном компьютере и использовать в любом сеансе PowerShell.
 
@@ -27,8 +29,6 @@ ms.locfileid: "53217819"
 * [Виртуальные машины Windows](/azure/virtual-machines/virtual-machines-windows-powershell-samples?toc=/powershell/azure/toc.json)
 * [Веб-приложения](/azure/app-service-web/app-service-powershell-samples?toc=/powershell/azure/toc.json)
 * [Базы данных SQL](/azure/sql-database/sql-database-powershell-samples?toc=/powershell/azure/toc.json)
-
-[!INCLUDE[az-replacing-azurerm](../includes/az-replacing-azurerm.md)]
 
 ## <a name="learn-powershell-basics"></a>Изучение основ PowerShell
 

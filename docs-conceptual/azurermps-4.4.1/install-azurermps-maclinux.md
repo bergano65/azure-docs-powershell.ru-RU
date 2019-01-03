@@ -7,23 +7,18 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 06/06/2018
-ms.openlocfilehash: 47611281f67d68c9fc2686e0c6156b060a225158
-ms.sourcegitcommit: 087c588169786c005a3c177624fb3ac6c8870125
+ms.openlocfilehash: 936bb24eecb4077080e172bf0d29fe57ec652187
+ms.sourcegitcommit: 797c18f93aaa495ef005993b2e202d7378588dfa
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/13/2018
-ms.locfileid: "53217530"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53594460"
 ---
 # <a name="install-azure-powershell-on-macos-or-linux"></a>Установка Azure PowerShell в ОС macOS или Linux
 
 Для платформ, отличных от Windows, доступна альтернатива Azure PowerShell — PowerShell Core версии 6. Эта версия PowerShell предназначена для всех платформ, поддерживающих .NET Core. Для работы с этими платформами доступна особая версия Azure PowerShell — для .NET Core.
 
-> [!NOTE]
-> Сейчас PowerShell Core версии 6 и Azure PowerShell для .NET Core реализованы в бета-версии.
-> Поддержка этих продуктов ограничена. Если у вас возникнут проблемы или вы обнаружите ошибки, сообщите об этом через сайт GitHub.
->
-> * [Проблемы, связанные с PowerShell Core версии 6](https://github.com/PowerShell/PowerShell/issues)
-> * [Проблемы, связанные с Azure PowerShell](https://github.com/azure/azure-docs-powershell/issues)
+[!INCLUDE[az-replacing-azurerm.md](../includes/az-replacing-azurerm.md)]
 
 ## <a name="install-powershell-core"></a>Установка PowerShell Core
 

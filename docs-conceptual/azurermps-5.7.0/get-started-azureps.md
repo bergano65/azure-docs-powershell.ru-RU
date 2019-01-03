@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 11/15/2017
-ms.openlocfilehash: edba82ef095079e24700a47eeb7747b3b28b7643
-ms.sourcegitcommit: 087c588169786c005a3c177624fb3ac6c8870125
+ms.openlocfilehash: a64bc4f07a5dc7d3f42e13877ed3bca53c4987d3
+ms.sourcegitcommit: 6685809f054203bd733c84f68acc69e53e5cca8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/13/2018
-ms.locfileid: "53216693"
+ms.lasthandoff: 01/02/2019
+ms.locfileid: "53982881"
 ---
 # <a name="get-started-with-azure-powershell"></a>Начало работы с Azure PowerShell
 
@@ -24,7 +24,7 @@ ms.locfileid: "53216693"
 
 1. [Установите Azure PowerShell](install-azurerm-ps.md).
 
-2. Чтобы проверить установку, выполните `Get-Module AzureRM -ListAvailable` в командной строке.
+2. Чтобы проверить установку, выполните `Get-InstalledModule AzureRM -AllVersions` в командной строке.
 
 ## <a name="azure-cloud-shell"></a>Azure Cloud Shell
 

@@ -7,17 +7,29 @@ ms.author: sttramer
 ms.manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.openlocfilehash: a35814f4411dd9cab75fa36bd13ff087cdec8f9b
-ms.sourcegitcommit: 087c588169786c005a3c177624fb3ac6c8870125
+ms.openlocfilehash: 7456e45fe9a94d3c1e809dfd075a090448001607
+ms.sourcegitcommit: 6685809f054203bd733c84f68acc69e53e5cca8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/13/2018
-ms.locfileid: "53217071"
+ms.lasthandoff: 01/02/2019
+ms.locfileid: "53982831"
 ---
 # <a name="uninstall-the-azure-powershell-module"></a>Удаление модуля Azure PowerShell
 
 Из этой статьи вы узнаете, как удалить предыдущую версию Azure PowerShell или полностью удалить этот модуль из системы. Если вы решили полностью удалить Azure PowerShell, отправьте нам отзыв с помощью командлета [Send-Feedback](/powershell/module/azurerm.profile/send-feedback).
 Если вы обнаружите ошибку, пожалуйста, [сообщите о ней на сайте GitHub](https://github.com/azure/azure-powershell/issues).
+
+
+## <a name="uninstall-msi"></a>Удаление пакета MSI
+
+Если вы установили Azure PowerShell с помощью пакета MSI, удалять модуль нужно через систему Windows, а не PowerShell.
+
+| платформа | Указания |
+|----------|--------------|
+| Windows 10 | "Пуск" > "Параметры" > "Приложения" |
+| Windows 7 </br>Windows 8 | "Пуск" > "Панель управления" > "Программы" > "Удаление программы" |
+
+В этом окне в списке программ вы должны увидеть модуль Azure PowerShell, который нужно удалить.
 
 ## <a name="uninstall-from-powershell"></a>Удаление с помощью PowerShell
 
@@ -109,14 +121,3 @@ Uninstalling Azure.AnalysisServices version 0.4.7
 $versions = (get-installedmodule AzureRM -AllVersions | Select-Object Version)
 $versions[1..($versions.Length-1)]  | foreach { Uninstall-AllModules -TargetModule AzureRM -Version ($_.Version) -Force }
 ```
-
-## <a name="uninstall-msi"></a>Удаление пакета MSI
-
-Если вы установили Azure PowerShell с помощью пакета MSI, удалять модуль нужно через систему Windows, а не PowerShell.
-
-| платформа | Указания |
-|----------|--------------|
-| Windows 10 | "Пуск" > "Параметры" > "Приложения" |
-| Windows 7 </br>Windows 8 | "Пуск" > "Панель управления" > "Программы" > "Удаление программы" |
-
-В этом окне в списке программ вы должны увидеть модуль Azure PowerShell, который нужно удалить.
