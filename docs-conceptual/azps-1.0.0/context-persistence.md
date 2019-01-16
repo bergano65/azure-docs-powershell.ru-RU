@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 12/13/2018
-ms.openlocfilehash: 8777662b7cfd3948f0e4bd91b0a85cc25bc97285
-ms.sourcegitcommit: 797c18f93aaa495ef005993b2e202d7378588dfa
+ms.openlocfilehash: 8702de48429482748939fb1a43ff911bed15f6c0
+ms.sourcegitcommit: c0f1ef7fd165e5f57dd2b753265510f111356c5f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53595202"
+ms.lasthandoff: 01/08/2019
+ms.locfileid: "54071919"
 ---
 # <a name="persist-user-credentials-across-powershell-sessions"></a>Использование учетных данных пользователя в разных сеансах PowerShell
 
@@ -42,7 +42,7 @@ ms.locfileid: "53595202"
 
 Чтобы разрешить Azure PowerShell запоминать контекст после закрытия сеанса PowerShell, используйте `Enable-AzContextAutosave`. Учетные данные и данные контекста автоматически сохраняются в специальной скрытой папке в каталоге пользователя (`$env:USERPROFILE\.Azure` — на Windows и `$HOME/.Azure` — на других платформах). Каждый новый сеанс PowerShell обращается к контексту, который использовался в последнем сеансе.
 
-Командлеты, которые помогают управлять контекстами Azure, также предоставляют удобные средства. С их помощью вы можете применить изменения как для текущего сеанса PowerShell (область `Process`), так и для всех сеансов PowerShell (область `CurrentUser`). Эти параметры будут подробно описаны в разделе [Использование областей контекстов](#Using-Context-Scopes).
+Командлеты, которые помогают управлять контекстами Azure, также предоставляют удобные средства. С их помощью вы можете применить изменения как для текущего сеанса PowerShell (область `Process`), так и для всех сеансов PowerShell (область `CurrentUser`). Эти параметры подробно описаны в разделе [Использование областей контекстов](#Using-Context-Scopes).
 
 ## <a name="running-azure-powershell-cmdlets-as-background-jobs"></a>Выполнение командлетов Azure PowerShell как фоновых заданий
 

@@ -7,16 +7,23 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 10/29/2018
-ms.openlocfilehash: 8b085720aeabe26c1293ece193e050b31f99a693
-ms.sourcegitcommit: ae81b08a45d8729fc8d40156422e3eb2e94de8c7
+ms.openlocfilehash: 80c59a10666c6e3a01e6c33716fce40094fb14be
+ms.sourcegitcommit: b5635e291cdc324e66c936aa16c5772507fc78e8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/27/2018
-ms.locfileid: "53786685"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "54055682"
 ---
 # <a name="sign-in-with-azure-powershell"></a>Вход с помощью Azure PowerShell
 
-Azure PowerShell поддерживает несколько методов проверки подлинности. Проще всего начать со входа в интерактивном режиме из командной строки.
+Azure PowerShell поддерживает несколько методов проверки подлинности. Проще всего приступить к работе можно с помощью оболочки [Azure Cloud Shell](/azure/cloud-shell/overview), которая автоматически выполняет вход в вашу учетную запись. Если используется локальная установка, вы можете выполнить вход в интерактивном режиме с помощью браузера. При написании скриптов автоматизации рекомендуется использовать [субъект-службу](create-azure-service-principal-azureps.md) с необходимыми разрешениями. Максимально ограничьте разрешения на вход для своего варианта использования, чтобы обеспечить защиту ресурсов Azure.
+
+Когда вы войдете, команды будут выполняться в вашей подписке по умолчанию. Чтобы изменить активную подписку для сеанса, используйте командлет [Set-AzContext](/powershell/module/az.accounts/set-azcontext). Чтобы изменить подписку по умолчанию, используемую при входе в систему с помощью Azure PowerShell, используйте командлет [Set-AzDefault](/powershell/module/az.accounts/set-azdefault).
+
+> [!IMPORTANT]
+>
+> Одни учетные данные можно использовать в нескольких сеансах PowerShell, пока вы остаетесь в системе.
+> Дополнительные сведения см. в статье [Использование учетных данных пользователя в разных сеансах PowerShell](context-persistence.md).
 
 ## <a name="sign-in-interactively"></a>Интерактивный вход
 
@@ -26,12 +33,20 @@ Azure PowerShell поддерживает несколько методов пр
 Connect-AzAccount
 ```
 
-При запуске этот командлет представит строку токена. Чтобы войти, скопируйте эту строку и вставьте ее в https://microsoft.com/devicelogin в браузере. После этого сеанс PowerShell будет аутентифицирован для подключения к Azure. Эта операция проверки подлинности актуальна для текущего сеанса PowerShell.
+При запуске этот командлет представит строку токена. Чтобы войти, скопируйте эту строку и вставьте ее в https://microsoft.com/devicelogin в браузере. Сеанс PowerShell пройдет аутентификацию для подключения к Azure.
 
-> [!IMPORTANT]
->
-> Одни учетные данные можно использовать в нескольких сеансах PowerShell, пока вы остаетесь в системе.
-> Дополнительные сведения см. в статье [Использование учетных данных пользователя в разных сеансах PowerShell](context-persistence.md).
+## <a name="sign-in-with-credentials"></a>Вход с использованием учетных данных
+
+Также можно войти в систему, используя объект `PSCredential` с правами для подключения к Azure.
+Самый простой способ получить объект учетных данных — использовать командлет [Get-Credential](/powershell/module/Microsoft.PowerShell.Security/Get-Credential). Когда вы запустите командлет, вам будет предложено ввести учетные данные: имя пользователя и пароль.
+
+> [!Note]
+> Этот способ не работает с учетными записями Майкрософт или с учетными записями, которые используют двухфакторную проверку подлинности.
+
+```azurepowershell-interactive
+$creds = Get-Credential
+Connect-AzAccount -Credential $creds
+```
 
 ## <a name="sign-in-with-a-service-principal"></a>Вход с использованием субъекта-службы
 
@@ -46,15 +61,17 @@ $pscredential = Get-Credential
 Connect-AzAccount -ServicePrincipal -ApplicationId  "http://my-app" -Credential $pscredential -TenantId $tenantid
 ```
 
-## <a name="sign-in-using-an-azure-managed-service-identity"></a>Вход с использованием Управляемого удостоверения службы Azure
+## <a name="sign-in-using-a-managed-identity"></a>Вход с использованием управляемого удостоверения 
 
-Управляемые удостоверения для ресурсов Azure — это функция Azure Active Directory. Вы можете использовать субъект-службу управляемых удостоверений для входа и получения маркера доступа только для приложений, обеспечив возможность обращения к другим ресурсам. Управляемые удостоверения доступны только на виртуальных машинах в облаке Azure.
+Управляемые удостоверения — это функция Azure Active Directory. Они представляют собой субъекты-службы, назначенные ресурсам в Azure. Вы можете использовать субъект-службу управляемых удостоверений для входа и получения маркера доступа только для приложений, обеспечив возможность обращения к другим ресурсам. Управляемые удостоверения доступны только в ресурсах в облаке Azure.
 
-Дополнительные сведения об управляемых удостоверениях для ресурсов Azure см. в руководстве по [использованию управляемых удостоверений для ресурсов Azure на виртуальной машине Azure для получения маркера доступа](/azure/active-directory/managed-identities-azure-resources/how-to-use-vm-token).
+Дополнительные сведения об управляемых удостоверениях для ресурсов Azure см. в статье [Как использовать управляемые удостоверения для ресурсов Azure на виртуальной машине Azure для получения маркера доступа](/azure/active-directory/managed-identities-azure-resources/how-to-use-vm-token).
 
-## <a name="sign-in-as-a-cloud-solution-provider-csp"></a>Вход в качестве поставщика облачных решений
+## <a name="sign-in-with-a-non-default-tenant-or-as-a-cloud-solution-provider-csp"></a>Вход с использованием нестандартного клиента или в качестве поставщика облачных решений (CSP)
 
-Чтобы войти как [поставщик облачных решений (CSP)](https://azure.microsoft.com/en-us/offers/ms-azr-0145p/), используйте параметр `-TenantId`. Как правило, этот параметр может быть предоставлен как идентификатор клиента или доменное имя. Но для входа в качестве поставщика облачных решений нужно указать **идентификатор клиента**.
+Если ваша учетная запись связана с несколькими клиентами, для входа в систему обязательно используйте параметр `-TenantId` при подключении. Этот параметр можно применить с любым методом входа. При входе в систему в качестве значения для этого параметра можно указать идентификатор объекта Azure клиента (идентификатор клиента) или полное доменное имя клиента.
+
+Если вы являетесь [поставщиком облачных решений](https://azure.microsoft.com/en-us/offers/ms-azr-0145p/), значением для `-TenantId` **должен** быть идентификатор клиента.
 
 ```azurepowershell-interactive
 Connect-AzAccount -TenantId 'xxxx-xxxx-xxxx-xxxx'
@@ -62,7 +79,7 @@ Connect-AzAccount -TenantId 'xxxx-xxxx-xxxx-xxxx'
 
 ## <a name="sign-in-to-another-cloud"></a>Вход в другое облако
 
-Облачные службы Azure предоставляют среды, которые соответствуют региональным правилам обработки данных.
+Облачные службы Azure предоставляют среды, которые соответствуют региональным законам об обработке данных.
 Для учетных записей в региональном облаке нужно при входе указать среду с помощью аргумента `-Environment`.
 Например, если ваша учетная запись находится в облаке для Китая, укажите следующее:
 
@@ -75,17 +92,3 @@ Connect-AzAccount -Environment AzureChinaCloud
 ```azurepowershell-interactive
 Get-AzEnvironment | Select-Object Name
 ```
-
-## <a name="learn-more-about-managing-azure-role-based-access"></a>Узнайте больше об управлении доступом на основе ролей Azure
-
-Дополнительные сведения об аутентификации и управлении подписками в Azure см. в статье [Использование назначений ролей для управления доступом к ресурсам в подписке Azure](/azure/active-directory/role-based-access-control-configure).
-
-Командлеты Azure PowerShell для управления ролями:
-
-* [Get-AzRoleAssignment](/powershell/module/az.Resources/Get-azRoleAssignment)
-* [Get-AzRoleDefinition](/powershell/module/az.Resources/Get-azRoleDefinition)
-* [New-AzRoleAssignment](/powershell/module/az.Resources/New-azRoleAssignment)
-* [New-AzRoleDefinition](/powershell/module/az.Resources/New-azRoleDefinition)
-* [Remove-AzRoleAssignment](/powershell/module/az.Resources/Remove-azRoleAssignment)
-* [Remove-AzRoleDefinition](/powershell/module/az.Resources/Remove-azRoleDefinition)
-* [Set-AzRoleDefinition](/powershell/module/az.Resources/Set-azRoleDefinition)
