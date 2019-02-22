@@ -7,24 +7,21 @@ ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.date: 09/09/2018
-ms.openlocfilehash: 2db1ada32e5a9285c27ec3f569b622c9c33a06b0
+ms.date: 12/13/2018
+ms.openlocfilehash: 3e1c5ad280bdb29ce479dd0a478d0ed58237f969
 ms.sourcegitcommit: 2054a8f74cd9bf5a50ea7fdfddccaa632c842934
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 02/12/2019
-ms.locfileid: "56145045"
+ms.locfileid: "56154169"
 ---
 # <a name="create-an-azure-service-principal-with-azure-powershell"></a>Создание субъекта-службы Azure с помощью Azure PowerShell
 
 Если вы планируете управлять приложением или службой с помощью Azure PowerShell, эти решения нужно запустить в субъекте-службе Azure Active Directory (AAD), а не своей учетной записи. В этой статье объясняется, как создать субъект безопасности с помощью Azure PowerShell.
 
-> [!NOTE]
-> Можно также создать субъект-службу на портале Azure. Дополнительные сведения см. в статье [Создание приложения Azure Active Directory и субъекта-службы с доступом к ресурсам с помощью портала](/azure/azure-resource-manager/resource-group-create-service-principal-portal).
-
 ## <a name="what-is-a-service-principal"></a>Что такое субъект-служба?
 
-Субъект-служба Azure — это идентификатор безопасности, который созданные пользователем приложения, службы и средства автоматизации используют для доступа к определенным ресурсам Azure. Это что-то вроде удостоверения пользователя (имя пользователя и пароль или сертификат) с определенной ролью и строго контролируемыми разрешениями. В отличие от удостоверений пользователей субъект-служба должен выполнять только определенные задачи. Это решение повышает безопасность, если вы предоставите ему минимальный уровень разрешений для выполнения задач управления.
+Субъект-служба Azure — это идентификатор безопасности, который созданные пользователем приложения, службы и средства автоматизации используют для доступа к определенным ресурсам Azure. Субъектам-службам назначаются определенные разрешения, связанные с их задачами, которые обеспечивают лучший контроль безопасности. Это не похоже на обычный идентификатор пользователя, который обычно разрешает вносить любые изменения.
 
 ## <a name="verify-your-own-permission-level"></a>Проверка уровня разрешений
 
@@ -36,15 +33,16 @@ ms.locfileid: "56145045"
 
 Войдите в учетную запись Azure, чтобы вы могли создать субъект-службу. Вам должен быть доступен один из следующих способов идентификации развернутого приложения:
 
-* Уникальное имя развернутого приложения, например MyDemoWebApp в следующих примерах.
-* Идентификатор приложения, глобальный уникальный идентификатор, связанный с развернутым приложением, службой или объектом.
+* Уникальное имя развернутого приложения, например MyDemoWebApp в следующих примерах
+* Идентификатор приложения, глобальный уникальный идентификатор, связанный с развернутым приложением, службой или объектом
 
 ### <a name="get-information-about-your-application"></a>Получение сведений о приложении
 
-Используйте командлет `Get-AzureRmADApplication`, чтобы получить сведения о приложении.
+Используйте командлет `Get-AzADApplication`, чтобы получить сведения о приложении.
 
 ```azurepowershell-interactive
-Get-AzureRmADApplication -DisplayNameStartWith MyDemoWebApp
+$app = Get-AzADApplication -DisplayNameStartWith MyDemoWebApp
+$app
 ```
 
 ```output
@@ -61,10 +59,10 @@ ReplyUrls               : {}
 
 ### <a name="create-a-service-principal-for-your-application"></a>Создание субъекта-службы для приложения
 
-Используйте командлет `New-AzureRmADServicePrincipal`, чтобы создать субъект-службу.
+Используйте командлет `New-AzADServicePrincipal`, чтобы создать субъект-службу.
 
 ```azurepowershell-interactive
-$servicePrincipal = New-AzureRmADServicePrincipal -ApplicationId 00c01aaa-1603-49fc-b6df-b78c4e5138b4
+$servicePrincipal = New-AzADServicePrincipal -ApplicationId 00c01aaa-1603-49fc-b6df-b78c4e5138b4
 ```
 
 ```output
@@ -77,7 +75,7 @@ AdfsId                :
 Type                  : ServicePrincipal
 ```
 
-Здесь вы можете либо непосредственно использовать свойство $servicePrincipal.Secret в командлете Connect-AzureRmAccount (см. раздел "Вход с помощью субъекта-службы" ниже), либо преобразовать SecureString в простую текстовую строку для дальнейшего использования:
+Отсюда вы можете напрямую использовать свойство `$servicePrincipal.Secret` в качестве аргумента для `Connect-AzAccount` (см. "Вход с использованием субъекта-службы"), либо вы можете преобразовать `SecureString` в текстовую строку:
 
 ```azurepowershell-interactive
 $BSTR = [System.Runtime.InteropServices.Marshal]::SecureStringToBSTR($servicePrincipal.Secret)
@@ -87,11 +85,12 @@ $password = [System.Runtime.InteropServices.Marshal]::PtrToStringAuto($BSTR)
 
 ### <a name="sign-in-using-the-service-principal"></a>Вход с помощью субъекта-службы
 
-Теперь вы можете выполнить вход от имени нового субъекта-службы для вашего приложения, используя указанный *appId* и автоматически созданный *пароль*. Для субъекта-службы также нужно указать идентификатор клиента. Идентификатор клиента отображается, если вы вошли в Azure с помощью личных учетных данных. Чтобы выполнить вход с помощью субъекта-службы, используйте следующие команды:
+Вы можете войти как новый субъект-служба для приложения, используя `appId`, который вы предоставили, и `password`, который был  
+создан. Для субъекта-службы также нужно указать идентификатор клиента. Идентификатор клиента отображается, если вы вошли в Azure с помощью личных учетных данных. Чтобы выполнить вход с помощью субъекта-службы, используйте команды:
 
 ```azurepowershell-interactive
 $cred = New-Object System.Management.Automation.PSCredential ("00c01aaa-1603-49fc-b6df-b78c4e5138b4", $servicePrincipal.Secret)
-Connect-AzureRmAccount -Credential $cred -ServicePrincipal -TenantId XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX
+Connect-AzAccount -Credential $cred -ServicePrincipal -TenantId XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX
 ```
 
 После успешного входа вы увидите примерно такие выходные данные:
@@ -114,9 +113,9 @@ CurrentStorageAccount :
 
 В Azure PowerShell доступны следующие командлеты для управления назначением ролей:
 
-* [Get-AzureRmRoleAssignment](/powershell/module/azurerm.resources/get-azurermroleassignment)
-* [New-AzureRmRoleAssignment](/powershell/module/azurerm.resources/new-azurermroleassignment)
-* [Remove-AzureRmRoleAssignment](/powershell/module/azurerm.resources/remove-azurermroleassignment)
+* [Get-AzRoleAssignment](/powershell/module/az.resources/get-azroleassignment)
+* [New-AzRoleAssignment](/powershell/module/az.resources/new-azroleassignment)
+* [Remove-AzRoleAssignment](/powershell/module/az.resources/remove-azroleassignment)
 
 По умолчанию субъекту-службе назначена роль **участника**. Возможно, это не лучший выбор для обеспечения взаимодействия приложения со службами Azure, учитывая общие разрешения этой роли.
 Роль **читателя** имеет больше ограничений и отлично подходит для приложений с доступом только на чтение. Вы можете просмотреть сведения о разрешениях каждой роли или создать пользовательские разрешения на портале Azure.
@@ -124,7 +123,7 @@ CurrentStorageAccount :
 В этом примере мы назначаем роль **читателя** предыдущему примеру субъекта-службы и удаляем роль **участника**:
 
 ```azurepowershell-interactive
-New-AzureRmRoleAssignment -ResourceGroupName myRG -ObjectId 698138e7-d7b6-4738-a866-b4e3081a69e4 -RoleDefinitionName Reader
+New-AzRoleAssignment -ResourceGroupName myRG -ObjectId 698138e7-d7b6-4738-a866-b4e3081a69e4 -RoleDefinitionName Reader
 ```
 
 ```output
@@ -139,13 +138,13 @@ ObjectType         : ServicePrincipal
 ```
 
 ```azurepowershell-interactive
-Remove-AzureRmRoleAssignment -ResourceGroupName myRG -ObjectId 698138e7-d7b6-4738-a866-b4e3081a69e4 -RoleDefinitionName Contributor
+Remove-AzRoleAssignment -ResourceGroupName myRG -ObjectId 698138e7-d7b6-4738-a866-b4e3081a69e4 -RoleDefinitionName Contributor
 ```
 
 Вот как просмотреть текущие назначенные роли:
 
 ```azurepowershell-interactive
-Get-AzureRmRoleAssignment -ResourceGroupName myRG -ObjectId 698138e7-d7b6-4738-a866-b4e3081a69e4
+Get-AzRoleAssignment -ResourceGroupName myRG -ObjectId 698138e7-d7b6-4738-a866-b4e3081a69e4
 ```
 
 ```output
@@ -161,10 +160,10 @@ ObjectType         : ServicePrincipal
 
 Другие командлеты Azure PowerShell для управления ролями:
 
-* [Get-AzureRmRoleDefinition](/powershell/module/azurerm.resources/Get-AzureRmRoleDefinition)
-* [New-AzureRmRoleDefinition](/powershell/module/azurerm.resources/New-AzureRmRoleDefinition)
-* [Remove-AzureRmRoleDefinition](/powershell/module/azurerm.resources/Remove-AzureRmRoleDefinition)
-* [Set-AzureRmRoleDefinition](/powershell/module/azurerm.resources/Set-AzureRmRoleDefinition)
+* [Get-AzRoleDefinition](/powershell/module/az.resources/Get-azRoleDefinition)
+* [New-AzRoleDefinition](/powershell/module/az.resources/New-azRoleDefinition)
+* [Remove-AzRoleDefinition](/powershell/module/az.resources/Remove-azRoleDefinition)
+* [Set-AzRoleDefinition](/powershell/module/az.resources/Set-azRoleDefinition)
 
 ## <a name="change-the-credentials-of-the-security-principal"></a>Изменение учетных данных субъекта безопасности
 
@@ -173,7 +172,7 @@ ObjectType         : ServicePrincipal
 ### <a name="add-a-new-password-for-the-service-principal"></a>Добавление нового пароля субъекта-службы
 
 ```azurepowershell-interactive
-New-AzureRmADSpCredential -ServicePrincipalName http://MyDemoWebApp
+New-AzADSpCredential -ServicePrincipalName http://MyDemoWebApp
 ```
 
 ```output
@@ -187,7 +186,7 @@ Type      : Password
 ### <a name="get-a-list-of-credentials-for-the-service-principal"></a>Получение списка учетных данных субъекта-службы
 
 ```azurepowershell-interactive
-Get-AzureRmADSpCredential -ServicePrincipalName http://MyDemoWebApp
+Get-AzADSpCredential -ServicePrincipalName http://MyDemoWebApp
 ```
 
 ```output
@@ -200,7 +199,7 @@ StartDate           EndDate             KeyId                                Typ
 ### <a name="remove-the-old-password-from-the-service-principal"></a>Удаление старого пароля субъекта-службы
 
 ```azurepowershell-interactive
-Remove-AzureRmADSpCredential -ServicePrincipalName http://MyDemoWebApp -KeyId ca9d4846-4972-4c70-b6f5-a4effa60b9bc
+Remove-AzADSpCredential -ServicePrincipalName http://MyDemoWebApp -KeyId ca9d4846-4972-4c70-b6f5-a4effa60b9bc
 ```
 
 ```output
@@ -213,7 +212,7 @@ service principal objectId '698138e7-d7b6-4738-a866-b4e3081a69e4'.
 ### <a name="verify-the-list-of-credentials-for-the-service-principal"></a>Проверка списка учетных данных субъекта-службы
 
 ```azurepowershell-interactive
-Get-AzureRmADSpCredential -ServicePrincipalName http://MyDemoWebApp
+Get-AzADSpCredential -ServicePrincipalName http://MyDemoWebApp
 ```
 
 ```output
@@ -225,7 +224,7 @@ StartDate           EndDate             KeyId                                Typ
 ### <a name="get-information-about-the-service-principal"></a>Получение сведений о субъекте-службе
 
 ```azurepowershell-interactive
-$svcprincipal = Get-AzureRmADServicePrincipal -ObjectId 698138e7-d7b6-4738-a866-b4e3081a69e4
+$svcprincipal = Get-AzADServicePrincipal -ObjectId 698138e7-d7b6-4738-a866-b4e3081a69e4
 $svcprincipal | Select-Object *
 ```
 

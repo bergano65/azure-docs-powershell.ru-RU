@@ -2,15 +2,12 @@ items:
 - name: Azure PowerShell
   href: overview.md
   items:
+  - name: Общие сведения о новом модуле Az
+    href: new-azureps-module-az.md
   - name: Install
-    href: install-azurerm-ps.md
-    items:
-    - name: Установка в macOS или Linux
-      href: install-azurermps-maclinux.md
-    - name: Установка с помощью пакета MSI
-      href: other-install.md
+    href: install-az-ps.md
   - name: Удаление
-    href: uninstall-azurerm-ps.md
+    href: uninstall-az-ps.md
   - name: Начало работы
     href: get-started-azureps.md
   - name: Cloud Shell
@@ -22,6 +19,8 @@ items:
       href: create-azure-service-principal-azureps.md
     - name: Сохраненные учетные данные
       href: context-persistence.md
+  - name: Перенос из AzureRM
+    href: migrate-from-azurerm-to-az.md
   - name: Запросы
     href: queries-azureps.md
   - name: Форматирование выходных данных
@@ -45,8 +44,8 @@ items:
   - name: Заметки о выпуске
     href: release-notes-azureps.md
     items:
-    - name: Критически важные изменения для Azure PowerShell 6.x
-      href: migration-guide.6.0.0.md
+    - name: Критические изменения для Az 1.0.0
+      href: migrate-az-1.0.0.md
 - name: Учебники
   items:
   - name: Создание виртуальных машин
@@ -63,9 +62,9 @@ items:
     href: /azure/sql-database/sql-database-powershell-samples?toc=%2fpowershell%2fmodule%2ftoc.json
   - name: База данных Cosmos
     href: /azure/cosmos-db/powershell-samples?toc=%2fpowershell%2fmodules%2ftoc.json
-ms.openlocfilehash: 44b6c7eaf75dfd1119ba6a0cc4888834a1fc698a
+ms.openlocfilehash: 5954dc3821f68af8bba916fc4832038ca24b5ca5
 ms.sourcegitcommit: 2054a8f74cd9bf5a50ea7fdfddccaa632c842934
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 02/12/2019
-ms.locfileid: "56156304"
+ms.locfileid: "56145028"

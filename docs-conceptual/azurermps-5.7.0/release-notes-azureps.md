@@ -9,11 +9,11 @@ ms.topic: conceptual
 ms.workload: ''
 ms.date: 2/20/2018
 ms.openlocfilehash: 1a9d38cd60ba596c085e5ee9f8d815e238362b1f
-ms.sourcegitcommit: 087c588169786c005a3c177624fb3ac6c8870125
+ms.sourcegitcommit: 2054a8f74cd9bf5a50ea7fdfddccaa632c842934
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/13/2018
-ms.locfileid: "53218108"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56154186"
 ---
 # <a name="release-notes"></a>Заметки о выпуске
 
@@ -147,7 +147,7 @@ Update-Module -Name AzureRM
     - Update-AzureRmRecoveryServicesAsrProtectionDirection
 
 #### <a name="azurermstorage"></a>AzureRM.Storage
-* Прекращено использование параметров EnableEncryptionService и DisableEncryptionService для командлетов учетной записи хранения New и Set, так как по умолчанию включено кэшрование неактивных данных без возможности отключения.
+* Прекращено использование параметров EnableEncryptionService и DisableEncryptionService для командлетов учетной записи хранения New- и Set-, так как по умолчанию включено кэшрование неактивных данных без возможности отключения.
     - New-AzureRmStorageAccount;
     - Set-AzureRmStorageAccount.
 
