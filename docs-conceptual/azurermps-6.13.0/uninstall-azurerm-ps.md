@@ -7,12 +7,12 @@ ms.author: sttramer
 ms.manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.openlocfilehash: 7456e45fe9a94d3c1e809dfd075a090448001607
-ms.sourcegitcommit: 6685809f054203bd733c84f68acc69e53e5cca8c
+ms.openlocfilehash: a0afae1ba51fdb34425c91049e08d7388f434d7d
+ms.sourcegitcommit: 0b5b0434fba7a752b0199256e04fa34f06aaf33a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/02/2019
-ms.locfileid: "53982831"
+ms.lasthandoff: 02/21/2019
+ms.locfileid: "56464984"
 ---
 # <a name="uninstall-the-azure-powershell-module"></a>Удаление модуля Azure PowerShell
 
@@ -20,7 +20,7 @@ ms.locfileid: "53982831"
 Если вы обнаружите ошибку, пожалуйста, [сообщите о ней на сайте GitHub](https://github.com/azure/azure-powershell/issues).
 
 
-## <a name="uninstall-msi"></a>Удаление пакета MSI
+## <a name="uninstall-azure-powershell-msi"></a>Удаление Azure PowerShell MSI
 
 Если вы установили Azure PowerShell с помощью пакета MSI, удалять модуль нужно через систему Windows, а не PowerShell.
 
@@ -29,7 +29,7 @@ ms.locfileid: "53982831"
 | Windows 10 | "Пуск" > "Параметры" > "Приложения" |
 | Windows 7 </br>Windows 8 | "Пуск" > "Панель управления" > "Программы" > "Удаление программы" |
 
-В этом окне в списке программ вы должны увидеть модуль Azure PowerShell, который нужно удалить.
+В этом окне в списке программ вы должны увидеть модуль __Azure PowerShell__. Это программа, которую можно удалить.
 
 ## <a name="uninstall-from-powershell"></a>Удаление с помощью PowerShell
 
