@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 02/20/2019
-ms.openlocfilehash: ae8bb8341209fedc3fadf8137f4faaf1ad3fe686
-ms.sourcegitcommit: 447276d46ffeeb37f0c07a570536665e36c5ddb8
+ms.openlocfilehash: 3ce1135cc81d11ce6faa62c790cb4358b5fceda4
+ms.sourcegitcommit: 32dad89878c7e728f740936f5f338b8ae878a6a1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/14/2019
-ms.locfileid: "57882408"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58192928"
 ---
 # <a name="create-an-azure-service-principal-with-azure-powershell"></a>Создание субъекта-службы Azure с помощью Azure PowerShell
 
@@ -88,7 +88,7 @@ $sp = New-AzADServicePrincipal -DisplayName ServicePrincipalName -KeyCredential 
 
 ## <a name="get-an-existing-service-principal"></a>Получение существующего субъекта-службы
 
-Список субъектов-служб для активного клиента можно получить с помощью командлета [Get-AzADServicePrincipal](/module/az.resources/get-azadserviceprincipal). По умолчанию эта команда возвращает __все__ субъекты-службы в клиенте, и в крупных организациях выполнение этой операции может занять много времени. Поэтому мы рекомендуем использовать один из необязательных аргументов фильтрации на стороне сервера:
+Список субъектов-служб для активного клиента можно получить с помощью командлета [Get-AzADServicePrincipal](/powershell/module/az.resources/get-azadserviceprincipal). По умолчанию эта команда возвращает __все__ субъекты-службы в клиенте, и в крупных организациях выполнение этой операции может занять много времени. Поэтому мы рекомендуем использовать один из необязательных аргументов фильтрации на стороне сервера:
 
 * `-DisplayNameBeginsWith` — запрашивает субъекты-службы с _префиксом_, который совпадает с указанным значением. Отображаемое имя субъекта-службы представляет собой значение, заданное при создании с помощью параметра `-DisplayName`.
 * `-DisplayName`  — запрашивает _точное совпадение_ для имени субъекта-службы.
@@ -121,7 +121,7 @@ Delete-AzRoleAssignment -ApplicationId <service principal application ID> -RoleD
 Чтобы проверить изменения, выведите назначенные роли:
 
 ```azurepowershell-interactive
-Get-AzRoleAssignment -ServicePrinicpalName ServicePrincipalName
+Get-AzRoleAssignment -ServicePrincipalName ServicePrincipalName
 ```
 
 ## <a name="sign-in-using-a-service-principal"></a>Вход с помощью субъекта-службы
