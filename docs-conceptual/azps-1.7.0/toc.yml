@@ -1,0 +1,70 @@
+items:
+- name: Azure PowerShell
+  href: overview.md
+  items:
+  - name: Общие сведения о новом модуле Az
+    href: new-azureps-module-az.md
+  - name: Install
+    href: install-az-ps.md
+  - name: Удаление
+    href: uninstall-az-ps.md
+  - name: Начало работы
+    href: get-started-azureps.md
+  - name: Cloud Shell
+    href: https://docs.microsoft.com/azure/cloud-shell/overview
+  - name: Вход
+    href: authenticate-azureps.md
+    items:
+    - name: Создание субъекта-службы
+      href: create-azure-service-principal-azureps.md
+    - name: Сохраненные учетные данные
+      href: context-persistence.md
+  - name: Перенос из AzureRM
+    href: migrate-from-azurerm-to-az.md
+  - name: Запросы
+    href: queries-azureps.md
+  - name: Форматирование выходных данных
+    href: formatting-output.md
+  - name: Управление подписками
+    href: manage-subscriptions-azureps.md
+  - name: Развертывание
+    items:
+    - name: Развертывание шаблонов Resource Manager
+      href: /azure/azure-resource-manager/resource-group-template-deploy
+    - name: Экспорт шаблонов Resource Manager
+      href: /azure/azure-resource-manager/resource-manager-export-template-powershell
+    - name: Развертывание частных шаблонов Resource Manager
+      href: /azure/azure-resource-manager/resource-manager-powershell-sas-token
+  - name: Основные понятия
+    items:
+    - name: Экспериментальные модули
+      href: using-experimental-modules.md
+    - name: Задания PowerShell
+      href: using-psjobs.md
+  - name: Заметки о выпуске
+    href: release-notes-azureps.md
+    items:
+    - name: Критические изменения для Az 1.0.0
+      href: migrate-az-1.0.0.md
+- name: Учебники
+  items:
+  - name: Создание виртуальных машин
+    href: azureps-vm-tutorial.yml
+- name: Примеры сценариев
+  items:
+  - name: Виртуальные машины Linux
+    href: /azure/virtual-machines/linux/powershell-samples?toc=%2fpowershell%2fmodule%2ftoc.json
+  - name: Виртуальные машины Windows
+    href: /azure/virtual-machines/windows/powershell-samples?toc=%2fpowershell%2fmodule%2ftoc.json
+  - name: Веб-приложения
+    href: /azure/app-service-web/app-service-powershell-samples?toc=%2fpowershell%2fmodule%2ftoc.json
+  - name: Базы данных SQL
+    href: /azure/sql-database/sql-database-powershell-samples?toc=%2fpowershell%2fmodule%2ftoc.json
+  - name: База данных Cosmos
+    href: /azure/cosmos-db/powershell-samples?toc=%2fpowershell%2fmodules%2ftoc.json
+ms.openlocfilehash: 5954dc3821f68af8bba916fc4832038ca24b5ca5
+ms.sourcegitcommit: 89066b7c4b527357bb2024e1ad708df84c131804
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59363904"
