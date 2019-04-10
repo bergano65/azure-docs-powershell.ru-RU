@@ -151,7 +151,7 @@ New-AzureRmAvailabilitySet -ResourceGroupName "MyRG" -Name "MyAvailabilitySet" -
 
 **Set-AzureRmVMAEMExtension**
 - Удален параметр `DisableWAD`.
-    -  Система диагностики Microsoft Azure отключена по умолчанию.
+    -  Диагностика Microsoft Azure отключена по умолчанию.
 
 **Set-AzureRmVMDataDisk**
 - Допустимые значения для параметра `StorageAccountType` изменены с `StandardLRS` и `PremiumLRS` на `Standard_LRS` и `Premium_LRS`соответственно.
