@@ -8,10 +8,10 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 12/13/2018
 ms.openlocfilehash: 28122ca953d62b405f19effbbc680f2dc6202cca
-ms.sourcegitcommit: 89066b7c4b527357bb2024e1ad708df84c131804
+ms.sourcegitcommit: ae4540a90508db73335a54408dfd6cdf3712a1e9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59364274"
 ---
 # <a name="migrate-from-azurerm-to-azure-powershell-az"></a>Миграция с AzureRM на Az для Azure PowerShell
@@ -43,7 +43,7 @@ Get-InstalledModule -Name AzureRM -AllVersions
 
 * __РЕКОМЕНДУЕТСЯ__: [Удалите модуль AzureRM](/powershell/azure/uninstall-az-ps#uninstall-the-azurerm-module).
   Убедитесь, что вы удалили _все_ установленные версии AzureRM, а не только самую последнюю.
-* [Установите модуль Az.](install-az-ps.md)
+* [Установите модуль Az](install-az-ps.md).
 
 ## <a name="a-namealiasesenable-azurerm-compatibility-aliases"></a><a name="aliases"/>Включение псевдонимов совместимости AzureRM 
 
@@ -68,7 +68,7 @@ Enable-AzureRmAlias -Scope CurrentUser
 ## <a name="change-module-imports-and-cmdlet-names"></a>Изменение импорта модулей и имен командлетов
 
 В общем случае имена модулей были изменены таким образом, чтобы заменить `AzureRM` и `Azure` на `Az`. То же относится и к командлетам.
-Например, модуль `AzureRM.Compute` был переименован в `Az.Compute`. `New-AzureRMVM` теперь называется `New-AzVM`, а `Get-AzureStorageBlob` — `Get-AzStorageBlob`.
+Например, модуль `AzureRM.Compute` был переименован в `Az.Compute`. `New-AzureRMVM` теперь называется `New-AzVM`, а `Get-AzureStorageBlob` — `Get-AzStorageBlob`.
 
 Существует несколько исключений из этой схемы именования, о которых следует знать. Некоторые модули были переименованы или объединены с существующими модулями, что не повлияло на суффикс их командлетов, кроме изменения `AzureRM` или `Azure` на `Az`. В противном случае полный суффикс командлета был изменен в соответствии с новым именем модуля.
 

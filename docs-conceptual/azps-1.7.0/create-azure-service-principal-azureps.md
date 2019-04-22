@@ -8,10 +8,10 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 02/20/2019
 ms.openlocfilehash: 06116c7eb6ed848c9f369a3dd16f5e901e02afbe
-ms.sourcegitcommit: 1f13aaa89d23130f84b98047e261d26cd4e9cf0c
+ms.sourcegitcommit: ae4540a90508db73335a54408dfd6cdf3712a1e9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/10/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59430624"
 ---
 # <a name="create-an-azure-service-principal-with-azure-powershell"></a>Создание субъекта-службы Azure с помощью Azure PowerShell
@@ -91,8 +91,8 @@ $sp = New-AzADServicePrincipal -DisplayName ServicePrincipalName -KeyCredential 
 
 Список субъектов-служб для активного клиента можно получить с помощью командлета [Get-AzADServicePrincipal](/powershell/module/az.resources/get-azadserviceprincipal). По умолчанию эта команда возвращает __все__ субъекты-службы в клиенте, и в крупных организациях выполнение этой операции может занять много времени. Поэтому мы рекомендуем использовать один из необязательных аргументов фильтрации на стороне сервера:
 
-* `-DisplayNameBeginsWith` — запрашивает субъекты-службы с _префиксом_, который совпадает с указанным значением. Отображаемое имя субъекта-службы представляет собой значение, заданное при создании с помощью параметра `-DisplayName`.
-* `-DisplayName` — запрашивает _точное совпадение_ для имени субъекта-службы.
+* `-DisplayNameBeginsWith` — запрашивает субъекты-службы с _префиксом_, который совпадает с указанным значением. Отображаемое имя субъекта-службы представляет собой значение, заданное при создании с помощью параметра `-DisplayName`.
+* `-DisplayName`  — запрашивает _точное совпадение_ для имени субъекта-службы.
 
 ## <a name="manage-service-principal-roles"></a>Управление ролями субъекта-службы
 
@@ -100,7 +100,7 @@ $sp = New-AzADServicePrincipal -DisplayName ServicePrincipalName -KeyCredential 
 
 * [Get-AzRoleAssignment](/powershell/module/az.resources/get-azroleassignment)
 * [New-AzRoleAssignment](/powershell/module/az.resources/new-azroleassignment)
-* [Delete-AzRoleAssignment](/powershell/module/az.resources/delete-azroleassignment)
+* [Delete-AzRoleAssignment](/powershell/module/az.resources/delete-azroleassignment).
 
 По умолчанию субъекту-службе назначена роль **участника**. Эта роль имеет все разрешения на чтение из учетной записи Azure и запись в нее. Роль **читателя** имеет больше ограничений, предоставляя права доступа только на чтение.  Дополнительные сведения об управлении доступом на основе ролей см. в статье [Встроенные роли для управления доступом на основе ролей в Azure](/azure/active-directory/role-based-access-built-in-roles).
 

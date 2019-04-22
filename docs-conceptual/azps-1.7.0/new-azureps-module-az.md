@@ -8,10 +8,10 @@ ms.manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.openlocfilehash: 10665a72bc7dcae8ecf36b5ef4e2ab285a0e78b7
-ms.sourcegitcommit: 89066b7c4b527357bb2024e1ad708df84c131804
+ms.sourcegitcommit: ae4540a90508db73335a54408dfd6cdf3712a1e9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59364221"
 ---
 # <a name="introducing-the-new-azure-powershell-az-module"></a>Знакомство с новым модулем Az для Azure PowerShell
@@ -29,7 +29,7 @@ Az — это новый модуль, поэтому нумерация вер
 Мы рекомендуем всем пользователям перейти на новый модуль Az. Для этого выполните следующие действия:
 
 * __РЕКОМЕНДУЕТСЯ__: [Удалите модуль AzureRM для Azure PowerShell](/powershell/azure/uninstall-az-ps#uninstall-the-azurerm-module).
-* [Установка модуля Az для Azure PowerShell](/powershell/azure/install-az-ps)
+* [Установите модуль Az для Azure PowerShell](/powershell/azure/install-az-ps).
 * Активируйте режим совместимости, чтобы добавить псевдонимы для командлетов AzureRM с помощью `Enable-AzureRMAlias`, пока вы не ознакомитесь с новым набором команд. Включайте псевдонимы __только__ в том случае, если у вас не установлено AzureRM.
 
 ## <a name="migrate-existing-scripts-to-az"></a>Миграция существующих скриптов на Az

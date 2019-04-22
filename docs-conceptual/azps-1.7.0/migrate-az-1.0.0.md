@@ -8,10 +8,10 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 12/14/2018
 ms.openlocfilehash: be3e19dc4b689adbc63b933dd9f3454122d5344a
-ms.sourcegitcommit: 89066b7c4b527357bb2024e1ad708df84c131804
+ms.sourcegitcommit: ae4540a90508db73335a54408dfd6cdf3712a1e9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59364246"
 ---
 # <a name="migration-guide-for-az-100"></a>Руководство по миграции для Az версии 1.0.0
@@ -21,7 +21,7 @@ ms.locfileid: "59364246"
 ## <a name="table-of-contents"></a>Оглавление
 - [Общие критически важные изменения](#general-breaking-changes)
   - [Изменения префикса существительного командлета](#cmdlet-noun-prefix-changes)
-  - [Изменение имен модулей](#module-name-changes)
+  - [Изменение имени модуля](#module-name-changes)
   - [Удаленные модули](#removed-modules)
   - [Windows PowerShell 5.1 и .NET 4.7.2](#windows-powershell-51-and-net-472)
   - [Временное удаление входа пользователя с помощью PSCredential](#temporary-removal-of-user-login-using-pscredential)
@@ -188,9 +188,9 @@ RequiredModules = @(@{ModuleName="Az.Profile"; ModuleVersion="1.0.0"})
 ### <a name="azcompute-previously-azurermcompute"></a>Az.Compute (ранее AzureRM.Compute)
 - `IdentityIds` удалены из свойства `Identity` в объектах `PSVirtualMachine` и `PSVirtualMachineScaleSet`. Сценарии больше не должны использовать значение этого поля для принятия решений об обработке.
 - Тип свойства `InstanceView` объекта `PSVirtualMachineScaleSetVM` изменен с `VirtualMachineInstanceView` на `VirtualMachineScaleSetVMInstanceView`
-- `AutoOSUpgradePolicy` и `AutomaticOSUpgrade` — эти свойства удалены из свойства `UpgradePolicy`.
+- Свойства `AutoOSUpgradePolicy` и `AutomaticOSUpgrade` удалены из свойства `UpgradePolicy`
 - Тип свойства `Sku` в объекте `PSSnapshotUpdate` изменен с `DiskSku` на `SnapshotSku`
-- `VmScaleSetVMParameterSet` — удалено из командлета `Add-AzVMDataDisk`. Вы больше не можете отдельно добавлять диск данных в виртуальную машину масштабируемого набора.
+- `VmScaleSetVMParameterSet` удалено из командлета `Add-AzVMDataDisk`, вы больше не можете отдельно добавлять диск с данными в виртуальную машину масштабируемого набора.
 
 ### <a name="azdatafactory-previously-azurermdatafactories-and-azurermdatafactoryv2"></a>Az.DataFactory (ранее AzureRM.DataFactories и AzureRM.DataFactoryV2)
 - Параметр `GatewayName` стал обязательным в командлете `New-AzDataFactoryEncryptValue`
@@ -198,7 +198,7 @@ RequiredModules = @(@{ModuleName="Az.Profile"; ModuleVersion="1.0.0"})
 - Параметр `LinkedServiceName` удален из командлета `Get-AzDataFactoryV2ActivityRun`. Сценарии больше не должны использовать значение этого поля для принятия решений об обработке.
 
 ### <a name="azdatalakeanalytics-previously-azurermdatalakeanalytics"></a>Az.DataLakeAnalytics (ранее AzureRM.DataLakeAnalytics)
-- Удалены следующие нерекомендуемые командлеты: `New-AzDataLakeAnalyticsCatalogSecret`, `Remove-AzDataLakeAnalyticsCatalogSecret` и `Set-AzDataLakeAnalyticsCatalogSecret`
+- Удалены следующие нерекомендуемые командлеты: `New-AzDataLakeAnalyticsCatalogSecret`, `Remove-AzDataLakeAnalyticsCatalogSecret` и `Set-AzDataLakeAnalyticsCatalogSecret`.
 
 ### <a name="azdatalakestore-previously-azurermdatalakestore"></a>Az.DataLakeStore (ранее AzureRM.DataLakeStore)
 - В следующих командлетах параметр `Encoding` изменен с типа `FileSystemCmdletProviderEncoding` на `System.Text.Encoding`. Это изменение удаляет значения кодирования `String` и `Oem`. Все остальные предыдущие значения кодирования остаются.
@@ -264,7 +264,7 @@ RequiredModules = @(@{ModuleName="Az.Profile"; ModuleVersion="1.0.0"})
 
 ### <a name="azrecoveryservices-previously-azurermrecoveryservices-azurermrecoveryservicesbackup-and-azurermrecoveryservicessiterecovery"></a>Az.RecoveryServices (ранее AzureRM.RecoveryServices, AzureRM.RecoveryServices.Backup и AzureRM.RecoveryServices.SiteRecovery)
 - Из командлета `New/Set-AzRecoveryServicesAsrPolicy` удален параметр `Encryption`.
-- `TargetStorageAccountName` — этот параметр теперь является обязательным для восстановления управляемого диска в командлете `Restore-AzRecoveryServicesBackupItem`.
+- Параметр `TargetStorageAccountName` теперь является обязательным для восстановления управляемого диска в командлете `Restore-AzRecoveryServicesBackupItem`.
 - В командлете `Restore-AzRecoveryServicesBackupItem` удалены параметры `StorageAccountName` и `StorageAccountResourceGroupName`.
 - В командлете `Get-AzRecoveryServicesBackupContainer` удален параметр `Name`.
 
@@ -304,13 +304,13 @@ RequiredModules = @(@{ModuleName="Az.Profile"; ModuleVersion="1.0.0"})
 
 ### <a name="azsql-previously-azurermsql"></a>Az.Sql (ранее AzureRM.Sql)
 - Из командлета `Set-AzSqlDatabaseBackupLongTermRetentionPolicy` удалены параметры `State` и `ResourceId`.
-- Удалены следующие нерекомендуемые командлеты: `Get/Set-AzSqlServerBackupLongTermRetentionVault`, `Get/Start/Stop-AzSqlServerUpgrade`, `Get/Set-AzSqlDatabaseAuditingPolicy`, `Get/Set-AzSqlServerAuditingPolicy`, `Remove-AzSqlDatabaseAuditing`, `Remove-AzSqlServerAuditing`
+- Удалены следующие нерекомендуемые командлеты: `Get/Set-AzSqlServerBackupLongTermRetentionVault`, `Get/Start/Stop-AzSqlServerUpgrade`, `Get/Set-AzSqlDatabaseAuditingPolicy`, `Get/Set-AzSqlServerAuditingPolicy`, `Remove-AzSqlDatabaseAuditing`, `Remove-AzSqlServerAuditing`.
 - Из командлета `Get-AzSqlDatabaseBackupLongTermRetentionPolicy` удален нерекомендуемый параметр `Current`
 - Из командлета `Get-AzSqlServerServiceObjective` удален нерекомендуемый параметр `DatabaseName`
 - Из командлета `Set-AzSqlDatabaseDataMaskingPolicy` удален нерекомендуемый параметр `PrivilegedLogin`
 
 ### <a name="azstorage-previously-azurestorage-and-azurermstorage"></a>Az.Storage (ранее Azure.Storage и AzureRM.Storage)
-- Для поддержки создания контекста хранения Oauth только с именем учетной записи хранения набор параметров по умолчанию был изменен на `OAuthParameterSet`
+- Для поддержки создания контекста хранения Oauth только с именем учетной записи хранения набор параметров по умолчанию был изменен на `OAuthParameterSet`.
   - Пример: `$ctx = New-AzureStorageContext -StorageAccountName $accountName`
 - Параметр `Location` стал обязательным в командлете `Get-AzStorageUsage`
 - Методы API службы хранилища теперь используют асинхронную модель на основе задач (TAP) вместо синхронных вызовов API.

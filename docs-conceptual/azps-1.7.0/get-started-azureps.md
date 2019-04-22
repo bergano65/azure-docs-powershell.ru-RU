@@ -8,10 +8,10 @@ ms.devlang: powershell
 ms.topic: get-started-article
 ms.date: 01/14/2019
 ms.openlocfilehash: 0c3b749cb2ac7f11dacafca76b65944f523f727d
-ms.sourcegitcommit: 89066b7c4b527357bb2024e1ad708df84c131804
+ms.sourcegitcommit: ae4540a90508db73335a54408dfd6cdf3712a1e9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59364230"
 ---
 # <a name="get-started-with-azure-powershell"></a>Начало работы с Azure PowerShell
@@ -66,10 +66,10 @@ Get-Command -Verb Get -Noun AzVM* -Module Az.Compute
 |---------------|-------------------------|----------------|
 | [Группа ресурсов](/azure/azure-resource-manager/resource-group-overview) | [Az.Resources](/powershell/module/az.resources#resources) | `AzResourceGroup` |
 | [Виртуальные машины](/azure/virtual-machines) | [Az.Compute](/powershell/module/az.compute#virtual_machines) | `AzVM` |
-| [учетные записи хранения;](/azure/storage/common/storage-introduction) | [Az.Storage](/powershell/module/az.storage/) | `AzStorageAccount` |
-| [Key Vault](/azure/key-vault/key-vault-whatis) | [Az.KeyVault](/powershell/module/az.keyvault) | `AzKeyVault` |
+| [Учетные записи хранения](/azure/storage/common/storage-introduction) | [Az.Storage](/powershell/module/az.storage/) | `AzStorageAccount` |
+| [хранилище ключей;](/azure/key-vault/key-vault-whatis) | [Az.KeyVault](/powershell/module/az.keyvault) | `AzKeyVault` |
 | [Веб-приложения](/azure/app-service) | [Az.Websites](/powershell/module/az.websites) | `AzWebApp` |
-| [базы данных SQL;](/azure/sql-database) | [Az.Sql](/powershell/module/az.sql) | `AzSqlDatabase` |
+| [Базы данных SQL](/azure/sql-database) | [Az.Sql](/powershell/module/az.sql) | `AzSqlDatabase` |
 
 Полный список модулей для Azure PowerShell см. на [этой странице](https://github.com/Azure/azure-powershell/blob/master/documentation/azure-powershell-modules.md) сайта GitHub.
 
@@ -82,9 +82,9 @@ Get-Command -Verb Get -Noun AzVM* -Module Az.Compute
 
 Кроме того, можно воспользоваться краткими руководствами по Azure PowerShell для других популярных служб Azure:
 
-* [Создание учетной записи хранения](/azure/storage/common/storage-quickstart-create-account?tabs=azure-powershell)
+* [создать учетную запись хранения;](/azure/storage/common/storage-quickstart-create-account?tabs=azure-powershell)
 * [Передача объектов в хранилище BLOB-объектов Azure и из него](/azure/storage/blobs/storage-quickstart-blobs-powershell)
-* [Создание и извлечение секретов в Azure Key Vault](/azure/key-vault/quick-create-powershell)
+* [Создание и извлечение секретов из Azure Key Vault](/azure/key-vault/quick-create-powershell)
 * [Создание базы данных Azure SQL и брандмауэра](/azure/sql-database/scripts/sql-database-create-and-configure-database-powershell)
 * [Запуск контейнеров в службе "Экземпляры контейнеров Azure"](/azure/container-instances/container-instances-quickstart-powershell)
 * [Создание масштабируемого набора виртуальных машин (VMSS)](/azure/virtual-machine-scale-sets/quick-create-powershell)
@@ -94,7 +94,7 @@ Get-Command -Verb Get -Noun AzVM* -Module Az.Compute
 
 * [Вход с помощью Azure PowerShell](authenticate-azureps.md)
 * [Управление подписками Azure с помощью Azure PowerShell](manage-subscriptions-azureps.md)
-* [Создание субъектов-служб с помощью Azure PowerShell](create-azure-service-principal-azureps.md)
+* [Создание субъектов-служб Azure с помощью Azure PowerShell](create-azure-service-principal-azureps.md)
 * Помощь от сообщества:
-  * [Форум Azure на портале MSDN](http://go.microsoft.com/fwlink/p/?LinkId=320212)
-  * [Переполнение стека](http://go.microsoft.com/fwlink/?LinkId=320213)
+  * [Форум Azure на MSDN](http://go.microsoft.com/fwlink/p/?LinkId=320212)
+  * [Stack Overflow](http://go.microsoft.com/fwlink/?LinkId=320213)
