@@ -1,16 +1,9 @@
-items:
 - name: PowerShell для Azure Stack
   href: overview.md
   items:
-  - name: Install
-    href: https://docs.microsoft.com/en-us/azure/azure-stack/azure-stack-powershell-install?toc=/powershell/azure/azure-stack/toc.json
-  - name: Подключение — оператор облака
-    href: https://docs.microsoft.com/en-us/azure/azure-stack/azure-stack-powershell-configure-admin
-  - name: Подключение — пользователь
-    href: https://docs.microsoft.com/en-us/azure/azure-stack/user/azure-stack-powershell-configure-user
-ms.openlocfilehash: 4c7843ba9e219de49a2b75560d24aad73ce6fecb
-ms.sourcegitcommit: ae4540a90508db73335a54408dfd6cdf3712a1e9
-ms.translationtype: HT
-ms.contentlocale: ru-RU
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "60120545"
+    - name: Install
+      href: 'https://docs.microsoft.com/en-us/azure/azure-stack/azure-stack-powershell-install?toc=/powershell/azure/azure-stack/toc.json'
+    - name: "Подключение\_— оператор облака"
+      href: 'https://docs.microsoft.com/en-us/azure/azure-stack/azure-stack-powershell-configure-admin'
+    - name: "Подключение\_— пользователь"
+      href: 'https://docs.microsoft.com/en-us/azure/azure-stack/user/azure-stack-powershell-configure-user'
