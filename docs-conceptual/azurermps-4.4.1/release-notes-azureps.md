@@ -184,7 +184,7 @@ ms.locfileid: "56154058"
     - Командлет Set-AzureRmManagedApplicationDefinition для обновления определения управляемого приложения.
 * SQL
   * Добавлена поддержка правил виртуальной сети:
-    - Добавлен командлет Get-AzureRmSqlServerVirtualNetworkRule, который позволяет получить правила виртуальной сети с фильтрацией по имени конкретного правила или списку правил для виртуальной сети в Azure SQL Server.
+    - Добавлен командлет Get-AzureRmSqlServerVirtualNetworkRule, который позволяет получить правила виртуальной сети с фильтрацией по имени конкретного правила или списку правил виртуальной сети в Azure SQL Server.
     - Добавлен командлет Set-AzureRmSqlServerVirtualNetworkRule для изменения виртуальной сети, на которую указывает правило.
     - Добавлен командлет Remove-AzureRmSqlServerVirtualNetworkRule для удаления правила виртуальной сети в Azure SQL Server.
     - Добавлен командлет New-AzureRmSqlServerVirtualNetworkRule для создания правила виртуальной сети в Azure SQL Server.
