@@ -6,6 +6,12 @@
   href: install-az-ps.md
 - name: Удаление
   href: uninstall-az-ps.md
+- name: Перенос из AzureRM
+  items:
+    - name: Этапы миграции
+      href: migrate-from-azurerm-to-az.md
+    - name: Переход с AzureRM на Az
+      href: migrate-az-1.0.0.md
 - name: Начало работы
   href: get-started-azureps.md
 - name: Cloud Shell
@@ -18,8 +24,6 @@
       href: create-azure-service-principal-azureps.md
     - name: Сохраненные учетные данные
       href: context-persistence.md
-- name: Перенос из AzureRM
-  href: migrate-from-azurerm-to-az.md
 - name: Запросы
   href: queries-azureps.md
 - name: Форматирование выходных данных
@@ -58,5 +62,3 @@
       href: /azure/cosmos-db/powershell-samples?toc=%2fpowershell%2fmodules%2ftoc.json
 - name: Заметки о выпуске
   href: release-notes-azureps.md
-- name: "Критические изменения для Az\_1.0.0"
-  href: migrate-az-1.0.0.md
