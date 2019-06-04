@@ -73,4 +73,8 @@
       href: /azure/cosmos-db/powershell-samples?toc=%2fpowershell%2fmodules%2ftoc.json
       displayName: 'database, nosql, mongodb, couchdb'
 - name: Заметки о выпуске
-  href: release-notes-azureps.md
+  items:
+    - name: "Заметки о выпуске Az\_ 2.1.0"
+      href: release-notes-azureps.md
+    - name: "Критические изменения в версии Az\_2.0.0"
+      href: migrate-az-2.0.0.md
