@@ -7,14 +7,16 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/01/2018
-ms.openlocfilehash: b4cbeb1b523664fb49c4640eaafd56e3b843ebaa
-ms.sourcegitcommit: 2054a8f74cd9bf5a50ea7fdfddccaa632c842934
+ms.openlocfilehash: f8dc413a91876e53e62d25cc38ac3b3ef6afda8e
+ms.sourcegitcommit: bbd3f061cac3417ce588487c1ae4e0bc52c11d6a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56145052"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "65534588"
 ---
 # <a name="breaking-changes-for-microsoft-azure-powershell-500"></a>Критические изменения для Microsoft Azure PowerShell 5.0.0
+
+[!INCLUDE [migrate-to-az](../includes/migrate-to-az.md)]
 
 Этот документ предназначен для уведомления о критических изменениях и является руководством по миграции для пользователей командлетов Microsoft Azure PowerShell. В каждом разделе описана причина критического изменения и самый простой путь миграции. Подробное описание см. в запросах на вытягивание для каждого изменения.
 

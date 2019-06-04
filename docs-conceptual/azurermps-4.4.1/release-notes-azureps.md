@@ -8,14 +8,16 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.workload: ''
 ms.date: 07/26/2017
-ms.openlocfilehash: 563f84c3af98de066611dd80102e552b31f12883
-ms.sourcegitcommit: 2054a8f74cd9bf5a50ea7fdfddccaa632c842934
+ms.openlocfilehash: bee7d63c06ab42e920eea750095facddb8f542d8
+ms.sourcegitcommit: bbd3f061cac3417ce588487c1ae4e0bc52c11d6a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56154058"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "65534536"
 ---
 # <a name="release-notes"></a>Заметки о выпуске
+
+[!INCLUDE [migrate-to-az](../includes/migrate-to-az.md)]
 
 Здесь приведен список изменений, внесенных в Azure PowerShell в этом выпуске.
 
@@ -60,7 +62,7 @@ ms.locfileid: "56154058"
     - Get-AzureRmContainerGroup;
     - Remove-AzureRmContainerGroup;
     - Get-AzureRmContainerInstanceLog.
-* Аналитика
+* Аналитические сведения
   * Новый командлет Disable-AzureRmActivityLogAlert:
     - Новый командлет для отключения оповещения для существующего журнала действий.
     - При необходимости с помощью этого командлета также можно присваивать теги.
@@ -92,7 +94,7 @@ ms.locfileid: "56154058"
     * Get-AzureKeyVaultCertificate;
     * Remove-AzureKeyVaultCertificate;
     * Undo-AzureKeyVaultCertificateRemoval.
-* Сеть
+* Network
   * Добавлена поддержка для служб конечных точек в подсетях виртуальной сети.
     - Обновлен командлет Add-AzureRmVirtualSubnetConfig: добавлен необязательный параметр -ServiceEndpoint.
     - Обновлен командлет New-AzureRmVirtualSubnetConfig: добавлен необязательный параметр -ServiceEndpoint.
@@ -239,7 +241,7 @@ ms.locfileid: "56154058"
     - Remove-AzureRmEventHubAuthorizationRule удаляет правило авторизации существующего пространства имен или концентратора событий.
     - New-AzureRmEventHubKey создает новый первичный или вторичный ключ для правила авторизации существующего пространства имен или концентратора событий.
     - Get-AzureRmEventHubKey получает первичный или вторичный ключ для правила авторизации существующего пространства имен или концентратора событий.
-* Сеть
+* Network
     * Добавлена поддержка IPv6 и новый необязательный параметр -PeerAddressType.
       * New-AzureRmExpressRouteCircuitPeeringConfig:
       * Set-AzureRmExpressRouteCircuitPeeringConfig: добавлена поддержка протокола IPv6. Добавлен новый необязательный параметр.
@@ -390,7 +392,7 @@ ms.locfileid: "56154058"
 * Хранилище ключей
     * Удалите из запроса каталога адрес электронной почты, когда в командлетах Set-AzureRMKeyVaultAccessPolicy и Remove-AzureRMKeyVaultAccessPolicy указывается параметр -UserPrincipalName.
       - Теперь у обоих командлетов есть параметр -EmailAddress, который может использоваться вместо параметра -UserPrincipalName, когда в запросе удобно использовать адрес электронной почты.  При наличии в каталоге более одного соответствующего адреса электронной почты выполнение командлета завершится ошибкой.
-* Сеть
+* Network
     * New-AzureRmIpsecPolicy: SALifeTimeSeconds и SADataSizeKilobytes больше не являются обязательными параметрами.
         - Значение SALifeTimeSeconds по умолчанию составляет 27 000 секунд.
         - Значение SADataSizeKilobytes по умолчанию составляет 102 400 000 КБ.
@@ -490,7 +492,7 @@ ms.locfileid: "56154058"
     * Get-AzureKeyVaultManagedStorageSasDefinition;
     * Set-AzureKeyVaultManagedStorageSasDefinition;
     * Remove-AzureKeyVaultManagedStorageSasDefinition.
-* Сеть
+* Network
     * Get-AzureRmNetworkUsage: новый командлет для отображения сведений о загрузке и использовании сети.
     * Добавлены новые параметры GatewaySku для VirtualNetworkGateways:
         * Для VPN-шлюзов добавлены новые SKU: VpnGw1, VpnGw2, VpnGw3.

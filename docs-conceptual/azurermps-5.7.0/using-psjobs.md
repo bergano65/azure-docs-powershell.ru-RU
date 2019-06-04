@@ -7,14 +7,16 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 12/11/2017
-ms.openlocfilehash: 827bf06cfafc43e6cabdd504b7cfff5ce353072c
-ms.sourcegitcommit: 2054a8f74cd9bf5a50ea7fdfddccaa632c842934
+ms.openlocfilehash: d2ffd6cc4c5e70c53ab60b1280384faac9b45867
+ms.sourcegitcommit: bbd3f061cac3417ce588487c1ae4e0bc52c11d6a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56156327"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "65534732"
 ---
 # <a name="running-cmdlets-in-parallel-using-powershell-jobs"></a>Выполнение командлетов в параллельном режиме с помощью заданий PowerShell
+
+[!INCLUDE [migrate-to-az](../includes/migrate-to-az.md)]
 
 PowerShell поддерживает выполнение асинхронных действий с помощью [заданий PowerShell](/powershell/module/microsoft.powershell.core/about/about_jobs).
 Azure PowerShell в значительной степени зависит от выполнения и ожидания сетевых вызовов в Azure. Разработчики часто пытаются выполнить несколько неблокирующих вызовов в Azure в рамках одного скрипта или создать ресурсы Azure в REPL без блокировки текущего сеанса. Для решения таких задач Azure PowerShell предоставляет поддержку [PSJob](/powershell/module/microsoft.powershell.core/about/about_jobs) первого класса.

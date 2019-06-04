@@ -7,16 +7,18 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 06/08/2018
-ms.openlocfilehash: 30778a650e7e6769cac814f8da581371a7943de4
-ms.sourcegitcommit: 2054a8f74cd9bf5a50ea7fdfddccaa632c842934
+ms.openlocfilehash: dae1db158f940587d81a3fe47dfad8524f136d56
+ms.sourcegitcommit: bbd3f061cac3417ce588487c1ae4e0bc52c11d6a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56145084"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "65534644"
 ---
 # <a name="query-output-of-azure-powershell-cmdlets"></a>Выходные данные запроса командлетов Azure PowerShell
 
-Вы можете обращаться к ресурсам с помощью встроенных командлетов PowerShell. В PowerShell имена командлетов представлены в формате **_глагол-существительное_**. Командлеты, в которых используется глагол **_Get_** (Получить) — это командлеты запроса. Существительные командлета — это типы ресурсов Azure, к которым будет применено действие командлета.
+[!INCLUDE [migrate-to-az](../includes/migrate-to-az.md)]
+
+Вы можете обращаться к ресурсам с помощью встроенных командлетов PowerShell. В PowerShell имена командлетов представлены в формате **_глагол-существительное_** . Командлеты, в которых используется глагол **_Get_** (Получить) — это командлеты запроса. Существительные командлета — это типы ресурсов Azure, к которым будет применено действие командлета.
 
 ## <a name="select-simple-properties"></a>Выбор простых свойств
 

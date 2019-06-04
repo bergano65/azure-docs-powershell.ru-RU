@@ -7,14 +7,16 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 09/05/2017
-ms.openlocfilehash: 30e57805dd59bd60d10c52422fcb68686563fadf
-ms.sourcegitcommit: 2054a8f74cd9bf5a50ea7fdfddccaa632c842934
+ms.openlocfilehash: 7867adeac41444c81c31b7ee44b910ab40d873f8
+ms.sourcegitcommit: bbd3f061cac3417ce588487c1ae4e0bc52c11d6a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56145125"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "65534757"
 ---
 # <a name="using-experimental-azure-powershell-modules"></a>Использование экспериментальных модулей Azure PowerShell
+
+[!INCLUDE [migrate-to-az](../includes/migrate-to-az.md)]
 
 Команда Azure PowerShell уделяет особое внимание средствам для разработчиков в Azure (в особенности интерфейсам CLI). Для этого мы проводим множество экспериментов, оценивая усовершенствования и оптимизируя работу с Azure PowerShell.
 
@@ -30,11 +32,11 @@ ms.locfileid: "56145125"
 
 Экспериментальные модули публикуются в коллекции PowerShell так же, как и существующие модули Azure PowerShell. Чтобы просмотреть список экспериментальный модулей, выполните следующую команду:
 
-```powershell-interactive
+```azurepowershell-interactive
 Find-Module AzureRM.*.Experiments
 ```
 
-```Output
+```output
 Version Name                         Repository Description
 ------- ----                         ---------- -----------
 1.0.25  AzureRM.Compute.Experiments  PSGallery  Azure Compute experiments for VM creation
@@ -43,7 +45,7 @@ Version Name                         Repository Description
 
 Чтобы установить экспериментальный модуль, используйте следующие команды из сеанса PowerShell с повышенными привилегиями:
 
-```powershell-interactive
+```azurepowershell-interactive
 Install-Module AzureRM.Compute.Experiments
 Install-Module AzureRM.Websites.Experiments
 ```
@@ -67,7 +69,7 @@ Install-Module AzureRM.Websites.Experiments
 
 - Сокращение имен. Это касается имен командлетов (например, `New-AzureRmVM` => `New-AzVm`) и параметров (например, `-ResourceGroupName` => `-Rg`). Чтобы обеспечить совместимость со старыми версиями командлетов, используйте псевдонимы. Обеспечьте _обратную совместимость_ наборов параметров.
 
-- Стандартные интеллектуальные значения. Создайте стандартные интеллектуальные значения для заполнения обязательных полей. Например: 
+- Стандартные интеллектуальные значения. Создайте стандартные интеллектуальные значения для заполнения обязательных полей. Например:
   - Группа ресурсов
   - Расположение
   - Зависимые ресурсы
