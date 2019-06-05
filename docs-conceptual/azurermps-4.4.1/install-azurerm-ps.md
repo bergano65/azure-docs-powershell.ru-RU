@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/27/2018
-ms.openlocfilehash: a8f79a5b24e790731a1ee962a1e80fb5ad89561a
-ms.sourcegitcommit: b37b8bb6f8e39ecea5b50ceec48601eed313add7
+ms.openlocfilehash: 39bf3c879135989bdd9a7382eb003a8f69e5bdbb
+ms.sourcegitcommit: bbd3f061cac3417ce588487c1ae4e0bc52c11d6a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65511590"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "65534850"
 ---
 # <a name="install-azure-powershell-on-windows-with-powershellget"></a>Установка Azure PowerShell в ОС Windows с помощью PowerShellGet
 
@@ -83,9 +83,9 @@ Are you sure you want to install the modules from 'PSGallery'?
 Ответьте "Да" или "Да для всех", чтобы продолжить установку.
 
 > [!NOTE]
->  Если установленная версия NuGet предшествует версии 2.8.5.201, вам будет предложено скачать и установить последнюю версию NuGet.
+> Если установленная версия NuGet предшествует версии 2.8.5.201, вам будет предложено скачать и установить последнюю версию NuGet.
 
-Модуль AzureRM — это набор командлетов для работы с Azure Resource Manager.  При установке модуля AzureRM любой модуль Azure PowerShell, который ранее не был установлен, скачивается из коллекции PowerShell.
+Модуль AzureRM — это набор командлетов для работы с Azure Resource Manager. При установке модуля AzureRM любой модуль Azure PowerShell, который ранее не был установлен, скачивается из коллекции PowerShell.
 
 Если у вас установлена предыдущая версия Azure PowerShell, то может появляться сообщение об ошибке. Для устранения этой проблемы см. раздел [Обновление Azure PowerShell до новой версии](#update-azps) далее в этой статье.
 
