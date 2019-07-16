@@ -74,7 +74,7 @@
       displayName: 'database, nosql, mongodb, couchdb'
 - name: Заметки о выпуске
   items:
-    - name: "Заметки о выпуске Az\_ 2.1.0"
+    - name: Заметки о выпуске
       href: release-notes-azureps.md
     - name: "Критические изменения в версии Az\_2.0.0"
       href: migrate-az-2.0.0.md
