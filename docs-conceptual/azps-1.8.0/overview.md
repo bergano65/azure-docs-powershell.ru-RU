@@ -8,12 +8,12 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.manager: carmonm
 ms.date: 01/10/2019
-ms.openlocfilehash: 710decaf8fcc0ba57e1e978a665474047393adc7
-ms.sourcegitcommit: 5bdedc77b27b66998387486761ec67ed9326f169
+ms.openlocfilehash: 1978ba5415a27349ac68175144cca0d89fa26d96
+ms.sourcegitcommit: 0b644bfecf4224b2ea83520d1a6a956734d9fba4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/24/2019
-ms.locfileid: "67345244"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67863887"
 ---
 # <a name="overview-of-azure-powershell"></a>Общие сведения об Azure PowerShell
 
@@ -49,7 +49,6 @@ ms.locfileid: "67345244"
 * [Установка PowerShell](/powershell/scripting/install/installing-powershell)
 * [Scripting with Windows PowerShell](/powershell/scripting/powershell-scripting) (Написание скриптов с помощью Windows PowerShell)
 * [Основы PowerShell. (Part 1) Getting Started with PowerShell](https://channel9.msdn.com/Blogs/Taste-of-Premier/PowerShellBasicsPart1) (Основы PowerShell. Часть 1. Начало работы с PowerShell)
-* [Краткий курс по началу работы с PowerShell](https://mva.microsoft.com/liveevents/powershell-jumpstart) на сайте Microsoft Virtual Academy
 
 Приведенные ниже примеры помогут вам разобраться в некоторых вариантах использования Azure:
 

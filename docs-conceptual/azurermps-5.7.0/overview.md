@@ -8,12 +8,12 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.manager: carmonm
 ms.date: 08/31/2017
-ms.openlocfilehash: e5c344ca59de37eeb59bba538e7437d4a0c26ed7
-ms.sourcegitcommit: 2054a8f74cd9bf5a50ea7fdfddccaa632c842934
+ms.openlocfilehash: b260abb91de26dadac31340f17f97ff378813fac
+ms.sourcegitcommit: 0b644bfecf4224b2ea83520d1a6a956734d9fba4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56154177"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67863205"
 ---
 # <a name="overview-of-azure-powershell"></a>Общие сведения об Azure PowerShell
 
@@ -38,8 +38,6 @@ ms.locfileid: "56154177"
 * [Scripting with Windows PowerShell](/powershell/scripting/scripting-with-windows-powershell) (Написание скриптов с помощью Windows PowerShell)
 
 Вы также можете посмотреть этот видеоролик: [Основы PowerShell. Часть 1. Начало работы с PowerShell](https://channel9.msdn.com/Blogs/Taste-of-Premier/PowerShellBasicsPart1).
-
-Или пройдите [краткий курс по началу работы с PowerShell](https://mva.microsoft.com/liveevents/powershell-jumpstart) на сайте Microsoft Virtual Academy.
 
 ## <a name="other-azure-powershell-modules"></a>Другие модули Azure PowerShell
 
