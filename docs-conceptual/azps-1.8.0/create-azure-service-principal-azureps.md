@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 04/23/2019
-ms.openlocfilehash: abb85d3d3f6a20697510447cda2c02b2703ef921
-ms.sourcegitcommit: 5bdedc77b27b66998387486761ec67ed9326f169
+ms.openlocfilehash: 6d9df4a62238f1e3b9cc9a62864f5d4d9337d6a7
+ms.sourcegitcommit: a261efc84dedfd829c0613cf62f8fcf3aa62adb8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/24/2019
-ms.locfileid: "67345365"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68807383"
 ---
 # <a name="create-an-azure-service-principal-with-azure-powershell"></a>Создание субъекта-службы Azure с помощью Azure PowerShell
 
@@ -40,7 +40,14 @@ ms.locfileid: "67345365"
 $sp = New-AzADServicePrincipal -DisplayName ServicePrincipalName
 ```
 
-Возвращаемый объект содержит элемент `Secret`, который является строкой `SecureString` со сгенерированным паролем. Обязательно сохраните это значение в надежном расположении, чтобы выполнять аутентификацию с помощью субъекта-службы. Его значение __не будет__ отображаться в выходных данных консоли. Если вы потеряли пароль, [сбросьте учетные данные субъекта-службы](#reset-credentials). 
+Возвращаемый объект содержит элемент `Secret`, который является строкой `SecureString` со сгенерированным паролем. Обязательно сохраните это значение в надежном расположении, чтобы выполнять аутентификацию с помощью субъекта-службы. Его значение __не будет__ отображаться в выходных данных консоли. Если вы потеряли пароль, [сбросьте учетные данные субъекта-службы](#reset-credentials).
+
+Следующий код позволяет экспортировать секрет:
+
+```azurepowershell-interactive
+$BSTR = [System.Runtime.InteropServices.Marshal]::SecureStringToBSTR($sp.Secret)
+$UnsecureSecret = [System.Runtime.InteropServices.Marshal]::PtrToStringAuto($BSTR)
+```
 
 Если вы используете предоставленные пользователями пароли, аргумент `-PasswordCredential` принимает объекты `Microsoft.Azure.Commands.ActiveDirectory.PSADPasswordCredential`. Такие объекты должны иметь допустимые значения `StartDate` и `EndDate`, а также принимать значение `Password` в формате открытого текста. При создании пароля обязательно учитывайте [правила и ограничения для паролей в Azure Active Directory](/azure/active-directory/active-directory-passwords-policy). Не используйте ненадежные пароли или пароли, которые уже используются вами для доступа к другим ресурсам.
 

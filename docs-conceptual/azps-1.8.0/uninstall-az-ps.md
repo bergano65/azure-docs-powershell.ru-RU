@@ -1,18 +1,18 @@
 ---
 title: Удаление Azure PowerShell
 description: Сведения о том, как полностью удалить Azure PowerShell.
-ms.date: 05/10/2019
+ms.date: 06/10/2019
 author: sptramer
 ms.author: sttramer
 ms.manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.openlocfilehash: b32547e9c3df0df7495d1631a43be6934e1f62dc
-ms.sourcegitcommit: febbbd3f75c8dd1a296281d265289f015b6cb537
+ms.openlocfilehash: e71b4d0d662b29a32610fecb36351532040428e4
+ms.sourcegitcommit: a261efc84dedfd829c0613cf62f8fcf3aa62adb8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/12/2019
-ms.locfileid: "67037767"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68807441"
 ---
 # <a name="uninstall-the-azure-powershell-module"></a>Удаление модуля Azure PowerShell
 
@@ -106,7 +106,8 @@ Uninstalling Az.AnalysisServices version 0.7.0
 ```
 
 > [!NOTE]
-> Если скрипт не может сопоставить определенную версию зависимого модуля для удаления, _ни одна_ из версий этого модуля не будет удалена. Это обусловлено тем, что на компьютере могут быть установлены другие версии `Az`, связанные с этими модулями. В этом случае выводится список версий модуля, которые не удалось найти, если эти версии были установлены. После этого вы можете вручную удалить любые предыдущие версии с помощью `Uninstall-Module`.
+> Если скрипт не может сопоставить определенную зависимость с версией для удаления, _ни одна_ из версий этой зависимости не будет удалена. Это обусловлено тем, что на компьютере могут быть установлены другие версии целевого модуля, связанные с этими зависимостями. В этом случае перечисляются доступные версии зависимости.
+> После этого вы можете вручную удалить любые предыдущие версии с помощью `Uninstall-Module`.
 
 Выполните эту команду для каждой версии Azure PowerShell, которую нужно удалить. Для удобства следующий скрипт удалит все версии Az, __за исключением__ последней.
 
