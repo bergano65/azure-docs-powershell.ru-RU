@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 12/13/2018
-ms.openlocfilehash: d99265c7f156622d876d700106e2b06dd729e8b8
-ms.sourcegitcommit: 020c69430358b13cbd99fedd5d56607c9b10047b
+ms.openlocfilehash: 8e63e3efb2671eef435498063010d5704c793060
+ms.sourcegitcommit: a261efc84dedfd829c0613cf62f8fcf3aa62adb8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66365746"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68807509"
 ---
 # <a name="install-the-azure-powershell-module"></a>Установка модуля Azure PowerShell
 
@@ -37,23 +37,19 @@ $PSVersionTable.PSVersion
 
 ## <a name="install-the-azure-powershell-module"></a>Установка модуля Azure PowerShell
 
-> [!IMPORTANT]
->
-> Модули AzureRM и Az могут быть установлены одновременно. Если у вас установлены оба модуля, __не включайте псевдонимы__.
-> Включение псевдонимов приведет к конфликтам между командлетами AzureRM и псевдонимами команд Az с непредсказуемыми результатами.
-> Перед установкой модуля Az рекомендуется удалить AzureRM. Удалить AzureRM или включить псевдонимы можно в любое время. Дополнительные сведения о псевдонимах команд AzureRM см. в статье [Migrate from AzureRM to Az](migrate-from-azurerm-to-az.md) (Миграция с AzureRM на Az для Azure PowerShell).
-> Инструкции по удалению см. в разделе [Uninstall the AzureRM module](uninstall-az-ps.md#uninstall-the-azurerm-module) (Удаление модуля AzureRM). 
+> [!WARNING]
+> Для PowerShell 5.1 в Windows __не могут__ одновременно быть установлены модули AzureRM и Az. Если в системе нужно оставить модуль AzureRM, установите модуль Az для PowerShell Core версии 6.x или более поздней. Чтобы сделать это, [установите PowerShell Core версии 6.x или более поздней](https://docs.microsoft.com/en-us/powershell/scripting/install/installing-powershell-core-on-windows), а затем следуйте инструкциям в окне терминала PowerShell Core.
 
-Чтобы установить модули в глобальной области видимости, необходим более высокий уровень привилегий для установки модулей из коллекции PowerShell. Чтобы установить Azure PowerShell, выполните следующую команду в сеансе с более высоким уровнем привилегий ("Запуск от имени администратора" в Windows или с правами суперпользователя в macOS или Linux):
-
-```powershell-interactive
-Install-Module -Name Az -AllowClobber
-```
-
-Если у вас нет доступа к привилегиям администратора, можно выполнить установку для текущего пользователя, добавив аргумент `-Scope`.
+Рекомендуемый метод — установка только для активного пользователя:
 
 ```powershell-interactive
 Install-Module -Name Az -AllowClobber -Scope CurrentUser
+```
+
+Если вам нужно выполнить установку для всех пользователей в системе, потребуются права администратора. В сеансе PowerShell с повышенными привилегиями выполните запуск от имени администратора или используйте команду `sudo` в macOS либо Linux:
+
+```powershell-interactive
+Install-Module -Name Az -AllowClobber -Scope AllUsers
 ```
 
 По умолчанию коллекция PowerShell не используется как доверенный репозиторий для PowerShellGet. При первом использовании PSGallery отображается следующее сообщение:
@@ -71,6 +67,28 @@ Are you sure you want to install the modules from 'PSGallery'?
 Ответьте `Yes` или `Yes to All`, чтобы продолжить установку.
 
 Модуль Az — это общий модуль для командлетов Azure PowerShell. Во время его установки скачиваются все доступные модули Azure Resource Manager и устанавливаются все соответствующие командлеты.
+
+## <a name="troubleshooting"></a>Устранение неполадок
+
+Ниже описаны некоторые распространенные проблемы с установкой модуля Azure PowerShell. Если у вас возникла проблема, не описанная здесь, [сообщите о ней на сайте GitHub](https://github.com/azure/azure-powershell/issues).
+
+### <a name="proxy-blocks-connection"></a>Прокси-сервер блокирует подключения
+
+Если командлет `Install-Module` возвращает ошибки о том, что коллекция PowerShell недоступна, возможно, ваша система находится за прокси-сервером. Требования к настройке прокси-сервера на уровне системы в разных операционных системах могут отличаться. Эти требования не рассматриваются здесь. Обратитесь к системному администратору, чтобы узнать о параметрах своего прокси-сервера и о том, как настроить их для своей операционной системы.
+
+Возможно, среду PowerShell нельзя настроить для автоматического использования этого прокси-сервера. В PowerShell версии 5.1 и более поздних настройте использование прокси-сервера для сеанса PowerShell с помощью следующей команды:
+
+```powershell
+(New-Object System.Net.WebClient).Proxy.Credentials = `
+  [System.Net.CredentialCache]::DefaultNetworkCredentials
+```
+
+Если учетные данные операционной системы настроены правильно, в результате выполнения приведенной выше команды запросы PowerShell будут направляться через прокси-сервер.
+Чтобы эта настройка сохранялась между сеансами, добавьте команду в [профиль PowerShell](/powershell/module/microsoft.powershell.core/about/about_profiles).
+
+Чтобы установить пакет, ваш прокси-сервер должен разрешать HTTPS-подключения по следующему адресу:
+
+* `https://www.powershellgallery.com`
 
 ## <a name="sign-in"></a>Вход
 

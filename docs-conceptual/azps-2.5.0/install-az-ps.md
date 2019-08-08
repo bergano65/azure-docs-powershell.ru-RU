@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 12/13/2018
-ms.openlocfilehash: ead6c48496c646b5184f88aeac64fbe650be17c4
-ms.sourcegitcommit: 6c0d296bfec7c1c35a1d15074ca5eacda6684ea4
+ms.openlocfilehash: 8e63e3efb2671eef435498063010d5704c793060
+ms.sourcegitcommit: a261efc84dedfd829c0613cf62f8fcf3aa62adb8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68657983"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68807479"
 ---
 # <a name="install-the-azure-powershell-module"></a>Установка модуля Azure PowerShell
 
@@ -40,16 +40,16 @@ $PSVersionTable.PSVersion
 > [!WARNING]
 > Для PowerShell 5.1 в Windows __не могут__ одновременно быть установлены модули AzureRM и Az. Если в системе нужно оставить модуль AzureRM, установите модуль Az для PowerShell Core версии 6.x или более поздней. Чтобы сделать это, [установите PowerShell Core версии 6.x или более поздней](https://docs.microsoft.com/en-us/powershell/scripting/install/installing-powershell-core-on-windows), а затем следуйте инструкциям в окне терминала PowerShell Core.
 
-Чтобы установить модули в глобальной области видимости, необходим более высокий уровень привилегий для установки модулей из коллекции PowerShell. Чтобы установить Azure PowerShell, выполните следующую команду в сеансе с более высоким уровнем привилегий ("Запуск от имени администратора" в Windows или с правами суперпользователя в macOS или Linux):
-
-```powershell-interactive
-Install-Module -Name Az -AllowClobber
-```
-
-Если у вас нет доступа к привилегиям администратора, можно выполнить установку для текущего пользователя, добавив аргумент `-Scope`.
+Рекомендуемый метод — установка только для активного пользователя:
 
 ```powershell-interactive
 Install-Module -Name Az -AllowClobber -Scope CurrentUser
+```
+
+Если вам нужно выполнить установку для всех пользователей в системе, потребуются права администратора. В сеансе PowerShell с повышенными привилегиями выполните запуск от имени администратора или используйте команду `sudo` в macOS либо Linux:
+
+```powershell-interactive
+Install-Module -Name Az -AllowClobber -Scope AllUsers
 ```
 
 По умолчанию коллекция PowerShell не используется как доверенный репозиторий для PowerShellGet. При первом использовании PSGallery отображается следующее сообщение:
