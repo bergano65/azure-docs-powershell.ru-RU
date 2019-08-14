@@ -8,12 +8,12 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.workload: ''
 ms.date: 2/20/2018
-ms.openlocfilehash: ee9fb7e777d06f50514c6b4ba39805936b867045
-ms.sourcegitcommit: bbd3f061cac3417ce588487c1ae4e0bc52c11d6a
+ms.openlocfilehash: 61ab0f91c3d6fffdbffd336fa0d6ed9b0ab8f6ec
+ms.sourcegitcommit: b02cbcd00748a4a9a4790a5fba229ce53c3bf973
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "65535069"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68863292"
 ---
 # <a name="release-notes"></a>Заметки о выпуске
 
@@ -613,7 +613,7 @@ Update-Module -Name AzureRM
 * Добавлена поддержка параметра -AsJob для долго выполняющихся командлетов Websites. Благодаря этому выбранные командлеты могут выполняться в фоновом режиме и возвращать задание для отслеживания и контроля хода выполнения.
      - Затронутые командлеты: New-, Remove-, Add- и Set-для веб-приложений, плана службы приложений и слотов.
 
-## <a name="2017128-version-511"></a>8.12.2017, версия 5.1.1
+## <a name="2017128-version-511"></a>8\.12.2017, версия 5.1.1
 * Analysis Services:
   - В наборе проверок подстановка расположения заменена на динамическую подстановку, что позволило реализовать поддержку всех облаков.
 * Служба автоматизации
@@ -669,7 +669,7 @@ Update-Module -Name AzureRM
   - Новый командлет Update-AzureRmPowerBIEmbeddedCapacity вносит изменения в экземпляр емкости Power BI Embedded.
 * Профиль
   - Для USGovernmentActiveDirectoryEndpoint установлено значение https://login.microsoftonline.us/.
-    - Дополнительные сведения о сопоставлениях конечных точек Azure для государственных организаций см. здесь: https://docs.microsoft.com/en-us/azure/azure-government/documentation-government-developer-guide#endpoint-mapping.
+    - Дополнительные сведения о сопоставлениях конечных точек Azure для государственных организаций см. здесь: https://docs.microsoft.com/azure/azure-government/documentation-government-developer-guide#endpoint-mapping.
     - Добавлена поддержка параметра - AsJob для командлетов, благодаря которому выбранные командлеты могут выполняться в фоновом режиме и возвращать задание для отслеживания и контроля хода выполнения.
     - Добавлен параметр -AsJob для командлета Get-AzureRmSubscription.
 * RecoveryServices.Backup
@@ -722,8 +722,8 @@ Update-Module -Name AzureRM
   - AzureRM.Storage
   - AzureRM.StreamAnalytics
 
-## <a name="2017118---version-500"></a>8.11.2017, версия 5.0.0
-* Примечание. Это критическое изменение выпуска. Полный список критических изменений см. в руководстве по миграции (https://aka.ms/azps-migration-guide)).
+## <a name="2017118---version-500"></a>8\.11.2017, версия 5.0.0
+* Примечание. Это критическое изменение выпуска. Полный список критических изменений см. в руководстве по миграции (https://aka.ms/azps-migration-guide) ).
 * Для всех командлетов в AzureRM теперь добавлена поддержка справки в Интернете.
   - Запустите командлет Get-Help с параметром -Online, чтобы открыть справку в Интернете в браузере по умолчанию.
 * Analysis Services:
@@ -731,7 +731,7 @@ Update-Module -Name AzureRM
 * Управление API
   * Сведения о важных изменениях, внесенных в этот выпуск ApiManagement, см. в руководстве по миграции.
   * Обновлен командлет Get-AzureRmApiManagementUser для устранения проблемы, описанной здесь: https://github.com/Azure/azure-powershell/issues/4510.
-  * Обновлен командлет New-AzureRmApiManagementApi для создания API с пустым путем (https://github.com/Azure/azure-powershell/issues/4069).
+  * Обновлен командлет New-AzureRmApiManagementApi для создания API с пустым путем (https://github.com/Azure/azure-powershell/issues/4069 ).
 * ApplicationInsights
   * Добавлены команды для получения, создания и удаления ресурса Application Insights.
     - Get-AzureRmApplicationInsights
@@ -811,9 +811,9 @@ Update-Module -Name AzureRM
     - Добавлена поддержка всех операций с типом записи CAA.
 * концентратор событий.
   * Сведения о важных изменениях, внесенных в этот выпуск EventHub, см. в руководстве по миграции.
-* Аналитические сведения
+* Аналитика
   * Сведения о важных изменениях, внесенных в этот выпуск Insights, см. в руководстве по миграции.
-* Network
+* Сеть
   * Сведения о важных изменениях, внесенных в этот выпуск Network, см. в руководстве по миграции.
   * Добавлен командлет для отображения списка доступных поставщиков услуг Интернета в заданном регионе Azure.
     - Get-AzureRmNetworkWatcherReachabilityProvidersList

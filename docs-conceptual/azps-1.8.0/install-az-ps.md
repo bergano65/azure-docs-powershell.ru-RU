@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 12/13/2018
-ms.openlocfilehash: 8e63e3efb2671eef435498063010d5704c793060
-ms.sourcegitcommit: a261efc84dedfd829c0613cf62f8fcf3aa62adb8
+ms.openlocfilehash: 21345445efc89ab54bb7483cfe81f439f0a887a3
+ms.sourcegitcommit: b02cbcd00748a4a9a4790a5fba229ce53c3bf973
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68807509"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68861296"
 ---
 # <a name="install-the-azure-powershell-module"></a>Установка модуля Azure PowerShell
 
@@ -38,7 +38,7 @@ $PSVersionTable.PSVersion
 ## <a name="install-the-azure-powershell-module"></a>Установка модуля Azure PowerShell
 
 > [!WARNING]
-> Для PowerShell 5.1 в Windows __не могут__ одновременно быть установлены модули AzureRM и Az. Если в системе нужно оставить модуль AzureRM, установите модуль Az для PowerShell Core версии 6.x или более поздней. Чтобы сделать это, [установите PowerShell Core версии 6.x или более поздней](https://docs.microsoft.com/en-us/powershell/scripting/install/installing-powershell-core-on-windows), а затем следуйте инструкциям в окне терминала PowerShell Core.
+> Для PowerShell 5.1 в Windows __не могут__ одновременно быть установлены модули AzureRM и Az. Если в системе нужно оставить модуль AzureRM, установите модуль Az для PowerShell Core версии 6.x или более поздней. Чтобы сделать это, [установите PowerShell Core версии 6.x или более поздней](https://docs.microsoft.com/powershell/scripting/install/installing-powershell-core-on-windows), а затем следуйте инструкциям в окне терминала PowerShell Core.
 
 Рекомендуемый метод — установка только для активного пользователя:
 

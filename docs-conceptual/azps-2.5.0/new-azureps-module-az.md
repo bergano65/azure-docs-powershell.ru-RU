@@ -7,12 +7,12 @@ ms.author: sttramer
 ms.manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.openlocfilehash: 8dc5a7d3b47870455213aa01aebc1d215ad640a7
-ms.sourcegitcommit: a261efc84dedfd829c0613cf62f8fcf3aa62adb8
+ms.openlocfilehash: 21d41b6e14d1b39a78e40daee74b80de3a80c2a0
+ms.sourcegitcommit: b02cbcd00748a4a9a4790a5fba229ce53c3bf973
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68807458"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68861261"
 ---
 # <a name="introducing-the-new-azure-powershell-az-module"></a>Знакомство с новым модулем Az для Azure PowerShell
 
@@ -39,7 +39,7 @@ Az — это новый модуль, поэтому нумерация вер
 
 Для поддержки новых функций Azure в PowerShell необходимо как можно скорее перейти на модуль Az. Если вы не готовы установить модуль Az в качестве замены AzureRM, вам доступны несколько способов экспериментирования с Az.
 
-* Использование среды `PowerShell` с [Azure Cloud Shell](https://docs.microsoft.com/en-us/azure/cloud-shell/overview).
+* Использование среды `PowerShell` с [Azure Cloud Shell](https://docs.microsoft.com/azure/cloud-shell/overview).
   Azure Cloud Shell — это браузерная среда оболочки, которая поставляется с пакетом установки модуля Az и поддерживает псевдонимы совместимости `Enable-AzureRM`.
 * Оставив установленный модуль AzureRM с PowerShell 5.1 для Windows, установите модуль Az для PowerShell Core 6.x или более поздней версии. PowerShell 5.1 для Windows и PowerShell Core используют отдельные коллекции модулей. Следуйте инструкциям, чтобы [установить PowerShell Core](/powershell/scripting/install/installing-powershell-core-on-windows), а затем [установите модуль Az](install-az-ps.md) из терминала PowerShell Core.
 

@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: e72aae940b48543d6a99801032186112748ea48b
-ms.sourcegitcommit: 6c0d296bfec7c1c35a1d15074ca5eacda6684ea4
+ms.openlocfilehash: 77cb28e47d8dddcf3936edff23f794de3b78442b
+ms.sourcegitcommit: b02cbcd00748a4a9a4790a5fba229ce53c3bf973
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68657966"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68861194"
 ---
 ## <a name="250---july-2019"></a>2.5.0 — июль 2019 г.
 #### <a name="azaccounts"></a>Az.Accounts
@@ -536,7 +536,7 @@ ms.locfileid: "68657966"
     - Set-AzScheduledQueryRule
     - Update-AzScheduledQueryRule
     - Remove-AzScheduledQueryRule
-    - См. подробнее об [API SQR](https://docs.microsoft.com/en-us/rest/api/monitor/scheduledqueryrules).
+    - См. подробнее об [API SQR](https://docs.microsoft.com/rest/api/monitor/scheduledqueryrules).
     - Обновлен файл Az.Monitor.md для включения командлетов для правила генерации оповещений на основе метрик GenV2(не классическая версия).
 
 #### <a name="aznetwork"></a>Az.Network
@@ -589,7 +589,7 @@ ms.locfileid: "68657966"
 ### <a name="highlights-since-the-last-major-release"></a>Основные возможности с момента последнего основного выпуска
 * Общедоступная версия модуля `Az`.
 * Дополнительные сведения о модуле `Az` см. по этой ссылке: https://aka.ms/azps-announce
-* Добавлены средства заполнения для Location, ResourceGroup и ResourceName: https://azure.microsoft.com/en-us/blog/completers-in-azure-powershell/
+* Добавлены средства заполнения для Location, ResourceGroup и ResourceName: https://azure.microsoft.com/blog/completers-in-azure-powershell/
 * Добавлена поддержка подстановочных знаков в командлетах Get для Az.Compute и Az.Network.
 * Добавлена интерактивная аутентификация и аутентификация по имени пользователя и паролю — только для Windows PowerShell 5.1.
 * Добавлена поддержка для модулей runbook Python 2 в Az.Automation.
@@ -693,7 +693,7 @@ ms.locfileid: "68657966"
 ### <a name="highlights-since-the-last-major-release"></a>Основные возможности с момента последнего основного выпуска
 * Общедоступная версия модуля `Az`.
 * Дополнительные сведения о модуле `Az` см. по этой ссылке: https://aka.ms/azps-announce
-* Добавлены средства заполнения для Location, ResourceGroup и ResourceName: https://azure.microsoft.com/en-us/blog/completers-in-azure-powershell/
+* Добавлены средства заполнения для Location, ResourceGroup и ResourceName: https://azure.microsoft.com/blog/completers-in-azure-powershell/
 * Добавлена поддержка подстановочных знаков в командлетах Get для Az.Compute и Az.Network.
 * Добавлена интерактивная аутентификация и аутентификация по имени пользователя и паролю — только для Windows PowerShell 5.1.
 * Добавлена поддержка для модулей runbook Python 2 в Az.Automation.
@@ -750,7 +750,7 @@ ms.locfileid: "68657966"
 ### <a name="highlights-since-the-last-major-release"></a>Основные возможности с момента последнего основного выпуска
 * Общедоступная версия модуля `Az`.
 * Дополнительные сведения о модуле `Az` см. по этой ссылке: https://aka.ms/azps-announce
-* Добавлены средства заполнения для Location, ResourceGroup и ResourceName: https://azure.microsoft.com/en-us/blog/completers-in-azure-powershell/
+* Добавлены средства заполнения для Location, ResourceGroup и ResourceName: https://azure.microsoft.com/blog/completers-in-azure-powershell/
 * Добавлена поддержка подстановочных знаков в командлетах Get для Az.Compute и Az.Network.
 * Добавлена интерактивная аутентификация и аутентификация по имени пользователя и паролю — только для Windows PowerShell 5.1.
 * Добавлена поддержка для модулей runbook Python 2 в Az.Automation.
