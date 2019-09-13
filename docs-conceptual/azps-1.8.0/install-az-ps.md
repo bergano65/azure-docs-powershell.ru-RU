@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 12/13/2018
-ms.openlocfilehash: 21345445efc89ab54bb7483cfe81f439f0a887a3
-ms.sourcegitcommit: b02cbcd00748a4a9a4790a5fba229ce53c3bf973
+ms.openlocfilehash: e302e49d95b6bc15750366c9eb960a6fec80c1a4
+ms.sourcegitcommit: e5b029312d17e12257b2b5351b808fdab0b4634c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68861296"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70386787"
 ---
 # <a name="install-the-azure-powershell-module"></a>Установка модуля Azure PowerShell
 
@@ -101,13 +101,14 @@ Connect-AzAccount
 
 > [!NOTE]
 >
-> Если вы отключили автоматическую загрузку модулей, вам нужно вручную импортировать модуль с помощью `Import-Module Az`. Из-за структуры модуля эта операция может занять несколько секунд.
+> Если вы отключили автоматическую загрузку модулей, вручную импортируйте модуль с помощью `Import-Module Az`. Из-за структуры модуля эта операция может занять несколько секунд.
 
 Эти действия нужно повторять для каждого нового сеанса PowerShell. Чтобы узнать, как повторно использовать свои данные для входа в Azure в разных сеансах PowerShell, см. статью [Использование учетных данных пользователя в разных сеансах PowerShell](context-persistence.md).
 
 ## <a name="update-the-azure-powershell-module"></a>Обновление модуля Azure PowerShell
 
-Команда [Update-Module](/powershell/module/powershellget/update-module) не обновит установку надлежащим образом из-за способа упаковки модуля Az. С технической точки зрения Az является метамодулем, включающим все подмодули, содержащие командлеты, необходимые для взаимодействия со службами Azure. Это означает, что для обновления модуля Azure PowerShell его необходимо __переустановить__, а не просто __выполнить обновление__. Эта процедура ничем не отличается от установки, но может потребоваться добавить аргумент `-Force`:
+Команда [Update-Module](/powershell/module/powershellget/update-module) не обновит установку надлежащим образом из-за способа упаковки модуля Az. Установленный модуль Az фактически собирает и устанавливает все зависимые подмодули, чтобы предоставлять командлеты для каждой службы.
+Это означает, что для обновления модуля Azure PowerShell его необходимо __переустановить__, а не просто __выполнить обновление__. Эта процедура ничем не отличается от установки, но может потребоваться добавить аргумент `-Force`:
 
 ```powershell
 Install-Module -Name Az -AllowClobber -Force
