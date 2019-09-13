@@ -6,13 +6,13 @@ ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.date: 02/20/2019
-ms.openlocfilehash: 0b7a6fa4278d95a69b21f570ac6fb22b70f073f6
-ms.sourcegitcommit: b02cbcd00748a4a9a4790a5fba229ce53c3bf973
+ms.date: 09/04/2019
+ms.openlocfilehash: 21d87bd35da74f09b70976e7b395e7b987fbd3f5
+ms.sourcegitcommit: e5b029312d17e12257b2b5351b808fdab0b4634c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68861217"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70386813"
 ---
 # <a name="sign-in-with-azure-powershell"></a>Вход с помощью Azure PowerShell
 
@@ -54,7 +54,7 @@ Connect-AzAccount
 
 ```azurepowershell-interactive
 $pscredential = Get-Credential
-Connect-AzAccount -ServicePrincipal -Credential $pscredential -TenantId $tenantId
+Connect-AzAccount -ServicePrincipal -Credential $pscredential -Tenant $tenantId
 ```
 
 Если вы используете сценарии автоматизации, вам необходимо создать учетные данные на основе имени пользователя и защищенной строки:
@@ -62,7 +62,7 @@ Connect-AzAccount -ServicePrincipal -Credential $pscredential -TenantId $tenantI
 ```azurepowershell-interactive
 $passwd = ConvertTo-SecureString <use a secure password here> -AsPlainText -Force
 $pscredential = New-Object System.Management.Automation.PSCredential('service principal name/id', $passwd)
-Connect-AzAccount -ServicePrincipal -Credential $pscredential -TenantId $tenantId
+Connect-AzAccount -ServicePrincipal -Credential $pscredential -Tenant $tenantId
 ```
 
 При автоматизации подключений субъекта-службы обязательно придерживайтесь рекомендаций по использованию паролей.
@@ -71,7 +71,13 @@ Connect-AzAccount -ServicePrincipal -Credential $pscredential -TenantId $tenantI
 
 Для аутентификации на основе сертификата обязательно, чтобы среда Azure PowerShell могла извлекать данные из локального хранилища сертификатов по отпечатку сертификата.
 ```azurepowershell-interactive
-Connect-AzAccount -ServicePrincipal -TenantId $tenantId -CertificateThumbprint <thumbprint>
+Connect-AzAccount -ApplicationId $appId -Tenant $tenantId -CertificateThumbprint <thumbprint>
+```
+
+При использовании субъекта-службы вместо зарегистрированного приложения добавьте аргумент `-ServicePrincipal` и предоставьте идентификатор субъекта-службы в качестве значения параметра `-ApplicationId`.
+
+```azurepowershell-interactive
+Connect-AzAccount -ServicePrincipal -ApplicationId $servicePrincipalId -Tenant $tenantId -CertificateThumbprint <thumbprint>
 ```
 
 В PowerShell 5.1 проверять и администрировать хранилище сертификатов можно с помощью модуля [PKI](/powershell/module/pkiclient). В PowerShell версии 6.х и выше это не настолько просто. Приведенные ниже скрипты демонстрируют, как импортировать существующий сертификат в хранилище сертификатов, к которому имеет доступ PowerShell.
@@ -100,7 +106,7 @@ $store.Add($Certificate)
 $store.Close()
 ```
 
-## <a name="sign-in-using-a-managed-identity"></a>Вход с использованием управляемого удостоверения 
+## <a name="sign-in-using-a-managed-identity"></a>Вход с использованием управляемого удостоверения
 
 Управляемые удостоверения — это функция Azure Active Directory. Они представляют собой субъекты-службы, назначенные ресурсам в Azure. Вы можете использовать субъект-службу управляемых удостоверений для входа и получения маркера доступа только для приложений, обеспечив возможность обращения к другим ресурсам. Управляемые удостоверения доступны только в ресурсах в облаке Azure.
 
@@ -108,19 +114,19 @@ $store.Close()
 
 ## <a name="sign-in-with-a-non-default-tenant-or-as-a-cloud-solution-provider-csp"></a>Вход с использованием нестандартного клиента или в качестве поставщика облачных решений (CSP)
 
-Если ваша учетная запись связана с несколькими клиентами, для входа в систему обязательно используйте параметр `-TenantId` при подключении. Этот параметр можно применить с любым методом входа. При входе в систему в качестве значения для этого параметра можно указать идентификатор объекта Azure клиента (идентификатор клиента) или полное доменное имя клиента.
+Если ваша учетная запись связана с несколькими клиентами, для входа в систему обязательно используйте параметр `-Tenant` при подключении. Этот параметр можно применить с любым методом входа. При входе в систему в качестве значения для этого параметра можно указать идентификатор объекта Azure клиента (идентификатор клиента) или полное доменное имя клиента.
 
-Если вы являетесь [поставщиком облачных решений](https://azure.microsoft.com/offers/ms-azr-0145p/), значением для `-TenantId` **должен** быть идентификатор клиента.
+Если вы являетесь [поставщиком облачных решений](https://azure.microsoft.com/offers/ms-azr-0145p/), значением для `-Tenant` **должен** быть идентификатор клиента.
 
 ```azurepowershell-interactive
-Connect-AzAccount -TenantId 'xxxx-xxxx-xxxx-xxxx'
+Connect-AzAccount -Tenant 'xxxx-xxxx-xxxx-xxxx'
 ```
 
 ## <a name="sign-in-to-another-cloud"></a>Вход в другое облако
 
 Облачные службы Azure предоставляют среды, которые соответствуют региональным законам об обработке данных.
 Для учетных записей в региональном облаке нужно при входе указать среду с помощью аргумента `-Environment`.
-Например, если ваша учетная запись находится в облаке для Китая, укажите следующее:
+Этот параметр можно применить с любым методом входа. Например, если ваша учетная запись находится в облаке для Китая, укажите следующее:
 
 ```azurepowershell-interactive
 Connect-AzAccount -Environment AzureChinaCloud

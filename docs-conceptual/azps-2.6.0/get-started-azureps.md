@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: get-started-article
 ms.date: 01/14/2019
-ms.openlocfilehash: c60036ba8be6282007aa34a0bb9c0d9e33197072
-ms.sourcegitcommit: abca342d8687ca638679c049792d0cef6045837d
+ms.openlocfilehash: a4c8792f2ff27e1b6d3cee97144c26455356b7fd
+ms.sourcegitcommit: e5b029312d17e12257b2b5351b808fdab0b4634c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70052929"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70386743"
 ---
 # <a name="get-started-with-azure-powershell"></a>Начало работы с Azure PowerShell
 
@@ -43,7 +43,8 @@ Connect-AzAccount
 Connect-AzAccount -Environment AzureChinaCloud
 ```
 
-Вы получите токен, используемый на https://microsoft.com/devicelogin. Откройте эту страницу в браузере и введите токен, чтобы войти с данными учетной записи Azure и авторизовать Azure PowerShell. 
+В средах PowerShell 5.1 используется диалоговое окно для входа, в котором можно указать имя пользователя и пароль для учетной записи Azure. В любой другой версии PowerShell вы получите маркер для использования в [https://microsoft.com/devicelogin ].
+Откройте эту страницу в браузере и введите токен, чтобы войти с данными учетной записи Azure и авторизовать Azure PowerShell.
 
 После входа вам отобразится информация о ваших активных подписках Azure. Если в вашей учетной записи есть несколько подписок Azure и вы хотите выбрать другую, получите список доступных подписок с помощью командлета [Get-AzSubscription](/powershell/module/az.accounts/get-azsubscription) и выполните командлет [Set-AzContext](/powershell/module/az.accounts/set-azcontext) с указанием идентификатора своей подписки.
 Дополнительные сведения об управлении подписками Azure в Azure PowerShell см. в статье [Use multiple Azure subscriptions](manage-subscriptions-azureps.md) (Использование нескольких подписок Azure).
@@ -64,7 +65,7 @@ Get-Command -Verb Get -Noun AzVM* -Module Az.Compute
 
 | Тип ресурса | модуль Azure PowerShell; | Префикс в существительном |
 |---------------|-------------------------|----------------|
-| [Группа ресурсов](/azure/azure-resource-manager/resource-group-overview) | [Az.Resources](/powershell/module/az.resources#resources) | `AzResourceGroup` |
+| [группа ресурсов](/azure/azure-resource-manager/resource-group-overview) | [Az.Resources](/powershell/module/az.resources#resources) | `AzResourceGroup` |
 | [Виртуальные машины](/azure/virtual-machines) | [Az.Compute](/powershell/module/az.compute#virtual_machines) | `AzVM` |
 | [Учетные записи хранения](/azure/storage/common/storage-introduction) | [Az.Storage](/powershell/module/az.storage/) | `AzStorageAccount` |
 | [хранилище ключей;](/azure/key-vault/key-vault-whatis) | [Az.KeyVault](/powershell/module/az.keyvault) | `AzKeyVault` |
