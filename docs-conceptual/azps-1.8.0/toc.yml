@@ -1,9 +1,9 @@
 - name: Azure PowerShell
-  href: overview.md
+  href: index.yml
 - name: Общие сведения о новом модуле Az
   href: new-azureps-module-az.md
   displayName: 'intro, introduction, azurerm'
-- name: Install
+- name: Установка
   href: install-az-ps.md
 - name: Удаление
   href: uninstall-az-ps.md
@@ -53,7 +53,7 @@
     - name: Задания PowerShell
       href: using-psjobs.md
       displayName: 'background, task, scripting, automation'
-- name: Руководства
+- name: Учебники
   items:
     - name: Создание виртуальных машин
       href: azureps-vm-tutorial.yml
