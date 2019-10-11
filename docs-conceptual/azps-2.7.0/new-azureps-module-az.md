@@ -7,16 +7,16 @@ ms.author: sttramer
 ms.manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.openlocfilehash: 21d41b6e14d1b39a78e40daee74b80de3a80c2a0
-ms.sourcegitcommit: 92722d603b60dc769660e7517da60110133d9959
+ms.openlocfilehash: 36bb0074694947f48d703aebc9119f90b508da57
+ms.sourcegitcommit: a6ea0fb4d58a4e4177cab0e7bfd17f893325bc69
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71226428"
+ms.lasthandoff: 10/09/2019
+ms.locfileid: "72162601"
 ---
 # <a name="introducing-the-new-azure-powershell-az-module"></a>Знакомство с новым модулем Az для Azure PowerShell
 
-Начиная с декабря 2018 года модуль Az для Azure PowerShell есть в общедоступном выпуске и теперь является предполагаемым модулем PowerShell для работы с Azure. Модуль Az предлагает более короткие имена команд, улучшенную стабильность, а также кроссплатформенную поддержку. Кроме того, для AZ реализовано равенство функций с AzureRM, что обеспечивает простоту перехода.
+С декабря 2018 г. модуль Az для Azure PowerShell существует в общедоступной версии и теперь является модулем PowerShell, предназначенным для работы с Azure. Модуль Az предлагает более короткие имена команд, улучшенную стабильность, а также кроссплатформенную поддержку. Кроме того, для AZ реализовано равенство функций с AzureRM, что обеспечивает простоту перехода.
 
 Благодаря модулю Az среда Azure PowerShell теперь совместима с PowerShell 5.1 в Windows и PowerShell Core 6.x и более поздней версии на всех поддерживаемых платформах, включая Windows, macOS и Linux.
 
