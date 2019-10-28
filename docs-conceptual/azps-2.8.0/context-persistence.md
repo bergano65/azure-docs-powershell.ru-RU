@@ -1,150 +1,161 @@
 ---
-title: Использование учетных данных Azure в разных сеансах PowerShell
+title: Контексты Azure и учетные данные для входа
 description: Узнайте, как использовать учетные данные Azure и другие сведения в нескольких сеансах PowerShell.
 author: sptramer
 ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.date: 12/13/2018
-ms.openlocfilehash: 02b8090aa1868f24445ddff3a95c0d0c376e2cb8
-ms.sourcegitcommit: 0b94b9566124331d0b15eb7f5a811305c254172e
+ms.date: 10/21/2019
+ms.openlocfilehash: 72d1b07bb2c66f80ea6f5d37ef7012d0d0a5bbbc
+ms.sourcegitcommit: 1cdff856d1d559b978aac6bc034dd2f99ac04afe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72370411"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72791469"
 ---
-# <a name="persist-azure-user-credentials-across-powershell-sessions"></a>Использование учетных данных пользователя в разных сеансах PowerShell
+# <a name="azure-powershell-context-objects"></a>Объекты контекста Azure PowerShell
 
-В Azure PowerShell существует функция **автосохранения контекста Azure**, которая предоставляет следующие возможности:
+Azure PowerShell использует _объекты контекста Azure PowerShell_ (контексты Azure) для хранения информации о подписке и аутентификации. При наличие нескольких подписок, контексты Azure позволяют выбрать подписку для запуска командлетов Azure PowerShell. Контексты Azure также используются для хранения данных для входа в несколько сеансов PowerShell и выполнения фоновых задач.
 
-- хранение учетных данных для входа для повторного использования в новых сеансах PowerShell;
-- упрощенное использование фоновых задач для запуска долго выполняющихся командлетов;
-- переключение между учетными записями, подписками и средами без необходимости выполнять отдельный вход;
-- одновременное выполнение задач с использованием разных учетных данных и подписок в рамках одного сеанса PowerShell.
+Эта статья посвящена рассмотрению управления контекстами Azure, а не подписками или учетными записями. Если вы хотите управлять пользователями, подписками, клиентами или другой информацией об учетной записи, см. документацию по [Azure Active Directory](/azure/active-directory). Чтобы узнать, как использовать контексты для выполнения фоновых или параллельных задач, см. раздел [Выполнение командлетов в параллельном режиме с помощью заданий PowerShell](using-psjobs.md) после ознакомления с контекстами Azure.
 
-## <a name="azure-contexts-defined"></a>Определенные контексты Azure
+## <a name="overview-of-azure-context-objects"></a>Обзор объектов контекста Azure
 
-*Контекст Azure* — это набор сведений, которые определяют целевой объект для командлетов Azure PowerShell. Контекст состоит из пяти частей:
+Контексты Azure — это объекты PowerShell, которые представляют активную подписку для выполнения команд и информацию об аутентификации, необходимую для подключения к облаку Azure. Благодаря контекстам Azure, Azure PowerShell не требуется повторная аутентификация учетной записи при каждом переключении между подписками. Контекст Azure состоит из:
 
-- *Учетная запись* — имя пользователя или субъекта-службы, которое используется для аутентификации при обмене данными со средой Azure.
-- *Подписка* — подписка Azure с используемыми ресурсами.
-- *Клиент* — клиент Azure Active Directory, который содержит вашу подписку. Клиенты являются более важными при аутентификации субъекта-службы.
-- *Среда* — определяемое облако Azure (обычно это глобальное облако Azure).
-  Кроме того, параметр среды позволяет определять национальные и локальные (Azure Stack) облака, а также облака для государственных организаций.
-- *Учетные данные* — сведения, которые используются в Azure, чтобы выполнить идентификацию и авторизацию для доступа к ресурсам в Azure.
+* _Учетной записи_, использованной для входа в Azure с помощью [Connect-AzAccount](/powershell/module/az.accounts/connect-azaccount). Контексты Azure обрабатывают пользователей, идентификаторы приложения и субъект-службы одинаково с точки зрения учетной записи.
+* Активной _подписки_, соглашения об обслуживании Майкрософт для создания и запуска ресурсов Azure, связанных с _клиентом_. В документации или при работе с Active Directory клиентов часто называют _организациями_.
+* Ссылка на _кэш токена_ — сохраненный токен аутентификации для доступа к облаку Azure. [Настройки автосохранения контекста](#save-azure-contexts-across-powershell-sessions) определяют место и срок хранения этого токена.
 
-В последней версии Azure PowerShell контексты Azure автоматически сохраняются при каждом открытии нового сеанса PowerShell.
+Дополнительные сведения об этих условиях см. в разделе [Терминология Azure Active Directory](/azure/active-directory/fundamentals/active-directory-whatis#terminology). Токены аутентификации, используемые контекстами Azure, подобны другим сохраненным токенам, являющимся частью постоянного сеанса. 
 
-## <a name="automatically-save-the-context-for-the-next-sign-in"></a>Автоматическое сохранение контекста для следующего входа
+При входе с помощью `Connect-AzAccount`для подписки по умолчанию создается как минимум один контекст Azure. Объект, возвращаемый `Connect-AzAccount` является контекстом Azure по умолчанию, используемым до конца сеанса PowerShell.
 
-В Azure PowerShell данные контекста автоматически сохраняются между сеансами. Чтобы PowerShell не сохранял учетные данные и данные контекста, используйте `Disable-AzContextAutoSave`. Если сохранение контекста отключено, вам нужно будет каждый раз при открытии сеанса PowerShell входить в Azure.
+## <a name="get-azure-contexts"></a>Получение контекстов Azure
 
-Чтобы разрешить Azure PowerShell запоминать контекст после закрытия сеанса PowerShell, используйте `Enable-AzContextAutosave`. Учетные данные и данные контекста автоматически сохраняются в специальной скрытой папке в каталоге пользователя (`$env:USERPROFILE\.Azure` — на Windows и `$HOME/.Azure` — на других платформах). Каждый новый сеанс PowerShell обращается к контексту, который использовался в последнем сеансе.
+Доступные контексты Azure извлекаются с помощью командлета [Get-AzContext](/powershell/module/az.accounts/get-azcontext). Перечислите все доступные контексты с помощью `-ListAvailable`:
 
-Командлеты, которые помогают управлять контекстами Azure, также предоставляют удобные средства. С их помощью вы можете применить изменения как для текущего сеанса PowerShell (область `Process`), так и для всех сеансов PowerShell (область `CurrentUser`). Эти параметры подробно описаны в разделе [Использование областей контекстов](#using-context-scopes).
+```azurepowershell-interactive
+Get-AzContext -ListAvailable
+```
 
-## <a name="running-azure-powershell-cmdlets-as-background-jobs"></a>Выполнение командлетов Azure PowerShell как фоновых заданий
+Или получите контекст по имени:
 
-Функция **автосохранения контекста Azure** также позволяет использовать контекст с фоновыми заданиями PowerShell. PowerShell позволяет запускать и отслеживать долго выполняющиеся задачи как фоновые задания. Для этого вам не нужно дожидаться завершения их выполнения. Чтобы использовать в фоновых заданиях учетные данные, можно сделать следующее:
+```azurepowershell-interactive
+$context = Get-Context -Name "mycontext"
+```
 
-- Передать контекст как аргумент.
+Имена контекстов могут отличаться от имен связанных подписок.
 
-  Большинство командлетов AzureRM позволяют передавать контекст как параметр. Передать контекст в фоновое задание можно так:
+> [!IMPORTANT]
+> Доступные контексты Azure __не__ всегда являются доступными подписками. Контексты Azure представляют только локально хранимую информацию. Вы можете получить подписки с помощью командлета [Get-AzSubscription](/powershell/module/Az.Accounts/Get-AzSubscription?view=azps-1.8.0).
 
-  ```powershell-interactive
-  PS C:\> $job = Start-Job { param ($ctx) New-AzVm -AzureRmContext $ctx [... Additional parameters ...]} -ArgumentList (Get-AzContext)
+## <a name="create-a-new-azure-context-from-subscription-information"></a>Создание нового контекста Azure из сведений о подписке
+
+Командлет [Set-AzContext](/powershell/module/Az.Accounts/Set-AzContext) используется как для создания новых контекстов Azure, так и для их установки в качестве активного контекста.
+Самый простой способ создать новый контекст Azure — использовать существующие сведения о подписке. Командлет предназначен для получения объекта вывода из `Get-AzSubscription` в качестве переданного значения и настройки нового контекста Azure:
+
+```azurepowershell-interactive
+Get-AzSubscription -SubscriptionName 'MySubscriptionName' | Set-AzContext -Name 'MyContextName'
+```
+
+При необходимости укажите либо имя, либо идентификатор подписки и идентификатор клиента:
+
+```azurepowershell-interactive
+Set-AzContext -Name 'MyContextName' -Subscription 'MySubscriptionName' -Tenant '.......'
+```
+
+Если аргумент `-Name` пропущен, имя и идентификатор подписки используются в качестве имени контекста в формате `Subscription Name (subscription-id)`.
+
+## <a name="change-the-active-azure-context"></a>Изменение активного контекста Azure
+
+Для изменения активного контекста Azure можно использовать как `Set-AzContext`, так и [Select-AzContext](/powershell/module/az.accounts/set-azcontext). Как описано в статье [Создание нового контекста Azure](#create-a-new-azure-context-from-subscription-information), `Set-AzContext` создает новый контекст Azure для подписки, если он не существует, а затем переключается на использование этого контекста в качестве активного.
+
+`Select-AzContext` предназначен для использования только с существующими контекстами Azure и работает аналогично использованию `Set-AzContext -Context`, но предназначен для использования с конвейером:
+
+```azurepowershell-interactive
+Set-AzContext -Context $(Get-AzContext -Name "mycontext") # Set a context with an inline Azure context object
+Get-AzContext -Name "mycontext" | Select-AzContext # Set a context with a piped Azure context object
+```
+
+Как и многие другие команды управления учетными записями и контекстами в Azure PowerShell, `Set-AzContext` и `Select-AzContext` поддерживают аргумент `-Scope`, чтобы можно было контролировать продолжительность активного контекста. `-Scope` позволяет изменить активный контекст одного сеанса, не меняя значение по умолчанию:
+
+```azurepowershell-interactive
+Get-AzContext -Name "mycontext" | Select-AzContext -Scope Process
+```
+
+Чтобы избежать переключения контекстов для всего сеанса PowerShell, все команды Azure PowerShell могут выполняться в данном контексте с аргументом `-AzContext`:
+
+```azurepowershell-interactive
+$context = Get-AzContext -Name "mycontext"
+New-AzVM -Name ExampleVM -AzContext $context
+```
+
+Другое основное использование контекстов с командлетами Azure PowerShell — запуск фоновых команд. Дополнительные сведения о запуске заданий PowerShell с помощью Azure PowerShell см. в разделе [Выполнение командлетов PowerShell Azure в заданиях PowerShell](using-psjobs.md).
+
+## <a name="save-azure-contexts-across-powershell-sessions"></a>Сохранение контекстов Azure в сеансах PowerShell
+
+По умолчанию контексты Azure сохраняются для использования между сеансами PowerShell. Это поведение можно изменить следующими способами:
+
+* Войдите, используя `-Scope Process` с помощью `Connect-AzAccount`.
+
+  ```azurepowershell
+  Connect-AzAccount -Scope Process
   ```
 
-- Использовать контекст по умолчанию со включенной функцией автосохранения
+  Контекст Azure, возвращенный как часть этого входа, действителен _только_ для текущего сеанса и не будет автоматически сохраняться независимо от параметра автосохранения контекста Azure PowerShell.
+* Отключите автосохранение контекста Azure Powershell с помощью командлета [Disable-AzContextAutosave](/powershell/module/az.accounts/disable-azcontextautosave).
+  Отключение автосохранения контекста __не__ удаляет сохраненные токены. Чтобы узнать, как очистить сохраненную информацию о контексте Azure, см. раздел [Удаление контекстов и учетных данных Azure](#remove-azure-contexts-and-stored-credentials).
+* Явное включение автосохранения контекста Azure можно включить с помощью командлета [Enable-AzContextAutosave](/powershell/module/az.accounts/enable-azcontextautosave). При включенном автосохранении все контексты пользователя хранятся локально для последующих сеансов PowerShell.
+* Сохраните контексты вручную с помощью [Save-AzContext](/powershell/module/az.accounts/save-azcontext) для использования в будущих сеансах PowerShell, где их можно загрузить с помощью командлета [Import-AzContext](/powershell/module/az.accounts/import-azcontext):
 
-  Если включить функцию **автосохранения контекста**, фоновые задания будут автоматически использовать сохраненный контекст по умолчанию.
-
-  ```powershell-interactive
-  PS C:\> $job = Start-Job { New-AzVm [... Additional parameters ...]}
+  ```azurepowershell
+  Save-AzContext -Path current-context.json # Save the current context
+  Save-AzContext -Profile $profileObject -Path other-context.json # Save a context object
+  Import-AzContext -Path other-context.json # Load the context from a file and set it to the current context
   ```
 
-Если вам нужно узнать выходные данные фоновой задачи, используйте `Get-Job`, чтобы проверить состояние задания, и `Wait-Job`, чтобы дождаться завершения задания. Используйте `Receive-Job`, чтобы записать или отобразить выходные данные фонового задания. См. дополнительные сведения о [заданиях](/powershell/module/microsoft.powershell.core/about/about_jobs).
+> [!WARNING]
+> Отключение автосохранения контекста __не__ удаляет сохраненную информацию контекста. Чтобы удалить сохраненную информацию, используйте командлет [Clear-AzContext](/powershell/module/az.accounts/Clear-AzContext). Подробнее об удалении сохраненных контекстов см. раздел [Удаление контекстов и учетных данных](#remove-azure-contexts-and-stored-credentials).
 
-## <a name="creating-selecting-renaming-and-removing-contexts"></a>Создание, выбор, переименование и удаление контекстов
-
-Чтобы создать контекст, нужно войти в Azure. Командлет `Connect-AzAccount` (или его псевдоним `Login-AzAccount`) определяет контекст по умолчанию, который будет использоваться командлетами Azure PowerShell. Он также обеспечивает доступ к любому клиенту или подписке в рамках разрешений, предоставляемых вашими учетными данными.
-
-Чтобы добавить новый контекст после входа, используйте командлет `Set-AzContext` (или его псевдоним `Select-AzSubscription`).
+Каждая из этих команд поддерживает параметр `-Scope`, который может принимать значение `Process` только для текущего запущенного процесса. Например, чтобы убедиться, что вновь созданные контексты не сохраняются после выхода из сеанса PowerShell:
 
 ```azurepowershell-interactive
-PS C:\> Set-AzContext -Subscription "Contoso Subscription 1" -Name "Contoso1"
+Disable-AzContextAutosave -Scope Process
+$context2 = Set-AzContext -Subscription "sub-id" -Tenant "other-tenant"
 ```
 
-В примере выше мы добавили новый контекст для подписки "Contoso Subscription 1", используя текущие учетные данные. Новый контекст называется "Contoso1". Если вы не укажете имя для контекста, будет использоваться имя по умолчанию на основе идентификатора учетной записи и подписки.
+Информация контекстов и токены хранятся в каталоге `$env:USERPROFILE\.Azure` в Windows и в `$HOME/.Azure` — на других платформах. Конфиденциальная информация, такая как идентификаторы подписки и идентификаторы клиентов, может по-прежнему отображаться в сохраненной информации через журналы или сохраненные контексты. Чтобы узнать, как очистить сохраненную информацию, см. раздел [Удаление контекстов и учетных данных](#remove-azure-contexts-and-stored-credentials).
 
-Чтобы переименовать существующий контекста, используйте командлет `Rename-AzContext`. Например:
+## <a name="remove-azure-contexts-and-stored-credentials"></a>Удаление контекстов Azure и сохраненных учетных данных
 
-```azurepowershell-interactive
-PS C:\> Rename-AzContext '[user1@contoso.org; 123456-7890-1234-564321]` 'Contoso2'
-```
+Для удаления контекстов и учетных данных Azure выполните следующие действия:
 
-В этом примере мы изменяем стандартное имя контекста `[user1@contoso.org; 123456-7890-1234-564321]` на простое имя "Contoso2". Командлеты, которые управляют контекстами, также поддерживают заполнение нажатием клавиши TAB. Это позволяет быстро выбрать контекст.
+* Выйдите из учетной записи с помощью командлета [Disconnect-AzAccount](/powershell/module/az.accounts/disconnect-azaccount).
+  Используя учетную запись или контекст, можно выйти из любой учетной записи.
 
-Наконец, чтобы удалить контекст, используйте командлет `Remove-AzContext`.  Например:
+  ```azurepowershell-interactive
+  Disconnect-AzAccount # Disconnect active account 
+  Disconnect-AzAccount -Username "user@contoso.com" # Disconnect by account name
 
-```azurepowershell-interactive
-PS C:\> Remove-AzContext Contoso2
-```
+  Disconnect-AzAccount -ContextName "subscription2" # Disconnect by context name
+  Disconnect-AzAccount -AzureContext $contextObject # Disconnect using context object information
+  ```
 
-Удаление контекста с именем "Contoso2". Этот контекст можно создать повторно с помощью командлета `Set-AzContext`.
+  При отключении всегда удаляются сохраненные токены аутентификации и очищаются сохраненные контексты, связанные с отключенным пользователем или контекстом.
+* Используйте [Clear-AzContext](/powershell/module/az.accounts/Clear-AzContext). Этот командлет гарантированно всегда удаляет сохраненные контексты и токены аутентификации, а также выводит вас из системы.
+* Удаление контекста с помощью [Remove-AzContext](/powershell/module/az.accounts/remove-azcontext):
+  
+  ```azurepowershell-interactive
+  Remove-AzContext -Name "mycontext" # Remove by name
+  Get-AzContext -Name "mycontext" | Remove-AzContext # Remove by piping Azure context object
+  ```
 
-## <a name="removing-credentials"></a>Удаление учетных данных
+  При удалении активного контекста, вы будете отключены от Azure. Вам также потребуется повторно выполнить проверку подлинности с помощью `Connect-AzAccount`.
 
-Вы можете удалить все учетные данные и связанные контексты пользователя или субъекта-службы с помощью командлета `Disconnect-AzAccount` (или его псевдонима `Logout-AzAccount`). Выполняемый без параметров командлет `Disconnect-AzAccount` удаляет все учетные данные и контексты, связанные с пользователем или субъектом-службой в текущем контексте. Чтобы связать с контекстом определенный субъект, вы можете передать имя пользователя, имя субъекта-службы или сам контекст.
+## <a name="see-also"></a>См. также
 
-```azurepowershell-interactive
-Disconnect-AzAccount user1@contoso.org
-```
-
-## <a name="using-context-scopes"></a>Использование областей контекстов
-
-Иногда нужно выбрать, изменить или удалить контекст в сеансе PowerShell, не влияя на другие сеансы. Чтобы изменить стандартное поведение командлетов, управляющих контекстом, используйте параметр `Scope`. Область `Process` переопределяет стандартное поведение, ограничивая его действие текущим сеансом. И наоборот, область `CurrentUser` изменяет контекст во всех сеансах, а не только в текущем.
-
-Например, вот как можно изменить контекст по умолчанию в текущем сеансе PowerShell, не влияя на другие окна, или изменить контекст, который будет использоваться при следующем открытии сеанса:
-
-```azurepowershell-interactive
-PS C:\> Select-AzContext Contoso1 -Scope Process
-```
-
-## <a name="how-the-context-autosave-setting-is-remembered"></a>Запоминание параметра автосохранения контекста
-
-Параметр автосохранения контекста сохраняется в каталоге пользователя Azure PowerShell (`$env:USERPROFILE\.Azure` — на Windows и `$HOME/.Azure` — на других платформах). На некоторых компьютерах учетные записи могут не иметь доступ к этому каталогу. В таких случаях можно использовать переменную среды
-
-```azurepowershell-interactive
-$env:AzureRmContextAutoSave="true" | "false"
-```
-
-Если задано значение true, контекст сохраняется автоматически. Если задано значение false, контекст не сохраняется.
-
-## <a name="context-management-cmdlets"></a>Командлеты управления контекстом
-
-- [Enable-AzContextAutosave][enable] — возможность сохранять контекст для использования в разных сеансах PowerShell.
-  Любые изменения влияют на глобальный контекст.
-- [Disable-AzContextAutosave][disable] — отключение автосохранения контекста. Для работы с новым сеансом PowerShell нужно будет выполнить вход.
-- [Select-AzContext][select] — выбор контекста по умолчанию. Все командлеты используют для аутентификации учетные данные из этого контекста.
-- [Disconnect-AzAccount][remove-cred] — удаление всех учетных данных и контекстов, связанных с учетной записью.
-- [Remove-AzContext][remove-context] — удаление именованного контекста.
-- [Rename-AzContext][rename] — переименование существующего контекста.
-- [Add-AzAccount][login] — возможность определения области входа на уровне процесса или текущего пользователя.
-  После аутентификации разрешено присваивать имя контексту по умолчанию.
-- [Import-AzContext][import] — возможность входа на уровне процесса или текущего пользователя.
-- [Set-AzContext][set-context] — возможность выбора существующих именованных контекстов и изменения области на уровне процесса или текущего пользователя.
-
-<!-- Hyperlinks -->
-[enable]: /powershell/module/az.accounts/Enable-AzureRmContextAutosave
-[disable]: /powershell/module/az.accounts/Disable-AzContextAutosave
-[select]: /powershell/module/az.accounts/Select-AzContext
-[remove-cred]: /powershell/module/az.accounts/Disconnect-AzAccount
-[remove-context]: /powershell/module/az.accounts/Remove-AzContext
-[rename]: /powershell/module/az.accounts/Rename-AzContext
-
-<!-- Updated cmdlets -->
-[login]: /powershell/module/az.accounts/Connect-AzAccount
-[import]:  /powershell/module/az.accounts/Import-AzContext
-[set-context]: /powershell/module/az.accounts/Set-AzContext
+* [Запуск командлетов Azure PowerShell в заданиях PowerShell](using-psjobs.md)
+* [Терминология Azure Active Directory](/azure/active-directory/fundamentals/active-directory-whatis#terminology)
+* [Справочные материалы по Az.Accounts](/powershell/module/az.accounts)
