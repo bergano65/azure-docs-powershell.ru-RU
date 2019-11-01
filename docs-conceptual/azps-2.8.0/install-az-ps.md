@@ -6,13 +6,13 @@ ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.date: 12/13/2018
-ms.openlocfilehash: e302e49d95b6bc15750366c9eb960a6fec80c1a4
-ms.sourcegitcommit: 0b94b9566124331d0b15eb7f5a811305c254172e
+ms.date: 10/22/2019
+ms.openlocfilehash: 7f22a420068db87fa2c3c007bd36f515384162fb
+ms.sourcegitcommit: ad7677d703a8512d371d3123dc7e541156b95cb8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72370339"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72814225"
 ---
 # <a name="install-the-azure-powershell-module"></a>Установка модуля Azure PowerShell
 
@@ -67,6 +67,18 @@ Are you sure you want to install the modules from 'PSGallery'?
 Ответьте `Yes` или `Yes to All`, чтобы продолжить установку.
 
 Модуль Az — это общий модуль для командлетов Azure PowerShell. Во время его установки скачиваются все доступные модули Azure Resource Manager и устанавливаются все соответствующие командлеты.
+
+## <a name="install-offline"></a>Установка в автономном режиме
+
+В некоторых средах невозможно подключиться к коллекции PowerShell. В таких случаях все же можно выполнить установку в автономном режиме, используя один из следующих методов:
+
+* Скачайте модули в другое расположение и используйте его в качестве источника установки в сети. Возможно, этот процесс будет сложным, но так вы сможете поместить в кэш модули PowerShell на отдельном сервере или в общей папке, чтобы развернуть их с помощью PowerShellGet на любой системе без подключения к сети. Сведения о том, как настроить локальный репозиторий и установить его в системах без подключения к сети, см. в статье [Работа с локальными хранилищами PowerShellGet](/powershell/scripting/gallery/how-to/working-with-local-psrepositories).
+* [Скачайте MSI для Azure PowerShell](install-az-ps-msi.md) на компьютер, подключенный к сети, а затем скопируйте установщик в системы без доступа к коллекции PowerShell. Помните, что установщик MSI работает только с PowerShell 5.1 в Windows.
+* С помощью команды [Save-Module](/powershell/module/PowershellGet/Save-Module) сохраните модуль в общую папку или в другом источнике и вручную скопируйте на другие компьютеры.
+  
+  ```powershell-interactive
+  Save-Module -Name Az -Path '\\someshare\PowerShell\modules' -Force
+  ```
 
 ## <a name="troubleshooting"></a>Устранение неполадок
 
