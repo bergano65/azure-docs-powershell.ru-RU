@@ -24,7 +24,7 @@ ms.locfileid: "74537254"
 ## <a name="install-or-run-in-azure-cloud-shell"></a>Установка или запуск в Azure Cloud Shell
 
 Проще всего начать работу с Azure PowerShell в среде Azure Cloud Shell.
-Чтобы скачать PowerShell и начать работу с Cloud Shell, см. [краткое руководство по использованию PowerShell в Azure Cloud Shell](/azure/cloud-shell/quickstart-powershell).
+Чтобы начать работу с Cloud Shell, см. [краткое руководство по использованию PowerShell в Azure Cloud Shell](/azure/cloud-shell/quickstart-powershell).
 Cloud Shell запускает PowerShell 6 в контейнере Linux, поэтому специальные функции Windows будут недоступны.
 
 Когда все будет готово к установке Azure PowerShell на локальный компьютер, следуйте инструкциям, приведенным в статье [Install the Azure PowerShell module](install-az-ps.md) (Установка модуля Azure PowerShell).
