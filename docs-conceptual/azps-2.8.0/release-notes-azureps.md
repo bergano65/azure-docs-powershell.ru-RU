@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 10/15/2019
-ms.openlocfilehash: 83e6039153bcc2b8ccb7ceddfa91609f0d6c7b3f
-ms.sourcegitcommit: b4ee3fbaaa2a329ea28308bd1902ae83a34db698
+ms.openlocfilehash: 8c1369cdedf8848f3c62ca6b6bc4eb3d2d78be95
+ms.sourcegitcommit: f9445d1525eac8c165637e1a80fbc92b1ab005c2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72380186"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74656828"
 ---
 ## <a name="280---october-2019"></a>2.8.0 — октябрь 2019 г.
 ### <a name="general"></a>Общие сведения
@@ -56,16 +56,16 @@ ms.locfileid: "72380186"
 * Исправлены незначительные ошибки: Get-AzIothub не возвращает subscriptionId. 
 
 #### <a name="azmonitor"></a>Az.Monitor
-* Добавлены новые получатели групп действий: -ItsmReceiver, -VoiceReceiver, -ArmRoleReceiver, -AzureFunctionReceiver, -LogicAppReceiver, -AutomationRunbookReceiver, -AzureAppPushReceiver.
+* Добавлены новые получатели групп действий для New-AzActionGroupReceiver: -ItsmReceiver, -VoiceReceiver,-ArmRoleReceiver, -AzureFunctionReceiver, -LogicAppReceiver, -AutomationRunbookReceiver, -AzureAppPushReceiver.
 * Для получателей включите общую схему оповещений. Это не касается получателей SMS, push-уведомлений приложения Azure, ITSM и голосовых сообщений.
-* Веб-перехватчики теперь поддерживают аутентификацию Azure Active Directory.
+* Веб-перехватчики теперь поддерживают аутентификацию на основе Azure Active Directory.
 
 #### <a name="aznetwork"></a>Az.Network
 * Добавлен новый командлет Get-AzAvailableServiceAlias, позволяющий получить псевдонимы для политик конечной точки службы.
 * В подключениях шлюза виртуальной сети появилась возможность добавлять селекторы трафика.
     - Добавлены новые командлеты:
-        - New-AzureRmTrafficSelectorPolicy.
-    - В командлеты добавлены необязательные параметры -TrafficSelectorPolicies, -New-AzureRmVirtualNetworkGatewayConnection, -Set-AzureRmVirtualNetworkGatewayConnection.
+        - New-AzIpsecTrafficSelectorPolicy
+    - В командлеты добавлены необязательные параметры -TrafficSelectorPolicies, -New-AzVirtualNetworkGatewayConnection, -Set-AzVirtualNetworkGatewayConnection.
 * В конфигурациях правил сетевой безопасности добавлена поддержка протоколов ESP и AH.
     - Обновлены командлеты:
         - Add-AzNetworkSecurityRuleConfig.
@@ -220,7 +220,7 @@ ms.locfileid: "72380186"
     -  Remove-AzRmStorageShare.
 
 #### <a name="azwebsites"></a>Az.Websites
-* Устранена проблема, из-за которой теги webapp удалялись при переносе приложения в новый ASP.
+* Исправлена проблема, из-за которой теги веб-приложений удалялись при переносе приложения на новый план службы приложений.
 * Теперь командлет Publish-AzureWebapp работает в Linux и Windows.
 * Обновлен пример в справочной документации по командлету Get-AzWebAppPublishingProfile.
 
