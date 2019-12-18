@@ -8,12 +8,12 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.manager: carmonm
 ms.date: 12/20/2018
-ms.openlocfilehash: bdb63ce4bb614920582460ae707d8594977e8f71
-ms.sourcegitcommit: 0b644bfecf4224b2ea83520d1a6a956734d9fba4
+ms.openlocfilehash: a5c5504aa4c2932582df9e4a40b4950d5f999cbd
+ms.sourcegitcommit: f9445d1525eac8c165637e1a80fbc92b1ab005c2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2019
-ms.locfileid: "67863585"
+ms.lasthandoff: 12/16/2019
+ms.locfileid: "75035852"
 ---
 # <a name="overview-of-azure-powershell"></a>Общие сведения об Azure PowerShell
 
@@ -34,7 +34,7 @@ ms.locfileid: "67863585"
 
 Если вы не знакомы с PowerShell, ознакомьтесь с вводными сведениями о PowerShell.
 
-* [Installing Windows PowerShell](/powershell/scripting/setup/installing-windows-powershell) (Установка Windows PowerShell)
+* [Installing Windows PowerShell](/powershell/scripting/install/installing-windows-powershell) (Установка Windows PowerShell)
 * [Scripting with Windows PowerShell](/powershell/scripting/powershell-scripting) (Написание скриптов с помощью Windows PowerShell)
 
 Вы также можете посмотреть этот видеоролик: [Основы PowerShell. Часть 1. Начало работы с PowerShell](https://channel9.msdn.com/Blogs/Taste-of-Premier/PowerShellBasicsPart1).
