@@ -7,13 +7,358 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 10/15/2019
-ms.openlocfilehash: 98a24c805fbf43dd899119d43301b4261c1f60dc
-ms.sourcegitcommit: f9445d1525eac8c165637e1a80fbc92b1ab005c2
+ms.openlocfilehash: f77d901169b0d98b2425a2e50d33a1789150b770
+ms.sourcegitcommit: e598dc45a26ff5a71112383252b350d750144a47
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/16/2019
-ms.locfileid: "75035767"
+ms.lasthandoff: 12/17/2019
+ms.locfileid: "75182559"
 ---
+## <a name="320---december-2019"></a>3.2.0 — декабрь 2019 г.
+
+### <a name="general"></a>Общие сведения
+* Обновление ссылок в .psd1 для использования относительного пути для всех модулей.
+
+#### <a name="azaccounts"></a>Az.Accounts
+* Установка правильного параметра UserAgent для телеметрии на стороне клиента для Az 4.0 (предварительная версия).
+* Отображение понятного пользователю сообщения об ошибке, если в Az 4.0 (предварительная версия) не указан контекст.
+
+#### <a name="azbatch"></a>Az.Batch
+* Исправлена проблема [№ 10602](https://github.com/Azure/azure-powershell/issues/10602), из-за которой использование командлета **New-AzBatchPool** приводило к неправильной отправке VirtualMachineConfiguration.ContainerConfiguration или VirtualMachineConfiguration.DataDisks на сервер.
+
+#### <a name="azdatafactory"></a>Az.DataFactory
+* Обновление пакета SDK Фабрики данных для .NET до версии 4.5.0.
+
+#### <a name="azfrontdoor"></a>Az.FrontDoor
+* Включена поддержка исключений управляемых правил WAF.
+* Добавление SocketAddr в список автозавершения.
+
+#### <a name="azhealthcareapis"></a>Az.HealthcareApis
+* Обработка исключений.
+
+#### <a name="azkeyvault"></a>Az.KeyVault
+* Исправлена ошибка при получении доступа к значению, которое может быть не задано.
+* Управление сертификатами шифрования на основе эллиптических кривых.
+    - Включена возможность указания кривой для политик сертификатов.
+
+#### <a name="azmonitor"></a>Az.Monitor
+* Добавление необязательного аргумента в команду добавления параметров диагностики. Существующий аргумент switch указывает на то, что экспорт в Log Analytics должен выполняться в фиксированную схему (выделенный тип данных).
+
+#### <a name="aznetwork"></a>Az.Network
+* В приложении AzureFirewall, NAT и сетевых правилах включена поддержка IpGroups.
+
+#### <a name="azresources"></a>Az.Resources
+* Устранена проблема, из-за которой при развертывании шаблона не удавалось считать его параметр, если имя параметра конфликтовало с именем встроенного параметра.
+* Обновлены командлеты политики для использования новой версии API 2019-09-01 с поддержкой группирования в определениях наборов политик.
+
+#### <a name="azsql"></a>Az.Sql
+* Обновлена функция автоматического создания расширенного хранилища для службы оценки уязвимостей в учетной записи StorageV2.
+
+#### <a name="azstorage"></a>Az.Storage
+* Включена поддержка создания маркера SAS на основе удостоверения контейнера и большого двоичного объекта с аутентификацией Oauth на основе контекста службы хранилища:
+    - New-AzStorageContainerSASToken;
+    - New-AzStorageBlobSASToken
+* Отозвана поддержка ключей делегирования пользователя учетной записи хранения, а также всех маркеров SAS удостоверения:
+    - Revoke-AzStorageAccountUserDelegationKeys.
+* Выполнено обновление до Microsoft.Azure.Management.Storage версии 14.2.0 для включения поддержки нового API версии 2019-06-01.
+* Включена поддержка значения, превышающего 5120, в параметре QuotaGiB в командлетах для работы с общими папками в плоскости управления и добавлен псевдоним Quota для параметра QuotaGiB: 
+    - New-AzRmStorageShare;
+    - Update-AzRmStorageShare;
+* Добавлен псевдоним QuotaGiB для параметра Quota:
+    - Set-AzStorageShareQuota.
+* Устранена проблема, из-за которой при использовании AzStorageContainerAcl могла очищаться хранимая политика доступа:
+    - Set-AzStorageContainerAcl.
+
+## <a name="310---november-2019"></a>Версия 3.1.0 от ноября 2019 г.
+### <a name="highlights-since-the-last-major-release"></a>Основные возможности с момента последнего основного выпуска
+* Выпуск Az.DataBoxEdge 1.0.0
+* Выпуск Az.SqlVirtualMachine 1.0.0
+
+#### <a name="azcompute"></a>Az.Compute
+* Функция повторного применения виртуальной машины
+    - Добавлен параметр повторного применения в командлет Set-AzVM.
+* Функция AutomaticRepairs масштабируемого набора виртуальных машин:
+    - Добавлены параметры EnableAutomaticRepair, AutomaticRepairGracePeriod и AutomaticRepairMaxInstanceRepairsPercent в следующие командлеты:   New-AzVmssConfig Update-AzVmss
+* Включена поддержка образа из коллекции разных клиентов для New-AzVM.
+* Добавлен фрагмент Spot в средство заполнения аргументов параметра Priority в командлетах New-AzVM, New-AzVMConfig и New-AzVmss.
+* Добавлены параметры DiskIOPSReadWrite и DiskMBpsReadWrite в командлет Add-AzVmssDataDisk.
+* Изменен параметр SourceImageId командлета New-AzGalleryImageVersion на необязательный.
+* Добавлены параметры OSDiskImage и DataDiskImage в командлет New-AzGalleryImageVersion.
+* Добавлен параметр HyperVGeneration в командлет New-AzGalleryImageDefinition.
+* Добавлены параметры SkipExtensionsOnOverprovisionedVMs в командлеты New-AzVmss, New-AzVmssConfig и Update-AzVmss.
+
+#### <a name="azdataboxedge"></a>Az.DataBoxEdge
+* Добавлен командлет `Get-AzDataBoxEdgeOrder`.
+    - Получение заказа.
+* Добавлен командлет `New-AzDataBoxEdgeOrder`.
+    - Создание заказа.
+* Добавлен командлет `Remove-AzDataBoxEdgeOrder`.
+    - Удаление заказа.
+* Изменен командлет `New-AzDataBoxEdgeShare`.
+    - Создание локальной общей папки.
+* Добавлен командлет `Set-AzDataBoxEdgeRole`.
+    - Сопоставление IotRole с общей папкой.
+* Добавлен командлет `Invoke-AzDataBoxEdgeDevice`.
+    - Вызов проверки обновлений, скачивание обновления, установка обновления на устройстве.
+* Добавлен командлет `Get-AzDataBoxEdgeTrigger`.
+    - Получение сведений о триггерах.
+* Добавлен командлет `New-AzDataBoxEdgeTrigger`.
+    - Создание триггеров.
+* Добавлен командлет `Remove-AzDataBoxEdgeTrigger`.
+    - Удаление триггеров.
+
+#### <a name="azdatafactory"></a>Az.DataFactory
+* Обновление пакета SDK Фабрики данных для .NET до версии 4.4.0.
+* Добавлен параметр ExpressCustomSetup в командлет Set-AzureRmDataFactoryV2IntegrationRuntime для включения конфигураций установки и сторонних компонентов без использования настраиваемого скрипта установки.
+
+#### <a name="azdatalakestore"></a>Az.DataLakeStore
+* Обновлена документация по Get-AzDataLakeStoreDeletedItem и Restore-AzDataLakeStoreDeletedItem.
+
+#### <a name="azeventhub"></a>Az.EventHub
+* Исправлена проблема № 10301. Исправлен формат даты маркера SAS.
+
+#### <a name="azfrontdoor"></a>Az.FrontDoor
+* Добавлен параметр MinimumTlsVersion в Enable-AzFrontDoorCustomDomainHttps и New-AzFrontDoorFrontendEndpointObject.
+* Добавлены параметры HealthProbeMethod и EnabledState в New-AzFrontDoorHealthProbeSettingObject.
+* Добавлен новый командлет для создания объекта BackendPoolsSettings для передачи при создании и обновлении Front Door.
+    - New-AzFrontDoorBackendPoolsSettingObject
+
+#### <a name="aznetwork"></a>Az.Network
+* Изменены примеры параметра FilterData Start-AzVirtualNetworkGatewayConnectionPacketCapture.md и Start-AzVirtualnetworkGatewayPacketCapture.md.
+
+#### <a name="azprivatedns"></a>Az.PrivateDns
+* Пакет SDK PrivateDns для .NET обновлен до версии 1.0.0
+
+#### <a name="azrecoveryservices"></a>Az.RecoveryServices
+* Включена поддержка Azure Site Recovery для выбора типа диска при включении защиты.
+* Внесено исправление Azure Site Recovery для изменения действия плана восстановления.
+* Включена поддержка восстановления SQL Azure Backup для принятия баз данных файлового потока.
+
+#### <a name="azrediscache"></a>Az.RedisCache
+* Добавлен параметр MinimumTlsVersion в командлеты New-AzRedisCache и Set-AzRedisCache. Кроме того, добавлен параметр MinimumTlsVersion в выходные данные командлета Get-AzRedisCache.
+* Добавлена проверка параметра -Size для командлетов Set-AzRedisCache и New-AzRedisCache.
+
+#### <a name="azresources"></a>Az.Resources
+- Обновлены командлеты политики для использования новой версии API 2019-06-01 с новым свойством EnforcementMode в назначении политики.
+- Обновлен пример справки по созданию определения политики
+- Исправлена ошибка с параметром -ServicePrincipalName командлета Remove-AZADServicePrincipal с возвратом пустой ссылки, если имя субъекта службы не найдено.
+- Исправлена ошибка с New-AZADServicePrincipal с возвратом пустой ссылки, если у клиента нет подписки.
+- Изменен командлет New-AzAdServicePrincipal для добавления учетных данных только для связанного приложения.
+
+#### <a name="azsql"></a>Az.Sql
+* Добавлена поддержка ReadReplicaCount для базы данных.
+* Исправлена ошибка с Set-AzSqlDatabase, если избыточность в пределах зоны не настроена.
+
+## <a name="300---november-2019"></a>Версия 3.0.0 от ноября 2019 г.
+### <a name="general"></a>Общие сведения
+* Выпущена версия Az.PrivateDns 1.0.0
+
+#### <a name="azaccounts"></a>Az.Accounts
+* Добавлено сообщение об устаревании для псевдонима "Resolve-Error".
+
+#### <a name="azadvisor"></a>Az.Advisor
+* Добавлена новая категория Operational Excellence (Эффективность работы) в командлет Get-AzAdvisorRecommendation.
+
+#### <a name="azbatch"></a>Az.Batch
+* `CoreQuota` в `BatchAccountContext` переименован в `DedicatedCoreQuota`. Также появился новый `LowPriorityCoreQuota`.
+  - Это влияет на **Get-AzBatchAccount**.
+* Параметр **New-AzBatchTask** `-ResourceFile` теперь принимает коллекцию объектов `PSResourceFile`, которые можно создать с помощью нового командлета **New-AzBatchResourceFile**.
+* Новый командлет **New-AzBatchResourceFile**, который помогает создавать объекты `PSResourceFile`. Их можно передавать в **New-AzBatchTask** в параметре `-ResourceFile`.
+  - Это позволяет поддерживать два новых типа файлов ресурсов, которые дополняют существующий метод `HttpUrl`:
+    - Файлы ресурсов на основе `AutoStorageContainerName` скачивают весь контейнер автоматического хранения в узел пакетной службы.
+    - Файлы ресурсов на основе `StorageContainerUrl` скачивают указанный в URL-адресе контейнер в узел пакетной службы.
+* Удалено свойство `ApplicationPackages` в `PSApplication`, который возвращается из **Get-AzBatchApplication**.
+  - Отдельные пакеты в приложении теперь можно извлечь с помощью **Get-AzBatchApplicationPackage**. Например, `Get-AzBatchApplication -AccountName myaccount -ResourceGroupName myresourcegroup -ApplicationId myapplication`.
+* `ApplicationId` переименован в `ApplicationName` для **Get-AzBatchApplicationPackage**, **New-AzBatchApplicationPackage**, **Remove-AzBatchApplicationPackage**, **Get-AzBatchApplication**, **New-AzBatchApplication**, **Remove-AzBatchApplication** и **Set-AzBatchApplication**.
+  - Теперь `ApplicationId` является псевдонимом для `ApplicationName`.
+* Добавлено новое свойство `PSWindowsUserConfiguration` в `PSUserAccount`.
+* `Version` переименован в `Name` для `PSApplicationPackage`.
+* `BlobSource` переименован в `HttpUrl` для `PSResourceFile`.
+* Удалено свойство `OSDisk` из `PSVirtualMachineConfiguration`.
+* Удалена операция **Set-AzBatchPoolOSVersion**. Больше она не поддерживается.
+* Удалено `TargetOSVersion` из `PSCloudServiceConfiguration`.
+* `CurrentOSVersion` переименован в `OSVersion` для `PSCloudServiceConfiguration`.
+* Удалено `DataEgressGiB` и `DataIngressGiB` из `PSPoolUsageMetrics`.
+* Операция **Get-AzBatchNodeAgentSku** удалена и заменена на **Get-AzBatchSupportedImage**. 
+  - **Get-AzBatchSupportedImage** возвращает те же данные, что и **Get-AzBatchNodeAgentSku**, но в более удобном формате.
+  - Также возвращаются новые непроверенные образы. Включается и дополнительная информация о `Capabilities` и `BatchSupportEndOfLife` для каждого образа.
+* Добавлена возможность монтировать файловые системы на каждом узле пула с помощью нового параметра `MountConfiguration` в **New-AzBatchPool**.
+* Теперь поддерживаются правила безопасности сети, которые блокируют сетевой доступ к пулу по исходящему порту трафика. Это выполняется с помощью свойства `SourcePortRanges` для `PSNetworkSecurityGroupRule`.
+* Что касается выполнения контейнеров, пакетная служба теперь поддерживает выполнение задачи в рабочей папке контейнера или рабочей папке задачи пакетной службы. Выбор зависит от параметра `WorkingDirectory` в `PSTaskContainerSettings`.
+* Добавлена возможность указать коллекцию общедоступных IP-адресов для `PSNetworkConfiguration` с помощью нового свойства `PublicIPs`. Это гарантирует, что узлы в пуле будут иметь IP-адреса из списка, предоставленного пользователем.
+* Если значение не задано, по умолчанию для `WaitForSuccess` в `PSSTartTask` используется значение `$True` (ранее `$False`).
+* Если значение не задано, по умолчанию для `Scope` в `PSAutoUserSpecification` используется значение `Pool` (ранее `Task` для Windows или `Pool` для Linux).
+
+#### <a name="azcdn"></a>Az.Cdn
+* Добавлены UrlRewriteAction и CacheKeyQueryStringAction в RulesEngine.
+* Исправлено несколько ошибок, таких как отсутствующий входной параметр Selector в командлете New-AzDeliveryRuleCondition.
+
+#### <a name="azcompute"></a>Az.Compute
+* Функция набора шифрования диска
+    - Новые командлеты:   New-AzDiskEncryptionSetConfig   New-AzDiskEncryptionSet   Get-AzDiskEncryptionSet   Remove-AzDiskEncryptionSet
+    - Добавлен параметр ProximityPlacementGroupId в следующие командлеты: Set-AzImageOSDisk Set-AzVMOSDisk Set-AzVmssStorageProfile        
+        Add-AzImageDataDisk New-AzVMDataDisk Set-AzVMDataDisk Add-AzVMDataDisk Add-AzVmssDataDisk Add-AzVmssVMDataDisk
+    - Параметры DiskEncryptionSetId и EncryptionType добавлены в следующие командлеты:   New-AzDiskConfig   New-AzSnapshotConfig
+* Добавлен параметр PublicIPAddressVersion в New-AzVmssIPConfig
+* FileUris для расширения пользовательских скриптов теперь будет защищенным, а не общедоступным параметром
+* Добавлено ScaleInPolicy в командлеты New-AzVmss, New-AzVmssConfig и Update-AzVmss
+* Критические изменения
+    - Параметр UploadSizeInBytes применяется теперь вместо DiskSizeGB для New-AzDiskConfig, если CreateOption имеет значение Upload
+    - PublishingProfile.Source.ManagedImage.Id заменяется на StorageProfile.Source.Id в объекте GalleryImageVersion
+
+#### <a name="azdatafactory"></a>Az.DataFactory
+* Пакет SDK Фабрики данных Azure для .NET обновлен до версии 4.3.0.
+
+#### <a name="azdatalakestore"></a>Az.DataLakeStore
+* Обновлен пакет SDK для ADLS (https://github.com/Azure/azure-data-lake-store-net/blob/preview-alpha/CHANGELOG.md#version-123-alpha), включает следующие исправления
+* Не создается исключение при невозможности десериализовать значение времени создания для записи в корзине или каталоге.
+* Предоставляется параметр для времени ожидания запроса в adlsclient
+* Исправлена передача исходного значения syncflag для восстановления badoffset
+* Исправлена операция EnumerateDirectory, чтобы она извлекала токен продолжения после проверки ответа
+* Исправлена ошибка объединения
+
+#### <a name="azfrontdoor"></a>Az.FrontDoor
+* Исправлены разные опечатки в разных частях модуля
+
+#### <a name="azhdinsight"></a>Az.HDInsight
+* Исправлена ошибка, из-за которой клиент получал сообщение об ошибке 'Not a valid Base-64 string' (Не является допустимой строкой Base64) при выполнении Get-AzHDInsightCluster для получения кластера с хранилищем ADLSGen1.
+* Добавлен параметр с именем ApplicationId в три командлета Add-AzHDInsightClusterIdentity, New-AzHDInsightClusterConfig и New-AzHDInsightCluster, чтобы клиент мог предоставить идентификатор приложения субъекта-службы для доступа к Azure Data Lake.
+* Для Microsoft.Azure.Management.HDInsight изменена версия с 2.1.0 на 5.1.0
+* Удалены пять командлетов:
+    - Get-AzHDInsightOMS
+    - Enable-AzHDInsightOMS
+    - Disable-AzHDInsightOMS
+    - Grant-AzHDInsightRdpServicesAccess
+    - Revoke-AzHDInsightRdpServicesAccess
+* Добавлены три командлета:
+    - Get-AzHDInsightMonitoring заменяет собой Get-AzHDInsightOMS.
+    - Enable-AzHDInsightMonitoring заменяет собой Enable-AzHDInsightOMS.
+    - Disable-AzHDInsightMonitoring заменяет собой Disable-AzHDInsightOMS.
+* Исправлен командлет Get-AzHDInsightProperties, чтобы он поддерживал получение сведений о возможностях из определенного расположения.
+* Удалены наборы параметров ("Spark1", "Spark2") из Add-AzHDInsightConfigValue.
+* Добавлены примеры в справочные документы по командлету Add-AzHDInsightSecurityProfile.
+* Изменен тип выходных данных для следующих командлетов:
+*  - Для Get-AzHDInsightProperties тип выходных данных изменен с CapabilitiesResponse на AzureHDInsightCapabilities.
+*  - Для Remove-AzHDInsightCluster тип выходных данных изменен с ClusterGetResponse на bool.
+*  - Для Set-AzHDInsightGatewaySettings тип выходных данных изменен с HttpConnectivitySettings на GatewaySettings.
+* Добавлены несколько условий для проверки сценариев.
+* Удалены несколько псевдонимов: Add-AzHDInsightConfigValues, Get-AzHDInsightProperties.
+
+#### <a name="aziothub"></a>Az.IotHub
+* Критические изменения
+    - Командлет Add-AzIotHubEventHubConsumerGroup теперь не поддерживает параметр EventHubEndpointName и не найдены псевдонимы для исходного имени параметра.
+    - Удален набор параметров __AllParameterSets для командлета Add-AzIotHubEventHubConsumerGroup.
+    - Командлет Get-AzIotHubEventHubConsumerGroup теперь не поддерживает параметр EventHubEndpointName и не найдены псевдонимы для исходного имени параметра.
+    - Удален набор параметров __AllParameterSets для командлета Get-AzIotHubEventHubConsumerGroup.
+    - Удалено свойство OperationsMonitoringProperties для типа Microsoft.Azure.Commands.Management.IotHub.Models.PSIotHubProperties.
+    - Удалено свойство OperationsMonitoringProperties для типа Microsoft.Azure.Commands.Management.IotHub.Models.PSIotHubInputProperties.
+    - Командлет New-AzIotHubExportDevice больше не поддерживает псевдоним New-AzIotHubExportDevices.
+    - Командлет New-AzIotHubImportDevice больше не поддерживает псевдоним New-AzIotHubImportDevices.
+    - Командлет Remove-AzIotHubEventHubConsumerGroup теперь не поддерживает параметр EventHubEndpointName и не найдены псевдонимы для исходного имени параметра.
+    - Удален набор параметров __AllParameterSets для командлета Remove-AzIotHubEventHubConsumerGroup.
+    - Командлет Set-AzIotHub теперь не поддерживает параметр OperationsMonitoringProperties и не найдены псевдонимы для исходного имени параметра.
+    - Удален набор параметров UpdateOperationsMonitoringProperties для командлета Set-AzIotHub.
+
+#### <a name="azrecoveryservices"></a>Az.RecoveryServices
+* Azure Site Recovery поддерживает настройку сетевых ресурсов, например групп безопасности сети, общедоступных IP-адресов и внутренних подсистем балансировки нагрузки из Azure в Azure.
+* Azure Site Recovery поддерживает запись на управляемый диск из vMWare в Azure.
+* Azure Site Recovery поддерживает сокращение NIC из vMWare в Azure.
+* Azure Site Recovery поддерживает ускорение сети NIC из Azure в Azure.
+* Azure Site Recovery поддерживает автоматическое обновление агента из Azure в Azure.
+* Azure Site Recovery поддерживает стандартный SSD-накопитель из Azure в Azure.
+* Azure Site Recovery поддерживает двухпроходное шифрование диска Azure из Azure в Azure.
+* Azure Site Recovery поддерживает новый добавленный диск из Azure в Azure.
+* Добавлена функция SoftDelete для виртуальных машин и соответствующие тесты
+
+#### <a name="azresources"></a>Az.Resources
+* Обновлена сборка зависимостей Microsoft.Extensions.Caching.Memory с версии 1.1.1 до 2.2
+
+#### <a name="aznetwork"></a>Az.Network
+* Изменены все командлеты для PrivateEndpointConnection, чтобы они поддерживали универсальный поставщик служб.
+    - Обновлен командлет:
+        - Approve-AzPrivateEndpointConnection.
+        - Deny-AzPrivateEndpointConnection.
+        - Get-AzPrivateEndpointConnection.
+        - Remove-AzPrivateEndpointConnection.
+        - Set-AzPrivateEndpointConnection
+* Добавлен новый командлет для PrivateLinkResource, который поддерживает универсальный поставщик служб.
+    - Новый командлет
+        - Get-AzPrivateLinkResource
+* Добавлены новые поля и параметр для протокола прокси версии 2.
+    - Добавлено свойство EnableProxyProtocol в PrivateLinkService
+    - Добавлено свойство LinkIdentifier в PrivateEndpointConnection
+    - Обновлен New-AzPrivateLinkService для поддержки нового необязательного параметра EnableProxyProtocol.
+* Исправлено описание параметра в справочной документации по командлету New-AzApplicationGatewaySku.
+* Новые командлеты для поддержки политики брандмауэра Azure
+* Добавлена поддержка дочерних ресурсов RouteTables для VirtualHub
+    - Добавлены новые командлеты:
+        - Add-AzVirtualHubRoute
+        - Add-AzVirtualHubRouteTable
+        - Get-AzVirtualHubRouteTable
+        - Remove-AzVirtualHubRouteTable
+        - Set-AzVirtualHub
+* Добавлена поддержка новых свойств SKU для VirtualHub и VirtualWANType в VirtualWan
+    - В следующие командлеты добавлены необязательные параметры:
+        - New-AzVirtualHub: добавлен параметр Sku
+        - Update-AzVirtualHub: добавлен параметр Sku
+        - New-AzVirtualWan: добавлен параметр VirtualWANType
+        - Update-AzVirtualWan: добавлен параметр VirtualWANType
+* Добавлена поддержка свойства EnableInternetSecurity для HubVnetConnection, VpnConnection и ExpressRouteConnection
+    - Добавлены новые командлеты:
+        - Update-AzureRmVirtualHubVnetConnection
+    - В следующие командлеты добавлены необязательные параметры:
+        - New-AzureRmVirtualHubVnetConnection: добавлен параметр EnableInternetSecurity
+        - New-AzureRmVpnConnection: добавлен параметр EnableInternetSecurity
+        - Update-AzureRmVpnConnection: добавлен параметр EnableInternetSecurity
+        - New-AzureRmExpressRouteConnection: добавлен параметр EnableInternetSecurity
+        - Set-AzureRmExpressRouteConnection: добавлен параметр EnableInternetSecurity
+* Добавлена поддержка настройки политики верхнего уровня WebApplicationFirewall
+    - Добавлены новые командлеты:
+        - New-AzApplicationGatewayFirewallPolicySetting
+        - New-AzApplicationGatewayFirewallPolicyExclusion
+        - New-AzApplicationGatewayFirewallPolicyManagedRuleGroupOverride
+        - New-AzApplicationGatewayFirewallPolicyManagedRuleOverride
+        - New-AzApplicationGatewayFirewallPolicyManagedRule
+        - New-AzApplicationGatewayFirewallPolicyManagedRuleSet
+    - В следующие командлеты добавлены необязательные параметры:
+        - New-AzApplicationGatewayFirewallPolicy: добавлены параметры PolicySetting, ManagedRule
+* Добавлена поддержка оператора Geo-Match для CustomRule
+    - Добавлен параметр GeoMatch в оператор для FirewallCondition
+* Добавлена поддержка политики брандмауэра perListener и perSite
+    - В следующие командлеты добавлены необязательные параметры:
+        - New-AzApplicationGatewayHttpListener: добавлены параметры FirewallPolicy, FirewallPolicyId
+        - New-AzApplicationGatewayPathRuleConfig: добавлены параметры FirewallPolicy, FirewallPolicyId
+* Исправлен учет регистра для требуемой подсети с именем AzureBastionSubnet в PSBastion
+* Поддержка полного доменного имени назначения в правилах сети и преобразованного полного доменного имени в правилах NAT для брандмауэра Azure
+* Добавлена поддержка ресурсов верхнего уровня RouteTables для IpGroup
+    - Добавлены новые командлеты:
+        - New-AzIpGroup
+        - Remove-AzIpGroup
+        - Get-AzIpGroup
+        - Set-AzIpGroup
+
+#### <a name="azservicefabric"></a>Az.ServiceFabric
+* Удален командлет Add-AzServiceFabricApplicationCertificate, так как соответствующий сценарий выполняется командлетом Add-AzVmssSecret.
+
+#### <a name="azsql"></a>Az.Sql
+* Добавлена поддержка восстановления удаленных баз данных в управляемых экземплярах.
+* Из кода удалены старые командлеты аудита.
+* Удалены нерекомендуемые псевдонимы:
+* Get-AzSqlDatabaseIndexRecommendations (вместо него используйте Get-AzSqlDatabaseIndexRecommendation)
+* Get-AzSqlDatabaseRestorePoints (вместо него используйте Get-AzSqlDatabaseRestorePoint)
+* Удален командлет Get-AzSqlDatabaseSecureConnectionPolicy
+* Удалены псевдонимы для нерекомендуемых командлетов параметров оценки уязвимостей
+* Командлеты расширенного обнаружения угроз объявлены устаревшими 
+* Добавлены командлеты для отключения и включения рекомендаций о конфиденциальности для столбцов в базе данных.
+
+#### <a name="azstorage"></a>Az.Storage
+* Поддержка включения большой общей папки при создании или обновлении учетной записи хранения
+    -  New-AzStorageAccount
+    -  Set-AzStorageAccount
+* При закрытии или получении маркера файла пропускается проверка того, является ли входной путь файлом или каталогом, чтобы избежать сбоев при получении объектов в состоянии DeletePending.
+    -  Get-AzStorageFileHandle
+    -  Close-AzStorageFileHandle
+    
 ## <a name="280---october-2019"></a>2.8.0 — октябрь 2019 г.
 ### <a name="general"></a>Общие сведения
 * Выпуск Az.HealthcareApis 1.0.0
@@ -56,18 +401,16 @@ ms.locfileid: "75035767"
 * Исправлены незначительные ошибки: Get-AzIothub не возвращает subscriptionId. 
 
 #### <a name="azmonitor"></a>Az.Monitor
-* Добавлены новые получатели групп действий для New-AzActionGroupReceiver: -ItsmReceiver, -VoiceReceiver,-ArmRoleReceiver, -AzureFunctionReceiver, -LogicAppReceiver, -AutomationRunbookReceiver, -AzureAppPushReceiver.
+* Добавлены новые получатели групп действий: -ItsmReceiver, -VoiceReceiver, -ArmRoleReceiver, -AzureFunctionReceiver, -LogicAppReceiver, -AutomationRunbookReceiver, -AzureAppPushReceiver.
 * Для получателей включите общую схему оповещений. Это не касается получателей SMS, push-уведомлений приложения Azure, ITSM и голосовых сообщений.
-* Веб-перехватчики теперь поддерживают аутентификацию на основе Azure Active Directory.
+* Веб-перехватчики теперь поддерживают аутентификацию Azure Active Directory.
 
 #### <a name="aznetwork"></a>Az.Network
 * Добавлен новый командлет Get-AzAvailableServiceAlias, позволяющий получить псевдонимы для политик конечной точки службы.
 * В подключениях шлюза виртуальной сети появилась возможность добавлять селекторы трафика.
     - Добавлены новые командлеты:
-        - New-AzIpsecTrafficSelectorPolicy
-    - В следующие командлеты добавлен необязательный параметр -TrafficSelectorPolicies:
-        - New-AzVirtualNetworkGatewayConnection;
-        - Set-AzVirtualNetworkGatewayConnection.
+        - New-AzureRmTrafficSelectorPolicy.
+    - В командлеты добавлены необязательные параметры -TrafficSelectorPolicies, -New-AzureRmVirtualNetworkGatewayConnection, -Set-AzureRmVirtualNetworkGatewayConnection.
 * В конфигурациях правил сетевой безопасности добавлена поддержка протоколов ESP и AH.
     - Обновлены командлеты:
         - Add-AzNetworkSecurityRuleConfig.
@@ -222,7 +565,7 @@ ms.locfileid: "75035767"
     -  Remove-AzRmStorageShare.
 
 #### <a name="azwebsites"></a>Az.Websites
-* Исправлена проблема, из-за которой теги веб-приложений удалялись при переносе приложения на новый план службы приложений.
+* Устранена проблема, из-за которой теги webapp удалялись при переносе приложения в новый ASP.
 * Теперь командлет Publish-AzureWebapp работает в Linux и Windows.
 * Обновлен пример в справочной документации по командлету Get-AzWebAppPublishingProfile.
 
