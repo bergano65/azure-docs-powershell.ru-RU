@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 11/15/2017
-ms.openlocfilehash: 77a66b3d218bbbfb230ed993b2a34eb3e845b1f1
-ms.sourcegitcommit: bbd3f061cac3417ce588487c1ae4e0bc52c11d6a
+ms.openlocfilehash: 564a3e70e3f6d1803cdff9976bace119f6e20f48
+ms.sourcegitcommit: 2d0c3ffaa5246f680784fa7e15b0d2536c27ff80
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "65534897"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75720401"
 ---
 # <a name="getting-started-with-azure-powershell"></a>Начало работы с Azure PowerShell
 
@@ -362,12 +362,12 @@ Are you sure you want to remove resource group 'myResourceGroup'
 
 Дополнительные сведения о способах использования Azure PowerShell см. в примерах популярных сценариев для [виртуальных машин Linux](/azure/virtual-machines/virtual-machines-linux-powershell-samples?toc=%2fpowershell%2fazure%%2ftoc.json), [виртуальных машин Windows](/azure/virtual-machines/virtual-machines-windows-powershell-samples?toc=%2fpowershell%2fazure%%2ftoc.json), [веб-приложений](/azure/app-service-web/app-service-powershell-samples?toc=%2fpowershell%2fazure%%2ftoc.json) и [баз данных SQL](/azure/sql-database/sql-database-powershell-samples?toc=%2fpowershell%2fazure%%2ftoc.json).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Вход с помощью Azure PowerShell](authenticate-azureps.md)
 * [Управление подписками Azure с помощью Azure PowerShell](manage-subscriptions-azureps.md)
 * [Создание субъектов-служб в Azure с помощью Azure PowerShell](create-azure-service-principal-azureps.md)
 * Ознакомьтесь с заметками о выпуске, касающимися миграции с более ранней версии: [https://github.com/Azure/azure-powershell/tree/dev/documentation/release-notes](https://github.com/Azure/azure-powershell/tree/dev/documentation/release-notes).
 * Помощь от сообщества:
-  * [Форум Azure на MSDN](http://go.microsoft.com/fwlink/p/?LinkId=320212)
-  * [Stackoverflow](http://go.microsoft.com/fwlink/?LinkId=320213)
+  * [Форум Azure на MSDN](https://go.microsoft.com/fwlink/p/?LinkId=320212)
+  * [Stackoverflow](https://go.microsoft.com/fwlink/?LinkId=320213)

@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 06/15/2018
-ms.openlocfilehash: ff50c676d42cad515aea74ea960105ed76f418a6
-ms.sourcegitcommit: b02cbcd00748a4a9a4790a5fba229ce53c3bf973
+ms.openlocfilehash: 5a4ccd67433fe3716df42075a4e2fd035a12af2b
+ms.sourcegitcommit: 2d0c3ffaa5246f680784fa7e15b0d2536c27ff80
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68863310"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75722447"
 ---
 # <a name="install-azure-powershell-on-windows-with-powershellget"></a>Установка Azure PowerShell в ОС Windows с помощью PowerShellGet
 
@@ -54,9 +54,9 @@ Install-Module PowerShellGet -Force
 
 |Сценарий|Инструкции по установке|
 |---|---|
-|Windows 10<br/>Windows Server 2016|Встроен в пакет Windows Management Framework (WMF) 5.0, который входит в состав ОС|
+|Windows 10<br/>Windows Server 2016|Встроен в пакет Windows Management Framework (WMF) 5.0, который входит в состав ОС|
 |Обновление до PowerShell 5| <ol><li>[Установите последнюю версию WMF](https://www.microsoft.com/download/details.aspx?id=54616)</li><li>Выполните следующую команду:<br/>```Install-Module PowerShellGet -Force```</li></ol>|
-|Windows с PowerShell 3 или PowerShell 4|<ol><il>[Получите модули PackageManagement:](http://go.microsoft.com/fwlink/?LinkID=746217)</il><li>Выполните следующую команду:<br/>```Install-Module PowerShellGet -Force```</li></ol>|
+|Windows с PowerShell 3 или PowerShell 4|<ol><il>[Получите модули PackageManagement:](https://go.microsoft.com/fwlink/?LinkID=746217)</il><li>Выполните следующую команду:<br/>```Install-Module PowerShellGet -Force```</li></ol>|
 
 > [!NOTE]
 > Чтобы использовать PowerShellGet, необходимо иметь политику выполнения, которая позволяет запускать сценарии. Дополнительные сведения о политике выполнения PowerShell см. в [этой статье](/powershell/module/microsoft.powershell.core/about/about_execution_policies).
@@ -136,6 +136,6 @@ Import-Module -Name AzureRM -RequiredVersion 2.3.0
 Если вы нашли ошибку при работе с Azure Powershell, [сообщите о ней на сайте GitHub](https://github.com/Azure/azure-powershell/issues).
 Чтобы отправить отзыв из командной строки, используйте командлет [Send-Feedback](/powershell/module/azurerm.profile/send-feedback).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Next Steps
 
 Сведения о начале работы с Azure PowerShell см. в [этой статье](get-started-azureps.md). Она содержит более подробную информацию о модуле и его компонентах.

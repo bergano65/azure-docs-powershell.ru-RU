@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 09/06/2017
-ms.openlocfilehash: d41e7ce2faac6a82b63ed173b5b64b85b56577c0
-ms.sourcegitcommit: bbd3f061cac3417ce588487c1ae4e0bc52c11d6a
+ms.openlocfilehash: c0ac4f6cfb803519b8dd711d3cca0d4a4f7e6f8b
+ms.sourcegitcommit: 2d0c3ffaa5246f680784fa7e15b0d2536c27ff80
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "65535090"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75722464"
 ---
 # <a name="other-installation-methods"></a>Другие методы установки
 
@@ -23,7 +23,7 @@ Azure PowerShell можно установить разными способам
 ## <a name="install-on-windows-using-the-web-platform-installer"></a>Установка в Windows с помощью установщика веб-платформы
 
 Установка последней версии Azure PowerShell из WebPI выполняется также, как и установка предыдущих версий.
-Скачайте [пакет Azure PowerShell WebPI](http://aka.ms/webpi-azps) и запустите установку.
+Скачайте [пакет Azure PowerShell WebPI](https://aka.ms/webpi-azps) и запустите установку.
 
 > [!NOTE]
 > Если вы ранее установили модули Azure из коллекции PowerShell, то установщик автоматически удаляет их. Это облегчает использование среды за счет установки только одной версии Azure PowerShell. Но в некоторых сценариях может потребоваться установить несколько версий одновременно.
@@ -56,7 +56,7 @@ At line:1 char:1
     + FullyQualifiedErrorId : CommandNotFoundException
 ```
 
-Эту ошибку можно исправить при перезагрузке компьютера или импорте модуля, используя полный путь. Например:
+Эту ошибку можно исправить при перезагрузке компьютера или импорте модуля, используя полный путь. Пример:
 
 ```powershell-interactive
 Import-Module "$env:ProgramFiles(x86)\Microsoft SDKs\Azure\PowerShell\AzureRM.psd1"

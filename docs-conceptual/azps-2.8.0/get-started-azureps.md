@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: get-started-article
 ms.date: 01/14/2019
-ms.openlocfilehash: a4c8792f2ff27e1b6d3cee97144c26455356b7fd
-ms.sourcegitcommit: 0b94b9566124331d0b15eb7f5a811305c254172e
+ms.openlocfilehash: c515fcbbe4dcb0b6578a56da137a77e3f843a2e6
+ms.sourcegitcommit: 2d0c3ffaa5246f680784fa7e15b0d2536c27ff80
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72370397"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75720452"
 ---
 # <a name="get-started-with-azure-powershell"></a>Начало работы с Azure PowerShell
 
@@ -24,7 +24,7 @@ ms.locfileid: "72370397"
 ## <a name="install-or-run-in-azure-cloud-shell"></a>Установка или запуск в Azure Cloud Shell
 
 Проще всего начать работу с Azure PowerShell в среде Azure Cloud Shell.
-Чтобы скачать PowerShell и начать работу с Cloud Shell, см. [краткое руководство по использованию PowerShell в Azure Cloud Shell](/azure/cloud-shell/quickstart-powershell).
+Чтобы начать работу с Cloud Shell, см. [Краткое руководство по использованию PowerShell в Azure Cloud Shell](/azure/cloud-shell/quickstart-powershell).
 Cloud Shell запускает PowerShell 6 в контейнере Linux, поэтому специальные функции Windows будут недоступны.
 
 Когда все будет готово к установке Azure PowerShell на локальный компьютер, следуйте инструкциям, приведенным в статье [Install the Azure PowerShell module](install-az-ps.md) (Установка модуля Azure PowerShell).
@@ -91,11 +91,11 @@ Get-Command -Verb Get -Noun AzVM* -Module Az.Compute
 * [Создание масштабируемого набора виртуальных машин (VMSS)](/azure/virtual-machine-scale-sets/quick-create-powershell)
 * [Создание подсистемы балансировки нагрузки уровня "Стандартный"](/azure/load-balancer/quickstart-create-standard-load-balancer-powershell)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Вход с помощью Azure PowerShell](authenticate-azureps.md)
 * [Управление подписками Azure с помощью Azure PowerShell](manage-subscriptions-azureps.md)
 * [Создание субъектов-служб Azure с помощью Azure PowerShell](create-azure-service-principal-azureps.md)
 * Помощь от сообщества:
-  * [Форум Azure на MSDN](http://go.microsoft.com/fwlink/p/?LinkId=320212)
-  * [Stack Overflow](http://go.microsoft.com/fwlink/?LinkId=320213)
+  * [Форум Azure на MSDN](https://go.microsoft.com/fwlink/p/?LinkId=320212)
+  * [Stack Overflow](https://go.microsoft.com/fwlink/?LinkId=320213)

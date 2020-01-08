@@ -7,18 +7,18 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/06/2017
-ms.openlocfilehash: 1f859dcbaca88e28ebc0814513b7f4ee35610dc2
-ms.sourcegitcommit: b02cbcd00748a4a9a4790a5fba229ce53c3bf973
+ms.openlocfilehash: a4911e72f687c07b31805c07fd23263a6b7f33b4
+ms.sourcegitcommit: 2d0c3ffaa5246f680784fa7e15b0d2536c27ff80
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68863213"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75718803"
 ---
 # <a name="installing-the-azure-powershell-service-management-module"></a>Установка модуля управления службами Azure PowerShell
 
 Предпочтительный способ установки Azure PowerShell — из [коллекции PowerShell](https://www.powershellgallery.com/).
 
-## <a name="step-1-install-powershellget"></a>Шаг 1. Установка PowerShellGet
+## <a name="step-1-install-powershellget"></a>Шаг 1. Установка PowerShellGet
 
 Чтобы установить элементы из коллекции PowerShell, требуется модуль PowerShellGet. Убедитесь, что в системе установлена необходимая версия PowerShellGet и что выполнены другие требования к системе. Выполните следующую команду, чтобы определить наличие PowerShellGet в вашей системе:
 
@@ -26,7 +26,7 @@ ms.locfileid: "68863213"
 Get-InstalledModule PowerShellGet -AllVersions | Select-Object Name,Version,Path
 ```
 
-Должен отобразиться похожий результат:
+Должен отобразиться результат, аналогичный следующему:
 
 ```output
 Name          Version Path
@@ -36,7 +36,7 @@ PowerShellGet 1.0.0.1 C:\Program Files\WindowsPowerShell\Modules\PowerShellGet\1
 
 Если у вас не установлен PowerShellGet, перейдите к разделу [Как получить PowerShellGet](#how-to-get-powershellget).
 
-## <a name="step-2-install-azure-powershell"></a>Шаг 2. Установите Azure PowerShell
+## <a name="step-2-install-azure-powershell"></a>Шаг 2. Установите Azure PowerShell
 
 Войдите в консоль Windows PowerShell с правами администратора и выполните следующую команду:
 
@@ -74,15 +74,15 @@ Add-AzureAccount
 
 Примеры скриптов, с помощью которых можно автоматизировать некоторые распространенные задачи в Azure, см. в [центре скриптов Microsoft Azure](http://www.windowsazure.com/documentation/scripts/).
 
-Общие сведения об установке, обучении, использовании и настройке Windows PowerShell см. в статье, посвященной [работе со скриптами в Windows PowerShell](http://go.microsoft.com/fwlink/p/?linkid=320210).
+Общие сведения об установке, обучении, использовании и настройке Windows PowerShell см. в статье, посвященной [работе со скриптами в Windows PowerShell](https://go.microsoft.com/fwlink/p/?linkid=320210).
 
-### <a name="how-to-get-powershellget"></a>Как получить PowerShellGet
+### <a name="how-to-get-powershellget"></a>Как установить PowerShellGet
 
 |Сценарий|Инструкции по установке|
 |---|---|
-|Используется Windows 10 или Windows Server 2016|Встроены в Windows Management Framework (WMF) 5.0, которая входит в состав ОС|
+|Используется Windows 10 или Windows Server 2016|Встроен в пакет Windows Management Framework (WMF) 5.0, который входит в состав ОС|
 |Обновление до PowerShell 5.0|[Установите последнюю версию WMF](https://www.microsoft.com/download/details.aspx?id=54616)|
-|Используется версия Windows с PowerShell 3 или PowerShell 4|[Скачайте модули PackageManagement](http://go.microsoft.com/fwlink/?LinkID=746217)|
+|Используется версия Windows с PowerShell 3 или PowerShell 4|[Скачайте модули PackageManagement](https://go.microsoft.com/fwlink/?LinkID=746217)|
 
 <div id="helpmechoose"/>
 

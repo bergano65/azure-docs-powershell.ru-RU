@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/27/2018
-ms.openlocfilehash: dc11af0fff84899ca1b3ad3abf8760dd8c59e6f6
-ms.sourcegitcommit: b02cbcd00748a4a9a4790a5fba229ce53c3bf973
+ms.openlocfilehash: 7b099fead7cb985fc8f7e6fed55b8c1107caa0d9
+ms.sourcegitcommit: 2d0c3ffaa5246f680784fa7e15b0d2536c27ff80
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68863270"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75720384"
 ---
 # <a name="install-azure-powershell-on-windows-with-powershellget"></a>Установка Azure PowerShell в ОС Windows с помощью PowerShellGet
 
@@ -59,7 +59,7 @@ Install-Module PowerShellGet -Force
 > [!IMPORTANT]
 > Для модуля AzureRM, описанном в этом документе, используется .NET Framework. Из-за этого модуль несовместимым с PowerShell версии 6.0, для которой используется .NET Core. Если вы используете PowerShell 6.0, изучите [инструкции по установке для macOS и Linux](install-azurermps-maclinux.md).
 
-## <a name="step-2-install-azure-powershell"></a>Шаг 2. Установите Azure PowerShell
+## <a name="step-2-install-azure-powershell"></a>Шаг 2. Установите Azure PowerShell
 
 Для установки Azure PowerShell из коллекции PowerShell требуются повышенные права. Выполните следующую команду PowerShell с повышенными правами:
 
@@ -80,16 +80,16 @@ Are you sure you want to install the modules from 'PSGallery'?
 [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"): Y
 ```
 
-Ответьте "Да" или "Да для всех", чтобы продолжить установку.
+Ответьте Yes (Да) или Yes to All (Да для всех), чтобы продолжить установку.
 
 > [!NOTE]
 > Если установленная версия NuGet предшествует версии 2.8.5.201, вам будет предложено скачать и установить последнюю версию NuGet.
 
 Модуль AzureRM — это набор командлетов для работы с Azure Resource Manager. При установке модуля AzureRM любой модуль Azure PowerShell, который ранее не был установлен, скачивается из коллекции PowerShell.
 
-Если у вас установлена предыдущая версия Azure PowerShell, то может появляться сообщение об ошибке. Для устранения этой проблемы см. раздел [Обновление Azure PowerShell до новой версии](#update-azps) далее в этой статье.
+Если у вас установлена предыдущая версия Azure PowerShell, то может появиться сообщение об ошибке. Для устранения этой проблемы см. раздел [Обновление Azure PowerShell до новой версии](#update-azps) далее в этой статье.
 
-## <a name="step-3-load-the-azurerm-module"></a>Шаг 3. Загрузка модуля AzureRM
+## <a name="step-3-load-the-azurerm-module"></a>Шаг 3. Загрузка модуля AzureRM
 
 После установки модуля его необходимо загрузить в сеанс PowerShell. Это необходимо сделать в обычном (без повышенных привилегий) сеансе PowerShell. Модули можно загрузить с помощью командлета `Import-Module` следующим образом:
 
@@ -97,7 +97,7 @@ Are you sure you want to install the modules from 'PSGallery'?
 Import-Module -Name AzureRM
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Next Steps
 
 Дополнительные сведения об использовании Azure PowerShell см. в следующей статье:
 
@@ -113,9 +113,9 @@ Import-Module -Name AzureRM
 
 |Сценарий|Инструкции по установке|
 |---|---|
-|Используется Windows 10 или Windows Server 2016|Встроены в Windows Management Framework (WMF) 5.0, которая входит в состав ОС|
+|Используется Windows 10 или Windows Server 2016|Встроен в пакет Windows Management Framework (WMF) 5.0, который входит в состав ОС|
 |Обновление до PowerShell 5.0|[Установите последнюю версию WMF](https://www.microsoft.com/download/details.aspx?id=54616)|
-|Используется версия Windows с PowerShell 3 или PowerShell 4|[Скачайте модули PackageManagement](http://go.microsoft.com/fwlink/?LinkID=746217)|
+|Используется версия Windows с PowerShell 3 или PowerShell 4|[Скачайте модули PackageManagement](https://go.microsoft.com/fwlink/?LinkID=746217)|
 
 ### <a name="div-idhelpmechoosechecking-the-version-of-azure-powershell"></a><div id="helpmechoose"/>Проверка версии Azure PowerShell
 
@@ -145,7 +145,7 @@ At C:\Program Files\WindowsPowerShell\Modules\PowerShellGet\1.0.0.1\PSModule.psm
     + FullyQualifiedErrorId : CommandAlreadyAvailable,Validate-ModuleCommandAlreadyAvailable,Microsoft.PowerShell.PackageManagement.Cmdlets.InstallPackage
 ```
 
-Как указано в сообщении об ошибке, для установки модуля необходимо использовать параметр -AllowClobber. Используйте следующую команду:
+Как указано в сообщении об ошибке, для установки модуля предлагается использовать параметр -AllowClobber Используйте следующую команду:
 
 ```powershell-interactive
 # Install the Azure Resource Manager modules from the PowerShell Gallery

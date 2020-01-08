@@ -12,7 +12,7 @@ ms.sourcegitcommit: 2d0c3ffaa5246f680784fa7e15b0d2536c27ff80
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 01/07/2020
-ms.locfileid: "75720563"
+ms.locfileid: "75721944"
 ---
 # <a name="migration-guide-for-az-200"></a>Руководство по переходу на Az версии 2.0.0
 
