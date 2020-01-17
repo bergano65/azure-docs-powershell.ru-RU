@@ -6,13 +6,13 @@ ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.date: 10/15/2019
-ms.openlocfilehash: fb934ed0f8bef5e2aff715debe5d406d54abf24f
-ms.sourcegitcommit: 2d0c3ffaa5246f680784fa7e15b0d2536c27ff80
+ms.date: 01/09/2020
+ms.openlocfilehash: 3806a1c609a71c53c0bddc5bafd51d845c0c296e
+ms.sourcegitcommit: 16904e0a72c55fb81248e0252769defb86c50f36
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75718990"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75831650"
 ---
 # <a name="azure-powershell-release-notes"></a>Заметки о выпуске Azure PowerShell
 
@@ -21,7 +21,7 @@ ms.locfileid: "75718990"
 * Обновлены командлеты Add-AzEnvironment и Set-AzEnvironment: теперь они принимают параметры AzureAttestationServiceEndpointResourceId и AzureAttestationServiceEndpointSuffix.
 
 #### <a name="azcdn"></a>Az.Cdn
-* Теперь в командлете New-AzCdnEndpoint отображаются сведения сообщения об ошибке.
+* Теперь в командлете New-AzCdnEndpoint отображаются сведения из сообщения об ошибке.
 
 #### <a name="azcompute"></a>Az.Compute
 * Командлет Set-AzVMCustomScriptExtension исправлен для виртуальной машины с управляемым диском ОС без профиля ОС.
