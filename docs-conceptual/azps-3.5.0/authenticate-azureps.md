@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 09/04/2019
-ms.openlocfilehash: 614cce77deb4390ea158a48ae2d48b7b983224f2
-ms.sourcegitcommit: a321ef9d134c684fa24ababcbd898f86b00d9364
+ms.openlocfilehash: 0de487cc34593ceac05aa2077358d692470dc23e
+ms.sourcegitcommit: a6f2fc500242de6248224278d743fd09aac2fafd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77477443"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78264389"
 ---
 # <a name="sign-in-with-azure-powershell"></a>Вход с помощью Azure PowerShell
 
@@ -75,7 +75,7 @@ Connect-AzAccount -ServicePrincipal -Credential $pscredential -Tenant $tenantId
 Connect-AzAccount -ApplicationId $appId -Tenant $tenantId -CertificateThumbprint <thumbprint>
 ```
 
-При использовании субъекта-службы вместо зарегистрированного приложения добавьте аргумент `-ServicePrincipal` и предоставьте идентификатор субъекта-службы в качестве значения параметра `-ApplicationId`.
+При использовании субъекта-службы вместо зарегистрированного приложения добавьте аргумент `-ServicePrincipal` и предоставьте идентификатор приложения субъекта-службы в качестве значения параметра `-ApplicationId`.
 
 ```azurepowershell-interactive
 Connect-AzAccount -ServicePrincipal -ApplicationId $servicePrincipalId -Tenant $tenantId -CertificateThumbprint <thumbprint>
