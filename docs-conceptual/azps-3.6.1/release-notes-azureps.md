@@ -1,18 +1,15 @@
 ---
 title: Заметки о выпуске Azure PowerShell
 description: Узнайте обо всех последних обновлениях модулей Azure PowerShell.
-author: sptramer
-ms.author: sttramer
-manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.date: 01/09/2020
-ms.openlocfilehash: 4c7ea19a225d63307ecf4a6fe5ebfa14ccd78d7e
+ms.date: 03/10/2020
+ms.openlocfilehash: f24e5ef66f9c49976c550c9847903bd0608c5123
 ms.sourcegitcommit: f6fa6543be1e0f6330b1598f01528b2928cc426c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/10/2020
-ms.locfileid: "79036167"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "79111027"
 ---
 # <a name="azure-powershell-release-notes"></a>Заметки о выпуске Azure PowerShell
 
@@ -72,14 +69,14 @@ ms.locfileid: "79036167"
     - Remove-AzTag -ResourceId
 * Добавлен новый командлет Tag.
     - Update-AzTag -ResourceId
-* Предоставляется ScopedDeployment из пакета SDK 3.3.0. 
+* Предоставляется ScopedDeployment из пакета SDK 3.3.0.
 
 #### <a name="azsql"></a>Az.Sql
 * Добавление PublicNetworkAccess в команды New-AzSqlServer и Set-AzSqlServer.
 * Включена поддержка конфигурации резервного копирования долгосрочного хранения для управляемых баз данных.
-    - Получение или настройка политики LTR в управляемой базе данных. 
-    - Получение резервных копий LTR по управляемой базе данных, управляемому экземпляру или расположению. 
-    - Удаление резервной копии LTR. 
+    - Получение или настройка политики LTR в управляемой базе данных.
+    - Получение резервных копий LTR по управляемой базе данных, управляемому экземпляру или расположению.
+    - Удаление резервной копии LTR.
     - Восстановление резервной копии LTR для создания новой управляемой базы данных.
 * Добавление MinimalTlsVersion в New-AzSqlServer и Set-AzSqlServer.
 * Добавление MinimalTlsVersion в New-AzSqlInstance и Set-AzSqlInstance.
@@ -323,7 +320,7 @@ ms.locfileid: "79036167"
 #### <a name="azstorage"></a>Az.Storage
 * Добавлено предупреждающее сообщение о критическом изменении значения DefaultAction в следующем выпуске:
     - Update-AzStorageAccountNetworkRuleSet.
-* Включена поддержка получения времени последней синхронизации учетной записи хранения путем выполнения командлета Get-AzureRmStorageAccount с параметром -IncludeGeoReplicationStats: 
+* Включена поддержка получения времени последней синхронизации учетной записи хранения путем выполнения командлета Get-AzureRmStorageAccount с параметром -IncludeGeoReplicationStats:
     - Get-AzureRmStorageAccount.
 
 ## <a name="320---december-2019"></a>3.2.0 — декабрь 2019 г.
@@ -373,7 +370,7 @@ ms.locfileid: "79036167"
 * Отозвана поддержка ключей делегирования пользователя учетной записи хранения, а также всех маркеров SAS удостоверения:
     - Revoke-AzStorageAccountUserDelegationKeys.
 * Выполнено обновление до Microsoft.Azure.Management.Storage версии 14.2.0 для включения поддержки нового API версии 2019-06-01.
-* Включена поддержка QuotaGiB (квота общего ресурса в ГиБ) для значений свыше 5120 в командлетах для работы с общими папками в плоскости управления и добавлен псевдоним Quota для параметра QuotaGiB. 
+* Включена поддержка QuotaGiB (квота общего ресурса в ГиБ) для значений свыше 5120 в командлетах для работы с общими папками в плоскости управления и добавлен псевдоним Quota для параметра QuotaGiB.
     - New-AzRmStorageShare;
     - Update-AzRmStorageShare;
 * Добавлен псевдоним QuotaGiB для параметра Quota:
@@ -491,7 +488,7 @@ ms.locfileid: "79036167"
 * Удалено `TargetOSVersion` из `PSCloudServiceConfiguration`.
 * `CurrentOSVersion` переименован в `OSVersion` для `PSCloudServiceConfiguration`.
 * Удалено `DataEgressGiB` и `DataIngressGiB` из `PSPoolUsageMetrics`.
-* Операция **Get-AzBatchNodeAgentSku** удалена и заменена на **Get-AzBatchSupportedImage**. 
+* Операция **Get-AzBatchNodeAgentSku** удалена и заменена на **Get-AzBatchSupportedImage**.
   - **Get-AzBatchSupportedImage** возвращает те же данные, что и **Get-AzBatchNodeAgentSku**, но в более удобном формате.
   - Также возвращаются новые непроверенные образы. Включается и дополнительная информация о `Capabilities` и `BatchSupportEndOfLife` для каждого образа.
 * Добавлена возможность монтировать файловые системы на каждом узле пула с помощью нового параметра `MountConfiguration` в **New-AzBatchPool**.
@@ -508,8 +505,7 @@ ms.locfileid: "79036167"
 #### <a name="azcompute"></a>Az.Compute
 * Функция набора шифрования диска
     - Новые командлеты:   New-AzDiskEncryptionSetConfig   New-AzDiskEncryptionSet   Get-AzDiskEncryptionSet   Remove-AzDiskEncryptionSet
-    - Добавлен параметр ProximityPlacementGroupId в следующие командлеты: Set-AzImageOSDisk Set-AzVMOSDisk Set-AzVmssStorageProfile        
-        Add-AzImageDataDisk New-AzVMDataDisk Set-AzVMDataDisk Add-AzVMDataDisk Add-AzVmssDataDisk Add-AzVmssVMDataDisk
+    - Добавлен параметр ProximityPlacementGroupId в следующие командлеты:   Set-AzImageOSDisk   Set-AzVMOSDisk   Set-AzVmssStorageProfile   Add-AzImageDataDisk   New-AzVMDataDisk   Set-AzVMDataDisk   Add-AzVMDataDisk   Add-AzVmssDataDisk   Add-AzVmssVMDataDisk
     - Параметры DiskEncryptionSetId и EncryptionType добавлены в следующие командлеты:   New-AzDiskConfig   New-AzSnapshotConfig
 * Добавлен параметр PublicIPAddressVersion в New-AzVmssIPConfig
 * FileUris для расширения пользовательских скриптов теперь будет защищенным, а не общедоступным параметром
@@ -660,7 +656,7 @@ ms.locfileid: "79036167"
 * Get-AzSqlDatabaseRestorePoints (вместо него используйте Get-AzSqlDatabaseRestorePoint)
 * Удален командлет Get-AzSqlDatabaseSecureConnectionPolicy
 * Удалены псевдонимы для нерекомендуемых командлетов параметров оценки уязвимостей
-* Командлеты расширенного обнаружения угроз объявлены устаревшими 
+* Командлеты расширенного обнаружения угроз объявлены устаревшими
 * Добавлены командлеты для отключения и включения рекомендаций о конфиденциальности для столбцов в базе данных.
 
 #### <a name="azstorage"></a>Az.Storage
@@ -670,7 +666,7 @@ ms.locfileid: "79036167"
 * При закрытии или получении маркера файла пропускается проверка того, является ли входной путь файлом или каталогом, чтобы избежать сбоев при получении объектов в состоянии DeletePending.
     -  Get-AzStorageFileHandle
     -  Close-AzStorageFileHandle
-    
+
 ## <a name="280---october-2019"></a>2.8.0 — октябрь 2019 г.
 ### <a name="general"></a>Общие сведения
 * Выпуск Az.HealthcareApis 1.0.0
@@ -683,7 +679,7 @@ ms.locfileid: "79036167"
     - исправлена проблема https://github.com/Azure/azure-powershell/issues/10068.
 
 #### <a name="azautomation"></a>Az.Automation
-* Исправлен командлет New-AzureAutomationSoftwareUpdateConfiguration для параметра перезагрузки Linux. 
+* Исправлен командлет New-AzureAutomationSoftwareUpdateConfiguration для параметра перезагрузки Linux.
 
 #### <a name="azbatch"></a>Az.Batch
 * Командлет **Get-AzBatchNodeAgentSku** объявлен устаревшим и будет заменен на **Get-AzBatchSupportImage** в версии 2.0.0.
@@ -691,7 +687,7 @@ ms.locfileid: "79036167"
 #### <a name="azcompute"></a>Az.Compute
 * В командлеты New-AzVM и New-AzVmss добавлены параметры Priority, EvictionPolicy и MaxPrice.
 * Исправлены предупреждающее сообщение для командлетов Add-AzVMAdditionalUnattendContent и Add-AzVMSshPublicKey и справочная документация по ним.
-* Для Set-AzVMDiskEncryptionExtension исправлено исключение -skipVmBackup для виртуальных машин Linux с управляемыми дисками. 
+* Для Set-AzVMDiskEncryptionExtension исправлено исключение -skipVmBackup для виртуальных машин Linux с управляемыми дисками.
 * Исправлена ошибка при изменении параметров шифрования в Set-AzVMDiskEncryptionExtension, реализован двухэтапный сценарий.
 
 #### <a name="azdatafactory"></a>Az.DataFactory
@@ -710,7 +706,7 @@ ms.locfileid: "79036167"
 
 #### <a name="aziothub"></a>Az.IotHub
 * Добавлен новый источник маршрутизации DigitalTwinChangeEvents.
-* Исправлены незначительные ошибки: Get-AzIothub не возвращает subscriptionId. 
+* Исправлены незначительные ошибки: Get-AzIothub не возвращает subscriptionId.
 
 #### <a name="azmonitor"></a>Az.Monitor
 * Добавлены новые получатели групп действий: -ItsmReceiver, -VoiceReceiver, -ArmRoleReceiver, -AzureFunctionReceiver, -LogicAppReceiver, -AutomationRunbookReceiver, -AzureAppPushReceiver.
@@ -806,7 +802,7 @@ ms.locfileid: "79036167"
 * Исправлена ошибка в определении типа области для командлета Set-AzActionRule.
 
 #### <a name="aznetwork"></a>Az.Network
-* Исправлен неправильный пример в справочной документации по командлету New-AzApplicationGateway. 
+* Исправлен неправильный пример в справочной документации по командлету New-AzApplicationGateway.
 * В справочную документацию по командлету Get-AzNetworkWatcherPacketCapture добавлено примечание, посвященное извлечению всех свойств для записи пакетов.
 * В справочной документации по командлету Test-AzNetworkWatcherIPFlow исправлен пример: теперь он правильно перечисляет сетевые карты.
 * Улучшен анализ облачных исключений для отображения дополнительных сведений (при их наличии).
@@ -942,7 +938,7 @@ ms.locfileid: "79036167"
     - Параметр PublicIpAddress объявлен нерекомендуемым, так как он не используется на стороне сервера.
     - Добавлен необязательный параметр Primary, указывающий, является ли текущая IP-конфигурация основной.
 * Улучшена обработка исключений из-за ошибок запроса от пакета SDK. Устранена проблема, при которой исключения пакета SDK не обрабатывались правильно, из-за чего не отображались основные сведения об ошибке.
-* Настроена логика проверки для префикса IPv6 IP-адреса для проверки правильности длины префикса IPv6. 
+* Настроена логика проверки для префикса IPv6 IP-адреса для проверки правильности длины префикса IPv6.
 * Обновлен Get-AzVirtualNetworkSubnetConfig: добавлен набор параметров для получения по идентификатору ресурса подсети.
 * Обновлено описание параметра Location для AzNetworkServiceTag.
 
@@ -965,7 +961,7 @@ ms.locfileid: "79036167"
 #### <a name="azservicebus"></a>Az.ServiceBus
 * Исправлена проблема № 9658: опечатка в написании параметра VirtualNetworkRule В Set-AzServiceBusNetworkRuleSet.
 * Исправлена проблема № 9786: не удается создать правило с правами только для прослушивания.
-* Добавлена новая команда Test-AzServiceBusNameAvailability для проверки доступности имени для очереди и раздела. 
+* Добавлена новая команда Test-AzServiceBusNameAvailability для проверки доступности имени для очереди и раздела.
 
 #### <a name="azservicefabric"></a>Az.ServiceFabric
 * Устранены ошибки командлета для добавления типа узла:
@@ -992,10 +988,10 @@ ms.locfileid: "79036167"
 * Обновлен общий код для использования последней версии ClientRuntime.
 
 #### <a name="azapplicationinsights"></a>Az.ApplicationInsights
-* Исправлена опечатка в примере в документации по Remove-AzApplicationInsightsApiKey. 
+* Исправлена опечатка в примере в документации по Remove-AzApplicationInsightsApiKey.
 
 #### <a name="azautomation"></a>Az.Automation
-* Исправлена опечатка в строке ресурса. 
+* Исправлена опечатка в строке ресурса.
 
 #### <a name="azcognitiveservices"></a>Az.CognitiveServices
 * Добавлена поддержка NetworkRuleSet.
@@ -1056,7 +1052,7 @@ ms.locfileid: "79036167"
     - Обновлен командлет New-AzApplicationGatewayProbeConfig: добавлен необязательный параметр Port, который используется при проверке внутреннего сервера. Этот параметр применяется к номерам SKU Standard_V2 и WAF_V2.
 
 #### <a name="azoperationalinsights"></a>Az.OperationalInsights
-* Обновленная версия по умолчанию для сохраненных операций поиска имеет значение 1. 
+* Обновленная версия по умолчанию для сохраненных операций поиска имеет значение 1.
 * Исправлены ошибки при обработке регулярных выражений со значениями NULL в журналах.
 
 #### <a name="azrecoveryservices"></a>Az.RecoveryServices
@@ -1210,7 +1206,7 @@ ms.locfileid: "79036167"
     - New-AzureRmEventGridDomainTopic
         - Создает раздел домена Сетки событий Azure.
     - Get-AzureRmEventGridDomainTopic
-        - Возвращает сведения о разделе домена Сетки событий или список всех разделов определенного домена Сетки событий в текущей подписке Azure. 
+        - Возвращает сведения о разделе домена Сетки событий или список всех разделов определенного домена Сетки событий в текущей подписке Azure.
     - Remove-AzureRmEventGridDomainTopic
         - Удаляет раздел домена Сетки событий Azure.
 * Обновлены командлеты:
@@ -1222,7 +1218,7 @@ ms.locfileid: "79036167"
             - срока действия подписки на событие;
             - параметров расширенной фильтрации.
         - Добавляют новое перечисление для ServiceBusQueue в качестве места назначения.
-        - Запрещают использование значение All в параметре -IncludedEventType и заменяют его следующим: 
+        - Запрещают использование значение All в параметре -IncludedEventType и заменяют его следующим:
     - Get-AzEventGridTopic, Get-AzEventGridDomain, Get-AzEventGridDomainTopic, Get-AzEventGridSubscription
         - Добавляют новые необязательные параметры (Top, ODataQuery и NextLink) для поддержки разбиения на страницы и фильтрации результатов.
     - Remove-AzureRmEventGridSubscription
@@ -1240,11 +1236,11 @@ ms.locfileid: "79036167"
     - Новые командлеты
         - Get-AzVirtualNetworkGatewayVpnClientConnectionHealth
 * Добавляет AvailablePrivateEndpointType.
-    - Новые командлеты 
+    - Новые командлеты
         - Get-AzAvailablePrivateEndpointType
 * Добавляет PrivatePrivateLinkService.
-    - Новые командлеты 
-        - Get-AzPrivateLinkService 
+    - Новые командлеты
+        - Get-AzPrivateLinkService
         - New-AzPrivateLinkService
         - Remove-AzPrivateLinkService
         - New-AzPrivateLinkServiceIpConfig
@@ -1273,8 +1269,8 @@ ms.locfileid: "79036167"
         - Добавлен параметр -PublicIpAddress, который принимает один или несколько объектов общедоступных IP-адресов.
         - Добавлен параметр -VirtualNetwork, который принимает объект виртуальной сети.
         - Добавлены методы AddPublicIpAddress и RemovePublicIpAddress для объекта брандмауэра. Они принимают объект общедоступного IP-адреса в качестве входных данных.
-        - Не рекомендуется использовать параметры -PublicIpName и -VirtualNetworkName. 
-* Обновлены следующие команды для функции: В параметрах проверки подлинности AAD VPN-клиента задан ресурс шлюза виртуальной сети. 
+        - Не рекомендуется использовать параметры -PublicIpName и -VirtualNetworkName.
+* Обновлены следующие команды для функции: В параметрах проверки подлинности AAD VPN-клиента задан ресурс шлюза виртуальной сети.
     - Обновлен командлет New-AzVirtualNetworkGateway: Добавлены необязательные параметры AadTenantUri, AadAudienceId, AadIssuerUri для возможности задавать в шлюзе параметры проверки подлинности AAD VPN-клиента.
     - Обновлен командлет Set-AzVirtualNetworkGateway: Добавлены необязательные параметры AadTenantUri, AadAudienceId, AadIssuerUri для возможности задавать в шлюзе параметры проверки подлинности AAD VPN-клиента.
     - Обновлен командлет Set-AzVirtualNetworkGateway: Добавлен необязательный параметр-переключатель RemoveAadAuthentication для удаления в шлюзе параметров проверки подлинности AAD VPN-клиента.
@@ -1369,17 +1365,17 @@ ms.locfileid: "79036167"
     - **Get-AzApiManagementSchema** — получение схем, настроенных в API.
     - **Remove-AzApiManagementSchema** — удаление схемы, настроенной в API.
     - **Set-AzApiManagementSchema** — обновление схемы, настроенной в API.
-* Создан командлет для создания токена пользователя. 
+* Создан командлет для создания токена пользователя.
     - **New-AzApiManagementUserToken** — создание токена пользователя, по умолчанию действительного в течение 8 часов. С помощью этого командлета можно создавать токен для пользователя GIT.
 * Создан командлет для получения состояния сети.
     - **Get-AzApiManagementNetworkStatus** — получение состояния подключения сети ресурсов, от которых зависит служба "Управление API". Это полезно при развертывании службы ApiManagement в виртуальной сети и проверке того, не нарушена ли какая-либо из зависимостей.
-* Обновлен командлет **New-AzApiManagement** для управления службой ApiManagement. 
+* Обновлен командлет **New-AzApiManagement** для управления службой ApiManagement.
     - Добавлена поддержка нового SKU Consumption.
     - Добавлена поддержка для включения флага EnableClientCertificate в SKU Consumption.
     - Новый командлет **New-AzApiManagementSslSetting** позволяет настраивать параметр TLS/SSL для сервера (Backend) и внешнего интерфейса (Frontend). Его также можно использовать для настройки Ciphers как 3DES, в ServerProtocols как Http2 для внешнего интерфейса (Frontend) службы ApiManagement.
     - Добавлена поддержка настройки имени узла DeveloperPortal в службе ApiManagement.
 * Обновлен командлет **Get-AzApiManagementSsoToken** для извлечения объекта PsApiManagement в качестве входных данных.
-* Обновлен командлет для отображения встроенных сообщений об ошибках. 
+* Обновлен командлет для отображения встроенных сообщений об ошибках.
      > PS D:\github\azure-powershell> Set-AzApiManagementPolicy -Context  -PolicyFilePath C:\wrongpolicy.xml -ApiId httpbin Set-AzApiManagementPolicy : Код ошибки: ValidationError. Сообщение об ошибке: "Некоторые поля содержат неправильные значения". Сведения об ошибке: [Code=ValidationError, Message=Error in element 'log-to-eventhub' on line 3, column 10: Logger not found, Target=log-to-eventhub]
 * Обновлен командлет **Export-AzApiManagementApi** для экспортирования программных интерфейсов в формате OpenApi 3.0.
 * Обновлен командлет **Import-AzApiManagementApi**:
@@ -1388,15 +1384,15 @@ ms.locfileid: "79036167"
     - Для переопределения свойства ServiceUrl, указанного в любом документе.
 * Обновлен командлет **Get-AzApiManagementPolicy** для возврата политики в формате, экранированном не для XML, с использованием rawxml.
 * Обновлен командлет **Set-AzApiManagementPolicy**. Он принимает политику в формате, экранированном не для XML, с использованием rawxml и в формате, экранированном для XML, с использованием XML.
-* Обновлен командлет **New-AzApiManagementApi**: 
+* Обновлен командлет **New-AzApiManagementApi**:
     - Для настройки API с помощью сервера авторизации OpenId.
     - Для создания API в ApiVersionSet.
     - Для клонирования API с использованием значений SourceApiId и SourceApiRevision.
-    - Возможность настройки параметра SubscriptionRequired в области API. 
+    - Возможность настройки параметра SubscriptionRequired в области API.
 * Обновлен командлет **Set-AzApiManagementApi**:
     - Для настройки API с помощью сервера авторизации OpenId.
-    - Для обновления API в ApiVersionSet.    
-    - Возможность настройки параметра SubscriptionRequired в области API. 
+    - Для обновления API в ApiVersionSet.
+    - Возможность настройки параметра SubscriptionRequired в области API.
 * Обновлен командлет **New-AzApiManagementRevision**:
     - Для клонирования (копирования тегов, продуктов, операций и политик) существующей редакции с использованием SourceApiRevision. Новая редакция предполагает родительский идентификатор ApiId.
     - Для предоставления ApiRevisionDescription.
@@ -1422,7 +1418,7 @@ ms.locfileid: "79036167"
     - Get-AzApiManagementAuthorizationServer.
     - Get-AzApiManagementBackend.
         > Get-AzApiManagementBackend -ResourceId /subscriptions/subid/resourceGroups/rgName/providers/Microsoft.ApiManagement/service/contoso/backends/servicefabric
-    - Get-AzApiManagementCertificate. 
+    - Get-AzApiManagementCertificate.
     - Remove-AzApiManagementApiVersionSet.
     - Remove-AzApiManagementSubscription.
 
@@ -1470,7 +1466,7 @@ ms.locfileid: "79036167"
     - Новый параметр ProximityPlacementGroupId будет добавлен в следующие командлеты:   New-AzAvailabilitySet   New-AzVMConfig   New-AzVmssConfig
 * В командлет New-AzGalleryImageVersion добавлен параметр StorageAccountType.
 * TargetRegion в командлете New-AzGalleryImageVersion может содержать StorageAccountType.
-* Параметр-переключатель SkipShutdown добавлен в командлеты Stop-AzVM и Stop-AzVmss.       
+* Параметр-переключатель SkipShutdown добавлен в командлеты Stop-AzVM и Stop-AzVmss.
 * Критические изменения
     - Командлет SET-AzVMBootDiagnostics изменен на Set-AzVMBootDiagnostic.
     - Командлет Export-AzLogAnalyticThrottledRequests изменен на Export-AzLogAnalyticThrottledRequests.
@@ -1505,7 +1501,7 @@ ms.locfileid: "79036167"
     - На пользователей с ролью оператора HDInsight это не повлияет.
 
 #### <a name="azmonitor"></a>Az.Monitor
-* Новые командлеты для API SQR (запланированное правило запросов)  
+* Новые командлеты для API SQR (запланированное правило запросов)
     - New-AzScheduledQueryRuleAlertingAction
     - New-AzScheduledQueryRuleAznsActionGroup
     - New-AzScheduledQueryRuleLogMetricTrigger
@@ -1603,7 +1599,7 @@ ms.locfileid: "79036167"
 * Обновлен текст справки для конечной точки, указывающий, что необходимо создать ресурсы, прежде чем использовать командлеты для создания или обновления подписки на события.
 
 #### <a name="azeventhub"></a>Az.EventHub
-* Добавлены новые командлеты для NetworkRuleSet пространства имен. 
+* Добавлены новые командлеты для NetworkRuleSet пространства имен.
 
 #### <a name="azhdinsight"></a>Az.HDInsight
 * Изменены присутствующие в командлетах существительные во множественном числе на существительные в единственном числе, а также устаревшие имена во множественном числе.
@@ -1693,7 +1689,7 @@ ms.locfileid: "79036167"
 
 #### <a name="azcompute"></a>Az.Compute
 * В командлеты New-AzDiskConfig и New-AzSnapshotConfig добавлен параметр HyperVGeneration.
-* Теперь можно создавать виртуальные машину на основе образов из коллекции от других клиентов. 
+* Теперь можно создавать виртуальные машину на основе образов из коллекции от других клиентов.
 
 #### <a name="azcontainerinstance"></a>Az.ContainerInstance
 * Исправлена проблема в параметре -Command командлета New-AzContainerGroup, из-за которой в конце добавлялся пустой аргумент.
@@ -1775,7 +1771,7 @@ ms.locfileid: "79036167"
     - New-AzStorageAccountManagementPolicyRule
 
 #### <a name="azwebsites"></a>Az.Websites
-* Исправлена ошибка с шаблоном ARM, из-за которой прерывалось клонирование все слотов при использовании New-AzWebApp -IncludeSourceWebAppSlots. 
+* Исправлена ошибка с шаблоном ARM, из-за которой прерывалось клонирование все слотов при использовании New-AzWebApp -IncludeSourceWebAppSlots.
 
 ## <a name="150---march-2019"></a>1.5.0 — март 2019 г.
 #### <a name="azaccounts"></a>Az.Accounts
@@ -1844,7 +1840,7 @@ ms.locfileid: "79036167"
 * Добавлены командлеты для перечисления и восстановления удаленного элемента ADL.
 
 #### <a name="azeventhub"></a>Az.EventHub
-* Добавлено новое логическое свойство SkipEmptyArchives для пропуска пустых архивов в классе CaptureDescription Eventhub. 
+* Добавлено новое логическое свойство SkipEmptyArchives для пропуска пустых архивов в классе CaptureDescription Eventhub.
 
 #### <a name="azkeyvault"></a>Az.KeyVault
 * Исправлена расстановка тегов для командлета Set-AzKeyVaultSecret.
@@ -1872,8 +1868,8 @@ ms.locfileid: "79036167"
 
 #### <a name="azoperationalinsights"></a>Az.OperationalInsights
 * Дополнительная поддержка создания и получения источников данных ApplicationInsights.
-    - Добавлен новый тип ApplicationInsights для получения определенных или всех источников данных ApplicationInsights для указанной рабочей области. 
-    - Добавлен командлет New-AzOperationalInsightsApplicationInsightsDataSource для создания источника данных с использованием параметров указанного ресурса Application-Insightss: subscription Id, resourceGroupName и name. 
+    - Добавлен новый тип ApplicationInsights для получения определенных или всех источников данных ApplicationInsights для указанной рабочей области.
+    - Добавлен командлет New-AzOperationalInsightsApplicationInsightsDataSource для создания источника данных с использованием параметров указанного ресурса Application-Insightss: subscription Id, resourceGroupName и name.
 
 #### <a name="azresources"></a>Az.Resources
 * исправлена проблема https://github.com/Azure/azure-powershell/issues/8166.
@@ -1904,9 +1900,9 @@ ms.locfileid: "79036167"
 Общедоступная версия модуля Az.RecoveryServices.
 
 #### <a name="azresources"></a>Az.Resources
-* Исправлена расстановка тегов для групп ресурсов. 
+* Исправлена расстановка тегов для групп ресурсов.
     - Дополнительные сведения см. здесь: https://github.com/Azure/azure-powershell/issues/8166.
-* Исправлена проблема с игнорированием командлетом `Get-AzureRmRoleAssignment` параметра -ErrorAction. 
+* Исправлена проблема с игнорированием командлетом `Get-AzureRmRoleAssignment` параметра -ErrorAction.
     - Дополнительные сведения см. здесь: https://github.com/Azure/azure-powershell/issues/8235.
 
 #### <a name="azsql"></a>Az.Sql
@@ -2211,7 +2207,7 @@ ms.locfileid: "79036167"
 
 ### <a name="azwebsites"></a>Az.Websites
 
-* Set-AzureRmWebApp и Set-AzureRmWebAppSlot 
+* Set-AzureRmWebApp и Set-AzureRmWebAppSlot
     - Добавлен новый параметр (-AzureStoragePath), который указывает путь службы хранилища Azure для подключения в приложениях-контейнерах Windows и Linux. Используйте выходные данные нового командлета New-AzureRmWebAppAzureStoragePath в качестве параметра, чтобы задать пути к службе хранилища Azure.
 
 ## <a name="061---november-2018"></a>0.6.1 — ноябрь 2018 г.
@@ -2239,7 +2235,7 @@ ms.locfileid: "79036167"
 ### <a name="aznetwork"></a>Az.Network
 * Добавлены командлеты New-AzureRmApplicationGatewayCustomError, Add-AzureRmApplicationGatewayCustomError, Get-AzureRmApplicationGatewayCustomError, Set-AzureRmApplicationGatewayCustomError, Remove-AzureRmApplicationGatewayCustomError, Add-AzureRmApplicationGatewayHttpListenerCustomError, Get-AzureRmApplicationGatewayHttpListenerCustomError, Set-AzureRmApplicationGatewayHttpListenerCustomError, Remove-AzureRmApplicationGatewayHttpListenerCustomError.
 * Протокол ICMP возвращен в список поддерживаемых сетевых протоколов Брандмауэра Azure.
-* Обновлен командлет Test-AzureRmNetworkWatcherConnectivity, в который добавлена проверка идентификатора, адреса и порта целевого объекта. 
+* Обновлен командлет Test-AzureRmNetworkWatcherConnectivity, в который добавлена проверка идентификатора, адреса и порта целевого объекта.
 * Исправлены проблемы с использованием памяти в карте виртуальной сети.
 
 ### <a name="azrecoveryservicesbackup"></a>Az.RecoveryServices.Backup
@@ -2371,7 +2367,7 @@ ms.locfileid: "79036167"
     - Start-AzureStorageFileCopy
 * Добавлена поддержка получения сведения об использовании ресурса хранилища для конкретного расположения. Также добавлено предупреждающее сообщение о том, что функция получения глобальных сведений об использовании ресурса хранилища устарела.
     - Get-AzStorageUsage
-    
+
 #### <a name="azcognitiveservices"></a>Az.CognitiveServices
 * Поддержка Get-AzCognitiveServicesAccountSkus без существующей учетной записи.
 
