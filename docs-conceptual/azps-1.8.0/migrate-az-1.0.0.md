@@ -8,10 +8,10 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/15/2019
 ms.openlocfilehash: ea7593cf2b753b210ff2955b7bd450030ad83596
-ms.sourcegitcommit: f9445d1525eac8c165637e1a80fbc92b1ab005c2
+ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/16/2019
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "75035835"
 ---
 # <a name="breaking-changes-for-az-100"></a>Критические изменения для Az 1.0.0
@@ -55,7 +55,7 @@ ms.locfileid: "75035835"
 
 ### <a name="cmdlet-noun-prefix-changes"></a>Изменения префикса существительного командлета
 
-В модуле AzureRM в существительных командлетов используется префикс `AzureRM` или `Azure`.  Az упрощает и нормализует имена командлетов, так что все командлеты используют "Az" в качестве префикса существительного командлета. Например:
+В модуле AzureRM в существительных командлетов используется префикс `AzureRM` или `Azure`.  Az упрощает и нормализует имена командлетов, так что все командлеты используют "Az" в качестве префикса существительного командлета. Пример:
 
 ```azurepowershell-interactive
 Get-AzureRMVM
@@ -122,7 +122,7 @@ Get-AzureRmStorageAccount | Get-AzureStorageContainer | Get-AzureStorageBlob
 
 #### <a name="migrating-requires-and-import-module-statements"></a>Перенос инструкций #Requires и Import-Module
 
-Скрипты, объявляющие зависимости от модулей AzureRM с помощью `#Requires` или `Import-Module`, должны быть обновлены для использования новых имен модулей. Например:
+Скрипты, объявляющие зависимости от модулей AzureRM с помощью `#Requires` или `Import-Module`, должны быть обновлены для использования новых имен модулей. Пример:
 
 ```azurepowershell-interactive
 #Requires -Module AzureRM.Compute
@@ -257,7 +257,7 @@ RequiredModules = @(@{ModuleName="Az.Profile"; ModuleVersion="1.0.0"})
   New-AzDataLakeStoreAccount -Tag @{TagName="TagValue"}
   ```
 
-- Из объекта `PSDataLakeStoreAccountBasic` удалены нерекомендуемые свойства: `Identity`, `EncryptionState`, `EncryptionProvisioningState`, `EncryptionConfig`, `FirewallState`, `FirewallRules`, `VirtualNetworkRules`, `TrustedIdProviderState`, `TrustedIdProviders`, `DefaultGroup`, `NewTier`, `CurrentTier`, `FirewallAllowAzureIps`.  Любой сценарий, который использует `PSDatalakeStoreAccount`, возвращенный из `Get-AzDataLakeStoreAccount`, не должен ссылаться на эти свойства.
+- Из объекта `Identity` удалены нерекомендуемые свойства: `EncryptionState`, `EncryptionProvisioningState`, `EncryptionConfig`, `FirewallState`, `FirewallRules`, `VirtualNetworkRules`, `TrustedIdProviderState`, `TrustedIdProviders`, `DefaultGroup`, `NewTier`, `CurrentTier`, `FirewallAllowAzureIps`, `PSDataLakeStoreAccountBasic`.  Любой сценарий, который использует `PSDatalakeStoreAccount`, возвращенный из `Get-AzDataLakeStoreAccount`, не должен ссылаться на эти свойства.
 
 ### <a name="azkeyvault-previously-azurermkeyvault"></a>Az.KeyVault (ранее AzureRM.KeyVault)
 
@@ -289,8 +289,8 @@ RequiredModules = @(@{ModuleName="Az.Profile"; ModuleVersion="1.0.0"})
 
 ### <a name="aznetwork-previously-azurermnetwork"></a>Az.Network (ранее AzureRM.Network)
 
-- Из командлета `Get-AzServiceEndpointPolicyDefinition` удален нерекомендуемый параметр `ResourceId`
-- Из объекта `PSVirtualNetwork` удалено нерекомендуемое свойство `EnableVmProtection`
+- Из командлета `ResourceId` удален нерекомендуемый параметр `Get-AzServiceEndpointPolicyDefinition`
+- Из объекта `EnableVmProtection` удалено нерекомендуемое свойство `PSVirtualNetwork`
 - Нерекомендуемый командлет `Set-AzVirtualNetworkGatewayVpnClientConfig` удален
 
 Скрипты больше не должны принимать решения об обработке на основе значений этих полей.
@@ -311,14 +311,14 @@ RequiredModules = @(@{ModuleName="Az.Profile"; ModuleVersion="1.0.0"})
 
 ### <a name="azrecoveryservices-previously-azurermrecoveryservices-azurermrecoveryservicesbackup-and-azurermrecoveryservicessiterecovery"></a>Az.RecoveryServices (ранее AzureRM.RecoveryServices, AzureRM.RecoveryServices.Backup и AzureRM.RecoveryServices.SiteRecovery)
 
-- Из командлета `New/Set-AzRecoveryServicesAsrPolicy` удален параметр `Encryption`.
+- Из командлета `Encryption` удален параметр `New/Set-AzRecoveryServicesAsrPolicy`.
 - Параметр `TargetStorageAccountName` теперь является обязательным для восстановления управляемого диска в командлете `Restore-AzRecoveryServicesBackupItem`.
-- В командлете `Restore-AzRecoveryServicesBackupItem` удалены параметры `StorageAccountName` и `StorageAccountResourceGroupName`.
-- В командлете `Get-AzRecoveryServicesBackupContainer` удален параметр `Name`.
+- В командлете `StorageAccountName` удалены параметры `StorageAccountResourceGroupName` и `Restore-AzRecoveryServicesBackupItem`.
+- В командлете `Name` удален параметр `Get-AzRecoveryServicesBackupContainer`.
 
 ### <a name="azresources-previously-azurermresources"></a>Az.Resources (ранее AzureRM.Resources)
 
-- Из командлета `New/Set-AzPolicyAssignment` удален параметр `Sku`.
+- Из командлета `Sku` удален параметр `New/Set-AzPolicyAssignment`.
 - Параметр `Password` удален из командлетов `New-AzADServicePrincipal` и `New-AzADSpCredential`. Пароли генерируются автоматически. Сценарии, которые предоставили пароль:
 
   ```azurepowershell-interactive
@@ -356,11 +356,11 @@ RequiredModules = @(@{ModuleName="Az.Profile"; ModuleVersion="1.0.0"})
 
 ### <a name="azsql-previously-azurermsql"></a>Az.Sql (ранее AzureRM.Sql)
 
-- Из командлета `Set-AzSqlDatabaseBackupLongTermRetentionPolicy` удалены параметры `State` и `ResourceId`.
+- Из командлета `State` удалены параметры `ResourceId` и `Set-AzSqlDatabaseBackupLongTermRetentionPolicy`.
 - Удалены следующие нерекомендуемые командлеты: `Get/Set-AzSqlServerBackupLongTermRetentionVault`, `Get/Start/Stop-AzSqlServerUpgrade`, `Get/Set-AzSqlDatabaseAuditingPolicy`, `Get/Set-AzSqlServerAuditingPolicy`, `Remove-AzSqlDatabaseAuditing`, `Remove-AzSqlServerAuditing`.
-- Из командлета `Get-AzSqlDatabaseBackupLongTermRetentionPolicy` удален нерекомендуемый параметр `Current`
-- Из командлета `Get-AzSqlServerServiceObjective` удален нерекомендуемый параметр `DatabaseName`
-- Из командлета `Set-AzSqlDatabaseDataMaskingPolicy` удален нерекомендуемый параметр `PrivilegedLogin`
+- Из командлета `Current` удален нерекомендуемый параметр `Get-AzSqlDatabaseBackupLongTermRetentionPolicy`
+- Из командлета `DatabaseName` удален нерекомендуемый параметр `Get-AzSqlServerServiceObjective`
+- Из командлета `PrivilegedLogin` удален нерекомендуемый параметр `Set-AzSqlDatabaseDataMaskingPolicy`
 
 ### <a name="azstorage-previously-azurestorage-and-azurermstorage"></a>Az.Storage (ранее Azure.Storage и AzureRM.Storage)
 
