@@ -8,10 +8,10 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 09/05/2017
 ms.openlocfilehash: 7867adeac41444c81c31b7ee44b910ab40d873f8
-ms.sourcegitcommit: bbd3f061cac3417ce588487c1ae4e0bc52c11d6a
+ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/11/2019
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "65534757"
 ---
 # <a name="using-experimental-azure-powershell-modules"></a>Использование экспериментальных модулей Azure PowerShell
@@ -32,11 +32,11 @@ ms.locfileid: "65534757"
 
 Экспериментальные модули публикуются в коллекции PowerShell так же, как и существующие модули Azure PowerShell. Чтобы просмотреть список экспериментальный модулей, выполните следующую команду:
 
-```azurepowershell-interactive
+```powershell-interactive
 Find-Module AzureRM.*.Experiments
 ```
 
-```output
+```Output
 Version Name                         Repository Description
 ------- ----                         ---------- -----------
 1.0.25  AzureRM.Compute.Experiments  PSGallery  Azure Compute experiments for VM creation
@@ -45,7 +45,7 @@ Version Name                         Repository Description
 
 Чтобы установить экспериментальный модуль, используйте следующие команды из сеанса PowerShell с повышенными привилегиями:
 
-```azurepowershell-interactive
+```powershell-interactive
 Install-Module AzureRM.Compute.Experiments
 Install-Module AzureRM.Websites.Experiments
 ```
@@ -69,9 +69,9 @@ Install-Module AzureRM.Websites.Experiments
 
 - Сокращение имен. Это касается имен командлетов (например, `New-AzureRmVM` => `New-AzVm`) и параметров (например, `-ResourceGroupName` => `-Rg`). Чтобы обеспечить совместимость со старыми версиями командлетов, используйте псевдонимы. Обеспечьте _обратную совместимость_ наборов параметров.
 
-- Стандартные интеллектуальные значения. Создайте стандартные интеллектуальные значения для заполнения обязательных полей. Например:
+- Стандартные интеллектуальные значения. Создайте стандартные интеллектуальные значения для заполнения обязательных полей. Пример:
   - Группа ресурсов
-  - Расположение
+  - Location
   - Зависимые ресурсы
 
 ### <a name="experimental-improvements"></a>Экспериментальные усовершенствования

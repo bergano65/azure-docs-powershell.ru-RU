@@ -8,10 +8,10 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 10/21/2019
 ms.openlocfilehash: 0e8dd4f766307d9ab2e27e2cf8bec6bbd34f5e51
-ms.sourcegitcommit: 1cdff856d1d559b978aac6bc034dd2f99ac04afe
+ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2019
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "72791412"
 ---
 # <a name="azure-powershell-context-objects"></a>Объекты контекста Azure PowerShell
@@ -154,7 +154,7 @@ $context2 = Set-AzContext -Subscription "sub-id" -Tenant "other-tenant"
 
   При удалении активного контекста, вы будете отключены от Azure. Вам также потребуется повторно выполнить проверку подлинности с помощью `Connect-AzAccount`.
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также раздел
 
 * [Запуск командлетов Azure PowerShell в заданиях PowerShell](using-psjobs.md)
 * [Терминология Azure Active Directory](/azure/active-directory/fundamentals/active-directory-whatis#terminology)

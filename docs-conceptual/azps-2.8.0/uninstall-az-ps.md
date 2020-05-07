@@ -8,10 +8,10 @@ ms.manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.openlocfilehash: 772667032d421e32c6cd63abbcb686b4eab308e2
-ms.sourcegitcommit: ad7677d703a8512d371d3123dc7e541156b95cb8
+ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2019
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "72814242"
 ---
 # <a name="uninstall-the-azure-powershell-module"></a>Удаление модуля Azure PowerShell
@@ -23,10 +23,10 @@ ms.locfileid: "72814242"
 
 Если вы установили Azure PowerShell с помощью пакета MSI, удалять модуль нужно через систему Windows, а не PowerShell.
 
-| платформа | Указания |
+| Платформа | Instructions |
 |----------|--------------|
-| Windows 10 | "Пуск" > "Параметры" > "Приложения" |
-| Windows 7 </br>Windows 8 | "Пуск" > "Панель управления" > "Программы" > "Удаление программы" |
+| Windows 10 | Пуск > Параметры > Приложения |
+| Windows 7 </br>Windows 8 | Пуск > Панель управления > Программы > Удалить программу |
 
 В этом окне в списке программ вы должны увидеть модуль __Azure PowerShell__. Это программа, которую можно удалить. Если этой программы нет в списке, значит, она установлена с помощью PowerShellGet. Следуйте приведенным ниже инструкциям.
 
@@ -136,10 +136,10 @@ $versions[0..($versions.Length-2)]  | foreach { Uninstall-AllModules -TargetModu
 
 Если вы установили модули AzureRM Azure PowerShell с помощью пакета MSI, удалять модуль нужно через систему Windows, а не PowerShell.
 
-| платформа | Указания |
+| Платформа | Instructions |
 |----------|--------------|
-| Windows 10 | "Пуск" > "Параметры" > "Приложения" |
-| Windows 7 </br>Windows 8 | "Пуск" > "Панель управления" > "Программы" > "Удаление программы" |
+| Windows 10 | Пуск > Параметры > Приложения |
+| Windows 7 </br>Windows 8 | Пуск > Панель управления > Программы > Удалить программу |
 
 В этом окне в списке программ вы должны увидеть модуль __Azure PowerShell__. Это программа, которую можно удалить. Если этой программы нет в списке, значит, она установлена с помощью PowerShellGet. Следуйте приведенным ниже инструкциям.
 

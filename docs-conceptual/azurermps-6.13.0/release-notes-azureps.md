@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.workload: ''
 ms.date: 08/28/2018
 ms.openlocfilehash: eecd66ddf433cc2543ceeaef1519d69179f2f099
-ms.sourcegitcommit: bbd3f061cac3417ce588487c1ae4e0bc52c11d6a
+ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/11/2019
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "65534454"
 ---
 # <a name="release-notes"></a>Заметки о выпуске
@@ -168,10 +168,10 @@ ms.locfileid: "65534454"
 
 #### <a name="azurermdatalakestore"></a>AzureRM.DataLakeStore
 * Добавлена поддержка правил виртуальной сети:
-    - Get-AzureRmDataLakeStoreVirtualNetworkRule: получение или отображение правила виртуальной сети Azure Data Lake Store.
-    - Add-AzureRmDataLakeStoreVirtualNetworkRule: добавление правила виртуальной сети для указанной учетной записи Data Lake Store.
-    - Set-AzureRmDataLakeStoreVirtualNetworkRule: изменение указанного правила виртуальной сети для указанной учетной записи Data Lake Store.
-    - Remove-AzureRmDataLakeStoreVirtualNetworkRule: удаление правила виртуальной сети Azure Data Lake Store.
+    - Get-AzureRmDataLakeStoreVirtualNetworkRule — позволяет получить или вывести правило виртуальной сети Azure Data Lake Store.
+    - Add-AzureRmDataLakeStoreVirtualNetworkRule — позволяет добавить правило виртуальной сети для указанной учетной записи Data Lake Store.
+    - Set-AzureRmDataLakeStoreVirtualNetworkRule — позволяет изменить определенное правило виртуальной сети для указанной учетной записи Data Lake Store.
+    - Remove-AzureRmDataLakeStoreVirtualNetworkRule — позволяет удалить правило виртуальной сети Azure Data Lake Store.
 
 #### <a name="azurermnetwork"></a>AzureRM.Network
 * Обновлен командлет Test-AzureRmNetworkWatcherConnectivity. Теперь он позволяет передать значение протокола в серверную часть.
@@ -273,7 +273,7 @@ ms.locfileid: "65534454"
   - Set-AzureRmLoadBalancerOutboundRuleConfig
   - Remove-AzureRmLoadBalancerOutboundRuleConfig
 * Добавлено новое свойство HostedWorkloads для PSNetworkInterface.
-* Добавлены новые командлеты для функции "Брандмауэр Azure" (ARM):
+* Добавлены новые командлеты для функции Брандмауэра Azure через ARM.
   - Добавлен командлет Get-AzureRmFirewall.
   - Добавлен командлет Set-AzureRmFirewall.
   - Добавлен командлет New-AzureRmFirewall.
@@ -325,9 +325,9 @@ ms.locfileid: "65534454"
   - New-AzureRmLoadBalancerFrontendIpConfig
   - New-AzureRmNetworkInterface
 * Добавлены командлеты для делегирования подсети.
-  - New-AzureRmDelegation: создание делегирования, которое можно добавить к подсети.
-  - Remove-AzureRmDelegation: принятие подсети и удаление указанного имени делегирования из этой подсети.
-  - Add-AzureRmDelegation: принятие подсети и добавление указанного имени службы в качестве делегирования для этой подсети.
+  - New-AzureRmDelegation — создает делегирование, которое можно добавить к подсети.
+  - Remove-AzureRmDelegation — принимает подсеть и удаляет указанное имя делегирования из этой подсети.
+  - Add-AzureRmDelegation — принимает подсеть и добавляет указанное имя службы в качестве делегирования для этой подсети.
   - Get-AzureRmDelegation
   - Get-AzureRmAvailableServiceDelegations
 
@@ -778,7 +778,7 @@ ms.locfileid: "65534454"
 #### <a name="azurermnetwork"></a>AzureRM.Network
 * Включен пиринг между виртуальными сетями в нескольких клиентах для командлета Set/Add-AzureRmVirtualNetworkPeering.
 * Для шлюза приложений обновлены следующие командлеты:
-    - New-AzureRmApplicationGateway: добавлен флаг EnableFIPS и поддержка зон.
+    - New-AzureRmApplicationGateway: добавлены флаг EnableFIPS и поддержка зон.
     - New-AzureRmApplicationGatewaySku: добавлены новые номера SKU Standard_v2 и WAF_v2.
     - Set-AzureRmApplicationGatewaySku: добавлены новые номера SKU Standard_v2 и WAF_v2.
 * Командлеты RouteTable пересозданы в последней версии генератора.
@@ -854,7 +854,7 @@ ms.locfileid: "65534454"
 
 #### <a name="azurermnetwork"></a>AzureRM.Network
 * Для параметра шлюзов виртуальной вести, избыточных между зонами, предоставлены новые номера SKU.
-* Добавлены новые команды для функции API партнеров ExpressRoute (ARM):
+* Добавлены новые команды для функции поддержки партнерских API для ExpressRoute, развертываемых с помощью ARM:
     - добавлена команда Get-AzureRmExpressRouteCrossConnection;
     - добавлена команда Set-AzureRmExpressRouteCrossConnection;
     - добавлена команда Add-AzureRmExpressRouteCrossConnectionPeering;
@@ -1008,7 +1008,7 @@ ms.locfileid: "65534454"
 * Добавлена поддержка установки сертификатов, выданных частным центром сертификации в качестве корневого или обычного ЦС.
 * Добавлена поддержка для приема пользовательских SSL-сертификатов с помощью KeyVault и нескольких имен узлов прокси-сервера.
 * Добавлена поддержка для удостоверения MSI.
-* Добавлена поддержка для принятия политик с помощью URL-адреса. Примечание. Указанные ниже командлеты в следующем выпуске будут отмечены как нерекомендуемые:
+* Добавлена поддержка для принятия политик с помощью URL-адреса. Примечание. Указанные ниже командлеты в следующей версии будут отмечены как нерекомендуемые.
    - Import-AzureRmApiManagementHostnameCertificate
    - New-AzureRmApiManagementHostnameConfiguration
    - Set-AzureRmApiManagementHostnames
