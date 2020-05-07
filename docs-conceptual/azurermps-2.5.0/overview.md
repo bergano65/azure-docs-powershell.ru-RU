@@ -9,21 +9,21 @@ ms.topic: conceptual
 ms.manager: knithinc
 ms.date: 09/21/2018
 ms.openlocfilehash: 55f19ac5e6767df1312e0b531184e8621b60a011
-ms.sourcegitcommit: febbbd3f75c8dd1a296281d265289f015b6cb537
+ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/12/2019
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "67038199"
 ---
 # <a name="azurerm-module-250"></a>Модуль AzureRM версии 2.5.0
 
-## <a name="requirements"></a>Требования:
+## <a name="requirements"></a>Требования
 Минимальная поддерживаемая версия Azure Stack — 1904.
 
 Примечание. Если вы используете более раннюю версию, установите версию 1.2.11.
 
 
-## <a name="install"></a>Install
+## <a name="install"></a>Установка
 ```powershell-interactive
 # Remove previous versions of AzureStack modules
 Uninstall-Module -Name AzureStack -Force 
@@ -65,7 +65,7 @@ Use-AzureRmProfile -Profile 2018-03-01-hybrid -Force
 ### <a name="azure-bridge"></a>Мост Azure
 Предварительная версия модуля для администраторов компонента Azure Stack "Мост Azure", которая позволяет объединять образы из Azure.
 
-### <a name="backup"></a>Azure Backup
+### <a name="backup"></a>Резервное копирование
 Предварительная версия модуля для администраторов службы Backup, которая позволяет администраторам:
 - настраивать расположение для хранения резервных копий;
 - выполнять резервное копирование;
@@ -87,7 +87,7 @@ Use-AzureRmProfile -Profile 2018-03-01-hybrid -Force
 - создание пулов IP-адресов.
 
 
-### <a name="gallery"></a>Коллекция
+### <a name="gallery"></a>Коллекции
 Предварительная версия модуля для администраторов коллекций Azure Stack, которая предоставляет функции для управления элементами коллекции в Azure Stack Marketplace.
 
 ### <a name="infrastructure-insights"></a>Infrastructure Insights
@@ -98,13 +98,13 @@ Use-AzureRmProfile -Profile 2018-03-01-hybrid -Force
 ### <a name="keyvault"></a>Хранилище ключей
 Предварительная версия модуля для администраторов Key Vault в Azure Stack, которая позволяет администратору просматривать квоты Key Vault.
 
-### <a name="network"></a>Network
+### <a name="network"></a>Сеть
 Предварительная версия модуля для администраторов сетей, которая позволяет:
 - управлять квотами сети;
 - просматривать выделенные сетевые ресурсы, например общедоступные IP-адреса, виртуальные сети, подсистемы балансировки нагрузки;
 - использовать командлет для отображения общих сведений об администраторе.
 
-### <a name="storage"></a>Хранилище
+### <a name="storage"></a>Память
 Предварительная версия модуля для администраторов хранилища Azure Stack.  В этом выпуске мы предоставляем следующие функции:
 - управление квотами хранилища;
 - сборка мусора для удаленных ресурсов хранилища;
@@ -119,11 +119,11 @@ Use-AzureRmProfile -Profile 2018-03-01-hybrid -Force
 - просмотр сведений об использовании и производительности.
 - Управление RBAC
 
-### <a name="subscription"></a>Подписка
+### <a name="subscription"></a>Subscription
 Предварительная версия модуля подписки Azure Stack.  Этот модуль предоставляет следующие функции для пользователей:
 - создание, удаление и изменение подписок.
 
-### <a name="update"></a>Блокировка изменений
+### <a name="update"></a>Update
 Предварительная версия модуля для администраторов обновлений Azure Stack.  В этом модуле администраторы могут:
 - выводить список и устанавливать доступные обновления;
 - возобновлять прерванную установку обновлений;

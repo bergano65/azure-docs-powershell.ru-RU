@@ -8,10 +8,10 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 04/30/2019
 ms.openlocfilehash: 8a9a399f72ed9e3e9a3cbc09c8a4abaa91339c24
-ms.sourcegitcommit: f0f09eee03ef9dd7fe07432252a3dc8ca93e3a7b
+ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2019
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "71319296"
 ---
 ## <a name="180---april-2019"></a>1.8.0 — апрель 2019 г.
@@ -858,4 +858,4 @@ ms.locfileid: "71319296"
 * Новые командлеты New-AzWebAppContainerPSSession и Enter-WebAppContainerPSSession, которые позволяют инициировать удаленный сеанс PowerShell в приложении-контейнере Windows
 
 ## <a name="020---september-2018"></a>0.2.0 — сентябрь 2018 г.
- Первый выпуск
+ Начальный выпуск

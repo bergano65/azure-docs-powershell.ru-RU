@@ -9,15 +9,15 @@ ms.topic: conceptual
 ms.manager: knithinc
 ms.date: 09/21/2018
 ms.openlocfilehash: afa83a6258e57e961576b328e67fad634704dddf
-ms.sourcegitcommit: 2054a8f74cd9bf5a50ea7fdfddccaa632c842934
+ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56154229"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "63053364"
 ---
 # <a name="azure-stack-module-150"></a>Модуль Azure Stack версии 1.5.0
 
-## <a name="requirements"></a>Требования:
+## <a name="requirements"></a>Требования
 Минимальная поддерживаемая версия Azure Stack — 1808.
 
 Примечание. Если вы используете более раннюю версию, установите версию 1.4.0.
@@ -27,7 +27,7 @@ ms.locfileid: "56154229"
 - New-AzsOffer не позволяет создать общедоступное предложение. После него нужно вызвать командлет Set-AzsOffer, чтобы изменить состояние.
 - Нельзя удалить пул IP-адресов без повторного развертывания.
 
-## <a name="install"></a>Install
+## <a name="install"></a>Установка
 ```
 # Remove previous versions of AzureStack modules
 Uninstall-Module -Name AzureStack -Force 
@@ -69,7 +69,7 @@ Install-Module -Name AzureStack -RequiredVersion 1.5.0
 ### <a name="azure-bridge"></a>Мост Azure
 Предварительная версия модуля для администраторов компонента Azure Stack "Мост Azure", которая позволяет объединять образы из Azure.
 
-### <a name="backup"></a>Azure Backup
+### <a name="backup"></a>Резервное копирование
 Предварительная версия модуля для администраторов службы Backup, которая позволяет администраторам:
 - настраивать расположение для хранения резервных копий;
 - выполнять резервное копирование;
@@ -91,7 +91,7 @@ Install-Module -Name AzureStack -RequiredVersion 1.5.0
 - создание пулов IP-адресов.
 
 
-### <a name="gallery"></a>Коллекция
+### <a name="gallery"></a>Коллекции
 Предварительная версия модуля для администраторов коллекций Azure Stack, которая предоставляет функции для управления элементами коллекции в Azure Stack Marketplace.
 
 ### <a name="infrastructure-insights"></a>Infrastructure Insights
@@ -108,7 +108,7 @@ Install-Module -Name AzureStack -RequiredVersion 1.5.0
 - просматривать выделенные сетевые ресурсы, например общедоступные IP-адреса, виртуальные сети, подсистемы балансировки нагрузки;
 - использовать командлет для отображения общих сведений об администраторе.
 
-### <a name="storage"></a>Хранилище
+### <a name="storage"></a>Память
 Предварительная версия модуля для администраторов хранилища Azure Stack.  В этом выпуске мы предоставляем следующие функции:
 - управление квотами хранилища;
 - сборка мусора для удаленных ресурсов хранилища;
@@ -123,11 +123,11 @@ Install-Module -Name AzureStack -RequiredVersion 1.5.0
 - просмотр сведений об использовании и производительности.
 - Управление RBAC
 
-### <a name="subscription"></a>Подписка
+### <a name="subscription"></a>Subscription
 Предварительная версия модуля подписки Azure Stack.  Этот модуль предоставляет следующие функции для пользователей:
 - создание, удаление и изменение подписок.
 
-### <a name="update"></a>Блокировка изменений
+### <a name="update"></a>Update
 Предварительная версия модуля для администраторов обновлений Azure Stack.  В этом модуле администраторы могут:
 - выводить список и устанавливать доступные обновления;
 - возобновлять прерванную установку обновлений;

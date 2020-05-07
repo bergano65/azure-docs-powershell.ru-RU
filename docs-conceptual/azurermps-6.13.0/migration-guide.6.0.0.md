@@ -8,10 +8,10 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/01/2018
 ms.openlocfilehash: 1fbd24996da2fbc7d4e95c2a63f828aea6cb3145
-ms.sourcegitcommit: bbd3f061cac3417ce588487c1ae4e0bc52c11d6a
+ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/11/2019
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "65534924"
 ---
 # <a name="breaking-changes-for-microsoft-azure-powershell-600"></a>Критически важные изменения в Microsoft Azure PowerShell 6.0.0
@@ -340,7 +340,7 @@ $sas=Set-AzureKeyVaultManagedStorageSasDefinition -AccountName $sa.StorageAccoun
     - `Stop-AzureKeyVaultCertificateOperation`
     - `Update-AzureKeyVaultManagedStorageAccountKey`
 
-- Обновлен параметр `IKeyVaultDataServiceClient`. Теперь все операции с сертификатами возвращают PSTypes вместо типов пакетов SDK. А именно:
+- Обновлен параметр `IKeyVaultDataServiceClient`. Теперь все операции с сертификатами возвращают PSTypes вместо типов пакетов SDK. В том числе:
     - `SetCertificateContacts`
     - `GetCertificateContacts`
     - `GetCertificate`
@@ -380,7 +380,7 @@ $sas=Set-AzureKeyVaultManagedStorageSasDefinition -AccountName $sa.StorageAccoun
 **New-AzureRmRedisCache**
 - Параметры `Subnet` и `VirtualNetwork` заменены на `SubnetId`.
 - Удален параметр `RedisVersion`.
-- Параметр `MaxMemoryPolicy` заменен на `RedisConfiguration`.
+- Параметр `MaxMemoryPolicy` изменен на `RedisConfiguration`.
 
 ```powershell-interactive
 # Old
@@ -391,7 +391,7 @@ New-AzureRmRedisCache -ResourceGroupName "MyRG" -Name "MyRedisCache" -Location "
 ```
 
 **Set-AzureRmRedisCache**
-- Параметр `MaxMemoryPolicy` заменен на `RedisConfiguration`.
+- Параметр `MaxMemoryPolicy` изменен на `RedisConfiguration`.
 
 ```powershell-interactive
 # Old
@@ -461,7 +461,7 @@ Get-AzureRmRoleDefinition [other required parameters]
 
 Модуль `AzureRM.SiteRecovery` изменится на `AzureRM.RecoveryServices.SiteRecovery` — функциональное супермножество модуля `AzureRM.SiteRecovery`, содержащее новый набор эквивалентных командлетов. Полный список сопоставлений старых и новых командлетов см. ниже.
 
-| Нерекомендуемые командлеты                                        | Эквивалентные командлеты                                                | Псевдонимы                                  |
+| Нерекомендуемые командлеты                                        | Эквивалентные командлеты                                                | Aliases                                  |
 |----------------------------------------------------------|------------------------------------------------------------------|------------------------------------------|
 | `Edit-AzureRmSiteRecoveryRecoveryPlan`                   | `Edit-AzureRmRecoveryServicesAsrRecoveryPlan`                    | `Edit-ASRRecoveryPlan`                   |
 | `Get-AzureRmSiteRecoveryFabric`                          | `Get-AzureRmRecoveryServicesAsrFabric`                           | `Get-ASRFabric`                          |

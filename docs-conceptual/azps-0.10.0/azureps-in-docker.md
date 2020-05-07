@@ -5,10 +5,10 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/20/2020
 ms.openlocfilehash: b5ad201abcabbdc1a88db241b028d88f05054a14
-ms.sourcegitcommit: 4c61442a2df1cee633ce93cad9f6bc793803baa2
+ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "81445821"
 ---
 # <a name="using-azure-powershell-in-docker"></a>Использование Azure PowerShell в Docker
@@ -17,7 +17,7 @@ ms.locfileid: "81445821"
 
 ## <a name="finding-available-images"></a>Поиск доступных образов
 
-Для выпущенных образов требуется Docker 17.05 или более поздней версии. Также предполагается, что Docker можно запускать без `sudo` или прав локального администратора. Чтобы правильно установить `docker`, следуйте официальным [инструкциям][install] Docker.
+Для выпущенных образов требуется Docker 17.05 или более поздней версии. Также предполагается, что Docker можно запускать без `sudo` или прав локального администратора. Чтобы правильно установить [, следуйте официальным ][install]инструкциям`docker` Docker.
 
 Последняя версия образа контейнера содержит последнюю версию PowerShell и последние версии модулей Azure PowerShell, поддерживаемые модулем Az.
 

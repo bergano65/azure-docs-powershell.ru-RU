@@ -8,10 +8,10 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 10/15/2019
 ms.openlocfilehash: 98a24c805fbf43dd899119d43301b4261c1f60dc
-ms.sourcegitcommit: f9445d1525eac8c165637e1a80fbc92b1ab005c2
+ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/16/2019
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "75035767"
 ---
 ## <a name="280---october-2019"></a>2.8.0 — октябрь 2019 г.
@@ -358,7 +358,7 @@ ms.locfileid: "75035767"
 
 #### <a name="azeventhub"></a>Az.EventHub
 * Добавлен новый командлет для создания маркера SAS: New-AzEventHubAuthorizationRuleSASToken.
-* Добавлена проверка и сообщение об ошибке для случаев, когда для правил авторизации назначаются только права "Управление".
+* Добавлена проверка и сообщение об ошибке в ситуациях, когда для правил авторизации назначаются только права "Управление".
 
 #### <a name="azkeyvault"></a>Az.KeyVault
 * Добавлена поддержка для настройки параметра KeySize в политиках сертификатов.
@@ -1755,4 +1755,4 @@ ms.locfileid: "75035767"
 * Новые командлеты New-AzWebAppContainerPSSession и Enter-WebAppContainerPSSession, которые позволяют инициировать удаленный сеанс PowerShell в приложении-контейнере Windows
 
 ## <a name="020---september-2018"></a>0.2.0 — сентябрь 2018 г.
- Первый выпуск
+ Начальный выпуск
