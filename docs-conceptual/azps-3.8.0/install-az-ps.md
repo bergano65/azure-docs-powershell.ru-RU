@@ -4,16 +4,16 @@ description: Инструкции по установке Azure PowerShell с п
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 02/26/2020
-ms.openlocfilehash: 7a25270566f5e856ee44c4c191a47a3e7334508b
-ms.sourcegitcommit: 6a91b4c545350d316d3cf8c62f384478e3f3ba24
+ms.openlocfilehash: af088f428ce383faa7df6be2cc7d48350893be5b
+ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81740258"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82587971"
 ---
 # <a name="install-azure-powershell"></a>Установите Azure PowerShell
 
-В этой статье показано, как установить модули Azure PowerShell с помощью PowerShellGet. Эти инструкции применимы для платформ Windows, macOS и Linux.
+В этой статье показано, как установить модули Azure PowerShell с помощью [PowerShellGet](/powershell/scripting/gallery/installing-psget). Эти инструкции применимы для платформ Windows, macOS и Linux.
 
 Azure PowerShell также предоставляется в Azure [Cloud Shell](/azure/cloud-shell/overview) и предустанавливается в [образах Docker](azureps-in-docker.md).
 
@@ -31,7 +31,7 @@ $PSVersionTable.PSVersion
 
 1. При необходимости выполните обновление до [Windows PowerShell 5.1](/powershell/scripting/install/installing-windows-powershell#upgrading-existing-windows-powershell). Если вы используете Windows 10, среда PowerShell 5.1 уже установлена.
 2. [Установите платформу .NET Framework версии 4.7.2 или более поздней](/dotnet/framework/install).
-3. Убедитесь, что у вас установлена последняя версия PowerShellGet. Выполните `Update-Module PowerShellGet -Force`.
+3. Убедитесь, что у вас установлена последняя версия PowerShellGet. Выполните `Install-Module -Name PowerShellGet -Force`.
 
 ## <a name="install-the-azure-powershell-module"></a>Установка модуля Azure PowerShell
 

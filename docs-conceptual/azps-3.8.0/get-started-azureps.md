@@ -6,54 +6,51 @@ ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: get-started-article
-ms.date: 01/17/2020
-ms.openlocfilehash: 718f0dc0f1ef9b0c2aa3d0630ca099fa5cec7ec0
-ms.sourcegitcommit: 6a91b4c545350d316d3cf8c62f384478e3f3ba24
+ms.date: 04/24/2020
+ms.openlocfilehash: 70f74cf4d3c2465dac88d694f9b373e43c48f64c
+ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81740360"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82587981"
 ---
 # <a name="get-started-with-azure-powershell"></a>Начало работы с Azure PowerShell
 
-Среда Azure PowerShell оптимизирована для администрирования ресурсов Azure и управления ими из командной строки. С помощью Azure PowerShell можно создавать автоматизированные средства на основе модели Azure Resource Manager.
-Попробуйте использовать его в браузере с [Azure Cloud Shell](/azure/cloud-shell/overview), а также установить на локальном компьютере.
+Среда Azure PowerShell оптимизирована для администрирования ресурсов Azure и управления ими из командной строки.
+С помощью Azure PowerShell можно создавать автоматизированные средства на основе модели Azure Resource Manager. Попробуйте использовать его в браузере с [Azure Cloud Shell](/azure/cloud-shell/overview), а также установить на локальном компьютере.
 
 В этой статье содержатся инструкции по началу работы с Azure PowerShell и объясняются основные принципы работы этой среды.
 
 ## <a name="install-or-run-in-azure-cloud-shell"></a>Установка или запуск в Azure Cloud Shell
 
-Проще всего начать работу с Azure PowerShell в среде Azure Cloud Shell.
-Чтобы начать работу с Cloud Shell, см. [Краткое руководство по использованию PowerShell в Azure Cloud Shell](/azure/cloud-shell/quickstart-powershell).
-Cloud Shell запускает PowerShell 6 в контейнере Linux, поэтому специальные функции Windows будут недоступны.
+Проще всего начать работу с Azure PowerShell в среде Azure Cloud Shell. Чтобы начать работу с Cloud Shell, см. [Краткое руководство по использованию PowerShell в Azure Cloud Shell](/azure/cloud-shell/quickstart-powershell). Cloud Shell запускает PowerShell в контейнере Linux, поэтому специальные функции Windows будут недоступны.
 
 Когда все будет готово к установке Azure PowerShell на локальный компьютер, следуйте инструкциям, приведенным в статье [Install the Azure PowerShell module](install-az-ps.md) (Установка модуля Azure PowerShell).
 
 ## <a name="sign-in-to-azure"></a>Вход в Azure
 
-Войдите в учетную запись в интерактивном режиме с помощью командлета `Connect-AzAccount`. При использовании Cloud Shell этот шаг можно пропустить: Сеанс Azure Cloud Shell уже прошел аутентификацию для среды, подписки и клиента, который запустил сеанс Cloud Shell.
+Чтобы выполнить вход в интерактивном режиме, используйте командлет [Connect-AzAccount](/powershell/module/az.accounts/connect-azaccount). При использовании Cloud Shell этот шаг можно пропустить. Сеанс Azure Cloud Shell уже прошел аутентификацию для среды, подписки и клиента, который запустил сеанс Cloud Shell.
 
 ```azurepowershell-interactive
 Connect-AzAccount
 ```
 
-Если вы находитесь за пределами США, используйте для входа параметр `-Environment`. Имя среды для вашего региона можно получить с помощью командлета [Get AzEnvironment](/powershell/module/Az.Accounts/Get-AzEnvironment). Например, для входа в учетную запись Azure China 21Vianet выполните следующую команду:
+Облачные службы Azure предоставляют среды, которые соответствуют региональным законам об обработке данных. Для учетных записей в региональном облаке используйте параметр **Среда** для входа. Имя среды для вашего региона можно получить с помощью командлета [Get-AzEnvironment](/powershell/module/Az.Accounts/Get-AzEnvironment).
+Например, для входа в учетную запись Azure China 21Vianet выполните следующую команду:
 
 ```azurepowershell-interactive
 Connect-AzAccount -Environment AzureChinaCloud
 ```
 
-В средах PowerShell 5.1 используется диалоговое окно для входа, в котором можно указать имя пользователя и пароль для учетной записи Azure. В любой другой версии PowerShell вы получите маркер для использования в [https://microsoft.com/devicelogin ].
-Откройте эту страницу в браузере и введите токен, чтобы войти с данными учетной записи Azure и авторизовать Azure PowerShell.
+В средах Windows PowerShell 5.1 используется диалоговое окно для входа, в котором можно указать имя пользователя и пароль для учетной записи Azure. В любой другой версии PowerShell предоставляется токен для использования в [microsoft.com/devicelogin](https://microsoft.com/devicelogin). Откройте эту страницу в браузере и введите токен, чтобы войти с данными учетной записи Azure и авторизовать Azure PowerShell.
 
-После входа вам отобразится информация о ваших активных подписках Azure. Если в вашей учетной записи есть несколько подписок Azure и вы хотите выбрать другую, получите список доступных подписок с помощью командлета [Get-AzSubscription](/powershell/module/az.accounts/get-azsubscription) и выполните командлет [Set-AzContext](/powershell/module/az.accounts/set-azcontext) с указанием идентификатора своей подписки.
-Дополнительные сведения об управлении подписками Azure в Azure PowerShell см. в статье [Use multiple Azure subscriptions](manage-subscriptions-azureps.md) (Использование нескольких подписок Azure).
+После входа вам отобразится информация о ваших активных подписках Azure. Если в вашей учетной записи есть несколько подписок Azure и вы хотите выбрать другую, получите список доступных подписок с помощью командлета [Get-AzSubscription](/powershell/module/az.accounts/get-azsubscription) и выполните командлет [Set-AzContext](/powershell/module/az.accounts/set-azcontext) с указанием идентификатора своей подписки. Дополнительные сведения об управлении подписками Azure в Azure PowerShell см. в статье [Use multiple Azure subscriptions](manage-subscriptions-azureps.md) (Использование нескольких подписок Azure).
 
 После входа в учетную запись Azure вы можете использовать командлеты Azure PowerShell для доступа и управления ресурсами в подписке. Дополнительные сведения о процессе входа и методах проверки подлинности см. в статье [Вход с помощью Azure PowerShell](authenticate-azureps.md).
 
 ## <a name="find-commands"></a>Поиск команд
 
-В Azure PowerShell названия командлетов выбираются в соответствии со стандартным соглашением об именовании для PowerShell — `VERB-NOUN`. Глагол (часть verb) отвечает за действие (к ним относятся `New`, `Get`, `Set`, `Remove`), а существительное (часть noun) — за тип ресурса (к ним относятся `AzVM`, `AzKeyVaultCertificate`, `AzFirewall`, `AzVirtualNetworkGateway`). В Azure PowerShell существительное всегда начинается с префикса `Az`. Полный список стандартных глаголов см. в разделе [Approved verbs for PowerShell Commands](/powershell/scripting/developer/cmdlet/approved-verbs-for-windows-powershell-commands) (Утвержденные глаголы для команд PowerShell).
+В Azure PowerShell названия командлетов выбираются в соответствии со стандартным соглашением об именовании для PowerShell — `Verb-Noun`. Глагол (часть verb) отвечает за действие (к ним относятся `New`, `Get`, `Set`, `Remove`), а существительное (часть noun) — за тип ресурса (к ним относятся `AzVM`, `AzKeyVaultCertificate`, `AzFirewall`, `AzVirtualNetworkGateway`). В Azure PowerShell существительное всегда начинается с префикса `Az`. Полный список стандартных глаголов см. в разделе [Approved verbs for PowerShell Commands](/powershell/scripting/developer/cmdlet/approved-verbs-for-windows-powershell-commands) (Утвержденные глаголы для команд PowerShell).
 
 Если вы знаете существительные и глаголы, с помощью модулей Azure PowerShell можно найти команды, выполнив командлет [Get-Command](/powershell/module/microsoft.powershell.core/get-command). Например, чтобы найти все связанные с виртуальной машиной команды, в которых используется глагол `Get` выполните следующий код:
 
@@ -63,16 +60,20 @@ Get-Command -Verb Get -Noun AzVM* -Module Az.Compute
 
 Чтобы облегчить поиск часто используемых команд, в таблице ниже приведены типы ресурсов, указан соответствующий модуль Azure PowerShell и префикс для использования с командой `Get-Command`:
 
-| Тип ресурса | модуль Azure PowerShell; | Префикс в существительном |
-|---------------|-------------------------|----------------|
-| [Группа ресурсов](/azure/azure-resource-manager/resource-group-overview) | [Az.Resources](/powershell/module/az.resources#resources) | `AzResourceGroup` |
-| [Виртуальные машины](/azure/virtual-machines) | [Az.Compute](/powershell/module/az.compute#virtual_machines) | `AzVM` |
-| [Учетные записи хранения](/azure/storage/common/storage-introduction) | [Az.Storage](/powershell/module/az.storage/) | `AzStorageAccount` |
-| [хранилище ключей;](/azure/key-vault/key-vault-whatis) | [Az.KeyVault](/powershell/module/az.keyvault) | `AzKeyVault` |
-| [Веб-приложения](/azure/app-service) | [Az.Websites](/powershell/module/az.websites) | `AzWebApp` |
-| [Базы данных SQL](/azure/sql-database) | [Az.Sql](/powershell/module/az.sql) | `AzSqlDatabase` |
+|                              Тип ресурса                              |                   модуль Azure PowerShell;                    |    Префикс в существительном     |
+| ----------------------------------------------------------------------- | ------------------------------------------------------------ | ------------------ |
+| [Группа ресурсов](/azure/azure-resource-manager/resource-group-overview) | [Az.Resources](/powershell/module/az.resources#resources)    | `AzResourceGroup`  |
+| [Виртуальные машины](/azure/virtual-machines)                             | [Az.Compute](/powershell/module/az.compute#virtual_machines) | `AzVM`             |
+| [Учетные записи хранения](/azure/storage/common/storage-introduction)          | [Az.Storage](/powershell/module/az.storage/)                 | `AzStorageAccount` |
+| [хранилище ключей;](/azure/key-vault/key-vault-whatis)                          | [Az.KeyVault](/powershell/module/az.keyvault)                | `AzKeyVault`       |
+| [Веб-приложения](/azure/app-service)                                  | [Az.Websites](/powershell/module/az.websites)                | `AzWebApp`         |
+| [Базы данных SQL](/azure/sql-database)                                    | [Az.Sql](/powershell/module/az.sql)                          | `AzSqlDatabase`    |
 
 Полный список модулей для Azure PowerShell см. на [этой странице](https://github.com/Azure/azure-powershell/blob/master/documentation/azure-powershell-modules.md) сайта GitHub.
+
+## <a name="telemetry"></a>Телеметрия
+
+По умолчанию Azure PowerShell автоматически собирает данные телеметрии. Корпорация Майкрософт агрегирует собранные данные для определения закономерностей использования, обнаружения распространенных проблем и улучшения работы Azure PowerShell. Microsoft Azure PowerShell не собирает личные или персональные данные. Чтобы отключить сбор данных, необходимо явно отказаться от этого с помощью командлета [Disable-AzDataCollection](/powershell/module/az.accounts/disable-azdatacollection).
 
 ## <a name="learn-azure-powershell-basics-with-quickstarts-and-tutorials"></a>Дополнительные сведения об основах работы с Azure PowerShell приведены в кратких руководствах и других материалах
 
@@ -88,7 +89,7 @@ Get-Command -Verb Get -Noun AzVM* -Module Az.Compute
 * [Создание и извлечение секретов из Azure Key Vault](/azure/key-vault/quick-create-powershell)
 * [Создание базы данных Azure SQL и брандмауэра](/azure/sql-database/scripts/sql-database-create-and-configure-database-powershell)
 * [Запуск контейнеров в службе "Экземпляры контейнеров Azure"](/azure/container-instances/container-instances-quickstart-powershell)
-* [Создание масштабируемого набора виртуальных машин (VMSS)](/azure/virtual-machine-scale-sets/quick-create-powershell)
+* [Создание масштабируемого набора виртуальных машин](/azure/virtual-machine-scale-sets/quick-create-powershell)
 * [Создание подсистемы балансировки нагрузки уровня "Стандартный"](/azure/load-balancer/quickstart-create-standard-load-balancer-powershell)
 
 ## <a name="next-steps"></a>Дальнейшие действия

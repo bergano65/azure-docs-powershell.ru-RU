@@ -8,10 +8,10 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 08/31/2017
 ms.openlocfilehash: c89df2e3d04a97ebe31d62cd448ea662301b74b4
-ms.sourcegitcommit: 0fdccb57a356b6e7c35a77b1f76e01fb96ef582b
+ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/17/2019
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "65854114"
 ---
 # <a name="persisting-user-credentials-across-powershell-sessions"></a>Использование учетных данных пользователя в разных сеансах PowerShell
@@ -83,7 +83,7 @@ PS C:\> Set-AzureRMContext -Subscription "Contoso Subscription 1" -Name "Contoso
 
 В примере выше мы добавили новый контекст для подписки "Contoso Subscription 1", используя текущие учетные данные. Новый контекст называется "Contoso1". Если вы не укажете имя для контекста, будет использоваться имя по умолчанию на основе идентификатора учетной записи и подписки.
 
-Чтобы переименовать существующий контекста, используйте командлет `Rename-AzureRmContext`. Например:
+Чтобы переименовать существующий контекста, используйте командлет `Rename-AzureRmContext`. Пример:
 
 ```azurepowershell-interactive
 PS C:\> Rename-AzureRmContext '[user1@contoso.org; 123456-7890-1234-564321]` 'Contoso2'
@@ -91,7 +91,7 @@ PS C:\> Rename-AzureRmContext '[user1@contoso.org; 123456-7890-1234-564321]` 'Co
 
 В этом примере мы изменяем стандартное имя контекста `[user1@contoso.org; 123456-7890-1234-564321]` на простое имя "Contoso2". Командлеты, которые управляют контекстами, также поддерживают заполнение нажатием клавиши TAB. Это позволяет быстро выбрать контекст.
 
-Наконец, чтобы удалить контекст, используйте командлет `Remove-AzureRmContext`.  Например:
+Наконец, чтобы удалить контекст, используйте командлет `Remove-AzureRmContext`.  Пример:
 
 ```azurepowershell-interactive
 PS C:\> Remove-AzureRmContext Contoso2
@@ -131,20 +131,20 @@ $env:AzureRmContextAutoSave="true" | "false"
 
 Новые командлеты для управления контекстом
 
-- [Enable-AzureRmContextAutosave][enable] — включение сохранения контекста для использования в разных сеансах PowerShell.
+- [Enable-AzureRmContextAutosave][enable] — сохранение контекста для использования в разных сеансах PowerShell.
   Любые изменения влияют на глобальный контекст.
-- [Disable-AzureRmContextAutosave][disable] — отключение автосохранения контекста. Для работы с новым сеансом PowerShell нужно будет выполнить вход.
-- [Select-AzureRmContext][select] — выбор контекста по умолчанию. Все последующие командлеты будут использовать для аутентификации учетные данные из этого контекста.
-- [Disconnect-AzureRmAccount][remove-cred] — удаление всех учетных данных и контекстов, связанных с учетной записью.
-- [Remove-AzureRmContext][remove-context] — удаление именованного контекста.
-- [Rename-AzureRmContext][rename] — переименование существующего контекста.
+- [Disable-AzureRmContextAutosave][disable] — отключение автосохранения контекста. Для работы с новым сеансом PowerShell нужно будет выполнить вход.
+- [Select-AzureRmContext][select] — выбор контекста по умолчанию. Все последующие командлеты будут использовать для аутентификации учетные данные из этого контекста.
+- [Disconnect-AzureRmAccount][remove-cred] — удаление всех учетных данных и контекстов, связанных с учетной записью.
+- [Remove-AzureRmContext][remove-context] — удаление именованного контекста.
+- [Rename-AzureRmContext][rename] — переименование существующего контекста.
 
 Изменения в существующих командлетах профиля
 
-- [Add-AzureRmAccount][login] — возможность входа на уровне процесса или текущего пользователя.
+- [Add-AzureRmAccount][login] — возможность входа на уровне процесса или текущего пользователя.
   После аутентификации разрешено присваивать имя контексту по умолчанию.
-- [Import-AzureRmContext][import] — возможность входа на уровне процесса или текущего пользователя.
-- [Set-AzureRmContext][set-context] — возможность выбора существующих именованных контекстов и применения изменений на уровне процесса или текущего пользователя.
+- [Import-AzureRmContext][import] — возможность входа на уровне процесса или текущего пользователя.
+- [Set-AzureRmContext][set-context] — возможность выбора существующих именованных контекстов и применения изменений на уровне процесса или текущего пользователя.
 
 <!-- Hyperlinks -->
 [enable]: /powershell/module/azurerm.profile/Enable-AzureRmContextAutosave

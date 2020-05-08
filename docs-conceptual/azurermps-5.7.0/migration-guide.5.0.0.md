@@ -8,10 +8,10 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/01/2018
 ms.openlocfilehash: f8dc413a91876e53e62d25cc38ac3b3ef6afda8e
-ms.sourcegitcommit: bbd3f061cac3417ce588487c1ae4e0bc52c11d6a
+ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/11/2019
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "65534588"
 ---
 # <a name="breaking-changes-for-microsoft-azure-powershell-500"></a>Критические изменения для Microsoft Azure PowerShell 5.0.0
@@ -316,7 +316,7 @@ Set-AzureRmVMAccessExtension [other required parameters] -Credential $PSCredenti
 - Командлет Get-AzureRmEventHubNamespaceKey удален. Используйте командлет Get-AzureRmEventHubKey.
     
 ### <a name="new-azurermeventhubnamespace"></a>**New-AzureRmEventHubNamespace**
-- Свойство Status и Enabled из NamespceAttributes будут удалены. 
+- Свойства Status и Enabled из NamespceAttributes будут удалены. 
 
 ```powershell-interactive
 # Old
@@ -641,8 +641,8 @@ Set-AzureRmADUser [other required parameters] -Password $SecureStringVariable
 
 ### <a name="type-namespaceattributes"></a>**Тип NamespaceAttributes**
 - Следующие свойства удалены:
-    - Включено
-    - Status
+    - Активировано
+    - Состояние
    
 ```powershell-interactive
 # Old
