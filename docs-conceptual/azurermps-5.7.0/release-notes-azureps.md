@@ -768,7 +768,7 @@ Update-Module -Name AzureRM
     - Добавлен параметр `UserAccounts`.
       - Этот параметр определяет учетные записи пользователей, созданные на каждом узле в пуле.
     - Добавлен параметр `TargetLowPriorityComputeNodes`; параметр `TargetDedicated` переименован в `TargetDedicatedComputeNodes`.
-      - Для параметра `TargetDedicated` создан псевдоним `TargetDedicatedComputeNodes`.
+      - Для параметра `TargetDedicatedComputeNodes` создан псевдоним `TargetDedicated`.
     - Добавлен параметр `NetworkConfiguration`.
       - Этот параметр позволяет настраивать параметры сети пулов.
   * Обновлены параметры для командлета `New-AzureBatchCertificate`.
@@ -778,7 +778,7 @@ Update-Module -Name AzureRM
   * Обновлены параметры для командлета `Set-AzureBatchComputeNodeUser`.
     - Параметр `Password` теперь имеет значение `SecureString`.
   * Параметр `Name` переименован в `Path` для командлетов `Get-AzureBatchNodeFile`, `Get-AzureBatchNodeFileContent` и `Remove-AzureBatchNodeFile`.
-    - Для параметра `Name` создан псевдоним `Path`.
+    - Для параметра `Path` создан псевдоним `Name`.
   * Изменения объектов
     - Полный список см. в журнале изменений пакетной службы
   * Добавлена поддержка аутентификации на основе Azure Active Directory.
