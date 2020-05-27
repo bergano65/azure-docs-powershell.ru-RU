@@ -1,18 +1,15 @@
 ---
 title: Использование субъектов-служб Azure с помощью Azure PowerShell
 description: В этой статье описывается, как создавать и использовать субъекты-службы с помощью Azure PowerShell.
-author: sptramer
-ms.author: sttramer
-manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 04/23/2019
-ms.openlocfilehash: 4c47d2bac2c63f13ac0ebbccda3e2eed12cd658f
-ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
+ms.openlocfilehash: 2da3d55c8afce97722b68d0753dd2bcac38b00d9
+ms.sourcegitcommit: 80c3188500fd174f5c5484302360ad87ace0fb9b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81740020"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83554580"
 ---
 # <a name="create-an-azure-service-principal-with-azure-powershell"></a>Создание субъекта-службы Azure с помощью Azure PowerShell
 
@@ -45,8 +42,7 @@ $sp = New-AzADServicePrincipal -DisplayName ServicePrincipalName
 Следующий код позволяет экспортировать секрет:
 
 ```azurepowershell-interactive
-$BSTR = [System.Runtime.InteropServices.Marshal]::SecureStringToBSTR($sp.Secret)
-$UnsecureSecret = [System.Runtime.InteropServices.Marshal]::PtrToStringAuto($BSTR)
+$UnsecureSecret = ConvertFrom-SecureString -SecureString $sp.Secret -AsPlainText
 ```
 
 Если вы используете предоставленные пользователями пароли, аргумент `-PasswordCredential` принимает объекты `Microsoft.Azure.Commands.ActiveDirectory.PSADPasswordCredential`. Такие объекты должны иметь допустимые значения `StartDate` и `EndDate`, а также принимать значение `Password` в формате открытого текста. При создании пароля обязательно учитывайте [правила и ограничения для паролей в Azure Active Directory](/azure/active-directory/active-directory-passwords-policy). Не используйте ненадежные пароли или пароли, которые уже используются вами для доступа к другим ресурсам.

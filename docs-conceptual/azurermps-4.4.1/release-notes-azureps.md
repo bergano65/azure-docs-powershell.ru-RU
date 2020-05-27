@@ -1,19 +1,16 @@
 ---
 title: Журнал изменений Azure PowerShell | Документация Майкрософт
 description: Это руководство содержит историю изменений Azure PowerShell, внесенных в новом выпуске.
-author: sptramer
-ms.author: sttramer
-manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.workload: ''
 ms.date: 07/26/2017
-ms.openlocfilehash: 1491f3f23deb767b754a98b3fab616356daa71f3
-ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
+ms.openlocfilehash: bdd8e71460a9adcdb2cc87544f81f82c96380ec7
+ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "67863771"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83387400"
 ---
 # <a name="release-notes"></a>Заметки о выпуске
 
@@ -39,23 +36,23 @@ ms.locfileid: "67863771"
   * Командлет Get-AzureRmCognitiveServicesAccount теперь поддерживает правильное разбиение на страницы.
 * Службы вычислений
   * Функция команды запуска:
-    - Новый командлет Invoke-AzureRmVMRunCommand вызывает команду запуска на виртуальной машине.
-    - Новый командлет Get-AzureRmVMRunCommandDocument позволяет просматривать доступные документы команды запуска.
+    - Новый командлет Invoke-AzureRmVMRunCommand позволяет вызвать команду запуска на виртуальной машине.
+    - Новый командлет Get-AzureRmVMRunCommandDocument позволяет просматривать доступные документы по командам запуска.
   * В командлет Set-AzureRmDataDisk добавлен параметр StorageAccountType.
   * Добавлена поддержка зон доступности для виртуальной машины, масштабируемого набора виртуальных машин и диска.
-    - В командлеты New-AzureRmVM, New-AzureRmVMConfig, New-AzureRmVmssConfig и New-AzureRmDiskConfig добавлен новый параметр Zone.
+    - Новый параметр Zone добавлен в командлеты New-AzureRmVM, New-AzureRmVMConfig, New-AzureRmVmssConfig и New-AzureRmDiskConfig.
   * Функция последовательного обновления масштабируемого набора виртуальных машин:
-    - Новый командлет Start-AzureRmVmssRollingOSUpgrade вызывает в ОС последовательное обновление масштабируемого набора виртуальных машин.
+    - Новый командлет Start-AzureRmVmssRollingOSUpgrade позволяет вызвать в ОС последовательное обновление масштабируемого набора виртуальных машин.
     - Новый командлет Set-AzureRmVmssRollingUpgradePolicy позволяет задать политику обновления для последовательного обновления масштабируемого набора виртуальных машин.
-    - Новый командлет Stop-AzureRmVmssRollingUpgrade отменяет последовательное обновление масштабируемого набора виртуальных машин.
-    - Новый командлет Get-AzureRmVmssRollingUpgrade отображает сведения о состоянии последовательного обновления масштабируемого набора виртуальных машин.
+    - Новый командлет Stop-AzureRmVmssRollingUpgrade позволяет отменить последовательное обновление масштабируемого набора виртуальных машин.
+    - Новый командлет Get-AzureRmVmssRollingUpgrade позволяет просмотреть сведения о состоянии последовательного обновления масштабируемого набора виртуальных машин.
   * Для идентификатора, назначенного системой, введен параметр-переключатель AssignIdentity.
-    - В командлеты New-AzureRmVMConfig, New-AzureRmVmssConfig и Update-AzureRmVM добавлен параметр AssignIdentity.
+    - Новый параметр AssignIdentity добавлен в командлеты New-AzureRmVMConfig, New-AzureRmVmssConfig и Update-AzureRmVM.
   * Функция шифрования дисков VMSS:
-    - Новый командлет Set-AzureRmVmssDiskEncryptionExtension включает шифрование дисков в масштабируемом наборе виртуальных машин.
-    - Новый командлет Disable-AzureRmVmssDiskEncryption отключает шифрование дисков в масштабируемом наборе виртуальных машин.
-    - Новый командлет Get-AzureRmVmssDiskEncryptionStatus отображает состояние шифрования диска в масштабируемом наборе виртуальных машин.
-    - Новый командлет Get-AzureRmVmssVMDiskEncryptionStatus отображает состояние шифрования диска в масштабируемом наборе виртуальных машин.
+    - Новый командлет Set-AzureRmVmssDiskEncryptionExtension позволяет включить шифрование дисков в масштабируемом наборе виртуальных машин.
+    - Новый командлет Disable-AzureRmVmssDiskEncryption позволяет отключить шифрование дисков в масштабируемом наборе виртуальных машин.
+    - Новый командлет Get-AzureRmVmssDiskEncryptionStatus позволяет просмотреть сведения о состоянии шифрования диска в масштабируемом наборе виртуальных машин.
+    - Новый командлет Get-AzureRmVmssVMDiskEncryptionStatus позволяет просмотреть сведения о состоянии шифрования диска виртуальных машин в масштабируемом наборе виртуальных машин.
 * Экземпляры контейнеров
   * Добавлены командлеты PowerShell для службы "Экземпляры контейнеров Azure":
     - New-AzureRmContainerGroup;
@@ -130,9 +127,9 @@ ms.locfileid: "67863771"
     - Обновлен командлет New-AzureRmVirtualNetwork: добавлены параметры-переключатели EnableDDoSProtection и EnableVmProtection.
     - В объект PSVirtualNetwork добавлены свойства EnableDDoSProtection и EnableVmProtection.
   * Добавлена поддержка внутренней подсистемы балансировки нагрузки с высоким уровнем доступности.
-    - Обновлен командлет Add-AzureRmLoadBalancerRuleConfig: для параметра Protocol добавлено допустимое значение All.
-    - Обновлен командлет New-AzureRmLoadBalancerRuleConfig: для параметра Protocol добавлено допустимое значение All.
-    - Обновлен командлет Set-AzureRmLoadBalancerRuleConfig: для параметра Protocol добавлено допустимое значение All.
+    - Обновлен командлет Add-AzureRmLoadBalancerRuleConfig: теперь для параметра Protocol является допустимым значение All.
+    - Обновлен командлет New-AzureRmLoadBalancerRuleConfig: теперь для параметра Protocol является допустимым значение All.
+    - Обновлен командлет Set-AzureRmLoadBalancerRuleConfig: теперь для параметра Protocol является допустимым значение All.
   * Добавлена поддержка групп безопасности приложений.
     - Добавлен командлет New-AzureRmApplicationSecurityGroup.
     - Добавлен командлет Get-AzureRmApplicationSecurityGroup.
@@ -221,7 +218,7 @@ ms.locfileid: "67863771"
   * В StartAzureAutomationDscCompilationJob и ImportAzureAutomationDscNodeConfiguration добавлена поддержка управления версиями сборок NodeConfiguration.
   * Исправлены существующие проблемы: устранена проблема с псевдонимом № 3775, а также исправлены проблемы с псевдонимом runOn и поддержкой HybridWorkers.
 * Службы вычислений
-  * Set-AzureRmVMAEMExtension: добавлена поддержка новых размеров дисков уровня "Премиум".
+  * Set-AzureRmVMAEMExtension: добавлена поддержка новых размеров дисков ценовой категории "Премиум".
   * Set-AzureRmVMAEMExtension: добавлена поддержка серии M.
   * В Add-AzureRmVmssExtension добавлен параметр ForceUpdateTag.
   * В New-AzureRmVmssIpConfig добавлен параметр Primary.
@@ -244,8 +241,8 @@ ms.locfileid: "67863771"
 * Сеть
     * Добавлена поддержка IPv6 и новый необязательный параметр -PeerAddressType.
       * New-AzureRmExpressRouteCircuitPeeringConfig:
-      * Set-AzureRmExpressRouteCircuitPeeringConfig: добавлена поддержка IPv6. Добавлен новый необязательный параметр.
-      * Remove-AzureRmExpressRouteCircuitPeeringConfig: добавлена поддержка IPv6. Добавлен новый необязательный параметр.
+      * Set-AzureRmExpressRouteCircuitPeeringConfig: добавлена поддержка протокола IPv6. Добавлен новый необязательный параметр.
+      * Remove-AzureRmExpressRouteCircuitPeeringConfig: добавлена поддержка протокола IPv6. Добавлен новый необязательный параметр.
     * Параметр -ProbeEnabled помечен как устаревший.
       - Add-AzureRmApplicationGatewayBackendHttpSettings
       - New-AzureRmApplicationGatewayBackendHttpSettings
@@ -460,18 +457,18 @@ ms.locfileid: "67863771"
 
 ## <a name="20170607---version-410"></a>07.06.2017: версия 4.1.0
 * Analysis Services:
-    * Добавлены новые номера SKU: B1, В2, S0.
+    * Добавлены новые номера SKU: B1, B2, S0.
     * Добавлена поддержка масштабирования.
 * Cognitive Services:
     * Обновлена подробная информация о лицензионных соглашениях, отображаемая при создании ресурсов Cognitive Services.
 * Службы вычислений
     * Исправлен командлет Test-AzureRmVMAEMExtension для применения к виртуальным машинам с несколькими управляемыми дисками.
-    * Обновлен командлет Set-AzureRmVMAEMExtension: добавлены сведения о кэшировании управляемых дисков уровня "Премиум".
-    * Add-AzureRmVhd: ограничение размера VHD увеличено до 4 ТБ.
+    * Обновлен командлет Set-AzureRmVMAEMExtension: добавлена возможность кэширования информации для управляемых дисков ценовой категории "Премиум".
+    * Add-AzureRmVhd: предельное значение размера VHD увеличено до 4 ТБ.
     * Stop-AzureRmVM: уточнено описание параметра STayProvisioned в документации.
     * New-AzureRmDiskUpdateConfig
       * Нерекомендуемые параметры: CreateOption, StorageAccountId, ImageReference, SourceUri, SourceResourceId.
-    * Set-AzureRmDiskUpdateImageReference: нерекомендуемый командлет.
+    * Set-AzureRmDiskUpdateImageReference: Нерекомендуемые командлеты
     * New-AzureRmSnapshotUpdateConfig
       * Нерекомендуемые параметры: CreateOption, StorageAccountId, ImageReference, SourceUri, SourceResourceId.
     * Set-AzureRmSnapshotUpdateImageReference: нерекомендуемый командлет.
@@ -524,8 +521,8 @@ ms.locfileid: "67863771"
     * Добавлены новые параметры Monitor: MonitorIntervalInSeconds, MonitorTimeoutInSeconds, MonitorToleratedNumberOfFailures.
     * В Monitor добавлен протокол TCP.
 * Управление службами
-    * Add-AzureVhd: ограничение размера VHD увеличено до 4 ТБ.
-    * New-AzureBGPPeering: поддержка устаревшего режима.
+    * Add-AzureVhd: предельное значение размера VHD увеличено до 4 ТБ.
+    * New-AzureBGPPeering: поддержка LegacyMode.
 * Azure.Storage;
     * Обновлена справка для параметров, которые принимают подстановочные знаки, а также обновлен тип StorageContext.
 
@@ -609,14 +606,14 @@ ms.locfileid: "67863771"
   - Get-AzureRmMetricDefinition:
     + выходные данные по-прежнему представляют собой список, но структура списка изменилась.
   - Get-AzureRmMetric:
-    + вызов изменился. Теперь он имеет такой синтаксис: Get-AzureRmMetric ResourceId [MetricNames [TimeGrain] [AggregationType] [StartTime] [EndTime]] [DetailedOutput];
+    + вызов изменился. Теперь он имеет такой синтаксис: Get-AzureRmMetric ResourceId [MetricNames [TimeGrain] [AggregationType] [StartTime] [EndTime]] [DetailedOutput].
     + выходные данные представляют собой список, а структура элементов списка изменилась.
 * Хранилище ключей
   - Добавление поддержки архивации и восстановления секретов Key Vault:
     + секреты можно архивировать и восстанавливать в соответствии с функциональными возможностями, которые поддерживаются для ключей.
 
   - Теперь командлеты службы архивации для ключей и секретов принимают соответствующий объект в качестве входного параметра:
-    + вызывающий объект может выстраивать операции извлечения и архивации в цепочку: Get-AzureKeyVaultKey -VaultName myVault -Name myKey | Backup-AzureKeyVaultKey.
+    + Вызывающий объект может объединить в цепочку операции извлечения и резервного копирования: Get-AzureKeyVaultKey -VaultName myVault -Name myKey | Backup-AzureKeyVaultKey.
 
   - Теперь командлеты службы архивации поддерживают параметр -Force, позволяющий перезаписать существующий файл:
     + обратите внимание, что попытка перезаписать существующий файл больше не вызывает исключение. Вместо этого пользователю будет предложено выбрать дальнейшие действия.

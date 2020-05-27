@@ -1,18 +1,15 @@
 ---
 title: Вход с помощью Azure PowerShell
 description: Сведения о том, как с помощью Azure PowerShell выполнить вход в роли пользователя, субъекта-службы или с помощью управляемых удостоверений для ресурсов Azure.
-author: sptramer
-ms.author: sttramer
-manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 09/04/2019
-ms.openlocfilehash: 21d87bd35da74f09b70976e7b395e7b987fbd3f5
-ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
+ms.openlocfilehash: b28510da68723b294565cef7dca0bcc87a989eab
+ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "79402788"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83387165"
 ---
 # <a name="sign-in-with-azure-powershell"></a>Вход с помощью Azure PowerShell
 

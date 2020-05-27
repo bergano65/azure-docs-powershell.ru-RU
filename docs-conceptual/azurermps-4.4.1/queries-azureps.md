@@ -1,24 +1,21 @@
 ---
 title: Обращение к ресурсам Azure и форматирование результатов | Документация Майкрософт
 description: Как обратиться к ресурсам в Azure и форматировать результаты запроса.
-author: sptramer
-ms.author: sttramer
-manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/30/2017
-ms.openlocfilehash: db161bb0ec1b25b1cb7445724cc5758599dbc674
-ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
+ms.openlocfilehash: 23cc0d13e9ecb17bef04cedc8a0f395a04e89390
+ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "65534656"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83386482"
 ---
 # <a name="querying-for-azure-resources"></a>Обращение к ресурсам Azure
 
 [!INCLUDE [migrate-to-az](../includes/migrate-to-az.md)]
 
-Вы можете обращаться к ресурсам с помощью встроенных командлетов PowerShell. В PowerShell имена командлетов представлены в формате **_глагол-существительное_** . Командлеты, в которых используется глагол **_Get_** (Получить) — это командлеты запроса. Существительные командлета — это типы ресурсов Azure, к которым будет применено действие командлета.
+Вы можете обращаться к ресурсам с помощью встроенных командлетов PowerShell. В PowerShell имена командлетов представлены в формате **_глагол-существительное_**. Командлеты, в которых используется глагол **_Get_** (Получить) — это командлеты запроса. Существительные командлета — это типы ресурсов Azure, к которым будет применено действие командлета.
 
 ## <a name="selecting-simple-properties"></a>Выбор простых свойств
 
