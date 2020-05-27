@@ -1,18 +1,15 @@
 ---
 title: Все отличия между AzureRM и Az версии 1.0.0 для Azure PowerShell
 description: Это руководство по миграции содержит список критических изменений, внесенных в выпуск Az версии 1 в Azure PowerShell.
-author: sptramer
-ms.author: sttramer
-manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/15/2019
-ms.openlocfilehash: ea7593cf2b753b210ff2955b7bd450030ad83596
-ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
+ms.openlocfilehash: d2e67ada70fed91a939dc72935e2fa639c731002
+ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "75035835"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83387026"
 ---
 # <a name="breaking-changes-for-az-100"></a>Критические изменения для Az 1.0.0
 
@@ -365,7 +362,7 @@ RequiredModules = @(@{ModuleName="Az.Profile"; ModuleVersion="1.0.0"})
 ### <a name="azstorage-previously-azurestorage-and-azurermstorage"></a>Az.Storage (ранее Azure.Storage и AzureRM.Storage)
 
 - Для поддержки создания контекста хранения Oauth только с именем учетной записи хранения набор параметров по умолчанию был изменен на `OAuthParameterSet`.
-  - Пример: `$ctx = New-AzureStorageContext -StorageAccountName $accountName`
+  - Например, `$ctx = New-AzureStorageContext -StorageAccountName $accountName`.
 - Параметр `Location` стал обязательным в командлете `Get-AzStorageUsage`
 - Методы API службы хранилища теперь используют асинхронную модель на основе задач (TAP) вместо синхронных вызовов API. В приведенных ниже примерах показаны новые асинхронные команды.
 

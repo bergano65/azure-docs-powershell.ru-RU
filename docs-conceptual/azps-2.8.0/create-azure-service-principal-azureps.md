@@ -1,18 +1,15 @@
 ---
 title: Использование субъектов-служб Azure с помощью Azure PowerShell
 description: В этой статье описывается, как создавать и использовать субъекты-службы с помощью Azure PowerShell.
-author: sptramer
-ms.author: sttramer
-manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 04/23/2019
-ms.openlocfilehash: 4c47d2bac2c63f13ac0ebbccda3e2eed12cd658f
-ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
+ms.openlocfilehash: 2e4ae053df3e3a22e22ec40206cbce98ab5d6ff8
+ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "72370431"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83384952"
 ---
 # <a name="create-an-azure-service-principal-with-azure-powershell"></a>Создание субъекта-службы Azure с помощью Azure PowerShell
 

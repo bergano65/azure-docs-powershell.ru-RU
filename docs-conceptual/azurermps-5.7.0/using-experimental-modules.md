@@ -1,18 +1,15 @@
 ---
 title: Использование экспериментальных модулей Azure PowerShell
 description: Принципы и особенности использования экспериментальных модулей Azure PowerShell.
-author: sptramer
-ms.author: sttramer
-manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 09/05/2017
-ms.openlocfilehash: 9cd88919b51f24d19579b865d9f3d5cc779b62d9
-ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
+ms.openlocfilehash: e3becd414b339eed46f97cf04854a4d019542fe1
+ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "65534772"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83387247"
 ---
 # <a name="using-experimental-azure-powershell-modules"></a>Использование экспериментальных модулей Azure PowerShell
 
@@ -71,7 +68,7 @@ Install-Module AzureRM.Websites.Experiments
 
 - Стандартные интеллектуальные значения. Создайте стандартные интеллектуальные значения для заполнения обязательных полей. Пример:
   - Группа ресурсов
-  - Location
+  - Расположение
   - Зависимые ресурсы
 
 ### <a name="experimental-improvements"></a>Экспериментальные усовершенствования

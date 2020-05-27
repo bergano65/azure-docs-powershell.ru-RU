@@ -5,11 +5,11 @@ ms.date: 10/22/2019
 ms.devlang: powershell
 ms.topic: conceptual
 ms.openlocfilehash: 1bf94f4c7a27328b60b7f9369888f688541ba4a7
-ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
+ms.sourcegitcommit: 10ec909100a70acec94d42f6084e7bf0342c6854
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83386873"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83631019"
 ---
 # <a name="uninstall-the-azure-powershell-module"></a>Удаление модуля Azure PowerShell
 

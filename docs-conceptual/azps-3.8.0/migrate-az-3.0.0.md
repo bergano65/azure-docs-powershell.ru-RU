@@ -1,18 +1,15 @@
 ---
 title: Руководство по переходу на Az версии 3.0.0
 description: Это руководство по переходу содержит список критических изменений, внесенных в выпуск Az версии 3.0 в Azure PowerShell.
-author: sptramer
-ms.author: sttramer
-manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 11/04/2019
-ms.openlocfilehash: e88752e0c997efc4f49161e358072803cb63450a
-ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
+ms.openlocfilehash: 06be35bc3573d00d90a8cf2d822ac051ab72f6bb
+ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81740139"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83387417"
 ---
 # <a name="migration-guide-for-az-300"></a>Руководство по переходу на Az версии 3.0.0
 

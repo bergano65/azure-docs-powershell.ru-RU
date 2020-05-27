@@ -4,12 +4,12 @@ description: Узнайте, как использовать учетные да
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 10/21/2019
-ms.openlocfilehash: d93d7ee0ac88d797b04080e8b96160b4241eaf92
-ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
+ms.openlocfilehash: c79d1d634d5b76b2c6ab6b6ab309c2d49f9f7678
+ms.sourcegitcommit: 10ec909100a70acec94d42f6084e7bf0342c6854
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83387128"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83630934"
 ---
 # <a name="azure-powershell-context-objects"></a>Объекты контекста Azure PowerShell
 
@@ -40,7 +40,7 @@ Get-AzContext -ListAvailable
 Или получите контекст по имени:
 
 ```azurepowershell-interactive
-$context = Get-Context -Name "mycontext"
+$context = Get-AzContext -Name "mycontext"
 ```
 
 Имена контекстов могут отличаться от имен связанных подписок.
@@ -50,7 +50,7 @@ $context = Get-Context -Name "mycontext"
 
 ## <a name="create-a-new-azure-context-from-subscription-information"></a>Создание нового контекста Azure из сведений о подписке
 
-Командлет [Set-AzContext](/powershell/module/Az.Accounts/Set-AzContext?view=azps-1.8.0) используется как для создания новых контекстов Azure, так и для их установки в качестве активного контекста.
+Командлет [Set-AzContext](/powershell/module/Az.Accounts/Set-AzContext) используется как для создания новых контекстов Azure, так и для их установки в качестве активного контекста.
 Самый простой способ создать новый контекст Azure — использовать существующие сведения о подписке. Командлет предназначен для получения объекта вывода из `Get-AzSubscription` в качестве переданного значения и настройки нового контекста Azure:
 
 ```azurepowershell-interactive
@@ -67,7 +67,7 @@ Set-AzContext -Name 'MyContextName' -Subscription 'MySubscriptionName' -Tenant '
 
 ## <a name="change-the-active-azure-context"></a>Изменение активного контекста Azure
 
-Для изменения активного контекста Azure можно использовать как `Set-AzContext`, так и [Select-AzContext](/powershell/module/az.accounts/set-azcontext?view=azps-1.8.0). Как описано в статье [Создание нового контекста Azure](#create-a-new-azure-context-from-subscription-information), `Set-AzContext` создает новый контекст Azure для подписки, если он не существует, а затем переключается на использование этого контекста в качестве активного.
+Для изменения активного контекста Azure можно использовать как `Set-AzContext`, так и [Select-AzContext](/powershell/module/az.accounts/set-azcontext). Как описано в статье [Создание нового контекста Azure](#create-a-new-azure-context-from-subscription-information), `Set-AzContext` создает новый контекст Azure для подписки, если он не существует, а затем переключается на использование этого контекста в качестве активного.
 
 `Select-AzContext` предназначен для использования только с существующими контекстами Azure и работает аналогично использованию `Set-AzContext -Context`, но предназначен для использования с конвейером:
 

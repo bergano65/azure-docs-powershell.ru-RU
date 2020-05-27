@@ -1,18 +1,15 @@
 ---
 title: Использование учетных данных пользователя в разных сеансах PowerShell
 description: Узнайте, как использовать учетные данные Azure и другие сведения в нескольких сеансах PowerShell.
-author: sptramer
-ms.author: sttramer
-manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 08/31/2017
-ms.openlocfilehash: 442dfed6175f2f5e2f386df3cb2bcea4871bcc01
-ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
+ms.openlocfilehash: 28f125b76686096d157ef243c9217a4a2c4e019e
+ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "65854167"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83386822"
 ---
 # <a name="persisting-user-credentials-across-powershell-sessions"></a>Использование учетных данных пользователя в разных сеансах PowerShell
 
