@@ -4,12 +4,12 @@ description: Инструкции по установке Azure PowerShell с п
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/14/2020
-ms.openlocfilehash: 9cc681a56270c0894348a0eb6789ded3fa294f54
-ms.sourcegitcommit: 80c3188500fd174f5c5484302360ad87ace0fb9b
+ms.openlocfilehash: d3bed5a96af6bed16cda971a1a40b8416a1b115b
+ms.sourcegitcommit: 10ec909100a70acec94d42f6084e7bf0342c6854
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 05/19/2020
-ms.locfileid: "83554597"
+ms.locfileid: "83630764"
 ---
 # <a name="install-azure-powershell"></a>Установите Azure PowerShell
 
@@ -22,7 +22,7 @@ Azure PowerShell также предоставляется в Azure [Cloud Shell
 > [!NOTE]
 > Для работы в Azure PowerShell на всех платформах мы рекомендуем использовать PowerShell версии 7.x и выше.
 
-Azure PowerShell работает с PowerShell версии 6.2.4 и выше на любой платформе. Кроме того, в Windows также поддерживается использование в PowerShell 5.1. Мы рекомендуем установить [последнюю версию PowerShell](/powershell/scripting/install/installing-powershell) для своей операционной системы. Дополнительных требований для использования Azure PowerShell в PowerShell версии 6.2.4 и выше нет.
+Azure PowerShell работает с PowerShell версии 6.2.4 и выше на любой платформе. Кроме того, в Windows также поддерживается использование в PowerShell 5.1. Установите [последнюю версию PowerShell](/powershell/scripting/install/installing-powershell) для своей операционной системы. Дополнительных требований для использования Azure PowerShell в PowerShell версии 6.2.4 и выше нет.
 
 Чтобы узнать вашу версию PowerShell, выполните приведенную ниже команду:
 
@@ -35,7 +35,7 @@ $PSVersionTable.PSVersion
 1. Выполните обновление до [Windows PowerShell 5.1](/powershell/scripting/install/installing-windows-powershell#upgrading-existing-windows-powershell).
    Если вы используете Windows 10 версии 1607 и выше, у вас уже есть PowerShell версии 5.1.
 2. [Установите платформу .NET Framework версии 4.7.2 или более поздней](/dotnet/framework/install).
-3. Убедитесь, что у вас установлена последняя версия PowerShellGet. Запустите сеанс PowerShell 5.1, щелкнув **Запуск от имени администратора** и выполните `Install-Module -Name PowerShellGet -AllowClobber -Force`.
+3. Убедитесь, что у вас установлена последняя версия PowerShellGet. Выполните `Install-Module -Name PowerShellGet -Force`.
 
 ## <a name="install-the-azure-powershell-module"></a>Установка модуля Azure PowerShell
 
@@ -45,7 +45,7 @@ $PSVersionTable.PSVersion
 Использование командлетов PowerShellGet — предпочтительный метод установки. Установите модуль Az только для текущего пользователя. Это рекомендуемая область установки. Этот метод работает одинаково на платформах Windows, macOS и Linux. Выполните следующую команду из сеанса PowerShell:
 
 ```powershell-interactive
-if ($PSVersionTable.PSEdition -eq 'Desktop' -and (Get-Module -Name AzureRM -ListAvailable)) {
+if (Get-Module -Name AzureRM -ListAvailable) {
     Write-Warning -Message 'Az module not installed. Having both the AzureRM and Az modules installed at the same time is not supported.'
 } else {
     Install-Module -Name Az -AllowClobber -Scope CurrentUser
@@ -69,7 +69,7 @@ Are you sure you want to install the modules from 'PSGallery'?
 Для установки модуля для всех пользователей системы требуются повышенные права. Запустите сеанс PowerShell **от имени администратора** в Windows либо выполните команду `sudo` в macOS или Linux:
 
 ```powershell-interactive
-if ($PSVersionTable.PSEdition -eq 'Desktop' -and (Get-Module -Name AzureRM -ListAvailable)) {
+if (Get-Module -Name AzureRM -ListAvailable) {
     Write-Warning -Message 'Az module not installed. Having both the AzureRM and Az modules installed at the same time is not supported.'
 } else {
     Install-Module -Name Az -AllowClobber -Scope AllUsers
@@ -134,7 +134,7 @@ Connect-AzAccount
 Командлеты PowerShellGet не могут обновлять модули, установленные из пакета MSI. Пакеты MSI не обновляют модули, установленные с помощью PowerShellGet. Если у вас возникли проблемы с обновлением с помощью модуля PowerShellGet, необходимо выполнить **повторную установку**, а не просто **обновление**. Повторная установка выполняется так же, как и первоначальная, но необходимо добавить параметр `-Force`:
 
 ```powershell
-if ($PSVersionTable.PSEdition -eq 'Desktop' -and (Get-Module -Name AzureRM -ListAvailable)) {
+if (Get-Module -Name AzureRM -ListAvailable) {
     Write-Warning -Message 'Az module not installed. Having both the AzureRM and Az modules installed at the same time is not supported.'
 } else {
     Install-Module -Name Az -AllowClobber -Force
@@ -155,25 +155,13 @@ Get-InstalledModule -Name Az -AllVersions | Select-Object -Property Name, Versio
 
 Если у вас установлено несколько версий модуля, средство автоматической загрузки модулей и `Import-Module` загрузят последнюю версию по умолчанию.
 
-Определенную версию модуля `Az` можно установить или загрузить с помощью параметра `-RequiredVersion`.
+Определенную версию модуля `Az` можно установить или загрузить с помощью параметра `-RequiredVersion`:
 
 ```powershell-interactive
 # Install Az version 3.6.1
 Install-Module -Name Az -RequiredVersion 3.6.1
 # Load Az version 3.6.1
 Import-Module -Name Az -RequiredVersion 3.6.1
-```
-
-## <a name="use-multiple-repositories-with-powershellget"></a>Использование нескольких репозиториев с PowerShellGet
-
-Параметр **Repository** является обязательным, если вы добавили дополнительные репозитории в PowerShellGet в системе и модуль Az можно найти более чем в одном из них.
-
-```powershell-interactive
-if ($PSVersionTable.PSEdition -eq 'Desktop' -and (Get-Module -Name AzureRM -ListAvailable)) {
-    Write-Warning -Message 'Az module not installed. Having both the AzureRM and Az modules installed at the same time is not supported.'
-} else {
-    Install-Module -Name Az -Repository PSGallery -AllowClobber -Force
-}
 ```
 
 ## <a name="provide-feedback"></a>Отзывы
