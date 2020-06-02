@@ -4,12 +4,12 @@ description: Сведения о том, как установить Azure Power
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 10/22/2019
-ms.openlocfilehash: d51a65d3e8600e8b381da0f485725c0345e37215
-ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
+ms.openlocfilehash: 1bae6879dcf3cd56f9a8d6400bcd516e0cbf6a19
+ms.sourcegitcommit: 9f5c7d231b069ad501729bf015a829f3fe89bc6a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83387077"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84121649"
 ---
 # <a name="install-azure-powershell-on-windows-with-msi"></a>Установка Azure PowerShell в ОС Windows с помощью пакета MSI
 
@@ -17,8 +17,7 @@ ms.locfileid: "83387077"
 
 ## <a name="requirements"></a>Требования
 
-Установщик MSI для Azure PowerShell работает __только__ с PowerShell 5.1 в Windows. Для установки на платформах, отличных от Windows, или более поздних версий PowerShell [используйте PowerShellGet](install-az-ps.md).
-Чтобы узнать вашу версию PowerShell, выполните приведенную ниже команду:
+Установщик MSI в Windows предназначен для только установки Azure PowerShell 5.1. Для установки на платформах, отличающихся от Windows, или более поздних версий PowerShell [выполните установку PowerShellGet](install-az-ps.md). Чтобы узнать вашу версию PowerShell, выполните приведенную ниже команду:
 
 ```powershell-interactive
 $PSVersionTable.PSVersion
@@ -26,12 +25,12 @@ $PSVersionTable.PSVersion
 
 Чтобы использовать Azure PowerShell в PowerShell 5.1, сделайте следующее:
 
-1. При необходимости выполните обновление до [Windows PowerShell 5.1](/powershell/scripting/install/installing-windows-powershell#upgrading-existing-windows-powershell). Если вы используете Windows 10, среда PowerShell 5.1 уже установлена.
+1. При необходимости выполните обновление до [Windows PowerShell 5.1](/powershell/scripting/windows-powershell/install/installing-windows-powershell#upgrading-existing-windows-powershell). Если вы используете Windows 10, среда PowerShell 5.1 уже установлена.
 2. [Установите платформу .NET Framework версии 4.7.2 или более поздней](/dotnet/framework/install).
 
 ## <a name="install-or-update-on-windows-using-the-msi-package"></a>Установка или обновление в Windows с помощью пакета MSI
 
-Azure PowerShell для Windows можно установить с помощью MSI-файла из [GitHub](https://github.com/Azure/azure-powershell/releases/tag/v1.8.0-April2019). Если вы установили более ранние версии модулей Azure с помощью пакета MSI, установщик удалит их автоматически. Пакет MSI устанавливает модули в `${env:ProgramFiles}\WindowsPowerShell\Modules`.
+Пакет MSI для Azure PowerShell доступен на [GitHub](https://github.com/Azure/azure-powershell/releases/tag/v1.8.0-April2019). Если вы установили более ранние версии модулей Azure PowerShell с помощью пакета MSI, установщик удалит их автоматически. Пакет MSI устанавливает модули в `${env:ProgramFiles}\WindowsPowerShell\Modules`.
 
 Чтобы начать работу с Azure PowerShell, выполните вход, используя данные своей учетной записи в Azure.
 
@@ -41,17 +40,14 @@ Connect-AzAccount
 ```
 
 > [!NOTE]
->
 > Если вы отключили автоматическую загрузку модулей, вам нужно вручную импортировать модуль с помощью `Import-Module Az`. Из-за структуры модуля эта операция может занять около минуты.
 
 Это действие нужно будет повторить для каждого нового сеанса PowerShell. Чтобы узнать, как повторно использовать свои данные для входа в Azure в разных сеансах PowerShell, см. статью [Использование учетных данных пользователя в разных сеансах PowerShell](context-persistence.md).
 
 ## <a name="provide-feedback"></a>Отзывы
 
-Если вы нашли ошибку при работе с Azure Powershell, сообщите о ней [на сайте GitHub](https://github.com/Azure/azure-powershell/issues).
-Чтобы отправить отзыв из командной строки, используйте командлет [Send-Feedback](/powershell/module/az.accounts/send-feedback).
+Если вы нашли ошибку при работе с Azure PowerShell, [сообщите о проблеме на GitHub](https://github.com/Azure/azure-powershell/issues). Чтобы отправить отзыв из командной строки, используйте командлет [Send-Feedback](/powershell/module/az.accounts/send-feedback).
 
 ## <a name="next-steps"></a>Next Steps
 
-Дополнительные сведения о модулях Azure PowerShell и их функциях см. в статье [Get Started with Azure PowerShell](get-started-azureps.md) (Начало работы с Azure PowerShell).
-Если вы знакомы с Azure PowerShell и вам необходимо мигрировать из AzureRM, см. статью [Migrate from AzureRM to Az](migrate-from-azurerm-to-az.md) (Миграция с AzureRM на Az).
+Дополнительные сведения о модулях Azure PowerShell и их функциях см. в статье [Get Started with Azure PowerShell](get-started-azureps.md) (Начало работы с Azure PowerShell). Если вы знакомы с Azure PowerShell и вам необходимо мигрировать из AzureRM, см. статью [Migrate from AzureRM to Az](migrate-from-azurerm-to-az.md) (Миграция с AzureRM на Az).

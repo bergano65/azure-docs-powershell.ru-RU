@@ -4,12 +4,12 @@ description: Узнайте обо всех последних обновлен�
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/10/2020
-ms.openlocfilehash: c02cfaa7f7f39393f21cec31c5115f009381b19c
-ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
+ms.openlocfilehash: 9dd733865ba8235eed6dcef4637a63ad93999338
+ms.sourcegitcommit: 9f5c7d231b069ad501729bf015a829f3fe89bc6a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81446059"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84121916"
 ---
 # <a name="azure-powershell-release-notes"></a>Заметки о выпуске Azure PowerShell
 ## <a name="0100-preview---april-2020"></a>0.10.0-preview — апрель 2020 г.
@@ -29,7 +29,7 @@ ms.locfileid: "81446059"
   - Az.Websites
 * В PowerShell появились три новых модуля Az, которые работают с Azure Stack Hub: Az.Databox, Az.IotHub и Az.EventHub.
 * Команды остаются прежними же за исключением незначительных изменений, таких как изменение AzureRM на Az.
-* См. обновленную ссылку на документацию по [PowerShell для Azure Stack Hub](aka.ms/InstallASHPowerShell)
+* См. обновленную ссылку на документацию по [PowerShell для Azure Stack Hub](https://aka.ms/InstallASHPowerShell)
 
 #### <a name="azaccounts"></a>Az.Accounts
 * Обновление ADAL до MSAL
@@ -40,7 +40,7 @@ ms.locfileid: "81446059"
 * Исправлено исключение NullReferenceException командлетов Get-AzTenant/Get-AzDefault/Set-AzDefault, если вход не выполнен [10292]
 
 #### <a name="azcompute"></a>Az.Compute
-* Добавлены следующие параметры к командлету New-AzDiskConfig: 
+* Добавлены следующие параметры к командлету New-AzDiskConfig:
     - DiskIOPSReadOnly, DiskMBpsReadOnly, MaxSharesCount, GalleryImageReference
 * Разрешено свойство Encryption для параметра Target командлета New-AzGalleryImageVersion.
 * Исправлена проблема с tempDisk для командлетов Set-AzVmss -Reimage и Invoke-AzVMReimage. [11354]

@@ -4,12 +4,12 @@ description: Сведения о том, как установить Azure Power
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/10/2020
-ms.openlocfilehash: 1bd5bd1ae529a63c848b7aa835272d79b4011d32
-ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
+ms.openlocfilehash: 07abfc9a4277c0d658830c397ad5c1abfbe95abe
+ms.sourcegitcommit: 9f5c7d231b069ad501729bf015a829f3fe89bc6a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81740207"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84122212"
 ---
 # <a name="install-azure-powershell-on-windows-with-msi"></a>Установка Azure PowerShell в ОС Windows с помощью пакета MSI
 
@@ -25,7 +25,7 @@ $PSVersionTable.PSVersion
 
 Чтобы использовать Azure PowerShell в PowerShell 5.1, сделайте следующее:
 
-1. При необходимости выполните обновление до [Windows PowerShell 5.1](/powershell/scripting/install/installing-windows-powershell#upgrading-existing-windows-powershell). Если вы используете Windows 10, среда PowerShell 5.1 уже установлена.
+1. При необходимости выполните обновление до [Windows PowerShell 5.1](/powershell/scripting/windows-powershell/install/installing-windows-powershell#upgrading-existing-windows-powershell). Если вы используете Windows 10, среда PowerShell 5.1 уже установлена.
 2. [Установите платформу .NET Framework версии 4.7.2 или более поздней](/dotnet/framework/install).
 
 ## <a name="install-or-update-on-windows-using-the-msi-package"></a>Установка или обновление в Windows с помощью пакета MSI
