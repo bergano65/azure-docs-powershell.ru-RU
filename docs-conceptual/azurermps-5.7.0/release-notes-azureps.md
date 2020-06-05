@@ -1,21 +1,18 @@
 ---
-title: Журнал изменений Azure PowerShell | Документация Майкрософт
+title: Журнал изменений Azure PowerShell
 description: Это руководство содержит историю изменений Azure PowerShell, внесенных в новом выпуске.
-author: sptramer
-ms.author: sttramer
-manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.workload: ''
 ms.date: 2/20/2018
-ms.openlocfilehash: 61ab0f91c3d6fffdbffd336fa0d6ed9b0ab8f6ec
-ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
+ms.openlocfilehash: cf8d1fc76feb07e075339255de63e09f59187dc6
+ms.sourcegitcommit: 9f5c7d231b069ad501729bf015a829f3fe89bc6a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "68863292"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84122056"
 ---
-# <a name="release-notes"></a>Заметки о выпуске
+# <a name="azure-powershell-release-notes"></a>Заметки о выпуске Azure PowerShell
 
 [!INCLUDE [migrate-to-az](../includes/migrate-to-az.md)]
 
@@ -23,7 +20,7 @@ ms.locfileid: "68863292"
 
 ---
 
-# <a name="azure-powershell-570"></a>Azure PowerShell 5.7.0
+## <a name="azure-powershell-570"></a>Azure PowerShell 5.7.0
 
 Установщик Azure PowerShell 5.7.0: [ссылка](https://github.com/Azure/azure-powershell/releases/download/v5.7.0-April2018/azure-powershell.5.7.0.msi)
 
@@ -41,7 +38,7 @@ Install-Module -Name AzureRM -Repository PSGallery -Force
 Update-Module -Name AzureRM
 ```
 
-## <a name="changes-since-last-release"></a>Изменения с момента последнего выпуска
+### <a name="changes-since-last-release"></a>Изменения с момента последнего выпуска
 
 #### <a name="general"></a>Общие сведения
 * Обновление до последней версии Azure ClientRuntime.
@@ -149,7 +146,7 @@ Update-Module -Name AzureRM
     - Update-AzureRmRecoveryServicesAsrProtectionDirection
 
 #### <a name="azurermstorage"></a>AzureRM.Storage
-* Прекращено использование параметров EnableEncryptionService и DisableEncryptionService для новых и используемых командлетов учетной записи хранения, так как шифрование неактивных включено по умолчанию без возможности отключения.
+* Прекращено использование параметров EnableEncryptionService и DisableEncryptionService для командлетов учетной записи хранения New- и Set-, так как по умолчанию включено кэшрование неактивных данных без возможности отключения.
     - New-AzureRmStorageAccount;
     - Set-AzureRmStorageAccount.
 
@@ -184,9 +181,9 @@ Update-Module -Name AzureRM
 * New-AzureRmVMSS отображает строки подключения в режиме подробного протоколирования.
 * New-AzureRmVmss поддерживает общедоступные IP-адреса, правила балансировки нагрузки и правила NAT для входящего трафика.
 * Функция WriteAccelerator:
-    - Параметр-переключатель WriteAccelerator добавлен в следующие командлеты: Set-AzureRmVMOSDisk; Set-AzureRmVMDataDisk; Add-AzureRmVMDataDisk; Add-AzureRmVmssDataDisk.
-    - Параметр-переключатель OsDiskWriteAccelerator добавлен в следующий командлет: Set-AzureRmVmssStorageProfile.
-    - Логический параметр OsDiskWriteAccelerator добавлен в следующие командлеты: Update-AzureRmVM; Update-AzureRmVmss.
+    - В следующие командлеты добавлен новый параметр-переключатель WriteAccelerator: Set-AzureRmVMOSDisk, Set-AzureRmVMDataDisk, Add-AzureRmVMDataDisk  и Add-AzureRmVmssDataDisk.
+    - В следующий командлет добавлен новый параметр-переключатель OsDiskWriteAccelerator:     Set-AzureRmVmssStorageProfile.
+    - В следующие командлеты добавлен новый логический параметр OsDiskWriteAccelerator:     Update-AzureRmVM и Update-AzureRmVmss.
 
 #### <a name="azurermdatafactories"></a>AzureRM.DataFactories
 * Устранена проблема с шифрованием учетных данных, при которой происходила ошибка некоторых операций шифрования.
@@ -275,18 +272,18 @@ Update-Module -Name AzureRM
     - Remove-AzureRmNetworkWatcherConnectionMonitor
 * Обновлена документация AzureRmApplicationGatewayBackendAddressPool для удаления устаревшего примера.
 * Добавлен флаг EnableHttp2 для шлюза приложений.
-    - Добавлен дополнительный параметр -EnableHttp2 для New-AzureRmApplicationGateway.
+    - Обновлен командлет New-AzureRmApplicationGateway: добавлен необязательный параметр -EnableHttp2.
 * Добавлены теги IpTag для PublicIpAddress.
-    - Добавлены теги IpTag для New-AzureRmPublicIpAddress.
+    - Обновлен командлет New-AzureRmPublicIpAddress: добавлен параметр IpTags.
     - Добавлены теги IpTag для New-AzureRmPublicIpTag.
 * Добавлено свойство DisableBgpRoutePropagation в RouteTable и effectiveRoute.
 
 #### <a name="azurermresources"></a>AzureRM.Resources
-* Добавлен отсутствующий пример в документацию по Register-AzureRmProviderFeature.
-* Добавлен отсутствующий пример в документацию по Register-AzureRmResourceProvider.
+* Register-AzureRmProviderFeature: в документацию добавлен отсутствовавший пример.
+* Register-AzureRmResourceProvider: в документацию добавлен отсутствовавший пример.
 
 #### <a name="azurermstorage"></a>AzureRM.Storage
-* Прекращено использование параметров EnableEncryptionService и DisableEncryptionService для новых и используемых командлетов учетной записи хранения, так как шифрование неактивных включено по умолчанию без возможности отключения.
+* Прекращено использование параметров EnableEncryptionService и DisableEncryptionService для командлетов учетной записи хранения New- и Set-, так как по умолчанию включено кэшрование неактивных данных без возможности отключения.
     - New-AzureRmStorageAccount;
     - Set-AzureRmStorageAccount.
 
@@ -351,7 +348,7 @@ Update-Module -Name AzureRM
 * Добавлена поддержка запросов API версии 2 с помощью `Invoke-AzureRmOperationalInsightsQuery`. Дополнительные сведение о новом API-интерфейсе см. здесь: [https://dev.loganalytics.io/](https://dev.loganalytics.io/).
 
 ### <a name="azurermresources"></a>AzureRM.Resources
-* `Get-AzureRmADServicePrincipal`: удален параметр `-ServicePrincipalName` из пустого набора параметров по умолчанию из-за наличия набора параметров имени субъекта-службы.
+* `Get-AzureRmADServicePrincipal`: из пустого набора параметров по умолчанию удален параметр `-ServicePrincipalName` из-за наличия набора параметров имени субъекта-службы.
 
 ### <a name="azurermservicebus"></a>AzureRM.ServiceBus
 
@@ -493,7 +490,7 @@ Update-Module -Name AzureRM
 * Добавлено средство заполнения расположения для параметров -Location, которое включает заполнение нажатием клавиши TAB в допустимых расположениях.
 * Добавлено средство заполнения групп ресурсов для параметров -ResourceGroup, которое включает заполнение нажатием клавиши TAB в группах ресурсов в текущей подписке.
 * Добавлена поддержка параметра -AsJob для долго выполняющихся командлетов KeyVault. Благодаря этому выбранные командлеты могут выполняться в фоновом режиме и возвращать задание для отслеживания и контроля хода выполнения.
-  * Затронутый командлет: Remove-AzureRmKeyVault.
+  * Это касается командлета Remove-AzureRmKeyVault
 * Исправлена ошибка в командлете Set-AzureRmKeyVaultAccessPolicy, когда фильтр AAD настраивал в качестве имени субъекта-службы предоставляемое имя участника-пользователя вместо настройки имени участника-пользователя.
   - Дополнительные сведения о проблеме см. здесь: https://github.com/Azure/azure-powershell/issues/5201.
 
@@ -723,7 +720,7 @@ Update-Module -Name AzureRM
   - AzureRM.StreamAnalytics
 
 ## <a name="2017118---version-500"></a>8\.11.2017, версия 5.0.0
-* ПРИМЕЧАНИЕ. Это важное изменение выпуска. Полный список критических изменений см. в руководстве по миграции (https://aka.ms/azps-migration-guide) ).
+* Примечание. Это критическое изменение выпуска. Полный список критических изменений см. в руководстве по миграции (https://aka.ms/azps-migration-guide) ).
 * Для всех командлетов в AzureRM теперь добавлена поддержка справки в Интернете.
   - Запустите командлет Get-Help с параметром -Online, чтобы открыть справку в Интернете в браузере по умолчанию.
 * Analysis Services:
@@ -793,17 +790,17 @@ Update-Module -Name AzureRM
 * Data Lake Analytics
   * Сведения о важных изменениях, внесенных в этот выпуск DataLakeAnalytics, см. в руководстве по миграции.
   * Изменено одно из двух свойств OutputTypes командлета Get-AzureRmDataLakeAnalyticsAccount.
-    - List\<DataLakeAnalyticsAccount> на List\<PSDataLakeAnalyticsAccountBasic>
+    - Список \<DataLakeAnalyticsAccount> заменен на список \<PSDataLakeAnalyticsAccountBasic>.
     - Свойства PSDataLakeAnalyticsAccountBasic являются строгим подмножеством свойств DataLakeAnalyticsAccount.
     - Дополнительные свойства DataLakeAnalyticsAccount не возвращаются службой.  Следовательно, описываемое изменение точно это отражает. Эти дополнительные свойства по-прежнему связаны с PSDataLakeAnalyticsAccountBasic, но теперь они отмечены как Obsolete.
   * Изменено одно из двух свойств OutputTypes командлета Get-AzureRmDataLakeAnalyticsJob.
-    - List\<JobInformation> на List\<PSJobInformationBasic>
+    - Список \<JobInformation> заменен на список \<PSJobInformationBasic>.
     - Свойства PSJobInformationBasic являются строгим подмножеством свойств JobInformation.
     - Дополнительные свойства JobInformation не возвращаются службой.  Следовательно, описываемое изменение точно это отражает. Эти дополнительные свойства по-прежнему связаны с PSJobInformationBasic, но теперь они отмечены как Obsolete.
 * Data Lake Store
   * Сведения о важных изменениях, внесенных в этот выпуск DataLakeStore, см. в руководстве по миграции.
   * Изменено одно из двух свойств OutputTypes командлета Get-AzureRmDataLakeStoreAccount.
-    - List\<PSDataLakeStoreAccount> на List\<PSDataLakeStoreAccountBasic>
+    - Список \<PSDataLakeStoreAccount> заменен на список \<PSDataLakeStoreAccountBasic>.
     - Свойства PSDataLakeStoreAccountBasic являются строгим подмножеством свойств PSDataLakeStoreAccount.
     - Дополнительные свойства PSDataLakeStoreAccount не возвращаются службой.  Следовательно, описываемое изменение точно это отражает. Эти дополнительные свойства по-прежнему связаны с PSDataLakeStoreAccountBasic, но теперь они отмечены как Obsolete.
 * DNS:

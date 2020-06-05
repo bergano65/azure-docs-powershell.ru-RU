@@ -4,12 +4,12 @@ description: Общие сведения об Azure PowerShell со ссылка
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 12/20/2018
-ms.openlocfilehash: 91607252c33deb05efebb2d02608084a4b9c7b35
-ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
+ms.openlocfilehash: 9d1b9c35829facc34cd7c252cb450fcce18685b2
+ms.sourcegitcommit: 9f5c7d231b069ad501729bf015a829f3fe89bc6a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83385564"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84122226"
 ---
 # <a name="overview-of-azure-powershell"></a>Общие сведения об Azure PowerShell
 
@@ -21,17 +21,17 @@ ms.locfileid: "83385564"
 
 Приведенные ниже примеры помогут вам понять, как реализовать типичные сценарии с помощью Azure PowerShell:
 
-* [Виртуальные машины Linux](/azure/virtual-machines/virtual-machines-linux-powershell-samples?toc=/powershell/azure/toc.json)
-* [Виртуальные машины Windows](/azure/virtual-machines/virtual-machines-windows-powershell-samples?toc=/powershell/azure/toc.json)
-* [Веб-приложения](/azure/app-service-web/app-service-powershell-samples?toc=/powershell/azure/toc.json)
-* [Базы данных SQL](/azure/sql-database/sql-database-powershell-samples?toc=/powershell/azure/toc.json)
+- [Виртуальные машины Linux](/azure/virtual-machines/virtual-machines-linux-powershell-samples?toc=/powershell/azure/toc.json)
+- [Виртуальные машины Windows](/azure/virtual-machines/virtual-machines-windows-powershell-samples?toc=/powershell/azure/toc.json)
+- [Веб-приложения](/azure/app-service-web/app-service-powershell-samples?toc=/powershell/azure/toc.json)
+- [Базы данных SQL](/azure/sql-database/sql-database-powershell-samples?toc=/powershell/azure/toc.json)
 
 ## <a name="learn-powershell-basics"></a>Изучение основ PowerShell
 
 Если вы не знакомы с PowerShell, ознакомьтесь с вводными сведениями о PowerShell.
 
-* [Installing Windows PowerShell](/powershell/scripting/install/installing-windows-powershell) (Установка Windows PowerShell)
-* [Scripting with Windows PowerShell](/powershell/scripting/powershell-scripting) (Написание скриптов с помощью Windows PowerShell)
+- [Installing Windows PowerShell](/powershell/scripting/install/installing-powershell) (Установка Windows PowerShell)
+- [Учебные ресурсы для PowerShell](/powershell/scripting/learn/more-powershell-learning)
 
 Вы также можете посмотреть этот видеоролик: [Основы PowerShell. Часть 1. Начало работы с PowerShell](https://channel9.msdn.com/Blogs/Taste-of-Premier/PowerShellBasicsPart1).
 
@@ -42,7 +42,7 @@ ms.locfileid: "83385564"
 
 ## <a name="other-azure-powershell-modules"></a>Другие модули Azure PowerShell
 
-* [Azure Active Directory](/powershell/azure/active-directory/)
-* [Azure Information Protection](/powershell/azure/aip/)
-* [Azure Service Fabric](/powershell/azure/service-fabric/)
-* [Azure ElasticDB](/powershell/azure/elasticdbjobs/)
+- [Azure Active Directory](/powershell/azure/active-directory/)
+- [Azure Information Protection](/powershell/azure/aip/)
+- [Azure Service Fabric](/powershell/azure/service-fabric/)
+- [Azure ElasticDB](/powershell/azure/elasticdbjobs/)

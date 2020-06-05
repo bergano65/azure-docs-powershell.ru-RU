@@ -4,12 +4,12 @@ description: Знакомством с новым модулем Az для Azure
 ms.date: 05/10/2019
 ms.devlang: powershell
 ms.topic: conceptual
-ms.openlocfilehash: a74b7fecdb108d45c09edb9939e9a8fa04a15bff
-ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
+ms.openlocfilehash: bef3ae8344a13e170a30889c1954fd2e9b29dcdf
+ms.sourcegitcommit: 9f5c7d231b069ad501729bf015a829f3fe89bc6a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83387638"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84121938"
 ---
 # <a name="introducing-the-new-azure-powershell-az-module"></a>Знакомство с новым модулем Az для Azure PowerShell
 
@@ -23,7 +23,7 @@ Az — это новый модуль, поэтому нумерация вер
 
 Значительные обновления могут быть сопряжены со сложностями, поэтому важно узнать, почему было принято решение представить новый набор модулей с новыми командлетами для взаимодействия с Azure через PowerShell.
 
-Самое большое и важное изменение заключается в том, что PowerShell стал кроссплатформенным продуктом с момента появления [PowerShell Core 6.x](/powershell/scripting/overview) на основе библиотеки .NET Standard.
+Самое большое и важное изменение заключается в том, что PowerShell стал кроссплатформенным продуктом с момента появления [PowerShell](/powershell/scripting/overview) на основе библиотеки .NET Standard.
 Мы стремимся обеспечить поддержку Azure на всех платформах. Это означает, что модули Azure PowerShell необходимо обновить для использования .NET Standard и совместимости с PowerShell Core. Вместо того чтобы вносить в существующий модуль AzureRM сложные изменения для добавления этой поддержки, был создан модуль Az.
 
 Это решение также дало нашим инженерам возможность согласовать проектирование и именование командлетов и модулей. Все модули теперь начинаются с префикса `Az.`, а все командлеты используют форму _команда_-`Az`_существительное_. Ранее имена командлетов не только были длиннее, но и в них были несоответствия.
@@ -36,15 +36,14 @@ Az — это новый модуль, поэтому нумерация вер
 
 Для поддержки новых функций Azure в PowerShell необходимо как можно скорее перейти на модуль Az. Если вы не готовы установить модуль Az в качестве замены AzureRM, вам доступны несколько способов экспериментирования с Az.
 
-* Использование среды `PowerShell` с [Azure Cloud Shell](https://docs.microsoft.com/azure/cloud-shell/overview).
-  Azure Cloud Shell — это браузерная среда оболочки, которая поставляется с пакетом установки модуля Az и поддерживает псевдонимы совместимости `Enable-AzureRM`.
+* Использование среды `PowerShell` с [Azure Cloud Shell](/azure/cloud-shell/overview). Azure Cloud Shell — это браузерная среда оболочки, которая поставляется с пакетом установки модуля Az и поддерживает псевдонимы совместимости `Enable-AzureRM`.
 * Оставив установленный модуль AzureRM с PowerShell 5.1 для Windows, установите модуль Az для PowerShell Core 6.x или более поздней версии. PowerShell 5.1 для Windows и PowerShell Core используют отдельные коллекции модулей. Следуйте инструкциям, чтобы [установить PowerShell Core](/powershell/scripting/install/installing-powershell-core-on-windows), а затем [установите модуль Az](install-az-ps.md) из терминала PowerShell Core.
 
 Чтобы выполнить обновление из существующей установки AzureRM, сделайте следующее:
 
 1. [Удалите модуль AzureRM для Azure PowerShell](/powershell/azure/uninstall-az-ps#uninstall-the-azurerm-module).
 2. [Установите модуль Az для Azure PowerShell](install-az-ps.md).
-3. __НЕОБЯЗАТЕЛЬНО__. Активируйте режим совместимости, чтобы добавить псевдонимы для командлетов AzureRM с помощью [Enable-AzureRMAlias](/powershell/module/az.accounts/enable-azurermalias), пока вы не ознакомитесь с новым набором команд. Дополнительные сведения см. в следующем разделе или в статье [Перенос Azure PowerShell с AzureRM на Az](migrate-from-azurerm-to-az.md).
+3. **НЕОБЯЗАТЕЛЬНО**. Активируйте режим совместимости, чтобы добавить псевдонимы для командлетов AzureRM с помощью [Enable-AzureRMAlias](/powershell/module/az.accounts/enable-azurermalias), пока вы не ознакомитесь с новым набором команд. Дополнительные сведения см. в следующем разделе или в статье [Перенос Azure PowerShell с AzureRM на Az](migrate-from-azurerm-to-az.md).
 
 ## <a name="migrate-existing-scripts-to-az"></a>Миграция существующих скриптов на Az
 
