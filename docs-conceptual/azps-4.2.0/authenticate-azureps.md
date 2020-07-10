@@ -3,19 +3,19 @@ title: Вход с помощью Azure PowerShell
 description: Сведения о том, как с помощью Azure PowerShell выполнить вход в роли пользователя, субъекта-службы или с помощью управляемых удостоверений для ресурсов Azure.
 ms.devlang: powershell
 ms.topic: conceptual
-ms.date: 06/18/2020
-ms.openlocfilehash: f82a9e373806f2f071ae59f6aee7e0a0bd4ea13d
-ms.sourcegitcommit: 5523170e571fbd1dc93bd0fa4223aba3b324d3b0
+ms.date: 7/7/2020
+ms.openlocfilehash: 7ac723202ca9e81c8ef4cba5e844d46b98ba4b67
+ms.sourcegitcommit: 7b368a9be1cea2ac4e7d269e1a51529271269a42
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/25/2020
-ms.locfileid: "85363571"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86098811"
 ---
 # <a name="sign-in-with-azure-powershell"></a>Вход с помощью Azure PowerShell
 
 Azure PowerShell поддерживает несколько методов проверки подлинности. Проще всего приступить к работе можно с помощью оболочки [Azure Cloud Shell](/azure/cloud-shell/overview), которая автоматически выполняет вход в вашу учетную запись. Если используется локальная установка, вы можете выполнить вход в интерактивном режиме с помощью браузера. При написании скриптов автоматизации рекомендуется использовать [субъект-службу](create-azure-service-principal-azureps.md) с необходимыми разрешениями. Максимально ограничьте разрешения на вход для своего варианта использования, чтобы обеспечить защиту ресурсов Azure.
 
-Когда вы войдете, команды будут выполняться в вашей подписке по умолчанию. Чтобы изменить активную подписку для сеанса, используйте командлет [Set-AzContext](/powershell/module/az.accounts/set-azcontext). Чтобы изменить подписку по умолчанию, используемую при входе в систему с помощью Azure PowerShell, используйте командлет [Set-AzDefault](/powershell/module/az.accounts/set-azdefault).
+Если у вас есть доступ более чем к одной подписке, вы входите в первую, которую предлагает Azure. Команды выполняются для этой подписки по умолчанию. Чтобы изменить активную подписку для сеанса, используйте командлет [Set-AzContext](/powershell/module/az.accounts/set-azcontext). Чтобы изменить активную подписку и сохранить ее между сеансами в той же системе, используйте командлет [Select-AzContext](/powershell/module/az.accounts/select-azcontext).
 
 > [!IMPORTANT]
 > Одни учетные данные можно использовать в нескольких сеансах PowerShell, пока вы остаетесь в системе.
