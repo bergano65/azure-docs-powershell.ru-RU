@@ -4,12 +4,13 @@ description: Сведения о том, как с помощью Azure PowerShe
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 09/04/2019
-ms.openlocfilehash: b28510da68723b294565cef7dca0bcc87a989eab
-ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
+ms.custom: devx-track-azurepowershell
+ms.openlocfilehash: e9f0cdf7a5add44958bc2510a2ff3d2207b2729a
+ms.sourcegitcommit: 8b3126b5c79f453464d90669f0046ba86b7a3424
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83387165"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89242993"
 ---
 # <a name="sign-in-with-azure-powershell"></a>Вход с помощью Azure PowerShell
 

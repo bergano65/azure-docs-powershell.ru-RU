@@ -4,12 +4,13 @@ description: Узнайте обо всех последних обновлен�
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/10/2020
-ms.openlocfilehash: 9dd733865ba8235eed6dcef4637a63ad93999338
-ms.sourcegitcommit: 9f5c7d231b069ad501729bf015a829f3fe89bc6a
+ms.custom: devx-track-azurepowershell
+ms.openlocfilehash: f0a8c70ac16c99235b9497cddd03ec4796b40482
+ms.sourcegitcommit: 8b3126b5c79f453464d90669f0046ba86b7a3424
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84121916"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89239355"
 ---
 # <a name="azure-powershell-release-notes"></a>Заметки о выпуске Azure PowerShell
 ## <a name="0100-preview---april-2020"></a>0.10.0-preview — апрель 2020 г.

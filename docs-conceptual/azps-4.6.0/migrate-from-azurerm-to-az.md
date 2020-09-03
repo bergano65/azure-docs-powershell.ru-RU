@@ -4,12 +4,13 @@ description: Сведения о действиях и инструментах 
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/10/2019
-ms.openlocfilehash: 0b0b951d540ed91e15472853bba46e4f302921bc
-ms.sourcegitcommit: b94a3f00c147144b0ef7f8cf8d0f151e04674b89
+ms.custom: devx-track-azurepowershell
+ms.openlocfilehash: 83860dd5abfbb1c3da94de6813bceca1bbb0fca7
+ms.sourcegitcommit: 8b3126b5c79f453464d90669f0046ba86b7a3424
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88821922"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89242432"
 ---
 # <a name="migrate-azure-powershell-from-azurerm-to-az"></a>Перенос Azure PowerShell с AzureRM на Az
 
