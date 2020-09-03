@@ -4,12 +4,13 @@ description: Сведения о том, как полностью удалит�
 ms.date: 10/22/2019
 ms.devlang: powershell
 ms.topic: conceptual
-ms.openlocfilehash: 1bf94f4c7a27328b60b7f9369888f688541ba4a7
-ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
+ms.custom: devx-track-azurepowershell
+ms.openlocfilehash: 3e6c2feacea9c5d82e772c2e47fedd2a0d10b561
+ms.sourcegitcommit: 8b3126b5c79f453464d90669f0046ba86b7a3424
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83387196"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89243180"
 ---
 # <a name="uninstall-the-azure-powershell-module"></a>Удаление модуля Azure PowerShell
 
@@ -147,7 +148,7 @@ $versions[0..($versions.Length-2)]  | foreach { Uninstall-AllModules -TargetModu
 ```powershell-interactive
 Uninstall-AzureRm
 ```
-или диспетчер конфигурации служб
+или
 ```powershell-interactive
 Uninstall-Module AzureRm
 ```
@@ -158,7 +159,7 @@ Uninstall-Module AzureRm
 $versions = (Get-InstalledModule AzureRM -AllVersions | Select-Object Version)
 $versions | foreach { Uninstall-AllModules -TargetModule AzureRM -Version ($_.Version) -Force }
 ```
-или диспетчер конфигурации служб
+или
 ```powershell-interactive
 foreach ($module in (Get-Module -ListAvailable AzureRM*).Name |Get-Unique) {
    write-host "Removing Module $module"
