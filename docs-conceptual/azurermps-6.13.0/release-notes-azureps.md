@@ -5,16 +5,17 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.workload: ''
 ms.date: 08/28/2018
-ms.openlocfilehash: 8aa0462af97877e0d20fe898ddd927a6d2850dea
-ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
+ms.custom: devx-track-azurepowershell
+ms.openlocfilehash: 189b360f8825b7de93b67b0b2cbe670d00187327
+ms.sourcegitcommit: 8b3126b5c79f453464d90669f0046ba86b7a3424
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83387332"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89241361"
 ---
 # <a name="release-notes"></a>Заметки о выпуске
 
-[!INCLUDE [migrate-to-az](../includes/migrate-to-az.md)]
+[!INCLUDE [migrate-to-az-banner](../../includes/migrate-to-az-banner.md)]
 
 Здесь приведен список изменений, внесенных в Azure PowerShell в этом выпуске.
 
@@ -46,7 +47,7 @@ ms.locfileid: "83387332"
 #### <a name="azurermnetwork"></a>AzureRM.Network
 * Добавлены командлеты New-AzureRmApplicationGatewayCustomError, Add-AzureRmApplicationGatewayCustomError, Get-AzureRmApplicationGatewayCustomError, Set-AzureRmApplicationGatewayCustomError, Remove-AzureRmApplicationGatewayCustomError, Add-AzureRmApplicationGatewayHttpListenerCustomError, Get-AzureRmApplicationGatewayHttpListenerCustomError, Set-AzureRmApplicationGatewayHttpListenerCustomError, Remove-AzureRmApplicationGatewayHttpListenerCustomError.
 * Протокол ICMP возвращен в список поддерживаемых сетевых протоколов Брандмауэра Azure.
-* Обновлен командлет Test-AzureRmNetworkWatcherConnectivity, в который добавлена проверка идентификатора, адреса и порта целевого объекта. 
+* Обновлен командлет Test-AzureRmNetworkWatcherConnectivity, в который добавлена проверка идентификатора, адреса и порта целевого объекта.
 * Исправлены проблемы с использованием памяти в карте виртуальной сети.
 
 #### <a name="azurermrecoveryservicesbackup"></a>AzureRM.RecoveryServices.Backup
@@ -231,14 +232,14 @@ ms.locfileid: "83387332"
 #### <a name="azurermprofile"></a>AzureRM.Profile
 * Незначительные изменения в общем коде хранилища.
 * Обновлены файлы справки, в которые добавлены полные типы параметров.
-* В наборе параметров ServicePrincipalCertificateWithSubscriptionId параметр -ServicePrincipal теперь стал необязательным. 
+* В наборе параметров ServicePrincipalCertificateWithSubscriptionId параметр -ServicePrincipal теперь стал необязательным.
 
 #### <a name="azurestorage"></a>Azure.Storage;
-* Поддержка создания контекста хранилища с использованием OAuth. 
+* Поддержка создания контекста хранилища с использованием OAuth.
     - New-AzureStorageContext
 
 #### <a name="azurermcdn"></a>AzureRM.Cdn
-* Добавлен номер SKU для расценок на Standard_Microsoft в CDN. 
+* Добавлен номер SKU для расценок на Standard_Microsoft в CDN.
 
 #### <a name="azurermcompute"></a>AzureRM.Compute
 * Keyvault и Storage перенесены в общие зависимости.
@@ -349,7 +350,7 @@ ms.locfileid: "83387332"
 * Добавлены поле версии в объект PSSignalRResource и строка подключения в объект PSSignalRKeys.
 
 #### <a name="azurermstorage"></a>AzureRM.Storage
-* Добавлена поддержка политики неизменяемости в AzureRm.Storage. 
+* Добавлена поддержка политики неизменяемости в AzureRm.Storage.
     - Remove-AzureRmStorageAccountNetworkRule.
     - Get-AzureRmStorageContainer
     - Update-AzureRmStorageContainer
@@ -685,7 +686,7 @@ ms.locfileid: "83387332"
 * Обновлен пример для New-AzureRmDisk.
 * Добавлен пример для New-AzureRmVM.
 * Обновлено описание командлета Set-AzureRmVMOSDisk.
-* Обновлен пример 1 для Set-AzureRmVMBginfoExtension: исправлены орфографические ошибки и префикс. 
+* Обновлен пример 1 для Set-AzureRmVMBginfoExtension: исправлены орфографические ошибки и префикс.
 
 #### <a name="azurermdatafactoryv2"></a>AzureRM.DataFactoryV2
 * Пакет .NET SDK для ADF обновлен до версии 1.1.0.
@@ -897,7 +898,7 @@ ms.locfileid: "83387332"
 * В файлы справки добавлены дополнительные сведения о параметре -Permissions.
 
 #### <a name="azurermcompute"></a>AzureRM.Compute
-* Get-AzureRmVmDiskEncryptionStatus устраняет проблему, которая наблюдалась на виртуальных машинах без дисков данных. 
+* Get-AzureRmVmDiskEncryptionStatus устраняет проблему, которая наблюдалась на виртуальных машинах без дисков данных.
 * Обновлена версия клиентской библиотеки Compute для исправления следующих командлетов:
     - Grant-AzureRmDiskAccess
     - Grant-AzureRmSnapshotAccess
@@ -1020,8 +1021,8 @@ ms.locfileid: "83387332"
 
 #### <a name="azurermdatalakestore"></a>AzureRM.DataLakeStore
 * Исправлен пример для Export-AzureRmDataLakeStoreChildItemProperties.
-* Исправлено исключение параметра NULL при использовании рекурсии в Set-AzureRmDataLakeStoreItemAclEntry. 
-* Исправлены файлы справки для Set-AzureRmDataLakeStoreItemAclEntry, Set-AzureRmDataLakeStoreItemAcl и Remove-AzureRmDataLakeStoreItemAclEntry. 
+* Исправлено исключение параметра NULL при использовании рекурсии в Set-AzureRmDataLakeStoreItemAclEntry.
+* Исправлены файлы справки для Set-AzureRmDataLakeStoreItemAclEntry, Set-AzureRmDataLakeStoreItemAcl и Remove-AzureRmDataLakeStoreItemAclEntry.
 
 #### <a name="azurermnetwork"></a>AzureRM.Network
 * Пакет SDK для сети обновлен с предварительной версии 18.0.0 до предварительной версии 19.0.0.
@@ -1041,7 +1042,7 @@ ms.locfileid: "83387332"
 * Обновлены командлеты аудита, которые теперь позволяют удалять AuditActions или AuditActionGroups.
 * Исправлена проблема с Set-AzureRmSqlDatabaseBackupLongTermRetentionPolicy, при которой установка новой гибкой политики хранения завершалась ошибкой с сообщением "Configure long term retention policy with azure recovery service vault and policy is no longer supported. Please submit request with the new flexible retention policy" (Настройка политики долгосрочного хранения с помощью хранилища и политики служб восстановления Azure больше не поддерживается. Отправьте запрос с использованием новой гибкой политики хранения).
 * Обновлены все командлеты, связанные со службой "База данных SQL Azure", с созданием эластичных пулов и обновлением. Теперь используются новые API баз данных с поддержкой свойства номеров SKU для обеспечения масштабируемости и связанных с уровнями возможностей.
-* Обновлены командлеты, в том числе: 
+* Обновлены командлеты, в том числе:
     - New-AzureRmSqlDatabase; Set-AzureRmSqlDatabase;
     - New-AzureRmSqlElasticPool; Set-AzureRmSqlElasticPool;
     - New-AzureRmSqlDatabaseCopy

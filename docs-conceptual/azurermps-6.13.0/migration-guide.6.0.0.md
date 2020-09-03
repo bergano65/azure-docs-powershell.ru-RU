@@ -4,16 +4,17 @@ description: Это руководство по миграции содержи�
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/01/2018
-ms.openlocfilehash: ab20dd07fb0c14d8066ad12185f8245be291e7ec
-ms.sourcegitcommit: 9f5c7d231b069ad501729bf015a829f3fe89bc6a
+ms.custom: devx-track-azurepowershell
+ms.openlocfilehash: 7b14df54d521c12c43663a1a3601e4cb671317b3
+ms.sourcegitcommit: 8b3126b5c79f453464d90669f0046ba86b7a3424
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84122238"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89241633"
 ---
 # <a name="breaking-changes-for-microsoft-azure-powershell-600"></a>Критически важные изменения в Microsoft Azure PowerShell 6.0.0
 
-[!INCLUDE [migrate-to-az](../includes/migrate-to-az.md)]
+[!INCLUDE [migrate-to-az-banner](../../includes/migrate-to-az-banner.md)]
 
 Этот документ предназначен для уведомления о критических изменениях и является руководством по миграции для пользователей командлетов Microsoft Azure PowerShell. В каждом разделе описана причина критического изменения и самый простой путь миграции. Подробное описание см. в запросах на вытягивание для каждого изменения.
 

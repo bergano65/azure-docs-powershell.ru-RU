@@ -4,16 +4,17 @@ description: Узнайте, как использовать учетные да
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 08/31/2017
-ms.openlocfilehash: 28f125b76686096d157ef243c9217a4a2c4e019e
-ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
+ms.custom: devx-track-azurepowershell
+ms.openlocfilehash: 9c9d6a028d3a28f99320aef5a574d868b2fd9bc1
+ms.sourcegitcommit: 8b3126b5c79f453464d90669f0046ba86b7a3424
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83386822"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89244608"
 ---
 # <a name="persisting-user-credentials-across-powershell-sessions"></a>Использование учетных данных пользователя в разных сеансах PowerShell
 
-[!INCLUDE [migrate-to-az](../includes/migrate-to-az.md)]
+[!INCLUDE [migrate-to-az-banner](../../includes/migrate-to-az-banner.md)]
 
 В Azure PowerShell существует функция **автосохранения контекста Azure**, которая предоставляет следующие возможности:
 
@@ -132,7 +133,7 @@ $env:AzureRmContextAutoSave="true" | "false"
   Любые изменения влияют на глобальный контекст.
 - [Disable-AzureRmContextAutosave][disable] — отключение автосохранения контекста. Для работы с новым сеансом PowerShell нужно будет выполнить вход.
 - [Select-AzureRmContext][select] — выбор контекста по умолчанию. Все последующие командлеты будут использовать для аутентификации учетные данные из этого контекста.
-- [Remove-AzureRmAccount][remove-cred] — удаление всех учетных данных и контекстов, связанных с учетной записью.
+- [Remove-AzureRmAccount][remove-cred] — удаление всех учетных данных и контекстов, связанных с учетной записью.
 - [Remove-AzureRmContext][remove-context] — удаление именованного контекста.
 - [Rename-AzureRmContext][rename] — переименование существующего контекста.
 
