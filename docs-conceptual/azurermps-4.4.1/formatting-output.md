@@ -4,16 +4,17 @@ description: Как обратиться к ресурсам в Azure и фор�
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/30/2017
-ms.openlocfilehash: a76ceee5ae1172630d74afd3c671031592d78a8b
-ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
+ms.custom: devx-track-azurepowershell
+ms.openlocfilehash: 54895da77a0073f34c1fae9565eb93092de9cfd1
+ms.sourcegitcommit: 8b3126b5c79f453464d90669f0046ba86b7a3424
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83386771"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89238721"
 ---
 # <a name="formatting-query-results"></a>Форматирование результатов запроса
 
-[!INCLUDE [migrate-to-az](../includes/migrate-to-az.md)]
+[!INCLUDE [migrate-to-az-banner](../../includes/migrate-to-az-banner.md)]
 
 По умолчанию каждый командлет PowerShell заранее определяет форматирование выходных данных, что упрощает их чтение.  Среда PowerShell также позволяет гибко настраивать выходные данные или преобразовать выходные данные командлета в другой формат с помощью следующих командлетов:
 

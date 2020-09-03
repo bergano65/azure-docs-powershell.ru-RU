@@ -4,16 +4,17 @@ description: Принципы и особенности использовани
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 09/11/2018
-ms.openlocfilehash: 2c52dec39bdc656c7a2b17c547ec5f87ac659fa1
-ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
+ms.custom: devx-track-azurepowershell
+ms.openlocfilehash: 2a44d29cb0770bf1517993606358c3669b2ee982
+ms.sourcegitcommit: 8b3126b5c79f453464d90669f0046ba86b7a3424
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83387298"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89244251"
 ---
 # <a name="use-experimental-azure-powershell-modules"></a>Использование экспериментальных модулей Azure PowerShell
 
-[!INCLUDE [migrate-to-az](../includes/migrate-to-az.md)]
+[!INCLUDE [migrate-to-az-banner](../../includes/migrate-to-az-banner.md)]
 
 Команда Azure PowerShell уделяет особое внимание средствам для разработчиков в Azure (в особенности интерфейсам CLI). Для этого мы проводим множество экспериментов, оценивая усовершенствования и оптимизируя работу с Azure PowerShell.
 
@@ -68,7 +69,7 @@ Install-Module AzureRM.Websites.Experiments
 
 - Стандартные интеллектуальные значения. Создайте стандартные интеллектуальные значения для заполнения обязательных полей. Пример:
   - Группа ресурсов
-  - Location
+  - Расположение
   - Зависимые ресурсы
 
 ### <a name="experimental-improvements"></a>Экспериментальные усовершенствования

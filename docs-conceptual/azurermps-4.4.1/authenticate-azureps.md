@@ -4,16 +4,17 @@ description: Сведения о том, как с помощью Azure PowerShe
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/15/2017
-ms.openlocfilehash: c9a6a48d27a2c3b7f01e3bd7bd5bf82aa04dc587
-ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
+ms.custom: devx-track-azurepowershell
+ms.openlocfilehash: 7a79af082ac7c3ffe923a7f0a1c7854b7a562df7
+ms.sourcegitcommit: 8b3126b5c79f453464d90669f0046ba86b7a3424
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83386839"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89244370"
 ---
 # <a name="sign-in-with-azure-powershell"></a>Вход с помощью Azure PowerShell
 
-[!INCLUDE [migrate-to-az](../includes/migrate-to-az.md)]
+[!INCLUDE [migrate-to-az-banner](../../includes/migrate-to-az-banner.md)]
 
 Azure PowerShell поддерживает разные методы проверки подлинности. Проще всего начать со входа в интерактивном режиме из командной строки.
 

@@ -8,12 +8,13 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.manager: knithinc
 ms.date: 09/21/2018
-ms.openlocfilehash: 55f19ac5e6767df1312e0b531184e8621b60a011
-ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
+ms.custom: devx-track-azurepowershell
+ms.openlocfilehash: 4b72bbd1bda93767251e0ba3d488f798575d9115
+ms.sourcegitcommit: 8b3126b5c79f453464d90669f0046ba86b7a3424
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "67038199"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89244319"
 ---
 # <a name="azurerm-module-250"></a>Модуль AzureRM версии 2.5.0
 
@@ -71,7 +72,7 @@ Use-AzureRmProfile -Profile 2018-03-01-hybrid -Force
 - выполнять резервное копирование;
 - выводить список созданных резервных копий и выполнять на их основе восстановление.
 
-### <a name="commerce"></a>Приложения для коммерции
+### <a name="commerce"></a>Коммерция
 Предварительная версия модуля для администраторов средства коммерции в Azure Stack, которая позволяет просматривать статистические сведения об использовании данных для всей системы Azure Stack.
 
 ### <a name="compute"></a>Службы вычислений
@@ -119,7 +120,7 @@ Use-AzureRmProfile -Profile 2018-03-01-hybrid -Force
 - просмотр сведений об использовании и производительности.
 - Управление RBAC
 
-### <a name="subscription"></a>Subscription
+### <a name="subscription"></a>Подписка
 Предварительная версия модуля подписки Azure Stack.  Этот модуль предоставляет следующие функции для пользователей:
 - создание, удаление и изменение подписок.
 

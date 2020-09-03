@@ -4,12 +4,13 @@ description: Это руководство по миграции содержи�
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/15/2019
-ms.openlocfilehash: 6c2d681144fe561e734a247c44046e3dadb78083
-ms.sourcegitcommit: edfe63c6949cd59127028ac8a13bb4a8827d555c
+ms.custom: devx-track-azurepowershell
+ms.openlocfilehash: ae2539a09b93fb482ed3f8a363c7a0a66e02a412
+ms.sourcegitcommit: 8b3126b5c79f453464d90669f0046ba86b7a3424
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87566660"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89239593"
 ---
 # <a name="breaking-changes-for-az-100"></a>Критические изменения для Az 1.0.0
 

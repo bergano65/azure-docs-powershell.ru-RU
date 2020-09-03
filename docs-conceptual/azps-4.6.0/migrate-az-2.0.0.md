@@ -4,12 +4,13 @@ description: Это руководство по переходу содержи�
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/24/2019
-ms.openlocfilehash: 91362f3cc6b35e96a543c1304fb55acbf373d291
-ms.sourcegitcommit: b94a3f00c147144b0ef7f8cf8d0f151e04674b89
+ms.custom: devx-track-azurepowershell
+ms.openlocfilehash: 2d8a3c04388bfc5028811f6d1b6caf2c6fce4147
+ms.sourcegitcommit: 8b3126b5c79f453464d90669f0046ba86b7a3424
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88821971"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89244438"
 ---
 # <a name="migration-guide-for-az-200"></a>Руководство по переходу на Az версии 2.0.0
 
