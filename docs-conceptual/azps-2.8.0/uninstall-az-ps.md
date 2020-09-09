@@ -4,12 +4,13 @@ description: Сведения о том, как полностью удалит�
 ms.date: 10/22/2019
 ms.devlang: powershell
 ms.topic: conceptual
-ms.openlocfilehash: 69b4213225181b235dfef1217e9d8e89321ef4d1
-ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
+ms.custom: devx-track-azurepowershell
+ms.openlocfilehash: dd81996406249a8cae42beb6ec84718c923a7e1a
+ms.sourcegitcommit: 8b3126b5c79f453464d90669f0046ba86b7a3424
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83386023"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89241514"
 ---
 # <a name="uninstall-the-azure-powershell-module"></a>Удаление модуля Azure PowerShell
 
