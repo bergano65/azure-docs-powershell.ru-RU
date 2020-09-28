@@ -5,14 +5,176 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/10/2020
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 52129f31202a8ae04bf80988b5aa07b12fe081b8
+ms.openlocfilehash: 98bae70dbd61c74aa92e69cb67afc89ebae23f70
 ms.sourcegitcommit: 15f21c40dcb7610e2fbaaabf264ad925e4224500
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 09/22/2020
-ms.locfileid: "90913393"
+ms.locfileid: "90928615"
 ---
 # <a name="azure-powershell-release-notes"></a>Заметки о выпуске Azure PowerShell
+
+## <a name="470---september-2020"></a>4.7.0 — сентябрь 2020 г.
+#### <a name="azaccounts"></a>Az.Accounts
+* Изменен формат сообщений о предстоящих критических изменениях.
+* Версия Azure.Core обновлена до 1.4.1.
+
+#### <a name="azaks"></a>Az.Aks
+* Добавлена логика проверки параметров на стороне клиента для командлетов New-AzAksCluster, Set-AzAksCluster и New-AzAksNodePool. [12372]
+* Добавлена поддержка для надстроек в командлете New-AzAksCluster. [11239]
+* Добавлены командлеты Enable-AzAksAddOn и Disable-AzAksAddOn для надстроек. [11239]
+* Добавлен параметр GenerateSshKey для командлета New-AzAksCluster. [12371]
+* Обновлена версия API до 2020-06-01.
+
+#### <a name="azcognitiveservices"></a>Az.CognitiveServices
+* Реализовано отображение дополнительных юридических условий для определенных API.
+
+#### <a name="azcompute"></a>Az.Compute
+* Добавлен необязательный параметр -EncryptionType к командлету New-AzVmDiskEncryptionSetConfig.
+* Новые командлеты для нового типа ресурсов: DiskAccess (Get-AzDiskAccess, New-AzDiskAccess, Get-AzDiskAccess).
+* Добавлены необязательные параметры -DiskAccessId и -NetworkAccessPolicy к командлету New-AzSnapshotConfig.
+* Добавлены необязательные параметры -DiskAccessId и -NetworkAccessPolicy к командлету New-AzDiskConfig.
+* Добавлено свойство PatchStatus к представлению экземпляра виртуальной машины.
+* Добавлено свойство VMHealth к представлению экземпляра виртуальной машины, которое является возвращенным объектом при вызове Get-AzVm с параметром -Status.
+* Добавлено поле AssignedHost к представлениям экземпляра Get-AzVM и Get-AzVmss. В поле отображается идентификатор ресурса для экземпляра виртуальной машины.
+* Добавлен необязательный параметр -SupportAutomaticPlacement к командлету New-AzHostGroup. 
+* Добавлен параметр -HostGroupId к командлетам New-AzVm и New-AzVmss.
+
+#### <a name="azdatafactory"></a>Az.DataFactory
+* Версия пакета SDK ADF для .NET обновлена до 4.11.0.
+
+#### <a name="azeventhub"></a>Az.EventHub
+* Добавлены новые командлеты кластера: New-AzEventHubCluster, Set-AzEventHubCluster, Get-AzEventHubCluster, Remove-AzEventHubCluster, Get-AzEventHubClustersAvailableRegions.
+* Исправление для проблемы № 10722: исправление ошибки, из-за которой свойству AuthorizationRule.Rights назначалось только значение Listen (Прослушивание).
+
+#### <a name="azfunctions"></a>Az.Functions
+* Удалена возможность создавать Функции версии 2 в регионах, которые не поддерживают ее.
+* PowerShell 6.2 не рекомендуется к использованию. Добавлено предупреждение при создании пользователем приложения-функции PowerShell 6.2 о том, что рекомендуется создать приложение-функцию PowerShell 7.0.
+
+#### <a name="azhdinsight"></a>Az.HDInsight
+* Добавлена поддержка создания кластера с использованием конфигурации автомасштабирования.
+    - Добавлен новый параметр AutoscaleConfiguration к командлету New-AzHDInsightCluster.
+* Добавлена поддержка управления конфигурацией автомасштабирования для кластера.
+    - Добавлен новый командлет Get-AzHDInsihgtClusterAutoscaleConfiguration.
+    - Добавлен новый командлет New-AzHDInsihgtClusterAutoscaleConfiguration.
+    - Добавлен новый командлет Set-AzHDInsihgtClusterAutoscaleConfiguration.
+    - Добавлен новый командлет Remove-AzHDInsihgtClusterAutoscaleConfiguration.
+    - Добавлен новый командлет New-AzHDInsihgtClusterAutoscaleScheduleCondition.
+
+#### <a name="azkeyvault"></a>Az.KeyVault
+* Добавлена поддержка авторизации с помощью RBAC [10557].
+* Расширена обработка ошибок в командлете Set-AzKeyVaultAccessPolicy [4007].
+
+#### <a name="azkusto"></a>Az.Kusto
+* Выпущена общедоступная версия модуля Az.Kusto.
+
+#### <a name="aznetwork"></a>Az.Network
+* [Критическое изменение] Обновлены приведенные ниже командлеты для соответствия виртуальному маршрутизатору ресурсов и виртуальному концентратору.
+    - New-AzVirtualRouter: 
+        - Добавлен параметр -HostedSubnet для поддержки дочернего ресурса конфигурации IP-адресов.
+        - Удалены параметры -HostedGateway и -HostedGatewayId.
+    - Get-AzVirtualRouter:
+        - добавлен набор параметров на уровне подписки.
+    - Remove-AzVirtualRouter
+    - Add-AzVirtualRouterPeer
+    - Get-AzVirtualRouterPeer
+    - Remove-AzVirtualRouterPeer
+* Добавлен новый командлет для порта Azure Express Route.
+    - New-AzExpressRoutePortLOA
+* Добавлено свойство RemoteBgpCommunities к ресурсу пиринга виртуальной сети.
+* Изменено сообщение с предупреждением для New-AzLoadBalancerFrontendIpConfig, New-AzPublicIpAddress и New-AzPublicIpPrefix.
+* Добавлено свойство VpnGatewayIpConfigurations в выходные данные командлета Get-AzVpnGateway.
+* Исправлена ошибка командлета Set-AzApplicationGatewaySslCertificate [9488].
+* Добавлен параметр AllowActiveFTP в AzureFirewall.
+* Обновлены следующие команды для функции: Включена возможность настройки и удаления параметров безопасности в Интернете на VPN-шлюзе P2S виртуальной глобальной сети.
+- Обновлен командлет New-AzP2sVpnGateway: Добавлен необязательный параметр EnableInternetSecurityFlag для клиентов, позволяющий задать значение true для включения безопасности в Интернете на VPN-шлюзе P2S, который будет применяться к клиентам с подключениями типа "точка — сеть".
+- Обновлен командлет Update-AzP2sVpnGateway: Добавлены необязательные параметры EnableInternetSecurityFlag и DisableInternetSecurityFlag для клиентов, позволяющий задать значение true/false для включения/отключения безопасности в Интернете на VPN-шлюзе P2S, который будет применяться к клиентам с подключениями типа "точка — сеть".
+* Добавлен новый командлет Reset-AzP2sVpnGateway для клиентов, позволяющий сбрасывать и перезагружать VPN-шлюз P2S виртуальной глобальной сети для устранения неполадок.
+* Добавлен новый командлет Reset-AzVpnGateway для клиентов, позволяющий сбрасывать и перезагружать VPN-шлюз виртуальной глобальной сети для устранения неполадок.
+* Обновлен командлет Set-AzVirtualNetworkSubnetConfig.
+    - Для свойств группы безопасности сети и таблицы маршрутизации подсети теперь задаются значения NULL, если они явно указаны в параметрах [1548][9718].
+
+#### <a name="azrecoveryservices"></a>Az.RecoveryServices
+* Исправлено состояние удаления для элементов резервного копирования рабочей нагрузки.
+
+#### <a name="azresources"></a>Az.Resources
+* Добавлена отсутствующая проверка для командлета Set-AzRoleAssignment.
+* Добавлен важный атрибут в параметр SubscriptionId командлета Get-AzResourceGroupDeploymentOperation.
+* Обновлены командлеты What-If шаблона ARM для отображения изменений ресурса Ignore последними.
+* Исправлены проблемы безопасности и сериализации параметров массива для командлетов развертывания [12773].
+
+#### <a name="azservicefabric"></a>Az.ServiceFabric
+* Добавлены новые командлеты для управляемых кластеров и типов узлов:
+    - New-AzServiceFabricManagedCluster
+    - Get-AzServiceFabricManagedCluster
+    - Set-AzServiceFabricManagedCluster
+    - Remove-AzServiceFabricManagedCluster
+    - Add-AzServiceFabricManagedClusterClientCertificate
+    - Remove-AzServiceFabricManagedClusterClientCertificate
+    - New-AzServiceFabricManagedNodeType
+    - Get-AzServiceFabricManagedNodeType
+    - Set-AzServiceFabricManagedNodeType
+    - Remove-AzServiceFabricManagedNodeType
+    - Add-AzServiceFabricManagedNodeTypeVMExtension
+    - Add-AzServiceFabricManagedNodeTypeVMSecret
+    - Remove-AzServiceFabricManagedNodeTypeVMExtension
+    - Restart-AzServiceFabricManagedNodeTyp
+* Пакет SDK для Service Fabric обновлен до версии 1.2.0, в которой используется версия API 2020-03-01 поставщика ресурсов Service Fabric для текущей модели и 2020-01-01-preview для управляемых кластеров.
+
+#### <a name="azsql"></a>Az.Sql
+* Добавлен параметр BackupStorageRedundancy к командлетам New-AzSqlInstance и Get-AzSqlInstance.
+* Добавлен командлет Get-AzSqlServerActiveDirectoryOnlyAuthentication.
+* Добавлен командлет Enable-AzSqlServerActiveDirectoryOnlyAuthentication.
+* Добавлен параметр Force к командлету New-AzSqlInstance.
+* Добавлены командлеты для службы воспроизведения журнала управляемой базы данных.
+    - Start-AzSqlInstanceDatabaseLogReplay
+    - Get-AzSqlInstanceDatabaseLogReplay
+    - Complete-AzSqlInstanceDatabaseLogReplay
+    - Stop-AzSqlInstanceDatabaseLogReplay
+* Добавлен командлет Get-AzSqlInstanceActiveDirectoryOnlyAuthentication.
+* Добавлен командлет Enable-AzSqlInstanceActiveDirectoryOnlyAuthentication.
+* Добавлен командлет Disable-AzSqlInstanceActiveDirectoryOnlyAuthentication.
+* Обновлены командлеты New-AzSqlDatabaseImport и New-AzSqlDatabaseExport для поддержки функциональности сетевой изоляции.
+* Добавлен командлет New-AzSqlDatabaseImportExisting.
+* Обновлены командлеты баз данных для поддержки указания типа хранилища резервных копий.
+* Добавлен параметр Force к командлету New-AzSqlDatabase.
+* Добавлено предупреждение для конфигурации BackupStorageRedundancy в выбранных регионах в командлете New-AzSqlDatabase.
+* Обновлены командлеты ActiveDirectoryOnlyAuthentication для сервера и экземпляра для включения ResourceId и InputObject.
+
+#### <a name="azstorage"></a>Az.Storage
+* Исправлен сбой отправки BLOB-объекта путем обновления до Microsoft.Azure.Storage.DataMovement 2.0.0 [12220].
+* Реализована поддержка восстановления до точки во времени.
+    - Enable-AzStorageBlobRestorePolicy
+    - Disable-AzStorageBlobRestorePolicy
+    - New-AzStorageBlobRangeToRestore
+    - Restore-AzStorageBlobRange
+* Реализована поддержка получения состояния восстановления BLOB-объекта путем выполнения командлета Get-AzureRmStorageAccount с параметром -IncludeBlobRestoreStatus. 
+    - Get-AzureRMStorageAccount
+* Добавлено важное сообщение с предупреждением о предстоящем изменении выходных данных командлета.
+    - Get-AzStorageContainerStoredAccessPolicy
+    - Set-AzStorageContainerStoredAccessPolicy
+    - Set-AzStorageAccountManagementPolicy
+    - Get-AzStorageAccountManagementPolicy
+    - Add-AzStorageAccountManagementPolicyAction
+    - New-AzStorageAccountManagementPolicyRule
+* Версия пакета SDK Microsoft.Azure.Cosmos.Table обновлена до 1.0.8.
+
+### <a name="thanks-to-our-community-contributors"></a>Благодарим наших участников сообщества
+* Томас Ван Лере (Thomas Van Laere) (@ThomVanL), добавление Dockerfile-alpine-3.10 (12911). 
+* Лохит Чаудари Чилукури (Lohith Chowdary Chilukuri) (@Lochiluk), обновление Remove-AzNetworkInterfaceIpConfig.md (12807). 
+* Роберт Стрэнд (Roberth Strand) (@roberthstrand), Get-AzResourceGroup — новый пример и очистка (12828). 
+* Рави Мишра (Ravi Mishra) (@inmishrar), обновление стека среды выполнения веб-приложений Azure до .NET Core (12833). 
+* @jack-education, обновление Set-AzVirtualNetworkSubnetConfig для разрешения удаления группы безопасности сети и таблицы маршрутизации из подсети (12351). 
+* @hagop-globanet, обновление Add-AzApplicationGatewayCustomError.md (12784). 
+* Джошуа Ван Даален (Joshua Van Daalen) (@greenSacrifice)
+  * Изменение правописания Proeprty на Property (12821) 
+  * Обновление примеров New-AzResourceLock.md (12806)
+* Эрагон Риддл (Eragon Riddle) (@eragonriddle), исправлено имя поля параметра в примере (12825) 
+* @rossifumax, исправление опечатки в New-AzConfigurationAssignment.md (12701)
+
+## <a name="461---august-2020"></a>4.6.1 — август 2020 г.
+#### <a name="azcompute"></a>Az.Compute
+* Исправлен параметр -EncryptionAtHost в New-AzVm для удаления значения false по умолчанию [№ 12776].
 
 ## <a name="460---august-2020"></a>4.6.0 — август 2020 г.
 #### <a name="azaccounts"></a>Az.Accounts
@@ -55,7 +217,7 @@ ms.locfileid: "90913393"
 * Добавлен командлет Get-AzDeploymentManagementGroupWhatIfResult для получения результатов выполнения What-If в шаблоне ARM в области группы управления.
 * Добавлен командлет Get-AzTenantWhatIfResult для получения результатов выполнения What-If в шаблоне ARM в области арендатора.
 * Переопределены параметры -WhatIf и -Confirm для New-AzManagementGroupDeployment и New-AzTenantDeployment для использования результатов выполнения What-If в шаблоне ARM.
-* Исправлено поведение параметров -WhatIf и -Confirm для новых командлетов развертывания, чтобы они соответствовали $WhatIfPreference и $ConfirmPreference.
+* Исправлено поведение параметров -WhatIf и -Confirm для новых командлетов развертывания, чтобы они соответствовали значению False. 
 * Исправлена ошибка сериализации для -TemplateObject и TemplateParameterObject [№ 1528] [№ 6292].
 * Добавлен атрибут критического изменения в Get-AzResourceGroupDeploymentOperation для предстоящего изменения типа выходных данных.
 
