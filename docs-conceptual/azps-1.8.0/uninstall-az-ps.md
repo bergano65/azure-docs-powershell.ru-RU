@@ -1,38 +1,37 @@
 ---
 title: Удаление Azure PowerShell
 description: Сведения о том, как полностью удалить Azure PowerShell.
-ms.date: 10/22/2019
+ms.date: 09/15/2020
 ms.devlang: powershell
 ms.topic: conceptual
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: dd81996406249a8cae42beb6ec84718c923a7e1a
-ms.sourcegitcommit: 8b3126b5c79f453464d90669f0046ba86b7a3424
+ms.openlocfilehash: 20859d6135676a3a4fb1e9f5d66909d157b38ac6
+ms.sourcegitcommit: 5fcf17330d6f335561640a5ee3d98c59f7baab94
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89240936"
+ms.lasthandoff: 09/26/2020
+ms.locfileid: "91381434"
 ---
 # <a name="uninstall-the-azure-powershell-module"></a>Удаление модуля Azure PowerShell
 
-Из этой статьи вы узнаете, как удалить предыдущую версию Azure PowerShell или полностью удалить этот модуль из системы. Если вы решили полностью удалить Azure PowerShell, отправьте нам отзыв с помощью командлета [Send-Feedback](/powershell/module/az.accounts/send-feedback).
-Если возникнет ошибка, мы будем признательны, если вы [сообщите о ней на GitHub](https://github.com/azure/azure-powershell/issues), чтобы мы исправили ее.
+Из этой статьи вы узнаете, как удалить предыдущую версию Azure PowerShell или полностью удалить этот модуль из системы. Если вы решили полностью удалить Azure PowerShell, отправьте нам отзыв с помощью командлета [Send-Feedback](/powershell/module/az.accounts/send-feedback). Если возникнет ошибка, мы будем признательны, если вы [сообщите о ней на GitHub](https://github.com/azure/azure-powershell/issues), чтобы мы исправили ее.
 
-## <a name="uninstall-azure-powershell-from-msi"></a>Удаление Azure PowerShell из MSI
+## <a name="uninstall-the-az-powershell-module-from-msi"></a>Удаление модуля Az PowerShell из MSI
 
-Если вы установили Azure PowerShell с помощью пакета MSI, удалять модуль нужно через систему Windows, а не PowerShell.
+Если вы установили модуль Az PowerShell с помощью пакета MSI, удалять модуль нужно через систему Windows, а не PowerShell.
 
-| Платформа | Instructions |
-|----------|--------------|
-| Windows 10 | Пуск > Параметры > Приложения |
+|         Платформа         |                      Instructions                      |
+| ------------------------ | ------------------------------------------------------ |
+| Windows 10               | Пуск > Параметры > Приложения                                |
 | Windows 7 </br>Windows 8 | Пуск > Панель управления > Программы > Удалить программу |
 
-В этом окне в списке программ вы должны увидеть модуль __Azure PowerShell__. Это программа, которую можно удалить. Если этой программы нет в списке, значит, она установлена с помощью PowerShellGet. Следуйте приведенным ниже инструкциям.
+В этом окне в списке программ вы должны увидеть модуль **Azure PowerShell**. Это программа, которую можно удалить. Если этой программы нет в списке, значит, она установлена с помощью PowerShellGet. Следуйте приведенным ниже инструкциям.
 
-## <a name="uninstall-azure-powershell-from-powershell-get"></a>Удаление Azure PowerShell из PowerShellGet
+## <a name="uninstall-the-az-powershell-module-from-powershellget"></a>Удаление модуля Az PowerShell из PowerShellGet
 
-Чтобы удалить модули Az, используйте командлет [Uninstall-Module](/powershell/module/powershellget/uninstall-module). Учтите, что `Uninstall-Module` удаляет только один модуль. Чтобы полностью удалить Azure PowerShell, каждый модуль нужно удалять отдельно. Удаление может усложниться, если у вас установлено несколько версий Azure PowerShell.
+Чтобы удалить модули Az, используйте командлет [Uninstall-Module](/powershell/module/powershellget/uninstall-module). Учтите, что `Uninstall-Module` удаляет только один модуль. Чтобы полностью удалить модуль Az PowerShell, каждый модуль нужно удалять отдельно. Удаление может усложниться, если у вас установлено несколько версий Azure PowerShell.
 
-Чтобы проверить, какие версии Azure PowerShell у вас установлены, используйте следующую команду:
+Чтобы проверить, какие версии модуля Az PowerShell у вас установлены, используйте следующую команду:
 
 ```powershell-interactive
 Get-InstalledModule -Name Az -AllVersions
@@ -41,117 +40,157 @@ Get-InstalledModule -Name Az -AllVersions
 ```output
 Version             Name                           Repository           Description
 -------             ----                           ----------           -----------
-0.7.0               Az                             PSGallery            Azure Resource Manager Module
-1.0.0               Az                             PSGallery            Azure Resource Manager Module
+3.8.0               Az                             PSGallery            Microsoft Azure PowerShell
+4.1.0               Az                             PSGallery            Microsoft Azure PowerShell
 ```
 
-<a name="uninstall-script"/>
-
-Следующий скрипт запрашивает из коллекции PowerShell список зависимых подмодулей, а затем удаляет правильную версию каждого подмодуля. Необходимы права доступа администратора для запуска этого скрипта в области, отличающейся от `Process` или `CurrentUser`.
+Следующий скрипт запрашивает из коллекции PowerShell список зависимых подмодулей, а затем удаляет правильную версию каждого подмодуля. Для запуска этого скрипта в области, отличающейся от **Процесс** или **Текущий пользователь**, требуются права доступа администратора.
 
 ```powershell-interactive
-function Uninstall-AllModules {
+function Uninstall-AzModule {
+  [CmdletBinding(SupportsShouldProcess)]
   param(
-    [Parameter(Mandatory=$true)]
-    [string]$TargetModule,
+    [ValidateNotNullOrEmpty()]
+    [ValidateSet('Az','AzureRM','Azure')]
+    [string]$Name = 'Az',
 
-    [Parameter(Mandatory=$true)]
+    [Parameter(Mandatory)]
     [string]$Version,
 
-    [switch]$Force,
-
-    [switch]$WhatIf
+    [switch]$AllowPrerelease
   )
-  
-  $AllModules = @()
-  
-  'Creating list of dependencies...'
-  $target = Find-Module $TargetModule -RequiredVersion $version
-  $target.Dependencies | ForEach-Object {
-    if ($_.PSObject.Properties.Name -contains 'requiredVersion') {
-      $AllModules += New-Object -TypeName psobject -Property @{name=$_.name; version=$_.requiredVersion}
-    }
-    else { # Assume minimum version
-      # Minimum version actually reports the installed dependency
-      # which is used, not the actual "minimum dependency." Check to
-      # see if the requested version was installed as a dependency earlier.
-      $candidate = Get-InstalledModule $_.name -RequiredVersion $version -ErrorAction Ignore
-      if ($candidate) {
-        $AllModules += New-Object -TypeName psobject -Property @{name=$_.name; version=$version}
-      }
-      else {
-        $availableModules = Get-InstalledModule $_.name -AllVersions
-        Write-Warning ("Could not find uninstall candidate for {0}:{1} - module may require manual uninstall. Available versions are: {2}" -f $_.name,$version,($availableModules.Version -join ', '))
-      }
-    }
-  }
-  $AllModules += New-Object -TypeName psobject -Property @{name=$TargetModule; version=$Version}
 
-  foreach ($module in $AllModules) {
-    Write-Host ('Uninstalling {0} version {1}...' -f $module.name,$module.version)
-    try {
-      Uninstall-Module -Name $module.name -RequiredVersion $module.version -Force:$Force -ErrorAction Stop -WhatIf:$WhatIf
-    } catch {
-      Write-Host ("`t" + $_.Exception.Message)
+  $Params = @{}
+
+  if ($PSBoundParameters.AllowPrerelease) {
+    $Params.AllowPrerelease = $true
+  }
+
+  $IsAdmin = ([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole] 'Administrator')
+
+  if (-not(Get-InstalledModule -Name $Name -RequiredVersion $Version -ErrorAction SilentlyContinue -OutVariable RootModule @Params)) {
+
+    Write-Warning -Message "Uninstall aborted. $Name version $Version not found."
+
+  } elseif (($RootModule.InstalledLocation -notlike "*$env:USERPROFILE*") -and ($IsAdmin -eq $false)) {
+
+    Write-Warning -Message "Uninstall aborted. $Name version $Version exists in a system path. PowerShell must be run elevated as an admin to remove it."
+
+  } elseif ((Get-Process -Name powershell, pwsh -OutVariable Sessions -ErrorAction SilentlyContinue).Count -gt 1) {
+
+    Write-Warning -Message "Uninstall aborted. Please close all other PowerShell sessions before continuing. There are currently $($Sessions.Count) PowerShell sessions running."
+
+  } else {
+    Write-Verbose -Message 'Creating list of dependencies...'
+    $target = Find-Module -Name $Name -RequiredVersion $Version @Params
+
+    $AllModules = @([pscustomobject]@{
+      Name = $Name
+      Version = $Version
+    })
+
+    $AllModules += foreach ($dependency in $target.Dependencies) {
+      switch ($dependency.keys) {
+        {$_ -contains 'RequiredVersion'} {$UninstallVersion = $dependency.RequiredVersion; break}
+        {$_ -contains 'MinimumVersion'} {$UninstallVersion = $dependency.MinimumVersion; break}
+      }
+
+      [pscustomobject]@{
+        Name = $dependency.Name
+        Version = $UninstallVersion
+      }
+    }
+
+    [int]$i = 100 / $AllModules.Count
+
+    foreach ($module in $AllModules) {
+      Write-Progress -Activity 'Uninstallation in Progress' -Status "$i% Complete:" -PercentComplete $i
+      $i++
+
+      if (Get-InstalledModule -Name $module.Name -RequiredVersion $module.Version -ErrorAction SilentlyContinue @Params) {
+        Write-Verbose -Message "Uninstalling $($module.Name) version $($module.Version)"
+
+        Remove-Module -FullyQualifiedName @{ModuleName=$module.Name;ModuleVersion=$module.Version} -ErrorAction SilentlyContinue
+
+        try {
+          if ($PSCmdlet.ShouldProcess("$($module.Name) version $($module.Version)")) {
+            Uninstall-Module -Name $module.Name -RequiredVersion $module.Version -Force -ErrorAction Stop @Params
+          }
+          $State = 'Uninstalled'
+        } Catch {
+          $State = 'Manual uninstall required'
+          Write-Verbose -Message "$($module.Name) version: $($module.Version) may require manual uninstallation."
+        }
+
+      } else {
+        $State = 'Not found'
+        Write-Verbose -Message "$($module.Name) version: $($module.Version) not found."
+      }
+
+      if (-not $PSBoundParameters.WhatIf) {
+        [pscustomobject]@{
+          ModuleName = $module.Name
+          Version = $module.Version
+          State = $State
+        }
+      }
+
     }
   }
 }
 ```
 
-Чтобы воспользоваться этой функцией, скопируйте и вставьте этот код в окно сеанса PowerShell. В примере ниже показано, как запустить функцию, чтобы удалить предыдущую версию Azure PowerShell.
+Чтобы воспользоваться этой функцией, скопируйте и вставьте этот код в окно сеанса PowerShell. В примере ниже показано, как выполнить функцию для удаления предыдущей версии модуля Az PowerShell и его подмодулей.
 
 ```powershell-interactive
-Uninstall-AllModules -TargetModule Az -Version 0.7.0 -Force
+Uninstall-AzModule -Name Az -Version 1.8.0
 ```
 
-Во время выполнения скрипта в окне будут отображаться имя и версия каждого удаляемого подмодуля. Чтобы запустить скрипт для просмотра только удаляемых компонентов без удаления, используйте параметр `-WhatIf`.
+Во время выполнения скрипта в окне будут отображаться **имя**, **версия** и **состояние** каждого удаляемого подмодуля. Чтобы запустить скрипт только для просмотра удаляемых компонентов без их удаления, используйте параметр `-WhatIf`.
 
 ```output
-Creating list of dependencies...
-Uninstalling Az.Profile version 0.7.0
-Uninstalling Az.Aks version 0.7.0
-Uninstalling Az.AnalysisServices version 0.7.0
+ModuleName              Version  State
+----------              -------  -----
+Az.Accounts             1.5.1    Not found
+Az.Aks                  1.0.1    Uninstalled
+Az.AnalysisServices     1.1.0    Uninstalled
+Az.ApiManagement        1.0.0    Uninstalled
+Az.ApplicationInsights  1.0.0    Uninstalled
 ...
 ```
 
-> [!NOTE]
-> Если скрипт не может сопоставить определенную зависимость с версией для удаления, _ни одна_ из версий этой зависимости не будет удалена. Это обусловлено тем, что на компьютере могут быть установлены другие версии целевого модуля, связанные с этими зависимостями. В этом случае перечисляются доступные версии зависимости.
-> После этого вы можете вручную удалить любые предыдущие версии с помощью `Uninstall-Module`.
+> [!IMPORTANT]
+> Если скрипт не может сопоставить определенную зависимость с версией для удаления, _ни одна_ из версий этой зависимости не будет удалена. Это обусловлено тем, что на компьютере могут быть установлены другие версии целевого модуля, связанные с этими зависимостями.
 
-Выполните эту команду для каждой версии Azure PowerShell, которую нужно удалить. Для удобства следующий скрипт удалит все версии Az, __за исключением__ последней.
+Выполните следующий пример для каждой версии модуля Az PowerShell, которую нужно удалить.
+Для удобства следующий скрипт удалит все версии Az, **кроме** последней.
 
 ```powershell-interactive
-$versions = (Get-InstalledModule Az -AllVersions | Select-Object Version)
-$versions[0..($versions.Length-2)]  | foreach { Uninstall-AllModules -TargetModule Az -Version ($_.Version) -Force }
+$Modules = Get-InstalledModule -Name Az -AllVersions |
+    Sort-Object -Property Version -Descending |
+        Select-Object -Skip 1
+$Modules | ForEach-Object {Uninstall-AzModule -Name $_.Name -Version $_.Version}
 ```
 
 ## <a name="uninstall-the-azurerm-module"></a>Удаление модуля AzureRM
 
-Если в вашей системе установлен модуль Az и вы хотите удалить AzureRM, существуют два метода, которые не требуют выполнения сценария `Uninstall-AllModules`, описанного выше. Выбор метода зависит от того, как был установлен модуль AzureRM.
-Если вы этого не знаете, тогда сначала удалите MSI.
+Если в вашей системе установлен модуль Az и вы хотите удалить AzureRM, это можно сделать одним из двух методов. Выбор метода зависит от того, как был установлен модуль AzureRM. Если вы этого не знаете, тогда сначала удалите MSI.
 
-### <a name="uninstall-azure-powershell-msi"></a>Удаление Azure PowerShell MSI
+### <a name="uninstall-the-azurerm-powershell-module-from-msi"></a>Удаление модуля AzureRM PowerShell из MSI
 
-Если вы установили модули AzureRM Azure PowerShell с помощью пакета MSI, удалять модуль нужно через систему Windows, а не PowerShell.
+Если вы установили модуль AzureRM PowerShell с помощью пакета MSI, удалять модуль нужно через систему Windows, а не PowerShell.
 
-| Платформа | Instructions |
-|----------|--------------|
-| Windows 10 | Пуск > Параметры > Приложения |
+|         Платформа         |                      Instructions                      |
+| ------------------------ | ------------------------------------------------------ |
+| Windows 10               | Пуск > Параметры > Приложения                                |
 | Windows 7 </br>Windows 8 | Пуск > Панель управления > Программы > Удалить программу |
 
-В этом окне в списке программ вы должны увидеть модуль __Azure PowerShell__. Это программа, которую можно удалить. Если этой программы нет в списке, значит, она установлена с помощью PowerShellGet. Следуйте приведенным ниже инструкциям.
+В этом окне в списке программ вы должны увидеть **Azure PowerShell** или **Microsoft Azure PowerShell — месяц год**. Это программа, которую можно удалить. Если этой программы нет в списке, значит, она установлена с помощью PowerShellGet. Следуйте приведенным ниже инструкциям.
 
-### <a name="uninstall-from-powershell"></a>Удаление с помощью PowerShell
+### <a name="uninstall-the-azurerm-powershell-module-from-powershellget"></a>Удаление модуля AzureRM PowerShell из PowerShellGet
 
-Если вы установили AzureRM с помощью PowerShellGet, то модули можно удалить с помощью команды [Uninstall-AzureRM](/powershell/module/az.accounts/uninstall-azurerm), доступной в модуле `Az.Accounts`. С вашего компьютера удалятся _все_ модули AzureRM, но для этого требуются права администратора.
+Если вы установили AzureRM с помощью PowerShellGet, вы можете удалить модули с помощью командлета [Uninstall-AzureRM](/powershell/module/az.accounts/uninstall-azurerm), доступного в модуле `Az.Accounts`. Приведенный ниже пример команды удалит с вашего компьютера _все_ модули AzureRM. Для ее выполнения требуются права администратора.
 
 ```powershell-interactive
 Uninstall-AzureRm
-```
-
-Если вам не удается запустить команду `Uninstall-AzureRM`, используйте [скрипт `Uninstall-AllModules`](#uninstall-script), приведенный в этой статье, путем следующего вызова:
-
-```powershell-interactive
-$versions = (Get-InstalledModule AzureRM -AllVersions | Select-Object Version)
-$versions | foreach { Uninstall-AllModules -TargetModule AzureRM -Version ($_.Version) -Force }
 ```

@@ -5,12 +5,12 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/23/2020
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 5f42bbb65313d1caa839443d463b61cc743ca0a5
-ms.sourcegitcommit: 8b3126b5c79f453464d90669f0046ba86b7a3424
+ms.openlocfilehash: c64541beb5eb0d3db38932fb3915de865919641b
+ms.sourcegitcommit: 5fcf17330d6f335561640a5ee3d98c59f7baab94
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89242670"
+ms.lasthandoff: 09/26/2020
+ms.locfileid: "91381468"
 ---
 # <a name="migration-guide-for-az-410"></a>Руководство по переходу на Az версии 4.1.0
 
@@ -135,19 +135,19 @@ ms.locfileid: "89242670"
 
 ### `Get-AzApiManagementProperty`
 
-Командлет `Get-AzApiManagementProperty` заменен на `Get-AzureApiManagementNamedValue`.
+Командлет `Get-AzApiManagementProperty` заменен на `Get-AzApiManagementNamedValue`.
 
 ### `New-AzApiManagementProperty`
 
-Командлет `New-AzApiManagementProperty` заменен на `New-AzureApiManagementNamedValue`.
+Командлет `New-AzApiManagementProperty` заменен на `New-AzApiManagementNamedValue`.
 
 ### `Remove-AzApiManagementProperty`
 
-Командлет `Remove-AzApiManagementProperty` заменен на `Remove-AzureApiManagementNamedValue`.
+Командлет `Remove-AzApiManagementProperty` заменен на `Remove-AzApiManagementNamedValue`.
 
 ### `Set-AzApiManagementProperty`
 
-Командлет `Set-AzApiManagementProperty` заменен на `Set-AzureApiManagementNamedValue`.
+Командлет `Set-AzApiManagementProperty` заменен на `Set-AzApiManagementNamedValue`.
 
 ## <a name="azbatch"></a>Az.Batch
 
