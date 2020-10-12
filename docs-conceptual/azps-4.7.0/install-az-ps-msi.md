@@ -5,12 +5,12 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/10/2020
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 33d9214544ddb126b717685f9e7986bed926b149
-ms.sourcegitcommit: 15f21c40dcb7610e2fbaaabf264ad925e4224500
+ms.openlocfilehash: 193e8c5d14f1bf2fe9c84a9da2defac50be97ec7
+ms.sourcegitcommit: 3d16496984a0b9fd7631aa043726060ddae3624d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90928486"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91833263"
 ---
 # <a name="install-azure-powershell-on-windows-with-msi"></a>Установка Azure PowerShell в ОС Windows с помощью пакета MSI
 
@@ -31,7 +31,14 @@ $PSVersionTable.PSVersion
 
 ## <a name="install-or-update-on-windows-using-the-msi-package"></a>Установка или обновление в Windows с помощью пакета MSI
 
-Пакет MSI для Azure PowerShell доступен на [GitHub](https://github.com/Azure/azure-powershell/releases/latest). Если вы установили более ранние версии модулей Azure PowerShell с помощью пакета MSI, установщик удалит их автоматически. Пакет MSI устанавливает модули в `${env:ProgramFiles}\WindowsPowerShell\Modules`.
+Пакет MSI для Azure PowerShell доступен на [GitHub](https://github.com/Azure/azure-powershell/releases):
+
+1. Перейдите по адресу https://github.com/Azure/azure-powershell/releases.
+2. Найдите Новейший модуль коллекции для Azure PowerShell (они перечислены в хронологическом порядке, обычно указаны только версии выпуска без имени, например "4.7.0").
+3. Прокрутите заметки об исправлениях вниз до конца и щелкните стрелку рядом с параметром ресурсов, чтобы отобразились параметры MSI.
+4. Щелкните MSI командлетов Az по своему усмотрению, чтобы начать загрузку.
+
+Если вы установили более ранние версии модулей Azure PowerShell с помощью пакета MSI, установщик удалит их автоматически. Пакет MSI устанавливает модули в `${env:ProgramFiles}\WindowsPowerShell\Modules`.
 
 Чтобы начать работу с Azure PowerShell, выполните вход, используя данные своей учетной записи в Azure.
 
