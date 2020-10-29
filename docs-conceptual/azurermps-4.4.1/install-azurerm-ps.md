@@ -5,12 +5,12 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/27/2018
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 7c0ae849d276df103619bec3422cdc9b694d068f
-ms.sourcegitcommit: 8b3126b5c79f453464d90669f0046ba86b7a3424
+ms.openlocfilehash: 3f4b05352ef5e5c7f32495d002a78aadd3e056e1
+ms.sourcegitcommit: 038cb42a3bd8c009bc57c8c1c252e66fa170c84b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89238590"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92523297"
 ---
 # <a name="install-azure-powershell-on-windows-with-powershellget"></a>Установка Azure PowerShell в ОС Windows с помощью PowerShellGet
 
@@ -75,7 +75,7 @@ You are installing the modules from an untrusted repository. If you trust this r
 its InstallationPolicy value by running the Set-PSRepository cmdlet.
 
 Are you sure you want to install the modules from 'PSGallery'?
-[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"): Y
+[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"): Y
 ```
 
 Ответьте Yes (Да) или Yes to All (Да для всех), чтобы продолжить установку.
@@ -113,7 +113,6 @@ Import-Module -Name AzureRM
 |---|---|
 |Используется Windows 10 или Windows Server 2016|Встроен в пакет Windows Management Framework (WMF) 5.0, который входит в состав ОС|
 |Обновление до PowerShell 5.0|[Установите последнюю версию WMF](https://www.microsoft.com/download/details.aspx?id=54616)|
-|Используется версия Windows с PowerShell 3 или PowerShell 4|[Скачайте модули PackageManagement](https://go.microsoft.com/fwlink/?LinkID=746217)|
 
 ### <a name="div-idhelpmechoosechecking-the-version-of-azure-powershell"></a><div id="helpmechoose"/>Проверка версии Azure PowerShell
 
@@ -137,9 +136,9 @@ available on this system. This module 'Azure.Storage' may override the existing 
 still want to install this module 'Azure.Storage', use -AllowClobber parameter.
 
 At C:\Program Files\WindowsPowerShell\Modules\PowerShellGet\1.0.0.1\PSModule.psm1:1772 char:21
-+ ...          $null = PackageManagement\Install-Package @PSBoundParameters
-+                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    + CategoryInfo          : InvalidOperation: (Microsoft.Power....InstallPackage:InstallPackage) [Install-Package], Exception
++ ...          $null = PackageManagement\Install-Package @PSBoundParameters
++                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (Microsoft.Power....InstallPackage:InstallPackage) [Install-Package], Exception
     + FullyQualifiedErrorId : CommandAlreadyAvailable,Validate-ModuleCommandAlreadyAvailable,Microsoft.PowerShell.PackageManagement.Cmdlets.InstallPackage
 ```
 
@@ -168,7 +167,7 @@ Import-Module -Name AzureRM -RequiredVersion 2.3.0
 ```
 
 > [!NOTE]
-> Версии 2.1.0 и 1.2.6 — это первые версии модуля, предназначенные для установки и использования без удаления предыдущей версии. Если загрузить более раннюю версию модуля Azure PowerShell, то загрузится несовместимая версия модуля **AzureRM.Profile**. Это приведет к тому, что при каждом выполнении командлета будет отображаться запрос на вход.
+> Версии 2.1.0 и 1.2.6 — это первые версии модуля, предназначенные для установки и использования без удаления предыдущей версии. Если загрузить более раннюю версию модуля Azure PowerShell, то загрузится несовместимая версия модуля **AzureRM.Profile** . Это приведет к тому, что при каждом выполнении командлета будет отображаться запрос на вход.
 
 ### <a name="other-installation-methods"></a>Другие методы установки
 

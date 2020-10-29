@@ -5,12 +5,12 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 08/31/2017
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 7d220266bd6e36fd083f56290cb6cee8f2e80d3e
-ms.sourcegitcommit: 8b3126b5c79f453464d90669f0046ba86b7a3424
+ms.openlocfilehash: 5bd3e788f84bad171e13f43fb9c97d922a1e5222
+ms.sourcegitcommit: 038cb42a3bd8c009bc57c8c1c252e66fa170c84b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89243707"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92523420"
 ---
 # <a name="overview-of-azure-powershell"></a>Общие сведения об Azure PowerShell
 
@@ -22,8 +22,8 @@ ms.locfileid: "89243707"
 
 Приведенные ниже примеры помогут вам понять, как реализовать типичные сценарии с помощью Azure PowerShell:
 
-- [Виртуальные машины Linux](/azure/virtual-machines/virtual-machines-linux-powershell-samples?toc=/powershell/azure/toc.json)
-- [Виртуальные машины Windows](/azure/virtual-machines/virtual-machines-windows-powershell-samples?toc=/powershell/azure/toc.json)
+- [Виртуальные машины Linux](/azure/virtual-machines/linux/powershell-samples?toc=/powershell/azure/toc.json)
+- [Виртуальные машины Windows](/azure/virtual-machines/windows/powershell-samples?toc=/powershell/azure/toc.json)
 - [Веб-приложения](/azure/app-service-web/app-service-powershell-samples?toc=/powershell/azure/toc.json)
 - [Базы данных SQL](/azure/sql-database/sql-database-powershell-samples?toc=/powershell/azure/toc.json)
 
@@ -38,7 +38,5 @@ ms.locfileid: "89243707"
 
 ## <a name="other-azure-powershell-modules"></a>Другие модули Azure PowerShell
 
-- [Azure Active Directory](/powershell/azure/active-directory/)
-- [Azure Information Protection](/powershell/azure/aip/)
-- [Azure Service Fabric](/powershell/azure/service-fabric/)
-- [Azure ElasticDB](/powershell/azure/elasticdbjobs/)
+- [Azure Active Directory](/powershell/module/activedirectory/)
+- [Azure Service Fabric](/powershell/module/AzureRM.ServiceFabric/)

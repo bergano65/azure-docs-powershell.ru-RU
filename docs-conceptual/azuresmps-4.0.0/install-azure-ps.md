@@ -5,12 +5,12 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/06/2017
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 286288f83a0ad0b486cccb3543858c173a8eb087
-ms.sourcegitcommit: 8b3126b5c79f453464d90669f0046ba86b7a3424
+ms.openlocfilehash: 2860d5c7642b137c1cb14a38fa13d59ec2a4123c
+ms.sourcegitcommit: 038cb42a3bd8c009bc57c8c1c252e66fa170c84b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89241327"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92523212"
 ---
 # <a name="installing-the-azure-powershell-service-management-module"></a>Установка модуля управления службами Azure PowerShell
 
@@ -72,7 +72,7 @@ Add-AzureAccount
 
 Примеры скриптов, с помощью которых можно автоматизировать некоторые распространенные задачи в Azure, см. в [центре скриптов Microsoft Azure](http://www.windowsazure.com/documentation/scripts/).
 
-Общие сведения об установке, обучении, использовании и настройке Windows PowerShell см. в статье, посвященной [работе со скриптами в Windows PowerShell](https://go.microsoft.com/fwlink/p/?linkid=320210).
+Общие сведения об установке, обучении, использовании и настройке Windows PowerShell см. в статье, посвященной [работе со скриптами в Windows PowerShell](/powershell/scripting/learn/ps101/00-introduction).
 
 ### <a name="how-to-get-powershellget"></a>Как установить PowerShellGet
 
@@ -80,7 +80,6 @@ Add-AzureAccount
 |---|---|
 |Используется Windows 10 или Windows Server 2016|Встроен в пакет Windows Management Framework (WMF) 5.0, который входит в состав ОС|
 |Обновление до PowerShell 5.0|[Установите последнюю версию WMF](https://www.microsoft.com/download/details.aspx?id=54616)|
-|Используется версия Windows с PowerShell 3 или PowerShell 4|[Скачайте модули PackageManagement](https://go.microsoft.com/fwlink/?LinkID=746217)|
 
 <div id="helpmechoose"/>
 
