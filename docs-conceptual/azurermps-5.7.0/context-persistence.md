@@ -5,18 +5,18 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 08/31/2017
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 73f8401fa3fe405d21b654bf8e7df628af9773e9
-ms.sourcegitcommit: 8b3126b5c79f453464d90669f0046ba86b7a3424
+ms.openlocfilehash: 2427e26700e975bfb6ce3d677a1af1a6130f10a9
+ms.sourcegitcommit: 038cb42a3bd8c009bc57c8c1c252e66fa170c84b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89243860"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92523399"
 ---
 # <a name="persisting-user-credentials-across-powershell-sessions"></a>Использование учетных данных пользователя в разных сеансах PowerShell
 
 [!INCLUDE [migrate-to-az-banner](../../includes/migrate-to-az-banner.md)]
 
-В Azure PowerShell существует функция **автосохранения контекста Azure**, которая предоставляет следующие возможности:
+В Azure PowerShell существует функция **автосохранения контекста Azure** , которая предоставляет следующие возможности:
 
 - хранение учетных данных для входа для повторного использования в новых сеансах PowerShell;
 - упрощенное использование фоновых задач для запуска долго выполняющихся командлетов;
@@ -61,7 +61,7 @@ ms.locfileid: "89243860"
 
 - Использовать контекст по умолчанию со включенной функцией автосохранения
 
-  Если включить функцию **автосохранения контекста**, фоновые задания будут автоматически использовать сохраненный контекст по умолчанию.
+  Если включить функцию **автосохранения контекста** , фоновые задания будут автоматически использовать сохраненный контекст по умолчанию.
 
   ```powershell-interactive
   PS C:\> $job = Start-Job { New-AzureRmVm [... Additional parameters ...]}
@@ -154,5 +154,4 @@ $env:AzureRmContextAutoSave="true" | "false"
 
 <!-- Updated cmdlets -->
 [login]: /powershell/module/azurerm.profile/Connect-AzureRmAccount
-[import]: /powershell/module/azurerm.profile/Import-AzureRmAccount
 [set-context]: /powershell/module/azurerm.profile/Import-AzureRmContext

@@ -5,12 +5,12 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 09/11/2018
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: d8479b24b2c890999c5620d2031a6605e98c0730
-ms.sourcegitcommit: 8b3126b5c79f453464d90669f0046ba86b7a3424
+ms.openlocfilehash: cbb07ce6711616c1cabe5ab2108015ea78fd28e9
+ms.sourcegitcommit: 038cb42a3bd8c009bc57c8c1c252e66fa170c84b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89243384"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92523178"
 ---
 # <a name="get-started-with-azure-powershell"></a>Начало работы с Azure PowerShell
 
@@ -363,14 +363,14 @@ Are you sure you want to remove resource group 'myResourceGroup'
 
 ## <a name="get-samples"></a>Получение примеров
 
-Дополнительные сведения о способах использования Azure PowerShell см. в примерах популярных сценариев для [виртуальных машин Linux](/azure/virtual-machines/virtual-machines-linux-powershell-samples?toc=%2fpowershell%2fazure%%2ftoc.json), [виртуальных машин Windows](/azure/virtual-machines/virtual-machines-windows-powershell-samples?toc=%2fpowershell%2fazure%%2ftoc.json), [веб-приложений](/azure/app-service-web/app-service-powershell-samples?toc=%2fpowershell%2fazure%%2ftoc.json) и [баз данных SQL](/azure/sql-database/sql-database-powershell-samples?toc=%2fpowershell%2fazure%%2ftoc.json).
+Дополнительные сведения о способах использования Azure PowerShell см. в примерах популярных сценариев для [виртуальных машин Linux](/azure/virtual-machines/linux/powershell-samples?toc=%2fpowershell%2fazure%%2ftoc.json), [виртуальных машин Windows](/azure/virtual-machines/windows/powershell-samples?toc=%2fpowershell%2fazure%%2ftoc.json), [веб-приложений](/azure/app-service-web/app-service-powershell-samples?toc=%2fpowershell%2fazure%%2ftoc.json) и [баз данных SQL](/azure/sql-database/sql-database-powershell-samples?toc=%2fpowershell%2fazure%%2ftoc.json).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * [Вход с помощью Azure PowerShell](authenticate-azureps.md)
 * [Управление подписками Azure с помощью Azure PowerShell](manage-subscriptions-azureps.md)
 * [Создание субъектов-служб в Azure с помощью Azure PowerShell](create-azure-service-principal-azureps.md)
-* Ознакомьтесь с заметками о выпуске, касающимися миграции с более раннего выпуска: [https://github.com/Azure/azure-powershell/tree/dev/documentation/release-notes](https://github.com/Azure/azure-powershell/tree/dev/documentation/release-notes).
+* Ознакомьтесь с [заметками о выпуске](./release-notes-azureps.md), касающимися миграции с более раннего выпуска.
 * Помощь от сообщества:
   * [Форум Azure на MSDN](https://go.microsoft.com/fwlink/p/?LinkId=320212)
   * [Stackoverflow](https://go.microsoft.com/fwlink/?LinkId=320213)
