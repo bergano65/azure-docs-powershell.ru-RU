@@ -1,0 +1,197 @@
+---
+external help file: Microsoft.Azure.Commands.ApiManagement.ServiceManagement.dll-Help.xml
+Module Name: AzureRM.ApiManagement
+ms.assetid: EEB52CCA-F5D6-4ACB-A6C9-D07C510A5878
+online version: ''
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/preview/src/ResourceManager/ApiManagement/Commands.ApiManagement/help/Get-AzureRmApiManagementGroup.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/preview/src/ResourceManager/ApiManagement/Commands.ApiManagement/help/Get-AzureRmApiManagementGroup.md
+ms.openlocfilehash: 0c28742eb3c774adb8c7b6a8d920e91377bea35f
+ms.sourcegitcommit: f599b50d5e980197d1fca769378df90a842b42a1
+ms.translationtype: MT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "93566344"
+---
+# Get-AzureRmApiManagementGroup
+
+## КРАТКИй обзор
+Возвращает все или определенные группы управления API.
+
+[!INCLUDE [migrate-to-az-banner](../../includes/migrate-to-az-banner.md)]
+
+## Максимальное
+
+### Получить все группы (по умолчанию)
+```
+Get-AzureRmApiManagementGroup -Context <PsApiManagementContext> [-Name <String>]
+ [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+```
+
+### КОД группы "получить по"
+```
+Get-AzureRmApiManagementGroup -Context <PsApiManagementContext> [-GroupId <String>] [-Name <String>]
+ [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+```
+
+### Поиск групп по пользователям
+```
+Get-AzureRmApiManagementGroup -Context <PsApiManagementContext> [-Name <String>] [-UserId <String>]
+ [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+```
+
+### Поиск групп по продуктам
+```
+Get-AzureRmApiManagementGroup -Context <PsApiManagementContext> [-Name <String>] [-ProductId <String>]
+ [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+```
+
+## NОПИСАНИЕ
+Командлет **Get-AzureRmApiManagementGroup** возвращает все или определенные группы управления API.
+
+## ИЛЛЮСТРИРУЮТ
+
+### Пример 1: получение всех групп
+```
+PS C:\>Get-AzureRmApiManagementGroup -Context $APImContext
+```
+
+Эта команда возвращает все группы.
+
+### Пример 2: получение учетной записи группы по ИДЕНТИФИКАТОРу
+```
+PS C:\>Get-AzureRmApiManagementGroup -Context $APImContext -GroupId "0123456789"
+```
+
+Эта команда получает идентификатор группы с именем 0123456789.
+
+### Пример 3: получение группировки по имени
+```
+PS C:\>Get-AzureRmApiManagementGroup -Context $APImContext -Name "Group0002"
+```
+
+Эта команда возвращает группу с именем Group0002.
+
+### Пример 4: получение всех групп пользователей
+```
+PS C:\>Get-AzureRmApiManagementGroup -Context $APImContext -UserId "0123456789"
+```
+
+Эта команда получает все группы пользователей с ИДЕНТИФИКАТОРом пользователя 0123456789.
+
+## ПАРАМЕТРЫ
+
+### -Context
+Указывает экземпляр PsApiManagementContext.
+
+```yaml
+Type: Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementContext
+Parameter Sets: (All)
+Aliases: 
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -GroupId
+Указывает код группы.
+Если задано значение, командлет пытается найти группу по ее идентификатору.
+
+```yaml
+Type: System.String
+Parameter Sets: Get by group ID
+Aliases: 
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -Name (имя)
+Указывает имя группы управления.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases: 
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -ProductId
+Идентификатор существующего продукта.
+Если задано значение, будет возвращено все группы, которым назначен продукт.
+Этот параметр является необязательным.
+
+```yaml
+Type: System.String
+Parameter Sets: Find groups by product
+Aliases: 
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -UserId
+Указывает идентификатор существующего продукта.
+Если указан командлет, вы вернете все группы, в которые назначен продукт.
+
+```yaml
+Type: System.String
+Parameter Sets: Find groups by user
+Aliases: 
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -DefaultProfile
+Учетные данные, учетная запись, клиент и подписка, используемые для связи с Azure.
+
+```yaml
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### CommonParameters
+Этот командлет поддерживает общие параметры:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-of Variable,-out,-PipelineVariable,-Verbose, и-WarningAction. Дополнительные сведения можно найти в разделе about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
+
+## ВХОДНЫЕ данные
+
+## НАПРЯЖЕНИЕ
+
+### IList<Microsoft. Azure. Commands. ApiManagement. ServiceManagement. Models. PsApiManagementGroup>
+
+## Пуск
+
+## ДОПОЛНИТЕЛЬНЫЕ ССЫЛКИ
+
+[New-AzureRmApiManagementGroup](./New-AzureRmApiManagementGroup.md)
+
+[Remove-AzureRmApiManagementGroup](./Remove-AzureRmApiManagementGroup.md)
+
+[Set-AzureRmApiManagementGroup](./Set-AzureRmApiManagementGroup.md)
+
+

@@ -1,0 +1,209 @@
+---
+external help file: Microsoft.Azure.Commands.DataFactories.dll-Help.xml
+Module Name: AzureRM.DataFactories
+ms.assetid: 5490BB24-127E-4C21-B85F-B70D817B659A
+online version: ''
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/preview/src/ResourceManager/DataFactories/Commands.DataFactories/help/Save-AzureRmDataFactoryLog.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/preview/src/ResourceManager/DataFactories/Commands.DataFactories/help/Save-AzureRmDataFactoryLog.md
+ms.openlocfilehash: 8525333f2be148b59053c62fc4d0f95dda8949a7
+ms.sourcegitcommit: f599b50d5e980197d1fca769378df90a842b42a1
+ms.translationtype: MT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "93566741"
+---
+# Save-AzureRmDataFactoryLog
+
+## КРАТКИй обзор
+Загружает файлы журнала из службы обработки Azure HDInsight.
+
+[!INCLUDE [migrate-to-az-banner](../../includes/migrate-to-az-banner.md)]
+
+## Максимальное
+
+### ByFactoryName (по умолчанию)
+```
+Save-AzureRmDataFactoryLog [-DataFactoryName] <String> [-Id] <String> [-DownloadLogs] [[-Output] <String>]
+ [-ResourceGroupName] <String> [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+```
+
+### ByFactoryObject
+```
+Save-AzureRmDataFactoryLog [-DataFactory] <PSDataFactory> [-Id] <String> [-DownloadLogs] [[-Output] <String>]
+ [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+```
+
+## NОПИСАНИЕ
+Командлет **Save-AzureRmDataFactoryLog** загружает файлы журнала, связанные с обработкой Azure HDInsight для проектов свинья или Hive, или для настраиваемых действий на локальном жестком диске.
+Сначала необходимо выполнить командлет Get-AzureRmDataFactoryRun, чтобы получить идентификатор для действия, выполняемого для среза данных, а затем использовать этот идентификатор для получения файлов журнала из хранилища BLOB-объектов, связанного с кластером HDInsight.
+
+Если параметр *DownloadLogs* не указан, командлет просто возвращает расположение файлов журнала.
+
+Если вы укажете *DownloadLogs* без указания выходного каталога (параметр *Output* ), файлы журнала загружаются в папку документы по умолчанию.
+
+Если задать *DownloadLogs* и выходную папку ( *Output* ), файлы журнала будут загружены в указанную папку.
+
+## ИЛЛЮСТРИРУЮТ
+
+### Пример 1: сохранение файлов журнала в определенной папке
+```
+PS C:\>Save-AzureRmDataFactoryLog -ResourceGroupName "ADF" -DataFactoryName "LogProcessingFactory" -Id "841b77c9-d56c-48d1-99a3-8c16c3e77d39" -DownloadLogs -Output "C:\Test"
+```
+
+Эта команда позволяет сохранить файлы журнала для действия с ИД 841b77c9-d56c-48d1-99a3-8c16c3e77d39, в котором действие относится к конвейеру в фабрике данных с именем LogProcessingFactory в группе ресурсов с именем ADF.
+Файлы журнала сохраняются в папке C:\Test.
+
+### Пример 2: сохранение файлов журнала в папке "документы по умолчанию"
+```
+PS C:\>Save-AzureRmDataFactoryLog -ResourceGroupName "ADF" -DataFactoryName "LogProcessingFactory" -Id "841b77c9-d56c-48d1-99a3-8c16c3e77d39" -DownloadLogs
+```
+
+Эта команда позволяет сохранить файлы журнала в папке "документы" (по умолчанию).
+
+### Пример 3: получение расположения файлов журнала
+```
+PS C:\>Save-AzureRmDataFactoryLog -ResourceGroupName "ADF" -DataFactoryName "LogProcessingFactory" -Id "841b77c9-d56c-48d1-99a3-8c16c3e77d39"
+```
+
+Эта команда возвращает расположение файлов журнала.
+Обратите внимание, что *DownloadLogs* не указан.
+
+## ПАРАМЕТРЫ
+
+### — Фактическое.
+Указывает объект **PSDataFactory** .
+
+```yaml
+Type: Microsoft.Azure.Commands.DataFactories.Models.PSDataFactory
+Parameter Sets: ByFactoryObject
+Aliases: 
+
+Required: True
+Position: 0
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -DataFactoryName
+Указывает имя фабрики данных.
+Этот командлет загружает файлы журнала для фабрики данных, которую указывает этот параметр.
+
+```yaml
+Type: System.String
+Parameter Sets: ByFactoryName
+Aliases: 
+
+Required: True
+Position: 1
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -DownloadLogs
+Указывает на то, что этот командлет загружает файлы журнала на локальный компьютер.
+Если папка *Ouptut* не указана, файлы сохраняются в папке "документы" во вложенной папке.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: 
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ID
+Указывает идентификатор действия, выполняемого для среза данных.
+Для получения идентификатора используйте командлет Get-AzureRmDataFactoryRun.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases: 
+
+Required: True
+Position: 1
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -Output
+Указывает папку выходных данных, в которой сохраняются Скачанные файлы журнала.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases: 
+
+Required: False
+Position: 2
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ResourceGroupName
+Указывает имя группы ресурсов Azure.
+Этот командлет создает фабрику данных, принадлежащую группе, которую указывает этот параметр.
+
+```yaml
+Type: System.String
+Parameter Sets: ByFactoryName
+Aliases: 
+
+Required: True
+Position: 0
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -DefaultProfile
+Учетные данные, учетная запись, клиент и подписка, используемые для связи с Azure.
+
+```yaml
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### CommonParameters
+Этот командлет поддерживает общие параметры:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-of Variable,-out,-PipelineVariable,-Verbose, и-WarningAction. Дополнительные сведения можно найти в разделе about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
+
+## ВХОДНЫЕ данные
+
+## НАПРЯЖЕНИЕ
+
+### Microsoft. Azure. Commands. Factoring. Models. PSRunLogInfo
+
+## Пуск
+* Ключевые слова: Azure, azurerm, ARM, Resource, Management, Manager, Data, фабрики
+
+## ДОПОЛНИТЕЛЬНЫЕ ССЫЛКИ
+
+[Get-AzureRmDataFactoryRun](./Get-AzureRmDataFactoryRun.md)
+
+[Get-AzureRmDataFactoryPipeline](./Get-AzureRmDataFactoryPipeline.md)
+
+[New-AzureRmDataFactoryPipeline](./New-AzureRmDataFactoryPipeline.md)
+
+[Remove-AzureRmDataFactoryPipeline](./Remove-AzureRmDataFactoryPipeline.md)
+
+[Set-AzureRmDataFactoryPipelineActivePeriod](./Set-AzureRmDataFactoryPipelineActivePeriod.md)
+
+[Приостановить — AzureRmDataFactoryPipeline](./Suspend-AzureRmDataFactoryPipeline.md)
+
+
