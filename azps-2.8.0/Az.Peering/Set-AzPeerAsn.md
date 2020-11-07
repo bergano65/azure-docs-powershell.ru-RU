@@ -1,0 +1,190 @@
+---
+external help file: Microsoft.Azure.PowerShell.Cmdlets.Peering.dll-Help.xml
+Module Name: Az.Peering
+online version: https://docs.microsoft.com/en-us/powershell/module/az.peering/set-azpeerasn
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Peering/Peering/help/Set-AzPeerAsn.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Peering/Peering/help/Set-AzPeerAsn.md
+ms.openlocfilehash: 81398d4ab62db1b8dca573dfd6beccde3be63700
+ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.translationtype: MT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "93904582"
+---
+# Set-AzPeerAsn
+
+## КРАТКИй обзор
+Обновление контактных данных
+
+## Максимальное
+
+### ByName (по умолчанию)
+```
+Set-AzPeerAsn [-Name] <String> [-Email <String[]>] [-Phone <String[]>] [-AsJob]
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### По умолчанию
+```
+Set-AzPeerAsn [-InputObject] <PSPeerAsn> [-Email <String[]>] [-Phone <String[]>] [-AsJob]
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+## NОПИСАНИЕ
+Позволяет обновлять контактные данные PeerAsn подписки.
+
+## ИЛЛЮСТРИРУЮТ
+
+### Пример 1
+```powershell
+#Get the Peer ASN object
+PS C:> Get-AzPeerAsn -PeerName Contoso | Set-AzPeerAsn -Email noc1@contoso.com
+
+PeerContactInfo : Microsoft.Azure.PowerShell.Cmdlets.Peering.Models.PSContactInfo
+PeerName        : Contoso
+ValidationState : None
+PeerAsnProperty : 65050
+Name            : Contoso65050
+Id              : /subscriptions//providers/Microsoft.Peering/peerAsns/Contoso65050
+Type            : Microsoft.Peering/peerAsns
+```
+
+Добавляет адрес электронной почты для однорангового узла ASN
+
+## ПАРАМЕТРЫ
+
+### -AsJob
+Выполнение в фоновом режиме.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -DefaultProfile
+Учетные данные, учетная запись, клиент и подписка, используемые для связи с Azure.
+
+```yaml
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzContext, AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Электронная почта
+Отправить по электронной почте
+
+```yaml
+Type: System.String[]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -InputObject
+{{Fill InputObject описание}}
+
+```yaml
+Type: Microsoft.Azure.PowerShell.Cmdlets.Peering.Models.PSPeerAsn
+Parameter Sets: Default
+Aliases:
+
+Required: True
+Position: 0
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### -Name (имя)
+Уникальное имя PSPeering.
+
+```yaml
+Type: System.String
+Parameter Sets: ByName
+Aliases:
+
+Required: True
+Position: 0
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Phone
+Кнопка
+
+```yaml
+Type: System.String[]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Confirm
+Запрашивает подтверждение перед запуском командлета.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -WhatIf
+Показывает, что произойдет при запуске командлета. Командлет не выполняется.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### CommonParameters
+Этот командлет поддерживает общие параметры:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-of Variable,-out,-PipelineVariable,-Verbose, и-WarningAction. Дополнительные сведения можно найти в разделе [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+
+## ВХОДНЫЕ данные
+
+### Microsoft. Azure. PowerShell. командлеты. Peer (Models. PSPeerAsn)
+
+## НАПРЯЖЕНИЕ
+
+### Microsoft. Azure. PowerShell. командлеты. Peer (Models. PSPeerAsn)
+
+## Пуск
+
+## ДОПОЛНИТЕЛЬНЫЕ ССЫЛКИ
