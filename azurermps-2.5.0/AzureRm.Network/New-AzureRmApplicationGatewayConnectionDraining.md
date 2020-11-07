@@ -1,0 +1,107 @@
+---
+external help file: Microsoft.Azure.Commands.Network.dll-Help.xml
+Module Name: AzureRM.Network
+online version: https://docs.microsoft.com/en-us/powershell/module/azurerm.network/new-azurermapplicationgatewayconnectiondraining
+schema: 2.0.0
+ms.openlocfilehash: 6e17db790cd776e8662c4c445e53604dcb8929de
+ms.sourcegitcommit: b9b2dea3441d1532a5564ddca3dced45424fe2d6
+ms.translationtype: MT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 08/15/2020
+ms.locfileid: "93913807"
+---
+# New-AzureRmApplicationGatewayConnectionDraining
+
+## КРАТКИй обзор
+Создает новую конфигурацию сток подключений для параметров HTTP для веб-сервер.
+
+[!INCLUDE [migrate-to-az-banner](../../includes/migrate-to-az-banner.md)]
+
+## Максимальное
+
+```
+New-AzureRmApplicationGatewayConnectionDraining -Enabled <Boolean> -DrainTimeoutInSec <Int32>
+ [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+```
+
+## NОПИСАНИЕ
+Командлет **New-AzureRmApplicationGatewayConnectionDraining** создает новую конфигурацию сток подключений для параметров HTTP для веб-сервер.
+
+## ИЛЛЮСТРИРУЮТ
+
+### Пример 1
+```
+PS C:\> $connectionDraining = New-AzureRmApplicationGatewayConnectionDraining -Enabled $True -DrainTimeoutInSec 42
+```
+
+Команда создает новую конфигурацию сток подключений с параметром "Enabled" (true), а DrainTimeoutInSec — 42 секунд и сохраняет его в $connectionDraining.
+
+## ПАРАМЕТРЫ
+
+### -DefaultProfile
+Учетные данные, учетная запись, клиент и подписка, используемые для связи с Azure.
+
+```yaml
+Type: IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -DrainTimeoutInSec
+Число секунд, в течение которого сток подключений является активным.
+Допустимые значения: от 1 секунды до 3600 секунд.
+
+```yaml
+Type: Int32
+Parameter Sets: (All)
+Aliases: 
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Включено
+Включена ли сток подключений.
+
+```yaml
+Type: Boolean
+Parameter Sets: (All)
+Aliases: 
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### CommonParameters
+Этот командлет поддерживает общие параметры:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-of Variable,-out,-PipelineVariable,-Verbose, и-WarningAction. Дополнительные сведения можно найти в разделе about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
+
+## ВХОДНЫЕ данные
+
+### Ничего
+
+## НАПРЯЖЕНИЕ
+
+### Microsoft. Azure. Commands. Network. Models. PSApplicationGatewayConnectionDraining
+
+## Пуск
+
+## ДОПОЛНИТЕЛЬНЫЕ ССЫЛКИ
+
+[Get-AzureRmApplicationGatewayConnectionDraining](./Get-AzureRmApplicationGatewayConnectionDraining.md)
+
+[Remove-AzureRmApplicationGatewayConnectionDraining](./Remove-AzureRmApplicationGatewayConnectionDraining.md)
+
+[Set-AzureRmApplicationGatewayConnectionDraining](./Set-AzureRmApplicationGatewayConnectionDraining.md)
+
