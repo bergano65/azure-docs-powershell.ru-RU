@@ -1,0 +1,272 @@
+---
+external help file: Microsoft.Azure.Commands.Network.dll-Help.xml
+Module Name: AzureRM.Network
+ms.assetid: 622FE9AC-1CC4-489C-BB17-9D6B9D1C151D
+online version: ''
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/preview/src/ResourceManager/Network/Commands.Network/help/New-AzureRmApplicationGatewayRequestRoutingRule.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/preview/src/ResourceManager/Network/Commands.Network/help/New-AzureRmApplicationGatewayRequestRoutingRule.md
+ms.openlocfilehash: 291188d8eac7f5031079e477fe2e6a3a0106b4a2
+ms.sourcegitcommit: f599b50d5e980197d1fca769378df90a842b42a1
+ms.translationtype: MT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "93734046"
+---
+# New-AzureRmApplicationGatewayRequestRoutingRule
+
+## КРАТКИй обзор
+Создание правила маршрутизации запросов для шлюза приложений.
+
+[!INCLUDE [migrate-to-az-banner](../../includes/migrate-to-az-banner.md)]
+
+## Максимальное
+
+### SetByResourceId
+```
+New-AzureRmApplicationGatewayRequestRoutingRule -Name <String> -RuleType <String>
+ [-BackendHttpSettingsId <String>] [-HttpListenerId <String>] [-BackendAddressPoolId <String>]
+ [-UrlPathMapId <String>] [-RedirectConfigurationId <String>] [-DefaultProfile <IAzureContextContainer>]
+ [<CommonParameters>]
+```
+
+### SetByResource
+```
+New-AzureRmApplicationGatewayRequestRoutingRule -Name <String> -RuleType <String>
+ [-BackendHttpSettings <PSApplicationGatewayBackendHttpSettings>]
+ [-HttpListener <PSApplicationGatewayHttpListener>]
+ [-BackendAddressPool <PSApplicationGatewayBackendAddressPool>] [-UrlPathMap <PSApplicationGatewayUrlPathMap>]
+ [-RedirectConfiguration <PSApplicationGatewayRedirectConfiguration>]
+ [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+```
+
+## NОПИСАНИЕ
+Командлет **Add-AzureRmApplicationGatewayRequestRoutingRule** создает правило маршрутизации запросов для шлюза приложений Azure.
+
+## ИЛЛЮСТРИРУЮТ
+
+### Пример 1: Создание правила маршрутизации запросов для шлюза приложения
+```
+PS C:\>$Rule = New-AzureRmApplicationGatewayRequestRoutingRule -Name "Rule01" -RuleType Basic -BackendHttpSettings $Setting -HttpListener $Listener -BackendAddressPool $Pool
+```
+
+Эта команда создает базовое правило маршрутизации запросов с именем Rule01 и сохраняет результат в переменной с именем $Rule.
+
+## ПАРАМЕТРЫ
+
+### -BackendAddressPool
+Задает пул серверных адресов (объект) для создаваемого правила маршрутизации запросов.
+
+```yaml
+Type: Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayBackendAddressPool
+Parameter Sets: SetByResource
+Aliases: 
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -BackendAddressPoolId
+Указывает идентификатор пула серверного адреса для правила маршрутизации запросов, которое нужно создать.
+
+```yaml
+Type: System.String
+Parameter Sets: SetByResourceId
+Aliases: 
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -BackendHttpSettings
+Задает серверные параметры HTTP, как объект, для создаваемого правила маршрутизации запросов.
+
+```yaml
+Type: Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayBackendHttpSettings
+Parameter Sets: SetByResource
+Aliases: 
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -BackendHttpSettingsId
+Указывает идентификатор HTTP-параметров для правила маршрутизации запросов, которое нужно создать.
+
+```yaml
+Type: System.String
+Parameter Sets: SetByResourceId
+Aliases: 
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -HttpListener
+Задает прослушиватель HTTP для создаваемого правила маршрутизации запросов.
+
+```yaml
+Type: Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayHttpListener
+Parameter Sets: SetByResource
+Aliases: 
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -HttpListenerId
+Задает идентификатор HTTP-прослушивателя для создаваемого правила маршрутизации запросов.
+
+```yaml
+Type: System.String
+Parameter Sets: SetByResourceId
+Aliases: 
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Name (имя)
+Указывает имя правила маршрутизации запросов, которое создает этот командлет.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases: 
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -RedirectConfiguration
+RedirectConfiguration шлюза приложений
+
+```yaml
+Type: Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayRedirectConfiguration
+Parameter Sets: SetByResource
+Aliases: 
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -RedirectConfigurationId
+Идентификатор RedirectConfiguration шлюза приложения
+
+```yaml
+Type: System.String
+Parameter Sets: SetByResourceId
+Aliases: 
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -RuleType
+Указывает тип правила маршрутизации запросов.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases: 
+Accepted values: Basic, PathBasedRouting
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -UrlPathMap
+```yaml
+Type: Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayUrlPathMap
+Parameter Sets: SetByResource
+Aliases: 
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -UrlPathMapId
+```yaml
+Type: System.String
+Parameter Sets: SetByResourceId
+Aliases: 
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -DefaultProfile
+Учетные данные, учетная запись, клиент и подписка, используемые для связи с Azure.
+
+```yaml
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### CommonParameters
+Этот командлет поддерживает общие параметры:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-of Variable,-out,-PipelineVariable,-Verbose, и-WarningAction. Дополнительные сведения можно найти в разделе about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
+
+## ВХОДНЫЕ данные
+
+### System. String
+
+## НАПРЯЖЕНИЕ
+
+### Microsoft. Azure. Commands. Network. Models. PSApplicationGatewayRequestRoutingRule
+
+## Пуск
+
+## ДОПОЛНИТЕЛЬНЫЕ ССЫЛКИ
+
+[Add-AzureRmApplicationGatewayRequestRoutingRule](./Add-AzureRmApplicationGatewayRequestRoutingRule.md)
+
+[Get-AzureRmApplicationGatewayRequestRoutingRule](./Get-AzureRmApplicationGatewayRequestRoutingRule.md)
+
+[Remove-AzureRmApplicationGatewayRequestRoutingRule](./Remove-AzureRmApplicationGatewayRequestRoutingRule.md)
+
+[Set-AzureRmApplicationGatewayRequestRoutingRule](./Set-AzureRmApplicationGatewayRequestRoutingRule.md)
+
+
