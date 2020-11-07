@@ -1,0 +1,158 @@
+---
+external help file: Microsoft.Azure.Commands.Websites.dll-Help.xml
+Module Name: AzureRM.WebSites
+ms.assetid: 38433470-CAFD-4B8F-980C-63D4B264B39F
+online version: https://docs.microsoft.com/en-us/powershell/module/azurerm.websites/get-azurermwebapppublishingprofile
+schema: 2.0.0
+ms.openlocfilehash: 5884092a7520517844d6d0137023f99dc744cb86
+ms.sourcegitcommit: b9b2dea3441d1532a5564ddca3dced45424fe2d6
+ms.translationtype: MT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 08/15/2020
+ms.locfileid: "93913529"
+---
+# Get-AzureRmWebAppPublishingProfile
+
+## КРАТКИй обзор
+Получает профиль публикации веб-приложения Azure.
+
+[!INCLUDE [migrate-to-az-banner](../../includes/migrate-to-az-banner.md)]
+
+## Максимальное
+
+### Состояний
+```
+Get-AzureRmWebAppPublishingProfile [[-OutputFile] <String>] [[-Format] <String>] [-ResourceGroupName] <String>
+ [-Name] <String> [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+```
+
+### S2
+```
+Get-AzureRmWebAppPublishingProfile [[-OutputFile] <String>] [[-Format] <String>] [-WebApp] <Site>
+ [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+```
+
+## NОПИСАНИЕ
+Командлет **Get-AzureRmWebAppPublishingProfile** получает профиль публикации веб-приложения Azure.
+
+## ИЛЛЮСТРИРУЮТ
+
+### 1:
+```
+PS C:\> Get-AzureRmWebAppPublishingProfile -ResourceGroupName "Default-Web-WestUS" -Name "ContosoWebApp" -Format "Ftp" -OutputFile "C:\Users\contoso\outputfile"
+```
+
+Эта команда получает профиль публикации в формате FTP для веб-приложения ContosoWebApp, связанного с группой ресурсов Default-Web-WestUS, и сохраняет его в указанном выходном файле.
+
+## ПАРАМЕТРЫ
+
+### -DefaultProfile
+Учетные данные, учетная запись, клиент и подписка, используемые для связи с Azure.
+
+```yaml
+Type: IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Format
+Формате
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases: 
+Accepted values: WebDeploy, FileZilla3, Ftp
+
+Required: False
+Position: 3
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Name (имя)
+Имя WebApp
+
+```yaml
+Type: String
+Parameter Sets: S1
+Aliases: 
+
+Required: True
+Position: 1
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -Выходной_файл
+Выходной файл
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases: 
+
+Required: False
+Position: 2
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ResourceGroupName
+Имя группы ресурсов
+
+```yaml
+Type: String
+Parameter Sets: S1
+Aliases: 
+
+Required: True
+Position: 0
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -WebApp
+Объект WebApp
+
+```yaml
+Type: Site
+Parameter Sets: S2
+Aliases: 
+
+Required: True
+Position: 0
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### CommonParameters
+Этот командлет поддерживает общие параметры:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-of Variable,-out,-PipelineVariable,-Verbose, и-WarningAction. Дополнительные сведения можно найти в разделе about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
+
+## ВХОДНЫЕ данные
+
+### Семейств
+Параметр "WebApp" принимает значение типа "сайт" из конвейера.
+
+## НАПРЯЖЕНИЕ
+
+## Пуск
+
+## ДОПОЛНИТЕЛЬНЫЕ ССЫЛКИ
+
+[Get-AzureRmAppServicePlan](./Get-AzureRmAppServicePlan.md)
+
+[Get-AzureRmWebApp](./Get-AzureRmWebApp.md)
+
+
