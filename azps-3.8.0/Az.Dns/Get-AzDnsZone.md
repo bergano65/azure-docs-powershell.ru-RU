@@ -1,0 +1,133 @@
+---
+external help file: Microsoft.Azure.PowerShell.Cmdlets.Dns.dll-Help.xml
+Module Name: Az.Dns
+ms.assetid: B831ABE6-348C-4DD6-9295-18D23A1FDF63
+online version: https://docs.microsoft.com/en-us/powershell/module/az.dns/get-azdnszone
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Dns/Dns/help/Get-AzDnsZone.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Dns/Dns/help/Get-AzDnsZone.md
+ms.openlocfilehash: 68fff050564eff7014a7428556d3d4b2ce68f06d
+ms.sourcegitcommit: 6a91b4c545350d316d3cf8c62f384478e3f3ba24
+ms.translationtype: MT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "94066364"
+---
+# Get-AzDnsZone
+
+## КРАТКИй обзор
+Возвращает зону DNS.
+
+## Максимальное
+
+### По умолчанию (по умолчанию)
+```
+Get-AzDnsZone [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+```
+
+### Группа
+```
+Get-AzDnsZone [-Name <String>] -ResourceGroupName <String> [-DefaultProfile <IAzureContextContainer>]
+ [<CommonParameters>]
+```
+
+## NОПИСАНИЕ
+Командлет **Get-AzDnsZone** получает DNS-зону из заданной группы ресурсов.
+Если указан параметр *Name* , возвращается один объект **dnsZone** .
+Если параметр *Name* не указан, возвращается массив, содержащий все зоны в указанной группе ресурсов.
+Вы можете использовать объект **dnsZone** , чтобы обновить зону, например добавить в нее объекты **набора записей** .
+
+## ИЛЛЮСТРИРУЮТ
+
+### Пример 1: получение зоны
+```
+PS C:\> $Zone = Get-AzDnsZone -ResourceGroupName "MyResourceGroup" -Name "myzone.com"
+```
+
+В этом примере возвращается зона DNS с именем myzone.com из указанной группы ресурсов, а затем она сохраняется в переменной $Zone.
+
+### Пример 2: получение всех зон в группе ресурсов
+```
+PS C:\> $Zones = Get-AzDnsZone -ResourceGroupName "MyResourceGroup"
+```
+
+В этом примере выполняется получение всех зон DNS в указанной группе ресурсов и их сохранение в переменной $Zones.
+
+### Пример 3: получение всех зон в подписке
+```
+PS C:\> $Zones = Get-AzDnsZone
+```
+
+В этом примере выполняется получение всех зон DNS в текущей подписке Azure и их сохранение в переменной $Zones.
+
+## ПАРАМЕТРЫ
+
+### -DefaultProfile
+Учетные данные, учетная запись, клиент и подписка, используемые для связи с Azure
+
+```yaml
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzContext, AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Name (имя)
+Указывает имя зоны DNS, которую требуется получить.
+Если вы не укажете значение параметра *Name* , этот командлет получает все зоны DNS в указанной группе ресурсов.
+Если параметр *ResourceGroupName* также опущен, этот командлет получает все зоны DNS в текущей подписке Azure.
+
+```yaml
+Type: System.String
+Parameter Sets: ResourceGroup
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -ResourceGroupName
+Указывает имя группы ресурсов, содержащей зону DNS, которую требуется получить.
+Если *ResourceGroupName* не указан, необходимо также опустить параметр *Name* .
+В этом случае этот командлет получает все зоны DNS в текущей подписке Azure.
+
+```yaml
+Type: System.String
+Parameter Sets: ResourceGroup
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### CommonParameters
+Этот командлет поддерживает общие параметры:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-of Variable,-out,-PipelineVariable,-Verbose, и-WarningAction. Дополнительные сведения можно найти в разделе about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .
+
+## ВХОДНЫЕ данные
+
+### System. String
+
+## НАПРЯЖЕНИЕ
+
+### Microsoft. Azure. Commands. DNS. DnsZone
+
+## Пуск
+
+## ДОПОЛНИТЕЛЬНЫЕ ССЫЛКИ
+
+[New-AzDnsZone](./New-AzDnsZone.md)
+
+[Remove-AzDnsZone](./Remove-AzDnsZone.md)
+
+[Set-AzDnsZone](./Set-AzDnsZone.md)
