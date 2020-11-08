@@ -1,0 +1,304 @@
+---
+external help file: ''
+Module Name: Az.Functions
+online version: https://docs.microsoft.com/en-us/powershell/module/az.functions/update-azfunctionappplan
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Functions/help/Update-AzFunctionAppPlan.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Functions/help/Update-AzFunctionAppPlan.md
+ms.openlocfilehash: e0831e95a5601d3558af7089825684cc48e7838c
+ms.sourcegitcommit: b4a38bcb0501a9016a4998efd377aa75d3ef9ce8
+ms.translationtype: MT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "94245404"
+---
+# Update-AzFunctionAppPlan
+
+## КРАТКИй обзор
+Обновляет функциональный план служб приложений.
+
+## Максимальное
+
+### ByName (по умолчанию)
+```
+Update-AzFunctionAppPlan -Name <String> -ResourceGroupName <String> [-SubscriptionId <String>]
+ [-MaximumWorkerCount <Int32>] [-MinimumWorkerCount <Int32>] [-Sku <String>] [-Tag <Hashtable>]
+ [-DefaultProfile <PSObject>] [-AsJob] [-NoWait] [-Confirm] [-WhatIf] [<CommonParameters>]
+```
+
+### ByObjectInput
+```
+Update-AzFunctionAppPlan -InputObject <IAppServicePlan> [-MaximumWorkerCount <Int32>]
+ [-MinimumWorkerCount <Int32>] [-Sku <String>] [-Tag <Hashtable>] [-DefaultProfile <PSObject>] [-AsJob]
+ [-NoWait] [-Confirm] [-WhatIf] [<CommonParameters>]
+```
+
+## NОПИСАНИЕ
+Обновляет функциональный план служб приложений.
+
+## ИЛЛЮСТРИРУЮТ
+
+### Пример 1: Обновление плана служб приложений до EP2 SKU с двадцатью максимальными сотрудниками.
+```powershell
+PS C:\> Update-AzFunctionAppPlan -ResourceGroupName MyResourceGroupName `
+                                 -Name MyPremiumPlan `
+                                 -MaximumWorkerCount 20 `
+                                 -Sku EP2
+
+```
+
+Эта команда обновляет план служб приложений на EP2 SKU, используя двадцать максимум сотрудников.
+
+## ПАРАМЕТРЫ
+
+### -AsJob
+Выполнить команду как задание.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -DefaultProfile
+
+
+```yaml
+Type: System.Management.Automation.PSObject
+Parameter Sets: (All)
+Aliases: AzureRMContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -InputObject
+Для конструирования просмотрите раздел заметок о свойствах INPUTOBJECT и создайте хэш-таблицу.
+
+```yaml
+Type: Microsoft.Azure.PowerShell.Cmdlets.Functions.Models.Api20190801.IAppServicePlan
+Parameter Sets: ByObjectInput
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### -MaximumWorkerCount
+Максимальное количество рабочих процессов для плана служб приложений.
+
+```yaml
+Type: System.Int32
+Parameter Sets: (All)
+Aliases: MaxBurst
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -MinimumWorkerCount
+Минимальное количество рабочих процессов для плана служб приложений.
+
+```yaml
+Type: System.Int32
+Parameter Sets: (All)
+Aliases: MinInstances
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Name (имя)
+Имя плана служб приложений.
+
+```yaml
+Type: System.String
+Parameter Sets: ByName
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Wait
+Выполните команду асинхронно.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ResourceGroupName
+Имя группы ресурсов, к которой принадлежит ресурс.
+
+```yaml
+Type: System.String
+Parameter Sets: ByName
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -SKU
+SKU плана.
+Допустимые входные значения: EP1, EP2, EP3
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -SubscriptionId
+Идентификатор подписки Azure.
+
+```yaml
+Type: System.String
+Parameter Sets: ByName
+Aliases:
+
+Required: False
+Position: Named
+Default value: (Get-AzContext).Subscription.Id
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Тег
+Теги ресурсов.
+
+```yaml
+Type: System.Collections.Hashtable
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Confirm
+Запрашивает подтверждение перед запуском командлета.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -WhatIf
+Показывает, что произойдет при запуске командлета.
+Командлет не выполняется.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### CommonParameters
+Этот командлет поддерживает общие параметры:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-of Variable,-out,-PipelineVariable,-Verbose, и-WarningAction. Дополнительные сведения можно найти в разделе [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+
+## ВХОДНЫЕ данные
+
+### Microsoft. Azure. PowerShell. командлеты. functions. Models. Api20190801. IAppServicePlan
+
+## НАПРЯЖЕНИЕ
+
+### Microsoft. Azure. PowerShell. командлеты. functions. Models. Api20190801. IAppServicePlan
+
+## Пуск
+
+СВЯЗЫВАЮТ
+
+СВОЙСТВА СЛОЖНЫХ ПАРАМЕТРОВ
+
+Чтобы создать параметры, описанные ниже, создайте хэш-таблицу, содержащую соответствующие свойства. Для получения сведений о хэш-таблицах запустите Get-Help about_Hash_Tables.
+
+
+INPUTOBJECT <IAppServicePlan> : 
+  - `Location <String>`: Расположение ресурса.
+  - `[Kind <String>]`: Типа ресурса.
+  - `[Tag <IResourceTags>]`: Теги ресурсов.
+    - `[(Any) <String>]`: Это указывает на то, что в этот объект можно добавить любое свойство.
+  - `[Capacity <Int32?>]`: Текущее количество экземпляров, назначенных ресурсу.
+  - `[FreeOfferExpirationTime <DateTime?>]`: Время истечения срока действия бесплатного предложения фермы серверов.
+  - `[HostingEnvironmentProfileId <String>]`: Идентификатор ресурса среды службы приложений.
+  - `[HyperV <Boolean?>]`: <code>true</code> В противном случае, если вы хотите, чтобы контейнеры службы приложений Hyper-V <code>false</code> .
+  - `[IsSpot <Boolean?>]`: Если <code>true</code> , этот план служб приложений владеет плашечными экземплярами.
+  - `[IsXenon <Boolean?>]`: Устаревший: Если в качестве контейнера службы приложений для контейнеров Hyper-V — <code>true</code> <code>false</code> в противном случае.
+  - `[MaximumElasticWorkerCount <Int32?>]`: Максимальное количество сотрудников, разрешенных для этого плана служб приложений ElasticScaleEnabled
+  - `[PerSiteScaling <Boolean?>]`: Если <code>true</code> приложения, назначенные для этого плана служб приложений, можно масштабировать независимо друг от друга.         Если <code>false</code> приложения, назначенные для этого плана служб приложений, будут масштабироваться во всех экземплярах плана.
+  - `[Reserved <Boolean?>]`: Если план служб приложений для <code>true</code> Linux <code>false</code> в противном случае.
+  - `[SkuCapability <ICapability[]>]`: Возможности SKU, например, включены ли диспетчер трафика?
+    - `[Name <String>]`: Название возможности SKU.
+    - `[Reason <String>]`: Причина возможности SKU.
+    - `[Value <String>]`: Значение возможности SKU.
+  - `[SkuCapacityDefault <Int32?>]`: Количество рабочих процессов по умолчанию для этого плана служб приложений SKU.
+  - `[SkuCapacityMaximum <Int32?>]`: Максимальное количество сотрудников для этого плана служб приложений SKU.
+  - `[SkuCapacityMinimum <Int32?>]`: Минимальное количество рабочих процессов для этого плана служб приложений SKU.
+  - `[SkuCapacityScaleType <String>]`: Доступные конфигурации масштабирования для плана служб приложений.
+  - `[SkuFamily <String>]`: Код семейства SKU ресурса.
+  - `[SkuLocation <String[]>]`: Расположение SKU.
+  - `[SkuName <String>]`: Имя SKU ресурса.
+  - `[SkuSize <String>]`: Указатель размера SKU ресурса.
+  - `[SkuTier <String>]`: Уровень обслуживания SKU ресурса.
+  - `[SpotExpirationTime <DateTime?>]`: Время истечения срока действия фермы серверов. Действует только в том случае, если это ферма серверов с плашечными серверами.
+  - `[TargetWorkerCount <Int32?>]`: Масштабирование количества рабочих процессов.
+  - `[TargetWorkerSizeId <Int32?>]`: Масштабирование кода размера рабочего процесса.
+  - `[WorkerTierName <String>]`: Целевой рабочий уровень, назначенный плану служб приложений.
+
+## ДОПОЛНИТЕЛЬНЫЕ ССЫЛКИ
+
