@@ -5,12 +5,12 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/10/2020
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 913532fa5a8937f7ba4cc1ce21c5879f3920fc7f
-ms.sourcegitcommit: b4a38bcb0501a9016a4998efd377aa75d3ef9ce8
+ms.openlocfilehash: 4ab5639cfb997c5f9ee1286e6eacb97ef775239a
+ms.sourcegitcommit: 63181e0af0e4468b0530fdb0495ed4d44bdfd1c8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92753847"
+ms.lasthandoff: 10/31/2020
+ms.locfileid: "93134868"
 ---
 # <a name="azure-powershell-release-notes"></a>Заметки о выпуске Azure PowerShell
 
@@ -46,7 +46,7 @@ ms.locfileid: "92753847"
 * Добавлены необязательные параметры Tier, MaxSharesCount, DiskIOPSReadOnly и DiskMBpsReadOnly в командлет New-AzDiskUpdateConfig. 
 
 #### <a name="azcontainerregistry"></a>Az.ContainerRegistry
-* [Критическое изменение] Обновлена версия API до 2020-05-01.
+* [Критическое изменение] Обновлена версия API до 2019-05-01.
 * [Критическое изменение] Удалены номер SKU "Классический" и параметр StorageAccountName из командлета New-AzContainerRegistry.
 * Добавлены новые командлеты: Connect-AzContainerRegistry, Import-AzContainerRegistry, Get-AzContainerRegistryUsage, New-AzContainerRegistryNetworkRule, Set-AzContainerRegistryNetworkRule.
 * Добавлен новый параметр NetworkRuleSet в командлет Update-AzContainerRegistry.
@@ -1762,28 +1762,28 @@ ms.locfileid: "92753847"
 
 #### <a name="azbatch"></a>Az.Batch
 * `CoreQuota` в `BatchAccountContext` переименован в `DedicatedCoreQuota`. Также появился новый `LowPriorityCoreQuota`.
-  - Это влияет на **Get-AzBatchAccount** .
-* Параметр **New-AzBatchTask** `-ResourceFile` теперь принимает коллекцию объектов `PSResourceFile`, которые можно создать с помощью нового командлета **New-AzBatchResourceFile** .
+  - Это влияет на **Get-AzBatchAccount**.
+* Параметр **New-AzBatchTask** `-ResourceFile` теперь принимает коллекцию объектов `PSResourceFile`, которые можно создать с помощью нового командлета **New-AzBatchResourceFile**.
 * Новый командлет **New-AzBatchResourceFile** , который помогает создавать объекты `PSResourceFile`. Их можно передавать в **New-AzBatchTask** в параметре `-ResourceFile`.
   - Это позволяет поддерживать два новых типа файлов ресурсов, которые дополняют существующий метод `HttpUrl`:
     - Файлы ресурсов на основе `AutoStorageContainerName` скачивают весь контейнер автоматического хранения в узел пакетной службы.
     - Файлы ресурсов на основе `StorageContainerUrl` скачивают указанный в URL-адресе контейнер в узел пакетной службы.
-* Удалено свойство `ApplicationPackages` в `PSApplication`, который возвращается из **Get-AzBatchApplication** .
-  - Отдельные пакеты в приложении теперь можно извлечь с помощью **Get-AzBatchApplicationPackage** . Например: `Get-AzBatchApplication -AccountName myaccount -ResourceGroupName myresourcegroup -ApplicationId myapplication`.
-* `ApplicationId` переименован в `ApplicationName` для **Get-AzBatchApplicationPackage** , **New-AzBatchApplicationPackage** , **Remove-AzBatchApplicationPackage** , **Get-AzBatchApplication** , **New-AzBatchApplication** , **Remove-AzBatchApplication** и **Set-AzBatchApplication** .
+* Удалено свойство `ApplicationPackages` в `PSApplication`, который возвращается из **Get-AzBatchApplication**.
+  - Отдельные пакеты в приложении теперь можно извлечь с помощью **Get-AzBatchApplicationPackage**. Например: `Get-AzBatchApplication -AccountName myaccount -ResourceGroupName myresourcegroup -ApplicationId myapplication`.
+* `ApplicationId` переименован в `ApplicationName` для **Get-AzBatchApplicationPackage** , **New-AzBatchApplicationPackage** , **Remove-AzBatchApplicationPackage** , **Get-AzBatchApplication** , **New-AzBatchApplication** , **Remove-AzBatchApplication** и **Set-AzBatchApplication**.
   - Теперь `ApplicationId` является псевдонимом для `ApplicationName`.
 * Добавлено новое свойство `PSWindowsUserConfiguration` в `PSUserAccount`.
 * `Version` переименован в `Name` для `PSApplicationPackage`.
 * `BlobSource` переименован в `HttpUrl` для `PSResourceFile`.
 * Удалено свойство `OSDisk` из `PSVirtualMachineConfiguration`.
-* Удалена операция **Set-AzBatchPoolOSVersion** . Больше она не поддерживается.
+* Удалена операция **Set-AzBatchPoolOSVersion**. Больше она не поддерживается.
 * Удалено `TargetOSVersion` из `PSCloudServiceConfiguration`.
 * `CurrentOSVersion` переименован в `OSVersion` для `PSCloudServiceConfiguration`.
 * Удалено `DataEgressGiB` и `DataIngressGiB` из `PSPoolUsageMetrics`.
-* Операция **Get-AzBatchNodeAgentSku** удалена и заменена на **Get-AzBatchSupportedImage** .
+* Операция **Get-AzBatchNodeAgentSku** удалена и заменена на **Get-AzBatchSupportedImage**.
   - **Get-AzBatchSupportedImage** возвращает те же данные, что и **Get-AzBatchNodeAgentSku** , но в более удобном формате.
   - Также возвращаются новые непроверенные образы. Включается и дополнительная информация о `Capabilities` и `BatchSupportEndOfLife` для каждого образа.
-* Добавлена возможность монтировать файловые системы на каждом узле пула с помощью нового параметра `MountConfiguration` в **New-AzBatchPool** .
+* Добавлена возможность монтировать файловые системы на каждом узле пула с помощью нового параметра `MountConfiguration` в **New-AzBatchPool**.
 * Теперь поддерживаются правила безопасности сети, которые блокируют сетевой доступ к пулу по исходящему порту трафика. Это выполняется с помощью свойства `SourcePortRanges` для `PSNetworkSecurityGroupRule`.
 * Что касается выполнения контейнеров, пакетная служба теперь поддерживает выполнение задачи в рабочей папке контейнера или рабочей папке задачи пакетной службы. Выбор зависит от параметра `WorkingDirectory` в `PSTaskContainerSettings`.
 * Добавлена возможность указать коллекцию общедоступных IP-адресов для `PSNetworkConfiguration` с помощью нового свойства `PublicIPs`. Это гарантирует, что узлы в пуле будут иметь IP-адреса из списка, предоставленного пользователем.
@@ -2079,8 +2079,8 @@ ms.locfileid: "92753847"
 #### <a name="azmonitor"></a>Az.Monitor
 * Указание на самую последнюю версию пакета SDK для монитора, т. е. 0.24.1-preview:
    - В командлеты метрик добавлены некритические изменения, т. е. перечисление единиц поддерживает несколько новых значений. Эти командлеты доступны только для чтения, поэтому входные данные командлетов не будут изменены.
-   - Актуальная версия API запросов **ActionGroups**  — **2019-06-01** . До этого была версия **2018-03-01** . Тесты сценария обновлены в соответствии с этим изменением.
-   - В конструкторы классов **EmailReceiver** и **WebhookReceiver** добавлен один новый обязательный аргумент — логическое значение с именем **useCommonAlertSchema** . Сейчас для него установлено значение **false** , чтобы скрыть это критическое изменение от командлетов. **Примечание** . Это временное изменение, которое должно быть подтверждено командой оповещения.
+   - Актуальная версия API запросов **ActionGroups**  — **2019-06-01**. До этого была версия **2018-03-01**. Тесты сценария обновлены в соответствии с этим изменением.
+   - В конструкторы классов **EmailReceiver** и **WebhookReceiver** добавлен один новый обязательный аргумент — логическое значение с именем **useCommonAlertSchema**. Сейчас для него установлено значение **false** , чтобы скрыть это критическое изменение от командлетов. **Примечание**. Это временное изменение, которое должно быть подтверждено командой оповещения.
    - Порядок аргументов для конструктора класса **Source** (связанного с классом **ScheduledQueryRuleSource** ) изменился по сравнению с предыдущим пакетом SDK. Это изменение требует, чтобы были исправлены два модульных теста: они были скомпилированы, но не прошли тест.
    - Порядок аргументов для конструктора класса **AlertingAction** (связанного с классом **ScheduledQueryRuleSource** ) изменился по сравнению с предыдущим пакетом SDK. Это изменение требует, чтобы были исправлены два модульных теста: они были скомпилированы, но не прошли тест.
 * Добавлена поддержка критериев динамического порога для оповещения метрики версии 2:
@@ -2183,9 +2183,9 @@ ms.locfileid: "92753847"
 #### <a name="azapimanagement"></a>Az.ApiManagement
 * исправлена проблема https://github.com/Azure/azure-powershell/issues/9351.
     - Обновлена версия NuGet для .NET, которая не накладывает ограничений на productId, apiId, groupId и userId.
-* **Get-AzApiManagementProduct** . Добавлена поддержка запросов к продуктам с помощью API.
+* **Get-AzApiManagementProduct**. Добавлена поддержка запросов к продуктам с помощью API.
   https://github.com/Azure/azure-powershell/issues/9482
-* **New-AzApiManagementApiRevision** . Устранена проблема, из-за которой не задавался параметр ApiRevisionDescription при создании новой редакции API https://github.com/Azure/azure-powershell/issues/9752.
+* **New-AzApiManagementApiRevision**. Устранена проблема, из-за которой не задавался параметр ApiRevisionDescription при создании новой редакции API https://github.com/Azure/azure-powershell/issues/9752.
 * Исправлено написание имени модели c PsApiManagementOAuth2AuthrozationServer на PsApiManagementOAuth2AuthorizationServer.
 
 #### <a name="azbatch"></a>Az.Batch
@@ -2675,7 +2675,7 @@ ms.locfileid: "92753847"
     - Для переопределения свойства PsApiManagementSchema, указанного в любом документе (Swagger, Wadl, Wsdl, OpenApi).
     - Для переопределения свойства ServiceUrl, указанного в любом документе.
 * Обновлен командлет **Get-AzApiManagementPolicy** для возврата политики в формате, экранированном не для XML, с использованием rawxml.
-* Обновлен командлет **Set-AzApiManagementPolicy** . Он принимает политику в формате, экранированном не для XML, с использованием rawxml и в формате, экранированном для XML, с использованием XML.
+* Обновлен командлет **Set-AzApiManagementPolicy**. Он принимает политику в формате, экранированном не для XML, с использованием rawxml и в формате, экранированном для XML, с использованием XML.
 * Обновлен командлет **New-AzApiManagementApi** :
     - Для настройки API с помощью сервера авторизации OpenId.
     - Для создания API в ApiVersionSet.
@@ -2692,11 +2692,11 @@ ms.locfileid: "92753847"
 * Обновлен командлет **New-AzApiManagementIdentityProvider** :
     - Для настройки AAD или AADB2C с Authority.
     - Для установки политик SignupPolicy, SigninPolicy, ProfileEditingPolicy и PasswordResetPolicy.
-* Обновлен командлет **New-AzApiManagementSubscription** .
+* Обновлен командлет **New-AzApiManagementSubscription**.
     - Для учета новой модели SubscriptonModel с помощью Scope и UserId.
     - Для учета прежней модели подписки с помощью ProductId и UserId.
     - Добавлена поддержка для включения AllowTracing на уровне подписки.
-* Обновлен командлет **Set-AzApiManagementSubscription** .
+* Обновлен командлет **Set-AzApiManagementSubscription**.
     - Для учета новой модели SubscriptonModel с помощью Scope и UserId.
     - Для учета прежней модели подписки с помощью ProductId и UserId.
     - Добавлена поддержка для включения AllowTracing на уровне подписки.

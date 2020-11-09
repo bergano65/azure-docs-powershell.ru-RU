@@ -5,12 +5,12 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 06/17/2020
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 3c876454560e4ad421e6d32a8ca8b30a651fd8af
-ms.sourcegitcommit: 1de2b6c3c99197958fa2101bc37680e7507f91ac
+ms.openlocfilehash: 20a58253e3f9435a9d33c700435f77fbb42df7ea
+ms.sourcegitcommit: 375232b84336ef5e13052504deaa43f5bd4b7f65
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "92002316"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93365115"
 ---
 # <a name="create-an-azure-service-principal-with-azure-powershell"></a>Создание субъекта-службы Azure с помощью Azure PowerShell
 
@@ -19,6 +19,11 @@ ms.locfileid: "92002316"
 Субъект-служба Azure — это удостоверение, созданное для использования с приложениями, размещенными службами и автоматизированными средствами с целью получения доступа к ресурсам Azure. Такой доступ ограничен ролями, которые назначены субъекту-службе, что позволяет управлять разрешениями доступа к ресурсам, в том числе на разных уровнях. По соображениям безопасности мы рекомендуем всегда использовать субъекты-службы с автоматизированными средствами, чтобы не допускать их входа с помощью удостоверения пользователя.
 
 В этой статье описано, как создать субъект-службу, получить сведения о нем и сбросить его с помощью Azure PowerShell.
+
+> [!WARNING]
+> При создании субъекта-службы с помощью команды [New-AzADServicePrincipal](/powershell/module/Az.Resources/New-AzADServicePrincipal) в выходные данные включаются учетные данные, которые необходимо защитить. Убедитесь, что эти учетные данные не включены в код, или проверьте учетные данные в системе управления версиями. В качестве альтернативы можно использовать [управляемые удостоверения](/azure/active-directory/managed-identities-azure-resources/overview), чтобы не работать с учетными данными.
+>
+> По умолчанию [New-AzADServicePrincipal](/powershell/module/Az.Resources/New-AzADServicePrincipal) присваивает субъекту-службе в области действия подписки роль [Участник](/azure/role-based-access-control/built-in-roles#contributor). Чтобы снизить риск компрометации субъекта-службы, назначьте более конкретную роль и ограничьте область ресурсом или группой ресурсов. Дополнительные сведения см. в статье [Шаги по добавлению назначения ролей](/azure/role-based-access-control/role-assignments-steps).
 
 ## <a name="create-a-service-principal"></a>Создание субъекта-службы
 
@@ -101,7 +106,7 @@ $sp = New-AzADServicePrincipal -DisplayName ServicePrincipalName -KeyCredential 
 
 Список субъектов-служб для активного арендатора можно получить с помощью командлета [Get-AzADServicePrincipal](/powershell/module/az.resources/get-azadserviceprincipal). По умолчанию эта команда возвращает _все_ субъекты-службы в арендаторе. Получение результатов для больших организаций может занять много времени. Поэтому мы рекомендуем использовать один из необязательных аргументов фильтрации на стороне сервера:
 
-- `-DisplayNameBeginsWith` — запрашивает субъекты-службы с _префиксом_, который совпадает с указанным значением. Отображаемое имя субъекта-службы представляет собой значение, заданное при создании с помощью параметра `-DisplayName`.
+- `-DisplayNameBeginsWith` — запрашивает субъекты-службы с _префиксом_ , который совпадает с указанным значением. Отображаемое имя субъекта-службы представляет собой значение, заданное при создании с помощью параметра `-DisplayName`.
 - `-DisplayName`  — запрашивает _точное совпадение_ для имени субъекта-службы.
 
 ## <a name="manage-service-principal-roles"></a>Управление ролями субъекта-службы
