@@ -6,12 +6,12 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.compute/ad
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Compute/Compute/help/Add-AzVMSecret.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Compute/Compute/help/Add-AzVMSecret.md
-ms.openlocfilehash: b2209b3e9d7c7dcf01a05af277dd5106e70fd8b2
-ms.sourcegitcommit: 6a91b4c545350d316d3cf8c62f384478e3f3ba24
+ms.openlocfilehash: 059aedf6ca3b5c229092f9ce536d23a8fc602830
+ms.sourcegitcommit: 7aaa37edc9681b643946505bcbc3cc6435f1d7ca
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "94073447"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94395464"
 ---
 # Add-AzVMSecret
 
@@ -30,7 +30,7 @@ Add-AzVMSecret [-VM] <PSVirtualMachine> [[-SourceVaultId] <String>] [[-Certifica
 Это значение позволяет добавить сертификат на виртуальную машину.
 Секрет должен храниться в хранилище ключей.
 Дополнительные сведения о хранилище ключей можно найти в разделе [что такое Azure Key Vault?](https://azure.microsoft.com/en-us/documentation/articles/key-vault-whatis/).
-Дополнительные сведения о командлетах можно найти в статьях [командлетов Azure Key Vault](https://msdn.microsoft.com/library/azure/dn868052.aspx) в сетевой библиотеке разработчиков Microsoft или командлете [Set-AzKeyVaultSecret](/powershell/module/az.keyvault/set-azkeyvaultsecret) .
+Дополнительные сведения о командлетах можно найти в статьях [командлетов Azure Key Vault](/powershell/module/az.keyvault) или командлет [Set-AzKeyVaultSecret](/powershell/module/az.keyvault/set-azkeyvaultsecret) .
 
 ## ИЛЛЮСТРИРУЮТ
 
@@ -81,7 +81,7 @@ Accept wildcard characters: False
 
 ### -CertificateUrl
 Указывает URL-адрес, указывающий на секретный ключ хранилища, который содержит сертификат.
-Сертификат — это кодировка Base64 следующего объекта JSON, который кодируется в кодировке UTF-8: {"Data": "PFX-Encoded-File", " \< Password", " \> \< \> пароль" ( \< в настоящее время это тип данных \> ). DataType принимает только PFX-файлы.
+Сертификат — это кодировка Base64 следующего объекта JSON, который кодируется в кодировке UTF-8: {"Data": "", "Password": "" \<Base64-encoded-file\> \<file-format\> , \<pfx-file-password\> в настоящее время DataType принимает только PFX-файлы.
 
 ```yaml
 Type: System.String
