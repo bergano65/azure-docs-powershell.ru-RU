@@ -5,12 +5,13 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/15/2019
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: ae2539a09b93fb482ed3f8a363c7a0a66e02a412
-ms.sourcegitcommit: 8b3126b5c79f453464d90669f0046ba86b7a3424
+ms.service: azure-powershell
+ms.openlocfilehash: 3ab12307f786c12422338835926802793a33713e
+ms.sourcegitcommit: 2036538797dd088728aee5ac5021472454d82eb2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89240647"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "93408030"
 ---
 # <a name="breaking-changes-for-az-100"></a>Критические изменения для Az 1.0.0
 
@@ -208,7 +209,7 @@ RequiredModules = @(@{ModuleName="Az.Profile"; ModuleVersion="1.0.0"})
   - Set-AzureRmApiManagementHostnames
   - Update-AzureRmApiManagementDeployment
   - Import-AzureRmApiManagementHostnameCertificate
-  - Используйте командлет **Set-AzApiManagement**, чтобы задать эти свойства.
+  - Используйте командлет **Set-AzApiManagement** , чтобы задать эти свойства.
 - Удалены приведенные ниже свойства.
   - Удалены свойства: `PortalHostnameConfiguration`, `ProxyHostnameConfiguration`, `ManagementHostnameConfiguration` и `ScmHostnameConfiguration` типа `PsApiManagementHostnameConfiguration` из `PsApiManagementContext`. Вместо этого используйте: `PortalCustomHostnameConfiguration`, `ProxyCustomHostnameConfiguration`, `ManagementCustomHostnameConfiguration` и `ScmCustomHostnameConfiguration` типа `PsApiManagementCustomHostNameConfiguration`.
   - Свойство `StaticIPs` удалено из PsApiManagementContext. Свойство было разделено на `PublicIPAddresses` и `PrivateIPAddresses`.

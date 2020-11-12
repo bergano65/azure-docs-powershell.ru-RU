@@ -5,12 +5,13 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/10/2020
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 249780d2bfe53929b7c50cbdc8850a01fd9b53dc
-ms.sourcegitcommit: 1de2b6c3c99197958fa2101bc37680e7507f91ac
+ms.service: azure-powershell
+ms.openlocfilehash: ea374b23e85c16393e5de16b043ae0c28545cb61
+ms.sourcegitcommit: 2036538797dd088728aee5ac5021472454d82eb2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "92002412"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "93408077"
 ---
 # <a name="azure-powershell-release-notes"></a>Заметки о выпуске Azure PowerShell
 
@@ -1292,7 +1293,7 @@ ms.locfileid: "92002412"
 
 #### <a name="azapimanagement"></a>Az.ApiManagement
 * **Get-AzApiManagementApiSchema** Исправлено получение схемы Open-API, связанной с API https://github.com/Azure/azure-powershell/issues/10626
-* **New-AzApiManagementProduct*** и **Set-AzApiManagementProduct**
+* **New-AzApiManagementProduct** _ и _ *Set-AzApiManagementProduct**
   - Исправить документацию для https://github.com/Azure/azure-powershell/issues/10472
 * **Set-AzApiManagementApi** Добавлен пример, показывающий, как обновить ServiceUrl с помощью командлета
 
@@ -1589,13 +1590,13 @@ ms.locfileid: "92002412"
 * `CoreQuota` в `BatchAccountContext` переименован в `DedicatedCoreQuota`. Также появился новый `LowPriorityCoreQuota`.
   - Это влияет на **Get-AzBatchAccount**.
 * Параметр **New-AzBatchTask** `-ResourceFile` теперь принимает коллекцию объектов `PSResourceFile`, которые можно создать с помощью нового командлета **New-AzBatchResourceFile**.
-* Новый командлет **New-AzBatchResourceFile**, который помогает создавать объекты `PSResourceFile`. Их можно передавать в **New-AzBatchTask** в параметре `-ResourceFile`.
+* Новый командлет **New-AzBatchResourceFile** , который помогает создавать объекты `PSResourceFile`. Их можно передавать в **New-AzBatchTask** в параметре `-ResourceFile`.
   - Это позволяет поддерживать два новых типа файлов ресурсов, которые дополняют существующий метод `HttpUrl`:
     - Файлы ресурсов на основе `AutoStorageContainerName` скачивают весь контейнер автоматического хранения в узел пакетной службы.
     - Файлы ресурсов на основе `StorageContainerUrl` скачивают указанный в URL-адресе контейнер в узел пакетной службы.
 * Удалено свойство `ApplicationPackages` в `PSApplication`, который возвращается из **Get-AzBatchApplication**.
   - Отдельные пакеты в приложении теперь можно извлечь с помощью **Get-AzBatchApplicationPackage**. Например: `Get-AzBatchApplication -AccountName myaccount -ResourceGroupName myresourcegroup -ApplicationId myapplication`.
-* `ApplicationId` переименован в `ApplicationName` для **Get-AzBatchApplicationPackage**, **New-AzBatchApplicationPackage**, **Remove-AzBatchApplicationPackage**, **Get-AzBatchApplication**, **New-AzBatchApplication**, **Remove-AzBatchApplication** и **Set-AzBatchApplication**.
+* `ApplicationId` переименован в `ApplicationName` для **Get-AzBatchApplicationPackage** , **New-AzBatchApplicationPackage** , **Remove-AzBatchApplicationPackage** , **Get-AzBatchApplication** , **New-AzBatchApplication** , **Remove-AzBatchApplication** и **Set-AzBatchApplication**.
   - Теперь `ApplicationId` является псевдонимом для `ApplicationName`.
 * Добавлено новое свойство `PSWindowsUserConfiguration` в `PSUserAccount`.
 * `Version` переименован в `Name` для `PSApplicationPackage`.
@@ -1606,7 +1607,7 @@ ms.locfileid: "92002412"
 * `CurrentOSVersion` переименован в `OSVersion` для `PSCloudServiceConfiguration`.
 * Удалено `DataEgressGiB` и `DataIngressGiB` из `PSPoolUsageMetrics`.
 * Операция **Get-AzBatchNodeAgentSku** удалена и заменена на **Get-AzBatchSupportedImage**.
-  - **Get-AzBatchSupportedImage** возвращает те же данные, что и **Get-AzBatchNodeAgentSku**, но в более удобном формате.
+  - **Get-AzBatchSupportedImage** возвращает те же данные, что и **Get-AzBatchNodeAgentSku** , но в более удобном формате.
   - Также возвращаются новые непроверенные образы. Включается и дополнительная информация о `Capabilities` и `BatchSupportEndOfLife` для каждого образа.
 * Добавлена возможность монтировать файловые системы на каждом узле пула с помощью нового параметра `MountConfiguration` в **New-AzBatchPool**.
 * Теперь поддерживаются правила безопасности сети, которые блокируют сетевой доступ к пулу по исходящему порту трафика. Это выполняется с помощью свойства `SourcePortRanges` для `PSNetworkSecurityGroupRule`.
@@ -1792,7 +1793,7 @@ ms.locfileid: "92002412"
 * Обновление телеметрии и перезаписи URL-адресов для созданных модулей, исправление для модульных тестов Windows.
 
 #### <a name="azapimanagement"></a>Az.ApiManagement
-* **Set-AzApiManagementApi** — в ApiVersionSet добавлена поддержка обновления API.
+* **Set-AzApiManagementApi**  — в ApiVersionSet добавлена поддержка обновления API.
     - исправлена проблема https://github.com/Azure/azure-powershell/issues/10068.
 
 #### <a name="azautomation"></a>Az.Automation
@@ -1904,10 +1905,10 @@ ms.locfileid: "92002412"
 #### <a name="azmonitor"></a>Az.Monitor
 * Указание на самую последнюю версию пакета SDK для монитора, т. е. 0.24.1-preview:
    - В командлеты метрик добавлены некритические изменения, т. е. перечисление единиц поддерживает несколько новых значений. Эти командлеты доступны только для чтения, поэтому входные данные командлетов не будут изменены.
-   - Актуальная версия API запросов **ActionGroups** — **2019-06-01**. До этого была версия **2018-03-01**. Тесты сценария обновлены в соответствии с этим изменением.
-   - В конструкторы классов **EmailReceiver** и **WebhookReceiver** добавлен один новый обязательный аргумент — логическое значение с именем **useCommonAlertSchema**. Сейчас для него установлено значение **false**, чтобы скрыть это критическое изменение от командлетов. **Примечание**. Это временное изменение, которое должно быть подтверждено командой оповещения.
-   - Порядок аргументов для конструктора класса **Source** (связанного с классом **ScheduledQueryRuleSource**) изменился по сравнению с предыдущим пакетом SDK. Это изменение требует, чтобы были исправлены два модульных теста: они были скомпилированы, но не прошли тест.
-   - Порядок аргументов для конструктора класса **AlertingAction** (связанного с классом **ScheduledQueryRuleSource**) изменился по сравнению с предыдущим пакетом SDK. Это изменение требует, чтобы были исправлены два модульных теста: они были скомпилированы, но не прошли тест.
+   - Актуальная версия API запросов **ActionGroups**  — **2019-06-01**. До этого была версия **2018-03-01**. Тесты сценария обновлены в соответствии с этим изменением.
+   - В конструкторы классов **EmailReceiver** и **WebhookReceiver** добавлен один новый обязательный аргумент — логическое значение с именем **useCommonAlertSchema**. Сейчас для него установлено значение **false** , чтобы скрыть это критическое изменение от командлетов. **Примечание**. Это временное изменение, которое должно быть подтверждено командой оповещения.
+   - Порядок аргументов для конструктора класса **Source** (связанного с классом **ScheduledQueryRuleSource** ) изменился по сравнению с предыдущим пакетом SDK. Это изменение требует, чтобы были исправлены два модульных теста: они были скомпилированы, но не прошли тест.
+   - Порядок аргументов для конструктора класса **AlertingAction** (связанного с классом **ScheduledQueryRuleSource** ) изменился по сравнению с предыдущим пакетом SDK. Это изменение требует, чтобы были исправлены два модульных теста: они были скомпилированы, но не прошли тест.
 * Добавлена поддержка критериев динамического порога для оповещения метрики версии 2:
     - New-AzMetricAlertRuleV2Criteria: теперь также позволяет создавать критерии динамического порога.
     - Add-AzMetricAlertRuleV2: теперь также позволяет принимать критерии динамического порога.
@@ -2465,27 +2466,27 @@ ms.locfileid: "92002412"
 ## <a name="210---may-2019"></a>2.1.0 — май 2019 г.
 #### <a name="azapimanagement"></a>Az.ApiManagement
 * Созданы командлеты для управления диагностикой в глобальной области и в области API.
-    - **Get-AzApiManagementDiagnostic** — получение диагностики, заданной глобально или на уровне области API.
-    - **New-AzApiManagementDiagnostic** — создание диагностики в глобальной области или в области API.
-    - **New-AzApiManagementHttpMessageDiagnostic** — создание параметра диагностики, для которого регистрируются заголовки и размер байтов тела.
-    - **New-AzApiManagementPipelineDiagnosticSetting** — создание параметров диагностики для сообщений HTTP, поступающих в шлюз или исходящих из него.
-    - **New-AzApiManagementSamplingSetting** — создание параметра выборки для запросов и ответов касательно диагностики.
-    - **Remove-AzApiManagementDiagnostic** — удаление объекта диагностики в глобальной области или в области API.
-    - **Set-AzApiManagementDiagnostic** — обновление объекта диагностики в глобальной области или в области API.
+    - **Get-AzApiManagementDiagnostic**  — получение диагностики, заданной глобально или на уровне области API.
+    - **New-AzApiManagementDiagnostic**  — создание диагностики в глобальной области или в области API.
+    - **New-AzApiManagementHttpMessageDiagnostic**  — создание параметра диагностики, для которого регистрируются заголовки и размер байтов тела.
+    - **New-AzApiManagementPipelineDiagnosticSetting**  — создание параметров диагностики для сообщений HTTP, поступающих в шлюз или исходящих из него.
+    - **New-AzApiManagementSamplingSetting**  — создание параметра выборки для запросов и ответов касательно диагностики.
+    - **Remove-AzApiManagementDiagnostic**  — удаление объекта диагностики в глобальной области или в области API.
+    - **Set-AzApiManagementDiagnostic**  — обновление объекта диагностики в глобальной области или в области API.
 * Созданы командлеты для управления кэшем в службе ApiManagement.
-    - **Get-AzApiManagementCache** — получение сведений о кэше, указанном идентификатором, или обо всех кэшах.
-    - **New-AzApiManagementCache** — создание кэша по умолчанию или кэша в определенном регионе Azure.
-    - **Remove-AzApiManagementCache** — удаление кэша.
-    - **Update-AzApiManagementCache** — обновление кэша.
+    - **Get-AzApiManagementCache**  — получение сведений о кэше, указанном идентификатором, или обо всех кэшах.
+    - **New-AzApiManagementCache**  — создание кэша по умолчанию или кэша в определенном регионе Azure.
+    - **Remove-AzApiManagementCache**  — удаление кэша.
+    - **Update-AzApiManagementCache**  — обновление кэша.
 * Созданы командлеты для управления схемой API.
-    - **New-AzApiManagementSchema** — создание схемы для API.
-    - **Get-AzApiManagementSchema** — получение схем, настроенных в API.
-    - **Remove-AzApiManagementSchema** — удаление схемы, настроенной в API.
-    - **Set-AzApiManagementSchema** — обновление схемы, настроенной в API.
+    - **New-AzApiManagementSchema**  — создание схемы для API.
+    - **Get-AzApiManagementSchema**  — получение схем, настроенных в API.
+    - **Remove-AzApiManagementSchema**  — удаление схемы, настроенной в API.
+    - **Set-AzApiManagementSchema**  — обновление схемы, настроенной в API.
 * Создан командлет для создания токена пользователя.
-    - **New-AzApiManagementUserToken** — создание токена пользователя, по умолчанию действительного в течение 8 часов. С помощью этого командлета можно создавать токен для пользователя GIT.
+    - **New-AzApiManagementUserToken**  — создание токена пользователя, по умолчанию действительного в течение 8 часов. С помощью этого командлета можно создавать токен для пользователя GIT.
 * Создан командлет для получения состояния сети.
-    - **Get-AzApiManagementNetworkStatus** — получение состояния подключения сети ресурсов, от которых зависит служба "Управление API". Это полезно при развертывании службы ApiManagement в виртуальной сети и проверке того, не нарушена ли какая-либо из зависимостей.
+    - **Get-AzApiManagementNetworkStatus**  — получение состояния подключения сети ресурсов, от которых зависит служба "Управление API". Это полезно при развертывании службы ApiManagement в виртуальной сети и проверке того, не нарушена ли какая-либо из зависимостей.
 * Обновлен командлет **New-AzApiManagement** для управления службой ApiManagement.
     - Добавлена поддержка нового SKU Consumption.
     - Добавлена поддержка для включения флага EnableClientCertificate в SKU Consumption.
@@ -2495,26 +2496,26 @@ ms.locfileid: "92002412"
 * Обновлен командлет для отображения встроенных сообщений об ошибках.
      > PS D:\github\azure-powershell> Set-AzApiManagementPolicy -Context  -PolicyFilePath C:\wrongpolicy.xml -ApiId httpbin Set-AzApiManagementPolicy : Код ошибки: ValidationError. Сообщение об ошибке: "Некоторые поля содержат неправильные значения". Сведения об ошибке: [Code=ValidationError, Message=Error in element 'log-to-eventhub' on line 3, column 10: Logger not found, Target=log-to-eventhub]
 * Обновлен командлет **Export-AzApiManagementApi** для экспортирования программных интерфейсов в формате OpenApi 3.0.
-* Обновлен командлет **Import-AzApiManagementApi**:
+* Обновлен командлет **Import-AzApiManagementApi** :
     - Для импортирования API из спецификации документа OpenApi 3.0.
     - Для переопределения свойства PsApiManagementSchema, указанного в любом документе (Swagger, Wadl, Wsdl, OpenApi).
     - Для переопределения свойства ServiceUrl, указанного в любом документе.
 * Обновлен командлет **Get-AzApiManagementPolicy** для возврата политики в формате, экранированном не для XML, с использованием rawxml.
 * Обновлен командлет **Set-AzApiManagementPolicy**. Он принимает политику в формате, экранированном не для XML, с использованием rawxml и в формате, экранированном для XML, с использованием XML.
-* Обновлен командлет **New-AzApiManagementApi**:
+* Обновлен командлет **New-AzApiManagementApi** :
     - Для настройки API с помощью сервера авторизации OpenId.
     - Для создания API в ApiVersionSet.
     - Для клонирования API с использованием значений SourceApiId и SourceApiRevision.
     - Возможность настройки параметра SubscriptionRequired в области API.
-* Обновлен командлет **Set-AzApiManagementApi**:
+* Обновлен командлет **Set-AzApiManagementApi** :
     - Для настройки API с помощью сервера авторизации OpenId.
     - Для обновления API в ApiVersionSet.
     - Возможность настройки параметра SubscriptionRequired в области API.
-* Обновлен командлет **New-AzApiManagementRevision**:
+* Обновлен командлет **New-AzApiManagementRevision** :
     - Для клонирования (копирования тегов, продуктов, операций и политик) существующей редакции с использованием SourceApiRevision. Новая редакция предполагает родительский идентификатор ApiId.
     - Для предоставления ApiRevisionDescription.
     - Для переопределения значения ServiceUrl при клонировании API.
-* Обновлен командлет **New-AzApiManagementIdentityProvider**:
+* Обновлен командлет **New-AzApiManagementIdentityProvider** :
     - Для настройки AAD или AADB2C с Authority.
     - Для установки политик SignupPolicy, SigninPolicy, ProfileEditingPolicy и PasswordResetPolicy.
 * Обновлен командлет **New-AzApiManagementSubscription**.
@@ -2666,7 +2667,7 @@ ms.locfileid: "92002412"
 * Добавлены новые командлеты для NetworkRuleSet пространства имен.
 
 #### <a name="azstorage"></a>Az.Storage
-* Выполнено обновление клиентской библиотеки хранилища до версии 10.0.1 (пространство имен всех объектов из этого пакета SDK изменено с Microsoft.WindowsAzure.Storage. *на Microsoft.Azure.Storage*).
+* Выполнено обновление клиентской библиотеки хранилища до версии 10.0.1 (пространство имен всех объектов из этого пакета SDK изменено с Microsoft.WindowsAzure.Storage. *на Microsoft.Azure.Storage* ).
 * Выполнено обновление до Microsoft.Azure.Management.Storage версии 11.0.0 для включения поддержки нового API версии 2019-04-01.
 * Значение свойства Kind по умолчанию в учетной записи хранения изменено со Storage на StorageV2.
     - New-AzStorageAccount

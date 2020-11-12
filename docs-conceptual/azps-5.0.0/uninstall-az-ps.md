@@ -5,12 +5,13 @@ ms.date: 09/15/2020
 ms.devlang: powershell
 ms.topic: conceptual
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 7f831bdf6d6144640e036d72900958847283acf1
-ms.sourcegitcommit: b4a38bcb0501a9016a4998efd377aa75d3ef9ce8
+ms.service: azure-powershell
+ms.openlocfilehash: ec4ecc9902f700e12ce6b22c32b4e07b13b4d4dc
+ms.sourcegitcommit: 2036538797dd088728aee5ac5021472454d82eb2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92753842"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "93407074"
 ---
 # <a name="how-to-uninstall-azure-powershell-modules"></a>Как удалить модули Azure PowerShell
 
@@ -29,7 +30,7 @@ ms.locfileid: "92753842"
 | Windows 10               | Пуск > Параметры > Приложения                                |
 | Windows 7 </br>Windows 8 | Пуск > Панель управления > Программы > Удалить программу |
 
-В этом окне в списке программ вы должны увидеть модуль **Azure PowerShell** . Это программа, которую можно удалить. Если этой программы нет в списке, значит, она установлена с помощью PowerShellGet. Следуйте приведенным ниже инструкциям.
+В этом окне в списке программ вы должны увидеть модуль **Azure PowerShell**. Это программа, которую можно удалить. Если этой программы нет в списке, значит, она установлена с помощью PowerShellGet. Следуйте приведенным ниже инструкциям.
 
 ### <a name="option-2-uninstall-the-az-powershell-module-from-powershellget"></a>Вариант 2. Удаление модуля Az PowerShell из PowerShellGet
 
@@ -189,7 +190,7 @@ $Modules | ForEach-Object {Uninstall-AzModule -Name $_.Name -Version $_.Version}
 | Windows 10               | Пуск > Параметры > Приложения                                |
 | Windows 7 </br>Windows 8 | Пуск > Панель управления > Программы > Удалить программу |
 
-В этом окне в списке программ вы должны увидеть **Azure PowerShell** или **Microsoft Azure PowerShell — месяц год** . Это программа, которую можно удалить. Если этой программы нет в списке, значит, она установлена с помощью PowerShellGet. Следуйте приведенным ниже инструкциям.
+В этом окне в списке программ вы должны увидеть **Azure PowerShell** или **Microsoft Azure PowerShell — месяц год**. Это программа, которую можно удалить. Если этой программы нет в списке, значит, она установлена с помощью PowerShellGet. Следуйте приведенным ниже инструкциям.
 
 ### <a name="option-2-uninstall-the-azurerm-powershell-module-from-powershellget"></a>Вариант 2. Удаление модуля AzureRM PowerShell из PowerShellGet
 

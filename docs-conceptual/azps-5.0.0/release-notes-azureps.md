@@ -5,12 +5,13 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/10/2020
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 4ab5639cfb997c5f9ee1286e6eacb97ef775239a
-ms.sourcegitcommit: 63181e0af0e4468b0530fdb0495ed4d44bdfd1c8
+ms.service: azure-powershell
+ms.openlocfilehash: 27073db862b83c5b95f2364355037c1ebd34a3b5
+ms.sourcegitcommit: 2036538797dd088728aee5ac5021472454d82eb2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/31/2020
-ms.locfileid: "93134868"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "93407499"
 ---
 # <a name="azure-powershell-release-notes"></a>Заметки о выпуске Azure PowerShell
 
@@ -140,7 +141,6 @@ ms.locfileid: "93134868"
 * Удален параметр -ApiVersion из командлетов *-AzDeployment.
 
 #### <a name="azsql"></a>Az.Sql
-* Добавлен параметр DiffBackupIntervalInHours в командлет Set-AzSqlDatabaseBackupShortTermRetentionPolicy. 
 * Исправлена ошибка, из-за которой выполнение командлета New-AzSqlDatabaseExport завершается сбоем, если не указать networkIsolation [№13097].
 * Исправлена ошибка, из-за которой командлеты New-AzSqlDatabaseExport и New-AzSqlDatabaseImport не возвращали OperationStatusLink в результирующем объекте [№13097].
 * Обновлены URL-адреса парных регионов Azure в предупреждениях об избыточности хранилища резервных копий. 

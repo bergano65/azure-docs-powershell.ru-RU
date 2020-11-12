@@ -5,12 +5,13 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 10/21/2019
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: b6ac8b821f2d88431be67fd5fe1d50fc640d2b8f
-ms.sourcegitcommit: b4a38bcb0501a9016a4998efd377aa75d3ef9ce8
+ms.service: azure-powershell
+ms.openlocfilehash: be9113ab1ad6a359832634ae2c21fd177b09318f
+ms.sourcegitcommit: 2036538797dd088728aee5ac5021472454d82eb2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92754043"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "93407686"
 ---
 # <a name="azure-powershell-context-objects"></a>Объекты контекста Azure PowerShell
 
@@ -23,10 +24,10 @@ Azure PowerShell использует _объекты контекста Azure P
 Контексты Azure — это объекты PowerShell, которые представляют активную подписку для выполнения команд и информацию об аутентификации, необходимую для подключения к облаку Azure. Благодаря контекстам Azure, Azure PowerShell не требуется повторная аутентификация учетной записи при каждом переключении между подписками. Контекст Azure состоит из:
 
 * _Учетной записи_ , использованной для входа в Azure с помощью [Connect-AzAccount](/powershell/module/az.accounts/connect-azaccount). Контексты Azure обрабатывают пользователей, идентификаторы приложения и субъект-службы одинаково с точки зрения учетной записи.
-* Активной _подписки_ , соглашения об обслуживании Майкрософт для создания и запуска ресурсов Azure, связанных с _клиентом_ . В документации или при работе с Active Directory клиентов часто называют _организациями_ .
+* Активной _подписки_ , соглашения об обслуживании Майкрософт для создания и запуска ресурсов Azure, связанных с _клиентом_. В документации или при работе с Active Directory клиентов часто называют _организациями_.
 * Ссылка на _кэш токена_  — сохраненный токен аутентификации для доступа к облаку Azure. [Настройки автосохранения контекста](#save-azure-contexts-across-powershell-sessions) определяют место и срок хранения этого токена.
 
-Дополнительные сведения об этих условиях см. в разделе [Терминология Azure Active Directory](/azure/active-directory/fundamentals/active-directory-whatis#terminology). Токены аутентификации, используемые контекстами Azure, подобны другим сохраненным токенам, являющимся частью постоянного сеанса. 
+Дополнительные сведения об этих условиях см. в разделе [Терминология Azure Active Directory](/azure/active-directory/fundamentals/active-directory-whatis#terminology). Токены аутентификации, используемые контекстами Azure, подобны другим сохраненным токенам, являющимся частью постоянного сеанса.
 
 При входе с помощью `Connect-AzAccount`для подписки по умолчанию создается как минимум один контекст Azure. Объект, возвращаемый `Connect-AzAccount` является контекстом Azure по умолчанию, используемым до конца сеанса PowerShell.
 
@@ -47,7 +48,7 @@ $context = Get-AzContext -Name "mycontext"
 Имена контекстов могут отличаться от имен связанных подписок.
 
 > [!IMPORTANT]
-> Доступные контексты Azure __не__ всегда являются доступными подписками. Контексты Azure представляют только локально хранимую информацию. Вы можете получить подписки с помощью командлета [Get-AzSubscription](/powershell/module/Az.Accounts/Get-AzSubscription?view=azps-1.8.0).
+> Доступные контексты Azure __не__ всегда являются доступными подписками. Контексты Azure представляют только локально хранимую информацию. Вы можете получить подписки с помощью командлета [Get-AzSubscription](/powershell/module/Az.Accounts/Get-AzSubscription).
 
 ## <a name="create-a-new-azure-context-from-subscription-information"></a>Создание нового контекста Azure из сведений о подписке
 
@@ -134,7 +135,7 @@ $context2 = Set-AzContext -Subscription "sub-id" -Tenant "other-tenant"
   Используя учетную запись или контекст, можно выйти из любой учетной записи.
 
   ```azurepowershell-interactive
-  Disconnect-AzAccount # Disconnect active account 
+  Disconnect-AzAccount # Disconnect active account
   Disconnect-AzAccount -Username "user@contoso.com" # Disconnect by account name
 
   Disconnect-AzAccount -ContextName "subscription2" # Disconnect by context name
@@ -144,7 +145,7 @@ $context2 = Set-AzContext -Subscription "sub-id" -Tenant "other-tenant"
   При отключении всегда удаляются сохраненные токены аутентификации и очищаются сохраненные контексты, связанные с отключенным пользователем или контекстом.
 * Используйте [Clear-AzContext](/powershell/module/az.accounts/Clear-AzContext). Этот командлет гарантированно всегда удаляет сохраненные контексты и токены аутентификации, а также выводит вас из системы.
 * Удаление контекста с помощью [Remove-AzContext](/powershell/module/az.accounts/remove-azcontext):
-  
+
   ```azurepowershell-interactive
   Remove-AzContext -Name "mycontext" # Remove by name
   Get-AzContext -Name "mycontext" | Remove-AzContext # Remove by piping Azure context object

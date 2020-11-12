@@ -5,12 +5,13 @@ ms.date: 05/20/2020
 ms.devlang: powershell
 ms.topic: conceptual
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 29b8fc24c468ad542a109042df552cbd45a9f3b2
-ms.sourcegitcommit: 8b3126b5c79f453464d90669f0046ba86b7a3424
+ms.service: azure-powershell
+ms.openlocfilehash: 9812987dcc10bf5ef65ceef9195218c84042e114
+ms.sourcegitcommit: 2036538797dd088728aee5ac5021472454d82eb2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89238818"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "93408910"
 ---
 # <a name="introducing-the-new-azure-powershell-az-module"></a>Знакомство с новым модулем Az для Azure PowerShell
 
