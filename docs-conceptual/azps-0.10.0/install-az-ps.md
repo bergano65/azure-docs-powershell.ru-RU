@@ -5,12 +5,13 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 02/26/2020
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 00cb5542e8d805f6e5e79e2177270fcbb93af808
-ms.sourcegitcommit: 8b3126b5c79f453464d90669f0046ba86b7a3424
+ms.service: azure-powershell
+ms.openlocfilehash: c6767d99690a04d1001dd76a218cc90c9cecca39
+ms.sourcegitcommit: 2036538797dd088728aee5ac5021472454d82eb2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89241914"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "93409896"
 ---
 # <a name="install-azure-powershell"></a>Установите Azure PowerShell
 
@@ -60,7 +61,7 @@ You are installing the modules from an untrusted repository. If you trust this r
 its InstallationPolicy value by running the `Set-PSRepository` cmdlet.
 
 Are you sure you want to install the modules from 'PSGallery'?
-[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"):
+[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"):
 ```
 
 Ответьте `Yes` или `Yes to All`, чтобы продолжить установку.
@@ -131,7 +132,7 @@ Connect-AzAccount
 
 Для обновления любого модуля PowerShell следует использовать тот же метод, который использовался для установки модуля. Например, если вы изначально использовали `Install-Module`, для получения последней версии следует использовать командлет [Update-Module](/powershell/module/powershellget/update-module). Если вы изначально использовали пакет MSI, необходимо скачать и установить новый пакет MSI.
 
-Командлеты PowerShellGet не могут обновлять модули, установленные из пакета MSI. Пакеты MSI не обновляют модули, установленные с помощью PowerShellGet. Если у вас возникли проблемы с обновлением с помощью модуля PowerShellGet, необходимо выполнить **повторную установку**, а не просто **обновление**. Повторная установка выполняется так же, как и первоначальная, но необходимо добавить параметр `-Force`:
+Командлеты PowerShellGet не могут обновлять модули, установленные из пакета MSI. Пакеты MSI не обновляют модули, установленные с помощью PowerShellGet. Если у вас возникли проблемы с обновлением с помощью модуля PowerShellGet, необходимо выполнить **повторную установку** , а не просто **обновление**. Повторная установка выполняется так же, как и первоначальная, но необходимо добавить параметр `-Force`:
 
 ```powershell
 if (Get-Module -Name AzureRM -ListAvailable) {

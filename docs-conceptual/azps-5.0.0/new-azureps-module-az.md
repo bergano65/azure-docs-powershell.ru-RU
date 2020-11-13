@@ -5,12 +5,13 @@ ms.date: 05/20/2020
 ms.devlang: powershell
 ms.topic: conceptual
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 0771bc474f43d8bbf392f2eba10da2e320d30556
-ms.sourcegitcommit: b4a38bcb0501a9016a4998efd377aa75d3ef9ce8
+ms.service: azure-powershell
+ms.openlocfilehash: 2643c1fbbe9be06112d2a1a377838a8cb1e7737b
+ms.sourcegitcommit: 2036538797dd088728aee5ac5021472454d82eb2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92753871"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "93410015"
 ---
 # <a name="introducing-the-new-azure-powershell-az-module"></a>Знакомство с новым модулем Az для Azure PowerShell
 
@@ -30,7 +31,7 @@ Az — это новый модуль, поэтому нумерация вер
 Самое большое и важное изменение заключается в том, что PowerShell стал кроссплатформенным продуктом с момента появления [PowerShell](/powershell/scripting/overview) на основе библиотеки .NET Standard.
 Мы стремимся обеспечить поддержку Azure на всех платформах. Это означает, что модули Azure PowerShell необходимо обновить для использования .NET Standard и совместимости с PowerShell Core. Вместо того чтобы вносить в существующий модуль AzureRM сложные изменения для добавления этой поддержки, был создан модуль Az.
 
-Это решение также позволило нашим инженерам скоординировать разработку и именование командлетов и модулей. Все модули теперь начинаются с префикса `Az.`, а все командлеты используют форму _команда_-`Az`_существительное_ . Ранее имена командлетов были длиннее, и в них присутствовали несоответствия.
+Это решение также позволило нашим инженерам скоординировать разработку и именование командлетов и модулей. Все модули теперь начинаются с префикса `Az.`, а все командлеты используют форму _команда_-`Az`_существительное_. Ранее имена командлетов были длиннее, и в них присутствовали несоответствия.
 
 Количество модулей уменьшилось. Некоторые модули, предназначенные для одних и тех же служб, были объединены. Командлеты плоскости управления и плоскости данных теперь содержатся в отдельных модулях для своих служб. Это упрощает задачу для тех, кто вручную управляет зависимостями и импортом.
 
@@ -47,7 +48,7 @@ Az — это новый модуль, поэтому нумерация вер
 
 1. [Удалите модуль AzureRM для Azure PowerShell](/powershell/azure/uninstall-az-ps#uninstall-the-azurerm-module).
 2. [Установите модуль Az для Azure PowerShell](install-az-ps.md).
-3. **НЕОБЯЗАТЕЛЬНО** . Активируйте режим совместимости, чтобы добавить псевдонимы для командлетов AzureRM с помощью [Enable-AzureRMAlias](/powershell/module/az.accounts/enable-azurermalias), пока вы не ознакомитесь с новым набором команд. Дополнительные сведения см. в следующем разделе или в статье [Перенос Azure PowerShell с AzureRM на Az](migrate-from-azurerm-to-az.md).
+3. **НЕОБЯЗАТЕЛЬНО**. Активируйте режим совместимости, чтобы добавить псевдонимы для командлетов AzureRM с помощью [Enable-AzureRMAlias](/powershell/module/az.accounts/enable-azurermalias), пока вы не ознакомитесь с новым набором команд. Дополнительные сведения см. в следующем разделе или в статье [Перенос Azure PowerShell с AzureRM на Az](migrate-from-azurerm-to-az.md).
 
 ## <a name="migrate-existing-scripts-to-az"></a>Миграция существующих скриптов на Az
 

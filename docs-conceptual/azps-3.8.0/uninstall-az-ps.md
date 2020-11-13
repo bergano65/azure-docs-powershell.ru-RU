@@ -5,12 +5,13 @@ ms.date: 09/15/2020
 ms.devlang: powershell
 ms.topic: conceptual
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 20859d6135676a3a4fb1e9f5d66909d157b38ac6
-ms.sourcegitcommit: 5fcf17330d6f335561640a5ee3d98c59f7baab94
+ms.service: azure-powershell
+ms.openlocfilehash: ff9135839b01ad9a1bf10e5969cd3226fe492145
+ms.sourcegitcommit: 2036538797dd088728aee5ac5021472454d82eb2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/26/2020
-ms.locfileid: "91381383"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "93410162"
 ---
 # <a name="uninstall-the-azure-powershell-module"></a>Удаление модуля Azure PowerShell
 
@@ -44,7 +45,7 @@ Version             Name                           Repository           Descript
 4.1.0               Az                             PSGallery            Microsoft Azure PowerShell
 ```
 
-Следующий скрипт запрашивает из коллекции PowerShell список зависимых подмодулей, а затем удаляет правильную версию каждого подмодуля. Для запуска этого скрипта в области, отличающейся от **Процесс** или **Текущий пользователь**, требуются права доступа администратора.
+Следующий скрипт запрашивает из коллекции PowerShell список зависимых подмодулей, а затем удаляет правильную версию каждого подмодуля. Для запуска этого скрипта в области, отличающейся от **Процесс** или **Текущий пользователь** , требуются права доступа администратора.
 
 ```powershell-interactive
 function Uninstall-AzModule {
@@ -146,7 +147,7 @@ function Uninstall-AzModule {
 Uninstall-AzModule -Name Az -Version 1.8.0
 ```
 
-Во время выполнения скрипта в окне будут отображаться **имя**, **версия** и **состояние** каждого удаляемого подмодуля. Чтобы запустить скрипт только для просмотра удаляемых компонентов без их удаления, используйте параметр `-WhatIf`.
+Во время выполнения скрипта в окне будут отображаться **имя** , **версия** и **состояние** каждого удаляемого подмодуля. Чтобы запустить скрипт только для просмотра удаляемых компонентов без их удаления, используйте параметр `-WhatIf`.
 
 ```output
 ModuleName              Version  State
