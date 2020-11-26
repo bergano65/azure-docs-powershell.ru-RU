@@ -3,15 +3,15 @@ title: Вход с помощью Azure PowerShell
 description: Сведения о том, как с помощью Azure PowerShell выполнить вход в роли пользователя, субъекта-службы или с помощью управляемых удостоверений для ресурсов Azure.
 ms.devlang: powershell
 ms.topic: conceptual
-ms.date: 7/7/2020
+ms.date: 11/23/2020
 ms.custom: devx-track-azurepowershell
 ms.service: azure-powershell
-ms.openlocfilehash: 2ec432ae2823bb59f32ca7801a44a9da48db9fac
-ms.sourcegitcommit: d81c3b0f0f7289104be03869eb675128b61db7d3
+ms.openlocfilehash: 46e5e84b6718cc7a700ef2df4e82647e8cb60941
+ms.sourcegitcommit: 25eca7b5f5480758aa2cd830458900cf91cf673c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94715720"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95515115"
 ---
 # <a name="sign-in-with-azure-powershell"></a>Вход с помощью Azure PowerShell
 
@@ -31,7 +31,7 @@ Azure PowerShell поддерживает несколько методов пр
 Connect-AzAccount
 ```
 
-При запуске из PowerShell версии 6 и выше этот командлет предоставляет строку токена. Чтобы войти в систему, скопируйте эту строку и вставьте ее в строку [microsoft.com/devicelogin](https://microsoft.com/devicelogin) в веб-браузере. Сеанс PowerShell пройдет аутентификацию для подключения к Azure. Можно указать параметр `UseDeviceAuthentication`, чтобы получить строку токена в Windows PowerShell.
+Начиная с версии модуля Az PowerShell 5.0.0, этот командлет по умолчанию представляет интерактивный запрос на вход через браузер. Вы можете указать параметр `UseDeviceAuthentication` для получения строки маркера. Ранее в PowerShell версии 6 и выше этот параметр использовался по умолчанию.
 
 > [!IMPORTANT]
 > Авторизация с учетными данными (на основе имени пользователя и пароля) была отключена в Azure PowerShell из-за изменений в способах авторизации Active Directory и по соображениям безопасности. Если вы используете авторизацию с учетными данными, чтобы автоматизировать процесс, [создайте субъект-службу](create-azure-service-principal-azureps.md).
