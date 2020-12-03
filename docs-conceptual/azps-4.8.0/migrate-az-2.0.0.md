@@ -6,12 +6,12 @@ ms.topic: conceptual
 ms.date: 05/24/2019
 ms.custom: devx-track-azurepowershell
 ms.service: azure-powershell
-ms.openlocfilehash: ebe18c24881f146b7cf885892c7869cd7167d511
-ms.sourcegitcommit: 2036538797dd088728aee5ac5021472454d82eb2
+ms.openlocfilehash: d6dac1514fffa140f6d785be9a1a0e8be58476eb
+ms.sourcegitcommit: 071b8c40c837ed4b2d65ce778339110d9e0899ab
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "93407482"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96427621"
 ---
 # <a name="migration-guide-for-az-200"></a>Руководство по переходу на Az версии 2.0.0
 
@@ -328,7 +328,7 @@ ms.locfileid: "93407482"
     - На пользователей с ролями оператора, участника или владельца кластера HDInsight это не повлияет.
     - Только пользователям с ролью читателя нужно указывать параметр `DefaultStorageAccountKey` явным образом.
 
-Дополнительные сведения об этих изменениях доступа на основе ролей см. по адресу [aka.ms/hdi-config-update](https://aka.ms/hdi-config-update).
+Дополнительные сведения об этих изменениях доступа на основе ролей см. по адресу [aka.ms/hdi-config-update](/azure/hdinsight/hdinsight-migrate-granular-access-cluster-configurations).
 
   #### <a name="before"></a>Перед
 

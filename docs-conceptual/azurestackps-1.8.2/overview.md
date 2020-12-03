@@ -8,12 +8,12 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.manager: knithinc
 ms.date: 08/06/2020
-ms.openlocfilehash: e314374eff433d1869378bdaa9a0370c3fd3d8d1
-ms.sourcegitcommit: 09eb4dbfcad6fce303b793dafe9bebdef589db03
+ms.openlocfilehash: 5e30e1b4a21f62c00419cfa77e1d875e110eebec
+ms.sourcegitcommit: 071b8c40c837ed4b2d65ce778339110d9e0899ab
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2020
-ms.locfileid: "88022956"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96427998"
 ---
 # <a name="azure-stack-module-182"></a>Модуль Azure Stack 1.8.2
 
@@ -21,7 +21,7 @@ ms.locfileid: "88022956"
 
 Минимальная поддерживаемая версия Azure Stack — 1910.
 
-Примечание. Сведения о более ранних версиях Azure Stack см. в разделе [Установка PowerShell для Azure Stack](https://docs.microsoft.com/azure/azure-stack/azure-stack-powershell-install#install-azure-stack-powershell).
+Примечание. Сведения о более ранних версиях Azure Stack см. в разделе [Установка PowerShell для Azure Stack](/azure/azure-stack/azure-stack-powershell-install#install-azure-stack-powershell).
 
 ## <a name="install"></a>Установка
 
