@@ -6,12 +6,12 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.custom: devx-track-azurepowershell
 ms.service: azure-powershell
-ms.openlocfilehash: a3b74531ff71ed0e9ac473831b71efb6f29d6e66
-ms.sourcegitcommit: 7887e040bdeb2f55c035a3169cd0d9d807ab186e
+ms.openlocfilehash: d922affd608ebfce41f9608ec82d565d6afe9f7f
+ms.sourcegitcommit: 3ef9f7f6c20af98282a0499b1527c291ee54011b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96536550"
+ms.lasthandoff: 12/05/2020
+ms.locfileid: "96617725"
 ---
 # <a name="introducing-the-azure-az-powershell-module"></a>Знакомство с модулем Azure Az PowerShell
 
@@ -77,7 +77,7 @@ ms.locfileid: "96536550"
 
 Az — это актуальный модуль PowerShell для Azure. Проблемы или запросы функций можно регистрировать непосредственно в [репозитории GitHub](https://github.com/Azure/azure-powershell) или через службу поддержки Майкрософт, если у вас есть контракт на поддержку. Возможность запроса функций будет реализована в последней версии Az. Функция критических проблем будет реализована в двух последних версиях Az.
 
-В AzureRM больше не будут добавляться новые командлеты или функции. Но модуль AzureRM по-прежнему официально поддерживается. Критические ошибки в нем будут исправляться до февраля 2020 года.
+В AzureRM больше не будут добавляться новые командлеты или функции. Но модуль AzureRM по-прежнему официально поддерживается. Критические ошибки в нем будут исправляться по февраль 2021 года.
 
 ## <a name="data-collection"></a>сбор данных
 
