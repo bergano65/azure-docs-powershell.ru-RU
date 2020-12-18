@@ -6,12 +6,12 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.custom: devx-track-azurepowershell
 ms.service: azure-powershell
-ms.openlocfilehash: d922affd608ebfce41f9608ec82d565d6afe9f7f
-ms.sourcegitcommit: 04221336bc9eed46c05ed1e828a6811534d4b4ab
+ms.openlocfilehash: 9021a1d8fdc73aedb87b17631f8e67cb8ef79166
+ms.sourcegitcommit: a6d92493a8d1b81b85f4db2a38f271134be5e6c5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96856685"
+ms.lasthandoff: 12/12/2020
+ms.locfileid: "97353858"
 ---
 # <a name="introducing-the-azure-az-powershell-module"></a>Знакомство с модулем Azure Az PowerShell
 
@@ -34,16 +34,17 @@ ms.locfileid: "96856685"
 
 * Безопасность и стабильность:
   * шифрование кэша токенов;
-  * поддержка ADFS 2019;
-  * механизм безопасности, позволяющий предотвратить атаки типа "злоумышленник в середине";
+  * Предотвращение атак "злоумышленник в середине"
+  * Поддержка проверки подлинности с помощью ADFS 2019
+  * Проверка подлинности на основе имени пользователя и пароля в PowerShell 7
   * поддержка таких функций, как Непрерывная оценка доступа (будет реализована в 2021 г.).
 * Поддержка всех служб Azure:
-  * модуль доступен для каждой службы Azure;
+  * Все общедоступные службы Azure имеют соответствующий поддерживаемый модуль PowerShell
   * исправление ряда ошибок и обновление версий API, используемых с AzureRM.
-* Несколько дополнительных новых возможностей:
+* Новые возможности
   * поддержка в Cloud Shell и кросс-платформенных решениях;
   * возможность получения и использования маркера доступа для доступа к ресурсам Azure;
-  * универсальный командлет Az для операций типа штриховки с escape-символами.
+  * Командлет, доступный для дополнительных операций REST с ресурсами Azure
 
 > [!NOTE]
 > Для работы в Az PowerShell на всех платформах мы рекомендуем использовать PowerShell версии 7.x и выше.
