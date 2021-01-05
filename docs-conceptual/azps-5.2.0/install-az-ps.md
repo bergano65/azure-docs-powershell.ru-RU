@@ -6,12 +6,12 @@ ms.topic: conceptual
 ms.date: 05/14/2020
 ms.custom: devx-track-azurepowershell
 ms.service: azure-powershell
-ms.openlocfilehash: f7a1658cdcafd1e8d6cba51ead26f9ddaa8c4c56
-ms.sourcegitcommit: 04221336bc9eed46c05ed1e828a6811534d4b4ab
+ms.openlocfilehash: ae26b84ecf02ff90ddfbbc2960aed448f37f2a6a
+ms.sourcegitcommit: e4f2cb406f0ea7bcdb48e130966eabba4d0f9a67
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96856815"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97665445"
 ---
 # <a name="install-azure-powershell"></a>Установите Azure PowerShell
 
@@ -44,6 +44,8 @@ $PSVersionTable.PSVersion
 > [!WARNING]
 > В Windows нельзя одновременно установить модули AzureRM и Az для PowerShell 5.1 Если в системе нужно оставить модуль AzureRM, установите модуль Az для PowerShell версии 6.2.4 и выше.
 
+### <a name="install-for-current-user"></a>Установка для текущего пользователя
+
 Использование командлетов PowerShellGet — предпочтительный метод установки. Установите модуль Az только для текущего пользователя. Это рекомендуемая область установки. Этот метод работает одинаково на платформах Windows, macOS и Linux. Выполните следующую команду из сеанса PowerShell:
 
 ```powershell-interactive
@@ -68,6 +70,8 @@ Are you sure you want to install the modules from 'PSGallery'?
 ```
 
 Ответьте `Yes` или `Yes to All`, чтобы продолжить установку.
+
+### <a name="install-for-all-users"></a>Установка для всех пользователей
 
 Для установки модуля для всех пользователей системы требуются повышенные права. Запустите сеанс PowerShell **от имени администратора** в Windows либо выполните команду `sudo` в macOS или Linux:
 

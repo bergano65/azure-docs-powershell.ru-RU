@@ -6,20 +6,17 @@ ms.service: azure-powershell
 ms.topic: quickstart
 ms.custom: devx-track-azurepowershell
 ms.author: mirobb
-ms.date: 12/10/2020
-ms.openlocfilehash: 6752fa0376c2f8887511455f56add0859f8961c8
-ms.sourcegitcommit: 076ff98abc48e072eb1727532817487bac7507c6
+ms.date: 12/18/2020
+ms.openlocfilehash: 3a26dfbb89f83a9d1983ea8d69cd47c9f74eab38
+ms.sourcegitcommit: dd90c54d8794109fa7984543649bb3faa0cbb544
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97488536"
+ms.lasthandoff: 12/19/2020
+ms.locfileid: "97701303"
 ---
 # <a name="quickstart-automatically-migrate-powershell-scripts-from-azurerm-to-the-az-powershell-module"></a>Краткое руководство. Автоматическая миграция скриптов PowerShell из AzureRM в модуль Az PowerShell
 
-В этой статье показано, как использовать модуль Az.Tools.Migration PowerShell для автоматической миграции скриптов PowerShell и модулей скриптов из AzureRM в модуль Az PowerShell.
-
-> [!IMPORTANT]
-> Модуль PowerShell Az.Tools.Migration сейчас предоставляется в общедоступной предварительной версии. Эта предварительная версия предоставляется без соглашения об уровне обслуживания. Эта версия не рекомендуется для использования с рабочими нагрузками в производственной среде. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены. Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
+В этой статье показано, как использовать модуль Az.Tools.Migration PowerShell для автоматической миграции скриптов PowerShell и модулей скриптов из AzureRM в модуль Az PowerShell. Дополнительные варианты миграции см. в статье [Перенос Azure PowerShell с AzureRM на Az](/powershell/azure/migrate-from-azurerm-to-az).
 
 ## <a name="requirements"></a>Требования
 
