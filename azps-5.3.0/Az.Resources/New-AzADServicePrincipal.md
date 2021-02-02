@@ -6,12 +6,12 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.resources/
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/New-AzADServicePrincipal.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/New-AzADServicePrincipal.md
-ms.openlocfilehash: 6d268c2378c93bcfb98e64c654880e8055bcede8
-ms.sourcegitcommit: 68451baa389791703e666d95469602c5652609ee
+ms.openlocfilehash: e7c77dc4daf38634e7661f4579dd5bbcc81d0443
+ms.sourcegitcommit: e680033f216d86cd91a1dfdb8328d32f4c99d21a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "98505233"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99251834"
 ---
 # New-AzADServicePrincipal
 
@@ -131,7 +131,7 @@ New-AzADServicePrincipal -ApplicationObject <PSADApplication> -KeyCredential <PS
 Создает новую главную службу Azure Active Directory. В наборе параметров по умолчанию используются значения по умолчанию для параметров, если они не заданы. Дополнительные сведения о значениях по умолчанию см. в описании каждого параметра. С помощью этого cmdlet можно назначить роль главе службы с параметрами **"Роль"** и **"Область".** Если обе функции опущены, роль участника назначена участнику службы. По умолчанию для параметров **"Роль"** и **"Область"** **заданы значения "Участник"** для текущей подписки. Он создает приложение и задает его свойства, если он не предоставлен. Чтобы обновить параметры конкретного приложения, используйте [cmdlet Update-AzADApplication.](./update-azadapplication.md)
 
 > [!WARNING]
-> Когда вы создаете главную службу с помощью команды **New-AzADServicePrincipal,** выходные данные включают учетные данные, которые необходимо защитить. Не включите эти учетные данные в код и не проверяйте их в источнике данных. В качестве альтернативы можно использовать [управляемые удостоверения,](/azure/active-directory/managed-identities-azure-resources/overview) чтобы избежать необходимости использовать учетные данные.
+> Когда вы создаете главную службу с помощью команды **New-AzADServicePrincipal,** выходные данные включают учетные данные, которые необходимо защитить. В качестве альтернативы можно использовать [управляемые удостоверения,](/azure/active-directory/managed-identities-azure-resources/overview) чтобы избежать необходимости использовать учетные данные.
 >
 > По умолчанию **New-AzADServicePrincipal** назначает [](/azure/role-based-access-control/built-in-roles#contributor) роль Участника основной службе в области подписки. Чтобы снизить риск компрометации основной службы, назначьте более определенную роль и сузьте область действия до группы ресурсов или ресурсов. Дополнительные [сведения см. в сведениях](/azure/role-based-access-control/role-assignments-steps) о добавлении назначения роли в этой области.
 
@@ -154,7 +154,7 @@ Id                    : 00000000-0000-0000-0000-000000000000
 Type                  : ServicePrincipal
 ```
 
-### Пример 2. Простое создание основной службы AD с указанной ролью и областью по умолчанию
+### Пример 2. Простое создание основной службы AD с заданной ролью и областью по умолчанию
 
 В следующем примере создается principal-служба AD с использованием значений по умолчанию для параметров, не указанных. Так как он не предоставлен, для основного обслуживания создается приложение. Principal service principal is created with **Reader** permissions for the current subscription since no value is provided for the **Scope** parameter.
 
@@ -304,7 +304,7 @@ Accept wildcard characters: False
 
 ### -ApplicationObject
 
-Объект, представляющий приложение, для которого создается основной службы.
+Объект, представляющий приложение, для которого создается principal-служба.
 
 ```yaml
 Type: Microsoft.Azure.Commands.ActiveDirectory.PSADApplication
@@ -477,7 +477,7 @@ Accept wildcard characters: False
 
 ### -Роль
 
-Роль, которая является основной службой, в рамках этой области. Если значение не за предоставлено, **для роли** "Участник" по умолчанию запредоставляются **роли "Участник".**
+Роль, которая является основной службой в рамках этой области. Если значение не за предоставлено, **для роли** "Участник" по умолчанию запредоставляются **роли "Участник".**
 
 ```yaml
 Type: System.String

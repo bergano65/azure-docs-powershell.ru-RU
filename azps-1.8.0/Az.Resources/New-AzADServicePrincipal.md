@@ -6,19 +6,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.resources/
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/New-AzADServicePrincipal.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/New-AzADServicePrincipal.md
-ms.openlocfilehash: 9db3e3d0fcb52869a53b4bd2b76603d2935c4dd0
-ms.sourcegitcommit: 375232b84336ef5e13052504deaa43f5bd4b7f65
+ms.openlocfilehash: aa46a09eec134797f1dcacfeb0541769c4569e9e
+ms.sourcegitcommit: e680033f216d86cd91a1dfdb8328d32f4c99d21a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93742970"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99251747"
 ---
 # New-AzADServicePrincipal
 
-## КРАТКИй обзор
-Создание нового субъекта-службы Azure Active Directory.
+## SYNOPSIS
+Создает новую главную службу Azure Active Directory.
 
-## Максимальное
+## СИНТАКСИС
 
 ### SimpleParameterSet (по умолчанию)
 ```
@@ -117,19 +117,19 @@ New-AzADServicePrincipal -ApplicationObject <PSADApplication> -KeyCredential <PS
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## NОПИСАНИЕ
-Создание нового субъекта-службы Azure Active Directory. Параметр по умолчанию использует значения по умолчанию для параметров, если пользователь не предоставил для них одно значение. Дополнительные сведения об используемых значениях по умолчанию можно найти в описании указанных ниже параметров.
-Этот командлет может назначать роль участнику службы с `Role` параметрами и и `Scope` Параметры; если ни один из этих параметров не указан, роль участника-службы назначена не будет. Значения по умолчанию для `Role` `Scope` параметров и параметры "участник" и "текущая подписка" соответственно ( _Примечание_. значения по умолчанию используются только в том случае, если пользователь предоставляет значение для одного из двух параметров, но не для другого).
-Командлет также неявно создает приложение и задает его свойства (если свойство ApplicationId не задано). Чтобы обновить параметры, зависящие от приложения, используйте командлет Set-AzADApplication.
+## ОПИСАНИЕ
+Создает новую главную службу Azure Active Directory. В наборе параметров по умолчанию используются значения по умолчанию для параметров, если пользователь не предоставляет их. Дополнительные сведения об используемых значениях по умолчанию см. в описании параметров ниже.
+Этот cmdlet может назначать роль главе службы с параметрами и их параметрами; если ни один из этих параметров не задан, роль не назначается. `Role` `Scope` По умолчанию для параметров и параметров заданы "Участник" и текущая подписка соответственно (примечание: значения по умолчанию используются только в том случае, если пользователь предоставляет значение для одного из двух параметров, но не `Role` `Scope` для другого).
+Он также неявно создает приложение и задает его свойства (если он не предоставлен). Для обновления параметров приложения используйте Set-AzADApplication.
 
 > [!WARNING]
-> Когда вы создаете участника службы с помощью команды **New-AzADServicePrincipal** , выходные данные включают учетные данные, которые необходимо защитить. Убедитесь в том, что эти учетные данные не включены в код, или проверьте учетные данные в системе управления версиями. В качестве альтернативы можно использовать [управляемые удостоверения](/azure/active-directory/managed-identities-azure-resources/overview) , чтобы избежать необходимости использовать учетные данные.
+> Когда вы создаете главную службу с помощью команды **New-AzADServicePrincipal,** выходные данные включают учетные данные, которые необходимо защитить. В качестве альтернативы можно использовать [управляемые удостоверения,](/azure/active-directory/managed-identities-azure-resources/overview) чтобы избежать необходимости использовать учетные данные.
 >
-> По умолчанию в разделе **New-AzADServicePrincipal** назначается [роль "участник"](/azure/role-based-access-control/built-in-roles#contributor) для субъекта-службы в области подписки. Чтобы уменьшить риск скомпрометированного субъекта-службы, назначайте более конкретные роли и ограничьте область ресурсом или группой ресурсов. Дополнительные сведения [можно найти в разделе инструкции по добавлению назначения роли](/azure/role-based-access-control/role-assignments-steps) .
+> По умолчанию **New-AzADServicePrincipal** назначает [](/azure/role-based-access-control/built-in-roles#contributor) роль Участника основной службе в области подписки. Чтобы снизить риск компрометации основной службы, назначьте более определенную роль и сузьте область действия до группы ресурсов или ресурсов. Дополнительные [сведения см. в сведениях](/azure/role-based-access-control/role-assignments-steps) о добавлении назначения роли в этой области.
 
-## ИЛЛЮСТРИРУЮТ
+## ПРИМЕРЫ
 
-### Пример 1: Создание участника простой службы AD
+### Пример 1. Простое создание основной службы AD
 
 ```
 PS C:\> New-AzADServicePrincipal
@@ -142,9 +142,9 @@ Id                    : yyyyyyyy-yyyy-yyyy-yyyy-yyyyyyyyyyyy
 Type                  : ServicePrincipal
 ```
 
-Приведенная выше команда создает участника службы AD, используя значения по умолчанию для параметров, которые не указаны. Так как идентификатор приложения не предоставлен, приложение было создано для субъекта-службы. Так как никаких значений не было предоставлено `Role` или у `Scope` созданного субъекта-службы нет разрешений.
+Вышеуказанная команда создает главную службу AD с использованием значений по умолчанию для параметров, которые не предоставлены. Так как не предоставлены id приложения, для этого деле фигуры службы было создано приложение. Поскольку значения не были за предоставлены или у созданного директора-службы нет `Role` `Scope` разрешений.
 
-### Пример 2-простого создания участника службы AD с указанной ролью и областью по умолчанию
+### Пример 2. Простое создание основной службы AD с заданной ролью и областью по умолчанию
 
 ```
 PS C:\> New-AzADServicePrincipal -Role Reader
@@ -159,9 +159,9 @@ Type                  : ServicePrincipal
 WARNING: Assigning role 'Reader' over scope '/subscriptions/zzzzzzzz-zzzz-zzzz-zzzz-zzzzzzzzzzzz' to the new service principal.
 ```
 
-Приведенная выше команда создает участника службы AD, используя значения по умолчанию для параметров, которые не указаны. Так как идентификатор приложения не предоставлен, приложение было создано для субъекта-службы. Субъект-служба создан с разрешениями "читатель" на текущую подписку (так как для параметра не было предоставлено значение `Scope` ).
+С помощью этой команды создается principal-служба AD, используя значения по умолчанию для параметров, которые не предоставлены. Так как не предоставлен id приложения, для основного обслуживания было создано приложение. Principal service principal was created with "Reader" permissions over the current subscription (since no value was provided for the `Scope` parameter).
 
-### Пример 3-Создание участника службы AD с указанной областью и ролью по умолчанию
+### Пример 3. Простое создание основной службы AD с заданной областью и ролью по умолчанию
 
 ```
 PS C:\> New-AzADServicePrincipal -Scope /subscriptions/zzzzzzzz-zzzz-zzzz-zzzz-zzzzzzzzzzzz/resourceGroups/myResourceGroup
@@ -176,9 +176,9 @@ Type                  : ServicePrincipal
 WARNING: Assigning role 'Contributor' over scope '/subscriptions/zzzzzzzz-zzzz-zzzz-zzzz-zzzzzzzzzzzz/resourceGroups/myResourceGroup' to the new service principal.
 ```
 
-Приведенная выше команда создает участника службы AD, используя значения по умолчанию для параметров, которые не указаны. Так как идентификатор приложения не предоставлен, приложение было создано для субъекта-службы. Субъект-служба создан с разрешениями "участник" (так как для параметра не было предоставлено значение `Role` ) для указанной области группы ресурсов.
+С помощью этой команды создается principal-служба AD, используя значения по умолчанию для параметров, которые не предоставлены. Так как не предоставлен id приложения, для основного обслуживания было создано приложение. Principal service principal was created with "Contributor" permissions (since no value was provided for the `Role` parameter) over the provided resource group scope.
 
-### Пример 4: Создание участника службы AD с указанной областью и ролью
+### Пример 4. Простое создание основной службы AD с заданной областью и ролью
 
 ```
 PS C:\> New-AzADServicePrincipal -Role Reader -Scope /subscriptions/zzzzzzzz-zzzz-zzzz-zzzz-zzzzzzzzzzzz/resourceGroups/myResourceGroup
@@ -193,9 +193,9 @@ Type                  : ServicePrincipal
 WARNING: Assigning role 'Reader' over scope '/subscriptions/zzzzzzzz-zzzz-zzzz-zzzz-zzzzzzzzzzzz/resourceGroups/myResourceGroup' to the new service principal.
 ```
 
-Приведенная выше команда создает участника службы AD, используя значения по умолчанию для параметров, которые не указаны. Так как идентификатор приложения не предоставлен, приложение было создано для субъекта-службы. Субъект-служба создан с разрешениями "читатель" в указанной области группы ресурсов.
+С помощью этой команды создается principal-служба AD, используя значения по умолчанию для параметров, которые не предоставлены. Так как не предоставлен id приложения, для основного обслуживания было создано приложение. Проект-служба была создана с разрешениями "Читатель" для за предоставленной области действия группы ресурсов.
 
-### Пример 5: Создание участника службы AD с помощью идентификатора приложения с назначением роли
+### Пример 5. Создание новой основной роли службы AD с использованием ид приложения с назначением роли
 
 ```
 PS C:\> New-AzADServicePrincipal -ApplicationId 34a28ad2-dec4-4a41-bc3b-d22ddf90000e
@@ -207,22 +207,22 @@ Id                    : yyyyyyyy-yyyy-yyyy-yyyy-yyyyyyyyyyyy
 Type                  : ServicePrincipal
 ```
 
-Создание субъекта-службы AD для приложения с идентификатором приложения "34a28ad2-dec4-4a41-bc3b-d22ddf90000e". Так как никаких значений не было предоставлено `Role` или у `Scope` созданного субъекта-службы нет разрешений.
+Создает для приложения новую главную службу AD с ид приложения 34a28ad2-dec4-4a41-bc3b-d22ddf90000e. Поскольку значения не были за предоставлены или у созданного директора-службы нет `Role` `Scope` разрешений.
 
-### Пример 6: Создание участника службы AD с помощью конвейера
+### Пример 6. Создание новой основной суммы службы AD с помощью piping
 
 ```
 PS C:\> Get-AzADApplication -ObjectId 3ede3c26-b443-4e0b-9efc-b05e68338dc3 | New-AzADServicePrincipal
 ```
 
-Возвращает приложение с идентификатором объекта "3ede3c26-b443-4e0b-9efc-b05e68338dc3" и каналами, которые можно создать с помощью командлета New-AzADServicePrincipal для создания субъекта-службы AD для этого приложения.
+Получает приложение с объектным ид '3ede3c26-b443-4e0b-9efc-b05e68338dc3' и трубами к New-AzADServicePrincipal- и создает для этого приложения новую главную службу AD.
 
-## ПАРАМЕТРЫ
+## PARAMETERS
 
 ### -ApplicationId
-Уникальный идентификатор приложения для субъекта-службы в клиенте.
-После создания это свойство невозможно изменить.
-Если идентификатор приложения не указан, будет создан один из них.
+Уникальный ид приложения для основной службы в клиенте.
+Созданное свойство невозможно изменить.
+Если не указан ид приложения, он будет создан.
 
 ```yaml
 Type: System.Guid
@@ -249,7 +249,7 @@ Accept wildcard characters: False
 ```
 
 ### -ApplicationObject
-Объект, представляющий приложение, для которого создается субъект-служба.
+Объект, представляющий приложение, для которого создается principal-служба.
 
 ```yaml
 Type: Microsoft.Azure.Commands.ActiveDirectory.PSADApplication
@@ -264,8 +264,8 @@ Accept wildcard characters: False
 ```
 
 ### -CertValue
-Значение типа учетных данных "асимметричный".
-Он представляет сертификат базового 64 в кодировке.
+Значение асимметричного типа учетных данных.
+Он представляет собой 64-кодированный сертификат.
 
 ```yaml
 Type: System.String
@@ -307,7 +307,7 @@ Accept wildcard characters: False
 ```
 
 ### -DisplayName
-Понятное имя субъекта-службы. Если отображаемое имя не задано, это значение будет использоваться по умолчанию: "Azure-PowerShell-MM-DD-гггг-чч-мм-СС", где суффикс — это время создания приложения.
+Удобное имя директора-службы. Если отображаемого имени нет, по умолчанию для этого значения будет зафикс "azure-powershell-MM-dd-y-HH-mm-ss", где суффикс — время создания приложения.
 
 ```yaml
 Type: System.String
@@ -334,8 +334,8 @@ Accept wildcard characters: False
 ```
 
 ### -EndDate
-Эффективная дата окончания использования учетных данных.
-Значение даты окончания по умолчанию — это год от сегодняшнего дня. Для «асимметричных» учетных данных типа это значение должно быть установлено в on или до даты, когда сертификат X509 является действительным.
+Дата окончания использования учетных данных.
+Значение даты окончания по умолчанию составляет один год от сегодняшнего дня. Для учетных данных асимметричного типа необходимо установить этот учетный данные в день, когда допустим сертификат X509, или до нее.
 
 ```yaml
 Type: System.DateTime
@@ -362,7 +362,7 @@ Accept wildcard characters: False
 ```
 
 ### -KeyCredential
-Коллекция ключевых учетных данных, связанных с приложением.
+Набор учетных данных ключа, связанных с приложением.
 
 ```yaml
 Type: Microsoft.Azure.Commands.ActiveDirectory.PSADKeyCredential[]
@@ -389,7 +389,7 @@ Accept wildcard characters: False
 ```
 
 ### -PasswordCredential
-Коллекция учетных данных пароля, связанных с приложением.
+Набор учетных данных, связанных с приложением.
 
 ```yaml
 Type: Microsoft.Azure.Commands.ActiveDirectory.PSADPasswordCredential[]
@@ -415,8 +415,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Role (роль)
-Роль, которую участник службы имеет над областью. Если задано значение, `Scope` но для него не указано значение `Role` , `Role` по умолчанию будет использоваться роль "участник".
+### -Роль
+Роль, которая является основной службой в рамках этой области. Если для нее есть значение, но для нее не за предоставлено значение, по умолчанию будет засве же `Scope` `Role` роль `Role` "Участник".
 
 ```yaml
 Type: System.String
@@ -431,7 +431,7 @@ Accept wildcard characters: False
 ```
 
 ### -Scope
-Область, для которой предоставлены разрешения субъекта-службы. Если задано значение, `Role` но для него не указано значение `Scope` , `Scope` по умолчанию будет использоваться текущая подписка.
+Область, для которую у директора-службы есть разрешения. Если значение за предоставлено, но для нее не за предоставлено значение, по умолчанию будет активна `Role` `Scope` `Scope` текущая подписка.
 
 ```yaml
 Type: System.String
@@ -446,7 +446,7 @@ Accept wildcard characters: False
 ```
 
 ### -SkipAssignment
-Если задано значение, будет пропущено создание назначения роли по умолчанию для субъекта-службы.
+Если за установлено, будет пропущено создание назначения роли по умолчанию для основного задания службы.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -461,8 +461,8 @@ Accept wildcard characters: False
 ```
 
 ### -StartDate
-Фактическая дата начала использования учетных данных.
-Значение даты начала по умолчанию — сегодня. Для «асимметричных» учетных данных типа это значение должно быть задано как on или после даты, с которой сертификат X509 является действительным.
+Начальную дату использования учетных данных.
+По умолчанию дата начала является сегодняшним значением. Для "асимметричных" учетных данных этого типа необходимо установить в день, начиная с даты действия сертификата X509, или после нее.
 
 ```yaml
 Type: System.DateTime
@@ -489,7 +489,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
-Запрашивает подтверждение перед запуском командлета.
+Перед запуском cmdlet вам будет предложено подтвердить его.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -504,8 +504,8 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Показывает, что произойдет при запуске командлета.
-Командлет не выполняется.
+Показывает, что произойдет при запуске cmdlet.
+Этот cmdlet не будет выполниться.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -520,32 +520,32 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Этот командлет поддерживает общие параметры:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-of Variable,-out,-PipelineVariable,-Verbose, и-WarningAction. Дополнительные сведения можно найти в разделе about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
+Этот cmdlet поддерживает общие параметры: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. Дополнительные сведения см. в about_CommonParameters https://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## ВХОДНЫЕ данные
+## INPUTS
 
-### System. GUID
+### System.Guid
 
-### System. String
+### System.String
 
-### Microsoft. Azure. Commands. ActiveDirectory. PSADApplication
+### Microsoft.Azure.Commands.ActiveDirectory.PSADApplication
 
-### Microsoft. Azure. Commands. ActiveDirectory. PSADPasswordCredential []
+### Microsoft.Azure.Commands.ActiveDirectory.PSADPasswordCredential[]
 
-### Microsoft. Azure. Commands. ActiveDirectory. PSADKeyCredential []
+### Microsoft.Azure.Commands.ActiveDirectory.PSADKeyCredential[]
 
-### System. DateTime
+### System.DateTime
 
-## НАПРЯЖЕНИЕ
+## OUTPUTS
 
-### Microsoft. Azure. Commands. ActiveDirectory. PSADServicePrincipal
+### Microsoft.Azure.Commands.ActiveDirectory.PSADServicePrincipal
 
-### Microsoft. Azure. Commands. Resources. Authorization. PSADServicePrincipalWrapper
+### Microsoft.Azure.Commands.Resources.Models.Authorization.PSADServicePrincipalWrapper
 
-## Пуск
-Ключевые слова: Azure, azurerm, ARM, Resource, менеджмент, руководитель, ресурс, группа, шаблон, развертывание
+## ПРИМЕЧАНИЯ
+Ключевые слова: azure, azurerm, arm, resource, management, manager, resource, group, template, deployment
 
-## ДОПОЛНИТЕЛЬНЫЕ ССЫЛКИ
+## СВЯЗАННЫЕ ССЫЛКИ
 
 [Remove-AzADServicePrincipal](./Remove-AzADServicePrincipal.md)
 
