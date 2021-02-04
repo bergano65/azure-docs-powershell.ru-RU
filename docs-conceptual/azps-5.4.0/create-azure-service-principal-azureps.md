@@ -6,12 +6,12 @@ ms.topic: conceptual
 ms.service: azure-powershell
 ms.date: 06/17/2020
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: a5640ded6fc8c6478084374f7808450f6a99d6e5
-ms.sourcegitcommit: 12bb1a6d1f89789bf2a78992f9b8ca848691a4d7
+ms.openlocfilehash: 1879fea883c796dae26e353adeab908c8acdb967
+ms.sourcegitcommit: e680033f216d86cd91a1dfdb8328d32f4c99d21a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/19/2021
-ms.locfileid: "98573959"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99251851"
 ---
 # <a name="create-an-azure-service-principal-with-azure-powershell"></a>Создание субъекта-службы Azure с помощью Azure PowerShell
 
@@ -22,7 +22,7 @@ ms.locfileid: "98573959"
 В этой статье описано, как создать субъект-службу, получить сведения о нем и сбросить его с помощью Azure PowerShell.
 
 > [!WARNING]
-> При создании субъекта-службы с помощью команды [New-AzADServicePrincipal](/powershell/module/Az.Resources/New-AzADServicePrincipal) в выходные данные включаются учетные данные, которые необходимо защитить. Убедитесь, что эти учетные данные не включены в код, или проверьте учетные данные в системе управления версиями. В качестве альтернативы можно использовать [управляемые удостоверения](/azure/active-directory/managed-identities-azure-resources/overview), чтобы не работать с учетными данными.
+> При создании субъекта-службы с помощью команды [New-AzADServicePrincipal](/powershell/module/Az.Resources/New-AzADServicePrincipal) в выходные данные включаются учетные данные, которые необходимо защитить. В качестве альтернативы можно использовать [управляемые удостоверения](/azure/active-directory/managed-identities-azure-resources/overview), чтобы не работать с учетными данными.
 >
 > По умолчанию [New-AzADServicePrincipal](/powershell/module/Az.Resources/New-AzADServicePrincipal) присваивает субъекту-службе в области действия подписки роль [Участник](/azure/role-based-access-control/built-in-roles#contributor). Чтобы снизить риск компрометации субъекта-службы, назначьте более конкретную роль и ограничьте область ресурсом или группой ресурсов. Дополнительные сведения см. в статье [Шаги по добавлению назначения ролей](/azure/role-based-access-control/role-assignments-steps).
 
