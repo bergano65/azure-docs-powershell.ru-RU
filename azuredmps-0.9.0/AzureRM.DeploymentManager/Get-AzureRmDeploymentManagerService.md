@@ -3,20 +3,19 @@ external help file: Microsoft.Azure.Commands.DeploymentManager.dll-Help.xml
 Module Name: AzureRM.DeploymentManager
 online version: https://docs.microsoft.com/en-us/powershell/module/azurerm.deploymentmanager/get-azurermdeploymentmanagerservice
 schema: 2.0.0
-content_git_url: ''
-ms.openlocfilehash: 655cfeeae35d1b48bbfe2149fd4262dffe72ae09
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: 4a91c2f8fdda1d2cda7c75f0cf7cfab165701f3d
+ms.sourcegitcommit: e57be0da5162efeb0a01f396e2343dd137920063
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93556324"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99572111"
 ---
 # Get-AzureRmDeploymentManagerService
 
-## КРАТКИй обзор
+## SYNOPSIS
 Возвращает службу в топологии службы.
 
-## Максимальное
+## СИНТАКСИС
 
 ### Интерактивный (по умолчанию)
 ```
@@ -48,36 +47,36 @@ Get-AzureRmDeploymentManagerService [-Service] <PSServiceResource> [-DefaultProf
  [<CommonParameters>]
 ```
 
-## NОПИСАНИЕ
-Командлет **Get-AzureRmDeploymentManagerService** Получает службу в рамках топологии службы и возвращает объект, представляющий эту службу.
-Укажите службу, указав ее имя, топологию службы и имя группы ресурсов. Кроме того, можно предоставить объект обслуживания или ИД ресурса.
+## ОПИСАНИЕ
+**Cmdlet Get-AzureRmDeploymentManagerService** получает службу в топологии службы и возвращает объект, который ее представляет.
+Укажите службу по имени, топологии службы и имени группы ресурсов. Кроме того, вы можете предоставить объект Service или ResourceId.
 
-Вы можете локально изменить этот объект, а затем применить изменения к службе с помощью командлета Set-AzureRmDeploymentManagerService.
+Вы можете изменить этот объект локально, а затем применить изменения к службе с помощью Set-AzureRmDeploymentManagerService-управления.
 
-## ИЛЛЮСТРИРУЮТ
+## ПРИМЕРЫ
 
 ### Пример 1
 ```powershell
 PS C:\> Get-AzureRmDeploymentManagerService -ResourceGroupName ContosoResourceGroup -ServiceTopologyName ContosoServiceTopology -Name ContosoService1
 ```
 
-Эта команда получает службу с именем ContosoService1 в топологии службы с именем ContosoServiceTopology в ContosoResourceGroup.
+Эта команда получает службу с именем ContosoService1 в топологии службы ContosoServiceTopology в contosoResourceGroup.
 
-### Пример 2: получение службы с помощью идентификатора ресурса.
+### Пример 2. Получите службу, используя идентификатор ресурса.
 ```powershell
 PS C:\> Get-AzureRmDeploymentManagerService -ResourceId "/subscriptions/subscriptionId/resourcegroups/ContosoResourceGroup/providers/Microsoft.DeploymentManager/serviceTopologies/ContosoServiceTopology/services/ContosoService1"
 ```
 
-Эта команда получает службу с именем ContosoService1 в топологии службы с именем ContosoServiceTopology в ContosoResourceGroup.
+Эта команда получает службу с именем ContosoService1 в топологии службы ContosoServiceTopology в contosoResourceGroup.
 
-### Пример 3: получение службы с помощью объекта обслуживания.
+### Пример 3. Получить службу с использованием объекта-службы.
 ```powershell
 PS C:\> Get-AzureRmDeploymentManagerService -Service $serviceObject
 ```
 
-Эта команда возвращает службу, имя и название топологии обслуживания и ResourceGroup которой соответствуют свойствам Name, ServiceTopologyName и ResourceGroupName для $serviceObject соответственно.
+Эта команда возвращает службу, имя которой, имя топологии службы и группа ресурсов соответствуют свойствам Name, ServiceTopologyName и ResourceGroupName $serviceObject соответственно.
 
-## ПАРАМЕТРЫ
+## PARAMETERS
 
 ### -DefaultProfile
 Учетные данные, учетная запись, клиент и подписка, используемые для связи с Azure.
@@ -94,7 +93,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Name (имя)
+### -Name
 Имя службы.
 
 ```yaml
@@ -139,8 +138,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Служба
-Объект обслуживания.
+### -Service
+Сервисный объект.
 
 ```yaml
 Type: Microsoft.Azure.Commands.DeploymentManager.Models.PSServiceResource
@@ -155,7 +154,7 @@ Accept wildcard characters: False
 ```
 
 ### -ServiceTopology
-Объект Topology (топология службы), в котором должна быть создана служба.
+Объект топологии службы, в котором необходимо создать службу.
 
 ```yaml
 Type: Microsoft.Azure.Commands.DeploymentManager.Models.PSServiceTopologyResource
@@ -185,7 +184,7 @@ Accept wildcard characters: False
 ```
 
 ### -ServiceTopologyResourceId
-Идентификатор ресурса топологии обслуживания, в котором должна быть создана служба.
+Идентификатор ресурса топологии службы, в котором должна быть создана служба.
 
 ```yaml
 Type: System.String
@@ -200,19 +199,19 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Этот командлет поддерживает общие параметры:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-of Variable,-out,-PipelineVariable,-Verbose, и-WarningAction. Дополнительные сведения можно найти в разделе about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
+Этот cmdlet поддерживает общие параметры: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. Дополнительные сведения см. в about_CommonParameters https://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## ВХОДНЫЕ данные
+## INPUTS
 
-### Ничего
+### Нет
 
-## НАПРЯЖЕНИЕ
+## OUTPUTS
 
-### Microsoft. Azure. Commands. DeploymentManager. Models. PSServiceResource
+### Microsoft.Azure.Commands.DeploymentManager.Models.PSServiceResource
 
-## Пуск
+## ПРИМЕЧАНИЯ
 
-## ДОПОЛНИТЕЛЬНЫЕ ССЫЛКИ
+## СВЯЗАННЫЕ ССЫЛКИ
 
 [New-AzureRmDeploymentManagerService](./New-AzureRmDeploymentManagerService.md)
 
