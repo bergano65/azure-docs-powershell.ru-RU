@@ -6,19 +6,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.resources/
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/Azs-tzl/src/Resources/Resources/help/Get-AzADUser.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/Azs-tzl/src/Resources/Resources/help/Get-AzADUser.md
-ms.openlocfilehash: 34a00ed29d40d8824ac0f2d24f5275bb7c0a0164
-ms.sourcegitcommit: 4c61442a2df1cee633ce93cad9f6bc793803baa2
+ms.openlocfilehash: b5690dfc1d85483b10fc7cd08606c4555784e8e0
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "93910961"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100398739"
 ---
 # Get-AzADUser
 
-## КРАТКИй обзор
-Фильтрует пользователей Active Directory.
+## SYNOPSIS
+Фильтрует активных пользователей каталогов.
 
-## Максимальное
+## СИНТАКСИС
 
 ### EmptyParameterSet (по умолчанию)
 ```
@@ -56,44 +56,44 @@ Get-AzADUser -Mail <String> [-DefaultProfile <IAzureContextContainer>] [-Include
  [-Skip <UInt64>] [-First <UInt64>] [<CommonParameters>]
 ```
 
-## NОПИСАНИЕ
-Фильтрует пользователей Active Directory.
+## ОПИСАНИЕ
+Фильтрует активных пользователей каталогов.
 
-## ИЛЛЮСТРИРУЮТ
+## ПРИМЕРЫ
 
-### Пример 1: список всех пользователей
+### Пример 1. Список всех пользователей
 
 ```
 PS C:\> Get-AzADUser
 ```
 
-Выводит список всех пользователей AD в клиенте.
+Список всех пользователей AD в клиенте.
 
-### Пример 2: список всех пользователей, использующих разбиение по страницам
+### Пример 2. Список всех пользователей с помощью разведки
 
 ```
 PS C:\> Get-AzADUser -First 100
 ```
 
-Список первых пользователей рекламы 100 в клиенте.
+Список первых 100 пользователей AD в клиенте.
 
-### Пример 3. получение пользователя рекламного объявления по имени субъекта-пользователя
+### Пример 3. Get AD user by user principal name
 
 ```
 PS C:\> Get-AzADUser -UserPrincipalName foo@domain.com
 ```
 
-Возвращает пользователя рекламы с основным именем пользователя " foo@domain.com ".
+Возвращает пользователя AD с именем директора пользователя " foo@domain.com " .
 
-### Пример 4: список по строке поиска
+### Пример 4. Строка "Список по поиску"
 
 ```
 PS C:\> Get-AzADUser -SearchString Joe
 ```
 
-Список всех пользователей рекламы, отображаемое имя которых начинается с "Joe".
+Список всех пользователей AD, отображаемая имя которых начинается с "Сергей".
 
-## ПАРАМЕТРЫ
+## PARAMETERS
 
 ### -DefaultProfile
 Учетные данные, учетная запись, клиент и подписка, используемые для связи с Azure
@@ -111,7 +111,7 @@ Accept wildcard characters: False
 ```
 
 ### -DisplayName
-Отображаемое имя пользователя.
+Отображаемая имя пользователя.
 
 ```yaml
 Type: System.String
@@ -141,7 +141,7 @@ Accept wildcard characters: False
 ```
 
 ### -IncludeTotalCount
-Показывает количество объектов в наборе данных. В настоящее время этот параметр не выполняет никаких действий.
+Отчет о количестве объектов в наборе данных. В настоящее время этот параметр не имеет никакого отношения.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -155,7 +155,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Почта
+### -Mail
 Почта пользователя.
 
 ```yaml
@@ -171,7 +171,7 @@ Accept wildcard characters: False
 ```
 
 ### -ObjectId
-Идентификатор объекта пользователя.
+ИД объекта пользователя.
 
 ```yaml
 Type: System.Guid
@@ -186,7 +186,7 @@ Accept wildcard characters: False
 ```
 
 ### -Skip
-Пропускает первые N объектов, а затем возвращает оставшиеся объекты.
+Игнорирует первые N объектов, а затем возвращает оставшиеся объекты.
 
 ```yaml
 Type: System.UInt64
@@ -201,7 +201,7 @@ Accept wildcard characters: False
 ```
 
 ### -StartsWith
-Используется для поиска пользователей, начинающихся с предоставленной строки.
+Используется для поиска пользователей, которые начинаются с предоставленной строки.
 
 ```yaml
 Type: System.String
@@ -216,7 +216,7 @@ Accept wildcard characters: False
 ```
 
 ### -UserPrincipalName
-Имя участника-пользователя.
+Имя пользователя(upn) пользователя.
 
 ```yaml
 Type: System.String
@@ -243,25 +243,24 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Этот командлет поддерживает общие параметры:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-of Variable,-out,-PipelineVariable,-Verbose, и-WarningAction. Дополнительные сведения можно найти в разделе about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .
+Этот cmdlet поддерживает общие параметры: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. Дополнительные сведения см. в about_CommonParameters http://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## ВХОДНЫЕ данные
+## INPUTS
 
-### System. String
+### System.String
 
-### System. GUID
+### System.Guid
 
-## НАПРЯЖЕНИЕ
+## OUTPUTS
 
-### Microsoft.Azure.Graph.RBAC.Version1_6. ActiveDirectory. PSADUser
+### Microsoft.Azure.Graph.RBAC.Version1_6.ActiveDirectory.PSADUser
 
-## Пуск
+## ПРИМЕЧАНИЯ
 
-## ДОПОЛНИТЕЛЬНЫЕ ССЫЛКИ
+## СВЯЗАННЫЕ ССЫЛКИ
 
 [New-AzADUser](./New-AzADUser.md)
 
-[Set-AzADUser](./Set-AzADUser.md)
 
 [Remove-AzADUser](./Remove-AzADUser.md)
 
