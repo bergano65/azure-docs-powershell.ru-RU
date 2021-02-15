@@ -6,19 +6,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.apimanagem
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/Update-AzApiManagementRegion.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/Update-AzApiManagementRegion.md
-ms.openlocfilehash: fce2d356b7da56d2b93fa8634e737f96f54da178
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: 3f9c88177d3f791acdd0be5c81eec2fb5bc6911c
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93901534"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100400711"
 ---
 # Update-AzApiManagementRegion
 
-## КРАТКИй обзор
+## SYNOPSIS
 Обновляет существующий регион развертывания в экземпляре PsApiManagement.
 
-## Максимальное
+## СИНТАКСИС
 
 ```
 Update-AzApiManagementRegion -ApiManagement <PsApiManagement> -Location <String> -Sku <PsApiManagementSku>
@@ -26,14 +26,14 @@ Update-AzApiManagementRegion -ApiManagement <PsApiManagement> -Location <String>
  [<CommonParameters>]
 ```
 
-## NОПИСАНИЕ
-Командлет **Update-AzApiManagementRegion** обновляет существующий экземпляр типа **Microsoft. Azure. Commands. ApiManagement. Models. PsApiManagementRegion** в коллекции объектов **AdditionalRegions** указанного экземпляра типа **Microsoft. Azure. Commands. ApiManagement. Models. PsApiManagement**.
-Этот командлет не развертывает ничего, но обновляет экземпляр **PsApiManagement** в памяти.
-Чтобы обновить развертывание управления API, используйте модифицированный **PsApiManagementInstance** в командлете Update-AzApiManagementDeployment.
+## ОПИСАНИЕ
+Командлет **Update-AzApiManagementRegion** обновляет существующий экземпляр типа **Microsoft.Azure.Commands.ApiManagement.Models.PsApiManagementRegion** в коллекции объектов **AdditionalRegions** предоставленного экземпляра **типа Microsoft.Azure.Commands.ApiManagement.Models.PsApiManagement**.
+Этот cmdlet не развертывает ничего, но обновляет экземпляр **PsApiManagement** в памяти.
+Чтобы обновить развертывание управления API, используйте измененный для Set-AzApiManagement **psApiManagementInstance.**
 
-## ИЛЛЮСТРИРУЮТ
+## ПРИМЕРЫ
 
-### Пример 1: увеличивает емкость дополнительного региона в экземпляре PsApiManagement
+### Пример 1. Увеличение емкости дополнительного региона в экземпляре PsApiManagement
 ```powershell
 PS C:\>$apimService = Get-AzApiManagement -ResourceGroupName $resourceGroupName -Name $apiManagementName
 PS C:\>$apimService = Update-AzApiManagementRegion -ApiManagement $apimService -Location "North Central US" -Capacity 2 -Sku Premium
@@ -42,12 +42,12 @@ PS C:\>$apimService = Update-AzApiManagementRegion -ApiManagement $apimService -
 PS C:\>$updatedService = Set-AzApiManagement -InputObject $apimService -PassThru
 ```
 
-Эта команда возвращает службу управления расширенным интерфейсом API, в которой есть регионы в Южной Центральной США и Северной центральной части США. Затем он увеличивает емкость центрального региона США до 2 с помощью команды **Update-AzApiManagementRegion**. Следующий командлет Set-AzApiManagement применяет изменение конфигурации к службе управления API.
+Эта команда получает службу SKU API Management Premium, регионы в юго-центральной части США и северной части США. Затем с помощью **Update-AzApiManagementRegion (Обновление-AzApiManagementRegion)** емкость региона North Central US увеличивается до 2. Следующий Set-AzApiManagement примещает изменение конфигурации к службе управления Api.
 
-## ПАРАМЕТРЫ
+## PARAMETERS
 
 ### -ApiManagement
-Указывает экземпляр **PsApiManagement** , который будет обновлять существующий регион развертывания в.
+Указывает экземпляр **PsApiManagement,** в который нужно обновить существующий регион развертывания.
 
 ```yaml
 Type: Microsoft.Azure.Commands.ApiManagement.Models.PsApiManagement
@@ -92,9 +92,9 @@ Accept wildcard characters: False
 ```
 
 ### -Location
-Указывает расположение области развертывания для обновления.
-Указывает расположение нового региона развертывания в поддерживаемом регионе для службы управления API.
-Для получения допустимых местоположений используйте командлет Get-AzResourceProvider-ProviderNamespace "Microsoft. ApiManagement" | where {$ _. ResourceTypes [0]. ResourceTypeName-EQ "Service"} | Расположение Select-Object
+Определяет расположение региона развертывания, который нужно обновить.
+Указывает расположение нового региона развертывания из поддерживаемого региона для службы управления Api.
+Чтобы получить допустимые расположения, используйте Get-AzResourceProvider -ProviderNamespace "Microsoft.ApiManagement" | где {$_. ResourceTypes[0]. ResourceTypeName -eq "service"} | Select-Object Расположения
 
 ```yaml
 Type: System.String
@@ -109,11 +109,11 @@ Accept wildcard characters: False
 ```
 
 ### -SKU
-Задает значение нового уровня для области развертывания.
+Указывает значение нового уровня для региона развертывания.
 Допустимые значения:
-- Программист
-- Стандартная
-- Версию
+- Разработчик
+- Стандартный
+- Premium
 
 ```yaml
 Type: Microsoft.Azure.Commands.ApiManagement.Models.PsApiManagementSku
@@ -129,8 +129,8 @@ Accept wildcard characters: False
 ```
 
 ### -VirtualNetwork
-Указывает конфигурацию виртуальной сети для региона развертывания.
-Передача $null приведет к удалению конфигурации виртуальной сети для региона.
+Определяет конфигурацию виртуальной сети для региона развертывания.
+Передача $null удалит конфигурацию виртуальной сети для этого региона.
 
 ```yaml
 Type: Microsoft.Azure.Commands.ApiManagement.Models.PsApiManagementVirtualNetwork
@@ -145,30 +145,30 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Этот командлет поддерживает общие параметры:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-of Variable,-out,-PipelineVariable,-Verbose, и-WarningAction. Дополнительные сведения можно найти в разделе about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
+Этот cmdlet поддерживает общие параметры: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. Дополнительные сведения см. в about_CommonParameters https://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## ВХОДНЫЕ данные
+## INPUTS
 
-### Microsoft. Azure. Commands. ApiManagement. Models. PsApiManagement
+### Microsoft.Azure.Commands.ApiManagement.Models.PsApiManagement
 
-### System. String
+### System.String
 
-### Microsoft. Azure. Commands. ApiManagement. Models. PsApiManagementSku
+### Microsoft.Azure.Commands.ApiManagement.Models.PsApiManagementSku
 
-### System. Int32
+### System.Int32
 
-### Microsoft. Azure. Commands. ApiManagement. Models. PsApiManagementVirtualNetwork
+### Microsoft.Azure.Commands.ApiManagement.Models.PsApiManagementVirtualNetwork
 
-## НАПРЯЖЕНИЕ
+## OUTPUTS
 
-### Microsoft. Azure. Commands. ApiManagement. Models. PsApiManagement
+### Microsoft.Azure.Commands.ApiManagement.Models.PsApiManagement
 
-## Пуск
+## ПРИМЕЧАНИЯ
 
-## ДОПОЛНИТЕЛЬНЫЕ ССЫЛКИ
+## СВЯЗАННЫЕ ССЫЛКИ
 
 [Add-AzApiManagementRegion](./Add-AzApiManagementRegion.md)
 
 [Remove-AzApiManagementRegion](./Remove-AzApiManagementRegion.md)
 
-[Update-AzApiManagementDeployment](./Update-AzApiManagementDeployment.md)
+[Set-AzApiManagement](./Set-AzApiManagement.md)

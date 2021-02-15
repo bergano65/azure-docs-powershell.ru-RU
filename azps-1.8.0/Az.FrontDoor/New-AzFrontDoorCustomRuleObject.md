@@ -5,19 +5,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.frontdoor/
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/FrontDoor/FrontDoor/help/New-AzFrontDoorCustomRuleObject.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/FrontDoor/FrontDoor/help/New-AzFrontDoorCustomRuleObject.md
-ms.openlocfilehash: 19f8215f8feaa1765da871f0fa38cc0120d842ea
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: 8602bd4636e3e6034552f48a6f6514a453b816a0
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93900634"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100400677"
 ---
 # New-AzFrontDoorCustomRuleObject
 
-## КРАТКИй обзор
+## SYNOPSIS
 Создание объекта CustomRule для создания политики WAF
 
-## Максимальное
+## СИНТАКСИС
 
 ```
 New-AzFrontDoorCustomRuleObject -Name <String> -RuleType <PSCustomRuleType>
@@ -26,10 +26,10 @@ New-AzFrontDoorCustomRuleObject -Name <String> -RuleType <PSCustomRuleType>
  [<CommonParameters>]
 ```
 
-## NОПИСАНИЕ
+## ОПИСАНИЕ
 Создание объекта CustomRule для создания политики WAF
 
-## ИЛЛЮСТРИРУЮТ
+## ПРИМЕРЫ
 
 ### Пример 1
 ```powershell
@@ -42,11 +42,11 @@ Rule1 MatchRule  Block        2                          1
 
 Создание объекта CustomRule
 
-## ПАРАМЕТРЫ
+## PARAMETERS
 
-### -Action (действие)
+### -Action
 Тип действий.
-Возможные значения: "разрешить", "блок", "журнал"
+Возможные значения: 'Allow', 'Block', 'Log'
 
 ```yaml
 Type: Microsoft.Azure.Commands.FrontDoor.Models.PSAction
@@ -77,7 +77,7 @@ Accept wildcard characters: False
 ```
 
 ### -MatchCondition
-Список условий соответствия.
+Список условий совпадения.
 
 ```yaml
 Type: Microsoft.Azure.Commands.FrontDoor.Models.PSMatchCondition[]
@@ -91,7 +91,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Name (имя)
+### -Name
 Имя правила
 
 ```yaml
@@ -106,8 +106,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Priority (приоритет)
-Описывает приоритет правила.
+### -Priority
+В нем описывается приоритет правила.
 
 ```yaml
 Type: System.Int32
@@ -122,7 +122,7 @@ Accept wildcard characters: False
 ```
 
 ### -RateLimitDurationInMinutes
-Продолжительность ограничения нормы. По умолчанию — 1 минута
+Ограничение срока действия тарифа. По умолчанию — 1 минута
 
 ```yaml
 Type: System.Int32
@@ -137,7 +137,7 @@ Accept wildcard characters: False
 ```
 
 ### -RateLimitThreshold
-Лимит скорости thresold
+Ограничив допустимый предел ставок
 
 ```yaml
 Type: System.Nullable`1[System.Int32]
@@ -153,7 +153,7 @@ Accept wildcard characters: False
 
 ### -RuleType
 Тип правила.
-Возможные значения: "MatchRule", "RateLimitRule"
+Возможные значения: 'MatchRule', 'RateLimitRule'
 
 ```yaml
 Type: Microsoft.Azure.Commands.FrontDoor.Models.PSCustomRuleType
@@ -169,19 +169,19 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Этот командлет поддерживает общие параметры:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-of Variable,-out,-PipelineVariable,-Verbose, и-WarningAction. Дополнительные сведения можно найти в разделе [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+Этот cmdlet поддерживает общие параметры: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. Дополнительные сведения см. [в about_CommonParameters.](https://go.microsoft.com/fwlink/?LinkID=113216)
 
-## ВХОДНЫЕ данные
+## INPUTS
 
-### Ничего
+### Нет
 
-## НАПРЯЖЕНИЕ
+## OUTPUTS
 
-### Microsoft. Azure. Commands. FrontDoor. Models. PSCustomRule
+### Microsoft.Azure.Commands.FrontDoor.Models.PSCustomRule
 
-## Пуск
+## ПРИМЕЧАНИЯ
 
-## ДОПОЛНИТЕЛЬНЫЕ ССЫЛКИ
+## СВЯЗАННЫЕ ССЫЛКИ
 
 [New-AzFrontDoorFireWallPolicy](./New-AzFrontDoorFireWallPolicy.md) 
- [Set-AzFrontDoorFireWallPolicy](./Set-AzFrontDoorFireWallPolicy.md)
+ [Update-AzFrontDoorFireWallPolicy](./Update-AzFrontDoorFireWallPolicy.md)

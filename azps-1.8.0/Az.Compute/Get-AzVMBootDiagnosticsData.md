@@ -6,19 +6,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.compute/ge
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Compute/Compute/help/Get-AzVMBootDiagnosticsData.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Compute/Compute/help/Get-AzVMBootDiagnosticsData.md
-ms.openlocfilehash: 94e5a1087f870f8dbbe099962e69d83b64f52ed3
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: ee210b5b9408f3de2b9e92213fafe4846ea8c3e1
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93901330"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100400660"
 ---
 # Get-AzVMBootDiagnosticsData
 
-## КРАТКИй обзор
-Получение данных диагностики загрузки для виртуальной машины.
+## SYNOPSIS
+Загружает диагностические данные для виртуальной машины.
 
-## Максимальное
+## СИНТАКСИС
 
 ### WindowsParamSet (по умолчанию)
 ```
@@ -32,21 +32,21 @@ Get-AzVMBootDiagnosticsData [-ResourceGroupName] <String> [-Name] <String> [-Lin
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## NОПИСАНИЕ
-Командлет **Get-AzVMBootDiagnosticsData** получает данные диагностики загрузки для виртуальной машины.
+## ОПИСАНИЕ
+Cmdlet **Get-AzVMBootDiagnosticsData** получает диагностические данные для виртуальной машины.
 
-## ИЛЛЮСТРИРУЮТ
+## ПРИМЕРЫ
 
-### Пример 1: получение данных диагностики загрузки
+### Пример 1. Получить диагностические данные о загрузке
 ```
 PS C:\> Get-AzVMBootDiagnosticsData -ResourceGroupName "ResourceGroup11" -Name "ContosoVM07" -Windows -LocalPath "C:\Contoso\BootDiagnostics"
 ```
 
-Эта команда возвращает данные диагностики загрузки для виртуальной машины с именем ContosoVM07.
-Эта виртуальная машина запускает операционную систему Windows.
-Команда сохраняет данные в указанном локальном пути.
+Эта команда загружает диагностические данные для виртуальной машины с именем ContosoVM07.
+На этой виртуальной машине работает операционная система Windows.
+Команда хранит данные в указанном локальном пути.
 
-## ПАРАМЕТРЫ
+## PARAMETERS
 
 ### -DefaultProfile
 Учетные данные, учетная запись, клиент и подписка, используемые для связи с Azure.
@@ -64,7 +64,7 @@ Accept wildcard characters: False
 ```
 
 ### -Linux
-Указывает на то, что виртуальная машина работает под управлением операционной системы Linux.
+Указывает на то, что на виртуальной машине работает операционная система Linux.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -79,7 +79,7 @@ Accept wildcard characters: False
 ```
 
 ### -LocalPath
-Указывает локальный путь для данных диагностики загрузки.
+Определяет локальный путь для диагностических данных загрузки.
 
 ```yaml
 Type: System.String
@@ -105,8 +105,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Name (имя)
-Указывает имя виртуальной машины, для которой этот командлет получает данные диагностики.
+### -Name
+Указывает имя виртуальной машины, для которой этот cmdlet получает диагностические данные.
 
 ```yaml
 Type: System.String
@@ -136,7 +136,7 @@ Accept wildcard characters: False
 ```
 
 ### -Windows
-Указывает на то, что виртуальная машина работает под управлением операционной системы Windows.
+Указывает на то, что на виртуальной машине работает операционная система Windows.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -151,22 +151,22 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Этот командлет поддерживает общие параметры:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-of Variable,-out,-PipelineVariable,-Verbose, и-WarningAction. Дополнительные сведения можно найти в разделе [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+Этот cmdlet поддерживает общие параметры: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. Дополнительные сведения см. [в about_CommonParameters.](https://go.microsoft.com/fwlink/?LinkID=113216)
 
-## ВХОДНЫЕ данные
+## INPUTS
 
-### System. String
+### System.String
 
-## НАПРЯЖЕНИЕ
+## OUTPUTS
 
-### Microsoft. Azure. Commands. COMPUTE. Models. PSVirtualMachine
+### Microsoft.Azure.Commands.Compute.Models.PSVirtualMa modelse
 
-### Microsoft. Azure. Commands. COMPUTE. Models. PSVirtualMachineInstanceView
+### Microsoft.Azure.Commands.Compute.Models.PSVirtualMa modelseInstanceView
 
-## Пуск
+## ПРИМЕЧАНИЯ
 
-## ДОПОЛНИТЕЛЬНЫЕ ССЫЛКИ
+## СВЯЗАННЫЕ ССЫЛКИ
 
-[Set-AzVMBootDiagnostics](./Set-AzVMBootDiagnostics.md)
+[Set-AzVMBootDiagnostic](./Set-AzVMBootDiagnostic.md)
 
 
