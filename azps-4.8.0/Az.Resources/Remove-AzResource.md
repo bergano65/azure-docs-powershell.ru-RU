@@ -6,19 +6,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.resources/
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/Remove-AzResource.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/Remove-AzResource.md
-ms.openlocfilehash: ecd70916f1ddb6e365fb9f880db9974f6c9ae771
-ms.sourcegitcommit: 1de2b6c3c99197958fa2101bc37680e7507f91ac
+ms.openlocfilehash: 9e8eea48238bd177f3a8556691db48686a57dd99
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "94235416"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100414872"
 ---
 # Remove-AzResource
 
-## КРАТКИй обзор
+## SYNOPSIS
 Удаляет ресурс.
 
-## Максимальное
+## СИНТАКСИС
 
 ### ByResourceId (по умолчанию)
 ```
@@ -41,26 +41,26 @@ Remove-AzResource [-AsJob] -ResourceName <String> -ResourceType <String> [-Exten
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## NОПИСАНИЕ
-Командлет **Remove-AzResource** удаляет ресурс Azure.
+## ОПИСАНИЕ
+С **его использованием** удаляется ресурс Azure.
 
-## ИЛЛЮСТРИРУЮТ
+## ПРИМЕРЫ
 
-### Пример 1: Удаление ресурса веб-сайта
+### Пример 1. Удаление ресурса веб-сайта
 ```
 PS C:\>Remove-AzResource -ResourceId "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/ResourceGroup11/providers/Microsoft.Web/sites/ContosoSite" -Force
 ```
 
-Эта команда удаляет ресурс веб-сайта с именем ContosoSite.
-В примере используется значение заполнителя для идентификатора подписки.
-Команда задает параметр *Force* .
-Поэтому он не запрашивает подтверждение.
+Эта команда удаляет ресурс веб-сайта ContosoSite.
+В примере используется заме желтая стоимость для ИД подписки.
+Команда определяет параметр *Force.*
+Поэтому запрос на подтверждение не будет.
 
-## ПАРАМЕТРЫ
+## PARAMETERS
 
 ### -ApiVersion
-Указывает версию используемого API поставщика ресурсов.
-Если вы не укажете версию, этот командлет использует последнюю доступную версию.
+Определяет версию API поставщика ресурсов.
+Если не указать версию, этот cmdlet использует последнюю доступную версию.
 
 ```yaml
 Type: System.String
@@ -75,7 +75,7 @@ Accept wildcard characters: False
 ```
 
 ### -AsJob
-Выполнить командлет в фоновом режиме
+Запуск cmdlet в фоновом режиме
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -105,8 +105,8 @@ Accept wildcard characters: False
 ```
 
 ### -ExtensionResourceName
-Указывает имя ресурса расширения ресурса, который удаляется этим командлетом.
-Например, чтобы указать базу данных, используйте следующий формат: имя `/` базы данных имени сервера
+Указывает имя ресурса расширения для ресурса, который удаляет этот cmdlet.
+Например, чтобы указать базу данных, используйте следующий формат: имя `/` базы данных "Имя сервера".
 
 ```yaml
 Type: System.String
@@ -121,8 +121,8 @@ Accept wildcard characters: False
 ```
 
 ### -ExtensionResourceType
-Указывает тип ресурса для расширения ресурса.
-Указывает тип ресурса расширения для ресурса.
+Тип ресурса для ресурса расширения.
+Тип ресурса расширения.
 Например: `Microsoft.Sql/Servers/Databases`
 
 ```yaml
@@ -138,7 +138,7 @@ Accept wildcard characters: False
 ```
 
 ### -Force
-Принудительное выполнение команды без запроса подтверждения пользователя.
+Запуск команды без запроса подтверждения.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -153,8 +153,8 @@ Accept wildcard characters: False
 ```
 
 ### -ODataQuery
-Задает фильтр стиля Open Data Protocol (OData).
-Этот командлет добавляет это значение в запрос в дополнение к любым другим фильтрам.
+Указывает фильтр стилей Open Data Protocol (OData).
+Этот cmdlet добавит это значение к запросу в дополнение к любым другим фильтрам.
 
 ```yaml
 Type: System.String
@@ -169,7 +169,7 @@ Accept wildcard characters: False
 ```
 
 ### -Pre
-Указывает на то, что этот командлет учитывает версии API предварительного выпуска, когда он автоматически определяет, какую версию использовать.
+Указывает на то, что этот cmdlet рассматривает предварительные версии API при автоматическом определении используемой версии.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -184,7 +184,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-Указывает имя группы ресурсов, из которой этот командлет удаляет ресурс.
+Имя группы ресурсов, из которой этот cmdlet удаляет ресурс.
 
 ```yaml
 Type: System.String
@@ -199,8 +199,8 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceId
-Указывает полный ИД ресурса, который удаляется этим командлетом.
-Идентификатор включает подписку, как показано в следующем примере: `/subscriptions/` ИД подписки`/providers/Microsoft.Sql/servers/ContosoServer/databases/ContosoDatabase`
+Определяет полное ид ресурса, который удаляет этот cmdlet.
+ИД включает подписку, как в следующем примере: `/subscriptions/` ИД подписки`/providers/Microsoft.Sql/servers/ContosoServer/databases/ContosoDatabase`
 
 ```yaml
 Type: System.String
@@ -215,7 +215,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceName
-Указывает имя ресурса, который удаляется этим командлетом.
+Указывает имя ресурса, который удаляет этот cmdlet.
 Например, чтобы указать базу данных, используйте следующий формат: `ContosoServer/ContosoDatabase`
 
 ```yaml
@@ -231,8 +231,8 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceType
-Указывает тип ресурса, который удаляется этим командлетом.
-Например, для базы данных тип ресурса выглядит следующим образом: `Microsoft.Sql/Servers/Databases`
+Определяет тип ресурса, который удаляет этот cmdlet.
+Например, для базы данных тип ресурса: `Microsoft.Sql/Servers/Databases`
 
 ```yaml
 Type: System.String
@@ -247,7 +247,7 @@ Accept wildcard characters: False
 ```
 
 ### -TenantLevel
-Указывает на то, что этот командлет работает на уровне клиента.
+Указывает на то, что этот cmdlet работает на уровне клиента.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -262,7 +262,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
-Запрашивает подтверждение перед запуском командлета.
+Перед запуском cmdlet вам будет предложено подтвердить его.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -277,8 +277,8 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Показывает, что произойдет при запуске командлета.
-Командлет не выполняется.
+Показывает, что произойдет при запуске cmdlet.
+Этот cmdlet не будет выполниться.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -293,21 +293,20 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Этот командлет поддерживает общие параметры:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-of Variable,-out,-PipelineVariable,-Verbose, и-WarningAction. Дополнительные сведения можно найти в разделе [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+Этот cmdlet поддерживает общие параметры: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. Дополнительные сведения см. [в about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)
 
-## ВХОДНЫЕ данные
+## INPUTS
 
-### System. String
+### System.String
 
-## НАПРЯЖЕНИЕ
+## OUTPUTS
 
-### System. Boolean
+### System.Boolean
 
-## Пуск
+## ПРИМЕЧАНИЯ
 
-## ДОПОЛНИТЕЛЬНЫЕ ССЫЛКИ
+## СВЯЗАННЫЕ ССЫЛКИ
 
-[Find-AzResource](./Find-AzResource.md)
 
 [Get-AzResource](./Get-AzResource.md)
 

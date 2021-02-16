@@ -6,12 +6,12 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.websites/s
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Websites/Websites/help/Set-AzWebApp.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Websites/Websites/help/Set-AzWebApp.md
-ms.openlocfilehash: 2028132e427bdba3fd49c20b9e7944eff90a9aa5
-ms.sourcegitcommit: c05d3d669b5631e526841f47b22513d78495350b
+ms.openlocfilehash: 5594e43b2e6c67e9df5b526f753557edd8a4d5ea
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/09/2021
-ms.locfileid: "100231297"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100414736"
 ---
 # Set-AzWebApp
 
@@ -42,7 +42,7 @@ Set-AzWebApp [[-Use32BitWorkerProcess] <Boolean>] [[-AutoSwapSlotName] <String>]
 ```
 
 ## ОПИСАНИЕ
-С **помощью cmdlet Set-AzWebApp** можно создать приложение Azure Web App.
+С **помощью cmdlet Set-AzWebApp** можно установить приложение Azure Web App.
 
 ## ПРИМЕРЫ
 
@@ -81,7 +81,7 @@ Set-AzWebApp -Name 'ContosoWebApp' -ResourceGroupName 'Default-Web-WestUS' -Conn
 ## PARAMETERS
 
 ### -AlwaysOn
-Убедитесь, что веб-приложение загружается постоянно, а не без задействуя его.
+Убедитесь, что веб-приложение загружается постоянно, а не в режиме простоя.
 
 ```yaml
 Type: System.Boolean
@@ -96,7 +96,7 @@ Accept wildcard characters: False
 ```
 
 ### -AppServicePlan
-Название плана службы приложений
+Имя плана службы приложений
 
 ```yaml
 Type: System.String
@@ -156,7 +156,7 @@ Accept wildcard characters: False
 ```
 
 ### -AutoSwapSlotName
-Название места назначения для автоматического обмена
+Название слота назначения для автоматического обмена
 
 ```yaml
 Type: System.String
@@ -291,7 +291,7 @@ Accept wildcard characters: False
 ```
 
 ### -DetailedErrorLoggingEnabled
-Boolean (Boolean) с включенным ведением подробных ошибок
+Boolean (Boolean) с включенным ведением журнала ошибок
 
 ```yaml
 Type: System.Boolean
@@ -581,7 +581,7 @@ Accept wildcard characters: False
 
 $PropertiesObject = @{ "CURRENT_STACK" = "dotnetcore" } New-AzResource -PropertyObject $PropertiesObject -ResourceGroupName "Default-Web-WestUS" -ResourceType Microsoft.Web/sites/config -ResourceName "ContosoWebApp/metadata" -ApiVersion 2018-02-01 -Force
 
-Замените значения default-Web-WestUS именем группы ресурсов веб-приложения ContosoWebApp и именем веб-приложения.
+Замените значения default-Web-WestUS именем группы ресурсов веб-приложения и ContosoWebApp именем веб-приложения.
  
 ## СВЯЗАННЫЕ ССЫЛКИ
 
@@ -597,4 +597,3 @@ $PropertiesObject = @{ "CURRENT_STACK" = "dotnetcore" } New-AzResource -Property
 
 [Stop-AzWebApp](./Stop-AzWebApp.md)
 
-[New-AzResource](./New-AzResource.md)
