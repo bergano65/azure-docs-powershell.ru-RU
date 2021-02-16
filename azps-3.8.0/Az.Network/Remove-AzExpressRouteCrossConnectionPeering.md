@@ -6,19 +6,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.network/Re
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Remove-AzExpressRouteCrossConnectionPeering.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Remove-AzExpressRouteCrossConnectionPeering.md
-ms.openlocfilehash: eb90b668bf0466c44e3fde0ef0a8d6777074fb37
-ms.sourcegitcommit: 6a91b4c545350d316d3cf8c62f384478e3f3ba24
+ms.openlocfilehash: 44a7dd8c0fbb3193ac514f9c1b447394b29574f3
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "94074055"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100400065"
 ---
 # Remove-AzExpressRouteCrossConnectionPeering
 
-## КРАТКИй обзор
-Удаляет конфигурацию пиринга перекрестного соединения ExpressRoute.
+## SYNOPSIS
+Удаляет конфигурацию пиринга для перекрестного подключения ExpressRoute.
 
-## Максимальное
+## СИНТАКСИС
 
 ```
 Remove-AzExpressRouteCrossConnectionPeering -ExpressRouteCrossConnection <PSExpressRouteCrossConnection>
@@ -26,19 +26,19 @@ Remove-AzExpressRouteCrossConnectionPeering -ExpressRouteCrossConnection <PSExpr
  [-Confirm] [<CommonParameters>]
 ```
 
-## NОПИСАНИЕ
-Командлет **Remove-AzExpressRouteCrossConnectionPeering** удаляет конфигурацию пиринга перекрестного подключения ExpressRoute.
+## ОПИСАНИЕ
+Для удаления конфигурации пиринга перекрестного подключения ExpressRoute удаляется cmdlet **Remove-AzExpressRouteCrossConnectionPeering.**
 
-## ИЛЛЮСТРИРУЮТ
+## ПРИМЕРЫ
 
-### Пример 1: Удаление конфигурации пиринга из перекрестного соединения ExpressRoute
+### Пример 1. Удаление конфигурации пиринга из перекрестного подключения ExpressRoute
 ```
 $cc = Get-AzExpressRouteCrossConnection -Name $CrossConnectionName -ResourceGroupName $rg
 Remove-AzExpressRouteCrossConnectionPeering -Name 'AzurePrivatePeering' -ExpressRouteCrossConnection $cc
 Set-AzExpressRouteCrossConnection -ExpressRouteCrossConnection $cc
 ```
 
-## ПАРАМЕТРЫ
+## PARAMETERS
 
 ### -DefaultProfile
 Учетные данные, учетная запись, клиент и подписка, используемые для связи с Azure.
@@ -56,7 +56,7 @@ Accept wildcard characters: False
 ```
 
 ### -ExpressRouteCrossConnection
-Перекрестное соединение ExpressRoute, содержащее конфигурацию пиринга, которую нужно удалить.
+Перекрестное подключение ExpressRoute, содержащее удаленную конфигурацию пиринга.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSExpressRouteCrossConnection
@@ -71,7 +71,7 @@ Accept wildcard characters: False
 ```
 
 ### -Force
-Не запрашивать подтверждение, если вы хотите перезаписать ресурс
+Не спрашивайте подтверждения при переописи ресурса
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -85,8 +85,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Name (имя)
-Имя конфигурации пиринга, которую нужно удалить.
+### -Name
+Имя удаляемой конфигурации пиринга.
 
 ```yaml
 Type: System.String
@@ -117,7 +117,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
-Запрашивает подтверждение перед запуском командлета.
+Перед запуском cmdlet вам будет предложено подтвердить его.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -132,7 +132,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Показывает, что произойдет при запуске командлета. Командлет не выполняется.
+Показывает, что произойдет при запуске cmdlet. Этот cmdlet не будет выполниться.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -147,24 +147,24 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Этот командлет поддерживает общие параметры:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-of Variable,-out,-PipelineVariable,-Verbose, и-WarningAction. Дополнительные сведения можно найти в разделе about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .
+Этот cmdlet поддерживает общие параметры: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. Дополнительные сведения см. в about_CommonParameters http://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## ВХОДНЫЕ данные
+## INPUTS
 
 ### PSExpressRouteCrossConnection
-Параметр "ExpressRouteCrossConnection" принимает значение типа "PSExpressRouteCrossConnection" из конвейера.
+Параметр "ExpressRouteCrossConnection" принимает значение типа PSExpressRouteCrossConnection из конвейера.
 
-## НАПРЯЖЕНИЕ
+## OUTPUTS
 
-### Microsoft. Azure. Commands. Network. Models. PSExpressRouteCrossConnection
+### Microsoft.Azure.Commands.Network.Models.PSExpressRouteCrossConnection
 
-## Пуск
+## ПРИМЕЧАНИЯ
 
-## ДОПОЛНИТЕЛЬНЫЕ ССЫЛКИ
+## СВЯЗАННЫЕ ССЫЛКИ
 
 [Add-AzExpressRouteCrossConnectionPeering](Add-AzExpressRouteCrossConnectionPeering.md)
 
-[Get-AzExpressRouteCrossConnectionPeering](New-AzExpressRouteCrossConnectionPeering.md)
+
 
 [Get-AzExpressRouteCrossConnection](Get-AzExpressRouteCrossConnection.md)
 
