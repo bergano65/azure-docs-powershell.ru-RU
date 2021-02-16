@@ -3,19 +3,19 @@ external help file: Microsoft.Azure.Commands.RecoveryServicesRdfe.dll-Help.xml
 ms.assetid: 2957C0DE-3A2F-4337-A778-2B95654972E7
 online version: ''
 schema: 2.0.0
-ms.openlocfilehash: d0b272732cf6c1e1b2025c8e7f48b58e4807cdb3
-ms.sourcegitcommit: 56ed085a868afa8263f8eb0f755b5822f5c29532
+ms.openlocfilehash: 8a7c99e2ce307d700e43094ffa9be47e5449acc0
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "94075595"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100411659"
 ---
 # Get-AzureSiteRecoveryJob
 
-## КРАТКИй обзор
-Возвращает сведения о операции для хранилища сайта.
+## SYNOPSIS
+Получает сведения об операции для хранилища восстановления сайта.
 
-## Максимальное
+## СИНТАКСИС
 
 ### ByParam (по умолчанию)
 ```
@@ -33,13 +33,13 @@ Get-AzureSiteRecoveryJob -Id <String> [-Profile <AzureSMProfile>] [<CommonParame
 Get-AzureSiteRecoveryJob -Job <ASRJob> [-Profile <AzureSMProfile>] [<CommonParameters>]
 ```
 
-## NОПИСАНИЕ
-Командлет **Get-AzureSiteRecoveryJob** получает задания Azure Site Recovery.
-Вы можете использовать этот командлет, чтобы просмотреть сведения об операции для текущего хранилища сайта для восстановления.
+## ОПИСАНИЕ
+Для получения заданий восстановления сайта Azure к работе **возвращается cmdlet Get-AzureSiteRecoveryJob.**
+С помощью этого cmdlet можно просмотреть сведения об операциях для текущего хранилища восстановления сайта.
 
-## ИЛЛЮСТРИРУЮТ
+## ПРИМЕРЫ
 
-### Пример 1: получение задания с указанием идентификатора
+### Пример 1. Задание задания с указанием ИД
 ```
 PS C:\> Get-AzureSiteRecoveryJob -Id "033785cc-9f72-4f07-8e78-e4d1e942a7ae" 
 Name             : SaveRecoveryPlan
@@ -57,9 +57,9 @@ Tasks            : {Save a recovery plan task}
 Errors           : {}
 ```
 
-Эта команда получает задание Azure Site Recovery с указанным ИДЕНТИФИКАТОРом.
+Эта команда получает задание восстановления сайта Azure с указанным ИД.
 
-### Пример 2: получение задания на основе времени
+### Пример 2. Получает задание по времени
 ```
 PS C:\> Get-AzureSiteRecoveryJob -StartTime "20-02-2015 01:00:00" -EndTime "21-02-2015 01:00:00"
 Name             : SaveRecoveryPlan
@@ -77,14 +77,14 @@ Tasks            : {Save a recovery plan task}
 Errors           : {}
 ```
 
-Эта команда возвращает задания для восстановления сайта, которые находятся в интервале между указанными временем начала и временем окончания.
+Эта команда получает задания восстановления сайта, которые выпадают между указанным временем начала и временем окончания.
 
-## ПАРАМЕТРЫ
+## PARAMETERS
 
 ### -EndTime
-Указывает время окончания для заданий.
-Этот командлет получает все задания, которые были запущены до указанного времени.
-Чтобы получить объект **DateTime** , используйте командлет **Get-Date** .
+Время окончания заданий.
+Этот cmdlet получает все задания, которые были начданы раньше указанного времени.
+Чтобы получить объект **даты и времени,** используйте cmdlet **Get-Date.**
 Для получения дополнительных сведений введите `Get-Help Get-Date` .
 
 ```yaml
@@ -99,8 +99,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ID
-Указывает идентификатор задания, которое требуется получить.
+### -Id
+Определяет ИД задания, который требуется получить.
 
 ```yaml
 Type: String
@@ -115,7 +115,7 @@ Accept wildcard characters: False
 ```
 
 ### -Job
-Указывает задание для получения.
+Задание, которую нужно получить.
 
 ```yaml
 Type: ASRJob
@@ -130,8 +130,8 @@ Accept wildcard characters: False
 ```
 
 ### -Profile
-Указывает профиль Azure, из которого считывается этот командлет.
-Если вы не укажете профиль, этот командлет считывает данные из локального профиля по умолчанию.
+Определяет профиль Azure, для которого читается этот cmdlet.
+Если не указать профиль, этот cmdlet будет читать данные из локального профиля по умолчанию.
 
 ```yaml
 Type: AzureSMProfile
@@ -146,8 +146,8 @@ Accept wildcard characters: False
 ```
 
 ### -StartTime
-Задает время начала для заданий.
-Этот командлет получает все задания, которые были запущены по истечении заданного времени.
+Время начала заданий.
+Этот cmdlet возвращает все задания, которые начинались после заданного времени.
 
 ```yaml
 Type: DateTime
@@ -162,17 +162,17 @@ Accept wildcard characters: False
 ```
 
 ### -State
-Задает состояние ввода для задания по восстановлению сайта.
-Этот командлет получает все задания, которые соответствуют указанному состоянию.
-Для этого параметра допустимы следующие значения:
+Определяет состояние входных данных для задания восстановления сайта.
+Этот командлет возвращает все задания, которые соответствуют указанному штату.
+Допустимые значения этого параметра:
 
 - NotStarted
-- Ход выполнения
-- LSP
-- Другие
-- Ошибкой
-- Отменен
-- Остановить
+- InProgress
+- Успешно
+- Другое
+- Сбой
+- Отменено
+- Приостановлено
 
 ```yaml
 Type: String
@@ -187,7 +187,7 @@ Accept wildcard characters: False
 ```
 
 ### -TargetObjectId
-Указывает идентификатор объекта, для которого задано задание.
+Определяет ИД объекта, целевого для задания.
 
 ```yaml
 Type: String
@@ -202,22 +202,22 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Этот командлет поддерживает общие параметры:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-of Variable,-out,-PipelineVariable,-Verbose, и-WarningAction. Дополнительные сведения можно найти в разделе about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
+Этот cmdlet поддерживает общие параметры: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. Дополнительные сведения см. в about_CommonParameters https://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## ВХОДНЫЕ данные
+## INPUTS
 
-## НАПРЯЖЕНИЕ
+## OUTPUTS
 
-## Пуск
+## ПРИМЕЧАНИЯ
 
-## ДОПОЛНИТЕЛЬНЫЕ ССЫЛКИ
+## СВЯЗАННЫЕ ССЫЛКИ
 
-[Командлеты служб Azure Site Recovery](./Azure.SiteRecoveryServices.md)
 
-[Restarting-AzureSiteRecoveryJob](./Restart-AzureSiteRecoveryJob.md)
 
-[Возобновить — AzureSiteRecoveryJob](./Resume-AzureSiteRecoveryJob.md)
+[Restart-AzureSiteRecoveryJob](./Restart-AzureSiteRecoveryJob.md)
 
-[Остановить-AzureSiteRecoveryJob](./Stop-AzureSiteRecoveryJob.md)
+[Resume-AzureSiteRecoveryJob](./Resume-AzureSiteRecoveryJob.md)
+
+[Stop-AzureSiteRecoveryJob](./Stop-AzureSiteRecoveryJob.md)
 
 
