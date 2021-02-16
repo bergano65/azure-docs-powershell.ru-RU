@@ -3,19 +3,19 @@ external help file: Microsoft.WindowsAzure.Commands.SqlDatabase.dll-Help.xml
 ms.assetid: 5AEF7D44-624D-4794-86FF-156E6729BB56
 online version: ''
 schema: 2.0.0
-ms.openlocfilehash: f8752766572975ef97094a3915446086c903a7fd
-ms.sourcegitcommit: 56ed085a868afa8263f8eb0f755b5822f5c29532
+ms.openlocfilehash: 95e276bf6af11698a4b3b82077175ec2ede2d7dc
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "94076295"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100402428"
 ---
 # Get-AzureSqlDatabaseCopy
 
-## КРАТКИй обзор
-Проверка состояния связей при копировании.
+## SYNOPSIS
+Проверяет состояние связей копирования.
 
-## Максимальное
+## СИНТАКСИС
 
 ### ByServerNameOnly (по умолчанию)
 ```
@@ -35,41 +35,41 @@ Get-AzureSqlDatabaseCopy -ServerName <String> -Database <Database> [-PartnerServ
  [-PartnerDatabase <String>] [-Profile <AzureSMProfile>] [<CommonParameters>]
 ```
 
-## NОПИСАНИЕ
-Командлет **Get-AzureSqlDatabaseCopy** проверяет состояние одного или нескольких активных связей копий.
-Запустите этот командлет после запуска командлета Start-AzureSqlDatabaseCopy или Stop-AzureSqlDatabaseCopy.
-Вы можете проверить связь с определенным копированием, все связи копий или отфильтрованный список связей копий, например все копии на конкретном целевом сервере.
-Этот командлет можно выполнить на сервере, на котором размещается исходная или целевая база данных.
+## ОПИСАНИЕ
+**Cmdlet Get-AzureSqlDataCopy** проверяет состояние одной или более активных связей копирования.
+Запустите этот cmdlet после запуска Start-AzureSqlDatabaseCopy или Stop-AzureSqlDatabaseCopy.
+Вы можете проверить конкретную связь копирования, все связи копирования или отфильтрованный список связей копирования, например все копии на определенном целевом сервере.
+Этот cmdlet можно выполнить на сервере, на котором размещена базовая или целевая база данных.
 
-Этот командлет является синхронным.
-Командлет блокирует консоль Azure PowerShell, пока не вернет объект Status.
+Этот cmdlet является синхронным.
+Этот cmdlet блокирует консоль Azure PowerShell, пока не будет возвращен объект состояния.
 
-Параметры *PartnerServer* и *PartnerDatabase* являются необязательными.
-Если не указать ни один из этих параметров, этот командлет возвращает таблицу результатов.
-Чтобы просмотреть состояние только для определенной базы данных, укажите оба параметра.
+Параметры *PartnerServer* и *PartnerDatabase* необязательны.
+Если ни один из параметров не указан, этот cmdlet возвращает таблицу результатов.
+Чтобы увидеть состояние только для конкретной базы данных, укажите оба параметра.
 
-## ИЛЛЮСТРИРУЮТ
+## ПРИМЕРЫ
 
-### Пример 1: получение состояния копии базы данных
+### Пример 1. Просмотр состояния копии базы данных
 ```
 PS C:\> Get-AzureSqlDatabaseCopy -ServerName "lpqd0zbr8y" -DatabaseName "Orders" -PartnerServer "bk0b8kf658"
 ```
 
-Эта команда получает состояние базы данных "заказы" на сервере с именем lpqd0zbr8y.
-Параметр *PartnerServer* ограничивает эту команду на сервер bk0b8kf658.
+Эта команда получает состояние базы данных "Заказы" на сервере lpqd0zbr8y.
+Параметр *PartnerServer ограничивает* эту команду сервером bk0b8kf658.
 
-### Пример 2: получение состояния всех копий на serverGet состояние всех копий на сервере
+### Пример 2. Получить состояние всех копий на сервереGet состояние всех копий на сервере
 ```
 PS C:\> Get-AzureSqlDatabaseCopy -ServerName "lpqd0zbr8y"
 ```
 
-Эта команда возвращает состояние всех активных копий на сервере с именем lpqd0zbr8y.
+Эта команда получает состояние всех активных копий на сервере lpqd0zbr8y.
 
-## ПАРАМЕТРЫ
+## PARAMETERS
 
-### -База данных
-Указывает объект, представляющий исходную базу данных SQL Azure.
-Этот командлет получает состояние копирования базы данных, которую указывает этот параметр.
+### -Database
+Определяет объект, который представляет исходный источник базы SQL Azure.
+Этот cmdlet получает состояние копии базы данных, указанной этим параметром.
 
 ```yaml
 Type: Database
@@ -84,8 +84,8 @@ Accept wildcard characters: False
 ```
 
 ### -DatabaseCopy
-Указывает объект, представляющий базу данных.
-Этот командлет получает состояние копирования базы данных, которую указывает этот параметр.
+Определяет объект, который представляет базу данных.
+Этот cmdlet получает состояние копии базы данных, указанной этим параметром.
 Этот параметр принимает входные данные конвейера.
 
 ```yaml
@@ -101,8 +101,8 @@ Accept wildcard characters: False
 ```
 
 ### -DatabaseName
-Указывает имя исходной базы данных.
-Этот командлет получает состояние копии базы данных, которую указывает этот параметр.
+Указывает имя базы данных.
+Этот cmdlet возвращает состояние копии базы данных, указанной этим параметром.
 
 ```yaml
 Type: String
@@ -117,8 +117,8 @@ Accept wildcard characters: False
 ```
 
 ### -PartnerDatabase
-Указывает имя базы данных получателя.
-Если эта база данных не найдена в динамическом административном представлении sys.dm_database_copies, этот командлет возвращает пустой объект Status.
+Указывает имя вторичной базы данных.
+Если эта база данных не найдена в sys.dm_database_copies управления, этот cmdlet возвращает пустой объект состояния.
 
 ```yaml
 Type: String
@@ -133,8 +133,8 @@ Accept wildcard characters: False
 ```
 
 ### -PartnerServer
-Указывает имя сервера, на котором размещена целевая база данных.
-Если этот сервер не найден в динамическом административном представлении sys.dm_database_copies, этот командлет возвращает пустой объект Status.
+Имя сервера, на котором размещена целевая база данных.
+Если этот сервер не найден в sys.dm_database_copies управления, этот cmdlet возвращает пустой объект состояния.
 
 ```yaml
 Type: String
@@ -149,8 +149,8 @@ Accept wildcard characters: False
 ```
 
 ### -Profile
-Указывает профиль Azure, из которого считывается этот командлет.
-Если вы не укажете профиль, этот командлет считывает данные из локального профиля по умолчанию.
+Определяет профиль Azure, для которого читается этот cmdlet.
+Если не указать профиль, этот cmdlet будет читать данные из локального профиля по умолчанию.
 
 ```yaml
 Type: AzureSMProfile
@@ -164,8 +164,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ИмяСервера
-Указывает имя сервера, на котором находится копия базы данных.
+### -ServerName
+Имя сервера, на котором находится копия базы данных.
 
 ```yaml
 Type: String
@@ -180,31 +180,31 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Этот командлет поддерживает общие параметры:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-of Variable,-out,-PipelineVariable,-Verbose, и-WarningAction. Дополнительные сведения можно найти в разделе about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
+Этот cmdlet поддерживает общие параметры: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. Дополнительные сведения см. в about_CommonParameters https://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## ВХОДНЫЕ данные
+## INPUTS
 
-### Microsoft. WindowsAzure. Commands. SqlDatabase. Model. DatabaseCopy
+### Microsoft.WindowsAzure.Commands.SqlDatabase.Model.DatabaseCopy
 
-### Microsoft. WindowsAzure. Commands. SqlDatabase. Services. Server. Database
+### Microsoft.WindowsAzure.Commands.SqlDatabase.Services.Server.Database
 
-## НАПРЯЖЕНИЕ
+## OUTPUTS
 
-### Microsoft. WindowsAzure. Commands. SqlDatabase. Model. DatabaseCopy
+### Microsoft.WindowsAzure.Commands.SqlDatabase.Model.DatabaseCopy
 
-## Пуск
-* Проверка подлинности: для этого командлета требуется проверка подлинности на основе сертификата. Пример использования проверки подлинности на основе сертификатов для настройки текущей подписки приведен в описании командлета New-AzureSqlDatabaseServerContext.
+## ПРИМЕЧАНИЯ
+* Проверка подлинности: этот cmdlet требует проверки подлинности на основе сертификата. Пример использования проверки подлинности на основе сертификата для проверки текущей подписки см. в New-AzureSqlDatabaseServerContext.
 
-## ДОПОЛНИТЕЛЬНЫЕ ССЫЛКИ
+## СВЯЗАННЫЕ ССЫЛКИ
 
-[База данных SQL Azure](https://azure.microsoft.com/en-us/services/sql-database/)
+[База SQL Azure](https://azure.microsoft.com/en-us/services/sql-database/)
 
-[Операции для баз данных SQL Azure](https://msdn.microsoft.com/en-us/library/azure/dn505719.aspx)
+[Операции для баз данных Azure SQL](https://msdn.microsoft.com/en-us/library/azure/dn505719.aspx)
 
-[Командлеты базы данных SQL Azure](./Azure.SQLDatabase.md)
+
 
 [Start-AzureSqlDatabaseCopy](./Start-AzureSqlDatabaseCopy.md)
 
-[Остановить-AzureSqlDatabaseCopy](./Stop-AzureSqlDatabaseCopy.md)
+[Stop-AzureSqlDatabaseCopy](./Stop-AzureSqlDatabaseCopy.md)
 
 

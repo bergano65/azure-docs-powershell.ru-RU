@@ -6,12 +6,12 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.keyvault/g
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/KeyVault/KeyVault/help/Get-AzKeyVaultCertificate.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/KeyVault/KeyVault/help/Get-AzKeyVaultCertificate.md
-ms.openlocfilehash: ccd2762449e24f881a3308c0d11476a1e4626fed
-ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
+ms.openlocfilehash: 002cfba4a5660fa8996c30ff83a1011da669539b
+ms.sourcegitcommit: c05d3d669b5631e526841f47b22513d78495350b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100402411"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "100226457"
 ---
 # Get-AzKeyVaultCertificate
 
@@ -101,6 +101,8 @@ Certificate : [Subject]
               [Thumbprint] 
                 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
+KeyId       : https://contoso.vault.azure.net:443/keys/TestCert01/XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+SecretId    : https://contoso.vault.azure.net:443/secrets/TestCert01/XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 Thumbprint  : XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 Tags        : 
 Enabled     : True
@@ -108,9 +110,22 @@ Created     : 2/8/2016 11:21:45 PM
 Updated     : 2/8/2016 11:21:45 PM
 ```
 
-Эта команда получает сертификат TestCert01 из хранилища ключей ContosoKV01.
+### Пример 2. Получить сертификат и сохранить его в качестве pfx
+Эта команда получает сертификат TestCert01 из хранилища ключей ContosoKV01. Чтобы скачать сертификат как pfx-файл, запустите следующую команду: Эти команды доступа к SecretId, а затем сохранить содержимое в файле PFX.
 
-### Пример 2. Получите все сертификаты, которые были удалены, но не удалены из этого хранилища ключей.
+```powershell
+$cert = Get-AzKeyVaultCertificate -VaultName "ContosoKV01" -Name "TestCert01"
+$secret = Get-AzKeyVaultSecret -VaultName $vaultName -Name $cert.Name -AsPlainText
+$secretByte = [Convert]::FromBase64String($secret)
+$x509Cert = New-Object System.Security.Cryptography.X509Certificates.X509Certificate2($secretByte, "", "Exportable,PersistKeySet")
+$type = [System.Security.Cryptography.X509Certificates.X509ContentType]::Pfx
+$pfxFileByte = $x509Cert.Export($type, $password)
+
+# Write to a file
+[System.IO.File]::WriteAllBytes("KeyVault.pfx", $pfxFileByte)
+```
+
+### Пример 3. Получите все сертификаты, которые были удалены, но не удалены из этого хранилища ключей.
 ```powershell
 PS C:\> Get-AzKeyVaultCertificate -VaultName 'contoso' -InRemovedState
 
@@ -142,7 +157,7 @@ Id                 : https://contoso.vault.azure.net:443/certificates/test2
 
 Эта команда получает все сертификаты, которые были ранее удалены, но не удалены, в хранилище ключей Contoso.
 
-### Пример 3. Возвращает сертификат MyCert, который был удален, но не был удален из этого сейфа ключа.
+### Пример 4. Возвращает сертификат MyCert, который был удален, но не был удален из этого сейфа ключа.
 ```powershell
 PS C:\> Get-AzKeyVaultCertificate -VaultName 'contoso' -Name 'test1' -InRemovedState
 
@@ -185,7 +200,7 @@ Id                 : https://contoso.vault.azure.net:443/certificates/test1/7fe4
 Эта команда получает сертификат MyCert, который ранее был удален, но не удален, в хранилище ключей Contoso.
 Эта команда возвращает метаданные, такие как дата удаления и запланированная дата удаления этого удаленного сертификата.
 
-### Пример 4. Сертификаты списков с использованием фильтрации
+### Пример 5. Сертификаты списков с использованием фильтрации
 ```powershell
 PS C:\> Get-AzKeyVaultCertificate -VaultName "ContosoKV01" -Name "test*"
 
@@ -348,7 +363,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Версия
+### -Version
 Определяет версию сертификата.
 
 ```yaml
@@ -364,7 +379,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Этот cmdlet поддерживает общие параметры: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. Дополнительные сведения см. [в about_CommonParameters.](https://go.microsoft.com/fwlink/?LinkID=113216)
+Этот cmdlet поддерживает общие параметры: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. Дополнительные сведения см. [в about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)
 
 ## INPUTS
 
@@ -392,3 +407,4 @@ Accept wildcard characters: False
 
 [Remove-AzKeyVaultCertificate](./Remove-AzKeyVaultCertificate.md)
 
+[Undo-AzKeyVaultSecretCertificate](./Undo-AzKeyVaultSecretCertificate.md)
