@@ -6,49 +6,49 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.notificati
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/NotificationHubs/NotificationHubs/help/Get-AzNotificationHubListKey.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/NotificationHubs/NotificationHubs/help/Get-AzNotificationHubListKey.md
-ms.openlocfilehash: 6b9aa676e00d137612908955e88558b4cefb0eb8
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: 7ce6c3c08c1794e2bed794186203a5c6c0d1fdea
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93904253"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100413767"
 ---
 # Get-AzNotificationHubListKey
 
-## КРАТКИй обзор
-Получает первичные и вторичные строки подключения, связанные с правилом авторизации концентратора уведомлений.
+## SYNOPSIS
+Возвращает основные и дополнительные строки подключения, связанные с правилом авторизации концентратора уведомлений.
 
-## Максимальное
+## СИНТАКСИС
 
 ```
 Get-AzNotificationHubListKey [-ResourceGroup] <String> [-Namespace] <String> [-NotificationHub] <String>
  [-AuthorizationRule] <String> [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## NОПИСАНИЕ
-Командлет **Get-AzNotificationHubListKey** возвращает первичные и дополнительные строки подключения для правила авторизации на основе центра уведомлений (SA).
-Правила авторизации управляют правами пользователей на разветвитель.
-Каждое правило включает в себя первичную и вспомогательную строку подключения.
-Эти строки подключения (URI) выполняют указанные ниже действия.
-- Наведите пользователей на ресурс.
-- Добавьте токен, содержащий параметры запроса.
-Один из этих параметров — подпись используется для проверки подлинности пользователя и предоставления указанного уровня доступа.
+## ОПИСАНИЕ
+Чтобы **получить основное** и дополнительное строки подключения для правила авторизации SAS, можно получить главное и дополнительное строки подключения для правила авторизации в Центре уведомлений Shared Access Signature (SAS).
+Правила авторизации управляют правами пользователей на центр.
+Каждое правило содержит основную и вторичную строку подключения.
+Эти строки подключения ( URIS) выполняют указанные ниже точки.
+- Наказать пользователей на ресурс.
+- Включайте маркер, содержащий параметры запроса.
+Один из этих параметров ( подпись) используется для проверки подлинности пользователя и предоставления указанного уровня доступа.
 
-## ИЛЛЮСТРИРУЮТ
+## ПРИМЕРЫ
 
-### Пример 1: получение первичных и дополнительных строк подключения для правила авторизации
+### Пример 1. Получите основные и дополнительные строки подключения для правила авторизации
 ```
 PS C:\>Get-AzNotificationHubListKey -Namespace "ContosoNamespace" -NotificationHub "ContosoInternalHub" -ResourceGroup "ContosoNotificationsGroup" -AuthorizationRule "ListenRule"
 ```
 
-Эта команда получает первичные и дополнительные строки подключения для правила авторизации ListenRule, правило, назначенное для концентратора уведомлений ContosoInternalHub.
-Команда должна включать пространство имен HUB и группу ресурсов.
+Эта команда получает основные и дополнительные строки подключения для правила авторизации ListenRule — правила, назначенного концентратору уведомлений ContosoInternalHub.
+Команда должна включать пространство имен концентратора и группу ресурсов.
 
-## ПАРАМЕТРЫ
+## PARAMETERS
 
 ### -AuthorizationRule
-Указывает имя правила проверки подлинности для подписи общего доступа (SAS).
-Эти правила определяют тип доступа пользователей к концентратору уведомлений.
+Указывает имя правила проверки подлинности SAS.
+Эти правила определяют тип доступа пользователей к центру уведомлений.
 
 ```yaml
 Type: System.String
@@ -78,8 +78,8 @@ Accept wildcard characters: False
 ```
 
 ### -Namespace
-Задает пространство имен, которому назначен Центр уведомлений.
-Пространства имен обеспечивают способ группировки и классификации концентраторов уведомлений.
+Определяет пространство имен, которому назначен концентратор уведомлений.
+Пространства имен предоставляют возможность группировать концентраторы уведомлений и классифицировать их.
 
 ```yaml
 Type: System.String
@@ -94,8 +94,8 @@ Accept wildcard characters: False
 ```
 
 ### -NotificationHub
-Указывает центр уведомлений, которому назначается правило авторизации с помощью этого командлета.
-Концентраторы уведомлений используются для отправки push-уведомлений нескольким клиентам вне зависимости от платформы, используемой этими клиентами.
+Указывает центр уведомлений, для который этот cmdlet назначает правило авторизации.
+Концентраторы уведомлений используются для отправки push-уведомлений нескольким клиентам независимо от платформы, используемой этими клиентами.
 
 ```yaml
 Type: System.String
@@ -110,8 +110,8 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceGroup
-Указывает группу ресурсов, которой назначен Центр уведомлений.
-Группы ресурсов организуют элементы, такие как пространства имен, концентраторы уведомлений и правила авторизации, в целях простого управления запасами и администрирования Azure.
+Группа ресурсов, которой назначен концентратор уведомлений.
+Группы ресурсов упорядочиют такие элементы, как пространства имен, концентраторы уведомлений и правила авторизации, чтобы упрость управление запасами и администрирование Azure.
 
 ```yaml
 Type: System.String
@@ -126,20 +126,19 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Этот командлет поддерживает общие параметры:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-of Variable,-out,-PipelineVariable,-Verbose, и-WarningAction. Дополнительные сведения можно найти в разделе about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
+Этот cmdlet поддерживает общие параметры: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. Дополнительные сведения см. в about_CommonParameters https://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## ВХОДНЫЕ данные
+## INPUTS
 
-### System. String
+### System.String
 
-## НАПРЯЖЕНИЕ
+## OUTPUTS
 
-### Microsoft. Azure. Management. NotificationHubs. Models. ResourceListKeys
+### Microsoft.Azure.Management.NotificationHubs.Models.ResourceListKeys
 
-## Пуск
+## ПРИМЕЧАНИЯ
 
-## ДОПОЛНИТЕЛЬНЫЕ ССЫЛКИ
+## СВЯЗАННЫЕ ССЫЛКИ
 
-[Get-AzNotificationHubAuthorizationRules](./Get-AzNotificationHubAuthorizationRules.md)
 
 
