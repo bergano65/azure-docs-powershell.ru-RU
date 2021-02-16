@@ -5,19 +5,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.apimanagem
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/New-AzApiManagementApiRelease.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/New-AzApiManagementApiRelease.md
-ms.openlocfilehash: 784480b56a868f84f8f79a35bf7ab2c1ba2e9fbf
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: 5a5d155b8c9127d330a1f53d1fe53d42d60d46a8
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93728073"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100406610"
 ---
 # New-AzApiManagementApiRelease
 
-## КРАТКИй обзор
-Создает выпустку API для редакции API.
+## SYNOPSIS
+Создание выпуска API для изменения его редакции.
 
-## Максимальное
+## СИНТАКСИС
 
 ```
 New-AzApiManagementApiRelease -Context <PsApiManagementContext> -ApiId <String> -ApiRevision <String>
@@ -25,13 +25,13 @@ New-AzApiManagementApiRelease -Context <PsApiManagementContext> -ApiId <String> 
  [<CommonParameters>]
 ```
 
-## NОПИСАНИЕ
+## ОПИСАНИЕ
 
-Командлет **New-AzApiManagementApiRelease** создает освобождение API для редакции API в контексте управления API. Выпуск используется для того, чтобы сделать редакцию API текущей редакцией.
+Для изменения редакции API в контексте управления API создается выпуск API **New-AzApiManagementApiRelease.** Выпуск используется для того, чтобы сделать версию Api текущей версией.
 
-## ИЛЛЮСТРИРУЮТ
+## ПРИМЕРЫ
 
-### Пример 1: создание выпуска API для редакции API
+### Пример 1. Создание выпуска API для изменения его редакции
 ```powershell
 PS C:\>$ApiMgmtContext = New-AzApiManagementContext -ResourceGroupName "Api-Default-WestUS" -ServiceName "contoso"
 PS C:\>New-AzApiManagementApiRelease -Context $context  -ApiId 5adf6fbf0faadf3ad8558065 -ApiRevision 6 -Note "Releasing version 6"
@@ -49,12 +49,12 @@ ResourceGroupName : Api-Default-WestUS
 ServiceName       : contoso
 ```
 
-Эта команда создает набор API версии `2` `echo-api` .
+Эта команда создает API-выпуск `2` `echo-api` редакции.
 
-## ПАРАМЕТРЫ
+## PARAMETERS
 
 ### -ApiId
-Идентификатор для нового API.
+Идентификатор нового API.
 
 ```yaml
 Type: System.String
@@ -69,7 +69,7 @@ Accept wildcard characters: False
 ```
 
 ### -ApiRevision
-Идентификатор редакции API.
+Идентификатор для изменения Api.
 
 ```yaml
 Type: System.String
@@ -83,9 +83,9 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Context
+### -Контекст
 Экземпляр PsApiManagementContext.
-Этот параметр является обязательным.
+Этот параметр является required(обязательно).
 
 ```yaml
 Type: Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementContext
@@ -114,8 +114,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Примечание
-Заметки о выпуске API. Это необязательный параметр
+### -Note
+Заметки о выпуске Api. Этот параметр необязателен.
 
 ```yaml
 Type: System.String
@@ -130,9 +130,9 @@ Accept wildcard characters: False
 ```
 
 ### -ReleaseId
-Идентификатор выпусков API.
+Идентификатор выпуска Api.
 Этот параметр является необязательным.
-Если идентификатор не указан, будет создан.
+Если не указан идентификатор, будет создан.
 
 ```yaml
 Type: System.String
@@ -147,7 +147,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
-Запрашивает подтверждение перед запуском командлета.
+Перед запуском cmdlet вам будет предложено подтвердить его.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -162,7 +162,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Показывает, что произойдет при запуске командлета. Командлет не выполняется.
+Показывает, что произойдет при запуске cmdlet. Этот cmdlet не будет выполниться.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -177,24 +177,24 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Этот командлет поддерживает общие параметры:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-of Variable,-out,-PipelineVariable,-Verbose, и-WarningAction. Дополнительные сведения можно найти в разделе [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+Этот cmdlet поддерживает общие параметры: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. Дополнительные сведения см. [в about_CommonParameters.](https://go.microsoft.com/fwlink/?LinkID=113216)
 
-## ВХОДНЫЕ данные
+## INPUTS
 
-### Microsoft. Azure. Commands. ApiManagement. ServiceManagement. Models. PsApiManagementContext
+### Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementContext
 
-### System. String
+### System.String
 
-## НАПРЯЖЕНИЕ
+## OUTPUTS
 
-### Microsoft. Azure. Commands. ApiManagement. ServiceManagement. Models. PsApiManagementApiRelease
+### Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementApiRelease
 
-## Пуск
+## ПРИМЕЧАНИЯ
 
-## ДОПОЛНИТЕЛЬНЫЕ ССЫЛКИ
+## СВЯЗАННЫЕ ССЫЛКИ
 
 [Get-AzApiManagementApiRelease](./Get-AzApiManagementApiRelease.md)
 
 [Remove-AzApiManagementApiRelease](./Remove-AzApiManagementApiRelease.md)
 
-[Set-AzApiManagementApiRelease](./Set-AzApiManagementApiRelease.md)
+[Update-AzApiManagementApiRelease](./Update-AzApiManagementApiRelease.md)
