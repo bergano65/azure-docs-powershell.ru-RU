@@ -6,19 +6,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.keyvault/g
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/KeyVault/KeyVault/help/Get-AzKeyVaultCertificate.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/KeyVault/KeyVault/help/Get-AzKeyVaultCertificate.md
-ms.openlocfilehash: 5935706c341fac5f0b26d3e4965f226342c3dfc8
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: ccd2762449e24f881a3308c0d11476a1e4626fed
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93720676"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100403584"
 ---
 # Get-AzKeyVaultCertificate
 
-## КРАТКИй обзор
+## SYNOPSIS
 Получает сертификат из хранилища ключей.
 
-## Максимальное
+## СИНТАКСИС
 
 ### ByName (по умолчанию)
 ```
@@ -74,12 +74,12 @@ Get-AzKeyVaultCertificate [-ResourceId] <String> [-Name] <String> [-IncludeVersi
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## NОПИСАНИЕ
-Командлет **Get-AzKeyVaultCertificate** получает указанный сертификат или версии сертификата из хранилища ключей в хранилище ключей Azure.
+## ОПИСАНИЕ
+Cmdlet **Get-AzKeyVaultCertificate** получает указанный сертификат или его версии из хранилища ключей в хранилище ключей Azure.
 
-## ИЛЛЮСТРИРУЮТ
+## ПРИМЕРЫ
 
-### Пример 1: получение сертификата
+### Пример 1. Получить сертификат
 ```powershell
 PS C:\> Get-AzKeyVaultCertificate -VaultName "ContosoKV01" -Name "TestCert01"
 Name        : testCert01
@@ -108,9 +108,9 @@ Created     : 2/8/2016 11:21:45 PM
 Updated     : 2/8/2016 11:21:45 PM
 ```
 
-Эта команда получает сертификат с именем TestCert01 из хранилища ключей с именем ContosoKV01.
+Эта команда получает сертификат TestCert01 из хранилища ключей ContosoKV01.
 
-### Пример 2: получение всех сертификатов, которые были удалены, но не очищены для этого хранилища ключей.
+### Пример 2. Получите все сертификаты, которые были удалены, но не удалены из этого хранилища ключей.
 ```powershell
 PS C:\> Get-AzKeyVaultCertificate -VaultName 'contoso' -InRemovedState
 
@@ -140,9 +140,9 @@ Version            :
 Id                 : https://contoso.vault.azure.net:443/certificates/test2
 ```
 
-Эта команда получает все сертификаты, которые были ранее удалены, но не очищены, в хранилище ключей contoso.
+Эта команда получает все сертификаты, которые были ранее удалены, но не удалены, в хранилище ключей Contoso.
 
-### Пример 3: получение сертификата MyCert, который был удален, но не очищен для этого хранилища ключей.
+### Пример 3. Возвращает сертификат MyCert, который был удален, но не был удален из этого сейфа ключа.
 ```powershell
 PS C:\> Get-AzKeyVaultCertificate -VaultName 'contoso' -Name 'test1' -InRemovedState
 
@@ -182,10 +182,10 @@ Version            : 7fe415d5518240c1a6fce89986b8d334
 Id                 : https://contoso.vault.azure.net:443/certificates/test1/7fe415d5518240c1a6fce89986b8d334
 ```
 
-Эта команда получает сертификат с именем "MyCert", который ранее был удален, но не очищен, в хранилище ключей, именуемом contoso.
-Эта команда возвращает метаданные, например дату удаления, и запланированную дату очистки этого удаленного сертификата.
+Эта команда получает сертификат MyCert, который ранее был удален, но не удален, в хранилище ключей Contoso.
+Эта команда возвращает метаданные, такие как дата удаления и запланированная дата удаления этого удаленного сертификата.
 
-### Пример 4: список сертификатов с помощью фильтрации
+### Пример 4. Сертификаты списков с использованием фильтрации
 ```powershell
 PS C:\> Get-AzKeyVaultCertificate -VaultName "ContosoKV01" -Name "test*"
 
@@ -214,7 +214,7 @@ Id        : https://ContosoKV01.vault.azure.net:443/certificates/test2
 This command gets all certificates starting with "test" from the key vault named ContosoKV01.
 ```
 
-## ПАРАМЕТРЫ
+## PARAMETERS
 
 ### -DefaultProfile
 Учетные данные, учетная запись, клиент и подписка, используемые для связи с Azure
@@ -232,7 +232,7 @@ Accept wildcard characters: False
 ```
 
 ### -IncludePending
-Указывает, нужно ли включать в вывод ожидающие сертификаты.
+Указывает, следует ли включать сертификаты, ожидающих проверки, в выходные данные.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -247,7 +247,7 @@ Accept wildcard characters: False
 ```
 
 ### -IncludeVersions
-Указывает на то, что эта операция получает все версии сертификата.
+Указывает на то, что эта операция возвращает все версии сертификата.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -277,7 +277,7 @@ Accept wildcard characters: False
 ```
 
 ### -InRemovedState
-Указывает, следует ли включать ранее удаленные сертификаты в выходной файл.
+Указывает, следует ли включать ранее удаленные сертификаты в выходные данные.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -291,8 +291,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Name (имя)
-Указывает имя получаемого сертификата.
+### -Name
+Указывает имя сертификата, который нужно получить.
 
 ```yaml
 Type: System.String
@@ -319,7 +319,7 @@ Accept wildcard characters: True
 ```
 
 ### -ResourceId
-Идентификатор ресурса KeyVault.
+ИД ресурса KeyVault.
 
 ```yaml
 Type: System.String
@@ -334,7 +334,7 @@ Accept wildcard characters: False
 ```
 
 ### -VaultName
-Указывает имя хранилища ключей.
+Указывает имя сейфа ключа.
 
 ```yaml
 Type: System.String
@@ -348,7 +348,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Version
+### -Версия
 Определяет версию сертификата.
 
 ```yaml
@@ -364,27 +364,27 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Этот командлет поддерживает общие параметры:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-of Variable,-out,-PipelineVariable,-Verbose, и-WarningAction. Дополнительные сведения можно найти в разделе [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+Этот cmdlet поддерживает общие параметры: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. Дополнительные сведения см. [в about_CommonParameters.](https://go.microsoft.com/fwlink/?LinkID=113216)
 
-## ВХОДНЫЕ данные
+## INPUTS
 
-### Microsoft. Azure. Commands. KeyVault. Models. PSKeyVault
+### Microsoft.Azure.Commands.KeyVault.Models.PSKeyVault
 
-### System. String
+### System.String
 
-## НАПРЯЖЕНИЕ
+## OUTPUTS
 
-### Microsoft. Azure. Commands. KeyVault. Models. PSKeyVaultCertificateIdentityItem
+### Microsoft.Azure.Commands.KeyVault.Models.PSKeyVaultCertificateIdentityItem
 
-### Microsoft. Azure. Commands. KeyVault. Models. PSKeyVaultCertificate
+### Microsoft.Azure.Commands.KeyVault.Models.PSKeyVaultCertificate
 
 ### Microsoft.Azure.Commands.KeyVault.Models.PSDeletedKeyVaultCertificate
 
 ### Microsoft.Azure.Commands.KeyVault.Models.PSDeletedKeyVaultCertificateIdentityItem
 
-## Пуск
+## ПРИМЕЧАНИЯ
 
-## ДОПОЛНИТЕЛЬНЫЕ ССЫЛКИ
+## СВЯЗАННЫЕ ССЫЛКИ
 
 [Add-AzKeyVaultCertificate](./Add-AzKeyVaultCertificate.md)
 
@@ -392,4 +392,3 @@ Accept wildcard characters: False
 
 [Remove-AzKeyVaultCertificate](./Remove-AzKeyVaultCertificate.md)
 
-[Undo-AzKeyVaultSecretCertificate](./Undo-AzKeyVaultSecretCertificate.md)
