@@ -5,19 +5,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.network/se
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Set-AzNetworkWatcherConfigFlowLog.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Set-AzNetworkWatcherConfigFlowLog.md
-ms.openlocfilehash: 4a64226f5445c77c262f1c0521a58d4f3f00ac99
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: bd921f855d95e729ebc2ff0fed32ef56bfe52110
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93729984"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100400099"
 ---
 # Set-AzNetworkWatcherConfigFlowLog
 
-## КРАТКИй обзор
-Настраивает ведение журнала потока для целевого ресурса.
+## SYNOPSIS
+Настраивает ведение журнала потоков для целевого ресурса.
 
-## Максимальное
+## СИНТАКСИС
 
 ### SetFlowlogByResourceWithoutTA (по умолчанию)
 ```
@@ -99,12 +99,12 @@ Set-AzNetworkWatcherConfigFlowLog -Location <String> -TargetResourceId <String> 
  [<CommonParameters>]
 ```
 
-## NОПИСАНИЕ
-Set-AzNetworkWatcherConfigFlowLog настраивает ведение журнала потока для целевого ресурса. Свойства для настройки включают, включено ли ведение журнала потока для указанного ресурса, настроенной учетной записи хранения для отправки журналов, формата ведения журнала потока и политики хранения для журналов. Сетевые группы безопасности поддерживаются для ведения журнала потока. 
+## ОПИСАНИЕ
+В Set-AzNetworkWatcherConfigFlowLog настраивается ведение журнала потоков для целевого ресурса. Настраиваемые свойства включают в себя: включено ли ведение журнала потоков для предоставленного ресурса, настроенная учетная запись хранения для отправки журналов, формат ведения журнала потоков и политика хранения журналов. В настоящее время сетевые группы безопасности поддерживают ведение журнала потоков. 
 
-## ИЛЛЮСТРИРУЮТ
+## ПРИМЕРЫ
 
-### Пример 1: Настройка ведения журнала потока для указанного NSG
+### Пример 1. Настройка ведения журнала потока для указанного NSG
 ```
 PS C:\> $NW = Get-AzNetworkWatcher -ResourceGroupName NetworkWatcherRg -Name NetworkWatcher_westcentralus
 PS C:\> $nsg = Get-AzNetworkSecurityGroup -ResourceGroupName NSGRG -Name appNSG
@@ -126,9 +126,9 @@ Format           : {
                    }
 ```
 
-В этом примере мы настраиваем состояние ведения журнала для группы безопасности сети. В ответе мы видим, что в указанном NSG включено ведение журнала потока, формат по умолчанию, а политика хранения не задана.
+В этом примере мы настроим состояние ведения журнала потоков для группы безопасности сети. В ответе мы видим, что в NSG включено ведение журнала потоков, формат по умолчанию, а политика хранения не настроена.
 
-### Пример 2: Настройка ведения журнала потока для указанной NSG и установка для функции ведения журнала потока значения 2.
+### Пример 2. Настройте ведение журнала потока для указанного NSG-журнала и установите для версии ведения журнала потоков 2.
 ```
 PS C:\> $NW = Get-AzNetworkWatcher -ResourceGroupName NetworkWatcherRg -Name NetworkWatcher_westcentralus
 PS C:\> $nsg = Get-AzNetworkSecurityGroup -ResourceGroupName NSGRG -Name appNSG
@@ -150,9 +150,9 @@ Format           : {
                    }
 ```
 
-В этом примере мы настраиваем ведение журнала для потока в сетевой группе безопасности (NSG) с указанными журналами версии 2. В ответе мы видим, что в указанном NSG включено ведение журнала потока, задан формат и не настроена политика хранения. Если регион не поддерживает указанную вами версию, наблюдатель сети запишет поддерживаемую версию по умолчанию в регионе.
+В этом примере мы настраиваем ведение журнала потока в группе безопасности сети (NSG) с помощью журналов версии 2. В ответе мы видим, что в NSG включено ведение журнала потоков, задан формат и политика хранения не настроена. Если регион не поддерживает конкретную версию, Network Watcher напишет в этом регионе поддерживаемую по умолчанию версию.
 
-### Пример 3: Настройка ведения журнала потока и анализа трафика для указанной NSG
+### Пример 3. Настройка журнала потоков и аналитики трафика для указанного NSG
 ```
 PS C:\> $NW = Get-AzNetworkWatcher -ResourceGroupName NetworkWatcherRg -Name NetworkWatcher_westcentralus
 PS C:\> $nsg = Get-AzNetworkSecurityGroup -ResourceGroupName NSGRG -Name appNSG
@@ -184,12 +184,12 @@ FlowAnalyticsConfiguration : {
           }
 ```
 
-В этом примере мы настраиваем состояние ведения журнала и анализ трафика для группы безопасности сети. В ответе мы видим, что в указанном NSG есть ведение журнала потока и включена аналитическая трафик, формат по умолчанию и политика хранения.
+В этом примере мы настроим состояние ведения журнала потоков и аналитику трафика для группы безопасности сети. В ответе мы видим, что в NSG включено ведение журнала потоков и включена аналитика трафика, формат по умолчанию, а политика хранения не настроена.
 
-## ПАРАМЕТРЫ
+## PARAMETERS
 
 ### -AsJob
-Выполнить командлет в фоновом режиме
+Запуск cmdlet в фоновом режиме
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -219,7 +219,7 @@ Accept wildcard characters: False
 ```
 
 ### -EnableFlowLog
-Пометка для включения и отключения ведения журнала потока.
+Пометить, чтобы включить или отключить ведение журнала потоков.
 
 ```yaml
 Type: System.Boolean
@@ -234,7 +234,7 @@ Accept wildcard characters: False
 ```
 
 ### -EnableRetention
-Пометка для включения и отключения хранения.
+Пометить, чтобы включить или отключить хранение.
 
 ```yaml
 Type: System.Boolean
@@ -249,7 +249,7 @@ Accept wildcard characters: False
 ```
 
 ### -EnableTrafficAnalytics
-Пометка для включения и отключения хранения.
+Пометить, чтобы включить или отключить хранение.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -264,7 +264,7 @@ Accept wildcard characters: False
 ```
 
 ### -FormatType
-Тип формата журнала потока.
+Тип формата журнала потоков.
 
 ```yaml
 Type: System.String
@@ -279,7 +279,7 @@ Accept wildcard characters: False
 ```
 
 ### -FormatVersion
-Версия формата журнала потока.
+Версия формата журнала потоков.
 
 ```yaml
 Type: System.Nullable`1[System.Int32]
@@ -294,7 +294,7 @@ Accept wildcard characters: False
 ```
 
 ### -Location
-Расположение наблюдателя сети.
+Расположение сетевого просмотра.
 
 ```yaml
 Type: System.String
@@ -309,7 +309,7 @@ Accept wildcard characters: False
 ```
 
 ### -NetworkWatcher
-Ресурс сетевого наблюдателя.
+Сетевой ресурс для просмотра.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSNetworkWatcher
@@ -324,7 +324,7 @@ Accept wildcard characters: False
 ```
 
 ### -NetworkWatcherName
-Имя наблюдателя сети.
+Имя сетевого смотритела.
 
 ```yaml
 Type: System.String
@@ -339,7 +339,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-Имя группы ресурсов наблюдателя сети.
+Имя группы ресурсов сетевого watcher.
 
 ```yaml
 Type: System.String
@@ -354,7 +354,7 @@ Accept wildcard characters: False
 ```
 
 ### -RetentionInDays
-Количество дней для хранения записей журнала потока.
+Количество дней для сохранения записей журнала потоков.
 
 ```yaml
 Type: System.Int32
@@ -369,7 +369,7 @@ Accept wildcard characters: False
 ```
 
 ### -StorageAccountId
-Идентификатор учетной записи хранения, которая используется для хранения журнала потока.
+ИД учетной записи хранения, которая используется для хранения журнала потоков.
 
 ```yaml
 Type: System.String
@@ -384,7 +384,7 @@ Accept wildcard characters: False
 ```
 
 ### -TargetResourceId
-Идентификатор целевого ресурса.
+ИД целевого ресурса.
 
 ```yaml
 Type: System.String
@@ -399,7 +399,7 @@ Accept wildcard characters: False
 ```
 
 ### -TrafficAnalyticsInterval
-Возвращает или задает интервал (в минутах), который может решить, как часто служба TA должна выполнять анализ потока.
+Возвращает или задает интервал (в минутах), который определяет, как часто служба tas должна делать аналитические данные.
 
 ```yaml
 Type: System.Int32
@@ -413,8 +413,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Рабочая область
-Объект WS, который используется для хранения данных аналитического трафика.
+### -Workspace
+Объект WS, который используется для хранения аналитических данных о трафике.
 
 ```yaml
 Type: Microsoft.Azure.Management.Internal.Network.Common.IOperationalInsightWorkspace
@@ -441,7 +441,7 @@ Accept wildcard characters: False
 ```
 
 ### -WorkspaceGUID
-GUID элемента WS, который используется для хранения данных аналитического трафика.
+GUID WS, используемого для хранения данных аналитики трафика.
 
 ```yaml
 Type: System.String
@@ -456,7 +456,7 @@ Accept wildcard characters: False
 ```
 
 ### -WorkspaceLocation
-Регион Azure в службе WS, которая используется для хранения данных анализа трафика.
+Регион Azure службы WS, которая используется для хранения данных аналитики трафика.
 
 ```yaml
 Type: System.String
@@ -471,7 +471,7 @@ Accept wildcard characters: False
 ```
 
 ### -WorkspaceResourceId
-Подписка на протокол WS, которая используется для хранения данных анализа трафика.
+Подписка на службу WS, которая используется для хранения аналитических данных о трафике.
 
 ```yaml
 Type: System.String
@@ -486,7 +486,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
-Запрашивает подтверждение перед запуском командлета.
+Перед запуском cmdlet вам будет предложено подтвердить его.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -501,7 +501,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Показывает, что произойдет при запуске командлета. Командлет не выполняется.
+Показывает, что произойдет при запуске cmdlet. Этот cmdlet не будет выполниться.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -516,30 +516,30 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Этот командлет поддерживает общие параметры:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-of Variable,-out,-PipelineVariable,-Verbose, и-WarningAction. Дополнительные сведения можно найти в разделе about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
+Этот cmdlet поддерживает общие параметры: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. Дополнительные сведения см. в about_CommonParameters https://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## ВХОДНЫЕ данные
+## INPUTS
 
-### Microsoft. Azure. Commands. Network. Models. PSNetworkWatcher
+### Microsoft.Azure.Commands.Network.Models.PSNetworkWatcher
 
-### System. String
+### System.String
 
-### System. Boolean
+### System.Boolean
 
-### System. Int32
+### System.Int32
 
-### System. Nullable "1 [[System. Int32, System. Private. CoreLib, Version = 4.0.0.0, Culture = Neutral, PublicKeyToken = 7cec85d7bea7798e]]
+### System.Nullable'1[[System.Int32, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]
 
-### Microsoft. Azure. Management. internal. Network. Common. IOperationalInsightWorkspace
+### Microsoft.Azure.Management.Internal.Network.Common.IOperationalInsightWorkspace
 
-## НАПРЯЖЕНИЕ
+## OUTPUTS
 
-### Microsoft. Azure. Commands. Network. Models. PSFlowLog
+### Microsoft.Azure.Commands.Network.Models.PSFlowLog
 
-## Пуск
-Ключевые слова: Azure, azurerm, ARM, Resource, менеджмент, руководитель, сеть, сеть, наблюдатель, поток, журналы, flowlog, ведение журнала
+## ПРИМЕЧАНИЯ
+Ключевые слова: azure, azurerm, arm, resource, management, manager, network, networking, networking, watcher, flow, logs, flowlog, logging
 
-## ДОПОЛНИТЕЛЬНЫЕ ССЫЛКИ
+## СВЯЗАННЫЕ ССЫЛКИ
 
 [New-AzNetworkWatcher](./New-AzNetworkWatcher.md)
 
@@ -563,7 +563,7 @@ Accept wildcard characters: False
 
 [Remove-AzNetworkWatcherPacketCapture](./Remove-AzNetworkWatcherPacketCapture.md)
 
-[Остановить-AzNetworkWatcherPacketCapture](./Stop-AzNetworkWatcherPacketCapture.md)
+[Stop-AzNetworkWatcherPacketCapture](./Stop-AzNetworkWatcherPacketCapture.md)
 
 [New-AzNetworkWatcherProtocolConfiguration](./New-AzNetworkWatcherProtocolConfiguration.md)
 
@@ -571,7 +571,7 @@ Accept wildcard characters: False
 
 [Test-AzNetworkWatcherConnectivity](./Test-AzNetworkWatcherConnectivity.md)
 
-[Остановить-AzNetworkWatcherConnectionMonitor](./Stop-AzNetworkWatcherConnectionMonitor.md)
+[Stop-AzNetworkWatcherConnectionMonitor](./Stop-AzNetworkWatcherConnectionMonitor.md)
 
 [Start-AzNetworkWatcherConnectionMonitor](./Start-AzNetworkWatcherConnectionMonitor.md)
 
@@ -591,6 +591,6 @@ Accept wildcard characters: False
 
 [Get-AzNetworkWatcherFlowLogStatus](./Get-AzNetworkWatcherFlowLogStatus.md)
 
-[Get-AzNetworkWatcherConnectionMonitorReport](./Get-AzNetworkWatcherConnectionMonitorReport)
+[Get-AzNetworkWatcherConnectionMonitorReport](./Get-AzNetworkWatcherConnectionMonitorReport.md)
 
-[Get-AzNetworkWatcherConnectionMonitor](./Get-AzNetworkWatcherConnectionMonitor)
+[Get-AzNetworkWatcherConnectionMonitor](./Get-AzNetworkWatcherConnectionMonitor.md)
