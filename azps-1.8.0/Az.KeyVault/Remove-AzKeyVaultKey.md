@@ -6,19 +6,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.keyvault/r
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/KeyVault/KeyVault/help/Remove-AzKeyVaultKey.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/KeyVault/KeyVault/help/Remove-AzKeyVaultKey.md
-ms.openlocfilehash: 2989a3b50eaf4e7c8993a407823b5a1c42c3503b
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: afa9f59520cba9f90f0f5d0a2edb6564b73245bf
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93900158"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100399249"
 ---
 # Remove-AzKeyVaultKey
 
-## КРАТКИй обзор
-Удаление ключа из хранилища ключей.
+## SYNOPSIS
+Удаляет ключ в хранилище ключей.
 
-## Максимальное
+## СИНТАКСИС
 
 ### ByVaultName (по умолчанию)
 ```
@@ -32,14 +32,14 @@ Remove-AzKeyVaultKey [-InputObject] <PSKeyVaultKeyIdentityItem> [-Force] [-PassT
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## NОПИСАНИЕ
-Командлет Remove-AzKeyVaultKey удаляет раздел из хранилища ключей.
-Если клавиша была случайно удалена, ключ может быть восстановлен с помощью Undo-AzKeyVaultKeyRemoval пользователем, у которого есть особые разрешения на восстановление.
-Этот командлет имеет значение High для свойства **ConfirmImpact** .
+## ОПИСАНИЕ
+С Remove-AzKeyVaultKey- и клавиши удаляются из хранилища ключей.
+Если ключ был случайно удален, его можно восстановить с помощью Undo-AzKeyVaultKeyRemoval пользователей со специальными разрешениями на восстановление.
+Этот cmdlet имеет высокое значение для свойства **ConfirmImpact.**
 
-## ИЛЛЮСТРИРУЮТ
+## ПРИМЕРЫ
 
-### Пример 1: Удаление ключа из хранилища ключей
+### Пример 1. Удаление ключа из хранилища ключей
 ```powershell
 PS C:\> Remove-AzKeyVaultKey -VaultName 'Contoso' -Name 'ITSoftware' -PassThru
 
@@ -57,34 +57,34 @@ Purge Disabled       : False
 Tags                 :
 ```
 
-Эта команда удаляет ключ с именем ITSoftware из хранилища ключей contoso.
+Эта команда удаляет ключ ITSoftware из хранилища ключей Contoso.
 
-### Пример 2: Удаление ключа без подтверждения пользователя
+### Пример 2. Удаление ключа без подтверждения пользователем
 ```powershell
 PS C:\> Remove-AzKeyVaultKey -VaultName 'Contoso' -Name 'ITSoftware' -Force
 ```
 
-Эта команда удаляет ключ с именем ITSoftware из хранилища ключей contoso.
-Команда задает параметр *Force* и, следовательно, командлет не запрашивает подтверждение.
+Эта команда удаляет ключ ITSoftware из хранилища ключей Contoso.
+Эта команда определяет параметр *Force,* поэтому командлет не будет запросить подтверждение.
 
-### Пример 3: Удаление удаленного ключа из хранилища ключей без возможности восстановления
+### Пример 3. Окончательное удаление удаленного ключа из хранилища ключей
 ```powershell
 PS C:\> Remove-AzKeyVaultKey -VaultName 'Contoso' -Name 'ITSoftware' -InRemovedState
 ```
 
-Эта команда удаляет ключ с именем ITSoftware из хранилища ключей Contoso без возможности восстановления.
-Для выполнения этого командлета требуется разрешение на очистку, которое должно быть ранее и явно предоставлено пользователю для этого хранилища ключей.
+Эта команда окончательно удаляет ключ ITSoftware из хранилища с именем Contoso.
+Для выполнения этого cmdlet необходимо разрешение на очистку, которое должно быть ранее и явно предоставлено пользователю для этого хранилища ключей.
 
-### Пример 4: Удаление ключей с помощью оператора Pipeline
+### Пример 4. Удаление ключей с помощью оператора конвейера
 ```powershell
 PS C:\> Get-AzKeyVaultKey -VaultName 'Contoso' | Where-Object {$_.Attributes.Enabled -eq $False} | Remove-AzKeyVaultKey
 ```
 
-Эта команда получает все ключи из хранилища ключей Contoso и передает их в командлет **Where-Object** с помощью оператора конвейера.
-Этот командлет передает ключи со значением $False для атрибута **Enabled** для текущего командлета.
-Этот командлет удаляет эти ключи.
+Эта команда получает все ключи в хранилище ключей Contoso и передает их в командлет **Where-Object** с помощью оператора конвейера.
+Этот cmdlet передает текущему $False, которые имеют значение $False **Enabled.**
+Этот cmdlet удаляет эти клавиши.
 
-## ПАРАМЕТРЫ
+## PARAMETERS
 
 ### -DefaultProfile
 Учетные данные, учетная запись, клиент и подписка, используемые для связи с Azure
@@ -102,7 +102,7 @@ Accept wildcard characters: False
 ```
 
 ### -Force
-Принудительное выполнение команды без запроса подтверждения пользователя.
+Запуск команды без запроса подтверждения.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -132,7 +132,7 @@ Accept wildcard characters: False
 ```
 
 ### -InRemovedState
-Удаление ранее удаленного ключа без возможности восстановления.
+Удалите ранее удаленный ключ навсегда.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -146,9 +146,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Name (имя)
-Задает имя удаляемого ключа.
-Этот командлет создает полное доменное имя (FQDN) ключа на основе имени, которое указывает этот параметр, имя хранилища ключей и текущую среду.
+### -Name
+Указывает имя ключа, который нужно удалить.
+Этот cmdlet конструирует полное доменное имя (FQDN) ключа на основе имени, указанного этим параметром, имени хранилища ключа и текущей среды.
 
 ```yaml
 Type: System.String
@@ -163,8 +163,8 @@ Accept wildcard characters: False
 ```
 
 ### -PassThru
-Указывает на то, что этот командлет возвращает объект **Microsoft. Azure. Commands. KeyVault. Models. PSKeyVaultKey** .
-По умолчанию этот командлет не создает никаких выходных данных.
+Указывает на то, что этот командлет возвращает объект **Microsoft.Azure.Commands.KeyVault.Models.PSKeyVaultKey.**
+По умолчанию этот cmdlet не создает никаких выходных данных.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -180,7 +180,7 @@ Accept wildcard characters: False
 
 ### -VaultName
 Указывает имя хранилища ключей, из которого нужно удалить ключ.
-Этот командлет создает полное доменное имя хранилища ключей, основываясь на имени, указанном этим параметром, и текущей среде.
+Этот cmdlet конструирует FQDN ключа хранилища на основе имени, указанного этим параметром, и текущей среды.
 
 ```yaml
 Type: System.String
@@ -195,7 +195,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
-Запрашивает подтверждение перед запуском командлета.
+Перед запуском cmdlet вам будет предложено подтвердить его.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -210,9 +210,9 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Показывает, что произойдет при запуске командлета.
-Командлет не выполняется. Показывает, что произойдет при запуске командлета.
-Командлет не выполняется.
+Показывает, что произойдет при запуске cmdlet.
+Этот cmdlet не будет выполниться. Показывает, что произойдет при запуске cmdlet.
+Этот cmdlet не будет выполниться.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -227,25 +227,24 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Этот командлет поддерживает общие параметры:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-of Variable,-out,-PipelineVariable,-Verbose, и-WarningAction. Дополнительные сведения можно найти в разделе about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
+Этот cmdlet поддерживает общие параметры: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. Дополнительные сведения см. в about_CommonParameters https://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## ВХОДНЫЕ данные
+## INPUTS
 
-### Microsoft. Azure. Commands. KeyVault. Models. PSKeyVaultKeyIdentityItem
+### Microsoft.Azure.Commands.KeyVault.Models.PSKeyVaultKeyIdentityItem
 
-## НАПРЯЖЕНИЕ
+## OUTPUTS
 
 ### Microsoft.Azure.Commands.KeyVault.Models.PSDeletedKeyVaultKey
 
-## Пуск
+## ПРИМЕЧАНИЯ
 
-## ДОПОЛНИТЕЛЬНЫЕ ССЫЛКИ
+## СВЯЗАННЫЕ ССЫЛКИ
 
 [Add-AzKeyVaultKey](./Add-AzKeyVaultKey.md)
 
 [Get-AzKeyVaultKey](./Get-AzKeyVaultKey.md)
 
-[Set-AzKeyVaultKeyAttribute](./Set-AzKeyVaultKeyAttribute.md)
 
 [Undo-AzKeyVaultKeyRemoval](./Undo-AzKeyVaultKeyRemoval.md)
 

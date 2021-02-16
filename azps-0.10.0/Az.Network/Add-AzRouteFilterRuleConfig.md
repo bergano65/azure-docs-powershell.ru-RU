@@ -5,19 +5,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.network/ad
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/Azs-tzl/src/Network/Network/help/Add-AzRouteFilterRuleConfig.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/Azs-tzl/src/Network/Network/help/Add-AzRouteFilterRuleConfig.md
-ms.openlocfilehash: 910b432382eb24f6c5eaf77d3e0c7fe3dc547413
-ms.sourcegitcommit: 4c61442a2df1cee633ce93cad9f6bc793803baa2
+ms.openlocfilehash: ded23a30c078cd1d474310d73d94717d050f6824
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "93910124"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100399283"
 ---
 # Add-AzRouteFilterRuleConfig
 
-## КРАТКИй обзор
-Добавляет правило фильтра маршрутов к фильтру маршрутов.
+## SYNOPSIS
+Добавляет правило фильтрации маршрутов в фильтр маршрутов.
 
-## Максимальное
+## СИНТАКСИС
 
 ```
 Add-AzRouteFilterRuleConfig -RouteFilter <PSRouteFilter> [-Force] -Name <String> -Access <String>
@@ -25,24 +25,24 @@ Add-AzRouteFilterRuleConfig -RouteFilter <PSRouteFilter> [-Force] -Name <String>
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## NОПИСАНИЕ
-Командлет Add-AzRouteFilterRuleConfig добавляет правило фильтра маршрутов в фильтр маршрута Azure.
+## ОПИСАНИЕ
+Новый Add-AzRouteFilterRuleConfig добавляет правило фильтра маршрутов в фильтр маршрутов Azure.
 
-## ИЛЛЮСТРИРУЮТ
+## ПРИМЕРЫ
 
-### --------------------------Пример 1: Добавление правила фильтра маршрутов в фильтр маршрута--------------------------
+### -------------------------- примере 1. Добавление правила фильтрации маршрутов в --------------------------
 ```
 PS C:\>$RouteFilter = Get-AzRouteFilter -ResourceGroupName "ResourceGroup11" -Name "routefilter01"
                       PS C:\> Add-AzRouteFilterRuleConfig -Name "rule13" -Access Allow -RouteFilterRuleType Community -RouteFilter $RouteFilter
 ```
 
-Первая команда получает фильтр маршрутов с именем routefilter01 с помощью командлета Get-AzRouteFilter.
+Первая команда получает фильтр маршрутов с именем routefilter01 с помощью Get-AzRouteFilter командлета.
 Команда сохраняет фильтр в переменной $RouteFilter.
 
-## ПАРАМЕТРЫ
+## PARAMETERS
 
-### -Доступ
-Задает доступ к правилу фильтра маршрутов, допустимые значения — Deny или Allow.
+### -Access
+Определяет доступ к правилу фильтра маршрутов. Допустимые значения — "Запретить" или "Разрешить".
 
 ```yaml
 Type: String
@@ -58,7 +58,7 @@ Accept wildcard characters: False
 ```
 
 ### -CommunityList
-Список значений сообщества, по которому будет фильтроваться фильтр маршрутов
+Список значений сообщества, по которые фильтр маршрутов будет фильтроваться
 
 ```yaml
 Type: System.Collections.Generic.List`1[System.String]
@@ -88,7 +88,7 @@ Accept wildcard characters: False
 ```
 
 ### -Force
-Не запрашивать подтверждение, если вы хотите переделать ресурс
+Не спрашивайте подтверждения при переописи ресурса
 
 ```yaml
 Type: SwitchParameter
@@ -102,8 +102,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Name (имя)
-Указывает имя правила фильтра маршрутов, которое нужно добавить в фильтр маршрутов.
+### -Name
+Указывает имя правила фильтрации маршрутов, которое нужно добавить в фильтр маршрутов.
 
 ```yaml
 Type: String
@@ -118,7 +118,7 @@ Accept wildcard characters: False
 ```
 
 ### -RouteFilter
-Указывает фильтр маршрутов, к которому этот командлет добавляет правило фильтра маршрутов.
+Определяет фильтр маршрутов, к которому этот cmdlet добавляет правило фильтрации маршрутов.
 
 ```yaml
 Type: PSRouteFilter
@@ -133,7 +133,7 @@ Accept wildcard characters: False
 ```
 
 ### -RouteFilterRuleType
-Указывает тип правила фильтра маршрутов.
+Определяет тип правила фильтрации маршрутов.
 Допустимые значения: Community
 
 ```yaml
@@ -150,7 +150,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
-Запрашивает подтверждение перед запуском командлета.
+Перед запуском cmdlet вам будет предложено подтвердить его.
 
 ```yaml
 Type: SwitchParameter
@@ -165,7 +165,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Показывает, что произойдет при запуске командлета. Командлет не выполняется.
+Показывает, что произойдет при запуске cmdlet. Этот cmdlet не будет выполниться.
 
 ```yaml
 Type: SwitchParameter
@@ -180,31 +180,28 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Этот командлет поддерживает общие параметры:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-of Variable,-out,-PipelineVariable,-Verbose, и-WarningAction. Дополнительные сведения можно найти в разделе about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .
+Этот cmdlet поддерживает общие параметры: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. Дополнительные сведения см. в about_CommonParameters http://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## ВХОДНЫЕ данные
+## INPUTS
 
 ### PSRouteFilter
-Параметр "RouteFilter" принимает значение типа "PSRouteFilter" из конвейера.
+Параметр "RouteFilter" принимает значение типа PSRouteFilter из конвейера.
 
-## НАПРЯЖЕНИЕ
+## OUTPUTS
 
-### Microsoft. Azure. Commands. Network. Models. PSRouteFilter
+### Microsoft.Azure.Commands.Network.Models.PSRouteFilter
 
-## Пуск
-Ключевые слова: Azure, azurerm, ARM, Resource, Management, Manager, Network, Network (сеть)
+## ПРИМЕЧАНИЯ
+Ключевые слова: azure, azurerm, arm, resource, management, manager, network, networking
 
-## ДОПОЛНИТЕЛЬНЫЕ ССЫЛКИ
+## СВЯЗАННЫЕ ССЫЛКИ
 
 [Get-AzRouteFilterRuleConfig](./Get-AzRouteFilterRuleConfig.md)
 
 [Get-AzRouteFilter](./Get-AzRouteFilter.md)
 
-[New-AzRouteFilterRuleConfigConfig](./New-AzRouteFilterRuleConfigConfig.md)
 
-[Remove-AzRouteFilterRuleConfigConfig](./Remove-AzRouteFilterRuleConfigConfig.md)
 
-[Set-AzRouteFilterRuleConfigConfig](./Set-AzRouteFilterRuleConfigConfig.md)
 
 [Set-AzRouteFilter](./Set-AzRouteFilter.md)
 
