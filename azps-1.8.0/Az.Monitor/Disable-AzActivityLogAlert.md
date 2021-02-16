@@ -6,19 +6,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.monitor/di
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/Disable-AzActivityLogAlert.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/Disable-AzActivityLogAlert.md
-ms.openlocfilehash: e06482a4bb068ab650a06157f2dad56a9e1ff53c
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: aba56e21b087971fc9cae6854111ef9ca4a2dc3c
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93899578"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100403346"
 ---
 # Disable-AzActivityLogAlert
 
-## КРАТКИй обзор
-Отключает оповещение журнала активности и задает его Теги.
+## SYNOPSIS
+Отключает оповещение журнала действий и устанавливает его теги.
 
-## Максимальное
+## СИНТАКСИС
 
 ### DisableByNameAndResourceGroup
 ```
@@ -38,36 +38,36 @@ Disable-AzActivityLogAlert -ResourceId <String> [-DefaultProfile <IAzureContextC
  [<CommonParameters>]
 ```
 
-## NОПИСАНИЕ
-Командлет **Disable-AzActivityLogAlert** отключает и оповещает журнал активности и позволяет установить его Теги.
-Этот командлет реализует шаблон ShouldProcess, т. е. может запросить подтверждение от пользователя, прежде чем действительно обновить ресурс.
+## ОПИСАНИЕ
+Командлет **Disable-AzActivityLogAlert** отключает оповещение журнала действий и позволяет настраивать его теги.
+Этот cmdlet реализует шаблон ShouldProcess, то есть может запросить подтверждение у пользователя перед фактическим исправлением ресурса.
 
-## ИЛЛЮСТРИРУЮТ
+## ПРИМЕРЫ
 
-### Пример 1: Отключение оповещения журнала активности
+### Пример 1. Отключение оповещения журнала действий
 ```
 PS C:\>Disable-AzActivityLogAlert -Name "alert1" -ResourceGroupName "Default-ActivityLogsAlerts"
 ```
 
-Эта команда отключает предупреждение журнала активности, именуемое alert1, в группе ресурсов по умолчанию — ActivityLogsAlerts.
-Эта команда изменяет свойство Tags предупреждения журнала активности с именем alert1 и отключает его.
+Эта команда отключает оповещение журнала действий "Оповещение1" в группе ресурсов Default-ActivityLogsAlerts.
+Эта команда изменяет свойство тегов оповещения журнала действий "Оповещение1" и отключает его.
 
-### Пример 2: Отключение оповещения журнала активности с помощью объекта PSActivityLogAlertResource в качестве входных данных
+### Пример 2. Отключение оповещения журнала действий с помощью объекта PSActivityLogAlertResource в качестве входных данных
 ```
 PS C:\>$obj = Get-AzActivityLogAlert -ResourceGroup "Default-activityLogAlerts" -Name "alert1"
 PS C:\>Disable-AzActivityLogAlert -InputObject $obj
 ```
 
-Эта команда отключает предупреждение журнала активности с именем alert1. Для этого он использует объект PSActivityLogAlertResource в качестве аргумента ввода.
+Эта команда отключает оповещение журнала действий под названием "Оповещение1". Для этого используется объект PSActivityLogAlertResource в качестве входного аргумента.
 
-### Пример 3: отключение ActivityLogAlert с помощью параметра ResourceId
+### Пример 3. Отключение activityLogAlert с помощью параметра ResourceId
 ```
 PS C:\>Find-AzResource -ResourceGroupEquals "myResourceGroup" -ResourceNameEquals "myLogAlert" | Disable-AzActivityLogAlert
 ```
 
-Эта команда отключает ActivityLogAlert с помощью параметра ResourceId в канале.
+Эта команда отключает activityLogAlert, используя параметр ResourceId из канала.
 
-## ПАРАМЕТРЫ
+## PARAMETERS
 
 ### -DefaultProfile
 Учетные данные, учетная запись, клиент и подписка, используемые для связи с Azure
@@ -85,7 +85,7 @@ Accept wildcard characters: False
 ```
 
 ### -InputObject
-Задает свойство Tags (Теги InputObject) для вызова, чтобы извлечь требуемое имя, имя группы ресурсов и дополнительные свойства тега.
+Задает свойство "Теги InputObject" звонка для извлечения требуемого имени, названия группы ресурсов и необязательных свойств тега.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Insights.OutputClasses.PSActivityLogAlertResource
@@ -99,8 +99,8 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -Name (имя)
-Имя оповещения журнала активности.
+### -Name
+Имя оповещения журнала действий.
 
 ```yaml
 Type: System.String
@@ -115,7 +115,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-Имя группы ресурсов, в которой будет находиться ресурс оповещения.
+Имя группы ресурсов, в которой должен существовать оповещение.
 
 ```yaml
 Type: System.String
@@ -130,7 +130,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceId
-Задает свойство Tags (Теги) для вызова, чтобы извлечь требуемое имя, свойства имени группы ресурсов.
+Задает свойство "Теги ResourceId" звонка для извлечения требуемого имени (свойства имени группы ресурсов).
 
 ```yaml
 Type: System.String
@@ -145,7 +145,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
-Запрашивает подтверждение перед запуском командлета.
+Перед запуском cmdlet вам будет предложено подтвердить его.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -160,7 +160,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Показывает, что произойдет при запуске командлета. Командлет не выполняется.
+Показывает, что произойдет при запуске cmdlet. Этот cmdlet не будет выполниться.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -175,21 +175,21 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Этот командлет поддерживает общие параметры:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-of Variable,-out,-PipelineVariable,-Verbose, и-WarningAction. Дополнительные сведения можно найти в разделе about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
+Этот cmdlet поддерживает общие параметры: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. Дополнительные сведения см. в about_CommonParameters https://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## ВХОДНЫЕ данные
+## INPUTS
 
-### System. String
+### System.String
 
-### Microsoft. Azure. Commands. Insights. OutputClasses. PSActivityLogAlertResource
+### Microsoft.Azure.Commands.Insights.OutputClasses.PSActivityLogAlertResource
 
-## НАПРЯЖЕНИЕ
+## OUTPUTS
 
-### Microsoft. Azure. Commands. Insights. OutputClasses. PSActivityLogAlertResource
+### Microsoft.Azure.Commands.Insights.OutputClasses.PSActivityLogAlertResource
 
-## Пуск
+## ПРИМЕЧАНИЯ
 
-## ДОПОЛНИТЕЛЬНЫЕ ССЫЛКИ
+## СВЯЗАННЫЕ ССЫЛКИ
 
 [Set-AzActivityLogAlert](./Set-AzActivityLogAlert.md)
 
@@ -199,6 +199,6 @@ Accept wildcard characters: False
 
 [New-AzActionGroup](./New-AzActionGroup.md)
 
-[New-AzActivityLogAlertCondition](./Get-AzActivityLogAlertCondition.md)
+
 
 [Enable-AzActivityLogAlert](./Enable-AzActivityLogAlert.md)
