@@ -6,19 +6,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.monitor/ge
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/Get-AzActionGroup.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/Get-AzActionGroup.md
-ms.openlocfilehash: c297198a1e49b93d498c136d1cb099d2068d24db
-ms.sourcegitcommit: 6a91b4c545350d316d3cf8c62f384478e3f3ba24
+ms.openlocfilehash: 90bd9c7943e6e788d81f8ddec85513676afade23
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "94075006"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100414039"
 ---
 # Get-AzActionGroup
 
-## КРАТКИй обзор
-Получает группу действий.
+## SYNOPSIS
+Получает группы действий.
 
-## Максимальное
+## СИНТАКСИС
 
 ### BySubscriptionOrResourceGroup (по умолчанию)
 ```
@@ -31,33 +31,33 @@ Get-AzActionGroup -ResourceGroupName <String> -Name <String> [-DefaultProfile <I
  [<CommonParameters>]
 ```
 
-## NОПИСАНИЕ
-Командлет **Get-AzActionGroup** получает одну или несколько групп действий.
+## ОПИСАНИЕ
+Для **получения одной или более групп действий** возвращается одна или несколько групп действий.
 
-## ИЛЛЮСТРИРУЮТ
+## ПРИМЕРЫ
 
-### Пример 1: получение группы действий по коду подписки
+### Пример 1. Получить группу действий по ИД подписки
 ```
 PS C:\>Get-AzActionGroup
 ```
 
-Эта команда выводит список всех групп действий для текущей подписки.
+Эта команда содержит список всех групп действий для текущей подписки.
 
-### Пример 2: получение групп действий для указанной группы ресурсов
+### Пример 2. Получить группы действий для данной группы ресурсов
 ```
 PS C:\>Get-AzActionGroup -ResourceGroup "Default-activityLogAlerts"
 ```
 
-Эта команда перечисляет группы действий для указанной группы ресурсов.
+Эта команда содержит группы действий для заданной группы ресурсов.
 
-### Пример 3: получение группы действий.
+### Пример 3. Получить группу действий.
 ```
 PS C:\>Get-AzActionGroup -ResourceGroup "Default-activityLogAlerts" -Name "actionGroup1"
 ```
 
-Эта команда перечисляет один (список с одной группой действий).
+Эта команда содержит одну группу (список с одним элементом).
 
-## ПАРАМЕТРЫ
+## PARAMETERS
 
 ### -DefaultProfile
 Учетные данные, учетная запись, клиент и подписка, используемые для связи с Azure
@@ -74,7 +74,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Name (имя)
+### -Name
 Имя группы действий.
 
 ```yaml
@@ -117,20 +117,20 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Этот командлет поддерживает общие параметры:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-of Variable,-out,-PipelineVariable,-Verbose, и-WarningAction. Дополнительные сведения можно найти в разделе [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+Этот cmdlet поддерживает общие параметры: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. Дополнительные сведения см. [в about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)
 
-## ВХОДНЫЕ данные
+## INPUTS
 
-### System. String
+### System.String
 
-## НАПРЯЖЕНИЕ
+## OUTPUTS
 
-### Microsoft. Azure. Commands. Insights. OutputClasses. PSActionGroupResource
+### Microsoft.Azure.Commands.Insights.OutputClasses.PSActionGroupResource
 
-## Пуск
+## ПРИМЕЧАНИЯ
 
-## ДОПОЛНИТЕЛЬНЫЕ ССЫЛКИ
+## СВЯЗАННЫЕ ССЫЛКИ
 
 [Set-AzActionGroup](./Set-AzActionGroup.md) 
  [Remove-AzActionGroup](./Remove-AzActionGroup.md) 
- [New-AzActionGroupReceiver](./AzureRmActionGroupReceiver.md)
+ [New-AzActionGroupReceiver](./New-AzActionGroupReceiver.md)
