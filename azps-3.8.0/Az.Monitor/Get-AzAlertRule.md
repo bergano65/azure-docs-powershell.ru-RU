@@ -6,19 +6,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.monitor/ge
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/Get-AzAlertRule.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/Get-AzAlertRule.md
-ms.openlocfilehash: f515d7db58e75cc916478e07edb4e34233201a4d
-ms.sourcegitcommit: 6a91b4c545350d316d3cf8c62f384478e3f3ba24
+ms.openlocfilehash: 61c50e59dfb02a454c9f513f4f5dac277a4ee28d
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "94075003"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100404111"
 ---
 # Get-AzAlertRule
 
-## КРАТКИй обзор
-Возвращает правила оповещения.
+## SYNOPSIS
+Получает правила оповещения.
 
-## Максимальное
+## СИНТАКСИС
 
 ### GetByResourceGroup
 ```
@@ -38,36 +38,36 @@ Get-AzAlertRule -ResourceGroupName <String> -TargetResourceId <String> [-Detaile
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## NОПИСАНИЕ
-Командлет **Get-AzAlertRule** получает правило оповещения по имени или URI-адресу или ко всем правилам оповещений из определенной группы ресурсов.
+## ОПИСАНИЕ
+С **помощью cmdlet Get-AzAlertRule** можно получить правило оповещения по его имени, URI или всем правилам оповещения из указанной группы ресурсов.
 
-## ИЛЛЮСТРИРУЮТ
+## ПРИМЕРЫ
 
-### Пример 1: получение правил оповещения для группы ресурсов
+### Пример 1. Получите правила оповещения для группы ресурсов
 ```
 PS C:\>Get-AzAlertRule -ResourceGroup "Default-Web-CentralUS"
 ```
 
-Эта команда получает все правила оповещения для группы ресурсов по умолчанию — Web-CentralUS.
-Выходные данные не содержат сведений о правилах, так как параметр *DetailedOutput* не указан.
+Эта команда получает все правила оповещения для группы ресурсов Default-Web-CentralUS.
+Выходные данные не содержат подробных сведений о правилах, так как параметр *DetailedOutput* не указан.
 
-### Пример 2: получение правила оповещения по имени
+### Пример 2. Получите правило оповещения по имени
 ```
 PS C:\>Get-AzAlertRule -ResourceGroup "Default-Web-CentralUS" -Name "myalert-7da64548-214d-42ca-b12b-b245bb8f0ac8"
 ```
 
-Эта команда возвращает правило оповещения с именем myAlert-7da64548-214d-42ca-b12b-b245bb8f0ac8.
-Так как параметр *DetailedOutput* не указан, в выходных данных содержатся только основные сведения о правиле оповещения.
+Эта команда получает правило оповещения myalert-7da64548-214d-42ca-b12b-b245bb8f0ac8.
+Так как *параметр DetailedOutput* не указан, выходные данные содержат только основные сведения о правиле оповещения.
 
-### Пример 3: получение правила оповещения по имени с подробным выводом
+### Пример 3. Получите правило оповещения по имени с подробными выходными сведениями
 ```
 PS C:\>Get-AzAlertRule -ResourceGroup "Default-Web-CentralUS" -Name "myalert-7da64548-214d-42ca-b12b-b245bb8f0ac8" -DetailedOutput
 ```
 
-Эта команда возвращает правило оповещения с именем myAlert-7da64548-214d-42ca-b12b-b245bb8f0ac8.
-Указан параметр *DetailedOutput* , поэтому выходные данные подробно описаны.
+Эта команда получает правило оповещения myalert-7da64548-214d-42ca-b12b-b245bb8f0ac8.
+Параметр *DetailedOutput* задан, поэтому выходные данные должны быть подробны.
 
-## ПАРАМЕТРЫ
+## PARAMETERS
 
 ### -DefaultProfile
 Учетные данные, учетная запись, клиент и подписка, используемые для связи с Azure
@@ -85,7 +85,7 @@ Accept wildcard characters: False
 ```
 
 ### -DetailedOutput
-Отображение подробных сведений в выходных данных.
+Отображение полных сведений в выходных данных.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -99,8 +99,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Name (имя)
-Указывает имя правила оповещения, которое требуется получить.
+### -Name
+Имя правила оповещения, которое нужно получить.
 
 ```yaml
 Type: System.String
@@ -115,7 +115,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-Указывает имя группы ресурсов.
+Имя группы ресурсов.
 
 ```yaml
 Type: System.String
@@ -130,7 +130,7 @@ Accept wildcard characters: False
 ```
 
 ### -TargetResourceId
-Указывает идентификатор целевого ресурса.
+Определяет ИД целевого ресурса.
 
 ```yaml
 Type: System.String
@@ -145,23 +145,22 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Этот командлет поддерживает общие параметры:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-of Variable,-out,-PipelineVariable,-Verbose, и-WarningAction. Дополнительные сведения можно найти в разделе [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+Этот cmdlet поддерживает общие параметры: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. Дополнительные сведения см. [в about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)
 
-## ВХОДНЫЕ данные
+## INPUTS
 
-### System. String
+### System.String
 
-### System. Management. Automation. SwitchParameter
+### System.Management.Automation.SwitchParameter
 
-## НАПРЯЖЕНИЕ
+## OUTPUTS
 
-### Microsoft. Azure. Commands. Insights. OutputClasses. PSAlertRule
+### Microsoft.Azure.Commands.Insights.OutputClasses.PSAlertRule
 
-## Пуск
+## ПРИМЕЧАНИЯ
 
-## ДОПОЛНИТЕЛЬНЫЕ ССЫЛКИ
+## СВЯЗАННЫЕ ССЫЛКИ
 
-[Add-AzLogAlertRule](./Add-AzLogAlertRule.md)
 
 [Add-AzMetricAlertRule](./Add-AzMetricAlertRule.md)
 
