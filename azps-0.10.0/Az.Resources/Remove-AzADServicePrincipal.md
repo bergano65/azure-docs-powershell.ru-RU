@@ -6,19 +6,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.resources/
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/Azs-tzl/src/Resources/Resources/help/Remove-AzADServicePrincipal.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/Azs-tzl/src/Resources/Resources/help/Remove-AzADServicePrincipal.md
-ms.openlocfilehash: 966b9baf35f1719f29fda6355a9675739693314f
-ms.sourcegitcommit: 4c61442a2df1cee633ce93cad9f6bc793803baa2
+ms.openlocfilehash: bd58a044db49cdd0cedf2872e97e64662a49372c
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "93910868"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100398229"
 ---
 # Remove-AzADServicePrincipal
 
-## КРАТКИй обзор
-Удаление субъекта-службы Azure Active Directory.
+## SYNOPSIS
+Удаляет главную службу Azure Active Directory.
 
-## Максимальное
+## СИНТАКСИС
 
 ### ObjectIdParameterSet (по умолчанию)
 ```
@@ -56,55 +56,55 @@ Remove-AzADServicePrincipal -ApplicationObject <PSADApplication> [-PassThru] [-F
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## NОПИСАНИЕ
-Удаление субъекта-службы Azure Active Directory.
+## ОПИСАНИЕ
+Удаляет главную службу Azure Active Directory.
 
-## ИЛЛЮСТРИРУЮТ
+## ПРИМЕРЫ
 
-### Пример 1: удаление субъекта-службы по идентификатору объекта
+### Пример 1. Удаление главной службы по ид объекта
 
 ```
 PS C:\> Remove-AzADServicePrincipal -ObjectId 61b5d8ea-fdc6-40a2-8d5b-ad447c678d45
 ```
 
-Удаление субъекта-службы с идентификатором объекта "61b5d8ea-fdc6-40a2-8d5b-ad447c678d45".
+Удаляет главную службу с ид объекта '61b5d8ea-fdc6-40a2-8d5b-ad447c678d45'.
 
-### Пример 2: удаление субъекта-службы с помощью кода приложения
+### Пример 2. Удаление основного обслуживания по ид приложения
 
 ```
 PS C:\> Remove-AzADServicePrincipal -ApplicationId 9263469e-d328-4321-8646-3e3e75d20e76
 ```
 
-Удаление субъекта-службы с идентификатором приложения "9263469e-d328-4321-8646-3e3e75d20e76".
+Удаляет главную службу с помощью ИД приложения "9263469e-d328-4321-8646-3e3e75d20e76".
 
-### Пример 3: удаление субъекта-службы по имени участника-службы
+### Пример 3. Удаление основного обслуживания по SPN
 
 ```
 PS C:\> Remove-AzADServicePrincipal -ServicePrincipalName MyServicePrincipal
 ```
 
-Удаление субъекта-службы с именем субъекта-службы "MyServicePrincipal"
+Удаление директора-службы с именем "MyServicePrincipal"
 
-### Пример 4: удаление субъекта-службы с помощью трубопроводов
+### Пример 4. Удаление основного обслуживания с помощью piping
 
 ```
 PS C:\> Get-AzADServicePrincipal -ObjectId 61b5d8ea-fdc6-40a2-8d5b-ad447c678d45 | Remove-AzADServicePrincipal
 ```
 
-Возвращает субъекта-службы с идентификатором объекта "61b5d8ea-fdc6-40a2-8d5b-ad447c678d45" и каналами, которые должны быть удалены с помощью командлета Remove-AzADServicePrincipal.
+Получает главную службу с ид объекта '61b5d8ea-fdc6-40a2-8d5b-ad447c678d45' и каналами, которые до Remove-AzADServicePrincipal-управления, чтобы удалить эту главную службу.
 
-### Пример 5: удаление субъекта-службы путем передачи приложения по конвейеру
+### Пример 5. Удаление основного обслуживания путем перенакладки приложения
 
 ```
 PS C:\> Get-AzApplication -ApplicationId 9263469e-d328-4321-8646-3e3e75d20e76 | Remove-AzADServicePrincipal
 ```
 
-Возвращает приложение с ИД приложения "9263469e-d328-4321-8646-3e3e75d20e76" и каналами, которые должны быть связаны с командлетом Remove-AzADServicePrincipal, для удаления субъекта-службы, связанного с этим приложением.
+Получает приложение с ИД приложения 9263469e-d328-4321-8646-3e3e75d20e76' и каналами, которые до Remove-AzADServicePrincipal-управления, чтобы удалить главную службу, связанную с этим приложением.
 
-## ПАРАМЕТРЫ
+## PARAMETERS
 
 ### -ApplicationId
-Идентификатор приложения субъекта-службы.
+ИД приложения-службы.
 
 ```yaml
 Type: System.Guid
@@ -119,7 +119,7 @@ Accept wildcard characters: False
 ```
 
 ### -ApplicationObject
-Объект приложения, субъект-служба которого удаляется.
+Объект приложения, главную службу которого удаляется.
 
 ```yaml
 Type: Microsoft.Azure.Graph.RBAC.Version1_6.ActiveDirectory.PSADApplication
@@ -149,7 +149,7 @@ Accept wildcard characters: False
 ```
 
 ### -DisplayName
-Отображаемое имя субъекта-службы.
+Отображаемая имя директора-службы.
 
 ```yaml
 Type: System.String
@@ -164,7 +164,7 @@ Accept wildcard characters: False
 ```
 
 ### -Force
-Переключиться в режим удаления субъекта-службы без подтверждения.
+Перейти к удалите главную службу без подтверждения.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -179,7 +179,7 @@ Accept wildcard characters: False
 ```
 
 ### -InputObject
-Объект субъекта-службы.
+Объект-служба.
 
 ```yaml
 Type: Microsoft.Azure.Graph.RBAC.Version1_6.ActiveDirectory.PSADServicePrincipal
@@ -194,7 +194,7 @@ Accept wildcard characters: False
 ```
 
 ### -ObjectId
-Идентификатор объекта субъекта-службы, который нужно удалить.
+Object Id of the service principal to delete.
 
 ```yaml
 Type: System.Guid
@@ -209,7 +209,7 @@ Accept wildcard characters: False
 ```
 
 ### -PassThru
-Если указан, возвращает участника-службы.
+Если указано, возвращает удаленную главную службу.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -223,8 +223,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Намерено
-Имя субъекта-службы.
+### -ServicePrincipalName
+Имя директора-службы.
 
 ```yaml
 Type: System.String
@@ -239,7 +239,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
-Запрашивает подтверждение перед запуском командлета.
+Перед запуском cmdlet вам будет предложено подтвердить его.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -254,8 +254,8 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Показывает, что произойдет при запуске командлета.
-Командлет не выполняется.
+Показывает, что произойдет при запуске cmdlet.
+Этот cmdlet не будет выполниться.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -270,34 +270,33 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Этот командлет поддерживает общие параметры:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-of Variable,-out,-PipelineVariable,-Verbose, и-WarningAction. Дополнительные сведения можно найти в разделе about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .
+Этот cmdlet поддерживает общие параметры: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. Дополнительные сведения см. в about_CommonParameters http://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## ВХОДНЫЕ данные
+## INPUTS
 
-### System. GUID
+### System.Guid
 
-### System. String
+### System.String
 
-### Microsoft.Azure.Graph.RBAC.Version1_6. ActiveDirectory. PSADServicePrincipal
+### Microsoft.Azure.Graph.RBAC.Version1_6.ActiveDirectory.PSADServicePrincipal
 Параметры: InputObject (ByValue)
 
-### Microsoft.Azure.Graph.RBAC.Version1_6. ActiveDirectory. PSADApplication
+### Microsoft.Azure.Graph.RBAC.Version1_6.ActiveDirectory.PSADApplication
 Параметры: ApplicationObject (ByValue)
 
-## НАПРЯЖЕНИЕ
+## OUTPUTS
 
-### Microsoft.Azure.Graph.RBAC.Version1_6. ActiveDirectory. PSADServicePrincipal
+### Microsoft.Azure.Graph.RBAC.Version1_6.ActiveDirectory.PSADServicePrincipal
 
-## Пуск
-Ключевые слова: Azure, AZ, ARM, ресурс, управление, руководитель, ресурс, группа, шаблон, развертывание
+## ПРИМЕЧАНИЯ
+Ключевые слова: azure, Az, arm, resource, management, manager, resource, group, template, deployment
 
-## ДОПОЛНИТЕЛЬНЫЕ ССЫЛКИ
+## СВЯЗАННЫЕ ССЫЛКИ
 
 [New-AzADServicePrincipal](./New-AzADServicePrincipal.md)
 
 [Get-AzADServicePrincipal](./Get-AzADServicePrincipal.md)
 
-[Set-AzADServicePrincipal](./Set-AzADServicePrincipal.md)
 
 [Remove-AzADApplication](./Remove-AzADApplication.md)
 

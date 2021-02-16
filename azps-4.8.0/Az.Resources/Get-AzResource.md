@@ -6,20 +6,20 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.resources/
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/Get-AzResource.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/Get-AzResource.md
-ms.openlocfilehash: e1748bb3dbb5c2bb86f02ef9ec58d0d1eec55ba9
-ms.sourcegitcommit: 1de2b6c3c99197958fa2101bc37680e7507f91ac
+ms.openlocfilehash: 2926aa351e7e9f1f9251c5a6e6a2292b27ef93b0
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "94236417"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100398195"
 ---
 # Get-AzResource
 
-## КРАТКИй обзор
+## SYNOPSIS
 
-Возвращает ресурсы.
+Ресурсы.
 
-## Максимальное
+## СИНТАКСИС
 
 ### ByTagNameValueParameterSet (по умолчанию)
 ```
@@ -41,13 +41,13 @@ Get-AzResource [-Name <String>] [-ResourceType <String>] [-ODataQuery <String>] 
  [<CommonParameters>]
 ```
 
-## NОПИСАНИЕ
+## ОПИСАНИЕ
 
-Командлет **Get-AzResource** получает ресурсы Azure.
+Для **получения ресурсов Azure возвращается cmdlet Get-AzResource.**
 
-## ИЛЛЮСТРИРУЮТ
+## ПРИМЕРЫ
 
-### Пример 1: получение всех ресурсов в текущей подписке
+### Пример 1. Получить все ресурсы в текущей подписке
 
 ```
 PS C:\> Get-AzResource | ft
@@ -67,7 +67,7 @@ testVM2 otherResourceGroup Microsoft.Compute/virtualMachines       eastus
 
 Эта команда получает все ресурсы в текущей подписке.
 
-### Пример 2: получение всех ресурсов в группе ресурсов
+### Пример 2. Получить все ресурсы в группе ресурсов
 
 ```
 PS C:\> Get-AzResource -ResourceGroupName testRG | ft
@@ -82,9 +82,9 @@ ip     testRG            Microsoft.Network/publicIPAddresses     westus
 vnet   testRG            Microsoft.Network/virtualNetworks       westus
 ```
 
-Эта команда получает все ресурсы в группе ресурсов "testRG".
+Эта команда получает все ресурсы из группы ресурсов TestRG.
 
-### Пример 3: получение всех ресурсов, для которых Группа ресурсов соответствует указанному подстановочному знаку
+### Пример 3. Получить все ресурсы, группа ресурсов которых соответствует предоставленной подгруппе
 
 ```
 PS C:\> Get-AzResource -ResourceGroupName other* | ft
@@ -96,9 +96,9 @@ storage otherResourceGroup Microsoft.Storage/storageAccounts eastus
 testVM2 otherResourceGroup Microsoft.Compute/virtualMachines eastus
 ```
 
-Эта команда получает все ресурсы, в которых Группа ресурсов принадлежит к людей, с "другим".
+Эта команда возвращает все ресурсы, группа которых относится к компании, с "другими".
 
-### Пример 4: получение всех ресурсов с заданным именем
+### Пример 4. Получить все ресурсы с заданным именем
 
 ```
 PS C:\> Get-AzResource -Name testVM | fl
@@ -116,9 +116,9 @@ Tags              :
                     Status  Approved
 ```
 
-Эта команда получает все ресурсы, имя ресурса которых равно "testVM".
+Эта команда возвращает все ресурсы с именем testVM.
 
-### Пример 5: получение всех ресурсов, имена которых соответствуют указанному подстановочному знаку
+### Пример 5. Получите все ресурсы, названия которых совпадают с предоставленными поддиавными знаками
 
 ```
 PS C:\> Get-AzResource -Name test* | ft
@@ -130,9 +130,9 @@ testKV  otherRG            Microsoft.KeyVault/vaults         eastus
 testVM2 otherResourceGroup Microsoft.Compute/virtualMachines eastus
 ```
 
-Эта команда получает все ресурсы, имя ресурса которых начинается с "Test".
+Эта команда возвращает все ресурсы, название которых начинается с "проверка".
 
-### Пример 6: получение всех ресурсов определенного типа ресурсов
+### Пример 6. Получить все ресурсы заданного типа ресурсов
 
 ```
 PS C:\> Get-AzResource -ResourceType Microsoft.Compute/virtualMachines | ft
@@ -143,9 +143,9 @@ testVM  testRG             Microsoft.Compute/virtualMachines westus
 testVM2 otherResourceGroup Microsoft.Compute/virtualMachines eastus
 ```
 
-Эта команда получает все ресурсы из текущих подписок, которые представляют собой виртуальные машины.
+Эта команда возвращает все ресурсы из текущих подписок, которые являются виртуальными компьютерами.
 
-### Пример 7: получение ресурса по идентификатору ресурса
+### Пример 7. Поимка ресурса по его ид
 
 ```
 PS C:\> Get-AzResource -ResourceId /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/testRG/providers/Microsoft.Compute/virtualMachines/testVM
@@ -163,9 +163,9 @@ Tags              :
                     Status  Approved
 ```
 
-Эта команда получает ресурс с предоставленным идентификатором ресурса, который является виртуальной машиной с именем "testVM" в группе ресурсов "testRG".
+Эта команда возвращает ресурс с предоставленным идом ресурса ( виртуальной машиной под названием testVM) в группе ресурсов testRG.
 
-## ПАРАМЕТРЫ
+## PARAMETERS
 
 ### -ApiVersion
 
@@ -197,7 +197,7 @@ Accept wildcard characters: False
 ```
 
 ### -ExpandProperties
-При задании этого параметра развертываются свойства ресурса.
+Если задан этот вариант, расширяет свойства ресурса.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -211,8 +211,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Name (имя)
-Имена извлекаемых ресурсов. Этот параметр поддерживает подстановочные знаки в начале и (или) конце строки.
+### -Name
+Имена извлекаемого ресурса. Этот параметр поддерживает поддиавные знаки в начале или конце строки.
 
 ```yaml
 Type: System.String
@@ -255,7 +255,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-Группа ресурсов, к которой относятся извлеченные ресурсы. Этот параметр поддерживает подстановочные знаки в начале и (или) конце строки.
+Группа извлекаемой ресурсов. Этот параметр поддерживает поддиавные знаки в начале или конце строки.
 
 ```yaml
 Type: System.String
@@ -270,7 +270,7 @@ Accept wildcard characters: True
 ```
 
 ### -ResourceId
-Указывает полный ИД ресурса, как показано в следующем примере. `/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/providers/Microsoft.Compute/virtualMachines`
+Указывает полностью определенный ИД ресурса, как по следующему примеру. `/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/providers/Microsoft.Compute/virtualMachines`
 
 ```yaml
 Type: System.String
@@ -285,7 +285,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceType
-Тип ресурса для извлекаемых ресурсов. Например, Microsoft. COMPUTE/virtualMachines
+Тип извлекаемого ресурса. Например, Microsoft.Compute/virtualMaоes
 
 ```yaml
 Type: System.String
@@ -299,9 +299,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Тег
+### -Tag
 
-Возвращает ресурсы с указанным тегом Azure. Введите хэш-таблицу с ключом имени или именем и ключом. Подстановочные знаки не поддерживаются. "Тег" — это пара "имя-значение", которую можно применять к ресурсам и группам ресурсов. Используйте теги для классификации ресурсов, таких как отдел или центр затрат, а также для отслеживания заметок и примечаний к ресурсам. Чтобы добавить тег к ресурсу, используйте параметр tag командлетов New-AzResource или Set-AzResource. Чтобы создать предопределенный тег, используйте командлет New-AzTag. Чтобы получить справку по хэш-таблицам в Windows PowerShell, выполните "Get-Help about_Hashtables".
+Ресурсы с указанным тегом Azure. Введите hash table с помощью клавиши Name или Name и Value keys. Поддиавные знаки не поддерживаются. Тег — это пара "имя-значение", которую можно применять к ресурсам и группам ресурсов. С помощью тегов можно классифицировать ресурсы( например, по отделам или затратам), а также отслеживать заметки и комментарии о ресурсах. Чтобы добавить тег на ресурс, используйте параметр "Тег" New-AzResource или Set-AzResource командлетов. Чтобы создать предопределный тег, воспользуйтесь New-AzTag командлетом. Для получения справки по hash таблицам в Windows PowerShell запустите get-help about_Hashtables.
 
 ```yaml
 Type: System.Collections.Hashtable
@@ -316,7 +316,7 @@ Accept wildcard characters: False
 ```
 
 ### -TagName
-Ключ тега для извлекаемых ресурсов.
+Ключ в теге извлекаемого ресурса.
 
 ```yaml
 Type: System.String
@@ -346,21 +346,20 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Этот командлет поддерживает общие параметры:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-of Variable,-out,-PipelineVariable,-Verbose, и-WarningAction. Дополнительные сведения можно найти в разделе [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+Этот cmdlet поддерживает общие параметры: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. Дополнительные сведения см. [в about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)
 
-## ВХОДНЫЕ данные
+## INPUTS
 
-### System. String
+### System.String
 
-## НАПРЯЖЕНИЕ
+## OUTPUTS
 
-### Microsoft. Azure. Commands. ResourceManager. командлеты. SdkModels. PSResource
+### Microsoft.Azure.Commands.ResourceManager.Cmdlets.SdkModels.PSResource
 
-## Пуск
+## ПРИМЕЧАНИЯ
 
-## ДОПОЛНИТЕЛЬНЫЕ ССЫЛКИ
+## СВЯЗАННЫЕ ССЫЛКИ
 
-[Find-AzResource](./Find-AzResource.md)
 
 [Move-AzResource](./Move-AzResource.md)
 

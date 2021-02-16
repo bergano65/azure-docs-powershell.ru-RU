@@ -6,19 +6,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.compute/ne
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/Azs-tzl/src/Compute/Compute/help/New-AzVMSqlServerAutoPatchingConfig.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/Azs-tzl/src/Compute/Compute/help/New-AzVMSqlServerAutoPatchingConfig.md
-ms.openlocfilehash: 0ce851373ac31aaef4c5664db7085f345e9b947d
-ms.sourcegitcommit: 4c61442a2df1cee633ce93cad9f6bc793803baa2
+ms.openlocfilehash: 3ba7ab00076a3a0634a0d4394270fe4a83ec8ede
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "93911454"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100398263"
 ---
 # New-AzVMSqlServerAutoPatchingConfig
 
-## КРАТКИй обзор
+## SYNOPSIS
 Создает объект конфигурации для автоматического исправления на виртуальной машине.
 
-## Максимальное
+## СИНТАКСИС
 
 ```
 New-AzVMSqlServerAutoPatchingConfig [-Enable] [-DayOfWeek <String>]
@@ -26,12 +26,12 @@ New-AzVMSqlServerAutoPatchingConfig [-Enable] [-DayOfWeek <String>]
  [<CommonParameters>]
 ```
 
-## NОПИСАНИЕ
-Командлет **New-AzVMSqlServerAutoPatchingConfig** создает объект конфигурации для автоматического исправления на виртуальной машине.
+## ОПИСАНИЕ
+Для автоматического исправления на виртуальной машине создается объект конфигурации **new-AzVMSqlServerAutoPatchingConfig.**
 
-## ИЛЛЮСТРИРУЮТ
+## ПРИМЕРЫ
 
-### Пример 1: создание объекта конфигурации для настройки автоматического исправления
+### Пример 1. Создание объекта конфигурации для настройки автоматического исправления
 ```
 PS C:\> $AutoPatchingConfig = New-AzVMSqlServerAutoPatchingConfig -Enable -DayOfWeek "Thursday" -MaintenanceWindowStartingHour 11 -MaintenanceWindowDuration 120 -PatchCategory "Important"
 Enable                        : True
@@ -42,31 +42,31 @@ PatchCategory                 : Important
 ```
 
 Эта команда создает объект конфигурации для исправления.
-Команда задает день недели и определяет окно обслуживания.
-Эта конфигурация включает исправление, использующее эти значения.
+Команда определяет день недели и окно обслуживания.
+Эта конфигурация позволяет исправления, использующие эти значения.
 Команда сохраняет результат в переменной $AutoBackupConfig.
-Вы можете указать этот элемент конфигурации для других командлетов, таких как командлеты Set-AzVMSqlServerExtension.
+Вы можете указать этот элемент конфигурации для других Set-AzVMSqlServerExtension.
 
-## ПАРАМЕТРЫ
+## PARAMETERS
 
 ### -DayOfWeek
-Указывает день недели, когда необходимо установить обновления.
+Определяет день недели, когда должны быть установлены обновления.
 
-Для этого параметра допустимы следующие значения:
+Допустимые значения этого параметра:
 
-- Воскресеньям
+- Воскресенье
+- Понедельник
 - Вторник
-- Вторник
+- Среда
 - Четверг
-- Вторник
-- Пт
-- Субботам
-- Жизни
+- Пятница
+- Суббота
+- Каждый день
 
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 Accepted values: Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Everyday
 
 Required: False
@@ -76,15 +76,15 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Enable (включить)
-Указывает на то, что автоматическая установка исправлений для виртуальной машины включена.
-Если вы включите автоматическое исправление, командлет поместит обновление Windows в интерактивный режим.
-Если отключить автоматическое исправление, параметры центра обновления Windows не изменяются.
+### -Enable
+Означает, что включено автоматическое исправление для виртуальной машины.
+Если включить автоматическое исправление, с помощью cmdlet вы сможете переналить Windows Update в интерактивный режим.
+Если отключить автоматическое исправление, параметры Обновления Windows не изменятся.
 
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -94,14 +94,14 @@ Accept wildcard characters: False
 ```
 
 ### -MaintenanceWindowDuration
-Указывает продолжительность (в минутах) периода обслуживания.
-Автоматическое исправление устраняет выполнение действия, которое может повлиять на доступность виртуальной машины за пределами этого окна.
+Длительность (в минутах) окна обслуживания.
+Автоматическое исправление не позволяет выполнять действия, которые могут повлиять на доступность виртуальной машины за пределами этого окна.
 Укажите кратное 30 минут.
 
 ```yaml
 Type: Int32
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -111,13 +111,13 @@ Accept wildcard characters: False
 ```
 
 ### -MaintenanceWindowStartingHour
-Указывает час дня, когда запускается окно обслуживания.
-Это время определяет время начала установки обновлений.
+Определяет час, в который день начинается окно обслуживания.
+На этот раз определяется время начала установки обновлений.
 
 ```yaml
 Type: Int32
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -132,7 +132,7 @@ Accept wildcard characters: False
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 Accepted values: Important
 
 Required: False
@@ -143,23 +143,23 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Этот командлет поддерживает общие параметры:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-of Variable,-out,-PipelineVariable,-Verbose, и-WarningAction. Дополнительные сведения можно найти в разделе about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .
+Этот cmdlet поддерживает общие параметры: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. Дополнительные сведения см. в about_CommonParameters http://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## ВХОДНЫЕ данные
+## INPUTS
 
-### Ничего
-Этот командлет не поддерживает никаких входных данных.
+### Нет
+Этот cmdlet не принимает входные данные.
 
-## НАПРЯЖЕНИЕ
+## OUTPUTS
 
 ### AutoPatchingSettings
-Этот командлет возвращает объект, содержащий параметры автоматического исправления.
+Этот cmdlet возвращает объект, содержащий параметры автоматического исправления.
 
-## Пуск
+## ПРИМЕЧАНИЯ
 
-## ДОПОЛНИТЕЛЬНЫЕ ССЫЛКИ
+## СВЯЗАННЫЕ ССЫЛКИ
 
-[New-AzureVMSqlServerAutoBackupConfig](./New-AzureVMSqlServerAutoBackupConfig.md)
+[New-AzureVMSqlServerAutoBackupConfig](./New-AzVMSqlServerAutoBackupConfig.md)
 
 [Set-AzVMSqlServerExtension](./Set-AzVMSqlServerExtension.md)
 

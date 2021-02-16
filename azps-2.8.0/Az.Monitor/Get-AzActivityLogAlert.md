@@ -6,19 +6,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.monitor/ge
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/Get-AzActivityLogAlert.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/Get-AzActivityLogAlert.md
-ms.openlocfilehash: 4982cb77f4dfd318d58f24ab2e2876e4eac8d2c7
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: 50ffa5beb8ab79d3c903ec5b7e6a21c9b08116db
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93720336"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100406406"
 ---
 # Get-AzActivityLogAlert
 
-## КРАТКИй обзор
-Получает один или несколько ресурсов для оповещения журнала активности.
+## SYNOPSIS
+Возвращает один или несколько ресурсов журнала действий.
 
-## Максимальное
+## СИНТАКСИС
 
 ### GetByNameAndResourceGroup
 ```
@@ -32,33 +32,33 @@ Get-AzActivityLogAlert [[-ResourceGroupName] <String>] [-DefaultProfile <IAzureC
  [<CommonParameters>]
 ```
 
-## NОПИСАНИЕ
-Командлет **Get-AzActivityLogAlert** получает один или несколько ресурсов для оповещения журнала активности.
+## ОПИСАНИЕ
+Для **этого можно использовать один** или несколько ресурсов журнала действий.
 
-## ИЛЛЮСТРИРУЮТ
+## ПРИМЕРЫ
 
-### Пример 1: получение уведомлений журнала активности по ИДЕНТИФИКАТОРу подписки
+### Пример 1. Получать оповещения журнала действий по ИД подписки
 ```
 PS C:\>Get-AzActivityLogAlert
 ```
 
-Эта команда выводит список всех оповещений журнала активности для текущей подписки.
+Эта команда содержит все оповещения журнала действий для текущей подписки.
 
-### Пример 2: получение оповещений журнала активности для указанной группы ресурсов
+### Пример 2. Получать оповещения журнала действий для данной группы ресурсов
 ```
 PS C:\>Get-AzActivityLogAlert -ResourceGroupName "Default-activityLogAlerts"
 ```
 
-Эта команда перечисляет оповещения журнала активности для указанной группы ресурсов.
+Эта команда содержит список оповещений журнала действий для данной группы ресурсов.
 
-### Пример 3: Получение оповещения журнала действий.
+### Пример 3. Оповещение в журнале действий.
 ```
 PS C:\>Get-AzActivityLogAlert -ResourceGroupName "Default-activityLogAlerts" -Name "alert1"
 ```
 
-Эта команда перечисляет один (список, в котором есть один элемент) оповещение журнала активности.
+Эта команда содержит одно оповещение журнала действий (список с одним элементом).
 
-## ПАРАМЕТРЫ
+## PARAMETERS
 
 ### -DefaultProfile
 Учетные данные, учетная запись, клиент и подписка, используемые для связи с Azure
@@ -75,8 +75,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Name (имя)
-Имя оповещения журнала активности.
+### -Name
+Имя оповещения журнала действий.
 
 ```yaml
 Type: System.String
@@ -91,8 +91,8 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-Имя группы ресурсов, в которой находится ресурс оповещения.
-Если имя не равно null или пустое, этот параметр должен содержать и не пустую строку.
+Имя группы ресурсов, в которой находится оповещение.
+Если имя не является пустым или пустым, этот параметр должен содержать непустую строку.
 
 ```yaml
 Type: System.String
@@ -119,26 +119,22 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Этот командлет поддерживает общие параметры:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-of Variable,-out,-PipelineVariable,-Verbose, и-WarningAction. Дополнительные сведения можно найти в разделе [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+Этот cmdlet поддерживает общие параметры: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. Дополнительные сведения см. [в about_CommonParameters.](https://go.microsoft.com/fwlink/?LinkID=113216)
 
-## ВХОДНЫЕ данные
+## INPUTS
 
-### System. String
+### System.String
 
-## НАПРЯЖЕНИЕ
+## OUTPUTS
 
-### Microsoft. Azure. Commands. Insights. OutputClasses. PSActivityLogAlertResource
+### Microsoft.Azure.Commands.Insights.OutputClasses.PSActivityLogAlertResource
 
-## Пуск
+## ПРИМЕЧАНИЯ
 
-## ДОПОЛНИТЕЛЬНЫЕ ССЫЛКИ
+## СВЯЗАННЫЕ ССЫЛКИ
 
 [Set-AzActivityLogAlert](./Set-AzActivityLogAlert.md)
-
-[Update-AzActivityLogAlert](./Update-AzActivityLogAlert.md)
 
 [Remove-AzActivityLogAlert](./Remove-AzActivityLogAlert.md)
 
 [New-AzActionGroup](./New-AzActionGroup.md)
-
-[New-AzActivityLogAlertCondition](./Get-AzActivityLogAlertCondition.md)

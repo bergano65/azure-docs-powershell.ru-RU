@@ -6,19 +6,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.compute/se
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/Azs-tzl/src/Compute/Compute/help/Set-AzVMSqlServerExtension.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/Azs-tzl/src/Compute/Compute/help/Set-AzVMSqlServerExtension.md
-ms.openlocfilehash: 4093e236f84d7587586ba30c8bd4653c4ba7358f
-ms.sourcegitcommit: 4c61442a2df1cee633ce93cad9f6bc793803baa2
+ms.openlocfilehash: 1795216cbc18da2d503a1e0056d614337cd12785
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "93911324"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100398246"
 ---
 # Set-AzVMSqlServerExtension
 
-## КРАТКИй обзор
+## SYNOPSIS
 Задает расширение Azure SQL Server на виртуальной машине.
 
-## Максимальное
+## СИНТАКСИС
 
 ```
 Set-AzVMSqlServerExtension [[-Version] <String>] [-ResourceGroupName] <String> [-VMName] <String>
@@ -27,66 +27,66 @@ Set-AzVMSqlServerExtension [[-Version] <String>] [-ResourceGroupName] <String> [
  [[-Location] <String>] [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## NОПИСАНИЕ
-Командлет **Set-AzVMSqlServerExtension** задает серверное расширение AzureSQL на виртуальной машине.
+## ОПИСАНИЕ
+Для виртуальной машины задается расширение AzureSQL Server с использованием cmdlet **Set-AzVMSqlServerExtension.**
 
-## ИЛЛЮСТРИРУЮТ
+## ПРИМЕРЫ
 
-### Пример 1: Настройка автоматических параметров исправлений на виртуальной машине
+### Пример 1. Настройка параметров автоматического исправления на виртуальной машине
 ```
 PS C:\> $AutoPatchingConfig = New-AzureVMSqlServerAutoPatchingConfig -Enable -DayOfWeek "Thursday" -MaintenanceWindowStartingHour 11 -MaintenanceWindowDuration 120 -PatchCategory "Important"
 PS C:\> Get-AzVM -ServiceName "Service02" -Name "VirtualMachine11" | Set-AzVMSqlServerExtension -AutoPatchingSettings $AutoPatchingConfig | Update-AzVM
 ```
 
-Первая команда создает объект конфигурации с помощью командлета **New-AzureVMSqlServerAutoPatchingConfig** .
-Эта команда хранит конфигурацию в переменной $AutoPatchingConfig.
+Первая команда создает объект конфигурации с помощью командлета **New-AzureVMSqlServerAutoPatchingConfig.**
+Команда сохраняет конфигурацию в переменной $AutoPatchingConfig.
 
-Вторая команда получает виртуальную машину с именем VirtualMachine11 в службе с именем Service02 с помощью командлета Get-AzVM.
-Команда передает этот объект в текущий командлет с помощью оператора конвейера.
+Вторая команда получает виртуальную машину VirtualMachine11 в службе Service02 с Get-AzVM командлетом.
+Эта команда передает этот объект текущему командлету с помощью оператора конвейера.
 
-Текущий командлет задает параметры автоматического исправления в $AutoPatchingConfig для виртуальной машины.
-Команда передает виртуальную машину командлету Update-AzVM.
+Текущий cmdlet задает параметры автоматического исправления в $AutoPatchingConfig для виртуальной машины.
+Эта команда передает виртуальную машину к Update-AzVM командлету.
 
-### Пример 2: Настройка параметров автоматического резервного копирования на виртуальной машине
+### Пример 2. Настройка параметров автоматического резервного копирования на виртуальной машине
 ```
 PS C:\> $AutoBackupConfig = New-AzureVMSqlServerAutoBackupConfig -Enable -RetentionPeriod 10 -StorageUri $StorageUrl -StorageKey $StorageAccountKeySecure
 PS C:\> Get-AzVM -ServiceName "Service02" -Name "VirtualMachine11" | Set-AzVMSqlServerExtension -AutoBackupSettings $AutoBackupConfig | Update-AzVM
 ```
 
-Первая команда создает объект конфигурации с помощью командлета **New-AzureVMSqlServerAutoBackupConfig** .
-Эта команда хранит конфигурацию в переменной $AutoBackupConfig.
+Первая команда создает объект конфигурации с помощью командлета **New-AzureVMSqlServerAutoBackupConfig.**
+Команда сохраняет конфигурацию в переменной $AutoBackupConfig.
 
-Вторая команда получает виртуальную машину с именем VirtualMachine11 в службе с именем Service02 и передает ее в текущий командлет.
+Вторая команда получает виртуальную машину с именем VirtualMa в службе Service02 и передает ее текущему командлету.
 
-Текущий командлет задает параметры автоматического резервного копирования в $AutoBackupConfig для виртуальной машины.
-Команда передает виртуальную машину командлету Update-AzVM.
+Текущий cmdlet задает параметры автоматического резервного копирования в $AutoBackupConfig для виртуальной машины.
+Эта команда передает виртуальную машину к Update-AzVM командлету.
 
-### Пример 3: отключение расширения SQL Server на виртуальной машине
+### Пример 3. Отключение расширения SQL Server на виртуальной машине
 ```
 PS C:\> Get-AzVM -ServiceName "Service03" -Name "VirtualMachine08" | Set-AzVMSqlServerExtension -Disable
 ```
 
-Эта команда получает виртуальную машину с именем VirtualMachine08 на Service03, а затем передает ее в текущий командлет.
-Команда отключает расширение виртуальной машины SQL Server на этой виртуальной машине.
+Эта команда получает виртуальную машину с именем VirtualMachine08 в службе Service03 и передает ее текущему командлету.
+Эта команда отключает расширение SQL Server на этой виртуальной машине.
 
-### Пример 4: удаление расширения SQL Server на определенной виртуальной машине
+### Пример 4. Удалить расширение SQL Server на определенной виртуальной машине
 ```
 PS C:\> Get-AzVM -ServiceName "Service03" -Name "VirtualMachine08" | Set-AzVMSqlServerExtension -Uninstall
 ```
 
-Эта команда получает виртуальную машину с именем VirtualMachine08 на Service03, а затем передает ее в текущий командлет.
-Команда удаляет расширение виртуальной машины SQL Server на этой виртуальной машине.
+Эта команда получает виртуальную машину с именем VirtualMachine08 в службе Service03 и передает ее текущему командлету.
+Эта команда выгрузит расширение SQL Server на этой виртуальной машине.
 
-## ПАРАМЕТРЫ
+## PARAMETERS
 
 ### -AutoBackupSettings
-Задает параметры автоматического резервного копирования SQL Server.
-Чтобы создать объект **AutoBackupSettings** , используйте командлет New-AzureVMSqlServerAutoBackupConfig.
+Параметры автоматического SQL Server параметры резервного копирования.
+Чтобы создать объект **AutoBackupSettings,** используйте New-AzureVMSqlServerAutoBackupConfig.
 
 ```yaml
 Type: AutoBackupSettings
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 6
@@ -96,13 +96,13 @@ Accept wildcard characters: False
 ```
 
 ### -AutoPatchingSettings
-Задает параметры автоматического исправления SQL Server.
-Чтобы создать объект **AutoPatchingSettings** , используйте командлет New-AzureVMSqlServerAutoPatchingConfig.
+Определяет параметры автоматического SQL Server исправлений.
+Чтобы создать объект **AutoPatchingSettings,** используйте New-AzureVMSqlServerAutoPatchingConfig..
 
 ```yaml
 Type: AutoPatchingSettings
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 5
@@ -130,7 +130,7 @@ Accept wildcard characters: False
 ```yaml
 Type: KeyVaultCredentialSettings
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 7
@@ -140,12 +140,12 @@ Accept wildcard characters: False
 ```
 
 ### -Location
-Указывает расположение виртуальной машины.
+Определяет расположение виртуальной машины.
 
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 8
@@ -154,13 +154,13 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Name (имя)
-Указывает имя сервера SQL Server, на котором находится расширение.
+### -Name
+Указывает имя имени SQL Server расширения.
 
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 4
@@ -175,7 +175,7 @@ Accept wildcard characters: False
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: 2
@@ -184,8 +184,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Version
-Указывает версию расширения SQL Server.
+### -Версия
+Определяет версию расширения SQL Server.
 
 ```yaml
 Type: String
@@ -200,12 +200,12 @@ Accept wildcard characters: False
 ```
 
 ### -VMName
-Указывает имя виртуальной машины, на которой этот командлет задает расширение SQL Server.
+Указывает имя виртуальной машины, на которой этот SQL Server расширения.
 
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: 3
@@ -215,28 +215,28 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Этот командлет поддерживает общие параметры:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-of Variable,-out,-PipelineVariable,-Verbose, и-WarningAction. Дополнительные сведения можно найти в разделе about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .
+Этот cmdlet поддерживает общие параметры: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. Дополнительные сведения см. в about_CommonParameters http://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## ВХОДНЫЕ данные
+## INPUTS
 
-### Ничего
-Этот командлет не поддерживает никаких входных данных.
+### Нет
+Этот cmdlet не принимает входные данные.
 
-## НАПРЯЖЕНИЕ
+## OUTPUTS
 
-### Microsoft. Azure. Commands. COMPUTE. Models. PSAzureOperationResponse
+### Microsoft.Azure.Commands.Compute.Models.PSAzureOperationResponse
 
-## Пуск
+## ПРИМЕЧАНИЯ
 
-## ДОПОЛНИТЕЛЬНЫЕ ССЫЛКИ
+## СВЯЗАННЫЕ ССЫЛКИ
 
 [Get-AzVM](./Get-AzVM.md)
 
 [Get-AzVMSqlServerExtension](./Get-AzVMSqlServerExtension.md)
 
-[New-AzureVMSqlServerAutoPatchingConfig](./New-AzureVMSqlServerAutoPatchingConfig.md)
+[New-AzureVMSqlServerAutoPatchingConfig](./New-AzVMSqlServerAutoPatchingConfig.md)
 
-[New-AzureVMSqlServerAutoBackupConfig](./New-AzureVMSqlServerAutoBackupConfig.md)
+[New-AzureVMSqlServerAutoBackupConfig](./New-AzVMSqlServerAutoBackupConfig.md)
 
 [Remove-AzVMSqlServerExtension](./Remove-AzVMSqlServerExtension.md)
 
