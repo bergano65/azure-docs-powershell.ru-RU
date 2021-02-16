@@ -5,40 +5,40 @@ online version: https://docs.microsoft.com/en-us/powershell/module/Az.keyvault/u
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/Azs-tzl/src/KeyVault/KeyVault/help/Undo-AzKeyVaultSecretRemoval.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/Azs-tzl/src/KeyVault/KeyVault/help/Undo-AzKeyVaultSecretRemoval.md
-ms.openlocfilehash: e65bef4119c51b989287bbf0db2e7587fef50271
-ms.sourcegitcommit: 4c61442a2df1cee633ce93cad9f6bc793803baa2
+ms.openlocfilehash: 9c240d3902aeba38af4281ba31bacea76bad0a58
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "93911144"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100399096"
 ---
 # Undo-AzKeyVaultSecretRemoval
 
-## КРАТКИй обзор
-Восстановление удаленного секрета из хранилища ключей в активном состоянии.
+## SYNOPSIS
+Восстановление удаленной секретной секретной области в активном состоянии.
 
-## Максимальное
+## СИНТАКСИС
 
 ```
 Undo-AzKeyVaultSecretRemoval [-VaultName] <String> [-Name] <String>
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## NОПИСАНИЕ
-Командлет **Undo-AzKeyVaultSecretRemoval** восстановит ранее удаленный секрет.
-Восстановленный секрет будет активен и может использоваться для всех обычных секретных операций.
-Для выполнения этой операции вызывающему объекту должно быть предоставлено разрешение "Recover".
+## ОПИСАНИЕ
+С **его нажатием** можно восстановить ранее удаленную секретную.
+Восстановленная секретная будет активна и ее можно использовать для всех обычных секретных операций.
+Для выполнения этой операции вызываемму вызываемму звоня необходимо разрешение на восстановление.
 
-## ИЛЛЮСТРИРУЮТ
+## ПРИМЕРЫ
 
 ### Пример 1
 ```
 PS C:\> Undo-AzKeyVaultSecretRemoval -VaultName 'MyKeyVault' -Name 'MySecret'
 ```
 
-Эта команда восстановит секретный "MySecret", который ранее был удален, в активное и пригодное для использования состояние.
+Эта команда восстановит секретный "МойСекрет", который ранее был удален, в активное и можное состояние.
 
-## ПАРАМЕТРЫ
+## PARAMETERS
 
 ### -DefaultProfile
 Учетные данные, учетная запись, клиент и подписка, используемые для связи с Azure
@@ -55,9 +55,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Name (имя)
-Имя секрета.
-Командлет создает полное доменное имя секрета из имени хранилища, выбранного в настоящее время среды и имени секрета.
+### -Name
+Секретное имя.
+Cmdlet constructs the FQDN of a secret from vault name, currently selected environment and secret name.
 
 ```yaml
 Type: String
@@ -72,8 +72,8 @@ Accept wildcard characters: False
 ```
 
 ### -VaultName
-Имя хранилища.
-Командлет создает полное доменное имя хранилища на основе имени и выбранной в данный момент среды.
+Имя сейфа.
+Cmdlet constructs the FQDN of a vault based on the name and currently selected environment.
 
 ```yaml
 Type: String
@@ -88,7 +88,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
-Запрашивает подтверждение перед запуском командлета.
+Перед запуском cmdlet вам будет предложено подтвердить его.
 
 ```yaml
 Type: SwitchParameter
@@ -103,8 +103,8 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Показывает, что произойдет при запуске командлета.
-Командлет не выполняется.
+Показывает, что произойдет при запуске cmdlet.
+Этот cmdlet не будет выполниться.
 
 ```yaml
 Type: SwitchParameter
@@ -119,22 +119,21 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Этот командлет поддерживает общие параметры:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-of Variable,-out,-PipelineVariable,-Verbose, и-WarningAction. Дополнительные сведения можно найти в разделе about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .
+Этот cmdlet поддерживает общие параметры: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. Дополнительные сведения см. в about_CommonParameters http://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## ВХОДНЫЕ данные
+## INPUTS
 
-### System. String
+### System.String
 
-## НАПРЯЖЕНИЕ
+## OUTPUTS
 
-### Microsoft. Azure. Commands. KeyVault. Models. Secret
+### Microsoft.Azure.Commands.KeyVault.Models.Secret
 
-## Пуск
+## ПРИМЕЧАНИЯ
 
-## ДОПОЛНИТЕЛЬНЫЕ ССЫЛКИ
+## СВЯЗАННЫЕ ССЫЛКИ
 
 [Remove-AzKeyVaultSecret](./Remove-AzKeyVaultSecret.md)
 
-[Add-AzKeyVaultSecret](./Add-AzKeyVaultSecret.md)
 
 [Get-AzKeyVaultSecret](./Get-AzKeyVaultSecret.md)

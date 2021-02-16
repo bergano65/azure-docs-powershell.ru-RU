@@ -5,31 +5,31 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.network/ne
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/New-AzNetworkWatcher.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/New-AzNetworkWatcher.md
-ms.openlocfilehash: 8253e43052203d4f5ba844cec02ec3b2af592b1d
-ms.sourcegitcommit: 6a91b4c545350d316d3cf8c62f384478e3f3ba24
+ms.openlocfilehash: dbc1f3e942a95adf0cb56721ec1a2666da9b9188
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "94066527"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100399045"
 ---
 # New-AzNetworkWatcher
 
-## КРАТКИй обзор
-Создание нового ресурса сетевого наблюдателя.
+## SYNOPSIS
+Создание ресурса Network Watcher.
 
-## Максимальное
+## СИНТАКСИС
 
 ```
 New-AzNetworkWatcher -Name <String> -ResourceGroupName <String> -Location <String> [-Tag <Hashtable>]
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## NОПИСАНИЕ
-Командлет New-AzNetworkWatcher создает новый ресурс сетевого наблюдателя.
+## ОПИСАНИЕ
+С New-AzNetworkWatcher создается новый ресурс Network Watcher.
 
-## ИЛЛЮСТРИРУЮТ
+## ПРИМЕРЫ
 
-### Пример 1: Создание наблюдателя сети
+### Пример 1. Создание сетевого watcher
 ```
 New-AzResourceGroup -Name NetworkWatcherRG -Location westcentralus
 New-AzNetworkWatcher -Name NetworkWatcher_westcentralus -ResourceGroup NetworkWatcherRG
@@ -42,9 +42,9 @@ Tags              :
 ProvisioningState : Succeeded
 ```
 
-В этом примере создается новый наблюдатель сети внутри созданной группы ресурсов. Обратите внимание, что для каждого региона на каждую подписку может быть создано только один наблюдатель сети.
+В этом примере создается сетевой просмотр в новой группе ресурсов. Обратите внимание, что для каждого региона можно создать только одно сетевое смотритель.
 
-## ПАРАМЕТРЫ
+## PARAMETERS
 
 ### -DefaultProfile
 Учетные данные, учетная запись, клиент и подписка, используемые для связи с Azure.
@@ -62,7 +62,7 @@ Accept wildcard characters: False
 ```
 
 ### -Location
-Поиска.
+"Расположение".
 
 ```yaml
 Type: System.String
@@ -76,8 +76,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Name (имя)
-Имя наблюдателя сети.
+### -Name
+Имя сетевого смотритела.
 
 ```yaml
 Type: System.String
@@ -106,8 +106,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Тег
-Пары "ключ-значение" в виде хэш-таблицы. Например: @ {Key0 = "value0"; key1 = $null; key2 = "значение2"}
+### -Tag
+Пары значений ключа в виде hash table. Например: @{key0="value0";key1=$null;key2="value2"}
 
 ```yaml
 Type: System.Collections.Hashtable
@@ -122,7 +122,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
-Запрашивает подтверждение перед запуском командлета.
+Перед запуском cmdlet вам будет предложено подтвердить его.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -137,8 +137,8 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Показывает, что произойдет при запуске командлета.
-Командлет не выполняется.
+Показывает, что произойдет при запуске cmdlet.
+Этот cmdlet не будет выполниться.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -153,22 +153,22 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Этот командлет поддерживает общие параметры:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-of Variable,-out,-PipelineVariable,-Verbose, и-WarningAction. Дополнительные сведения можно найти в разделе about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .
+Этот cmdlet поддерживает общие параметры: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. Дополнительные сведения см. в about_CommonParameters http://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## ВХОДНЫЕ данные
+## INPUTS
 
-### System. String
+### System.String
 
-### System. Collections. Hashtable
+### System.Collections.Hashtable
 
-## НАПРЯЖЕНИЕ
+## OUTPUTS
 
-### Microsoft. Azure. Commands. Network. Models. PSNetworkWatcher
+### Microsoft.Azure.Commands.Network.Models.PSNetworkWatcher
 
-## Пуск
-Ключевые слова: Azure, azurerm, ARM, Resource, менеджмент, руководитель, сеть, сеть, наблюдатель сети
+## ПРИМЕЧАНИЯ
+Ключевые слова: azure, azurerm, arm, resource, management, manager, network, networking, network watcher,
 
-## ДОПОЛНИТЕЛЬНЫЕ ССЫЛКИ
+## СВЯЗАННЫЕ ССЫЛКИ
 
 [New-AzNetworkWatcher](./New-AzNetworkWatcher.md)
 
@@ -192,7 +192,7 @@ Accept wildcard characters: False
 
 [Remove-AzNetworkWatcherPacketCapture](./Remove-AzNetworkWatcherPacketCapture.md)
 
-[Остановить-AzNetworkWatcherPacketCapture](./Stop-AzNetworkWatcherPacketCapture.md)
+[Stop-AzNetworkWatcherPacketCapture](./Stop-AzNetworkWatcherPacketCapture.md)
 
 [New-AzNetworkWatcherProtocolConfiguration](./New-AzNetworkWatcherProtocolConfiguration.md)
 
@@ -200,7 +200,7 @@ Accept wildcard characters: False
 
 [Test-AzNetworkWatcherConnectivity](./Test-AzNetworkWatcherConnectivity.md)
 
-[Остановить-AzNetworkWatcherConnectionMonitor](./Stop-AzNetworkWatcherConnectionMonitor.md)
+[Stop-AzNetworkWatcherConnectionMonitor](./Stop-AzNetworkWatcherConnectionMonitor.md)
 
 [Start-AzNetworkWatcherConnectionMonitor](./Start-AzNetworkWatcherConnectionMonitor.md)
 
@@ -220,6 +220,6 @@ Accept wildcard characters: False
 
 [Get-AzNetworkWatcherFlowLogStatus](./Get-AzNetworkWatcherFlowLogStatus.md)
 
-[Get-AzNetworkWatcherConnectionMonitorReport](./Get-AzNetworkWatcherConnectionMonitorReport)
+[Get-AzNetworkWatcherConnectionMonitorReport](./Get-AzNetworkWatcherConnectionMonitorReport.md)
 
-[Get-AzNetworkWatcherConnectionMonitor](./Get-AzNetworkWatcherConnectionMonitor)
+[Get-AzNetworkWatcherConnectionMonitor](./Get-AzNetworkWatcherConnectionMonitor.md)
