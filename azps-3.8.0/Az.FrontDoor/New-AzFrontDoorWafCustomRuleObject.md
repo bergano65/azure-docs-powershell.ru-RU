@@ -5,19 +5,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.frontdoor/
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/FrontDoor/FrontDoor/help/New-AzFrontDoorWafCustomRuleObject.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/FrontDoor/FrontDoor/help/New-AzFrontDoorWafCustomRuleObject.md
-ms.openlocfilehash: d352f70d28b9bfafae46697fb6d69dc50c739b19
-ms.sourcegitcommit: 6a91b4c545350d316d3cf8c62f384478e3f3ba24
+ms.openlocfilehash: 4612f1ef1dac22d87b6794e35f9541a39f6312ea
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "94073838"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100403992"
 ---
 # New-AzFrontDoorWafCustomRuleObject
 
-## КРАТКИй обзор
+## SYNOPSIS
 Создание объекта CustomRule для создания политики WAF
 
-## Максимальное
+## СИНТАКСИС
 
 ```
 New-AzFrontDoorWafCustomRuleObject -Name <String> -RuleType <String> -MatchCondition <PSMatchCondition[]>
@@ -25,10 +25,10 @@ New-AzFrontDoorWafCustomRuleObject -Name <String> -RuleType <String> -MatchCondi
  [-EnabledState <String>] [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## NОПИСАНИЕ
+## ОПИСАНИЕ
 Создание объекта CustomRule для создания политики WAF
 
-## ИЛЛЮСТРИРУЮТ
+## ПРИМЕРЫ
 
 ### Пример 1
 ```powershell
@@ -41,11 +41,11 @@ Rule1 MatchRule  Block        2                          1
 
 Создание объекта CustomRule
 
-## ПАРАМЕТРЫ
+## PARAMETERS
 
-### -Action (действие)
+### -Action
 Тип действий.
-Возможные значения: "разрешить", "блок", "журнал"
+Возможные значения: 'Allow', 'Block', 'Log'
 
 ```yaml
 Type: System.String
@@ -75,7 +75,7 @@ Accept wildcard characters: False
 ```
 
 ### -EnabledState
-Включенное состояние. Возможные значения: "включено", "отключено".
+Состояние включено. Возможные значения: "Включено", "Отключено".
 
 ```yaml
 Type: System.String
@@ -90,7 +90,7 @@ Accept wildcard characters: False
 ```
 
 ### -MatchCondition
-Список условий соответствия.
+Список условий совпадения.
 
 ```yaml
 Type: Microsoft.Azure.Commands.FrontDoor.Models.PSMatchCondition[]
@@ -104,7 +104,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Name (имя)
+### -Name
 Имя правила
 
 ```yaml
@@ -119,8 +119,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Priority (приоритет)
-Описывает приоритет правила.
+### -Priority
+В нем описывается приоритет правила.
 
 ```yaml
 Type: System.Int32
@@ -135,7 +135,7 @@ Accept wildcard characters: False
 ```
 
 ### -RateLimitDurationInMinutes
-Продолжительность ограничения нормы. По умолчанию — 1 минута
+Ограничение срока действия тарифа. По умолчанию — 1 минута
 
 ```yaml
 Type: System.Int32
@@ -150,7 +150,7 @@ Accept wildcard characters: False
 ```
 
 ### -RateLimitThreshold
-Порог ограничения скорости
+Пороговое значение ограничения ставки
 
 ```yaml
 Type: System.Nullable`1[System.Int32]
@@ -166,7 +166,7 @@ Accept wildcard characters: False
 
 ### -RuleType
 Тип правила.
-Возможные значения: "MatchRule", "RateLimitRule"
+Возможные значения: 'MatchRule', 'RateLimitRule'
 
 ```yaml
 Type: System.String
@@ -181,19 +181,19 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Этот командлет поддерживает общие параметры:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-of Variable,-out,-PipelineVariable,-Verbose, и-WarningAction. Дополнительные сведения можно найти в разделе [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+Этот cmdlet поддерживает общие параметры: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. Дополнительные сведения см. [в about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)
 
-## ВХОДНЫЕ данные
+## INPUTS
 
-### Ничего
+### Нет
 
-## НАПРЯЖЕНИЕ
+## OUTPUTS
 
-### Microsoft. Azure. Commands. FrontDoor. Models. PSCustomRule
+### Microsoft.Azure.Commands.FrontDoor.Models.PSCustomRule
 
-## Пуск
+## ПРИМЕЧАНИЯ
 
-## ДОПОЛНИТЕЛЬНЫЕ ССЫЛКИ
+## СВЯЗАННЫЕ ССЫЛКИ
 
 [New-AzFrontDoorWafPolicy](./New-AzFrontDoorWafPolicy.md) 
- [Set-AzFrontDoorWafPolicy](./Set-AzFrontDoorWafPolicy.md)
+ [Update-AzFrontDoorWafPolicy](./Update-AzFrontDoorWafPolicy.md)
