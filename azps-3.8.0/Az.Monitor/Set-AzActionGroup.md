@@ -6,19 +6,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.monitor/se
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/Set-AzActionGroup.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/Set-AzActionGroup.md
-ms.openlocfilehash: bcec58094fc124d3dd49fc2536a9427ed72d07a2
-ms.sourcegitcommit: 6a91b4c545350d316d3cf8c62f384478e3f3ba24
+ms.openlocfilehash: da050b069ee77ce73b2325a600ac06f4d0fb919c
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "93911777"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100399215"
 ---
 # Set-AzActionGroup
 
-## КРАТКИй обзор
+## SYNOPSIS
 Создает новую или обновляет существующую группу действий.
 
-## Максимальное
+## СИНТАКСИС
 
 ### ByPropertyName (по умолчанию)
 ```
@@ -44,22 +44,22 @@ Set-AzActionGroup [-ShortName <String>] [-DisableGroup]
  [<CommonParameters>]
 ```
 
-## NОПИСАНИЕ
-Командлет **Set-AzActionGroup** создает новый или обновляет существующую группу действий
+## ОПИСАНИЕ
+Для создания или обновления **существующей** группы действий будет создан или обновлена существующая группа действий.
 
-## ИЛЛЮСТРИРУЮТ
+## ПРИМЕРЫ
 
-### Пример 1: создание группы действий
+### Пример 1. Создание группы действий
 ```
 PS C:\>$email1 = New-AzActionGroupReceiver -Name 'user1' -EmailReceiver -EmailAddress 'user1@example.com'
 PS C:\>$sms1 = New-AzActionGroupReceiver -Name 'user2' -SmsReceiver -CountryCode '1' -PhoneNumber '5555555555'
 PS C:\>Set-AzActionGroup -Name $actionGroupName -ResourceGroup $resourceGroupName -ShortName $shortName -Receiver $email1,$sms1
 ```
 
-Первые две команды создают два получателя.
-В последней команде создается группа действий, в том числе два получателя.
+В первых двух командах создаются два приемника.
+Конечная команда создает группу действий с двумя приемниками.
 
-## ПАРАМЕТРЫ
+## PARAMETERS
 
 ### -DefaultProfile
 Учетные данные, учетная запись, клиент и подписка, используемые для связи с Azure
@@ -77,7 +77,7 @@ Accept wildcard characters: False
 ```
 
 ### -DisableGroup
-Отключение группы действий.
+Отключает группу действий.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -118,7 +118,7 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -Name (имя)
+### -Name
 Имя группы действий.
 
 ```yaml
@@ -133,8 +133,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Получатель
-Список получателей группы действий.
+### -Receiver
+Список приемников группы действий.
 
 ```yaml
 Type: System.Collections.Generic.List`1[Microsoft.Azure.Commands.Insights.OutputClasses.PSActionGroupReceiverBase]
@@ -149,7 +149,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-"Группа ресурсов"
+Имя группы ресурсов
 
 ```yaml
 Type: System.String
@@ -164,7 +164,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceId
-Ресурс
+Ресурс i
 
 ```yaml
 Type: System.String
@@ -205,7 +205,7 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Тег
+### -Tag
 Теги ресурса группы действий
 
 ```yaml
@@ -233,7 +233,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
-Запрашивает подтверждение перед запуском командлета.
+Перед запуском cmdlet вам будет предложено подтвердить его.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -248,7 +248,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Показывает, что произойдет при запуске командлета. Командлет не выполняется.
+Показывает, что произойдет при запуске cmdlet. Этот cmdlet не будет выполниться.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -263,28 +263,28 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Этот командлет поддерживает общие параметры:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-of Variable,-out,-PipelineVariable,-Verbose, и-WarningAction. Дополнительные сведения можно найти в разделе [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+Этот cmdlet поддерживает общие параметры: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. Дополнительные сведения см. [в about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)
 
-## ВХОДНЫЕ данные
+## INPUTS
 
-### System. String
+### System.String
 
-### System. Collections. Generic. List ' 1 [[Microsoft. Azure. Commands. Insights. OutputClasses. PSActionGroupReceiverBase, Microsoft. Azure. PowerShell. командлеты. Monitor, версия = 1.0.0.0, культура = независимая, PublicKeyToken = NULL]]
+### System.Collections.Generic.List'1[[Microsoft.Azure.Commands.Insights.OutputClasses.PSActionGroupReceiverBase, Microsoft.Azure.PowerShell.Cmdlets.Monitor, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
 
-### System. Management. Automation. SwitchParameter
+### System.Management.Automation.SwitchParameter
 
-### System. Collections. Generic. IDictionary "2 [[System. String, System. Private. CoreLib, Version = 4.0.0.0, культура = Neutral, PublicKeyToken = 7cec85d7bea7798e], [System. String, System. Private. CoreLib, Version = 4.0.0.0, Culture = Neutral, PublicKeyToken = 7cec85d7bea7798e]]
+### System.Collections.Generic.IDictionary'2[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]
 
-### Microsoft. Azure. Commands. Insights. OutputClasses. PSActionGroupResource
+### Microsoft.Azure.Commands.Insights.OutputClasses.PSActionGroupResource
 
-## НАПРЯЖЕНИЕ
+## OUTPUTS
 
-### Microsoft. Azure. Commands. Insights. OutputClasses. PSActionGroupResource
+### Microsoft.Azure.Commands.Insights.OutputClasses.PSActionGroupResource
 
-## Пуск
+## ПРИМЕЧАНИЯ
 
-## ДОПОЛНИТЕЛЬНЫЕ ССЫЛКИ
+## СВЯЗАННЫЕ ССЫЛКИ
 
 [Get-AzActionGroup](./Get-AzActionGroup.md) 
- [Remove-AzActionGroup](./Remove-AzActionGroup.md) 
- [New-AzActionGroupReceiver](./AzureRmActionGroupReceiver.md)
+ [Remove-AzActionGroup](./Remove-AzActionGroup.md)
+

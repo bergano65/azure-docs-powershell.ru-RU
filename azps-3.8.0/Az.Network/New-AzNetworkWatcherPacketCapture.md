@@ -5,19 +5,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.network/ne
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/New-AzNetworkWatcherPacketCapture.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/New-AzNetworkWatcherPacketCapture.md
-ms.openlocfilehash: 348767f145c2dd407fc277549f89c44386c8a564
-ms.sourcegitcommit: 6a91b4c545350d316d3cf8c62f384478e3f3ba24
+ms.openlocfilehash: 9825562ad5f0bec36da0efd14f2e06b93a3ad588
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "94066250"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100408582"
 ---
 # New-AzNetworkWatcherPacketCapture
 
-## КРАТКИй обзор
-Создание нового ресурса захвата пакетов и запуск сеанса захвата пакетов на виртуальной машине.
+## SYNOPSIS
+Создание ресурса для захвата пакетов и начало сеанса захвата пакетов на VM-
 
-## Максимальное
+## СИНТАКСИС
 
 ### SetByResource (по умолчанию)
 ```
@@ -46,14 +46,14 @@ New-AzNetworkWatcherPacketCapture -Location <String> -PacketCaptureName <String>
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## NОПИСАНИЕ
-Командлет New-AzNetworkWatcherPacketCapture создает новый ресурс захвата пакетов и начинает сеанс захвата пакетов на виртуальной машине.
-Продолжительность сеансов захвата пакетов можно настроить с помощью ограничения по времени или ограничения на размер. Также можно настроить объем данных, захваченных для каждого пакета.
-Фильтры можно применять к текущему сеансу захвата пакетов, что позволяет настраивать тип записанных пакетов. Фильтры могут ограничивать пакеты на локальных и удаленных IP-адресах & диапазоны адресов, локальные и удаленные порты & диапазоны портов и протокол уровня сеанса для захвата. Фильтры дописываются с помощью композиции, и можно применять несколько фильтров для обеспечения детальности захвата.
+## ОПИСАНИЕ
+С New-AzNetworkWatcherPacketCapture создается новый ресурс для захвата пакетов и начинается сеанс захвата пакетов на VM-
+Продолжительность сеансов захвата пакетов можно настроить с помощью ограничения по времени или по размеру. Также можно настроить объем данных для каждого пакета.
+Фильтры можно применять к заданным сеансам захвата пакетов, что позволяет настраивать тип захватимого пакета. Фильтры могут ограничивать пакеты для локальных и удаленных IP-адресов & адресов, локальных и удаленных портов & диапазонов портов и протоколов сеанса. Фильтры можно составить, а затем применить несколько фильтров, чтобы получить детализацию снимка.
 
-## ИЛЛЮСТРИРУЮТ
+## ПРИМЕРЫ
 
-### Пример 1: создание захвата пакетов с несколькими фильтрами
+### Пример 1. Создание пакета с несколькими фильтрами
 ```
 $nw = Get-AzResource | Where {$_.ResourceType -eq "Microsoft.Network/networkWatchers" -and $_.Location -eq "WestCentralUS" } 
 $networkWatcher = Get-AzNetworkWatcher -Name $nw.Name -ResourceGroupName $nw.ResourceGroupName 
@@ -65,12 +65,12 @@ $filter2 = New-AzPacketCaptureFilterConfig -Protocol UDP
 New-AzNetworkWatcherPacketCapture -NetworkWatcher $networkWatcher -TargetVirtualMachineId $vm.Id -PacketCaptureName "PacketCaptureTest" -StorageAccountId $storageAccount.id -TimeLimitInSeconds 60 -Filter $filter1, $filter2
 ```
 
-В этом примере мы создаем запись пакета с именем "PacketCaptureTest" с несколькими фильтрами и ограничением по времени. После завершения сеанса он будет сохранен в указанной учетной записи хранения. Примечание: для создания захваченных пакетов на целевой виртуальной машине должно быть установлено расширение сетевого наблюдателя Azure.
+В этом примере мы создали пакет PacketCaptureTest с несколькими фильтрами и ограничением по времени. После завершения сеанса он будет сохранен в указанной учетной записи хранения. Примечание. Для создания снимков пакетов на целевой виртуальной машине необходимо установить расширение Azure Network Watcher.
 
-## ПАРАМЕТРЫ
+## PARAMETERS
 
 ### -AsJob
-Выполнить командлет в фоновом режиме
+Запуск cmdlet в фоновом режиме
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -85,7 +85,7 @@ Accept wildcard characters: False
 ```
 
 ### -BytesToCapturePerPacket
-Байты для захвата на один пакет.
+Bytes to capture per packet.
 
 ```yaml
 Type: System.Nullable`1[System.Int32]
@@ -114,8 +114,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Фильтр
-Фильтры для сеанса записи пакетов.
+### -Filter
+Фильтры для сеанса захвата пакетов.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSPacketCaptureFilter[]
@@ -145,7 +145,7 @@ Accept wildcard characters: False
 ```
 
 ### -Location
-Расположение наблюдателя сети.
+Расположение сетевого просмотра.
 
 ```yaml
 Type: System.String
@@ -160,7 +160,7 @@ Accept wildcard characters: False
 ```
 
 ### -NetworkWatcher
-Ресурс сетевого наблюдателя.
+Сетевой ресурс для просмотра.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSNetworkWatcher
@@ -175,7 +175,7 @@ Accept wildcard characters: False
 ```
 
 ### -NetworkWatcherName
-Имя наблюдателя сети.
+Имя сетевого смотритела.
 
 ```yaml
 Type: System.String
@@ -190,7 +190,7 @@ Accept wildcard characters: False
 ```
 
 ### -PacketCaptureName
-Имя захвата пакета.
+Имя захвата пакетов.
 
 ```yaml
 Type: System.String
@@ -205,7 +205,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-Имя группы ресурсов наблюдателя сети.
+Имя группы ресурсов сетевого watcher.
 
 ```yaml
 Type: System.String
@@ -220,7 +220,7 @@ Accept wildcard characters: False
 ```
 
 ### -StorageAccountId
-Идентификатор учетной записи хранения.
+ИД учетной записи хранения.
 
 ```yaml
 Type: System.String
@@ -250,7 +250,7 @@ Accept wildcard characters: False
 ```
 
 ### -TargetVirtualMachineId
-Целевой ИД виртуальной машины.
+ИД целевой виртуальной машины.
 
 ```yaml
 Type: System.String
@@ -265,7 +265,7 @@ Accept wildcard characters: False
 ```
 
 ### -TimeLimitInSeconds
-Ограничение по времени (в секундах).
+Ограничение по времени в секундах.
 
 ```yaml
 Type: System.Nullable`1[System.Int32]
@@ -280,7 +280,7 @@ Accept wildcard characters: False
 ```
 
 ### -TotalBytesPerSession
-Общее количество байтов на сеанс.
+Общее количествобайтов в сеансе.
 
 ```yaml
 Type: System.Nullable`1[System.Int32]
@@ -295,7 +295,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
-Запрашивает подтверждение перед запуском командлета.
+Перед запуском cmdlet вам будет предложено подтвердить его.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -310,8 +310,8 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Показывает, что произойдет при запуске командлета.
-Командлет не выполняется.
+Показывает, что произойдет при запуске cmdlet.
+Этот cmdlet не будет выполниться.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -326,24 +326,24 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Этот командлет поддерживает общие параметры:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-of Variable,-out,-PipelineVariable,-Verbose, и-WarningAction. Дополнительные сведения можно найти в разделе about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .
+Этот cmdlet поддерживает общие параметры: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. Дополнительные сведения см. в about_CommonParameters http://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## ВХОДНЫЕ данные
+## INPUTS
 
-### Microsoft. Azure. Commands. Network. Models. PSNetworkWatcher
+### Microsoft.Azure.Commands.Network.Models.PSNetworkWatcher
 
-### System. String
+### System.String
 
-### System. Nullable "1 [[System. Int32, System. Private. CoreLib, Version = 4.0.0.0, Culture = Neutral, PublicKeyToken = 7cec85d7bea7798e]]
+### System.Nullable'1[[System.Int32, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]
 
-## НАПРЯЖЕНИЕ
+## OUTPUTS
 
-### Microsoft. Azure. Commands. Network. Models. PSPacketCaptureResult
+### Microsoft.Azure.Commands.Network.Models.PSPacketCaptureResult
 
-## Пуск
-Ключевые слова: Azure, azurerm, ARM, Resource, менеджмент, руководитель, сеть, сеть, наблюдатель сети, пакет, захват, трафик 
+## ПРИМЕЧАНИЯ
+Ключевые слова: azure, azurerm, arm, resource, management, manager, network, network, networking, network watcher, packet, capture, traffic 
 
-## ДОПОЛНИТЕЛЬНЫЕ ССЫЛКИ
+## СВЯЗАННЫЕ ССЫЛКИ
 
 [New-AzNetworkWatcher](./New-AzNetworkWatcher.md)
 
@@ -367,7 +367,7 @@ Accept wildcard characters: False
 
 [Remove-AzNetworkWatcherPacketCapture](./Remove-AzNetworkWatcherPacketCapture.md)
 
-[Остановить-AzNetworkWatcherPacketCapture](./Stop-AzNetworkWatcherPacketCapture.md)
+[Stop-AzNetworkWatcherPacketCapture](./Stop-AzNetworkWatcherPacketCapture.md)
 
 [New-AzNetworkWatcherProtocolConfiguration](./New-AzNetworkWatcherProtocolConfiguration.md)
 
@@ -375,7 +375,7 @@ Accept wildcard characters: False
 
 [Test-AzNetworkWatcherConnectivity](./Test-AzNetworkWatcherConnectivity.md)
 
-[Остановить-AzNetworkWatcherConnectionMonitor](./Stop-AzNetworkWatcherConnectionMonitor.md)
+[Stop-AzNetworkWatcherConnectionMonitor](./Stop-AzNetworkWatcherConnectionMonitor.md)
 
 [Start-AzNetworkWatcherConnectionMonitor](./Start-AzNetworkWatcherConnectionMonitor.md)
 
@@ -395,8 +395,8 @@ Accept wildcard characters: False
 
 [Get-AzNetworkWatcherFlowLogStatus](./Get-AzNetworkWatcherFlowLogStatus.md)
 
-[Get-AzNetworkWatcherConnectionMonitorReport](./Get-AzNetworkWatcherConnectionMonitorReport)
+[Get-AzNetworkWatcherConnectionMonitorReport](./Get-AzNetworkWatcherConnectionMonitorReport.md)
 
-[Get-AzNetworkWatcherConnectionMonitor](./Get-AzNetworkWatcherConnectionMonitor)
+[Get-AzNetworkWatcherConnectionMonitor](./Get-AzNetworkWatcherConnectionMonitor.md)
 
 

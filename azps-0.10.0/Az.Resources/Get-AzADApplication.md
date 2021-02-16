@@ -6,19 +6,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.resources/
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/Azs-tzl/src/Resources/Resources/help/Get-AzADApplication.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/Azs-tzl/src/Resources/Resources/help/Get-AzADApplication.md
-ms.openlocfilehash: 5f019f413e7ae0efa2013412499fcf34bd94a248
-ms.sourcegitcommit: 4c61442a2df1cee633ce93cad9f6bc793803baa2
+ms.openlocfilehash: a4d1831114db40295e30b30e0fb12621caff2c89
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "93910972"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100398858"
 ---
 # Get-AzADApplication
 
-## КРАТКИй обзор
+## SYNOPSIS
 Список существующих приложений Azure Active Directory.
 
-## Максимальное
+## СИНТАКСИС
 
 ### EmptyParameterSet (по умолчанию)
 ```
@@ -56,49 +56,49 @@ Get-AzADApplication -IdentifierUri <String> [-DefaultProfile <IAzureContextConta
  [-IncludeTotalCount] [-Skip <UInt64>] [-First <UInt64>] [<CommonParameters>]
 ```
 
-## NОПИСАНИЕ
+## ОПИСАНИЕ
 Список существующих приложений Azure Active Directory.
-Поиск приложения можно выполнить с помощью ObjectId, ApplicationId, IdentifierUri или DisplayName.
-Если параметр не указан, выводятся все приложения, набираемые в клиенте.
+Для подметки приложений можно использовать ObjectId, ApplicationId, IdentifierUri или DisplayName.
+Если параметр не задан, извлекает все приложения в клиенте.
 
-## ИЛЛЮСТРИРУЮТ
+## ПРИМЕРЫ
 
-### Пример 1: список всех приложений
+### Пример 1. Список всех приложений
 
 ```
 PS C:\> Get-AzADApplication
 ```
 
-Список всех приложений в клиенте.
+Список всех приложений, которые находятся в клиенте.
 
-### Пример 2. Перечисление приложений с помощью разбиения по страницам
+### Пример 2. Список приложений с использованием разведки
 
 ```
 PS C:\> Get-AzADApplication -First 100
 ```
 
-Список первых приложений 100 в клиенте.
+Список первых 100 приложений для клиента.
 
-### Пример 3: получение идентификатора URI для приложения
+### Пример 3. Получение приложения по идентификатору URI
 
 ```
 PS C:\> Get-AzADApplication -IdentifierUri http://mySecretApp1
 ```
 
-Получает приложение с URI идентификатора как " http://mySecretApp1 ".
+Возвращает приложение с идентификатором uri в качестве " http://mySecretApp1 " .
 
-### Пример 4: получение приложения по идентификатору объекта
+### Пример 4. Получение приложения по ид объекта
 
 ```
 PS C:\> Get-AzADApplication -ObjectId 39e64ec6-569b-4030-8e1c-c3c519a05d69
 ```
 
-Возвращает приложение с идентификатором объекта "39e64ec6-569b-4030-8e1c-c3c519a05d69".
+Получает приложение с ид объекта '39e64ec6-569b-4030-8e1c-c3c519a05d69'.
 
-## ПАРАМЕТРЫ
+## PARAMETERS
 
 ### -ApplicationId
-Идентификатор приложения для извлекаемого приложения.
+ИД приложения, извлекаемого из приложения.
 
 ```yaml
 Type: System.Guid
@@ -128,7 +128,7 @@ Accept wildcard characters: False
 ```
 
 ### -DisplayName
-Отображаемое имя приложения.
+Отображаемого имени приложения.
 
 ```yaml
 Type: System.String
@@ -143,7 +143,7 @@ Accept wildcard characters: False
 ```
 
 ### -DisplayNameStartWith
-Получение всех приложений, начинающихся с отображаемым именем.
+Получить все приложения, начиная с отображаемом имени.
 
 ```yaml
 Type: System.String
@@ -173,7 +173,7 @@ Accept wildcard characters: False
 ```
 
 ### -IdentifierUri
-Уникальный идентификатор URI извлекаемого приложения.
+Уникальный идентификатор Uri приложения, извлекаемого из приложения.
 
 ```yaml
 Type: System.String
@@ -188,7 +188,7 @@ Accept wildcard characters: False
 ```
 
 ### -IncludeTotalCount
-Показывает количество объектов в наборе данных. В настоящее время этот параметр не выполняет никаких действий.
+Отчет о количестве объектов в наборе данных. В настоящее время этот параметр не имеет никакого отношения.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -203,7 +203,7 @@ Accept wildcard characters: False
 ```
 
 ### -ObjectId
-Идентификатор объекта извлекаемого приложения.
+ИД объекта приложения, извлекаемого из приложения.
 
 ```yaml
 Type: System.Guid
@@ -218,7 +218,7 @@ Accept wildcard characters: False
 ```
 
 ### -Skip
-Пропускает первые N объектов, а затем возвращает оставшиеся объекты.
+Игнорирует первые N объектов, а затем возвращает оставшиеся объекты.
 
 ```yaml
 Type: System.UInt64
@@ -233,21 +233,21 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Этот командлет поддерживает общие параметры:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-of Variable,-out,-PipelineVariable,-Verbose, и-WarningAction. Дополнительные сведения можно найти в разделе about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .
+Этот cmdlet поддерживает общие параметры: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. Дополнительные сведения см. в about_CommonParameters http://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## ВХОДНЫЕ данные
+## INPUTS
 
-### System. GUID
+### System.Guid
 
-### System. String
+### System.String
 
-## НАПРЯЖЕНИЕ
+## OUTPUTS
 
-### Microsoft.Azure.Graph.RBAC.Version1_6. ActiveDirectory. PSADApplication
+### Microsoft.Azure.Graph.RBAC.Version1_6.ActiveDirectory.PSADApplication
 
-## Пуск
+## ПРИМЕЧАНИЯ
 
-## ДОПОЛНИТЕЛЬНЫЕ ССЫЛКИ
+## СВЯЗАННЫЕ ССЫЛКИ
 
 [Remove-AzADAppCredential](./Remove-AzADAppCredential.md)
 
@@ -257,7 +257,6 @@ Accept wildcard characters: False
 
 [Remove-AzADApplication](./Remove-AzADApplication.md)
 
-[Set-AzADApplication](./Set-AzADApplication.md)
 
 [New-AzADApplication](./New-AzADApplication.md)
 

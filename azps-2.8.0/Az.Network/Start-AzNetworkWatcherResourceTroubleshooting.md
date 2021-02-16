@@ -5,19 +5,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.network/st
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Start-AzNetworkWatcherResourceTroubleshooting.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Start-AzNetworkWatcherResourceTroubleshooting.md
-ms.openlocfilehash: 5399c97f076f1402b20b91798d2db215d00af8b3
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: 5c11eecb00aa97fc90aecc770a77285f77be988b
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93904330"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100408480"
 ---
 # Start-AzNetworkWatcherResourceTroubleshooting
 
-## КРАТКИй обзор
-Запуск устранения неполадок в сетевом ресурсе в Azure.
+## SYNOPSIS
+Начало устранения неполадок сетевого ресурса в Azure.
 
-## Максимальное
+## СИНТАКСИС
 
 ### SetByResource (по умолчанию)
 ```
@@ -38,12 +38,12 @@ Start-AzNetworkWatcherResourceTroubleshooting -Location <String> -TargetResource
  -StoragePath <String> [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## NОПИСАНИЕ
-Командлет Start-AzNetworkWatcherResourceTroubleshooting запускает устранение неполадок для сетевых ресурсов в Azure и возвращает сведения о возможных проблемах и снижении риска. В настоящее время поддерживаются шлюзы и соединения виртуальных сетей.
+## ОПИСАНИЕ
+Новый Start-AzNetworkWatcherResourceTroubleshooting запускает устранение неполадок сетевого ресурса в Azure и возвращает сведения о потенциальных проблемах и их устранении. В настоящее время поддерживаются виртуальные сетевые шлюзы и подключения.
 
-## ИЛЛЮСТРИРУЮТ
+## ПРИМЕРЫ
 
-### Пример 1: запуск устранения неполадок на шлюзе виртуальной сети
+### Пример 1. Начало устранения неполадок виртуального сетевого шлюза
 ```
 $nw = Get-AzResource | Where {$_.ResourceType -eq "Microsoft.Network/networkWatchers" -and $_.Location -eq "WestCentralUS" } 
 $networkWatcher = Get-AzNetworkWatcher -Name $nw.Name -ResourceGroupName $nw.ResourceGroupName 
@@ -55,9 +55,9 @@ $storagePath = 'https://{storageAccountName}.blob.core.windows.net/troubleshoot'
 Start-AzNetworkWatcherResourceTroubleshooting -NetworkWatcher $networkWatcher -TargetResourceId $target -StorageId $storageId -StoragePath $storagePath
 ```
 
-В приведенном выше примере начинается устранение неполадок шлюза виртуальной сети. Выполнение операции может занять несколько минут.
+В примере выше начнется устранение неполадок виртуального сетевого шлюза. Операция может занять несколько минут.
 
-## ПАРАМЕТРЫ
+## PARAMETERS
 
 ### -DefaultProfile
 Учетные данные, учетная запись, клиент и подписка, используемые для связи с Azure.
@@ -75,7 +75,7 @@ Accept wildcard characters: False
 ```
 
 ### -Location
-Расположение наблюдателя сети.
+Расположение сетевого просмотра.
 
 ```yaml
 Type: System.String
@@ -90,7 +90,7 @@ Accept wildcard characters: False
 ```
 
 ### -NetworkWatcher
-Ресурс сетевого наблюдателя.
+Сетевой ресурс для просмотра.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSNetworkWatcher
@@ -105,7 +105,7 @@ Accept wildcard characters: False
 ```
 
 ### -NetworkWatcherName
-Имя наблюдателя сети.
+Имя сетевого смотритела.
 
 ```yaml
 Type: System.String
@@ -120,7 +120,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-Имя группы ресурсов наблюдателя сети.
+Имя группы ресурсов сетевого watcher.
 
 ```yaml
 Type: System.String
@@ -135,7 +135,7 @@ Accept wildcard characters: False
 ```
 
 ### -StorageId
-Идентификатор хранилища.
+ИД хранилища.
 
 ```yaml
 Type: System.String
@@ -165,7 +165,7 @@ Accept wildcard characters: False
 ```
 
 ### -TargetResourceId
-Указывает идентификатор ресурса для устранения неполадок. Пример формата: "/Subscriptions/$ {subscriptionId}/resourceGroups/$ {resourceGroupName}/providers/Microsoft.Network/connections/$ {connectionName}"
+Определяет его ИД, который нужно устранить. Пример формата: "/subscriptions/${subscriptionId}/resourceGroups/${resourceGroupName}/providers/Microsoft.Network/connections/${connectionName}"
 
 ```yaml
 Type: System.String
@@ -180,22 +180,22 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Этот командлет поддерживает общие параметры:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-of Variable,-out,-PipelineVariable,-Verbose, и-WarningAction. Дополнительные сведения можно найти в разделе about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
+Этот cmdlet поддерживает общие параметры: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. Дополнительные сведения см. в about_CommonParameters https://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## ВХОДНЫЕ данные
+## INPUTS
 
-### Microsoft. Azure. Commands. Network. Models. PSNetworkWatcher
+### Microsoft.Azure.Commands.Network.Models.PSNetworkWatcher
 
-### System. String
+### System.String
 
-## НАПРЯЖЕНИЕ
+## OUTPUTS
 
-### Microsoft. Azure. Commands. Network. Models. PSTroubleshootingResult
+### Microsoft.Azure.Commands.Network.Models.PSTroubleshootingResult
 
-## Пуск
-Ключевые слова: Azure, azurerm, ARM, Resource, менеджмент, руководитель, сеть, сеть, наблюдатель сети, устранение неполадок, VPN, подключение
+## ПРИМЕЧАНИЯ
+Ключевые слова: azure, azurerm, arm, resource, management, manager, network, network, networking, network watcher, troubleshoot, VPN, connection
 
-## ДОПОЛНИТЕЛЬНЫЕ ССЫЛКИ
+## СВЯЗАННЫЕ ССЫЛКИ
 
 [New-AzNetworkWatcher](./New-AzNetworkWatcher.md)
 
@@ -219,7 +219,7 @@ Accept wildcard characters: False
 
 [Remove-AzNetworkWatcherPacketCapture](./Remove-AzNetworkWatcherPacketCapture.md)
 
-[Остановить-AzNetworkWatcherPacketCapture](./Stop-AzNetworkWatcherPacketCapture.md)
+[Stop-AzNetworkWatcherPacketCapture](./Stop-AzNetworkWatcherPacketCapture.md)
 
 [New-AzNetworkWatcherProtocolConfiguration](./New-AzNetworkWatcherProtocolConfiguration.md)
 
@@ -227,7 +227,7 @@ Accept wildcard characters: False
 
 [Test-AzNetworkWatcherConnectivity](./Test-AzNetworkWatcherConnectivity.md)
 
-[Остановить-AzNetworkWatcherConnectionMonitor](./Stop-AzNetworkWatcherConnectionMonitor.md)
+[Stop-AzNetworkWatcherConnectionMonitor](./Stop-AzNetworkWatcherConnectionMonitor.md)
 
 [Start-AzNetworkWatcherConnectionMonitor](./Start-AzNetworkWatcherConnectionMonitor.md)
 
@@ -247,6 +247,6 @@ Accept wildcard characters: False
 
 [Get-AzNetworkWatcherFlowLogStatus](./Get-AzNetworkWatcherFlowLogStatus.md)
 
-[Get-AzNetworkWatcherConnectionMonitorReport](./Get-AzNetworkWatcherConnectionMonitorReport)
+[Get-AzNetworkWatcherConnectionMonitorReport](./Get-AzNetworkWatcherConnectionMonitorReport.md)
 
-[Get-AzNetworkWatcherConnectionMonitor](./Get-AzNetworkWatcherConnectionMonitor)
+[Get-AzNetworkWatcherConnectionMonitor](./Get-AzNetworkWatcherConnectionMonitor.md)
