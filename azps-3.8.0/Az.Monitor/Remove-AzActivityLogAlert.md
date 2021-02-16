@@ -6,19 +6,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.monitor/re
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/Remove-AzActivityLogAlert.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/Remove-AzActivityLogAlert.md
-ms.openlocfilehash: 5a0841a3cb2cd01ebb7f44b41e89d0b30404dfd0
-ms.sourcegitcommit: 6a91b4c545350d316d3cf8c62f384478e3f3ba24
+ms.openlocfilehash: 89e0efa4f989d84b482c08df5c6f8d1bcd4cb427
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "94064851"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100411931"
 ---
 # Remove-AzActivityLogAlert
 
-## КРАТКИй обзор
-Удаляет оповещение журнала активности.
+## SYNOPSIS
+Удаляет оповещение журнала действий.
 
-## Максимальное
+## СИНТАКСИС
 
 ### RemoveByNameAndResourceGroup
 ```
@@ -38,14 +38,14 @@ Remove-AzActivityLogAlert -ResourceId <String> [-DefaultProfile <IAzureContextCo
  [<CommonParameters>]
 ```
 
-## NОПИСАНИЕ
-Командлет **Remove-AzActivityLogAlert** удаляет предупреждение журнала активности.
-Этот командлет реализует шаблон ShouldProcess, т. е. может запросить подтверждение от пользователя, прежде чем действительно обновить ресурс.
-Этот командлет реализует шаблон ShouldProcess, т. е. может запросить подтверждение от пользователя, прежде чем действительно создать, изменить или удалить ресурс.
+## ОПИСАНИЕ
+Для удаления оповещений журнала действий удаляется **cmdlet Remove-AzActivityLogAlert.**
+Этот cmdlet реализует шаблон ShouldProcess, то есть может запросить подтверждение у пользователя перед фактическим исправлением ресурса.
+Этот cmdlet реализует шаблон ShouldProcess, то есть может запросить подтверждение у пользователя перед созданием, изменением или удалением ресурса.
 
-## ИЛЛЮСТРИРУЮТ
+## ПРИМЕРЫ
 
-### Пример 1: Удаление оповещения журнала действий
+### Пример 1. Удаление оповещения журнала действий
 ```
 PS C:\>Remove-AzActivityLogAlert -ResourceGroup "Default-Web-CentralUS" -Name "myalert"
 RequestId                                                                                                    StatusCode
@@ -53,9 +53,9 @@ RequestId                                                                       
 2c6c159b-0e73-4a01-a67b-c32c1a0008a3                                                                                 OK
 ```
 
-Удаляет предупреждение журнала активности, используя имя и имя группы ресурсов в качестве входных данных.
+Удаляет оповещение журнала действий с использованием имени и названия группы ресурсов в качестве входных данных.
 
-### Пример 2: Удаление оповещения журнала активности с помощью PSActivityLogAlertResource в качестве входных данных
+### Пример 2. Удаление оповещения журнала действий с помощью psActivityLogAlertResource в качестве входных данных
 ```
 PS C:\>Get-AzActivityLogAlert -ResourceGroup "Default-activityLogAlerts" -Name "alert1" | Remove-AzActivityLogAlert 
 RequestId                                                                                                    StatusCode
@@ -63,16 +63,16 @@ RequestId                                                                       
 5c371547-80b0-4185-9b95-700b129de9d4                                                                                 OK
 ```
 
-Удаляет предупреждение журнала активности, используя PSActivityLogAlertResource в качестве входных данных.
+Удаляет оповещение журнала действий с помощью psActivityLogAlertResource.
 
-### Пример 3: удаление ActivityLogAlert с помощью параметра ResourceId
+### Пример 3. Удалите ActivityLogAlert с помощью параметра ResourceId
 ```
 PS C:\>Get-AzResource -ResourceGroupName "myResourceGroup" -Name "myLogAlert" | Remove-AzActivityLogAlert
 ```
 
-Эта команда удаляет ActivityLogAlert с помощью параметра ResourceId из канала.
+Эта команда удаляет activityLogAlert, используя параметр ResourceId из трубы.
 
-## ПАРАМЕТРЫ
+## PARAMETERS
 
 ### -DefaultProfile
 Учетные данные, учетная запись, клиент и подписка, используемые для связи с Azure
@@ -90,7 +90,7 @@ Accept wildcard characters: False
 ```
 
 ### -InputObject
-Задает свойство Tags (Теги InputObject) для вызова, чтобы извлечь требуемое имя и свойства имени группы ресурсов.
+Задает свойство "Теги InputObject" для извлечения требуемого имени и свойств имени группы ресурсов.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Insights.OutputClasses.PSActivityLogAlertResource
@@ -104,8 +104,8 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -Name (имя)
-Имя оповещения журнала активности.
+### -Name
+Имя оповещения журнала действий.
 
 ```yaml
 Type: System.String
@@ -120,7 +120,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-Имя группы ресурсов, в которой находится ресурс оповещения.
+Имя группы ресурсов, в которой находится оповещение.
 
 ```yaml
 Type: System.String
@@ -135,7 +135,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceId
-Задает свойство Tags (Теги) для вызова, чтобы извлечь требуемое имя, свойства имени группы ресурсов.
+Задает свойство "Теги ResourceId" звонка для извлечения требуемого имени (свойства имени группы ресурсов).
 
 ```yaml
 Type: System.String
@@ -150,7 +150,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
-Запрашивает подтверждение перед запуском командлета.
+Перед запуском cmdlet вам будет предложено подтвердить его.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -165,7 +165,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Показывает, что произойдет при запуске командлета. Командлет не выполняется.
+Показывает, что произойдет при запуске cmdlet. Этот cmdlet не будет выполниться.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -180,21 +180,21 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Этот командлет поддерживает общие параметры:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-of Variable,-out,-PipelineVariable,-Verbose, и-WarningAction. Дополнительные сведения можно найти в разделе [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+Этот cmdlet поддерживает общие параметры: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. Дополнительные сведения см. [в about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)
 
-## ВХОДНЫЕ данные
+## INPUTS
 
-### System. String
+### System.String
 
-### Microsoft. Azure. Commands. Insights. OutputClasses. PSActivityLogAlertResource
+### Microsoft.Azure.Commands.Insights.OutputClasses.PSActivityLogAlertResource
 
-## НАПРЯЖЕНИЕ
+## OUTPUTS
 
-### Microsoft. Azure. AzureOperationResponse
+### Microsoft.Azure.AzureOperationResponse
 
-## Пуск
+## ПРИМЕЧАНИЯ
 
-## ДОПОЛНИТЕЛЬНЫЕ ССЫЛКИ
+## СВЯЗАННЫЕ ССЫЛКИ
 
 [Enable-AzActivityLogAlert](./Enable-AzActivityLogAlert.md)
 
@@ -206,5 +206,5 @@ Accept wildcard characters: False
 
 [New-AzActionGroup](./New-AzActionGroup.md)
 
-[New-AzActivityLogAlertCondition](./Get-AzActivityLogAlertCondition.md)
+
 
