@@ -5,19 +5,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.network/ge
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Get-AzNetworkWatcherFlowLogStatus.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Get-AzNetworkWatcherFlowLogStatus.md
-ms.openlocfilehash: cdc97ff5e528e58aa088950f5272e7689f35b10e
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: 8a2bde41d0e7e09acc1ad10a9901f0cf26334d02
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93730523"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100400507"
 ---
 # Get-AzNetworkWatcherFlowLogStatus
 
-## КРАТКИй обзор
-Возвращает состояние регистрации потока для ресурса.
+## SYNOPSIS
+Возвращает состояние ведения журнала потока для ресурса.
 
-## Максимальное
+## СИНТАКСИС
 
 ### SetByResource (по умолчанию)
 ```
@@ -37,12 +37,14 @@ Get-AzNetworkWatcherFlowLogStatus -Location <String> -TargetResourceId <String> 
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## NОПИСАНИЕ
-Командлет Get-AzNetworkWatcherFlowLogStatus возвращает состояние регистрации потока на ресурсе. Состояние включает, включено ли ведение журнала потока для указанного ресурса, настроенной учетной записи хранения для отправки журналов и политики хранения для журналов. Сетевые группы безопасности поддерживаются для ведения журнала потока. 
+## ОПИСАНИЕ
+Этот Get-AzNetworkWatcherFlowLogStatus возвращает состояние ведения журнала потока для ресурса.
+Состояние включает в себя, включено ли ведение журнала потоков для предоставленного ресурса, настроенная учетная запись хранения для отправки журналов и политика хранения журналов.
+В настоящее время сетевые группы безопасности поддерживают ведение журнала потоков.
 
-## ИЛЛЮСТРИРУЮТ
+## ПРИМЕРЫ
 
-### Пример 1: получение состояния ведения журнала потока для указанного NSG
+### Пример 1. Просмотр состояния ведения журнала потока для указанного NSG
 ```
 PS C:\> $NW = Get-AzNetworkWatcher -ResourceGroupName NetworkWatcherRg -Name NetworkWatcher_westcentralus
 PS C:\> $nsg = Get-AzNetworkSecurityGroup -ResourceGroupName NSGRG -Name appNSG
@@ -64,9 +66,9 @@ Properties       : {
                    }
 ```
 
-В этом примере мы получаем состояние ведения журнала потока для группы безопасности сети. В указанном NSG включено ведение журнала потока, формат по умолчанию, а политика хранения не задана.
+В этом примере мы получаем состояние ведения журнала потока для группы безопасности сети. В указанной NSG включено ведение журнала потоков, формат по умолчанию, а политика хранения не настроена.
 
-### Пример 2: получение состояния ведения журнала потока и аналитики трафика для указанного NSG
+### Пример 2. Просмотр состояния журнала потока и аналитики трафика для указанного NSG
 ```
 PS C:\> $NW = Get-AzNetworkWatcher -ResourceGroupName NetworkWatcherRg -Name NetworkWatcher_westcentralus
 PS C:\> $nsg = Get-AzNetworkSecurityGroup -ResourceGroupName NSGRG -Name appNSG
@@ -95,12 +97,12 @@ FlowAnalyticsConfiguration : {
           }
 ```
 
-В этом примере мы получаем журнал потока и состояние аналитики трафика для группы безопасности сети. В указанном NSG включено ведение журнала потока и включена аналитическая трафик, формат по умолчанию и политика хранения.
+В этом примере мы получаем данные о состоянии ведения журнала потоков и аналитики трафика для группы безопасности сети. В указанном формате NSG включено ведение журнала потоков и включена аналитика трафика, формат по умолчанию, а политика хранения не настроена.
 
-## ПАРАМЕТРЫ
+## PARAMETERS
 
 ### -AsJob
-Выполнить командлет в фоновом режиме
+Запуск cmdlet в фоновом режиме
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -130,7 +132,7 @@ Accept wildcard characters: False
 ```
 
 ### -Location
-Расположение наблюдателя сети.
+Расположение сетевого просмотра.
 
 ```yaml
 Type: System.String
@@ -145,7 +147,7 @@ Accept wildcard characters: False
 ```
 
 ### -NetworkWatcher
-Ресурс сетевого наблюдателя.
+Сетевой ресурс для просмотра.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSNetworkWatcher
@@ -160,7 +162,7 @@ Accept wildcard characters: False
 ```
 
 ### -NetworkWatcherName
-Имя наблюдателя сети.
+Имя сетевого смотритела.
 
 ```yaml
 Type: System.String
@@ -175,7 +177,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-Имя группы ресурсов наблюдателя сети.
+Имя группы ресурсов сетевого watcher.
 
 ```yaml
 Type: System.String
@@ -190,7 +192,7 @@ Accept wildcard characters: False
 ```
 
 ### -TargetResourceId
-Идентификатор целевого ресурса.
+ИД целевого ресурса.
 
 ```yaml
 Type: System.String
@@ -205,22 +207,22 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Этот командлет поддерживает общие параметры:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-of Variable,-out,-PipelineVariable,-Verbose, и-WarningAction. Дополнительные сведения можно найти в разделе [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+Этот cmdlet поддерживает общие параметры: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. Дополнительные сведения см. [в about_CommonParameters.](https://go.microsoft.com/fwlink/?LinkID=113216)
 
-## ВХОДНЫЕ данные
+## INPUTS
 
-### Microsoft. Azure. Commands. Network. Models. PSNetworkWatcher
+### Microsoft.Azure.Commands.Network.Models.PSNetworkWatcher
 
-### System. String
+### System.String
 
-## НАПРЯЖЕНИЕ
+## OUTPUTS
 
-### Microsoft. Azure. Commands. Network. Models. PSFlowLog
+### Microsoft.Azure.Commands.Network.Models.PSFlowLog
 
-## Пуск
-Ключевые слова: Azure, azurerm, ARM, Resource, менеджмент, руководитель, сеть, сеть, наблюдатель, поток, журналы, flowlog, ведение журнала
+## ПРИМЕЧАНИЯ
+Ключевые слова: azure, azurerm, arm, resource, management, manager, network, networking, networking, watcher, flow, logs, flowlog, logging
 
-## ДОПОЛНИТЕЛЬНЫЕ ССЫЛКИ
+## СВЯЗАННЫЕ ССЫЛКИ
 
 [New-AzNetworkWatcher](./New-AzNetworkWatcher.md)
 
@@ -244,7 +246,7 @@ Accept wildcard characters: False
 
 [Remove-AzNetworkWatcherPacketCapture](./Remove-AzNetworkWatcherPacketCapture.md)
 
-[Остановить-AzNetworkWatcherPacketCapture](./Stop-AzNetworkWatcherPacketCapture.md)
+[Stop-AzNetworkWatcherPacketCapture](./Stop-AzNetworkWatcherPacketCapture.md)
 
 [New-AzNetworkWatcherProtocolConfiguration](./New-AzNetworkWatcherProtocolConfiguration.md)
 
@@ -252,7 +254,7 @@ Accept wildcard characters: False
 
 [Test-AzNetworkWatcherConnectivity](./Test-AzNetworkWatcherConnectivity.md)
 
-[Остановить-AzNetworkWatcherConnectionMonitor](./Stop-AzNetworkWatcherConnectionMonitor.md)
+[Stop-AzNetworkWatcherConnectionMonitor](./Stop-AzNetworkWatcherConnectionMonitor.md)
 
 [Start-AzNetworkWatcherConnectionMonitor](./Start-AzNetworkWatcherConnectionMonitor.md)
 
@@ -272,6 +274,6 @@ Accept wildcard characters: False
 
 [Get-AzNetworkWatcherFlowLogStatus](./Get-AzNetworkWatcherFlowLogStatus.md)
 
-[Get-AzNetworkWatcherConnectionMonitorReport](./Get-AzNetworkWatcherConnectionMonitorReport)
+[Get-AzNetworkWatcherConnectionMonitorReport](./Get-AzNetworkWatcherConnectionMonitorReport.md)
 
-[Get-AzNetworkWatcherConnectionMonitor](./Get-AzNetworkWatcherConnectionMonitor)
+[Get-AzNetworkWatcherConnectionMonitor](./Get-AzNetworkWatcherConnectionMonitor.md)
