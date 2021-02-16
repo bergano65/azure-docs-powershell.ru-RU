@@ -6,19 +6,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.sql/start-
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Sql/Sql/help/Start-AzSqlDatabaseExecuteIndexRecommendation.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Sql/Sql/help/Start-AzSqlDatabaseExecuteIndexRecommendation.md
-ms.openlocfilehash: c432b3a23c4495abebda013b5dd3943132827a30
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: 1ab1e223ec173cf5727011956f52979026159594
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93906906"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100402258"
 ---
 # Start-AzSqlDatabaseExecuteIndexRecommendation
 
-## КРАТКИй обзор
-Запускает рабочий процесс, который запускает рекомендованную операцию с индексами.
+## SYNOPSIS
+Запуск рабочего процесса, в который выполняется рекомендуемая операция индексации.
 
-## Максимальное
+## СИНТАКСИС
 
 ```
 Start-AzSqlDatabaseExecuteIndexRecommendation -ServerName <String> -DatabaseName <String>
@@ -26,22 +26,22 @@ Start-AzSqlDatabaseExecuteIndexRecommendation -ServerName <String> -DatabaseName
  [<CommonParameters>]
 ```
 
-## NОПИСАНИЕ
-Командлет **Start-AzSqlDatabaseExecuteIndexRecommendation** запускает рабочий процесс, который запускает рекомендованную операцию с индексами для базы данных SQL Azure.
+## ОПИСАНИЕ
+Для запуска рабочего процесса, который выполняет рекомендуемую операцию индексирования для базы данных Azure SQL, запускается рабочий процесс **Start-AzSqlDatabaseExecuteIndexRecommendation.**
 
-## ИЛЛЮСТРИРУЮТ
+## ПРИМЕРЫ
 
-### Пример 1: выполнение рекомендации по индексу
+### Пример 1. Запуск рекомендации по индексу
 ```
 PS C:\>Start-AzSqlDatabaseExecuteIndexRecommendation -ResourceGroup "ResourceGroup01" -ServerName "Server01" -DatabaseName "Database01" -IndexRecommendationName "INDEX_NAME"
 ```
 
-Эта команда запускает рекомендации по индексу.
+Эта команда выполняет рекомендации по индексу.
 
-## ПАРАМЕТРЫ
+## PARAMETERS
 
 ### -DatabaseName
-Указывает имя базы данных, для которой этот командлет запускает рабочий процесс.
+Указывает имя базы данных, для которой запускается рабочий процесс этим cmdlet.
 
 ```yaml
 Type: System.String
@@ -71,7 +71,7 @@ Accept wildcard characters: False
 ```
 
 ### -IndexRecommendationName
-Указывает имя рекомендации по индексированию, которое будет запущено этим командлетом.
+Указывает имя рекомендации по индексу, которую выполняет этот cmdlet.
 
 ```yaml
 Type: System.String
@@ -86,7 +86,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-Указывает имя группы ресурсов, которой назначен сервер.
+Имя группы ресурсов, которой назначен сервер.
 
 ```yaml
 Type: System.String
@@ -100,8 +100,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -ИмяСервера
-Указывает сервер, на котором размещена база данных, для которой этот командлет запускает рабочий процесс.
+### -ServerName
+Сервер, на котором размещена база данных, для которой запускается рабочий процесс.
 
 ```yaml
 Type: System.String
@@ -116,24 +116,23 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Этот командлет поддерживает общие параметры:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-of Variable,-out,-PipelineVariable,-Verbose, и-WarningAction. Дополнительные сведения можно найти в разделе [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+Этот cmdlet поддерживает общие параметры: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. Дополнительные сведения см. [в about_CommonParameters.](https://go.microsoft.com/fwlink/?LinkID=113216)
 
-## ВХОДНЫЕ данные
+## INPUTS
 
-### System. String
+### System.String
 
-## НАПРЯЖЕНИЕ
+## OUTPUTS
 
-### Microsoft. Azure. Commands. SQL. Model. IndexRecommendation
+### Microsoft.Azure.Commands.Sql.Model.IndexRecommendation
 
-## Пуск
+## ПРИМЕЧАНИЯ
 
-## ДОПОЛНИТЕЛЬНЫЕ ССЫЛКИ
+## СВЯЗАННЫЕ ССЫЛКИ
 
-[Get-AzSqlDatabaseIndexRecommendations](./Get-AzSqlDatabaseIndexRecommendations.md)
 
-[Остановить-AzSqlDatabaseExecuteIndexRecommendation](./Stop-AzSqlDatabaseExecuteIndexRecommendation.md)
+[Stop-AzSqlDatabaseExecuteIndexRecommendation](./Stop-AzSqlDatabaseExecuteIndexRecommendation.md)
 
-[Документация по базам данных SQL](https://docs.microsoft.com/azure/sql-database/)
+[SQL базы данных](https://docs.microsoft.com/azure/sql-database/)
 
 
