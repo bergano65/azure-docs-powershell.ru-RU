@@ -1,59 +1,59 @@
 ---
 external help file: Microsoft.Azure.PowerShell.Cmdlets.ApiManagement.ServiceManagement.dll-Help.xml
 Module Name: Az.ApiManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/az.apimanagement/remove-azapimanagementapirelease
+online version: https://docs.microsoft.com/en-us/powershell/module/az.apimanagement/update-azapimanagementapirelease
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/Remove-AzApiManagementApiRelease.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/Remove-AzApiManagementApiRelease.md
-ms.openlocfilehash: 9673df14bdd0f5b7d0e946170a155231e8c4e751
-ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/Update-AzApiManagementApiRelease.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/Update-AzApiManagementApiRelease.md
+ms.openlocfilehash: 99ec1234eea582fb91f2722032cb23c27e86b878
+ms.sourcegitcommit: c05d3d669b5631e526841f47b22513d78495350b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100412662"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "100233764"
 ---
-# Remove-AzApiManagementApiRelease
+# Update-AzApiManagementApiRelease
 
 ## SYNOPSIS
-Удаление определенного выпуска API
+Обновляет определенный выпуск API.
 
 ## СИНТАКСИС
 
-### ByApiReleaseId (по умолчанию)
+### ExpandedParameter (по умолчанию)
 ```
-Remove-AzApiManagementApiRelease -Context <PsApiManagementContext> -ApiId <String> -ReleaseId <String>
- [-PassThru] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+Update-AzApiManagementApiRelease -Context <PsApiManagementContext> -ReleaseId <String> -ApiId <String>
+ [-Note <String>] [-PassThru] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
 ```
 
 ### ByInputObject
 ```
-Remove-AzApiManagementApiRelease -InputObject <PsApiManagementApiRelease> [-PassThru]
+Update-AzApiManagementApiRelease [-Note <String>] -InputObject <PsApiManagementApiRelease> [-PassThru]
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## ОПИСАНИЕ
-
-**Cmdlet Remove-AzAzureRmApiManagementApiRelease** удаляет существующий выпуск API.
+Cmdlet **Update-AzApiManagementApiRelease** изменяет выпуск API управления Azure API.
 
 ## ПРИМЕРЫ
 
-### Пример 1. Удаление выпуска API
+### Пример 1. Обновление выпуска API для изменения его редакции
 ```powershell
-PS C:\>$apimContext = New-AzApiManagementContext -ResourceGroupName "Api-Default-WestUS" -ServiceName "contoso"
-PS C:\>Remove-AzAzureRmApiManagementApiRelease -Context $apimContext -ApiId "echo-api" -ReleaseId "2"
+PS C:\>$ApiMgmtContext = New-AzApiManagementContext -ResourceGroupName "Api-Default-WestUS" -ServiceName "contoso"
+PS C:\>Update-AzApiManagementApiRelease -Context $ApiMgmtContext -ApiId "echo-api" -ReleaseId "echo-api-release" -Note "Releasing version 2 of the echo-api to public"
 ```
 
-Эта команда удаляет выпуск API с указанными ApiId и ReleaseId.
+Эта команда обновляет `echo-api-release` выпуск API для API `echo-api` с новой заметкой.
 
 ## PARAMETERS
 
 ### -ApiId
-Идентификатор API.
+Идентификатор существующего API.
 Этот параметр является required(обязательно).
 
 ```yaml
 Type: System.String
-Parameter Sets: ByApiReleaseId
+Parameter Sets: ExpandedParameter
 Aliases:
 
 Required: True
@@ -69,13 +69,13 @@ Accept wildcard characters: False
 
 ```yaml
 Type: Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementContext
-Parameter Sets: ByApiReleaseId
+Parameter Sets: ExpandedParameter
 Aliases:
 
 Required: True
 Position: Named
 Default value: None
-Accept pipeline input: True (ByPropertyName, ByValue)
+Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -95,7 +95,7 @@ Accept wildcard characters: False
 ```
 
 ### -InputObject
-Экземпляр PsApiManagementApiRelease. Этот параметр является required(обязательно).
+Экземпляр типа Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementApiRelease.
 
 ```yaml
 Type: Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementApiRelease
@@ -105,13 +105,28 @@ Aliases:
 Required: True
 Position: Named
 Default value: None
-Accept pipeline input: True (ByValue)
+Accept pipeline input: True (ByPropertyName, ByValue)
+Accept wildcard characters: False
+```
+
+### -Note
+Заметки о выпуске Api.
+Этот параметр является необязательным.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
 ### -PassThru
-Если этот задан, будет указано "Истина" в случае успешной операции.
-Этот параметр является необязательным.
+Экземпляр Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementApiRelease, представляющий выпуск API набора.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -126,12 +141,12 @@ Accept wildcard characters: False
 ```
 
 ### -ReleaseId
-Идентификатор выпуска API.
+Идентификатор для Api Revision ReleaseId.
 Этот параметр является required(обязательно).
 
 ```yaml
 Type: System.String
-Parameter Sets: ByApiReleaseId
+Parameter Sets: ExpandedParameter
 Aliases:
 
 Required: True
@@ -179,13 +194,13 @@ Accept wildcard characters: False
 
 ### Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementContext
 
-### Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementApiRelease
-
 ### System.String
+
+### Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementApiRelease
 
 ## OUTPUTS
 
-### System.Boolean
+### Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementApiRelease
 
 ## ПРИМЕЧАНИЯ
 
@@ -194,5 +209,3 @@ Accept wildcard characters: False
 [Get-AzApiManagementApiRelease](./Get-AzApiManagementApiRelease.md)
 
 [New-AzApiManagementApiRelease](./New-AzApiManagementApiRelease.md)
-
-[Update-AzApiManagementApiRelease](./Update-AzApiManagementApiRelease.md)

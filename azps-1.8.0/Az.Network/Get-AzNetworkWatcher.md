@@ -5,19 +5,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.network/ge
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Get-AzNetworkWatcher.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Get-AzNetworkWatcher.md
-ms.openlocfilehash: fe5236d6f98cc78ed19c4fd3e5cf4a066d841fa6
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: cf5d5cba1b824af3187b681c7c87f26e4970b197
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93730528"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100402768"
 ---
 # Get-AzNetworkWatcher
 
-## КРАТКИй обзор
-Возвращает свойства наблюдателя сети.
+## SYNOPSIS
+Свойства сетевого watcher
 
-## Максимальное
+## СИНТАКСИС
 
 ### Список
 ```
@@ -30,12 +30,12 @@ Get-AzNetworkWatcher [-Name <String>] [-ResourceGroupName <String>] [-DefaultPro
 Get-AzNetworkWatcher -Location <String> [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## NОПИСАНИЕ
-Командлет Get-AzNetworkWatcher получает один или несколько ресурсов сетевого наблюдателя Azure.
+## ОПИСАНИЕ
+Этот Get-AzNetworkWatcher получает один или несколько ресурсов azure Network Watcher.
 
-## ИЛЛЮСТРИРУЮТ
+## ПРИМЕРЫ
 
-### Пример 1: получение сетевого наблюдателя
+### Пример 1. Получить Network Watcher
 ```
 Get-AzNetworkWatcher -Name NetworkWatcher_westcentralus -ResourceGroup NetworkWatcherRG
 
@@ -43,13 +43,13 @@ Name              : NetworkWatcher_westcentralus
 Id                : /subscriptions/bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb/resourceGroups/NetworkWatcherRG/providers/Microsoft.Network/networkWatchers/NetworkWatcher_westcentralus
 Etag              : W/"ac624778-0214-49b9-a04c-794863485fa6"
 Location          : westcentralus
-Tags              : 
+Tags              :
 ProvisioningState : Succeeded
 ```
 
-Возвращает наблюдатель сети с именем NetworkWatcher_westcentralus в группе NetworkWatcherRG ресурсов.
+Получает имя Network Watcher NetworkWatcher_westcentralus в группе ресурсов NetworkWatcherRG.
 
-### Пример 2: Просмотр списка наблюдателей сети с помощью фильтрации
+### Пример 2. Список сетевых watchers с использованием фильтрации
 ```
 Get-AzNetworkWatcher -Name NetworkWatcher*
 
@@ -57,20 +57,20 @@ Name              : NetworkWatcher_westcentralus1
 Id                : /subscriptions/bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb/resourceGroups/NetworkWatcherRG/providers/Microsoft.Network/networkWatchers/NetworkWatcher_westcentralus1
 Etag              : W/"ac624778-0214-49b9-a04c-794863485fa6"
 Location          : westcentralus
-Tags              : 
+Tags              :
 ProvisioningState : Succeeded
 
 Name              : NetworkWatcher_westcentralus2
 Id                : /subscriptions/bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb/resourceGroups/NetworkWatcherRG/providers/Microsoft.Network/networkWatchers/NetworkWatcher_westcentralus2
 Etag              : W/"ac624778-0214-49b9-a04c-794863485fa6"
 Location          : westcentralus
-Tags              : 
+Tags              :
 ProvisioningState : Succeeded
 ```
 
-Возвращает наблюдатели сети, которые начинаются с "NetworkWatcher".
+Получает network Watchers, которые начинаются с NetworkWatcher.
 
-## ПАРАМЕТРЫ
+## PARAMETERS
 
 ### -DefaultProfile
 Учетные данные, учетная запись, клиент и подписка, используемые для связи с Azure.
@@ -88,7 +88,7 @@ Accept wildcard characters: False
 ```
 
 ### -Location
-Расположение наблюдателя сети.
+Расположение сетевого просмотра.
 
 ```yaml
 Type: System.String
@@ -102,8 +102,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Name (имя)
-Имя наблюдателя сети.
+### -Name
+Имя сетевого смотритела.
 
 ```yaml
 Type: System.String
@@ -133,20 +133,20 @@ Accept wildcard characters: True
 ```
 
 ### CommonParameters
-Этот командлет поддерживает общие параметры:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-of Variable,-out,-PipelineVariable,-Verbose, и-WarningAction. Дополнительные сведения можно найти в разделе [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+Этот cmdlet поддерживает общие параметры: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. Дополнительные сведения см. [в about_CommonParameters.](https://go.microsoft.com/fwlink/?LinkID=113216)
 
-## ВХОДНЫЕ данные
+## INPUTS
 
-### Ничего
+### Нет
 
-## НАПРЯЖЕНИЕ
+## OUTPUTS
 
-### Microsoft. Azure. Commands. Network. Models. PSNetworkWatcher
+### Microsoft.Azure.Commands.Network.Models.PSNetworkWatcher
 
-## Пуск
-Ключевые слова: Azure, azurerm, ARM, Resource, менеджмент, руководитель, сеть, сеть, наблюдатель сети 
+## ПРИМЕЧАНИЯ
+Ключевые слова: azure, azurerm, arm, resource, management, manager, network, networking, network watcher,
 
-## ДОПОЛНИТЕЛЬНЫЕ ССЫЛКИ
+## СВЯЗАННЫЕ ССЫЛКИ
 
 [New-AzNetworkWatcher](./New-AzNetworkWatcher.md)
 
@@ -170,7 +170,7 @@ Accept wildcard characters: True
 
 [Remove-AzNetworkWatcherPacketCapture](./Remove-AzNetworkWatcherPacketCapture.md)
 
-[Остановить-AzNetworkWatcherPacketCapture](./Stop-AzNetworkWatcherPacketCapture.md)
+[Stop-AzNetworkWatcherPacketCapture](./Stop-AzNetworkWatcherPacketCapture.md)
 
 [New-AzNetworkWatcherProtocolConfiguration](./New-AzNetworkWatcherProtocolConfiguration.md)
 
@@ -178,7 +178,7 @@ Accept wildcard characters: True
 
 [Test-AzNetworkWatcherConnectivity](./Test-AzNetworkWatcherConnectivity.md)
 
-[Остановить-AzNetworkWatcherConnectionMonitor](./Stop-AzNetworkWatcherConnectionMonitor.md)
+[Stop-AzNetworkWatcherConnectionMonitor](./Stop-AzNetworkWatcherConnectionMonitor.md)
 
 [Start-AzNetworkWatcherConnectionMonitor](./Start-AzNetworkWatcherConnectionMonitor.md)
 
@@ -198,6 +198,6 @@ Accept wildcard characters: True
 
 [Get-AzNetworkWatcherFlowLogStatus](./Get-AzNetworkWatcherFlowLogStatus.md)
 
-[Get-AzNetworkWatcherConnectionMonitorReport](./Get-AzNetworkWatcherConnectionMonitorReport)
+[Get-AzNetworkWatcherConnectionMonitorReport](./Get-AzNetworkWatcherConnectionMonitorReport.md)
 
-[Get-AzNetworkWatcherConnectionMonitor](./Get-AzNetworkWatcherConnectionMonitor)
+[Get-AzNetworkWatcherConnectionMonitor](./Get-AzNetworkWatcherConnectionMonitor.md)
