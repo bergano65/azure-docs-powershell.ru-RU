@@ -6,19 +6,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.resources/
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/Azs-tzl/src/Resources/Resources/help/Get-AzADServicePrincipal.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/Azs-tzl/src/Resources/Resources/help/Get-AzADServicePrincipal.md
-ms.openlocfilehash: a80e2b8603995ba57aada9639b3a6b45e08e2e55
-ms.sourcegitcommit: 4c61442a2df1cee633ce93cad9f6bc793803baa2
+ms.openlocfilehash: 01f6b6d6ed119945af7d99bac9227c788976cbab
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "93910963"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100398705"
 ---
 # Get-AzADServicePrincipal
 
-## КРАТКИй обзор
-Фильтрует субъектов-служб Active Directory.
+## SYNOPSIS
+Фильтрует активных руководителей службы каталогов.
 
-## Максимальное
+## СИНТАКСИС
 
 ### EmptyParameterSet (по умолчанию)
 ```
@@ -62,55 +62,55 @@ Get-AzADServicePrincipal -ServicePrincipalName <String> [-DefaultProfile <IAzure
  [-IncludeTotalCount] [-Skip <UInt64>] [-First <UInt64>] [<CommonParameters>]
 ```
 
-## NОПИСАНИЕ
-Фильтрует субъектов-служб Active Directory.
+## ОПИСАНИЕ
+Фильтрует активных руководителей службы каталогов.
 
-## ИЛЛЮСТРИРУЮТ
+## ПРИМЕРЫ
 
-### Пример 1: список участников службы AD
+### Пример 1. Основные принципы работы службы List AD
 
 ```
 PS C:\> Get-AzADServicePrincipal
 ```
 
-Выводит список всех участников службы AD в клиенте.
+Список всех основных лиц служб AD в клиенте.
 
-### Пример 2: список участников AD-службы с помощью разбиения по страницам
+### Пример 2. Основные принципы работы службы List AD с помощью разведки
 
 ```
 PS C:\> Get-AzADServicePrincipal -First 100
 ```
 
-В этом списке указаны первые участники службы AD 100 в клиенте.
+Список первых 100 основных лиц служб AD в клиенте.
 
-### Пример 3: список участников службы по имени SPN
+### Пример 3. Основные принципы обслуживания списков по spn
 
 ```
 PS C:\> Get-AzADServicePrincipal -ServicePrincipalName 36f81fc3-b00f-48cd-8218-3879f51ff39f
 ```
 
-Список участников-служб с именем участника-службы "36f81fc3-b00f-48cd-8218-3879f51ff39f".
+Список основных служб с spN "36f81fc3-b00f-48cd-8218-3879f51ff39f".
 
-### Пример 4: список субъектов-служб по строке поиска
+### Пример 4. Список глав служб по строке поиска
 
 ```
 PS C:\> Get-AzADServicePrincipal -SearchString "Web"
 ```
 
-Список всех участников службы AD, отображаемое имя которых начинается с "веб".
+В этой списке перечислены все основные пользователи службЫ AD, отображаемая имя которых начинается с веб-сайта.
 
-### Пример 5: перечисление участников службы по конвейеру
+### Пример 5. Основные стороны служб списка путем перена доверений
 
 ```
 PS C:\> Get-AzADApplication -ObjectId 39e64ec6-569b-4030-8e1c-c3c519a05d69 | Get-AzADServicePrincipal
 ```
 
-Получает РЕКЛАМное приложение с идентификатором объекта "39e64ec6-569b-4030-8e1c-c3c519a05d69" и преобразует его в командлет Get-AzADServicePrincipal, чтобы получить список всех участников-служб для этого приложения.
+Получает приложение AD с ид объекта 39e64ec6-569b-4030-8e1c-c3c519a05d69' и передает его в Get-AzADServicePrincipal-Get-AzADServicePrincipal, чтобы перечислить всех участников обслуживания для этого приложения.
 
-## ПАРАМЕТРЫ
+## PARAMETERS
 
 ### -ApplicationId
-Идентификатор приложения субъекта-службы.
+ИД приложения-службы.
 
 ```yaml
 Type: System.Guid
@@ -125,7 +125,7 @@ Accept wildcard characters: False
 ```
 
 ### -ApplicationObject
-Объект приложения, для которого извлекается субъект-служба.
+Объект приложения, для которого извлекется основной-сервис.
 
 ```yaml
 Type: Microsoft.Azure.Graph.RBAC.Version1_6.ActiveDirectory.PSADApplication
@@ -155,7 +155,7 @@ Accept wildcard characters: False
 ```
 
 ### -DisplayName
-Отображаемое имя субъекта-службы.
+Отображаемая имя директора-службы.
 
 ```yaml
 Type: System.String
@@ -170,7 +170,7 @@ Accept wildcard characters: False
 ```
 
 ### -DisplayNameBeginsWith
-Строка поиска субъекта-службы.
+Строка поиска с основной строкой запроса на обслуживание.
 
 ```yaml
 Type: System.String
@@ -200,7 +200,7 @@ Accept wildcard characters: False
 ```
 
 ### -IncludeTotalCount
-Показывает количество объектов в наборе данных. В настоящее время этот параметр не выполняет никаких действий.
+Отчет о количестве объектов в наборе данных. В настоящее время этот параметр не имеет никакого отношения.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -215,7 +215,7 @@ Accept wildcard characters: False
 ```
 
 ### -ObjectId
-Идентификатор объекта субъекта-службы.
+Object id of the service principal.
 
 ```yaml
 Type: System.Guid
@@ -229,8 +229,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Намерено
-SPN службы.
+### -ServicePrincipalName
+SpN службы.
 
 ```yaml
 Type: System.String
@@ -245,7 +245,7 @@ Accept wildcard characters: False
 ```
 
 ### -Skip
-Пропускает первые N объектов, а затем возвращает оставшиеся объекты.
+Игнорирует первые N объектов, а затем возвращает оставшиеся объекты.
 
 ```yaml
 Type: System.UInt64
@@ -260,28 +260,27 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Этот командлет поддерживает общие параметры:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-of Variable,-out,-PipelineVariable,-Verbose, и-WarningAction. Дополнительные сведения можно найти в разделе about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .
+Этот cmdlet поддерживает общие параметры: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. Дополнительные сведения см. в about_CommonParameters http://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## ВХОДНЫЕ данные
+## INPUTS
 
-### System. String
+### System.String
 
-### System. GUID
+### System.Guid
 
-### Microsoft.Azure.Graph.RBAC.Version1_6. ActiveDirectory. PSADApplication
+### Microsoft.Azure.Graph.RBAC.Version1_6.ActiveDirectory.PSADApplication
 Параметры: ApplicationObject (ByValue)
 
-## НАПРЯЖЕНИЕ
+## OUTPUTS
 
-### Microsoft.Azure.Graph.RBAC.Version1_6. ActiveDirectory. PSADServicePrincipal
+### Microsoft.Azure.Graph.RBAC.Version1_6.ActiveDirectory.PSADServicePrincipal
 
-## Пуск
+## ПРИМЕЧАНИЯ
 
-## ДОПОЛНИТЕЛЬНЫЕ ССЫЛКИ
+## СВЯЗАННЫЕ ССЫЛКИ
 
 [New-AzADServicePrincipal](./New-AzADServicePrincipal.md)
 
-[Set-AzADServicePrincipal](./Set-AzADServicePrincipal.md)
 
 [Remove-AzADServicePrincipal](./Remove-AzADServicePrincipal.md)
 
