@@ -5,19 +5,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.network/ne
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/New-AzNetworkWatcherNetworkConfigurationDiagnosticProfile.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/New-AzNetworkWatcherNetworkConfigurationDiagnosticProfile.md
-ms.openlocfilehash: b05f62559670bdbdb0c018dff8febd8c5c8dfb20
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: f406ddbf3e975e6caa3d9e9164673ec95a311e76
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93730300"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100400184"
 ---
 # New-AzNetworkWatcherNetworkConfigurationDiagnosticProfile
 
-## КРАТКИй обзор
-Создание нового объекта профиля диагностики конфигурации сети. Этот объект используется для ограничения сетевого confiuration во время диагностического сеанса с указанными условиями.
+## SYNOPSIS
+Создание нового объекта диагностики конфигурации сети. Этот объект используется для ограничения сетевойконфигурации во время сеанса диагностики с использованием указанных критериев.
 
-## Максимальное
+## СИНТАКСИС
 
 ```
 New-AzNetworkWatcherNetworkConfigurationDiagnosticProfile -Direction <String> -Protocol <String>
@@ -25,12 +25,12 @@ New-AzNetworkWatcherNetworkConfigurationDiagnosticProfile -Direction <String> -P
  [<CommonParameters>]
 ```
 
-## NОПИСАНИЕ
-Командлет New-AzNetworkWatcherNetworkConfigurationDiagnosticProfile создает новый объект профиля диагностики. Этот объект используется для ограничения сетевого confiuration во время сеанса диагностики конфигурации сети с указанными условиями.
+## ОПИСАНИЕ
+С помощью New-AzNetworkWatcherNetworkConfigurationDiagnosticProfile-профиля создается новый объект профиля диагностики. Этот объект используется для ограничения сетевой конфигурации во время сеанса диагностики конфигурации сети с использованием указанных критериев.
 
-## ИЛЛЮСТРИРУЮТ
+## ПРИМЕРЫ
 
-### Пример 1: вызов диагностического сеанса диагностики конфигурации сети для виртуальной машины и указанного сетевого профиля
+### Пример 1. Сеанс диагностики конфигурации сети для VM и указанного профиля сети
 ```
 PS C:\> $profile = New-AzNetworkWatcherNetworkConfigurationDiagnosticProfile -Direction Inbound -Protocol Tcp -Source 10.1.1.4 -Destination * -DestinationPort 50
 PS C:\> Invoke-AzNetworkWatcherNetworkConfigurationDiagnostic -Location eastus -TargetResourceId /subscriptions/61cc8a98-a8be-4bfe-a04e-0b461f93fe35/resourceGroups/NwRgEastUS/providers/Microsoft.Compute/virtualMachines/vm1 -Profile $profile
@@ -65,7 +65,7 @@ Results : [
                       },
 ```
 
-## ПАРАМЕТРЫ
+## PARAMETERS
 
 ### -DefaultProfile
 Учетные данные, учетная запись, клиент и подписка, используемые для связи с Azure.
@@ -83,8 +83,8 @@ Accept wildcard characters: False
 ```
 
 ### -Destination
-Назначение трафика.
-Допустимые значения: "*", IP-адрес/CIDR, тег обслуживания.
+Пункт назначения для трафика.
+Можно принимать значения"*", "IP-адрес/CIDR", "Тег службы".
 
 ```yaml
 Type: System.String
@@ -99,8 +99,8 @@ Accept wildcard characters: False
 ```
 
 ### -DestinationPort
-Порт назначения трафика.
-Допустимые значения: "*", "порт" (например, 3389) и диапазон портов (например, 80-100).
+Порт назначения для трафика.
+Допустимые значения: "*", "порт" (например, 3389) и диапазон порта (например, 80-100).
 
 ```yaml
 Type: System.String
@@ -114,9 +114,9 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Направление
+### -Direction
 Направление трафика.
-Допустимые значения "входящий" и "Исходящие"
+Можно принимать значения "Входящие" и "Исходящие".
 
 ```yaml
 Type: System.String
@@ -130,9 +130,9 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -Protocol (протокол)
-Проверяемый протокол.
-Допустимые значения: "*", TCP, UDP.
+### -Protocol
+Протокол для проверки.
+Можно принимать значения "*", TCP, UDP.
 
 ```yaml
 Type: System.String
@@ -146,9 +146,9 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Source (источник)
+### -Source
 Источник трафика.
-Допустимые значения: "*", IP-адрес/CIDR, тег обслуживания.
+Принимаются значения "*", "IP-адрес/CIDR", "Тег службы".
 
 ```yaml
 Type: System.String
@@ -163,20 +163,20 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Этот командлет поддерживает общие параметры:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-of Variable,-out,-PipelineVariable,-Verbose, и-WarningAction. Дополнительные сведения можно найти в разделе about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
+Этот cmdlet поддерживает общие параметры: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. Дополнительные сведения см. в about_CommonParameters https://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## ВХОДНЫЕ данные
+## INPUTS
 
-### System. String
+### System.String
 
-## НАПРЯЖЕНИЕ
+## OUTPUTS
 
-### Microsoft. Azure. Commands. Network. Models. PSNetworkConfigurationDiagnosticProfile
+### Microsoft.Azure.Commands.Network.Models.PSNetworkConfigurationDiagnosticProfile
 
-## Пуск
-Ключевые слова: Azure, azurerm, ARM, Resource, менеджмент, руководитель, сеть, сеть, наблюдатель, диагностика, профиль
+## ПРИМЕЧАНИЯ
+Ключевые слова: azure, azurerm, arm, resource, management, manager, network, networking, watcher, diagnostic, profile
 
-## ДОПОЛНИТЕЛЬНЫЕ ССЫЛКИ
+## СВЯЗАННЫЕ ССЫЛКИ
 
 [New-AzNetworkWatcher](./New-AzNetworkWatcher.md)
 
@@ -200,7 +200,7 @@ Accept wildcard characters: False
 
 [Remove-AzNetworkWatcherPacketCapture](./Remove-AzNetworkWatcherPacketCapture.md)
 
-[Остановить-AzNetworkWatcherPacketCapture](./Stop-AzNetworkWatcherPacketCapture.md)
+[Stop-AzNetworkWatcherPacketCapture](./Stop-AzNetworkWatcherPacketCapture.md)
 
 [New-AzNetworkWatcherProtocolConfiguration](./New-AzNetworkWatcherProtocolConfiguration.md)
 
@@ -208,7 +208,7 @@ Accept wildcard characters: False
 
 [Test-AzNetworkWatcherConnectivity](./Test-AzNetworkWatcherConnectivity.md)
 
-[Остановить-AzNetworkWatcherConnectionMonitor](./Stop-AzNetworkWatcherConnectionMonitor.md)
+[Stop-AzNetworkWatcherConnectionMonitor](./Stop-AzNetworkWatcherConnectionMonitor.md)
 
 [Start-AzNetworkWatcherConnectionMonitor](./Start-AzNetworkWatcherConnectionMonitor.md)
 
@@ -228,6 +228,6 @@ Accept wildcard characters: False
 
 [Get-AzNetworkWatcherFlowLogStatus](./Get-AzNetworkWatcherFlowLogStatus.md)
 
-[Get-AzNetworkWatcherConnectionMonitorReport](./Get-AzNetworkWatcherConnectionMonitorReport)
+[Get-AzNetworkWatcherConnectionMonitorReport](./Get-AzNetworkWatcherConnectionMonitorReport.md)
 
-[Get-AzNetworkWatcherConnectionMonitor](./Get-AzNetworkWatcherConnectionMonitor)
+[Get-AzNetworkWatcherConnectionMonitor](./Get-AzNetworkWatcherConnectionMonitor.md)
