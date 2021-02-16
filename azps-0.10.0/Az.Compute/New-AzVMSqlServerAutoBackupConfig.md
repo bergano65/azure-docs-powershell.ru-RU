@@ -6,19 +6,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.compute/ne
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/Azs-tzl/src/Compute/Compute/help/New-AzVMSqlServerAutoBackupConfig.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/Azs-tzl/src/Compute/Compute/help/New-AzVMSqlServerAutoBackupConfig.md
-ms.openlocfilehash: 1ff53a29fa26ebe7ac78cac5140a9105b43bb27d
-ms.sourcegitcommit: 4c61442a2df1cee633ce93cad9f6bc793803baa2
+ms.openlocfilehash: ecff02643dd6d0e017d56af01792a06dc7b8d998
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "93911459"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100398280"
 ---
 # New-AzVMSqlServerAutoBackupConfig
 
-## КРАТКИй обзор
-Создает объект конфигурации для автоматической архивации SQL Server.
+## SYNOPSIS
+Создает объект конфигурации для автоматического SQL Server резервного копирования.
 
-## Максимальное
+## СИНТАКСИС
 
 ### StorageUriSqlServerAutoBackup (по умолчанию)
 ```
@@ -39,12 +39,12 @@ New-AzVMSqlServerAutoBackupConfig [-ResourceGroupName] <String> [-Enable]
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## NОПИСАНИЕ
-Командлет **New-AzVMSqlServerAutoBackupConfig** создает объект конфигурации для автоматической архивации SQL Server.
+## ОПИСАНИЕ
+Для автоматического резервного копирования создается объект конфигурации для SQL Server **AzVMSqlServerAutoBackupConfig.**
 
-## ИЛЛЮСТРИРУЮТ
+## ПРИМЕРЫ
 
-### Пример 1: создание конфигурации автоматической архивации с помощью URI хранилища и ключа учетной записи
+### Пример 1. Создание автоматической настройки резервного копирования с использованием URI хранилища и ключа учетной записи
 ```
 PS C:\> $AutoBackupConfig = New-AzVMSqlServerAutoBackupConfig -Enable -RetentionPeriod 10 -StorageUri "\\contoso\StorageGeneral" -StorageKey "< Storage Key for ContosoGeneral >"
 Enable                : True
@@ -52,12 +52,12 @@ EnableEncryption      : False
 RetentionPeriodInDays : 10
 ```
 
-Эта команда создает объект конфигурации автоматического резервного копирования, указав URI хранилища и ключ учетной записи.
-Автоматическая архивация включена, и автоматические резервные копии будут храниться в течение 10 дней.
+Эта команда создает объект автоматической резервной копии с указанием URI хранилища и ключа учетной записи.
+Автоматическое резервное копирование включено, и автоматическое резервное копирование хранится в течение 10 дней.
 Команда сохраняет результат в переменной $AutoBackupConfig.
-Вы можете указать этот элемент конфигурации для других командлетов, таких как командлеты Set-AzVMSqlServerExtension.
+Вы можете указать этот элемент конфигурации для других Set-AzVMSqlServerExtension.
 
-### Пример 2: создание конфигурации автоматической архивации с помощью контекста хранилища
+### Пример 2. Создание автоматической настройки резервного копирования с использованием контекста хранилища
 ```
 PS C:\> $StorageContext = New-AzureStorageContext -StorageAccountName "ContosoGeneral" -StorageAccountKey "< Storage Key for ContosoGeneral >"
 PS C:\> $AutoBackupConfig = New-AzVMSqlServerAutoBackupConfig -StorageContext $StorageContext -Enable -RetentionPeriod 10
@@ -66,13 +66,13 @@ EnableEncryption      : False
 RetentionPeriodInDays : 10
 ```
 
-Первая команда создает контекст хранения, а затем сохраняет его в переменной $StorageContext.
-Дополнительные сведения можно найти в разделе New-AzureStorageContext.
+Первая команда создает контекст хранилища, а затем сохраняет его в $StorageContext переменной.
+Дополнительные сведения см. в new-AzureStorageContext.
 
-Вторая команда создает объект конфигурации автоматического резервного копирования, указав контекст хранилища в $StorageContext.
-Автоматическая архивация включена, и автоматические резервные копии будут храниться в течение 10 дней.
+Вторая команда создает объект автоматической резервной копии с указанием контекста хранилища в $StorageContext.
+Автоматическое резервное копирование включено, и автоматическое резервное копирование хранится в течение 10 дней.
 
-### Пример 3: создание конфигурации автоматической архивации с помощью контекста хранилища с шифрованием и паролем
+### Пример 3. Создание автоматической резервной копии с использованием контекста хранилища с шифрованием и паролем
 ```
 PS C:\> $StorageContext = New-AzVMSqlServerAutoBackupConfig -StorageContext $StorageContext -Enable -RetentionPeriod 10 -EnableEncryption -CertificatePassword $CertificatePassword
 Enable                : True
@@ -80,21 +80,21 @@ EnableEncryption      : True
 RetentionPeriodInDays : 10
 ```
 
-Эта команда создает и сохраняет объект конфигурации для автоматического резервного копирования.
-Команда задает контекст хранения, созданный в предыдущем примере.
-Эта команда обеспечивает шифрование с помощью пароля.
-Пароль был ранее сохранен в качестве безопасной строки в переменной $CertificatePassword.
-Чтобы создать защищенную строку, используйте командлет ConvertTo-SecureString.
+Эта команда создает и сохраняет объект автоматической резервной копии.
+Команда определяет контекст хранилища, созданный в предыдущем примере.
+Она позволяет использовать шифрование с помощью пароля.
+Пароль ранее хранился как безопасная строка в переменной $CertificatePassword.
+Чтобы создать безопасную строку, воспользуйтесь ConvertTo-SecureString.
 
-## ПАРАМЕТРЫ
+## PARAMETERS
 
 ### -BackupScheduleType
-Тип расписания резервного копирования, ручной или автоматический
+Тип расписания резервного копирования, вручную или автоматически
 
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 Accepted values: Manual, Automated
 
 Required: False
@@ -110,7 +110,7 @@ Accept wildcard characters: False
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -120,12 +120,12 @@ Accept wildcard characters: False
 ```
 
 ### -CertificatePassword
-Указывает пароль для шифрования сертификата, используемого для выполнения зашифрованных резервных копий SQL Server.
+Пароль для шифрования сертификата, используемого для SQL Server архивации.
 
 ```yaml
 Type: SecureString
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 4
@@ -149,15 +149,15 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Enable (включить)
-Указывает на то, что для виртуальной машины SQL Server включена автоматическая архивация.
-Если указать этот параметр, автоматическая архивация задает расписание резервного копирования для всех текущих и новых баз данных.
-Это обновит параметры управляемого резервного копирования таким образом, чтобы они выполнив это расписание.
+### -Enable
+Означает, что автоматическое резервное копирование SQL Server на виртуальной машине включено.
+Если вы указали этот параметр, автоматическая резервная копия задает расписание резервного копирования для всех текущих и новых баз данных.
+Это обновление параметров управляемого резервного копирования в следуйте этому расписанию.
 
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 1
@@ -167,12 +167,12 @@ Accept wildcard characters: False
 ```
 
 ### -EnableEncryption
-Указывает на то, что этот командлет включает шифрование.
+Указывает на то, что этот cmdlet включает шифрование.
 
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 3
@@ -182,12 +182,12 @@ Accept wildcard characters: False
 ```
 
 ### -FullBackupFrequency
-Частота полных резервных копий SQL Server, ежедневно или еженедельно
+Периодичность полной резервной копии Sql Server: ежедневно или еженедельно
 
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 Accepted values: Daily, Weekly
 
 Required: False
@@ -198,12 +198,12 @@ Accept wildcard characters: False
 ```
 
 ### -FullBackupStartHour
-Часы суток (0-23), когда должна начинаться полная резервная копия SQL Server
+Час дня (0–23), когда должна начаться полная резервная копия Sql Server
 
 ```yaml
 Type: Int32
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -213,12 +213,12 @@ Accept wildcard characters: False
 ```
 
 ### -FullBackupWindowInHours
-Окно полного резервного копирования SQL Server в часах
+Окно полной резервной копии В часах в Sql Server
 
 ```yaml
 Type: Int32
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -228,12 +228,12 @@ Accept wildcard characters: False
 ```
 
 ### -LogBackupFrequencyInMinutes
-Частота резервного копирования журнала SQL Server каждые 1-60 минут
+Частота резервного копирования журнала Sql Server каждые 1–60 минут
 
 ```yaml
 Type: Int32
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -248,7 +248,7 @@ Accept wildcard characters: False
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -258,12 +258,12 @@ Accept wildcard characters: False
 ```
 
 ### -RetentionPeriodInDays
-Указывает количество дней, в течение которых будет храниться резервная копия.
+Количество дней для сохранения резервной копии.
 
 ```yaml
 Type: Int32
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 2
@@ -274,13 +274,13 @@ Accept wildcard characters: False
 
 ### -StorageContext
 Указывает учетную запись хранения, которая будет использоваться для хранения резервных копий.
-Чтобы получить объект **AzureStorageContext** , используйте командлет New-AzureStorageContext.
-По умолчанию используется учетная запись хранения, связанная с виртуальной машиной SQL Server.
+Чтобы получить объект **AzureStorageContext,** используйте New-AzureStorageContext.
+По умолчанию это учетная запись хранения, связанная с виртуальной SQL Server машиной.
 
 ```yaml
 Type: IStorageContext
 Parameter Sets: StorageContextSqlServerAutoBackup
-Aliases: 
+Aliases:
 
 Required: False
 Position: 5
@@ -290,12 +290,12 @@ Accept wildcard characters: False
 ```
 
 ### -StorageKey
-Указывает ключ хранилища для учетной записи хранения BLOB-объектов.
+Указывает ключ хранилища для учетной записи хранилища BLOB-хранилищ.
 
 ```yaml
 Type: SecureString
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 5
@@ -305,12 +305,12 @@ Accept wildcard characters: False
 ```
 
 ### -StorageUri
-Задает универсальный код ресурса (URI) учетной записи хранилища BLOB-объектов.
+Указывает URI учетной записи хранилища BLOB-ресурсов.
 
 ```yaml
 Type: Uri
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 4
@@ -320,22 +320,22 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Этот командлет поддерживает общие параметры:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-of Variable,-out,-PipelineVariable,-Verbose, и-WarningAction. Дополнительные сведения можно найти в разделе about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .
+Этот cmdlet поддерживает общие параметры: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. Дополнительные сведения см. в about_CommonParameters http://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## ВХОДНЫЕ данные
+## INPUTS
 
-### Ничего
-Этот командлет не поддерживает никаких входных данных.
+### Нет
+Этот cmdlet не принимает входные данные.
 
-## НАПРЯЖЕНИЕ
+## OUTPUTS
 
-### Microsoft. Azure. Commands. COMPUTE. AutoBackupSettings
+### Microsoft.Azure.Commands.Compute.AutoBackupSettings
 
-## Пуск
+## ПРИМЕЧАНИЯ
 
-## ДОПОЛНИТЕЛЬНЫЕ ССЫЛКИ
+## СВЯЗАННЫЕ ССЫЛКИ
 
-[New-AzureVMSqlServerAutoPatchingConfig](./New-AzureVMSqlServerAutoPatchingConfig.md)
+[New-AzureVMSqlServerAutoPatchingConfig](./New-AzVMSqlServerAutoPatchingConfig.md)
 
 [Set-AzVMSqlServerExtension](./Set-AzVMSqlServerExtension.md)
 
