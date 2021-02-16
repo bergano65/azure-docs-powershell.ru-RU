@@ -5,19 +5,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.apimanagem
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/Set-AzApiManagementBackend.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/Set-AzApiManagementBackend.md
-ms.openlocfilehash: f5cf0d9f80b15f178cb701b4474fa5dc13d957eb
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: cb7348e31ca80834836b27c97aa7f68e4207ed24
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93727944"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100404332"
 ---
 # Set-AzApiManagementBackend
 
-## КРАТКИй обзор
-Обновляет сервер.
+## SYNOPSIS
+Обновляет backend.
 
-## Максимальное
+## СИНТАКСИС
 
 ### ContextParameterSet (по умолчанию)
 ```
@@ -38,22 +38,22 @@ Set-AzApiManagementBackend -InputObject <PsApiManagementBackend> [-Protocol <Str
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## NОПИСАНИЕ
-Обновляет существующую базу данных в управлении API.
+## ОПИСАНИЕ
+Обновляет существующий backend in the Api Management (Управление Api).
 
-## ИЛЛЮСТРИРУЮТ
+## ПРИМЕРЫ
 
-### Обновляет описание внутреннего сервера 123
+### Обновляет описание backend 123.
 ```powershell
 PS C:\>$apimContext = New-AzApiManagementContext -ResourceGroupName "Api-Default-WestUS" -ServiceName "contoso"
 PS C:\>Set-AzApiManagementBackend -Context $apimContext -BackendId 123 -Description "updated description" -PassThru
 ```
 
-## ПАРАМЕТРЫ
+## PARAMETERS
 
 ### -BackendId
-Идентификатор нового внутреннего сервера.
-Этот параметр является обязательным.
+Идентификатор нового backend.
+Этот параметр является required(обязательно).
 
 ```yaml
 Type: System.String
@@ -67,9 +67,9 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Context
+### -Контекст
 Экземпляр PsApiManagementContext.
-Этот параметр является обязательным.
+Этот параметр является required(обязательно).
 
 ```yaml
 Type: Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementContext
@@ -84,7 +84,7 @@ Accept wildcard characters: False
 ```
 
 ### -Credential
-Сведения об учетных данных, которые следует использовать при общении с серверным сервером.
+Учетные данные, которые следует использовать при разговоре с backend.
 Этот параметр является необязательным.
 
 ```yaml
@@ -114,8 +114,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Описание
-Описание внутреннего сервера.
+### -Description
+Описание backend.
 Этот параметр является необязательным.
 
 ```yaml
@@ -131,7 +131,7 @@ Accept wildcard characters: False
 ```
 
 ### -InputObject
-Экземпляр PsApiManagementBackend. Этот параметр является обязательным.
+Экземпляр PsApiManagementBackend. Этот параметр является required(обязательно).
 
 ```yaml
 Type: Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementBackend
@@ -146,7 +146,7 @@ Accept wildcard characters: False
 ```
 
 ### -PassThru
-Указывает на то, что этот командлет возвращает  **PsApiManagementBackend** , который изменяется этим командлетом.
+Указывает на то, что этот cmdlet возвращает  **psApiManagementBackend,** который изменяет этот.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -160,9 +160,9 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Protocol (протокол)
-Внутренний протокол передачи данных (HTTP или SOAP).
-Это необязательный параметр
+### -Protocol
+Протокол backend Communication (http или soap).
+Этот параметр необязателен.
 
 ```yaml
 Type: System.String
@@ -177,8 +177,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Прокси
-Сведения о прокси-сервере, которые необходимо использовать при отправке запроса на сервер.
+### -Прокси-сервер
+Сведения прокси-сервера, которые будут использоваться при отправке запроса на сервер серверов.
 Этот параметр является необязательным.
 
 ```yaml
@@ -194,9 +194,9 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceId
-Универсальный код ресурса (URI) для управления ресурсом во внешней системе.
+Uri управления ресурсом внешней системы.
 Этот параметр является необязательным.
-Этот URL-адрес может представлять собой идентификатор ресурса ARM для логических приложений, приложений-функций или приложений API.
+Этот URL-адрес может быть ид ресурса Arm приложений Logic, приложений для функций и приложений API.
 
 ```yaml
 Type: System.String
@@ -211,7 +211,7 @@ Accept wildcard characters: False
 ```
 
 ### -ServiceFabricCluster
-Сведения о внутреннем кластере кластера фабрики служб. Этот параметр является необязательным.
+Сведения о структуре кластера "Сервис". Этот параметр является необязательным.
 
 ```yaml
 Type: Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementServiceFabric
@@ -226,7 +226,7 @@ Accept wildcard characters: False
 ```
 
 ### -SkipCertificateChainValidation
-Необходимость пропуска проверки цепочки сертификатов при общении с серверным сервером.
+Следует ли пропустить проверку цепочки сертификатов при разговоре с backend.
 Этот параметр является необязательным.
 
 ```yaml
@@ -242,7 +242,7 @@ Accept wildcard characters: False
 ```
 
 ### -SkipCertificateNameValidation
-Следует ли пропускать проверку имени сертификата при общении с серверным сервером.
+Следует ли пропускать проверку имени сертификата при разговоре с backend.
 Этот параметр является необязательным.
 
 ```yaml
@@ -258,7 +258,7 @@ Accept wildcard characters: False
 ```
 
 ### -Title
-Название внутреннего сервера.
+Заголовок для backend.
 Этот параметр является необязательным.
 
 ```yaml
@@ -273,8 +273,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### — URL-адрес
-URL-адрес среды выполнения для внутреннего сервера.
+### -URL-адрес
+URL-адрес времени запуска для backend.
 Этот параметр является необязательным.
 
 ```yaml
@@ -290,7 +290,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
-Запрашивает подтверждение перед запуском командлета.
+Перед запуском cmdlet вам будет предложено подтвердить его.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -305,7 +305,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Показывает, что произойдет при запуске командлета. Командлет не выполняется.
+Показывает, что произойдет при запуске cmdlet. Этот cmdlet не будет выполниться.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -320,33 +320,33 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Этот командлет поддерживает общие параметры:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-of Variable,-out,-PipelineVariable,-Verbose, и-WarningAction. Дополнительные сведения можно найти в разделе [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+Этот cmdlet поддерживает общие параметры: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. Дополнительные сведения см. [в about_CommonParameters.](https://go.microsoft.com/fwlink/?LinkID=113216)
 
-## ВХОДНЫЕ данные
+## INPUTS
 
-### Microsoft. Azure. Commands. ApiManagement. ServiceManagement. Models. PsApiManagementContext
+### Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementContext
 
-### System. String
+### System.String
 
-### System. Nullable "1 [[System. Boolean, System. Private. CoreLib, Version = 4.0.0.0, культура = Neutral, PublicKeyToken = 7cec85d7bea7798e]]
+### System.Nullable'1[[System.Boolean, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]
 
-### Microsoft. Azure. Commands. ApiManagement. ServiceManagement. Models. PsApiManagementBackendCredential
+### Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementBackendCredential
 
-### Microsoft. Azure. Commands. ApiManagement. ServiceManagement. Models. PsApiManagementBackendProxy
+### Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementBackendProxy
 
-### Microsoft. Azure. Commands. ApiManagement. ServiceManagement. Models. PsApiManagementServiceFabric
+### Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementServiceFabric
 
-### System. Management. Automation. SwitchParameter
+### System.Management.Automation.SwitchParameter
 
-## НАПРЯЖЕНИЕ
+## OUTPUTS
 
-### Microsoft. Azure. Commands. ApiManagement. ServiceManagement. Models. PsApiManagementBackend
+### Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementBackend
 
-## Пуск
+## ПРИМЕЧАНИЯ
 
-## ДОПОЛНИТЕЛЬНЫЕ ССЫЛКИ
+## СВЯЗАННЫЕ ССЫЛКИ
 
-[Get-AzApiManagementBackend](./Get-AzApiManagementBackend)
+[Get-AzApiManagementBackend](./Get-AzApiManagementBackend.md)
 
 [New-AzApiManagementBackend](./New-AzApiManagementBackend.md)
 

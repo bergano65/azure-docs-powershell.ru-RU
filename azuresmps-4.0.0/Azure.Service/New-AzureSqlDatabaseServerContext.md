@@ -3,19 +3,19 @@ external help file: Microsoft.WindowsAzure.Commands.SqlDatabase.dll-Help.xml
 ms.assetid: B7B29875-D2E5-4E96-AD4B-83032AB18D02
 online version: ''
 schema: 2.0.0
-ms.openlocfilehash: cdcd4788e3eefdce858cb88c0bf1885353f8a673
-ms.sourcegitcommit: 56ed085a868afa8263f8eb0f755b5822f5c29532
+ms.openlocfilehash: 5312556cb49d02ea901b4cb2526a36f7237f66d1
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "94075970"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100404179"
 ---
 # New-AzureSqlDatabaseServerContext
 
-## КРАТКИй обзор
-Создает контекст подключения сервера.
+## SYNOPSIS
+Создает контекст подключения к серверу.
 
-## Максимальное
+## СИНТАКСИС
 
 ### ByServerNameWithSqlAuth (по умолчанию)
 ```
@@ -47,35 +47,35 @@ New-AzureSqlDatabaseServerContext -FullyQualifiedServerName <String> [-UseSubscr
  [-SubscriptionName <String>] [-Profile <AzureSMProfile>] [<CommonParameters>]
 ```
 
-## NОПИСАНИЕ
-Командлет **New-AzureSqlDatabaseServerContext** создает контекст подключения к серверу базы данных SQL Azure.
-Использование проверки подлинности SQL Server для создания контекста подключения к серверу базы данных SQL с использованием указанных учетных данных.
-Вы можете указать сервер базы данных SQL по имени, по полному имени или по URL-адресу.
-Чтобы получить учетные данные, используйте командлет Get-Credential, который предлагает указать имя пользователя и пароль.
+## ОПИСАНИЕ
+Для создания контекста подключения к серверу базы данных Azure SQL Azure **создается cmdlet New-AzureSqlDataBaseServerContext.**
+Используйте SQL Server проверки подлинности для создания контекста подключения к серверу SQL базы данных с использованием указанных учетных данных.
+Вы можете указать SQL базы данных по имени, по полному имени или по URL-адресу.
+Чтобы получить учетные данные, Get-Credential вводить имя пользователя и пароль с помощью Get-Credential.
 
-Используйте командлет **New-AzureSqlDatabaseServerContext** с проверкой подлинности на основе сертификатов для создания контекста подключения к указанному серверу базы данных SQL, используя указанные данные подписки Azure.
-Сервер базы данных SQL можно указать по имени или по полному имени.
+С помощью cmdlet **New-AzureSqlDataBaseServerContext** с проверкой подлинности на основе сертификата создайте контекст подключения к указанному серверу базы данных SQL, используя указанные данные подписки Azure.
+Вы можете указать SQL базы данных по имени или по полному имени.
 Вы можете указать данные подписки в качестве параметра или получить их из текущей подписки Azure.
-С помощью командлета Select-AzureSubscription https://msdn.microsoft.com/library/windowsazure/jj152833.aspx выберите текущую подписку Azure.
+С помощью cmdlet Select-AzureSubscription https://msdn.microsoft.com/library/windowsazure/jj152833.aspx выберите текущую подписку Azure.
 
-## ИЛЛЮСТРИРУЮТ
+## ПРИМЕРЫ
 
-### Пример 1: создание контекста с использованием проверки подлинности SQL Server
+### Пример 1. Создание контекста с помощью проверки SQL Server подлинности
 ```
 PS C:\> $Credential = Get-Credential
 PS C:\> $Context = New-AzureSqlDatabaseServerContext -ServerName "lpqd0zbr8y" -Credential $Credential
 PS C:\> $Database17 = New-AzureSqlDatabase -ConnectionContext $Context -DatabaseName "Database17" -MaxSizeGB 50 -Collation "SQL_Latin1_General_CP1_CI_AS"
 ```
 
-В этом примере используется проверка подлинности SQL Server.
+В этом примере используется SQL Server проверки подлинности.
 
-В первой команде вам будет предложено ввести учетные данные администратора сервера и сохранить учетные данные в переменной $Credential.
+Первая команда запросит учетные данные администратора сервера, а затем за нее будет $Credential переменную.
 
-Вторая команда подключается к серверу базы данных SQL с именем lpqd0zbr8y с помощью $Credential.
+Вторая команда подключается к серверу SQL базы данных lpqd0zbr8y с помощью $Credential.
 
-Последняя команда создает базу данных с именем Database17 на сервере, который является частью контекста в $Context.
+Конечная команда создает на сервере базу данных с именем Database17, которая входит в контекст $Context.
 
-### Пример 2: создание контекста с использованием проверки подлинности на основе сертификатов
+### Пример 2. Создание контекста с помощью проверки подлинности на основе сертификата
 ```
 PS C:\> $SubscriptionId = <Subscription ID>
 PS C:\> $Thumbprint = <Certificate Thumbprint>
@@ -87,18 +87,18 @@ PS C:\> $Context = New-AzureSqlDatabaseServerContext -ServerName "lpqd0zbr8y" -U
 
 В этом примере используется проверка подлинности на основе сертификата.
 
-Первые две команды назначают значения для переменных $SubscriptionId и $Thumbprint.
+Первые две команды присваивают значения $SubscriptionId и $Thumbprint переменным.
 
-Третья команда получает сертификат, идентифицированный отпечатком, в $Thumbprint и сохраняет его в $Certificate.
+Третья команда получает сертификат, который определился с помощью $Thumbprint, и сохраняет его в $Certificate.
 
-Четвертая команда устанавливает подписку на Subscription07, а пятая команда выбирает эту подписку.
+Четвертая команда задает подписку на Subscription07, а пятая выбирает ее.
 
-Последняя команда создает контекст в текущей подписке для сервера с именем lpqd0zbr8y.
+Конечная команда создает контекст в текущей подписке для сервера с именем lpqd0zbr8y.
 
-## ПАРАМЕТРЫ
+## PARAMETERS
 
 ### -Credential
-Указывает объект учетных данных, который обеспечивает проверку подлинности SQL Server для доступа к серверу.
+Определяет объект учетных данных, SQL Server проверку подлинности для доступа к серверу.
 
 ```yaml
 Type: PSCredential
@@ -113,7 +113,7 @@ Accept wildcard characters: False
 ```
 
 ### -FullyQualifiedServerName
-Указывает полное доменное имя (FQDN) для сервера базы данных SQL Azure.
+Указывает полное доменное имя для сервера базы данных Azure SQL.
 Например, Server02.database.windows.net.
 
 ```yaml
@@ -129,7 +129,7 @@ Accept wildcard characters: False
 ```
 
 ### -ManageUrl
-Указывает URL-адрес, используемый этим командлетом для доступа к порталу SQL DatabaseManagement Azure для сервера.
+Url-адрес, который этот cmdlet использует для доступа к порталу управления базами SQL Azure для сервера.
 
 ```yaml
 Type: Uri
@@ -144,8 +144,8 @@ Accept wildcard characters: False
 ```
 
 ### -Profile
-Указывает профиль Azure, из которого считывается этот командлет.
-Если вы не укажете профиль, этот командлет считывает данные из локального профиля по умолчанию.
+Определяет профиль Azure, для которого читается этот cmdlet.
+Если не указать профиль, этот cmdlet будет читать данные из локального профиля по умолчанию.
 
 ```yaml
 Type: AzureSMProfile
@@ -159,8 +159,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ИмяСервера
-Указывает имя сервера базы данных.
+### -ServerName
+Имя сервера базы данных.
 
 ```yaml
 Type: String
@@ -187,9 +187,9 @@ Accept wildcard characters: False
 ```
 
 ### -SubscriptionName
-Указывает имя подписки Azure, которую этот командлет использует для создания контекста подключения.
-Если значение для этого параметра не задано, командлет использует текущую подписку.
-Запустите командлет Select-AzureSubscription, чтобы изменить текущую подписку.
+Указывает имя подписки Azure, которую этот cmdlet использует для создания контекста подключения.
+Если значение для этого параметра не задано, используется текущая подписка.
+Запустите Select-AzureSubscription, чтобы изменить текущую подписку.
 
 ```yaml
 Type: String
@@ -204,7 +204,7 @@ Accept wildcard characters: False
 ```
 
 ### -UseSubscription
-Указывает на то, что этот командлет использует подписку Azure для создания контекста подключения.
+Указывает на то, что для создания контекста подключения используется подписка Azure.
 
 ```yaml
 Type: SwitchParameter
@@ -219,23 +219,23 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Этот командлет поддерживает общие параметры:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-of Variable,-out,-PipelineVariable,-Verbose, и-WarningAction. Дополнительные сведения можно найти в разделе about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
+Этот cmdlet поддерживает общие параметры: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. Дополнительные сведения см. в about_CommonParameters https://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## ВХОДНЫЕ данные
+## INPUTS
 
-## НАПРЯЖЕНИЕ
+## OUTPUTS
 
-### Microsoft. WindowsAzure. Commands. SqlDatabase. Services. Server. IServerDataServiceContext
+### Microsoft.WindowsAzure.Commands.SqlDatabase.Services.Server.IServerDataServiceContext
 
-## Пуск
-* Если при проверке подлинности не указан домен и вы используете Windows PowerShell 2,0, командлет Get-Credential Возвращает обратную косую черту ( \\ ) в начале имени пользователя (например, \USER.). В Windows PowerShell 3,0 обратная косая черта не добавляется. Эта обратная косая черта не распознается параметром *Credential* командлета **New-AzureSqlDatabaseServerContext** . Чтобы удалить его, используйте команды, похожие на приведенные ниже.
+## ПРИМЕЧАНИЯ
+* Если проверка подлинности проводится без указания домена, а также при использовании Windows PowerShell 2.0, Get-Credential-редактор возвращает зашлывку (), предшеную имени пользователя, например \\ \user. Windows PowerShell 3.0 не добавляет обратное слаш. Эта backslash не распознается параметром *Credential* в cmdlet **New-AzureSqlDatabaseServerContext.** Чтобы удалить его, используйте следующие команды:
 
   `PS C:\\\> $Credential = Get-Credential`
 `PS C:\\\> $Credential = New-Object -TypeName 'System.Management.Automation.PSCredential' -ArgumentList $Credential.Username.Replace("\",""),$Credential.Password`
 
-## ДОПОЛНИТЕЛЬНЫЕ ССЫЛКИ
+## СВЯЗАННЫЕ ССЫЛКИ
 
-[Командлеты базы данных SQL Azure](./Azure.SQLDatabase.md)
+
 
 [Get-AzureSqlDatabase](./Get-AzureSqlDatabase.md)
 
