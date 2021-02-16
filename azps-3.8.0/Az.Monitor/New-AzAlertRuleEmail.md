@@ -6,55 +6,55 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.monitor/ne
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/New-AzAlertRuleEmail.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/New-AzAlertRuleEmail.md
-ms.openlocfilehash: 592329ff0793fc99f8e5b0e7031a2248342102f9
-ms.sourcegitcommit: 6a91b4c545350d316d3cf8c62f384478e3f3ba24
+ms.openlocfilehash: 7d9ed01346c04974fb43d7e3b233badb7a185dc2
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "94072982"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100411370"
 ---
 # New-AzAlertRuleEmail
 
-## КРАТКИй обзор
-Создание действия электронной почты для правила оповещения.
+## SYNOPSIS
+Создает действие по электронной почте для правила оповещения.
 
-## Максимальное
+## СИНТАКСИС
 
 ```
 New-AzAlertRuleEmail [[-CustomEmail] <String[]>] [-SendToServiceOwner]
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## NОПИСАНИЕ
-Командлет **New-AzAlertRuleEmail** создает действие электронной почты для правила оповещения.
+## ОПИСАНИЕ
+Для правила оповещения создается действие **"New-AzAlertRuleEmail".**
 
-## ИЛЛЮСТРИРУЮТ
+## ПРИМЕРЫ
 
-### Пример 1: Создание действия по электронной почте правила оповещения для владельцев служб
+### Пример 1. Создание действия правила оповещения для владельцев служб
 ```
 PS C:\>New-AzAlertRuleEmail -SendToServiceOwners
 ```
 
-Эта команда создает действие по электронной почте правила оповещения, которое отправляется своим владельцам услуг при срабатывании правила оповещения.
+Эта команда создает действие правила оповещения, которое отправляется владельцам служб при его отправке.
 
-### Пример 2: Создание действия по электронной почте для правила оповещения для владельцев, не связанных с обслуживанием
+### Пример 2. Создание действия правила оповещения для владельцев, не внося в службу
 ```
 PS C:\>New-AzAlertRuleEmail -CustomEmail pattif@contoso.com,davidchew@contoso.net
 ```
 
-Эта команда создает действие по электронной почте правила оповещения для указанных адресов электронной почты, но не для владельцев служб.
+Эта команда создает действие правила оповещения для указанных адресов электронной почты, но не для владельцев служб.
 
-### Пример 3: Создание действия по электронной почте правила оповещения для владельцев услуг и не владельцев служб
+### Пример 3. Создание действия правила оповещения для владельцев служб и других владельцев
 ```
 PS C:\>New-AzAlertRuleEmail -CustomEmail pattif@contoso.net -SendToServiceOwners
 ```
 
-Эта команда создает действие по электронной почте правила оповещения для указанного адреса и для владельцев служб.
+Эта команда создает действие правила оповещения для указанного адреса и для его владельцев служб.
 
-## ПАРАМЕТРЫ
+## PARAMETERS
 
 ### -CustomEmail
-Задает список адресов электронной почты, разделенных запятыми.
+Список адресов электронной почты, разделенных запятой.
 
 ```yaml
 Type: System.String[]
@@ -84,7 +84,7 @@ Accept wildcard characters: False
 ```
 
 ### -SendToServiceOwner
-Указывает, что эта операция отправляет владельцам службы сообщение электронной почты при срабатывании правила.
+Указывает на то, что при отправке правила владельцам службы отправляется сообщение электронной почты.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -99,23 +99,22 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Этот командлет поддерживает общие параметры:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-of Variable,-out,-PipelineVariable,-Verbose, и-WarningAction. Дополнительные сведения можно найти в разделе [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+Этот cmdlet поддерживает общие параметры: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. Дополнительные сведения см. [в about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)
 
-## ВХОДНЫЕ данные
+## INPUTS
 
-### System. String []
+### System.String[]
 
-### System. Management. Automation. SwitchParameter
+### System.Management.Automation.SwitchParameter
 
-## НАПРЯЖЕНИЕ
+## OUTPUTS
 
-### Microsoft. Azure. Management. Monitor. Management. Models. RuleEmailAction
+### Microsoft.Azure.Management.Monitor.Management.Models.RuleEmailAction
 
-## Пуск
+## ПРИМЕЧАНИЯ
 
-## ДОПОЛНИТЕЛЬНЫЕ ССЫЛКИ
+## СВЯЗАННЫЕ ССЫЛКИ
 
-[Add-AzLogAlertRule](./Add-AzLogAlertRule.md)
 
 [Add-AzMetricAlertRule](./Add-AzMetricAlertRule.md)
 
