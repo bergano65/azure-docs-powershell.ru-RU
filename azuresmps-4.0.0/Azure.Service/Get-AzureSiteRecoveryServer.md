@@ -3,19 +3,19 @@ external help file: Microsoft.Azure.Commands.RecoveryServicesRdfe.dll-Help.xml
 ms.assetid: 3EC274C9-9BF6-4B39-BC70-C7F9D780805D
 online version: ''
 schema: 2.0.0
-ms.openlocfilehash: a4081d6d072aadd6a4ae7d09ff57748a8f2cb697
-ms.sourcegitcommit: 56ed085a868afa8263f8eb0f755b5822f5c29532
+ms.openlocfilehash: 79b61501a56913fedb2a003d7aea1a041bfab4d5
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "94075580"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100412288"
 ---
 # Get-AzureSiteRecoveryServer
 
-## КРАТКИй обзор
-Возвращает серверы восстановления сайта, которые зарегистрировали хранилище сайтов для восстановления.
+## SYNOPSIS
+Регистрирует серверы восстановления сайта в хранилище восстановления сайта.
 
-## Максимальное
+## СИНТАКСИС
 
 ### По умолчанию (по умолчанию)
 ```
@@ -32,12 +32,12 @@ Get-AzureSiteRecoveryServer -Id <String> [-Profile <AzureSMProfile>] [<CommonPar
 Get-AzureSiteRecoveryServer -Name <String> [-Profile <AzureSMProfile>] [<CommonParameters>]
 ```
 
-## NОПИСАНИЕ
-Командлет **Get-AzureSiteRecoveryServer** получает сведения о серверах Azure Site Recovery, зарегистрированных в текущем хранилище сайта для восстановления.
+## ОПИСАНИЕ
+С **его учетом** можно получить сведения о серверах восстановления сайтов Azure, зарегистрированных в текущем хранилище восстановления сайта.
 
-## ИЛЛЮСТРИРУЮТ
+## ПРИМЕРЫ
 
-### Пример 1: получение сведений о сервере восстановления сайта
+### Пример 1. Просмотр сведений о сервере восстановления сайта
 ```
 PS C:\> Get-AzureSiteRecoveryServer
 ID              : cd7dec80-1144-4531-9ab3-888b8ab39bee
@@ -53,12 +53,12 @@ ProviderVersion : 3.5
 ServerVersion   : 3.2.7510.0
 ```
 
-Эта команда получает сведения о сервере Azure Site Recovery.
+Эта команда получает сведения о сервере восстановления сайта Azure.
 
-## ПАРАМЕТРЫ
+## PARAMETERS
 
-### -ID
-Указывает идентификатор сервера.
+### -Id
+Определяет ИД сервера.
 
 ```yaml
 Type: String
@@ -72,7 +72,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Name (имя)
+### -Name
 Указывает имя сервера.
 
 ```yaml
@@ -88,8 +88,8 @@ Accept wildcard characters: False
 ```
 
 ### -Profile
-Указывает профиль Azure, из которого считывается этот командлет.
-Если вы не укажете профиль, этот командлет считывает данные из локального профиля по умолчанию.
+Определяет профиль Azure, для которого читается этот cmdlet.
+Если не указать профиль, этот cmdlet будет читать данные из локального профиля по умолчанию.
 
 ```yaml
 Type: AzureSMProfile
@@ -104,16 +104,16 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Этот командлет поддерживает общие параметры:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-of Variable,-out,-PipelineVariable,-Verbose, и-WarningAction. Дополнительные сведения можно найти в разделе about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
+Этот cmdlet поддерживает общие параметры: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. Дополнительные сведения см. в about_CommonParameters https://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## ВХОДНЫЕ данные
+## INPUTS
 
-## НАПРЯЖЕНИЕ
+## OUTPUTS
 
-## Пуск
+## ПРИМЕЧАНИЯ
 
-## ДОПОЛНИТЕЛЬНЫЕ ССЫЛКИ
+## СВЯЗАННЫЕ ССЫЛКИ
 
-[Командлеты служб Azure Site Recovery](./Azure.SiteRecoveryServices.md)
+
 
 
