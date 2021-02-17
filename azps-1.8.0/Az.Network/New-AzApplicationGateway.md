@@ -6,21 +6,21 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.network/ne
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/New-AzApplicationGateway.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/New-AzApplicationGateway.md
-ms.openlocfilehash: 131a068faec659b8215790a1bcdc1609b3494cb1
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: e6ffaa0463a92560579c350a9d614aa0edcbd615
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93730434"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100401867"
 ---
 # New-AzApplicationGateway
 
-## КРАТКИй обзор
-Создание шлюза приложений.
+## SYNOPSIS
+Создает шлюз приложения.
 
-## Максимальное
+## СИНТАКСИС
 
-### IdentityByUserAssignedIdentityId (по умолчанию)
+### IdentityByUserAssignedIdidId (по умолчанию)
 ```
 New-AzApplicationGateway -Name <String> -ResourceGroupName <String> -Location <String>
  -Sku <PSApplicationGatewaySku> [-SslPolicy <PSApplicationGatewaySslPolicy>]
@@ -113,21 +113,21 @@ New-AzApplicationGateway -Name <String> -ResourceGroupName <String> -Location <S
  [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## NОПИСАНИЕ
-Командлет **New-AzApplicationGateway** создает шлюз приложений Azure.
-Для шлюза приложений требуются указанные ниже возможности.
+## ОПИСАНИЕ
+Для создания шлюза приложения Azure создается **cmdlet New-AzApplicationGateway.**
+Для шлюза приложения требуется следующее:
 - Группа ресурсов.
 - Виртуальная сеть.
-- Пул серверного сервера, содержащий IP-адреса серверных серверов.
-- Параметры пула серверов для заднего сервера. У каждого пула есть такие параметры, как порт, протокол и сходство на основе файлов cookie, которые применяются ко всем серверам в пуле.
-- IP-адреса переднего плана, которые являются IP-адресами, открытыми на шлюзе приложений. Интерфейсный IP-адрес может быть общедоступным IP-адресом или внутренним IP-адресом.
-- Внешние порты, которые являются общедоступными портами, открытыми на шлюзе приложений. Трафик, который нажимает эти порты, перенаправляется на серверные серверы.
-- Правило маршрутизации запросов, связывающее прослушиватель и пул серверного сервера. Правило определяет, на какой серверный пул должен перенаправляться трафик при каждом обращении к определенному прослушивателю.
-У прослушивателя есть интерфейсный порт, клиентский IP-адрес, протокол (HTTP или HTTPS) и имя сертификата SSL (при настройке разгрузки SSL).
+- Серверный пул серверов, содержащий IP-адреса серверов.
+- Параметры серверного пула. В каждом пуле есть параметры портов, протоколов и сходства на основе cookie, которые применяются на всех серверах в пуле.
+- IP-адреса переднего ip-адреса, открытые на шлюзе приложения. Конечным IP-адресом может быть общедоступный или внутренний IP-адрес.
+- Передне-конечные порты , которые являются общедоступными портами, открытыми на шлюзе приложения. Трафик, отправляемый на эти порты, перенаправляется на серверы серверов.
+- Правило маршрутки запроса, которое связывает слушателя и серверный пул. Это правило определяет, на какие серверные серверы следует направить трафик при его попадании на определенного слушателя.
+У слушателя есть порт переднего и переднего IP-адреса, протокол (HTTP или HTTPS) и имя SSL-сертификата (при настройке offload SSL).
 
-## ИЛЛЮСТРИРУЮТ
+## ПРИМЕРЫ
 
-### Пример 1: Создание шлюза приложений
+### Пример 1. Создание шлюза приложения
 ```
 PS C:\> $ResourceGroup = New-AzResourceGroup -Name "ResourceGroup01" -Location "West US" -Tag @{Name = "Department"; Value = "Marketing"} 
 PS C:\> $Subnet = New-AzVirtualNetworkSubnetConfig -Name "Subnet01" -AddressPrefix 10.0.0.0/24
@@ -147,28 +147,28 @@ PS C:\> $Sku = New-AzApplicationGatewaySku -Name "Standard_Small" -Tier Standard
 PS C:\> $Gateway = New-AzApplicationGateway -Name "AppGateway01" -ResourceGroupName "ResourceGroup01" -Location "West US" -BackendAddressPools $Pool -BackendHttpSettingsCollection $PoolSetting -FrontendIpConfigurations $FrontEndIpConfig  -GatewayIpConfigurations $GatewayIpConfig -FrontendPorts $FrontEndPort -HttpListeners $Listener -RequestRoutingRules $Rule -Sku $Sku
 ```
 
-В следующем примере создается шлюз приложений, в результате чего создаются группа ресурсов и виртуальная сеть, а также указанные ниже возможности.
-- Пул серверов в серверной части
-- Параметры пула серверов в серверной части
-- Интерфейсные порты
-- IP-адреса интерфейса пользователя
-- Правило маршрутизации запросов эти четыре команды создают виртуальную сеть.
+В следующем примере создается шлюз приложения, сначала создается группа ресурсов и виртуальная сеть, а также следующие:
+- Серверный пул серверов
+- Параметры серверного пула
+- Передне-конечные порты
+- IP-адреса переднего ip-адреса
+- Правило маршрутинга запросов с помощью этих четырех команд создает виртуальную сеть.
 Первая команда создает конфигурацию подсети.
 Вторая команда создает виртуальную сеть.
-Третья команда проверяет конфигурацию подсети, а четвертая команда проверяет, успешно ли создана виртуальная сеть.
-Следующие команды создают шлюз приложений.
-Первая команда создает IP-конфигурацию с именем GatewayIp01 для подсети, созданной ранее.
-Вторая команда создает пул серверных серверов с именем Pool01 со списком серверных IP-адресов и сохраняет пул в переменной $Pool.
-Третья команда создает параметры для пула ресурсов на внутреннем сервере и сохраняет параметры в переменной $PoolSetting.
-В этой команде создается порт переднего плана на порту 80 с именем FrontEndPort01 и хранится порт в переменной $FrontEndPort.
-Пятая команда создает общедоступный IP-адрес с помощью New-AzPublicIpAddress.
-Шестая команда создает IP-конфигурацию переднего плана с помощью $PublicIp, называет ее FrontEndPortConfig01 и сохраняет в переменной $FrontEndIpConfig.
-Команда седьмая создает прослушиватель с помощью ранее созданного $FrontEndIpConfig $FrontEndPort.
-Восьмая команда создает правило для слушателя.
-Команда девятка задает SKU.
-Десятая команда создает шлюз, используя объекты, заданные предыдущими командами.
+Третья команда проверяет конфигурацию подсети, а четвертая команда —, что виртуальная сеть создана успешно.
+Следующие команды создают шлюз приложения:
+Первая команда создает конфигурацию IP-адреса с именем GatewayIp01 для созданной ранее подсети.
+Вторая команда создает серверный пул с именем Pool01 со списком серверных IP-адресов и сохраняет пул в переменной $Pool серверов.
+Третья команда создает параметры для серверного пула серверов и сохраняет их в переменной $PoolSetting сервера.
+Для этой команды создается стойкий порт порта 80, именуется FrontEndPort01 и он сохраняется в переменной $FrontEndPort портом.
+Пятая команда создает общедоступный IP-адрес с использованием new-AzPublicIpAddress.
+Шестая команда создает конфигурацию ip-адреса переднего $PublicIp, именует ее FrontEndPortConfig01 и сохраняет ее в переменной $FrontEndIpConfig.
+При использовании седьмой команды создается слушатель с использованием ранее созданного $FrontEndIpConfig $FrontEndPort.
+Команда в качестве первой команды создает правило для слушателя.
+Невероятная команда задает SKU.
+Десятая команда создает шлюз, используя объекты, которые были за настроены предыдущими командами.
 
-### Пример 2: Создание шлюза приложений с удостоверением UserAssigned
+### Пример 2. Создание шлюза приложения с помощью удостоверения UserAssigned
 ```
 PS C:\> $ResourceGroup = New-AzResourceGroup -Name "ResourceGroup01" -Location "West US" -Tag @{Name = "Department"; Value = "Marketing"} 
 PS C:\> $Subnet = New-AzVirtualNetworkSubnetConfig -Name "Subnet01" -AddressPrefix 10.0.0.0/24
@@ -190,10 +190,10 @@ PS C:\> $AppgwIdentity = New-AzApplicationGatewayIdentity -UserAssignedIdentity 
 PS C:\> $Gateway = New-AzApplicationGateway -Name "AppGateway01" -ResourceGroupName "ResourceGroup01" -Location "West US" -Identity $AppgwIdentity -BackendAddressPools $Pool -BackendHttpSettingsCollection $PoolSetting -FrontendIpConfigurations $FrontEndIpConfig  -GatewayIpConfigurations $GatewayIpConfig -FrontendPorts $FrontEndPort -HttpListeners $Listener -RequestRoutingRules $Rule -Sku $Sku
 ```
 
-## ПАРАМЕТРЫ
+## PARAMETERS
 
 ### -AsJob
-Выполнить командлет в фоновом режиме
+Запуск cmdlet в фоновом режиме
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -208,7 +208,7 @@ Accept wildcard characters: False
 ```
 
 ### -AuthenticationCertificates
-Определяет сертификаты проверки подлинности для шлюза приложений.
+Определяет сертификаты проверки подлинности для шлюза приложения.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayAuthenticationCertificate[]
@@ -223,7 +223,7 @@ Accept wildcard characters: False
 ```
 
 ### -AutoscaleConfiguration
-Настройка автомасштабирования
+Настройка авто шкалы
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayAutoscaleConfiguration
@@ -238,7 +238,7 @@ Accept wildcard characters: False
 ```
 
 ### -BackendAddressPools
-Указывает список пулов серверных адресов для шлюза приложений.
+Определяет список пулов конечных адресов для шлюза приложения.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayBackendAddressPool[]
@@ -253,7 +253,7 @@ Accept wildcard characters: False
 ```
 
 ### -BackendHttpSettingsCollection
-Указывает список параметров HTTP для серверного шлюза приложений.
+Определяет список back-end HTTP-параметров шлюза приложения.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayBackendHttpSettings[]
@@ -268,7 +268,7 @@ Accept wildcard characters: False
 ```
 
 ### -CustomErrorConfiguration
-Ошибка клиента в шлюзе приложений
+Ошибка клиента шлюза приложения
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayCustomError[]
@@ -298,7 +298,7 @@ Accept wildcard characters: False
 ```
 
 ### -EnableFIPS
-Включен ли FIPS.
+Будет ли включена ли fiPS.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -313,7 +313,7 @@ Accept wildcard characters: False
 ```
 
 ### -EnableHttp2
-Включена ли HTTP2.
+Включена ли протокол HTTP2.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -328,7 +328,7 @@ Accept wildcard characters: False
 ```
 
 ### -FirewallPolicy
-Настройка брандмауэра
+Конфигурация брандмауэра
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayWebApplicationFirewallPolicy
@@ -358,7 +358,7 @@ Accept wildcard characters: False
 ```
 
 ### -Force
-Принудительное выполнение команды без запроса подтверждения пользователя.
+Запуск команды без запроса подтверждения.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -373,7 +373,7 @@ Accept wildcard characters: False
 ```
 
 ### -FrontendIPConfigurations
-Задает список IP-конфигураций интерфейсов для шлюза приложений.
+Определяет список конфигураций IP-адресов для шлюза приложения.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayFrontendIPConfiguration[]
@@ -388,7 +388,7 @@ Accept wildcard characters: False
 ```
 
 ### -FrontendPorts
-Задает список интерфейсных портов для шлюза приложений.
+Список переднего порта шлюза приложения.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayFrontendPort[]
@@ -403,7 +403,7 @@ Accept wildcard characters: False
 ```
 
 ### -GatewayIPConfigurations
-Задает список IP-конфигураций для шлюза приложений.
+Определяет список конфигураций IP-адресов для шлюза приложения.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayIPConfiguration[]
@@ -418,7 +418,7 @@ Accept wildcard characters: False
 ```
 
 ### -HttpListeners
-Задает список прослушивателей HTTP для шлюза приложений.
+Список HTTP-протоколов для шлюза приложения.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayHttpListener[]
@@ -433,7 +433,7 @@ Accept wildcard characters: False
 ```
 
 ### -Identity
-Удостоверение шлюза приложения, назначаемое шлюзу приложений.
+Удостоверение шлюза приложения, которое будет назначено шлюзу приложения.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSManagedServiceIdentity
@@ -448,7 +448,7 @@ Accept wildcard characters: False
 ```
 
 ### -Location
-Указывает область, в которой нужно создать шлюз приложения.
+Определяет регион, в котором нужно создать шлюз приложения.
 
 ```yaml
 Type: System.String
@@ -462,8 +462,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Name (имя)
-Указывает имя шлюза приложений.
+### -Name
+Указывает имя шлюза приложения.
 
 ```yaml
 Type: System.String
@@ -477,8 +477,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Зонды
-Указывает зонды для шлюза приложений.
+### -Ваймы
+Определяет, заданы ли амфеты для шлюза приложения.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayProbe[]
@@ -508,7 +508,7 @@ Accept wildcard characters: False
 ```
 
 ### -RequestRoutingRules
-Указывает список правил маршрутизации запросов для шлюза приложений.
+Определяет список правил маршрутики запросов для шлюза приложения.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayRequestRoutingRule[]
@@ -523,7 +523,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-Указывает имя группы ресурсов, в которой нужно создать шлюз приложения.
+Имя группы ресурсов, в которой нужно создать шлюз приложения.
 
 ```yaml
 Type: System.String
@@ -538,7 +538,7 @@ Accept wildcard characters: False
 ```
 
 ### -RewriteRuleSet
-Список RewriteRuleSet
+Список rewriteRuleSet
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayRewriteRuleSet[]
@@ -553,7 +553,7 @@ Accept wildcard characters: False
 ```
 
 ### -SKU
-Задает единицу хранения (SKU) шлюза приложений.
+Указывает единицу сохраняемого акций (SKU) шлюза приложения.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSApplicationGatewaySku
@@ -568,7 +568,7 @@ Accept wildcard characters: False
 ```
 
 ### -SslCertificates
-Указывает список SSL-сертификатов для шлюза приложений.
+Список SSL-сертификатов для шлюза приложения.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSApplicationGatewaySslCertificate[]
@@ -583,7 +583,7 @@ Accept wildcard characters: False
 ```
 
 ### -SslPolicy
-Указывает политику SSL для шлюза приложений.
+Политика SSL для шлюза приложения.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSApplicationGatewaySslPolicy
@@ -597,8 +597,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Тег
-Пары "ключ-значение" в виде хэш-таблицы. Например: @ {Key0 = "value0"; key1 = $null; key2 = "значение2"}
+### -Tag
+Пары значений ключа в виде hash table. Например: @{key0="value0";key1=$null;key2="value2"}
 
 ```yaml
 Type: System.Collections.Hashtable
@@ -613,7 +613,7 @@ Accept wildcard characters: False
 ```
 
 ### -TrustedRootCertificate
-Список доверенных корневых сертификатов.
+Список доверенных корневых сертификатов
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayTrustedRootCertificate[]
@@ -628,7 +628,7 @@ Accept wildcard characters: False
 ```
 
 ### -UrlPathMaps
-Указывает карты URL-пути для шлюза приложений.
+Указывает карты URL-пути для шлюза приложения.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayUrlPathMap[]
@@ -643,7 +643,7 @@ Accept wildcard characters: False
 ```
 
 ### -UserAssignedIdentityId
-ResourceId для пользователя, которому назначена идентификация, назначаемая шлюзу приложения.
+ResourceId идентификатора пользователя, назначенного шлюзу приложения.
 
 ```yaml
 Type: System.String
@@ -658,7 +658,7 @@ Accept wildcard characters: False
 ```
 
 ### -WebApplicationFirewallConfiguration
-Определяет конфигурацию брандмауэра веб-приложения (WAF). Вы можете использовать командлет Get-AzApplicationGatewayWebApplicationFirewallConfiguration, чтобы получить WAF.
+Указывает конфигурацию брандмауэра веб-приложения (WAF). Вы можете использовать Get-AzApplicationGatewayWebApplicationFirewallConfiguration WAF.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayWebApplicationFirewallConfiguration
@@ -673,7 +673,7 @@ Accept wildcard characters: False
 ```
 
 ### -Zone
-Список зон доступности, обозначающих, откуда должен быть получен шлюз приложений.
+Список зон доступности, обозначающий, из которых должен получиться шлюз приложения.
 
 ```yaml
 Type: System.String[]
@@ -688,7 +688,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
-Запрашивает подтверждение перед запуском командлета.
+Перед запуском cmdlet вам будет предложено подтвердить его.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -703,8 +703,8 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Показывает, что произойдет при запуске командлета.
-Командлет не выполняется.
+Показывает, что произойдет при запуске cmdlet.
+Этот cmdlet не будет выполниться.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -719,61 +719,60 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Этот командлет поддерживает общие параметры:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-of Variable,-out,-PipelineVariable,-Verbose, и-WarningAction. Дополнительные сведения можно найти в разделе about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
+Этот cmdlet поддерживает общие параметры: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. Дополнительные сведения см. в about_CommonParameters https://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## ВХОДНЫЕ данные
+## INPUTS
 
-### System. String
+### System.String
 
-### Microsoft. Azure. Commands. Network. Models. PSApplicationGatewaySku
+### Microsoft.Azure.Commands.Network.Models.PSApplicationGatewaySku
 
-### Microsoft. Azure. Commands. Network. Models. PSApplicationGatewaySslPolicy
+### Microsoft.Azure.Commands.Network.Models.PSApplicationGatewaySslPolicy
 
-### Microsoft. Azure. Commands. Network. Models. PSApplicationGatewayIPConfiguration []
+### Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayIPConfiguration[]
 
-### Microsoft. Azure. Commands. Network. Models. PSApplicationGatewaySslCertificate []
+### Microsoft.Azure.Commands.Network.Models.PSApplicationGatewaySslCertificate[]
 
-### Microsoft. Azure. Commands. Network. Models. PSApplicationGatewayAuthenticationCertificate []
+### Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayAuthenticationCertificate[]
 
-### Microsoft. Azure. Commands. Network. Models. PSApplicationGatewayTrustedRootCertificate []
+### Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayTrustedRootCertificate[]
 
-### Microsoft. Azure. Commands. Network. Models. PSApplicationGatewayFrontendIPConfiguration []
+### Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayFrontendIPConfiguration[]
 
-### Microsoft. Azure. Commands. Network. Models. PSApplicationGatewayFrontendPort []
+### Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayFrontendPort[]
 
-### Microsoft. Azure. Commands. Network. Models. PSApplicationGatewayProbe []
+### Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayProbe[]
 
-### Microsoft. Azure. Commands. Network. Models. PSApplicationGatewayBackendAddressPool []
+### Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayBackendAddressPool[]
 
-### Microsoft. Azure. Commands. Network. Models. PSApplicationGatewayBackendHttpSettings []
+### Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayBackendHttpSettings[]
 
-### Microsoft. Azure. Commands. Network. Models. PSApplicationGatewayHttpListener []
+### Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayHttpListener[]
 
-### Microsoft. Azure. Commands. Network. Models. PSApplicationGatewayUrlPathMap []
+### Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayUrlPathMap[]
 
-### Microsoft. Azure. Commands. Network. Models. PSApplicationGatewayRequestRoutingRule []
+### Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayRequestRoutingRule[]
 
-### Microsoft. Azure. Commands. Network. Models. PSApplicationGatewayRewriteRuleSet []
+### Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayRewriteRuleSet[]
 
-### Microsoft. Azure. Commands. Network. Models. PSApplicationGatewayRedirectConfiguration []
+### Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayRedirectConfiguration[]
 
-### Microsoft. Azure. Commands. Network. Models. PSApplicationGatewayWebApplicationFirewallConfiguration
+### Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayWebApplicationFirewallConfiguration
 
-### Microsoft. Azure. Commands. Network. Models. PSApplicationGatewayAutoscaleConfiguration
+### Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayAutoscaleConfiguration
 
-### System. Collections. Hashtable
+### System.Collections.Hashtable
 
-## НАПРЯЖЕНИЕ
+## OUTPUTS
 
-### Microsoft. Azure. Commands. Network. Models. PSApplicationGateway
+### Microsoft.Azure.Commands.Network.Models.PSApplicationGateway
 
-## Пуск
+## ПРИМЕЧАНИЯ
 
-## ДОПОЛНИТЕЛЬНЫЕ ССЫЛКИ
+## СВЯЗАННЫЕ ССЫЛКИ
 
 [New-AzApplicationGatewayBackendAddressPool](./New-AzApplicationGatewayBackendAddressPool.md)
 
-[New-AzApplicationGatewayBackendHttpSettings](./New-AzApplicationGatewayBackendHttpSettings.md)
 
 [New-AzApplicationGatewayFrontendIPConfig](./New-AzApplicationGatewayFrontendIPConfig.md)
 
