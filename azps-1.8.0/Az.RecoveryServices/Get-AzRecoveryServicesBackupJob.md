@@ -6,19 +6,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.recoveryse
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/RecoveryServices/RecoveryServices/help/Get-AzRecoveryServicesBackupJob.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/RecoveryServices/RecoveryServices/help/Get-AzRecoveryServicesBackupJob.md
-ms.openlocfilehash: 21498e13490b22b58621e2100dcc885442db7607
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: 5dab5eaca48152dc573caf75f5d80737802bfcdf
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93729706"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100399827"
 ---
 # Get-AzRecoveryServicesBackupJob
 
-## КРАТКИй обзор
-Получает задания резервного копирования.
+## SYNOPSIS
+Возвращает задания резервного копирования.
 
-## Максимальное
+## СИНТАКСИС
 
 ```
 Get-AzRecoveryServicesBackupJob [[-Status] <JobStatus>] [[-Operation] <JobOperation>] [[-From] <DateTime>]
@@ -26,13 +26,13 @@ Get-AzRecoveryServicesBackupJob [[-Status] <JobStatus>] [[-Operation] <JobOperat
  [-VaultId <String>] [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## NОПИСАНИЕ
-Командлет **Get-AzRecoveryServicesBackupJob** получает задания резервного копирования Azure для определенного хранилища.
-Настройте контекст хранилища с помощью командлета Set-AzRecoveryServicesVaultContext, прежде чем использовать текущий командлет.
+## ОПИСАНИЕ
+Чтобы **получить задания резервного** копирования для определенного хранилища, можно получить задания резервного копирования Azure.
+Прежде чем использовать текущий Set-AzRecoveryServicesVaultContext, задате контекст хранилища с помощью Set-AzRecoveryServicesVaultContext.
 
-## ИЛЛЮСТРИРУЮТ
+## ПРИМЕРЫ
 
-### Пример 1: получение всех выполняемых заданий
+### Пример 1. Все задания выполнения
 ```
 PS C:\>$Joblist = Get-AzRecoveryservicesBackupJob -Status Inprogress
 PS C:\> $Joblist[0]
@@ -41,20 +41,20 @@ WorkloadName     Operation            Status               StartTime            
 V2VM             Backup               InProgress           4/23/2016 5:00:30 PM      1/1/2001 12:00:00
 ```
 
-Первая команда получает состояние выполняющегося задания в виде массива, а затем сохраняет его в переменной $Joblist.
-Вторая команда отображает первый элемент в массиве $Joblist.
+Первая команда получает состояние выполнения задания как массива, а затем сохраняет его в $Joblist переменной.
+Вторая команда отображает первый элемент в $Joblist массиве.
 
-### Пример 2: получение всех невыполненных заданий за последние 7 дней
+### Пример 2. Получить все сбойные задания за последние 7 дней
 ```
 PS C:\>Get-AzRecoveryServicesBackupJob -From (Get-Date).AddDays(-7).ToUniversalTime() -Status Failed
 ```
 
-Эта команда возвращает задания с ошибкой за последнюю неделю в хранилище.
-Параметр *from* указывает время, семь дней в прошлом, указанное в формате UTC.
-В команде не указывается значение параметра " *Кому* ".
-Таким образом, используется значение по умолчанию для текущего времени.
+Эта команда получает сбой заданий за последнюю неделю в хранилище.
+Параметр *From* указывает время, прошедшее семь дней, указанное в UTC.
+Команда не указывает значение параметра *To.*
+Поэтому в нем используется значение по умолчанию для текущего времени.
 
-### Пример 3: получение выполняющегося задания и ожидание завершения
+### Пример 3. Получить задание и дождаться завершения
 ```
 PS C:\> 
 $Jobs = Get-AzRecoveryServicesBackupJob -Status InProgress
@@ -72,12 +72,12 @@ $Job = $Jobs[0]
     Done!
 ```
 
-Этот сценарий опрашивает первое задание, которое выполняется в данный момент, пока задание не будет завершено.
+Этот сценарий оповестит первое задание, которое в настоящее время находится в процессе выполнения, пока задание не будет завершено.
 
-## ПАРАМЕТРЫ
+## PARAMETERS
 
 ### -BackupManagementType
-Указывает тип управления резервным копированием.
+Определяет тип управления резервной копией.
 В настоящее время поддерживается только AzureVM, AzureStorage.
 
 ```yaml
@@ -109,10 +109,10 @@ Accept wildcard characters: False
 ```
 
 ### -From
-Задает начало в качестве объекта **DateTime** для диапазона времени для задач, которые получает этот командлет.
-Чтобы получить объект **DateTime** , используйте командлет Get-Date.
-Чтобы получить дополнительные сведения о объектах **DateTime** , введите `Get-Help Get-Date` .
-Используйте формат UTC для дат.
+Начало в качестве объекта **даты и времени** для диапазона времени для заданий, которые получает этот cmdlet.
+Чтобы получить объект **даты и времени,** используйте Get-Date даты.
+Чтобы получить дополнительные сведения об **объектах даты и времени,** введите `Get-Help Get-Date` .
+Для дат используйте формат UTC.
 
 ```yaml
 Type: System.Nullable`1[System.DateTime]
@@ -127,7 +127,7 @@ Accept wildcard characters: False
 ```
 
 ### -Job
-Указывает имя задания резервного копирования, которое требуется получить.
+Имя задания резервного копирования, которое нужно получить.
 
 ```yaml
 Type: Microsoft.Azure.Commands.RecoveryServices.Backup.Cmdlets.Models.JobBase
@@ -142,9 +142,9 @@ Accept wildcard characters: False
 ```
 
 ### -JobId
-Указывает идентификатор задания, которое получает этот командлет.
-Идентификатор — это свойство InstanceId объекта **AzureRmRecoveryServicesBackupJob** .
-Чтобы получить объект **AzureRmRecoveryServicesBackupJob** , используйте Get-AzRecoveryServicesBackupJob.
+Определяет код задания, которое получает этот cmdlet.
+ID — это свойство InstanceId объекта **AzureRmRecoveryServicesBackupJob.**
+Чтобы получить объект **AzureRmRecoveryServicesBackupJob,** воспользуйтесь get-AzRecoveryServicesBackupJob.
 
 ```yaml
 Type: System.String
@@ -158,16 +158,16 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Эксплуатация
-Указывает операцию заданий, которые получает этот командлет.
-Для этого параметра допустимы следующие значения:
-- Копирование
+### -Operation
+Указывает операцию заданий, которые получает этот cmdlet.
+Допустимые значения этого параметра:
+- Резервное копирование
 - ConfigureBackup
 - DeleteBackupData
-- Отменить
-- Восстановление
-- Снять защиту
-- Отмените регистрацию
+- Регистрация
+- "Восстановить"
+- "Отопретить"
+- Отоимкать регистрацию
 
 ```yaml
 Type: System.Nullable`1[Microsoft.Azure.Commands.RecoveryServices.Backup.Cmdlets.Models.JobOperation]
@@ -182,14 +182,14 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Status (состояние)
-Указывает состояние заданий, которые получает этот командлет.
-Для этого параметра допустимы следующие значения:
-- Ход выполнения
-- Ошибкой
-- Отменен
+### -Status
+Указывает состояние заданий, которые получает этот cmdlet.
+Допустимые значения этого параметра:
+- InProgress
+- Сбой
+- Отменено
 - Отмена
-- Completed
+- Завершено
 - CompletedWithWarnings
 
 ```yaml
@@ -206,10 +206,10 @@ Accept wildcard characters: False
 ```
 
 ### -To
-Задает конечный объект в качестве объекта **DateTime** из диапазона времени для задач, которые получает этот командлет.
-Значение по умолчанию — текущее системное время.
-Если указать этот параметр, необходимо также указать параметр *from* .
-Используйте формат UTC для дат.
+Окончание в качестве объекта **даты и времени** для диапазона времени для заданий, которые получает этот cmdlet.
+Значением по умолчанию является текущее системное время.
+Если этот параметр указан, необходимо также указать параметр *From.*
+Для дат используйте формат UTC.
 
 ```yaml
 Type: System.Nullable`1[System.DateTime]
@@ -224,7 +224,7 @@ Accept wildcard characters: False
 ```
 
 ### -VaultId
-Идентификатор ARM хранилища служб восстановления.
+ARM ИД хранилища служб восстановления.
 
 ```yaml
 Type: System.String
@@ -239,23 +239,22 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Этот командлет поддерживает общие параметры:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-of Variable,-out,-PipelineVariable,-Verbose, и-WarningAction. Дополнительные сведения можно найти в разделе about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
+Этот cmdlet поддерживает общие параметры: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. Дополнительные сведения см. в about_CommonParameters https://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## ВХОДНЫЕ данные
+## INPUTS
 
-### System. String
+### System.String
 
-## НАПРЯЖЕНИЕ
+## OUTPUTS
 
-### Microsoft. Azure. Commands. RecoveryServices. Backup. командлеты. Models. JobBase
+### Microsoft.Azure.Commands.RecoveryServices.Backup.Cmdlets.Models.JobBase
 
-## Пуск
+## ПРИМЕЧАНИЯ
 
-## ДОПОЛНИТЕЛЬНЫЕ ССЫЛКИ
+## СВЯЗАННЫЕ ССЫЛКИ
 
-[Get-AzRecoveryServicesBackupJobDetails](./Get-AzRecoveryServicesBackupJobDetails.md)
 
-[Остановить-AzRecoveryServicesBackupJob](./Stop-AzRecoveryServicesBackupJob.md)
+[Stop-AzRecoveryServicesBackupJob](./Stop-AzRecoveryServicesBackupJob.md)
 
 [Wait-AzRecoveryServicesBackupJob](./Wait-AzRecoveryServicesBackupJob.md)
 

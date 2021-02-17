@@ -6,45 +6,45 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.notificati
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/NotificationHubs/NotificationHubs/help/Get-AzNotificationHubsNamespaceListKey.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/NotificationHubs/NotificationHubs/help/Get-AzNotificationHubsNamespaceListKey.md
-ms.openlocfilehash: c099f3d8419e7298af1a262f824304d50685a420
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: 88e43b182694b50169738e0b775d9202aac15ffa
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93729901"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100399861"
 ---
 # Get-AzNotificationHubsNamespaceListKey
 
-## КРАТКИй обзор
-Получает первичные и вторичные строки подключения, связанные с правилом авторизации пространства имен концентратора уведомлений.
+## SYNOPSIS
+Возвращает основные и дополнительные строки подключения, связанные с правилом авторизации пространства имен концентратора уведомлений.
 
-## Максимальное
+## СИНТАКСИС
 
 ```
 Get-AzNotificationHubsNamespaceListKey [-ResourceGroup] <String> [-Namespace] <String>
  [-AuthorizationRule] <String> [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## NОПИСАНИЕ
-Командлет **Get-AzNotificationHubsNamespaceListKey** Возвращает основную и вспомогательную строки подключения для правила авторизации, назначенного пространству имен концентратора уведомлений.
+## ОПИСАНИЕ
+**Cmdlet Get-AzNotificationHubsNamespaceListKey** возвращает основные и дополнительные строки подключения для правила авторизации подписи ОБЩЕГО доступа (SAS), назначенного области имен концентратора уведомлений.
 Правила авторизации управляют правами пользователей на пространство имен концентратора уведомлений.
-Каждое правило включает в себя первичную и вспомогательную строку подключения.
+Каждое правило содержит основную и вторичную строку подключения.
 
-## ИЛЛЮСТРИРУЮТ
+## ПРИМЕРЫ
 
-### Пример 1: получение первичных и дополнительных строк подключения для правила авторизации
+### Пример 1. Получите основные и дополнительные строки подключения для правила авторизации
 ```
 PS C:\>Get-AzNotificationHubsNamespaceListKey -Namespace "ContosoNamespace" -ResourceGroup "ContosoNotificationsGroup" -AuthorizationRule "ListenRule"
 ```
 
-Эта команда возвращает первичные и дополнительные строки подключения для правила авторизации с именем ListenRule, назначенного пространству имен ContosoNamespace.
-При выполнении этой команды необходимо включить имя группы ресурсов, которой назначено пространство имен.
+Эта команда возвращает строки основного и дополнительного подключения для правила авторизации ListenRule, назначенного области имен ContosoNamespace.
+При запуске этой команды необходимо включить имя группы ресурсов, которая назначена области имен.
 
-## ПАРАМЕТРЫ
+## PARAMETERS
 
 ### -AuthorizationRule
 Указывает имя правила проверки подлинности SAS.
-Эти правила определяют тип доступа пользователей к концентратору уведомлений.
+Эти правила определяют тип доступа пользователей к центру уведомлений.
 
 ```yaml
 Type: System.String
@@ -74,7 +74,7 @@ Accept wildcard characters: False
 ```
 
 ### -Namespace
-Задает пространство имен, содержащее строки подключения, которые получает этот командлет.
+Определяет пространство имен, содержащее строки подключения, которые получает этот cmdlet.
 
 ```yaml
 Type: System.String
@@ -89,8 +89,8 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceGroup
-Указывает группу ресурсов, которой назначено пространство имен.
-Группы ресурсов организуют элементы, такие как пространства имен, концентраторы уведомлений и правила авторизации, в целях простого управления запасами и администрирования Azure.
+Группа ресурсов, которой назначено пространство имен.
+Группы ресурсов упорядочиют такие элементы, как пространства имен, концентраторы уведомлений и правила авторизации, чтобы упрость управление запасами и администрирование Azure.
 
 ```yaml
 Type: System.String
@@ -105,22 +105,21 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Этот командлет поддерживает общие параметры:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-of Variable,-out,-PipelineVariable,-Verbose, и-WarningAction. Дополнительные сведения можно найти в разделе about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
+Этот cmdlet поддерживает общие параметры: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. Дополнительные сведения см. в about_CommonParameters https://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## ВХОДНЫЕ данные
+## INPUTS
 
-### System. String
+### System.String
 
-## НАПРЯЖЕНИЕ
+## OUTPUTS
 
-### Microsoft. Azure. Management. NotificationHubs. Models. ResourceListKeys
+### Microsoft.Azure.Management.NotificationHubs.Models.ResourceListKeys
 
-## Пуск
+## ПРИМЕЧАНИЯ
 
-## ДОПОЛНИТЕЛЬНЫЕ ССЫЛКИ
+## СВЯЗАННЫЕ ССЫЛКИ
 
 [Get-AzNotificationHubsNamespace](./Get-AzNotificationHubsNamespace.md)
 
-[Get-AzNotificationHubsNamespaceAuthorizationRules](./Get-AzNotificationHubsNamespaceAuthorizationRules.md)
 
 

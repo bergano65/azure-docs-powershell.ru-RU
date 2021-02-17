@@ -6,19 +6,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.resources/
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/Azs-tzl/src/Resources/Resources/help/Remove-AzADApplication.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/Azs-tzl/src/Resources/Resources/help/Remove-AzADApplication.md
-ms.openlocfilehash: 00c9d6e5a5a729ca5a5119b812873078acb38326
-ms.sourcegitcommit: 4c61442a2df1cee633ce93cad9f6bc793803baa2
+ms.openlocfilehash: 956fcf09006e8e65d029bb5e380abc5de0e15c17
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "93910872"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100399929"
 ---
 # Remove-AzADApplication
 
-## КРАТКИй обзор
+## SYNOPSIS
 Удаляет приложение Azure Active Directory.
 
-## Максимальное
+## СИНТАКСИС
 
 ### ObjectIdParameterSet (по умолчанию)
 ```
@@ -44,39 +44,39 @@ Remove-AzADApplication -InputObject <PSADApplication> [-PassThru] [-Force]
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## NОПИСАНИЕ
+## ОПИСАНИЕ
 Удаляет приложение Azure Active Directory.
 
-## ИЛЛЮСТРИРУЮТ
+## ПРИМЕРЫ
 
-### Пример 1: Удаление приложения по идентификатору объекта
+### Пример 1. Удаление приложения по ид объекта
 
 ```
 PS C:\> Remove-AzADApplication -ObjectId b4cd1619-80b3-4cfb-9f8f-9f2333425738
 ```
 
-Удаляет приложение с идентификатором объекта "b4cd1619-80b3-4cfb-9f8f-9f2333425738" из клиента.
+Удаляет приложение с ид объекта 'b4cd1619-80b3-4cfb-9f8f-9f233425738' из клиента.
 
-### Пример 2: Удаление приложения по идентификатору приложения
+### Пример 2. Удаление приложения по ид приложения
 
 ```
 PS C:\> Remove-AzADApplication -ApplicationId f9c5ea4f-28f0-401a-a491-491a037fa346
 ```
 
-Удаляет приложение с идентификатором приложения "f9c5ea4f-28f0-401A-a491-491a037fa346" из клиента.
+Удаляет приложение с ид приложения f9c5ea4f-28f0-401a-a491-491a037fa346' из клиента.
 
-### Пример 3-Удаление приложения с помощью трубопроводов
+### Пример 3. Удаление приложения с помощью piping
 
 ```
 PS C:\> Get-AzADApplication -ObjectId b4cd1619-80b3-4cfb-9f8f-9f2333425738 | Remove-AzADApplication
 ```
 
-Возвращает приложение с идентификатором объекта "b4cd1619-80b3-4cfb-9f8f-9f2333425738" и каналами, которые должны быть удалены из клиента с помощью командлета Remove-AzADApplication.
+Получает приложение с ид объекта 'b4cd1619-80b3-4cfb-9f8f-9f233425738' и каналами, которые до Remove-AzADApplication добираются до Remove-AzADApplication, чтобы удалить приложение из клиента.
 
-## ПАРАМЕТРЫ
+## PARAMETERS
 
 ### -ApplicationId
-Идентификатор приложения, которое нужно удалить.
+ИД приложения, которое нужно удалить.
 
 ```yaml
 Type: System.Guid
@@ -106,7 +106,7 @@ Accept wildcard characters: False
 ```
 
 ### -DisplayName
-Отображаемое имя приложения.
+Отображаемого имени приложения.
 
 ```yaml
 Type: System.String
@@ -151,7 +151,7 @@ Accept wildcard characters: False
 ```
 
 ### -ObjectId
-Идентификатор объекта приложения, которое нужно удалить.
+ИД объекта приложения, который нужно удалить.
 
 ```yaml
 Type: System.Guid
@@ -166,7 +166,7 @@ Accept wildcard characters: False
 ```
 
 ### -PassThru
-Если указать это, будет возвращено значение истина, если команда была выполнена успешно.
+Если эта команда была успешной, ее можно указать как истина.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -181,7 +181,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
-Запрашивает подтверждение перед запуском командлета.
+Перед запуском cmdlet вам будет предложено подтвердить его.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -196,8 +196,8 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Показывает, что произойдет при запуске командлета.
-Командлет не выполняется.
+Показывает, что произойдет при запуске cmdlet.
+Этот cmdlet не будет выполниться.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -212,31 +212,30 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Этот командлет поддерживает общие параметры:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-of Variable,-out,-PipelineVariable,-Verbose, и-WarningAction. Дополнительные сведения можно найти в разделе about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .
+Этот cmdlet поддерживает общие параметры: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. Дополнительные сведения см. в about_CommonParameters http://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## ВХОДНЫЕ данные
+## INPUTS
 
-### System. GUID
+### System.Guid
 
-### System. String
+### System.String
 
-### Microsoft.Azure.Graph.RBAC.Version1_6. ActiveDirectory. PSADApplication
+### Microsoft.Azure.Graph.RBAC.Version1_6.ActiveDirectory.PSADApplication
 Параметры: InputObject (ByValue)
 
-## НАПРЯЖЕНИЕ
+## OUTPUTS
 
-### System. Boolean
+### System.Boolean
 
-## Пуск
-Ключевые слова: Azure, AZ, ARM, ресурс, управление, руководитель, ресурс, группа, шаблон, развертывание
+## ПРИМЕЧАНИЯ
+Ключевые слова: azure, Az, arm, resource, management, manager, resource, group, template, deployment
 
-## ДОПОЛНИТЕЛЬНЫЕ ССЫЛКИ
+## СВЯЗАННЫЕ ССЫЛКИ
 
 [New-AzADApplication](./New-AzADApplication.md)
 
 [Get-AzADApplication](./Get-AzADApplication.md)
 
-[Set-AzADApplication](./Set-AzADApplication.md)
 
 [Remove-AzADAppCredential](./Remove-AzADAppCredential.md)
 
