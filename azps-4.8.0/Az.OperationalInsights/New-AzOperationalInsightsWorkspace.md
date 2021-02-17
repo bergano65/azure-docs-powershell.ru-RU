@@ -6,19 +6,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.operationa
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/OperationalInsights/OperationalInsights/help/New-AzOperationalInsightsWorkspace.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/OperationalInsights/OperationalInsights/help/New-AzOperationalInsightsWorkspace.md
-ms.openlocfilehash: feac2aa9c5dd92c0d76090c6fc28353d56f9647c
-ms.sourcegitcommit: 1de2b6c3c99197958fa2101bc37680e7507f91ac
+ms.openlocfilehash: 8515bf4085fcd03d87aa15c3da649fe318b94966
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "94244033"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100405012"
 ---
 # New-AzOperationalInsightsWorkspace
 
-## КРАТКИй обзор
-Создание рабочей области.
+## SYNOPSIS
+Создается рабочее пространство.
 
-## Максимальное
+## СИНТАКСИС
 
 ```
 New-AzOperationalInsightsWorkspace [-ResourceGroupName] <String> [-Name] <String> [-Location] <String>
@@ -27,30 +27,30 @@ New-AzOperationalInsightsWorkspace [-ResourceGroupName] <String> [-Name] <String
  [[-PublicNetworkAccessForQuery] <String>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## NОПИСАНИЕ
-Командлет **New-AzOperationalInsightsWorkspace** создает рабочую область в заданной группе ресурсов и расположении.
+## ОПИСАНИЕ
+Командлет **New-AzOperationalInsightsWorkspace** создает рабочее пространство в указанной группе ресурсов и расположении.
 
-## ИЛЛЮСТРИРУЮТ
+## ПРИМЕРЫ
 
-### Пример 1: создание рабочей области по имени
+### Пример 1. Создание рабочей области по имени
 ```
 PS C:\>New-AzOperationalInsightsWorkspace -ResourceGroupName "ContosoResourceGroup" -Name "MyWorkspace" -Location "East US" -Sku "Standard"
 ```
 
-Эта команда создает стандартную рабочую область SKU с именем MyWorkspace в группе ресурсов с именем ContosoResourceGroup.
+Эта команда создает стандартную рабочая область с именем MyWorkspace в группе ресурсов ContosoResourceGroup.
 
-### Пример 2: создание рабочей области и связывание ее с существующей учетной записью
+### Пример 2. Создание рабочей области и связыва ее с существующей учетной записью
 ```
 PS C:\>$OILinkTargets = Get-AzOperationalInsightsLinkTargets
 
 PS C:\>$OILinkTargets[0] | New-AzOperationalInsightsWorkspace -ResourceGroupName "ContosoResourceGroup" -Name "MyWorkspace" -Sku "Standard"
 ```
 
-Первая команда использует командлет Get-AzOperationalInsightsLinkTargets для получения целевых данных ссылки на учетную запись, а затем сохраняет их в переменной $OILinkTargets.
-Вторая команда передает конечный объект ссылки на учетную запись в $OILinkTargets командлету **New-AzOperationalInsightsWorkspace** с помощью оператора конвейера.
-Команда создает стандартную рабочую область SKU с именем MyWorkspace, связанную с учетной записью первой оперативной аналитики в $OILinkTargets.
+Первая команда использует командлет Get-AzOperationalInsightsLinkTargets для получения целевых объектов связываемой учетной записи Operational Insights, а затем сохраняет их в $OILinkTargets переменной.
+Вторая команда передает первую целевую ссылку учетной записи в $OILinkTargets командлет **New-AzOperationalInsightsWorkspace** с помощью оператора конвейера.
+Эта команда создает стандартную рабочее пространство MyWorkspace, связанное с первой учетной записью Operational Insights в $OILinkTargets.
 
-## ПАРАМЕТРЫ
+## PARAMETERS
 
 ### -DefaultProfile
 Учетные данные, учетная запись, клиент и подписка, используемые для связи с Azure
@@ -68,7 +68,7 @@ Accept wildcard characters: False
 ```
 
 ### -Force
-Принудительное выполнение команды без запроса подтверждения пользователя.
+Запуск команды без запроса подтверждения.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -83,7 +83,7 @@ Accept wildcard characters: False
 ```
 
 ### -Location
-Указывает место для создания рабочей области, например "Восток США" или "Западная Европа".
+Определяет место, в котором будет создаваться рабочее пространство, например "Восточная США" или "Западная Европа".
 
 ```yaml
 Type: System.String
@@ -97,7 +97,7 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Name (имя)
+### -Name
 Указывает имя рабочей области.
 
 ```yaml
@@ -113,7 +113,7 @@ Accept wildcard characters: False
 ```
 
 ### -PublicNetworkAccessForIngestion
-Тип доступа к сети для доступа к рабочей области. Значение должно быть "включено" или "отключено"
+Тип сетевого доступа для доступа к рабочему пространству. Значение должно быть включено или отключено
 
 ```yaml
 Type: System.String
@@ -128,7 +128,7 @@ Accept wildcard characters: False
 ```
 
 ### -PublicNetworkAccessForQuery
-Тип сетевого доступа для доступа к запросу рабочей области. Значение должно быть "включено" или "отключено"
+Тип доступа к сети для запроса рабочей области. Значение должно быть включено или отключено
 
 ```yaml
 Type: System.String
@@ -144,7 +144,7 @@ Accept wildcard characters: False
 
 ### -ResourceGroupName
 Указывает имя группы ресурсов Azure.
-Рабочая область будет создана в этой группе ресурсов.
+Рабочая область создается в этой группе ресурсов.
 
 ```yaml
 Type: System.String
@@ -159,7 +159,7 @@ Accept wildcard characters: False
 ```
 
 ### -RetentionInDays
-Хранение данных рабочей области в днях. 730 дней – это максимально допустимое количество номеров SKU.
+Хранение данных рабочей области в днях. 730 дней — это максимальное значение для всех остальных skus
 
 ```yaml
 Type: System.Nullable`1[System.Int32]
@@ -174,14 +174,14 @@ Accept wildcard characters: False
 ```
 
 ### -SKU
-Указывает уровень обслуживания рабочей области. Дополнительные сведения о том, какое значение использовать, можно найти в этой видеосвязи https://docs.microsoft.com/en-us/azure/azure-monitor/platform/manage-cost-storage#legacy-pricing-tiers .
+Определяет уровень обслуживания рабочей области. Дополнительные сведения о том, какое значение нужно использовать, можно найти в https://docs.microsoft.com/en-us/azure/azure-monitor/platform/manage-cost-storage#legacy-pricing-tiers
 Допустимые значения:
 - бесплатно
 - pergb2018
 - pernode
-- версию
-- отдельно
-- Стандартная
+- premium
+- автономный
+- стандартный
 
 ```yaml
 Type: System.String
@@ -195,7 +195,7 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Тег
+### -Tag
 Теги ресурсов для рабочей области.
 
 ```yaml
@@ -211,7 +211,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
-Запрашивает подтверждение перед запуском командлета.
+Перед запуском cmdlet вам будет предложено подтвердить его.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -226,8 +226,8 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Показывает, что произойдет при запуске командлета.
-Командлет не выполняется.
+Показывает, что произойдет при запуске cmdlet.
+Этот cmdlet не будет выполниться.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -242,30 +242,29 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Этот командлет поддерживает общие параметры:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-of Variable,-out,-PipelineVariable,-Verbose, и-WarningAction. Дополнительные сведения можно найти в разделе [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+Этот cmdlet поддерживает общие параметры: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. Дополнительные сведения см. [в about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)
 
-## ВХОДНЫЕ данные
+## INPUTS
 
-### System. String
+### System.String
 
-### System. Nullable "1 [[System. GUID, System. Private. CoreLib, Version = 4.0.0.0, культура = Neutral, PublicKeyToken = 7cec85d7bea7798e]]
+### System.Nullable'1[[System.Guid, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]
 
-### System. Collections. Hashtable
+### System.Collections.Hashtable
 
-### System. Nullable "1 [[System. Int32, System. Private. CoreLib, Version = 4.0.0.0, Culture = Neutral, PublicKeyToken = 7cec85d7bea7798e]]
+### System.Nullable'1[[System.Int32, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]
 
-## НАПРЯЖЕНИЕ
+## OUTPUTS
 
-### Microsoft. Azure. Commands. OperationalInsights. Models. PSWorkspace
+### Microsoft.Azure.Commands.OperationalInsights.Models.PSWorkspace
 
-## Пуск
+## ПРИМЕЧАНИЯ
 
-Была выпущена новая модель ценообразования. Если вы являетесь поставщиком службы криптографии, это означает, что для SKU вам нужно использовать "standalone". В фоновом режиме номер SKU изменится на pergb2018. Дополнительные сведения можно найти в следующих примерах: https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitoring-usage-and-estimated-costs#new-pricing-model
+Выпущена новая модель цен. Если вы — CSP, это означает, что для SKU необходимо использовать автономный режим. При этом sku будет изменен на pergb2018. Дополнительные сведения см. в следующих сведениях: https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitoring-usage-and-estimated-costs#new-pricing-model
 
-## ДОПОЛНИТЕЛЬНЫЕ ССЫЛКИ
+## СВЯЗАННЫЕ ССЫЛКИ
 
-[Командлеты оперативной аналитики Azure](./Az.OperationalInsights.md)
+[Azure Operational Insights Cmdlets](./Az.OperationalInsights.md)
 
-[Get-AzOperationalInsightsLinkTargets](./Get-AzOperationalInsightsLinkTargets.md)
 
 

@@ -6,31 +6,31 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.monitor/ge
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/Get-AzAlertHistory.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/Get-AzAlertHistory.md
-ms.openlocfilehash: 559bc8183f6ac80e248099ea95bf6a957b5ea1f5
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: 8c5c6f5039b143c97071e181b249591be3a69b12
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93899570"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100403142"
 ---
 # Get-AzAlertHistory
 
-## КРАТКИй обзор
-Получает историю оповещений.
+## SYNOPSIS
+Возвращает историю оповещений.
 
-## Максимальное
+## СИНТАКСИС
 
 ```
 Get-AzAlertHistory [-ResourceId <String>] [-StartTime <DateTime>] [-EndTime <DateTime>] [-Status <String>]
  [-Caller <String>] [-DetailedOutput] [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## NОПИСАНИЕ
-Командлет **Get-AzAlertHistory** получает историю оповещений по мере их включения, отключения, срабатывания, разрешения и т. д.
+## ОПИСАНИЕ
+С **помощью cmdlet Get-AzAlertHistory** можно получить историю оповещений, которые были включены, отключены, отключены, устранены и так далее.
 
-## ИЛЛЮСТРИРУЮТ
+## ПРИМЕРЫ
 
-### Пример 1: получение журнала оповещений
+### Пример 1. Просмотр истории оповещений
 ```
 PS C:\>Get-AzAlertHistory -StartTime 2015-02-11T11:00:00 -EndTime 2015-02-11T12:00:00 -DetailedOutput
 Authorization        : 
@@ -170,9 +170,9 @@ SubscriptionId       : b93fb07a-6f93-30be-bf3e-4f0deca15f4f
 SubStatus            :
 ```
 
-Эта команда получает историю оповещений для указанного временного интервала для текущей подписки.
+Эта команда получает журнал оповещений для указанного времени для текущей подписки.
 
-### Пример 2: получение журнала оповещений для определенного ресурса
+### Пример 2. Получать историю оповещений для указанного ресурса
 ```
 PS C:\>Get-AzAlertHistory -StartTime 2015-02-11T11:00:00 -EndTime 2015-02-11T12:00:00 -ResourceId "/subscriptions/b93fb07a-6f93-30be-bf3e-4f0deca15f4f/resourceGroups/Default-Web-EastUS/providers/microsoft.insights/alertrules/checkrule3-4b135401-a30c-4224-ae21-fa53a5bd253d" -DetailedOutput
 
@@ -270,10 +270,10 @@ SubStatus            :
 
 Эта команда получает события, связанные с правилом оповещения для указанного ресурса.
 
-## ПАРАМЕТРЫ
+## PARAMETERS
 
-### -Вызывающий абонент
-Задает вызывающий абонент.
+### -Caller
+Указывает вызываемого.
 
 ```yaml
 Type: System.String
@@ -303,7 +303,7 @@ Accept wildcard characters: False
 ```
 
 ### -DetailedOutput
-Отображение подробных сведений в выходных данных.
+Отображение полных сведений в выходных данных.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -318,7 +318,7 @@ Accept wildcard characters: False
 ```
 
 ### -EndTime
-Указывает время окончания запроса в местном времени.
+Время окончания запроса в локальное время.
 Значение по умолчанию — текущее время.
 
 ```yaml
@@ -334,7 +334,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceId
-Указывает идентификатор ресурса, с которым связано правило.
+Определяет ИД ресурса, с помощью который связано правило.
 
 ```yaml
 Type: System.String
@@ -349,8 +349,8 @@ Accept wildcard characters: False
 ```
 
 ### -StartTime
-Задает время начала запроса в местном времени.
-По умолчанию используется текущее местное время минус один час.
+Время начала запроса в локальное время.
+По умолчанию за вычетом одного часа за вычетом текущего локального времени.
 
 ```yaml
 Type: System.Nullable`1[System.DateTime]
@@ -364,7 +364,7 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Status (состояние)
+### -Status
 Указывает состояние.
 
 ```yaml
@@ -380,25 +380,24 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Этот командлет поддерживает общие параметры:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-of Variable,-out,-PipelineVariable,-Verbose, и-WarningAction. Дополнительные сведения можно найти в разделе about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
+Этот cmdlet поддерживает общие параметры: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. Дополнительные сведения см. в about_CommonParameters https://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## ВХОДНЫЕ данные
+## INPUTS
 
-### System. String
+### System.String
 
-### System. Nullable "1 [[System. DateTime, System. Private. CoreLib, Version = 4.0.0.0, культура = Neutral, PublicKeyToken = 7cec85d7bea7798e]]
+### System.Nullable'1[[System.DateTime, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]
 
-### System. Management. Automation. SwitchParameter
+### System.Management.Automation.SwitchParameter
 
-## НАПРЯЖЕНИЕ
+## OUTPUTS
 
-### Microsoft. Azure. Commands. Insights. OutputClasses. PSEventData
+### Microsoft.Azure.Commands.Insights.OutputClasses.PSEventData
 
-## Пуск
+## ПРИМЕЧАНИЯ
 
-## ДОПОЛНИТЕЛЬНЫЕ ССЫЛКИ
+## СВЯЗАННЫЕ ССЫЛКИ
 
-[Add-AzLogAlertRule](./Add-AzLogAlertRule.md)
 
 [Add-AzMetricAlertRule](./Add-AzMetricAlertRule.md)
 
