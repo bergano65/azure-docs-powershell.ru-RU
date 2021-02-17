@@ -5,21 +5,21 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.datafactor
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/DataFactory/DataFactoryV2/help/Get-AzDataFactoryV2DataFlow.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/DataFactory/DataFactoryV2/help/Get-AzDataFactoryV2DataFlow.md
-ms.openlocfilehash: ad27587e52533af1ef7989d4b52de3319137640d
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: 369540a80ec6ffdc02f96783de5e86cc50f0c8f3
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93721541"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100407069"
 ---
 # Get-AzDataFactoryV2DataFlow
 
-## КРАТКИй обзор
-Возвращает сведения о потоках данных в фабрике данных.
+## SYNOPSIS
+Получает сведения о потоках данных в фабрике данных.
 
-## Максимальное
+## СИНТАКСИС
 
-### ByFactoryName (по умолчанию)
+### ByFactoryName (По умолчанию)
 ```
 Get-AzDataFactoryV2DataFlow [[-Name] <String>] [-ResourceGroupName] <String> [-DataFactoryName] <String>
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
@@ -37,13 +37,13 @@ Get-AzDataFactoryV2DataFlow [-ResourceId] <String> [-DefaultProfile <IAzureConte
  [<CommonParameters>]
 ```
 
-## NОПИСАНИЕ
-Командлет Get-AzDataFactoryV2DataFlow получает сведения о потоках данных в фабрике данных Azure.
-Если вы задаете имя потока данных, этот командлет получает сведения об этом потоке данных.
-Если имя не задано, этот командлет получает сведения обо всех потоках данных в фабрике данных.
+## ОПИСАНИЕ
+Этот Get-AzDataFactoryV2DataFlow получает сведения о потоках данных в фабрике данных Azure.
+Если задать имя потока данных, этот cmdlet получит сведения о нем.
+Если имя не указано, этот cmdlet получает сведения обо всех потоках данных в фабрике данных.
 
-## ИЛЛЮСТРИРУЮТ
-### Пример 1: получение сведений обо всех потоках данных
+## ПРИМЕРЫ
+### Пример 1. Сведения обо всех потоках данных
 ```powershell
 PS C:\> Get-AzDataFactoryV2DataFlow -ResourceGroupName "ADF" -DataFactoryName "WikiADF"
 
@@ -56,7 +56,7 @@ dataflow3                      WikiADF               adf Microsoft.Azure.Managem
 
 Эта команда получает сведения обо всех потоках данных в фабрике данных с именем WikiADF.
 
-### Пример 2: получение сведений об определенном потоке данных
+### Пример 2. Просмотр сведений об определенном потоке данных
 ```powershell
 PS C:\> Get-AzDataFactoryV2DataFlow -ResourceGroupName "ADF" -DataFactoryName "WikiADF" -Name "dataflow1"
 
@@ -65,11 +65,11 @@ DataFlowName           DataFactoryName ResourceGroupName                        
 TaxiDemo1                      WikiADF               adf Microsoft.Azure.Management.DataFactory.Models.MappingDataFlow
 ```
 
-Эта команда получает сведения о потоке данных с именем dataflow1 в фабрике данных с именем WikiADF.
+Эта команда получает сведения о потоке данных "Поток1" в фабрике данных с именем WikiADF.
 
-## ПАРАМЕТРЫ
+## PARAMETERS
 
-### — Фактическое.
+### -DataFactory
 Объект фабрики данных.
 
 ```yaml
@@ -85,7 +85,7 @@ Accept wildcard characters: False
 ```
 
 ### -DataFactoryName
-Имя фабрики данных.
+Название фабрики данных.
 
 ```yaml
 Type: System.String
@@ -114,7 +114,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Name (имя)
+### -Name
 Имя потока данных.
 
 ```yaml
@@ -145,7 +145,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceId
-Идентификатор ресурса Azure.
+ИД ресурса Azure.
 
 ```yaml
 Type: System.String
@@ -160,23 +160,21 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Этот командлет поддерживает общие параметры:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-of Variable,-out,-PipelineVariable,-Verbose, и-WarningAction. Дополнительные сведения можно найти в разделе [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+Этот cmdlet поддерживает общие параметры: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. Дополнительные сведения см. [в about_CommonParameters.](https://go.microsoft.com/fwlink/?LinkID=113216)
 
-## ВХОДНЫЕ данные
+## INPUTS
 
-### System. String
+### System.String
 
 ### Microsoft.Azure.Commands.DataFactoryV2.Models.PSDataFactory
 
-## НАПРЯЖЕНИЕ
+## OUTPUTS
 
 ### Microsoft.Azure.Commands.DataFactoryV2.Models.PSDataFlow
 
-## Пуск
-Ключевые слова: Azure, azurerm, ARM, Resource, Management, Manager, Data, фабрики
+## ПРИМЕЧАНИЯ
+Ключевые слова: azure, azurerm, arm, resource, management, manager, data, factories
 
-## ДОПОЛНИТЕЛЬНЫЕ ССЫЛКИ
+## СВЯЗАННЫЕ ССЫЛКИ
 
-[Set-AzDataFactoryDataFlow](./Set-AzDataFactoryDataFlow.md)
 
-[Remove-AzDataFactoryDataFlow](./Remove-AzDataFactoryDataFlow.md)
