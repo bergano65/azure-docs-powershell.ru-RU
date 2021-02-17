@@ -6,19 +6,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.monitor/ne
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/New-AzActionGroup.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/New-AzActionGroup.md
-ms.openlocfilehash: 0f5112929e36edcac0ca45103ed8c02583be1eb3
-ms.sourcegitcommit: 6a91b4c545350d316d3cf8c62f384478e3f3ba24
+ms.openlocfilehash: 5b4b71f3d108d78a15a5993556ab4e78f480170e
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "93912974"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100409160"
 ---
 # New-AzActionGroup
 
-## КРАТКИй обзор
-Создает объект ссылки на ActionGroup в памяти.
+## SYNOPSIS
+Создает объект ссылки ActionGroup в памяти.
 
-## Максимальное
+## СИНТАКСИС
 
 ```
 New-AzActionGroup -ActionGroupId <String>
@@ -26,22 +26,22 @@ New-AzActionGroup -ActionGroupId <String>
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## NОПИСАНИЕ
-Командлет **New-AzActionGroup** создает объект ссылки на группу действий в памяти.
+## ОПИСАНИЕ
+Для **этого в памяти создается** объект ссылки на группу действий.
 
-## ИЛЛЮСТРИРУЮТ
+## ПРИМЕРЫ
 
-### Пример 1: создание объекта ссылки на группу действий в памяти
+### Пример 1. Создание справочного объекта группы действий в памяти
 ```
 PS C:\>$dict = New-Object "System.Collections.Generic.Dictionary``2[System.String,System.String]"
 PS C:\>$dict.Add('key1', 'value1')
 PS C:\>$actionGrp1 = New-AzActionGroup -ActionGroupId 'actiongr1' -WebhookProperty $dict
 ```
 
-## ПАРАМЕТРЫ
+## PARAMETERS
 
 ### -ActionGroupId
-Идентификатор или имя группы действий.
+ИД или имя группы действий.
 
 ```yaml
 Type: System.String
@@ -71,7 +71,7 @@ Accept wildcard characters: False
 ```
 
 ### -WebhookProperty
-Свойства веб-перехватчика группы "действия"
+Свойства веб-приложения группы действий
 
 ```yaml
 Type: System.Collections.Generic.Dictionary`2[System.String,System.String]
@@ -86,21 +86,21 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Этот командлет поддерживает общие параметры:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-of Variable,-out,-PipelineVariable,-Verbose, и-WarningAction. Дополнительные сведения можно найти в разделе [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+Этот cmdlet поддерживает общие параметры: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. Дополнительные сведения см. [в about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)
 
-## ВХОДНЫЕ данные
+## INPUTS
 
-### System. String
+### System.String
 
-### System. Collections. Generic. Dictionary "2 [[System. String, System. Private. CoreLib, Version = 4.0.0.0, культура = Neutral, PublicKeyToken = 7cec85d7bea7798e]; [System. String; System. Private. CoreLib, Version = 4.0.0.0, Culture = Neutral, PublicKeyToken = 7cec85d7bea7798e]]
+### System.Collections.Generic.Dictionary'2[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]
 
-## НАПРЯЖЕНИЕ
+## OUTPUTS
 
-### Microsoft. Azure. Management. Monitor. Management. Models. ActivityLogAlertActionGroup
+### Microsoft.Azure.Management.Monitor.Management.Models.ActivityLogAlertActionGroup
 
-## Пуск
+## ПРИМЕЧАНИЯ
 
-## ДОПОЛНИТЕЛЬНЫЕ ССЫЛКИ
+## СВЯЗАННЫЕ ССЫЛКИ
 
 [Set-AzActivityLogAlert](./Set-AzActivityLogAlert.md)
 
@@ -112,5 +112,5 @@ Accept wildcard characters: False
 
 [Remove-AzActivityLogAlert](./Remove-AzActivityLogAlert.md)
 
-[New-AzActivityLogAlertCondition](./Get-AzActivityLogAlertCondition.md)
+
 
