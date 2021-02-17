@@ -6,19 +6,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.monitor/se
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/Set-AzDiagnosticSetting.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/Set-AzDiagnosticSetting.md
-ms.openlocfilehash: bcebb7e4e272a22878c240946f04ffd5013a8999
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: d41d99993961906f88dc500603f74fc1a0d4fdf0
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93903202"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100404927"
 ---
 # Set-AzDiagnosticSetting
 
-## КРАТКИй обзор
+## SYNOPSIS
 Задает параметры журналов и метрик для ресурса.
 
-## Максимальное
+## СИНТАКСИС
 
 ### OldSetDiagnosticSetting (по умолчанию)
 ```
@@ -37,28 +37,28 @@ Set-AzDiagnosticSetting -InputObject <PSServiceDiagnosticSettings> [-DefaultProf
  [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## NОПИСАНИЕ
-Командлет **Set-AzDiagnosticSetting** включает или выключает каждый Временный промежуток и категорию журнала для определенного ресурса.
+## ОПИСАНИЕ
+С **помощью cmdlet Set-AzDiagnosticSetting можно** включить или отключить каждый раз, когда для определенного ресурса настроена категория "вес и журнал".
 Журналы и метрики хранятся в указанной учетной записи хранения.
-Этот командлет реализует шаблон ShouldProcess, т. е. может запросить подтверждение от пользователя, прежде чем действительно создать, изменить или удалить ресурс.
+Этот cmdlet реализует шаблон ShouldProcess, то есть может запросить подтверждение у пользователя перед созданием, изменением или удалением ресурса.
 
-## ИЛЛЮСТРИРУЮТ
+## ПРИМЕРЫ
 
-### Пример 1: включение всех метрик и журналов для ресурса
+### Пример 1. Включить все метрики и журналы для ресурса
 ```
 PS C:\>Set-AzDiagnosticSetting -ResourceId "Resource01" -Enabled $True
 ```
 
-Эта команда включает все доступные метрики и журналы для Resource01.
+Эта команда позволяет включить все доступные метрики и журналы для Resource01.
 
-### Пример 2: Отключение всех метрик и журналов
+### Пример 2. Отключение всех метрик и журналов
 ```
 PS C:\>Set-AzDiagnosticSetting -ResourceId "Resource01" -Enabled $False
 ```
 
-Эта команда отключает все доступные метрики и журналы для Resource01 ресурсов.
+Эта команда отключает все доступные метрики и журналы для ресурса Resource01.
 
-### Пример 3: Включение и отключение нескольких категорий метрик
+### Пример 3. Включив/отключив несколько категорий метрик
 ```
 PS C:\>Set-AzDiagnosticSetting -ResourceId "Resource01" -Enabled $False -MetricCategory MetricCategory1,MetricCategory2
 StorageAccountId   : <storageAccountId>
@@ -84,10 +84,10 @@ Logs
    Category : Category4
 ```
 
-Эта команда отключает категории метрики с именем Category1 и Category2.
-Все остальные категории остаются прежними.
+Эта команда отключает категории метрик, которые называются Категория1 и Категория2.
+Все остальные категории остаются одинаковыми.
 
-### Пример 4: Включение и отключение нескольких категорий журналов
+### Пример 4. Включив или отключив несколько категорий журналов
 ```
 PS C:\>Set-AzDiagnosticSetting -ResourceId "Resource01" -Enabled $True -Category Category1,Category2
 StorageAccountId   : <storageAccountId>
@@ -113,29 +113,29 @@ Logs
    Category : Category4
 ```
 
-Эта команда включает Category1 и Category2.
-Все другие категории метрики и журналы останутся прежними.
+Эта команда позволяет использовать категории "Категория1" и "Категория2".
+Все остальные категории метрик и журналов остаются одинаковыми.
 
-### Пример 4: включение многогранного интервала и нескольких категорий
+### Пример 4. В этом примере можно включить временную зерну и несколько категорий
 ```
 PS C:\>Set-AzDiagnosticSetting -ResourceId "Resource01" -Enabled $True -Category Category1,Category2 -Timegrain PT1M
 ```
 
-Эта команда включает только Category1, Category2 и зернистость времени PT1M.
-Все остальные временные Гранки и категории не изменяются.
+Эта команда позволяет использовать только категории1, категории2 и время в PT1M.
+Все остальные времена и категории остаются без изменений.
 
-### Пример 5: использование конвейера
+### Пример 5. Использование конвейера
 ```
 PS C:\>Get-AzDiagnosticSetting -ResourceId "Resource01" | Set-AzDiagnosticSetting
 ```
 
-Эта команда использует конвейер PowerShell для установки (не изменения) диагностического параметра.
+Эта команда использует конвейер PowerShell для настройки (но не изменения) диагностических параметров.
 
-## ПАРАМЕТРЫ
+## PARAMETERS
 
-### -Категория
-Указывает список категорий журналов для включения или отключения в соответствии со значением *Enabled*.
-Если категория не указана, эта команда работает со всеми поддерживаемыми категориями. 
+### -Category
+Список категорий журналов, которые нужно включить или отключить в соответствии со значением *enabled.*
+Если категория не указана, эта команда выполняет все поддерживаемые категории.
 
 ```yaml
 Type: System.Collections.Generic.List`1[System.String]
@@ -164,9 +164,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Включено
+### -Enabled
 Указывает, следует ли включить диагностику.
-Укажите $True, чтобы включить диагностику, или $False, чтобы отключить диагностику.
+Укажите $True включить или отключить $False.
 
 ```yaml
 Type: System.Boolean
@@ -181,7 +181,7 @@ Accept wildcard characters: False
 ```
 
 ### -EventHubAuthorizationRuleId
-Идентификатор правила авторизации концентратора событий
+The event hub authorization id
 
 ```yaml
 Type: System.String
@@ -211,7 +211,7 @@ Accept wildcard characters: False
 ```
 
 ### -InputObject
-Входной объект (возможно, из конвейера). Имя и resourceId будут извлечены из этого объекта.
+Входной объект (возможно из конвейера). Имена и ид ресурса будут извлечены из этого объекта.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Insights.OutputClasses.PSServiceDiagnosticSettings
@@ -226,7 +226,8 @@ Accept wildcard characters: False
 ```
 
 ### -MetricCategory
-Список категорий метрик. Если категория не указана, эта команда работает со всеми поддерживаемыми категориями. 
+Список категорий метрик.
+Если категория не указана, эта команда выполняет все поддерживаемые категории.
 
 ```yaml
 Type: System.Collections.Generic.List`1[System.String]
@@ -240,8 +241,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Name (имя)
-Имя параметра диагностики. По умолчанию используется значение **Service**.
+### -Name
+Имя параметра диагностики. Значением по умолчанию является **служба.**
 
 ```yaml
 Type: System.String
@@ -256,7 +257,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceId
-Указывает идентификатор ресурса.
+Определяет ИД ресурса.
 
 ```yaml
 Type: System.String
@@ -271,7 +272,7 @@ Accept wildcard characters: False
 ```
 
 ### -RetentionEnabled
-Указывает, включена ли хранение диагностических данных.
+Указывает на то, включено ли хранение диагностических сведений.
 
 ```yaml
 Type: System.Nullable`1[System.Boolean]
@@ -286,7 +287,7 @@ Accept wildcard characters: False
 ```
 
 ### -RetentionInDays
-Указывает политику хранения в днях.
+Определяет политику хранения в днях.
 
 ```yaml
 Type: System.Nullable`1[System.Int32]
@@ -301,7 +302,7 @@ Accept wildcard characters: False
 ```
 
 ### -ServiceBusRuleId
-Идентификатор правила служебной шины.
+The Service Bus Rule id.
 
 ```yaml
 Type: System.String
@@ -316,7 +317,7 @@ Accept wildcard characters: False
 ```
 
 ### -StorageAccountId
-Указывает идентификатор учетной записи хранения, в которой нужно сохранить данные.
+Определяет ИД учетной записи хранения, в которой нужно сохранить данные.
 
 ```yaml
 Type: System.String
@@ -331,8 +332,8 @@ Accept wildcard characters: False
 ```
 
 ### -Timegrain
-Задает временные зависимости для включения или отключения метрик в соответствии со значением *Enabled*.
-Если вы не укажете промежуток времени, эта команда будет работать на всех доступных гранях времени.
+Определяет значения времени, заданные для включения или отключения метрик, в соответствии со значением *Enabled.*
+Если не указать время, эта команда выполняется со всеми доступными зернами времени.
 
 ```yaml
 Type: System.Collections.Generic.List`1[System.String]
@@ -347,7 +348,7 @@ Accept wildcard characters: False
 ```
 
 ### -WorkspaceId
-Идентификатор рабочей области.
+ИД ресурса рабочей области "Аналитика журналов" для отправки журналов и метрик в
 
 ```yaml
 Type: System.String
@@ -362,7 +363,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
-Запрашивает подтверждение перед запуском командлета.
+Перед запуском cmdlet вам будет предложено подтвердить его.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -377,7 +378,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Показывает, что произойдет при запуске командлета. Командлет не выполняется.
+Показывает, что произойдет при запуске cmdlet. Этот cmdlet не будет выполниться.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -392,29 +393,29 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Этот командлет поддерживает общие параметры:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-of Variable,-out,-PipelineVariable,-Verbose, и-WarningAction. Дополнительные сведения можно найти в разделе [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+Этот cmdlet поддерживает общие параметры: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. Дополнительные сведения см. [в about_CommonParameters.](https://go.microsoft.com/fwlink/?LinkID=113216)
 
-## ВХОДНЫЕ данные
+## INPUTS
 
-### Microsoft. Azure. Commands. Insights. OutputClasses. PSServiceDiagnosticSettings
+### Microsoft.Azure.Commands.Insights.OutputClasses.PSServiceDiagnosticSettings
 
-### System. String
+### System.String
 
-### System. Boolean
+### System.Boolean
 
-### System. Collections. Generic. List "1 [[System. String, System. Private. CoreLib, Version = 4.0.0.0, Culture = Neutral, PublicKeyToken = 7cec85d7bea7798e]]
+### System.Collections.Generic.List'1[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]
 
-### System. Nullable "1 [[System. Boolean, System. Private. CoreLib, Version = 4.0.0.0, культура = Neutral, PublicKeyToken = 7cec85d7bea7798e]]
+### System.Nullable'1[[System.Boolean, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]
 
-### System. Nullable "1 [[System. Int32, System. Private. CoreLib, Version = 4.0.0.0, Culture = Neutral, PublicKeyToken = 7cec85d7bea7798e]]
+### System.Nullable'1[[System.Int32, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]
 
-## НАПРЯЖЕНИЕ
+## OUTPUTS
 
-### Microsoft. Azure. Commands. Insights. OutputClasses. PSServiceDiagnosticSettings
+### Microsoft.Azure.Commands.Insights.OutputClasses.PSServiceDiagnosticSettings
 
-## Пуск
+## ПРИМЕЧАНИЯ
 
-## ДОПОЛНИТЕЛЬНЫЕ ССЫЛКИ
+## СВЯЗАННЫЕ ССЫЛКИ
 
 [Get-AzDiagnosticSetting](./Get-AzDiagnosticSetting.md) 
  [Remove-AzDiagnosticSetting](./Remove-AzDiagnosticSetting.md)
