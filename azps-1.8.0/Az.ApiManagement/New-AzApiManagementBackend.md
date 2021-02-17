@@ -5,19 +5,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.apimanagem
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/New-AzApiManagementBackend.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/New-AzApiManagementBackend.md
-ms.openlocfilehash: 4886e5e064276b73f571c81724b98a409930126a
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: 1f78630f195fca7e08ed755dbaeb48e413c8f8d1
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93720112"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100401017"
 ---
 # New-AzApiManagementBackend
 
-## КРАТКИй обзор
-Создание новой серверной сущности.
+## SYNOPSIS
+Создается новый объект в качестве backend.
 
-## Максимальное
+## СИНТАКСИС
 
 ```
 New-AzApiManagementBackend -Context <PsApiManagementContext> [-BackendId <String>] -Protocol <String>
@@ -28,12 +28,12 @@ New-AzApiManagementBackend -Context <PsApiManagementContext> [-BackendId <String
  [-Confirm] [<CommonParameters>]
 ```
 
-## NОПИСАНИЕ
-Создает новую серверную сущность в управлении API.
+## ОПИСАНИЕ
+Создает новую организацию в управлении Api.
 
-## ИЛЛЮСТРИРУЮТ
+## ПРИМЕРЫ
 
-### Создание внутренних 123 с помощью базовой схемы авторизации
+### Создание backend 123 с помощью базовой схемы авторизации
 ```powershell
 PS C:\>$apimContext = New-AzApiManagementContext -ResourceGroupName "Api-Default-WestUS" -ServiceName "contoso"
 PS C:\>$credential = New-AzApiManagementBackendCredential -AuthorizationHeaderScheme basic -AuthorizationHeaderParameter opensesame -Query @{"sv" = @('xx', 'bb'); "sr" = @('cc')} -Header @{"x-my-1" = @('val1', 'val2')}
@@ -41,14 +41,14 @@ PS C:\>$credential = New-AzApiManagementBackendCredential -AuthorizationHeaderSc
 PS C:\>$backend = New-AzApiManagementBackend -Context  $apimContext -BackendId 123 -Url 'https://contoso.com/awesomeapi' -Protocol http -Title "first backend" -SkipCertificateChainValidation $true -Credential $credential -Description "my backend"
 ```
 
-Создание новой базы данных
+Создание нового backend
 
-## ПАРАМЕТРЫ
+## PARAMETERS
 
 ### -BackendId
-Идентификатор нового внутреннего сервера.
+Идентификатор нового backend.
 Этот параметр является необязательным.
-Если не указано, будет создано.
+Если он не указан, будет создан.
 
 ```yaml
 Type: System.String
@@ -62,9 +62,9 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Context
+### -Контекст
 Экземпляр PsApiManagementContext.
-Этот параметр является обязательным.
+Этот параметр является required(обязательно).
 
 ```yaml
 Type: Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementContext
@@ -79,7 +79,7 @@ Accept wildcard characters: False
 ```
 
 ### -Credential
-Сведения об учетных данных, которые следует использовать при общении с серверным сервером.
+Учетные данные, которые следует использовать при разговоре с backend.
 Этот параметр является необязательным.
 
 ```yaml
@@ -109,8 +109,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Описание
-Описание внутреннего сервера.
+### -Description
+Описание backend.
 Этот параметр является необязательным.
 
 ```yaml
@@ -125,10 +125,10 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Protocol (протокол)
-Внутренний протокол связи.
-Этот параметр является обязательным.
-Допустимые значения: "http" и "SOAP".
+### -Protocol
+Протокол Backend Communication (Протокол backend Communication).
+Этот параметр является required(обязательно).
+Допустимые значения: http и soap.
 
 ```yaml
 Type: System.String
@@ -143,8 +143,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Прокси
-Сведения о прокси-сервере, которые необходимо использовать при отправке запроса на сервер.
+### -Прокси-сервер
+Сведения прокси-сервера, которые будут использоваться при отправке запроса на сервер серверов.
 Этот параметр является необязательным.
 
 ```yaml
@@ -160,9 +160,9 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceId
-Универсальный код ресурса (URI) для управления ресурсом во внешней системе.
+Uri управления ресурсом внешней системы.
 Этот параметр является необязательным.
-Этот URL-адрес может представлять собой идентификатор ресурса ARM для логических приложений, приложений-функций или приложений API.
+Этот URL-адрес может быть ид ресурса Arm приложений Logic, приложений для функций и приложений API.
 
 ```yaml
 Type: System.String
@@ -177,7 +177,7 @@ Accept wildcard characters: False
 ```
 
 ### -ServiceFabricCluster
-Сведения о внутреннем кластере кластера фабрики служб. Этот параметр является необязательным.
+Сведения о структуре кластера "Сервис". Этот параметр является необязательным.
 
 ```yaml
 Type: Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementServiceFabric
@@ -192,7 +192,7 @@ Accept wildcard characters: False
 ```
 
 ### -SkipCertificateChainValidation
-Необходимость пропуска проверки цепочки сертификатов при общении с серверным сервером.
+Следует ли пропустить проверку цепочки сертификатов при разговоре с backend.
 Этот параметр является необязательным.
 
 ```yaml
@@ -208,7 +208,7 @@ Accept wildcard characters: False
 ```
 
 ### -SkipCertificateNameValidation
-Следует ли пропускать проверку имени сертификата при общении с серверным сервером.
+Следует ли пропускать проверку имени сертификата при разговоре с backend.
 Этот параметр является необязательным.
 
 ```yaml
@@ -224,7 +224,7 @@ Accept wildcard characters: False
 ```
 
 ### -Title
-Название внутреннего сервера.
+Заголовок для backend.
 Этот параметр является необязательным.
 
 ```yaml
@@ -239,9 +239,9 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### — URL-адрес
-URL-адрес среды выполнения для внутреннего сервера.
-Этот параметр является обязательным.
+### -URL-адрес
+URL-адрес времени запуска для backend.
+Этот параметр является required(обязательно).
 
 ```yaml
 Type: System.String
@@ -256,7 +256,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
-Запрашивает подтверждение перед запуском командлета.
+Перед запуском cmdlet вам будет предложено подтвердить его.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -271,7 +271,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Показывает, что произойдет при запуске командлета. Командлет не выполняется.
+Показывает, что произойдет при запуске cmdlet. Этот cmdlet не будет выполниться.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -286,31 +286,31 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Этот командлет поддерживает общие параметры:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-of Variable,-out,-PipelineVariable,-Verbose, и-WarningAction. Дополнительные сведения можно найти в разделе about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
+Этот cmdlet поддерживает общие параметры: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. Дополнительные сведения см. в about_CommonParameters https://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## ВХОДНЫЕ данные
+## INPUTS
 
-### Microsoft. Azure. Commands. ApiManagement. ServiceManagement. Models. PsApiManagementContext
+### Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementContext
 
-### System. String
+### System.String
 
-### System. Nullable "1 [[System. Boolean, System. Private. CoreLib, Version = 4.0.0.0, культура = Neutral, PublicKeyToken = 7cec85d7bea7798e]]
+### System.Nullable'1[[System.Boolean, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]
 
-### Microsoft. Azure. Commands. ApiManagement. ServiceManagement. Models. PsApiManagementBackendCredential
+### Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementBackendCredential
 
-### Microsoft. Azure. Commands. ApiManagement. ServiceManagement. Models. PsApiManagementBackendProxy
+### Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementBackendProxy
 
-### Microsoft. Azure. Commands. ApiManagement. ServiceManagement. Models. PsApiManagementServiceFabric
+### Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementServiceFabric
 
-## НАПРЯЖЕНИЕ
+## OUTPUTS
 
-### Microsoft. Azure. Commands. ApiManagement. ServiceManagement. Models. PsApiManagementBackend
+### Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementBackend
 
-## Пуск
+## ПРИМЕЧАНИЯ
 
-## ДОПОЛНИТЕЛЬНЫЕ ССЫЛКИ
+## СВЯЗАННЫЕ ССЫЛКИ
 
-[Get-AzApiManagementBackend](./Get-AzApiManagementBackend)
+[Get-AzApiManagementBackend](./Get-AzApiManagementBackend.md)
 
 [New-AzApiManagementBackendCredential](./New-AzApiManagementBackendCredential.md)
 

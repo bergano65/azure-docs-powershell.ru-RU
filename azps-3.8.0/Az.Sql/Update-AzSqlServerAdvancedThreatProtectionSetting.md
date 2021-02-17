@@ -6,19 +6,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.sql/Update
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Sql/Sql/help/Update-AzSqlServerAdvancedThreatProtectionSetting.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Sql/Sql/help/Update-AzSqlServerAdvancedThreatProtectionSetting.md
-ms.openlocfilehash: 3ec370f0e4865ed5695e4f0890f99b50709e9ad8
-ms.sourcegitcommit: 6a91b4c545350d316d3cf8c62f384478e3f3ba24
+ms.openlocfilehash: 079a1254865821b77ca48a94256dbe1a9e4cb431
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "93912449"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100415331"
 ---
 # Update-AzSqlServerAdvancedThreatProtectionSetting
 
-## КРАТКИй обзор
-Задает дополнительные параметры защиты от угроз на сервере.
+## SYNOPSIS
+Задает на сервере дополнительные параметры защиты от угроз.
 
-## Максимальное
+## СИНТАКСИС
 
 ```
 Update-AzSqlServerAdvancedThreatProtectionSetting [-PassThru] [-NotificationRecipientsEmails <String>]
@@ -27,21 +27,21 @@ Update-AzSqlServerAdvancedThreatProtectionSetting [-PassThru] [-NotificationReci
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## NОПИСАНИЕ
-Командлет **Update-AzSqlServerAdvancedThreatProtectionSetting** устанавливает дополнительные параметры защиты от угроз на сервере Azure SQL Server.
-Для включения расширенной защиты от угроз на сервере параметры аудита должны быть включены на этом сервере.
-Чтобы использовать этот командлет, укажите параметры *ResourceGroupName* и ServerName для идентификации сервера.
+## ОПИСАНИЕ
+Для **azureSqlServerAdvancedThreatProtectionSetting** задает дополнительные параметры защиты от угроз на сервере Azure SQL.
+Чтобы включить на сервере расширенные параметры защиты от угроз, на сервере должны быть включены параметры аудита.
+Чтобы использовать этот cmdlet, укажите параметры *ResourceGroupName* и ServerName для идентификации сервера.
 
-## ИЛЛЮСТРИРУЮТ
+## ПРИМЕРЫ
 
-### Пример 1: Настройка расширенных параметров защиты от угроз для базы данных
+### Пример 1. Настройка дополнительных параметров защиты от угроз для базы данных
 ```
 PS C:\>Update-AzSqlServerAdvancedThreatProtectionSetting -ResourceGroupName "ResourceGroup11" -ServerName "Server01" -NotificationRecipientsEmails "admin01@contoso.com;secadmin@contoso.com" -EmailAdmins $False -ExcludedDetectionType "Sql_Injection_Vulnerability","SQL_Injection" -StorageAccountName "mystorageAccount"
 ```
 
-Эта команда задает расширенные параметры защиты от угроз для сервера с именем Server01.
+Эта команда задает дополнительные параметры защиты от угроз для сервера с именем Server01.
 
-## ПАРАМЕТРЫ
+## PARAMETERS
 
 ### -DefaultProfile
 Учетные данные, учетная запись, клиент и подписка, используемые для связи с Azure
@@ -59,7 +59,7 @@ Accept wildcard characters: False
 ```
 
 ### -EmailAdmins
-Указывает, имеют ли дополнительные параметры защиты от угроз администраторам контакты с помощью электронной почты.
+Определяет, следует ли расширенные параметры защиты от угроз связываться с администраторами по электронной почте.
 
 ```yaml
 Type: System.Nullable`1[System.Boolean]
@@ -74,12 +74,12 @@ Accept wildcard characters: False
 ```
 
 ### -ExcludedDetectionType
-Указывает массив типов обнаружения, исключаемых из параметров.
-Для этого параметра допустимы следующие значения:
+Указывает массив типов обнаружения, которые нужно исключить из параметров.
+Допустимые значения этого параметра:
 - Sql_Injection
 - Sql_Injection_Vulnerability
 - Access_Anomaly
-- Ничего
+- Нет
 
 ```yaml
 Type: System.String[]
@@ -94,7 +94,7 @@ Accept wildcard characters: False
 ```
 
 ### -NotificationRecipientsEmails
-Указывает список адресов электронной почты, разделенных точкой с запятой, по которым параметры отправляют оповещения.
+Определяет список адресов электронной почты, на которые параметры отправляют оповещения, разделив их за semicolon.
 
 ```yaml
 Type: System.String
@@ -109,8 +109,8 @@ Accept wildcard characters: False
 ```
 
 ### -PassThru
-Возвращает объект, который представляет собой элемент, с которым вы работаете.
-По умолчанию этот командлет не создает никаких выходных данных.
+Возвращает объект, представляющий элемент, с которым вы работаете.
+По умолчанию этот cmdlet не создает никаких выходных данных.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -125,7 +125,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-Указывает имя группы ресурсов, к которой принадлежит сервер.
+Имя группы ресурсов, к которой принадлежит сервер.
 
 ```yaml
 Type: System.String
@@ -154,7 +154,7 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -ИмяСервера
+### -ServerName
 Указывает имя сервера.
 
 ```yaml
@@ -170,7 +170,7 @@ Accept wildcard characters: False
 ```
 
 ### -StorageAccountName
-Указывает имя учетной записи хранения, которую нужно использовать. Подстановочные знаки не разрешены. Этот параметр не является обязательным. Если этот параметр не указан, командлет будет использовать учетную запись хранения, которая была ранее определена как часть параметров расширенной защиты от угроз для базы данных. Если при первом определении параметров обнаружения угроз базы данных этот параметр не указан, командлет завершится сбоем.
+Имя используемой учетной записи хранения. Поддиавные знаки не разрешены. Этот параметр не является нужным. Если этот параметр не задан, используется учетная запись хранения, которая была определена ранее в параметрах advanced threat protection базы данных. Если параметры обнаружения угроз в базе данных заданы впервые и этот параметр не задан, то при этом проектлет не будет работать.
 
 ```yaml
 Type: System.String
@@ -185,7 +185,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
-Запрашивает подтверждение перед запуском командлета.
+Перед запуском cmdlet вам будет предложено подтвердить его.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -200,8 +200,8 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Показывает, что произойдет при запуске командлета.
-Командлет не выполняется.
+Показывает, что произойдет при запуске cmdlet.
+Этот cmdlet не будет выполниться.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -216,28 +216,24 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Этот командлет поддерживает общие параметры:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-of Variable,-out,-PipelineVariable,-Verbose, и-WarningAction. Дополнительные сведения можно найти в разделе [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+Этот cmdlet поддерживает общие параметры: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. Дополнительные сведения см. [в about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)
 
-## ВХОДНЫЕ данные
+## INPUTS
 
-### System. String
+### System.String
 
-### System. Nullable "1 [[System. Boolean, System. Private. CoreLib, Version = 4.0.0.0, культура = Neutral, PublicKeyToken = 7cec85d7bea7798e]]
+### System.Nullable'1[[System.Boolean, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]
 
-### Microsoft. Azure. Commands. SQL. ThreatDetection. Model. DetectionType []
+### Microsoft.Azure.Commands.Sql.ThreatDetection.Model.DetectionType[]
 
-### System. Nullable "1 [[System. UInt32, System. Private. CoreLib, Version = 4.0.0.0, Culture = Neutral, PublicKeyToken = 7cec85d7bea7798e]]
+### System.Nullable'1[[System.UInt32, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]
 
-## НАПРЯЖЕНИЕ
+## OUTPUTS
 
-### Microsoft. Azure. Commands. SQL. ThreatDetection. Model. ServerThreatDetectionsettingsModel
+### Microsoft.Azure.Commands.Sql.ThreatDetection.Model.ServerThreatDetectionsettingsModel
 
-## Пуск
+## ПРИМЕЧАНИЯ
 
-## ДОПОЛНИТЕЛЬНЫЕ ССЫЛКИ
+## СВЯЗАННЫЕ ССЫЛКИ
 
-[Get-AzSqlServerThreatDetectionsettings](./Get-AzSqlServerThreatDetectionsettings.md)
-
-[Remove-AzSqlServerThreatDetectionsettings](03e90cd1-6ae2-4134-bc5e-28cc080614c9)
-
-[Документация по базам данных SQL](https://docs.microsoft.com/azure/sql-database/)
+[SQL базы данных](https://docs.microsoft.com/azure/sql-database/)

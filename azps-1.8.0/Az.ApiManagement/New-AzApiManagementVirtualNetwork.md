@@ -6,32 +6,32 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.apimanagem
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/New-AzApiManagementVirtualNetwork.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/New-AzApiManagementVirtualNetwork.md
-ms.openlocfilehash: 67020f99129dfa920aa1bbc5e22ac59c16affb32
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: 496e65438a2c0ef5f09bbf961535eaa842062f25
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93901702"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100400898"
 ---
 # New-AzApiManagementVirtualNetwork
 
-## КРАТКИй обзор
+## SYNOPSIS
 Создает экземпляр PsApiManagementVirtualNetwork.
 
-## Максимальное
+## СИНТАКСИС
 
 ```
 New-AzApiManagementVirtualNetwork -SubnetResourceId <String> [-DefaultProfile <IAzureContextContainer>]
  [<CommonParameters>]
 ```
 
-## NОПИСАНИЕ
-Командлет **New-AzApiManagementVirtualNetwork** является вспомогательной командой для создания экземпляра **PsApiManagementVirtualNetwork**.
-Эта команда используется с командлетом **Update-AzApiManagementDeployment** .
+## ОПИСАНИЕ
+Командлет **New-AzApiManagementVirtualNetwork** является командлетом-помощником для создания экземпляра **PsApiManagementVirtualNetwork.**
+Эта команда используется с **командлетом Set-AzApiManagement.**
 
-## ИЛЛЮСТРИРУЮТ
+## ПРИМЕРЫ
 
-### Пример 1: создание виртуальной сети
+### Пример 1. Создание виртуальной сети
 ```
 PS C:\>$vnetName = "myvnet"
 PS C:\>$subnetName = "default"
@@ -42,17 +42,17 @@ PS C:\>$vnet = New-AzvirtualNetwork -Name $vnetName -ResourceGroupName $resource
 PS C:\>$virtualNetwork = New-AzApiManagementVirtualNetwork -Location $location -SubnetResourceId $vnet.Subnets[0].Id
 
 # Get the service
-PS C:\>$service = Get-AzApiManagement -ResourceGroupName $resourceGroupName -Name $apiManagementName    
+PS C:\>$service = Get-AzApiManagement -ResourceGroupName $resourceGroupName -Name $apiManagementName
 PS C:\>$service.VirtualNetwork = $virtualNetwork
 PS C:\>$service.VpnType = "External"
 
 # Update the Deployment with Virtual Network
-PS C:\>Update-AzApiManagementDeployment -ApiManagement $service
+PS C:\>Set-AzApiManagement -ApiManagement $service
 ```
 
-В этом примере создается виртуальная сеть, после чего вызывается командлет **Update-AzApiManagementDeployment** .
+В этом примере создается виртуальная сеть, а затем вызывается **cmdlet Set-AzApiManagement.**
 
-## ПАРАМЕТРЫ
+## PARAMETERS
 
 ### -DefaultProfile
 Учетные данные, учетная запись, клиент и подписка, используемые для связи с Azure.
@@ -70,7 +70,7 @@ Accept wildcard characters: False
 ```
 
 ### -SubnetResourceId
-Указывает идентификатор ресурса подсети виртуальной сети.
+Определяет ИД ресурса подсети виртуальной сети.
 
 ```yaml
 Type: System.String
@@ -85,19 +85,19 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Этот командлет поддерживает общие параметры:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-of Variable,-out,-PipelineVariable,-Verbose, и-WarningAction. Дополнительные сведения можно найти в разделе about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
+Этот cmdlet поддерживает общие параметры: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. Дополнительные сведения см. в about_CommonParameters https://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## ВХОДНЫЕ данные
+## INPUTS
 
-### Ничего
+### Нет
 
-## НАПРЯЖЕНИЕ
+## OUTPUTS
 
-### Microsoft. Azure. Commands. ApiManagement. Models. PsApiManagementVirtualNetwork
+### Microsoft.Azure.Commands.ApiManagement.Models.PsApiManagementVirtualNetwork
 
-## Пуск
+## ПРИМЕЧАНИЯ
 
-## ДОПОЛНИТЕЛЬНЫЕ ССЫЛКИ
+## СВЯЗАННЫЕ ССЫЛКИ
 
-[Update-AzApiManagementDeployment](./Update-AzApiManagementDeployment.md)
+[Set-AzApiManagement](./Set-AzApiManagement.md)
 

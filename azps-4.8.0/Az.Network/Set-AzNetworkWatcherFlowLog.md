@@ -5,19 +5,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.network/se
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Set-AzNetworkWatcherFlowLog.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Set-AzNetworkWatcherFlowLog.md
-ms.openlocfilehash: 04a9b4c0ca8b613ce4d4c590572d80a729a65147
-ms.sourcegitcommit: 1de2b6c3c99197958fa2101bc37680e7507f91ac
+ms.openlocfilehash: c59034dcd587c9fee3ce6a4a7699670c77ea372f
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "94242968"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100415382"
 ---
 # Set-AzNetworkWatcherFlowLog
 
-## КРАТКИй обзор
-Обновляет ресурс журнала потока.
+## SYNOPSIS
+Обновляет ресурс журнала потоков.
 
-## Максимальное
+## СИНТАКСИС
 
 ### SetByName (по умолчанию)
 ```
@@ -93,10 +93,10 @@ Set-AzNetworkWatcherFlowLog -InputObject <PSFlowLogResource> [-Force]
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## NОПИСАНИЕ
-Обновляет ресурс журнала потока.
+## ОПИСАНИЕ
+Обновляет ресурс журнала потоков.
 
-## ИЛЛЮСТРИРУЮТ
+## ПРИМЕРЫ
 
 ### Пример 1
 ```powershell
@@ -106,9 +106,9 @@ PS C:\> $flowLog.Format.Version = 2
 PS C:\> $flowLog | Set-AzNetworkWatcherFlowLog -Force
 ```
 
-Name (имя): pstest ID:/subscriptions/bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb/resourceGroups/NetworkWatcherRG/provid ERS/Microsoft. Network/networkWatchers/NetworkWatcher_eastus/FlowLogs/pstest ETag: W/"e939e1e6-1509-4d7a-9e89-1ea532f6f222" ProvisioningState: успешное расположение: eastus TargetResourceId:/subscriptions/bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb/resourceGroups/MyFlowLog/provide RS/Microsoft. Network/networkSecurityGroups/MyNSG StorageId:/subscriptions/bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb/resourceGroups/FlowLogsV2Demo/provider s/Microsoft. Storage/storageAccounts/MyStorage Enabled: true RetentionPolicy: {"Days": 0, "Enabled": false} Format: {"тип": "JSON", "Version": "2}". {}
+Name : pstest Id : /subscriptions/bbbbbb-bbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb/resourceGroups/NetworkWatcherRG/provid ers/Microsoft.Network/networkWatchers/NetworkWatcher_eastus/FlowLogs/pstest Etag : W/"e939e1e6-1509-4d7a-9e89-1ea532f6f222" ProvisioningState : Succeeded Location : eastus TargetResourceId : /subscriptions/bbbbbbbb-bbbb-bbbb-bbbb-bbbb-bbbbbbbbbb/resourceGroups/MyFlowLog/provide rs/Microsoft.Network/networkSecurityGroups/MyNSG StorageId : /subscriptions/bbbbbb-bbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb/resourceGroups/FlowLogsV2Demo/provider s/Microsoft.Storage/storageAccounts/MyStorage Enabled: True RetentionPolicy : { "Days": 0, "Enabled": false } Format : { "Type": "JSON", "Версия": 2 } FlowAnalyticsConfiguration: {}
 
-## ПАРАМЕТРЫ
+## PARAMETERS
 
 ### -DefaultProfile
 Учетные данные, учетная запись, клиент и подписка, используемые для связи с Azure.
@@ -125,8 +125,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Включено
-Пометка для включения и отключения ведения журнала потока.
+### -Enabled
+Пометить, чтобы включить или отключить ведение журнала потоков.
 
 ```yaml
 Type: Boolean
@@ -141,7 +141,7 @@ Accept wildcard characters: False
 ```
 
 ### -EnableRetention
-Пометка для включения и отключения хранения.
+Пометить, чтобы включить или отключить хранение.
 
 ```yaml
 Type: Boolean
@@ -156,7 +156,7 @@ Accept wildcard characters: False
 ```
 
 ### -EnableTrafficAnalytics
-Пометка для включения и отключения TrafficAnalytics
+Пометка для того, чтобы включить или отключить TrafficAnalytics
 
 ```yaml
 Type: SwitchParameter
@@ -171,7 +171,7 @@ Accept wildcard characters: False
 ```
 
 ### -Force
-Не запрашивать подтверждение, если вы хотите перезаписать ресурс
+Не спрашивайте подтверждения при переописи ресурса
 
 ```yaml
 Type: SwitchParameter
@@ -186,8 +186,8 @@ Accept wildcard characters: False
 ```
 
 ### -FormatType
-Тип файла журнала потока.
-Теперь единственным поддерживаемым значением является "JSON".
+Тип файла журнала потоков.
+Теперь поддерживается только значение JSON.
 
 ```yaml
 Type: String
@@ -202,7 +202,7 @@ Accept wildcard characters: False
 ```
 
 ### -FormatVersion
-Версия журнала потока (редакция).
+Версия (редакция) журнала потоков.
 
 ```yaml
 Type: Int32
@@ -217,7 +217,7 @@ Accept wildcard characters: False
 ```
 
 ### -InputObject
-Объект "поток LOF".
+Объект Flow lof.
 
 ```yaml
 Type: PSFlowLogResource
@@ -232,7 +232,7 @@ Accept wildcard characters: False
 ```
 
 ### -Location
-Расположение наблюдателя сети.
+Расположение сетевого просмотра.
 
 ```yaml
 Type: String
@@ -246,8 +246,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Name (имя)
-Имя журнала потока.
+### -Name
+Имя журнала потоков.
 
 ```yaml
 Type: String
@@ -262,7 +262,7 @@ Accept wildcard characters: False
 ```
 
 ### -NetworkWatcher
-Ресурс сетевого наблюдателя.
+Сетевой ресурс для просмотра.
 
 ```yaml
 Type: PSNetworkWatcher
@@ -277,7 +277,7 @@ Accept wildcard characters: False
 ```
 
 ### -NetworkWatcherName
-Имя наблюдателя сети.
+Имя сетевого смотритела.
 
 ```yaml
 Type: String
@@ -292,7 +292,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-Имя группы ресурсов наблюдателя сети.
+Имя группы ресурсов сетевого watcher.
 
 ```yaml
 Type: String
@@ -307,7 +307,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceId
-Идентификатор ресурса FlowLog.
+ИД ресурса FlowLog.
 
 ```yaml
 Type: String
@@ -322,7 +322,7 @@ Accept wildcard characters: False
 ```
 
 ### -RetentionPolicyDays
-Количество дней для хранения записей журнала потока.
+Количество дней для сохранения записей журнала потоков.
 
 ```yaml
 Type: Int32
@@ -337,7 +337,7 @@ Accept wildcard characters: False
 ```
 
 ### -StorageId
-Идентификатор учетной записи хранения, которая используется для хранения журнала потока.
+ИД учетной записи хранения, которая используется для хранения журнала потоков.
 
 ```yaml
 Type: String
@@ -351,8 +351,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Тег
-Хэш-таблица, представляющая Теги ресурсов.
+### -Tag
+A hashtable which represents resource tags.
 
 ```yaml
 Type: Hashtable
@@ -367,7 +367,7 @@ Accept wildcard characters: False
 ```
 
 ### -TargetResourceId
-Идентификатор группы безопасности сети, к которой будет применен журнал потока.
+ИД группы безопасности сети, к которой будет применен журнал потоков.
 
 ```yaml
 Type: String
@@ -382,7 +382,7 @@ Accept wildcard characters: False
 ```
 
 ### -TrafficAnalyticsInterval
-Интервал (в минутах), по истечении которого служба TA должна выполнять анализ потока.
+Интервал в минутах, который определяет, как часто служба tas должна делать анализ потока.
 
 ```yaml
 Type: Int32
@@ -397,7 +397,7 @@ Accept wildcard characters: False
 ```
 
 ### -TrafficAnalyticsWorkspaceId
-Код ресурса присоединенной рабочей области.
+ИД ресурса вложенной рабочей области.
 
 ```yaml
 Type: String
@@ -412,7 +412,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
-Запрашивает подтверждение перед запуском командлета.
+Перед запуском cmdlet вам будет предложено подтвердить его.
 
 ```yaml
 Type: SwitchParameter
@@ -427,8 +427,8 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Показывает, что произойдет при запуске командлета.
-Командлет не выполняется.
+Показывает, что произойдет при запуске cmdlet.
+Этот cmdlet не будет выполниться.
 
 ```yaml
 Type: SwitchParameter
@@ -443,23 +443,23 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Этот командлет поддерживает общие параметры:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-of Variable,-out,-PipelineVariable,-Verbose, и-WarningAction. Дополнительные сведения можно найти в разделе [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+Этот cmdlet поддерживает общие параметры: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. Дополнительные сведения см. [в about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)
 
-## ВХОДНЫЕ данные
+## INPUTS
 
-### Microsoft. Azure. Commands. Network. Models. PSNetworkWatcher
+### Microsoft.Azure.Commands.Network.Models.PSNetworkWatcher
 
-### System. String
+### System.String
 
-### Microsoft. Azure. Commands. Network. Models. PSFlowLogResource
+### Microsoft.Azure.Commands.Network.Models.PSFlowLogResource
 
-## НАПРЯЖЕНИЕ
+## OUTPUTS
 
-### Microsoft. Azure. Commands. Network. Models. PSFlowLogResource
+### Microsoft.Azure.Commands.Network.Models.PSFlowLogResource
 
-## Пуск
+## ПРИМЕЧАНИЯ
 
-## ДОПОЛНИТЕЛЬНЫЕ ССЫЛКИ
+## СВЯЗАННЫЕ ССЫЛКИ
 
 [New-AzNetworkWatcher](./New-AzNetworkWatcher.md)
 
@@ -483,7 +483,7 @@ Accept wildcard characters: False
 
 [Remove-AzNetworkWatcherPacketCapture](./Remove-AzNetworkWatcherPacketCapture.md)
 
-[Остановить-AzNetworkWatcherPacketCapture](./Stop-AzNetworkWatcherPacketCapture.md)
+[Stop-AzNetworkWatcherPacketCapture](./Stop-AzNetworkWatcherPacketCapture.md)
 
 [New-AzNetworkWatcherProtocolConfiguration](./New-AzNetworkWatcherProtocolConfiguration.md)
 
@@ -491,7 +491,7 @@ Accept wildcard characters: False
 
 [Test-AzNetworkWatcherConnectivity](./Test-AzNetworkWatcherConnectivity.md)
 
-[Остановить-AzNetworkWatcherConnectionMonitor](./Stop-AzNetworkWatcherConnectionMonitor.md)
+[Stop-AzNetworkWatcherConnectionMonitor](./Stop-AzNetworkWatcherConnectionMonitor.md)
 
 [Start-AzNetworkWatcherConnectionMonitor](./Start-AzNetworkWatcherConnectionMonitor.md)
 
@@ -513,10 +513,10 @@ Accept wildcard characters: False
 
 [Get-AzNetworkWatcherConnectionMonitorReport](./Get-AzNetworkWatcherConnectionMonitorReport.md)
 
-[Get-AzNetworkWatcherConnectionMonitor](./Get-AzNetworkWatcherConnectionMonitor)
+[Get-AzNetworkWatcherConnectionMonitor](./Get-AzNetworkWatcherConnectionMonitor.md)
 
 [New-AzNetworkWatcherFlowLog](./New-AzNetworkWatcherFlowLog.md)
 
-[Get-AzNetworkWatcherFlowLog](./Get-AzNetworkWatcherFlowLog)
+[Get-AzNetworkWatcherFlowLog](./Get-AzNetworkWatcherFlowLog.md)
 
 [Remove-AzNetworkWatcherFlowLog](./Remove-AzNetworkWatcherFlowLog.md)

@@ -5,19 +5,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.keyvault/u
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/KeyVault/KeyVault/help/Undo-AzKeyVaultSecretRemoval.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/KeyVault/KeyVault/help/Undo-AzKeyVaultSecretRemoval.md
-ms.openlocfilehash: 1eca5a380dc71a5bd801c21bb7e7f556fcff0d35
-ms.sourcegitcommit: 1de2b6c3c99197958fa2101bc37680e7507f91ac
+ms.openlocfilehash: 9513cba1532ec70acb77cdf97d19de25db36434f
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "94079588"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100415586"
 ---
 # Undo-AzKeyVaultSecretRemoval
 
-## КРАТКИй обзор
-Восстановление удаленного секрета из хранилища ключей в активном состоянии.
+## SYNOPSIS
+Восстановление удаленной секретной секретной области в активном состоянии.
 
-## Максимальное
+## СИНТАКСИС
 
 ### По умолчанию (по умолчанию)
 ```
@@ -31,12 +31,12 @@ Undo-AzKeyVaultSecretRemoval [-InputObject] <PSDeletedKeyVaultSecretIdentityItem
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## NОПИСАНИЕ
-Командлет **Undo-AzKeyVaultSecretRemoval** восстановит ранее удаленный секрет.
-Восстановленный секрет будет активен и может использоваться для всех обычных секретных операций.
-Для выполнения этой операции вызывающему объекту должно быть предоставлено разрешение "Recover".
+## ОПИСАНИЕ
+С **его нажатием** можно восстановить ранее удаленную секретную.
+Восстановленная секретная будет активна и ее можно использовать для всех обычных секретных операций.
+Для выполнения этой операции вызываемму вызываемму звоня необходимо разрешение на восстановление.
 
-## ИЛЛЮСТРИРУЮТ
+## ПРИМЕРЫ
 
 ### Пример 1
 ```powershell
@@ -55,9 +55,9 @@ Content Type :
 Tags         :
 ```
 
-Эта команда восстановит секретный "MySecret", который ранее был удален, в активное и пригодное для использования состояние.
+Эта команда восстановит секретный "МойСекрет", который ранее был удален, в активное и можное состояние.
 
-## ПАРАМЕТРЫ
+## PARAMETERS
 
 ### -DefaultProfile
 Учетные данные, учетная запись, клиент и подписка, используемые для связи с Azure
@@ -75,7 +75,7 @@ Accept wildcard characters: False
 ```
 
 ### -InputObject
-Удален секретный объект
+Удаленный секретный объект
 
 ```yaml
 Type: Microsoft.Azure.Commands.KeyVault.Models.PSDeletedKeyVaultSecretIdentityItem
@@ -89,9 +89,9 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -Name (имя)
-Имя секрета.
-Командлет создает полное доменное имя секрета из имени хранилища, выбранного в настоящее время среды и имени секрета.
+### -Name
+Секретное имя.
+Cmdlet constructs the FQDN of a secret from vault name, currently selected environment and secret name.
 
 ```yaml
 Type: System.String
@@ -106,8 +106,8 @@ Accept wildcard characters: False
 ```
 
 ### -VaultName
-Имя хранилища.
-Командлет создает полное доменное имя хранилища на основе имени и выбранной в данный момент среды.
+Имя сейфа.
+Cmdlet constructs the FQDN of a vault based on the name and currently selected environment.
 
 ```yaml
 Type: System.String
@@ -122,7 +122,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
-Запрашивает подтверждение перед запуском командлета.
+Перед запуском cmdlet вам будет предложено подтвердить его.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -137,8 +137,8 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Показывает, что произойдет при запуске командлета.
-Командлет не выполняется.
+Показывает, что произойдет при запуске cmdlet.
+Этот cmdlet не будет выполниться.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -153,22 +153,21 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Этот командлет поддерживает общие параметры:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-of Variable,-out,-PipelineVariable,-Verbose, и-WarningAction. Дополнительные сведения можно найти в разделе [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+Этот cmdlet поддерживает общие параметры: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. Дополнительные сведения см. [в about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)
 
-## ВХОДНЫЕ данные
+## INPUTS
 
 ### Microsoft.Azure.Commands.KeyVault.Models.PSDeletedKeyVaultSecretIdentityItem
 
-## НАПРЯЖЕНИЕ
+## OUTPUTS
 
-### Microsoft. Azure. Commands. KeyVault. Models. PSKeyVaultSecret
+### Microsoft.Azure.Commands.KeyVault.Models.PSKeyVaultSecret
 
-## Пуск
+## ПРИМЕЧАНИЯ
 
-## ДОПОЛНИТЕЛЬНЫЕ ССЫЛКИ
+## СВЯЗАННЫЕ ССЫЛКИ
 
 [Remove-AzKeyVaultSecret](./Remove-AzKeyVaultSecret.md)
 
-[Add-AzKeyVaultSecret](./Add-AzKeyVaultSecret.md)
 
 [Get-AzKeyVaultSecret](./Get-AzKeyVaultSecret.md)

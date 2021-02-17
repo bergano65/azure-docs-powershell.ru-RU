@@ -5,33 +5,33 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.apimanagem
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/Get-AzApiManagementApiVersionSet.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/Get-AzApiManagementApiVersionSet.md
-ms.openlocfilehash: 16fea88f5a5a1ad8a0e39f62b26d918ca7a64dbd
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: 5b7c06e9ed75cf973a3b9e375ff888477b9a96d7
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93720165"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100400983"
 ---
 # Get-AzApiManagementApiVersionSet
 
-## КРАТКИй обзор
-Получение подробных сведений о наборах версий API
+## SYNOPSIS
+Подробные сведения о наборах версий API
 
-## Максимальное
+## СИНТАКСИС
 
 ```
 Get-AzApiManagementApiVersionSet -Context <PsApiManagementContext> [-ApiVersionSetId <String>]
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## NОПИСАНИЕ
-Командлет **Get-AzApiManagementApiVersionSet** получает сведения о наборах версий API, настроенных в контексте управления API.
+## ОПИСАНИЕ
+Для получения подробных сведений о наборах версий API, настроенных в контексте управления API, можно получить cmdlet **Get-AzApiManagementApiVersionSet.**
 
-## ИЛЛЮСТРИРУЮТ
+## ПРИМЕРЫ
 
 ### Пример 1
 
-### Пример 1: получение всех наборов версий API
+### Пример 1. Получить все наборы версий API
 ```powershell
 PS C:\>$ApiMgmtContext = New-AzApiManagementContext -ResourceGroupName "Api-Default-WestUS" -ServiceName "contoso"
 PS C:\>Get-AzApiManagementApiVersionSet -Context $ApiMgmtContext
@@ -70,7 +70,7 @@ ServiceName       : contoso
 
 Эта команда получает все наборы версий API для заданного контекста.
 
-### Пример 2: получение версии API, установленной ИДЕНТИФИКАТОРом
+### Пример 2. Получить версию API, настроенную по ИД
 ```powershell
 PS C:\>$ApiMgmtContext = New-AzApiManagementContext -ResourceGroupName "Api-Default-WestUS" -ServiceName "contoso"
 PS C:\>Get-AzApiManagementApiVersionSet -Context $ApiMgmtContext -ApiVersionSetId $ApiVersionSetId
@@ -86,13 +86,13 @@ ResourceGroupName : Api-Default-WestUS
 ServiceName       : contoso
 ```
 
-Эта команда возвращает версию API, установленную с указанным ИДЕНТИФИКАТОРом.
+Эта команда получает набор версий API с указанным ИД.
 
-## ПАРАМЕТРЫ
+## PARAMETERS
 
 ### -ApiVersionSetId
-Идентификатор API для поиска.
-Если указано, попытается получить API с помощью идентификатора.
+Идеумный идентификатор API.
+Если он указан, будет пытаться получить API по ИД.
 
 ```yaml
 Type: System.String
@@ -106,9 +106,9 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Context
+### -Контекст
 Экземпляр PsApiManagementContext.
-Этот параметр является обязательным.
+Этот параметр является required(обязательно).
 
 ```yaml
 Type: Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementContext
@@ -138,24 +138,24 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Этот командлет поддерживает общие параметры:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-of Variable,-out,-PipelineVariable,-Verbose, и-WarningAction. Дополнительные сведения можно найти в разделе about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
+Этот cmdlet поддерживает общие параметры: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. Дополнительные сведения см. в about_CommonParameters https://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## ВХОДНЫЕ данные
+## INPUTS
 
-### Microsoft. Azure. Commands. ApiManagement. ServiceManagement. Models. PsApiManagementContext
+### Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementContext
 
-### System. String
+### System.String
 
-## НАПРЯЖЕНИЕ
+## OUTPUTS
 
-### Microsoft. Azure. Commands. ApiManagement. ServiceManagement. Models. PsApiManagementApiVersionSet
+### Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementApiVersionSet
 
-## Пуск
+## ПРИМЕЧАНИЯ
 
-## ДОПОЛНИТЕЛЬНЫЕ ССЫЛКИ
+## СВЯЗАННЫЕ ССЫЛКИ
 
 [New-AzApiManagementApiVersionSet](./New-AzApiManagementApiVersionSet.md)
 
 [Remove-AzApiManagementApiSet](./Remove-AzApiManagementApiVersionSet.md)
 
-[Set-AzApiManagementApiVersionSet](./Set-AzApiManagementApiSet.md)
+[Set-AzApiManagementApiVersionSet](./Set-AzApiManagementApiVersionSet.md)

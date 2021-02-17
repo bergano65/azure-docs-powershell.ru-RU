@@ -5,41 +5,41 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.apimanagem
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/Remove-AzApiManagementBackend.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/Remove-AzApiManagementBackend.md
-ms.openlocfilehash: 3a725bf8dedec948277fac69be029375c3ab91a6
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: 0c50d88f05537b7ebfe7e7ed074e4c38dd01a254
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93731668"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100400847"
 ---
 # Remove-AzApiManagementBackend
 
-## КРАТКИй обзор
-Удаляет сервер.
+## SYNOPSIS
+Удаляет "Backend".
 
-## Максимальное
+## СИНТАКСИС
 
 ```
 Remove-AzApiManagementBackend -Context <PsApiManagementContext> -BackendId <String> [-PassThru]
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## NОПИСАНИЕ
-Удаляет серверные части, заданные идентификатором, из управления API.
+## ОПИСАНИЕ
+Из управления Api удаляется заданный идентификатором.
 
-## ИЛЛЮСТРИРУЮТ
+## ПРИМЕРЫ
 
-### Пример 1: удаление внутреннего сервера 123
+### Пример 1. Удаление backend 123
 ```powershell
 PS C:\>$apimContext = New-AzApiManagementContext -ResourceGroupName "Api-Default-WestUS" -ServiceName "contoso"
 PS C:\>Remove-AzApiManagementBackend -Context $apimContext -BackendId 123 -PassThru
 ```
 
-## ПАРАМЕТРЫ
+## PARAMETERS
 
 ### -BackendId
-Идентификатор существующей базы данных.
-Этот параметр является обязательным.
+Идентификатор существующего backend.
+Этот параметр является required(обязательно).
 
 ```yaml
 Type: System.String
@@ -53,9 +53,9 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Context
+### -Контекст
 Экземпляр PsApiManagementContext.
-Этот параметр является обязательным.
+Этот параметр является required(обязательно).
 
 ```yaml
 Type: Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementContext
@@ -85,7 +85,7 @@ Accept wildcard characters: False
 ```
 
 ### -PassThru
-Если задано значение true, операция Case запишется успешно.
+Если этот задан, будет указано "Истина" в случае успешной операции.
 Этот параметр является необязательным.
 Значение по умолчанию — false.
 
@@ -102,7 +102,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
-Запрашивает подтверждение перед запуском командлета.
+Перед запуском cmdlet вам будет предложено подтвердить его.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -117,7 +117,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Показывает, что произойдет при запуске командлета. Командлет не выполняется.
+Показывает, что произойдет при запуске cmdlet. Этот cmdlet не будет выполниться.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -132,25 +132,25 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Этот командлет поддерживает общие параметры:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-of Variable,-out,-PipelineVariable,-Verbose, и-WarningAction. Дополнительные сведения можно найти в разделе about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
+Этот cmdlet поддерживает общие параметры: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. Дополнительные сведения см. в about_CommonParameters https://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## ВХОДНЫЕ данные
+## INPUTS
 
-### Microsoft. Azure. Commands. ApiManagement. ServiceManagement. Models. PsApiManagementContext
+### Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementContext
 
-### System. String
+### System.String
 
-### System. Management. Automation. SwitchParameter
+### System.Management.Automation.SwitchParameter
 
-## НАПРЯЖЕНИЕ
+## OUTPUTS
 
-### System. Boolean
+### System.Boolean
 
-## Пуск
+## ПРИМЕЧАНИЯ
 
-## ДОПОЛНИТЕЛЬНЫЕ ССЫЛКИ
+## СВЯЗАННЫЕ ССЫЛКИ
 
-[Get-AzApiManagementBackend](./Get-AzApiManagementBackend)
+[Get-AzApiManagementBackend](./Get-AzApiManagementBackend.md)
 
 [New-AzApiManagementBackend](./New-AzApiManagementBackend.md)
 

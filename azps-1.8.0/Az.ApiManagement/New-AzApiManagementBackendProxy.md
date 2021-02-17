@@ -5,31 +5,31 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.apimanagem
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/New-AzApiManagementBackendProxy.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/New-AzApiManagementBackendProxy.md
-ms.openlocfilehash: aa681d48330755137b9c9687be6c40adc12295f2
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: 8b4b93e734c64e3b46b4ba9488a24f2d7f442d8e
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93720111"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100400932"
 ---
 # New-AzApiManagementBackendProxy
 
-## КРАТКИй обзор
-Создает новый объект прокси-сервера в серверной части.
+## SYNOPSIS
+Создает объект прокси-сервера серверов.
 
-## Максимальное
+## СИНТАКСИС
 
 ```
 New-AzApiManagementBackendProxy -Url <String> [-ProxyCredential <PSCredential>]
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## NОПИСАНИЕ
-Создает новый объект-посредник для базы данных, который может быть передан при создании новой серверной сущности.
+## ОПИСАНИЕ
+Создает объект прокси-сервера серверов, который можно создать в канале при создании нового объекта backend.
 
-## ИЛЛЮСТРИРУЮТ
+## ПРИМЕРЫ
 
-### Создание объекта прокси-сервера в серверной In-Memory
+### Создание объекта прокси-сервера In-Memory сервера
 ```powershell
 PS C:\>$secpassword = ConvertTo-SecureString "PlainTextPassword" -AsPlainText -Force
 PS C:\>$proxyCreds = New-Object System.Management.Automation.PSCredential ("foo", $secpassword)
@@ -40,9 +40,9 @@ PS C:\>$apimContext = New-AzApiManagementContext -ResourceGroupName "Api-Default
 PS C:\>$backend = New-AzApiManagementBackend -Context  $apimContext -BackendId 123 -Url 'https://contoso.com/awesomeapi' -Protocol http -Title "first backend" -SkipCertificateChainValidation $true -Proxy $credential -Description "backend with proxy server"
 ```
 
-Создает внутренний прокси-объект и настраивает внутренний сервер
+Создание прокси-сервера и его создание
 
-## ПАРАМЕТРЫ
+## PARAMETERS
 
 ### -DefaultProfile
 Учетные данные, учетная запись, клиент и подписка, используемые для связи с Azure.
@@ -60,7 +60,7 @@ Accept wildcard characters: False
 ```
 
 ### -ProxyCredential
-Учетные данные, используемые для подключения к прокси-серверу внутренней сети. Этот параметр является необязательным.
+Учетные данные, используемые для подключения к серверу прокси-сервера. Этот параметр является необязательным.
 
 ```yaml
 Type: System.Management.Automation.PSCredential
@@ -74,9 +74,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### — URL-адрес
-Адрес прокси-сервера, который будет использоваться для переадресации звонков на сервер.
-Этот параметр является обязательным.
+### -URL-адрес
+URL-адрес прокси-сервера, который будет использоваться при переададности звонков на сервер.
+Этот параметр является required(обязательно).
 
 ```yaml
 Type: System.String
@@ -91,21 +91,21 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Этот командлет поддерживает общие параметры:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-of Variable,-out,-PipelineVariable,-Verbose, и-WarningAction. Дополнительные сведения можно найти в разделе about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
+Этот cmdlet поддерживает общие параметры: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. Дополнительные сведения см. в about_CommonParameters https://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## ВХОДНЫЕ данные
+## INPUTS
 
-### Ничего
+### Нет
 
-## НАПРЯЖЕНИЕ
+## OUTPUTS
 
-### Microsoft. Azure. Commands. ApiManagement. ServiceManagement. Models. PsApiManagementBackendProxy
+### Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementBackendProxy
 
-## Пуск
+## ПРИМЕЧАНИЯ
 
-## ДОПОЛНИТЕЛЬНЫЕ ССЫЛКИ
+## СВЯЗАННЫЕ ССЫЛКИ
 
-[Get-AzApiManagementBackend](./Get-AzApiManagementBackend)
+[Get-AzApiManagementBackend](./Get-AzApiManagementBackend.md)
 
 [New-AzApiManagementBackend](./New-AzApiManagementBackend.md)
 
