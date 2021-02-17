@@ -5,19 +5,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.apimanagem
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/New-AzApiManagementBackendServiceFabric.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/New-AzApiManagementBackendServiceFabric.md
-ms.openlocfilehash: 9178efa364b7655e0a96f68a81399807435be4d5
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: 744889e022301951bbc9ba2895eb5750f85925d0
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93728059"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100401663"
 ---
 # New-AzApiManagementBackendServiceFabric
 
-## КРАТКИй обзор
+## SYNOPSIS
 Создает объект `PsApiManagementServiceFabric`
 
-## Максимальное
+## СИНТАКСИС
 
 ```
 New-AzApiManagementBackendServiceFabric -ManagementEndpoint <String[]> -ClientCertificateThumbprint <String>
@@ -25,13 +25,13 @@ New-AzApiManagementBackendServiceFabric -ManagementEndpoint <String[]> -ClientCe
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## NОПИСАНИЕ
+## ОПИСАНИЕ
 
-Командлет **New-AzApiManagementBackendServiceFabric** создает объект, `PsApiManagementServiceFabric` который будет использоваться в командлете **New-AzApiManagementBackend** и **Set-AzApiManagementBackend**.
+Для выполнения cmdlet **New-AzApiManagementBackendServiceFabric** создается объект, который будет использоваться в `PsApiManagementServiceFabric` cmdlet **New-AzApiManagementBackend** и **Set-AzApiManagementBackend.**
 
-## ИЛЛЮСТРИРУЮТ
+## ПРИМЕРЫ
 
-### Пример 1: создание объектной фабрики службы In-Memory
+### Пример 1. Создание объекта "Ткань из In-Memory службы"
 ```powershell
 PS C:\>$apimContext = New-AzApiManagementContext -ResourceGroupName "Api-Default-WestUS" -ServiceName "contoso"
 PS C:\>$ManagementEndpoints = 'https://sfbackend-01.net:443', 'https://sfbackend-02.net:443'
@@ -41,13 +41,13 @@ PS C:\>$serviceFabric = New-AzApiManagementBackendServiceFabric -ManagementEndpo
 PS C:\>$backend = New-AzApiManagementBackend -Context  $apimContext -BackendId 123 -Url 'https://contoso.com/awesomeapi' -Protocol http -ServiceFabricCluster $serviceFabric -Description "service fabric backend" -PassThru
 ```
 
-Создание контракта внутренней фабрики служб
+Создание контракта с структурой службы
 
-## ПАРАМЕТРЫ
+## PARAMETERS
 
 ### -ClientCertificateThumbprint
-Отпечаток клиентского сертификата для конечной точки управления.
-Этот параметр является обязательным.
+Эскиз клиентского сертификата для конечной точки управления.
+Этот параметр является required(обязательно).
 
 ```yaml
 Type: System.String
@@ -77,8 +77,8 @@ Accept wildcard characters: False
 ```
 
 ### -ManagementEndpoint
-Конечные точки управления кластером фабрики служб.
-Этот параметр является обязательным.
+Конечные точки управления "Ткань службы".
+Этот параметр является required(обязательно).
 
 ```yaml
 Type: System.String[]
@@ -93,8 +93,8 @@ Accept wildcard characters: False
 ```
 
 ### -MaxPartitionResolutionRetry
-Максимальное количество повторных попыток при разрешении раздела Fabric Service.
-Это необязательный параметр, а значение по умолчанию — 5.
+Максимальное количество ирисов при разрешении раздела "Ткань услуги".
+Этот параметр необязателен, а значение по умолчанию — 5.
 
 ```yaml
 Type: System.Nullable`1[System.Int32]
@@ -109,7 +109,7 @@ Accept wildcard characters: False
 ```
 
 ### -ServerCertificateThumbprint
-Отпечаток сертификатов Служба управления кластером, использующая для передачи данных TLS. Этот параметр является необязательным.
+Thumbprint of certificates cluster management service uses for tls communication. Этот параметр является необязательным.
 
 ```yaml
 Type: System.String[]
@@ -124,7 +124,7 @@ Accept wildcard characters: False
 ```
 
 ### -ServerX509Name
-Коллекция имен сертификатов X509 сервера.
+Коллекция имен сертификатов Сервера X509.
 Этот параметр является необязательным.
 
 ```yaml
@@ -140,21 +140,21 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Этот командлет поддерживает общие параметры:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-of Variable,-out,-PipelineVariable,-Verbose, и-WarningAction. Дополнительные сведения можно найти в разделе [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+Этот cmdlet поддерживает общие параметры: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. Дополнительные сведения см. [в about_CommonParameters.](https://go.microsoft.com/fwlink/?LinkID=113216)
 
-## ВХОДНЫЕ данные
+## INPUTS
 
-### System. String
+### System.String
 
-## НАПРЯЖЕНИЕ
+## OUTPUTS
 
-### Microsoft. Azure. Commands. ApiManagement. ServiceManagement. Models. PsApiManagementServiceFabric
+### Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementServiceFabric
 
-## Пуск
+## ПРИМЕЧАНИЯ
 
-## ДОПОЛНИТЕЛЬНЫЕ ССЫЛКИ
+## СВЯЗАННЫЕ ССЫЛКИ
 
-[Get-AzApiManagementBackend](./Get-AzApiManagementBackend)
+[Get-AzApiManagementBackend](./Get-AzApiManagementBackend.md)
 
 [New-AzApiManagementBackend](./New-AzApiManagementBackend.md)
 
