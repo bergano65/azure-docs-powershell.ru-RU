@@ -5,19 +5,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.sql/new-az
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Sql/Sql/help/New-AzSqlSyncGroup.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Sql/Sql/help/New-AzSqlSyncGroup.md
-ms.openlocfilehash: 512ed43ac1770a7a1a026c5a64d20a25016d547e
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: 7789bdc098ab7bb02414ffc39f38ba25f1c7e5ae
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93728871"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100399572"
 ---
 # New-AzSqlSyncGroup
 
-## КРАТКИй обзор
-Создает группу синхронизации базы данных SQL Azure.
+## SYNOPSIS
+Создает группу синхронизации SQL баз данных Azure.
 
-## Максимальное
+## СИНТАКСИС
 
 ```
 New-AzSqlSyncGroup [-Name] <String> -SyncDatabaseName <String> -SyncDatabaseServerName <String>
@@ -27,12 +27,12 @@ New-AzSqlSyncGroup [-Name] <String> -SyncDatabaseName <String> -SyncDatabaseServ
  [<CommonParameters>]
 ```
 
-## NОПИСАНИЕ
-Командлет **New-AzSqlSyncGroup** создает группу синхронизации базы данных SQL Azure.
+## ОПИСАНИЕ
+Для этого создается группа синхронизации базы данных Azure SQL **AzSqlSyncGroup.**
 
-## ИЛЛЮСТРИРУЮТ
+## ПРИМЕРЫ
 
-### Пример 1: создание группы синхронизации для базы данных SQL Azure.
+### Пример 1. Создание группы синхронизации для базы данных Azure SQL.
 ```
 PS C:\> $credential = Get-Credential
 PS C:\> New-AzSqlSyncGroup -ResourceGroupName "ResourceGroup01" -ServerName "Server01" -DatabaseName "Database01" -Name "SyncGroup01" -ConflictResolutionPolicy "HubWin"
@@ -53,12 +53,12 @@ LastSyncTime                : 1/1/0001 12:00:00 AM
 Schema                      :
 ```
 
-Эта команда создает группу синхронизации для базы данных SQL Azure. "schema.json" — файл на локальном диске. Он имеет полезные данные shema в формате JSON. Пример JSON схемы: {"Tables": [{"Columns": [{"QuotedName": "b3ee3a7f-7614-4644-AD07-afa832620b4bManualTestsm4column1"}, {"QuotedName": "b3ee3a7f-7614-4644-AD07-afa832620b4bManualTestsm4column2"}], "QuotedName": "MayQuotedTable1"}, {"столбцы": [{"QuotedName": "b3ee3a7f-7614-4644-AD07-afa832620b4bManualTestsm4column1"}, {"QuotedName": "b3ee3a7f-7614-4644-AD07-afa832620b4bManualTestsm4column2"}], "QuotedName": "MayQuotedTable2"}], "", "MasterSyncMemberName".
+Эта команда создает группу синхронизации для базы данных Azure SQL. "schema.js" — это файл на локальном диске. Она содержит шевему гругру в формате json. Пример схемы json: {"Tables": [{"Columns": [{"QuotedName": "b3ee3a7f-7614-4644-ad07-afa832620b4bManualTestsm4column1"}, {"QuotedName": "b3ee3a7f-7614-4644-ad07-afa832620b4bManualTestsm4column2"}], "QuotedName": "MayQuotedTable1"}, {"Столбцы": [{"QuotedName": "b3ee3a7f-7614-4644-ad07-afa832620b4bManualTestsm4column1"}, {"QuotedName": "b3ee3a7f-7614-4644-ad07-afa832620b4bManualTestsm4column2"}], "QuotedName": "MayQuotedTable2"}], "MasterSyncMemberName": null }
 
-## ПАРАМЕТРЫ
+## PARAMETERS
 
 ### -ConflictResolutionPolicy
-Политика разрешения конфликтов между центром и базой данных участников в группе "Синхронизация".
+Политика устранения конфликтов между центром и базой данных пользователей в группе синхронизации.
 
 ```yaml
 Type: System.String
@@ -74,7 +74,7 @@ Accept wildcard characters: False
 ```
 
 ### -DatabaseCredential
-Учетные данные проверки подлинности SQL для базы данных основного сервера.
+Учетные SQL проверки подлинности центральной базы данных.
 
 ```yaml
 Type: System.Management.Automation.PSCredential
@@ -89,7 +89,7 @@ Accept wildcard characters: False
 ```
 
 ### -DatabaseName
-Имя базы данных SQL Azure.
+Имя базы данных Azure SQL.
 
 ```yaml
 Type: System.String
@@ -119,8 +119,8 @@ Accept wildcard characters: False
 ```
 
 ### -IntervalInSeconds
-Частота выполнения синхронизации данных (в секундах).
-По умолчанию используется значение-1, что означает, что автоматическая синхронизация не включена.
+Частота (в секундах) синхронизации данных.
+Значение по умолчанию — -1, то есть автоматическая синхронизация не включена.
 
 ```yaml
 Type: System.Int32
@@ -134,7 +134,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Name (имя)
+### -Name
 Имя группы синхронизации.
 
 ```yaml
@@ -179,8 +179,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ИмяСервера
-Имя сервера Azure SQL Server.
+### -ServerName
+Имя службы Azure SQL Server.
 
 ```yaml
 Type: System.String
@@ -195,7 +195,7 @@ Accept wildcard characters: False
 ```
 
 ### -SyncDatabaseName
-База данных, которая используется для хранения метаданных, связанных с синхронизацией.
+База данных, используемая для синхронизации связанных метаданных.
 
 ```yaml
 Type: System.String
@@ -210,7 +210,7 @@ Accept wildcard characters: False
 ```
 
 ### -SyncDatabaseResourceGroupName
-Группа ресурсов, к которой принадлежит база данных метаданных синхронизации.
+Группа ресурсов, к которой относится база данных метаданных синхронизации.
 
 ```yaml
 Type: System.String
@@ -225,7 +225,7 @@ Accept wildcard characters: False
 ```
 
 ### -SyncDatabaseServerName
-Сервер, на котором размещается база данных метаданных синхронизации.
+Сервер, на котором находится база данных метаданных синхронизации.
 
 ```yaml
 Type: System.String
@@ -240,7 +240,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
-Запрашивает подтверждение перед запуском командлета.
+Перед запуском cmdlet вам будет предложено подтвердить его.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -255,8 +255,8 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Показывает, что произойдет при запуске командлета.
-Командлет не выполняется.
+Показывает, что произойдет при запуске cmdlet.
+Этот cmdlet не будет выполниться.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -271,21 +271,20 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Этот командлет поддерживает общие параметры:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-of Variable,-out,-PipelineVariable,-Verbose, и-WarningAction. Дополнительные сведения можно найти в разделе [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+Этот cmdlet поддерживает общие параметры: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. Дополнительные сведения см. [в about_CommonParameters.](https://go.microsoft.com/fwlink/?LinkID=113216)
 
-## ВХОДНЫЕ данные
+## INPUTS
 
-### System. String
+### System.String
 
-## НАПРЯЖЕНИЕ
+## OUTPUTS
 
-### Microsoft. Azure. Commands. SQL. Sync. Model. AzureSqlSyncGroupModel
+### Microsoft.Azure.Commands.Sql.DataSync.Model.AzureSqlSyncGroupModel
 
-## Пуск
+## ПРИМЕЧАНИЯ
 
-## ДОПОЛНИТЕЛЬНЫЕ ССЫЛКИ
+## СВЯЗАННЫЕ ССЫЛКИ
 
-[Set-AzSqlSyncGroup](./Set-AzSqlSyncGroup.md)
 
 [Remove-AzSqlSyncGroup](./Remove-AzSqlSyncGroup.md)
 
