@@ -6,19 +6,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.resources/
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/New-AzResource.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/New-AzResource.md
-ms.openlocfilehash: 0c4f351ca224991862e6b050462270fd64fd2a33
-ms.sourcegitcommit: 1de2b6c3c99197958fa2101bc37680e7507f91ac
+ms.openlocfilehash: eea8d72285e478f9eecb0a34f80cae5787ecec83
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "94079341"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100405301"
 ---
 # New-AzResource
 
-## КРАТКИй обзор
-Создание ресурса.
+## SYNOPSIS
+Создает ресурс.
 
-## Максимальное
+## СИНТАКСИС
 
 ### ByResourceId (по умолчанию)
 ```
@@ -46,19 +46,19 @@ New-AzResource [-Location <String>] [-Kind <String>] [-Properties <PSObject>] [-
  [<CommonParameters>]
 ```
 
-## NОПИСАНИЕ
-Командлет **New-AzResource** создает ресурс Azure, например веб-сайт, сервер базы данных Azure SQL или базу данных Azure SQL, в группе ресурсов.
+## ОПИСАНИЕ
+С его SQL создается ресурс Azure, например **веб-сайт,** сервер базы данных Azure SQL или база данных Azure SQL.
 
-## ИЛЛЮСТРИРУЮТ
+## ПРИМЕРЫ
 
-### Пример 1: Создание ресурса
+### Пример 1. Создание ресурса
 ```
 PS> New-AzResource -Location "West US" -Properties @{test="test"} -ResourceName TestSite06 -ResourceType microsoft.web/sites -ResourceGroupName ResourceGroup11 -Force
 ```
 
-Эта команда создает ресурс, который является веб-сайтом в ResourceGroup11.
+Эта команда создает ресурс, который является веб-сайтом в группе ResourceGroup11.
 
-### Пример 2: Создание ресурса с помощью splatting
+### Пример 2. Создание ресурса с помощью разгона
 ```
 PS> $prop = @{
     Location          = "West US" 
@@ -72,12 +72,12 @@ PS> $prop = @{
 PS> New-AzResource @prop
 ```
 
-Эта команда создает ресурс, который является веб-сайтом в ResourceGroup11.
+Эта команда создает ресурс, который является веб-сайтом в группе ResourceGroup11.
 
-## ПАРАМЕТРЫ
+## PARAMETERS
 
 ### -ApiVersion
-Указывает версию используемого API поставщика ресурсов. Если вы не укажете версию, этот командлет использует последнюю доступную версию.
+Определяет версию API поставщика ресурсов. Если не указать версию, этот cmdlet использует последнюю доступную версию.
 
 ```yaml
 Type: System.String
@@ -92,7 +92,7 @@ Accept wildcard characters: False
 ```
 
 ### -AsJob
-Выполнить командлет в фоновом режиме
+Запуск cmdlet в фоновом режиме
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -122,7 +122,7 @@ Accept wildcard characters: False
 ```
 
 ### -ExtensionResourceName
-Указывает имя ресурса расширения для ресурса. Например, чтобы указать базу данных, используйте следующий формат: имя `/` базы данных имени сервера
+Указывает имя ресурса расширения. Например, чтобы указать базу данных, используйте следующий формат: имя `/` базы данных "Имя сервера".
 
 ```yaml
 Type: System.String
@@ -137,8 +137,8 @@ Accept wildcard characters: False
 ```
 
 ### -ExtensionResourceType
-Указывает тип ресурса для расширения ресурса.
-Например, если ресурсом расширения является база данных, укажите следующий тип: `Microsoft.Sql/Servers/Databases`
+Тип ресурса для ресурса расширения.
+Например, если ресурс расширения является базой данных, укажите следующий тип: `Microsoft.Sql/Servers/Databases`
 
 ```yaml
 Type: System.String
@@ -153,7 +153,7 @@ Accept wildcard characters: False
 ```
 
 ### -Force
-Принудительное выполнение команды без запроса подтверждения пользователя.
+Запуск команды без запроса подтверждения.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -168,7 +168,7 @@ Accept wildcard characters: False
 ```
 
 ### -IsFullObject
-Указывает на то, что объект, который указывает параметр *свойств* , — это полный объект.
+Указывает на то, что объект, который определяет параметр *Properties,* является полным объектом.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -182,8 +182,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Видах
-Указывает ресурс ресурсов.
+### -Kind
+Определяет тип ресурса.
 
 ```yaml
 Type: System.String
@@ -199,8 +199,8 @@ Accept wildcard characters: False
 
 ### -Location
 Определяет расположение ресурса.
-Укажите расположение центра обработки данных, например, Центральный регион США или Юго-Восток.
-Ресурс можно поместить в любое место, которое поддерживает ресурсы такого типа. Группы ресурсов могут содержать ресурсы из различных местоположений. Чтобы определить, какие расположения поддерживают каждый тип ресурсов, используйте командлет Get-AzLocation.
+Укажите расположение центра обработки данных, например в Центральной США или Юго-Восточной Азии.
+Ресурс можно разместить в любом месте, которое поддерживает ресурсы такого типа. Группы ресурсов могут содержать ресурсы из разных мест. Чтобы определить, в каких расположениях поддерживается каждый тип ресурсов, используйте Get-AzLocation.
 
 ```yaml
 Type: System.String
@@ -215,7 +215,7 @@ Accept wildcard characters: False
 ```
 
 ### -ODataQuery
-Задает фильтр стиля Open Data Protocol (OData). Этот командлет добавляет это значение в запрос в дополнение к любым другим фильтрам.
+Указывает фильтр стилей Open Data Protocol (OData). Этот cmdlet добавит это значение к запросу в дополнение к любым другим фильтрам.
 
 ```yaml
 Type: System.String
@@ -229,8 +229,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Планирование
-Хэш-таблица, представляющая свойства плана ресурсов.
+### -Plan
+Hash table that represents resource plan properties.
 
 ```yaml
 Type: System.Collections.Hashtable
@@ -245,7 +245,7 @@ Accept wildcard characters: False
 ```
 
 ### -Pre
-Указывает на то, что этот командлет учитывает версии API предварительного выпуска, когда он автоматически определяет, какую версию использовать.
+Указывает на то, что этот cmdlet рассматривает предварительные версии API при автоматическом определении используемой версии.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -259,8 +259,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Свойства
-Определяет свойства ресурса для ресурса. Используйте этот параметр, чтобы указать значения свойств, специфичных для типа ресурса.
+### -Properties
+Определяет свойства ресурса. С помощью этого параметра можно указать значения свойств, специфифичивых для типа ресурса.
 
 ```yaml
 Type: System.Management.Automation.PSObject
@@ -275,7 +275,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-Указывает имя группы ресурсов, в которой этот командлет создает ресурс.
+Имя группы ресурсов, в которой этот cmdlet создает ресурс.
 
 ```yaml
 Type: System.String
@@ -290,7 +290,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceId
-Указывает полный идентификатор ресурса, включая подписку, как показано в следующем примере: `/subscriptions/` идентификатор подписки`/providers/Microsoft.Sql/servers/ContosoServer/databases/ContosoDatabase`
+Указывает полностью определенный ИД ресурса, включая подписку, как по следующему примеру: `/subscriptions/` ИД подписки.`/providers/Microsoft.Sql/servers/ContosoServer/databases/ContosoDatabase`
 
 ```yaml
 Type: System.String
@@ -320,8 +320,8 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceType
-Указывает тип ресурса.
-Например, для базы данных тип ресурса выглядит следующим образом: `Microsoft.Sql/Servers/Databases`
+Тип ресурса.
+Например, для базы данных тип ресурса: `Microsoft.Sql/Servers/Databases`
 
 ```yaml
 Type: System.String
@@ -336,7 +336,7 @@ Accept wildcard characters: False
 ```
 
 ### -SKU
-Хэш-таблица, представляющая свойства SKU.
+Hash table that represents sku properties.
 
 ```yaml
 Type: System.Collections.Hashtable
@@ -350,8 +350,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Тег
-Пары "ключ-значение" в виде хэш-таблицы. Например: @ {Key0 = "value0"; key1 = $null; key2 = "значение2"}
+### -Tag
+Пары значений ключа в виде hash table. Например: @{key0="value0";key1=$null;key2="value2"}
 
 ```yaml
 Type: System.Collections.Hashtable
@@ -366,7 +366,7 @@ Accept wildcard characters: False
 ```
 
 ### -TenantLevel
-Указывает на то, что этот командлет работает на уровне клиента.
+Указывает на то, что этот cmdlet работает на уровне клиента.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -381,7 +381,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
-Запрашивает подтверждение перед запуском командлета.
+Перед запуском cmdlet вам будет предложено подтвердить его.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -396,8 +396,8 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Показывает, что произойдет при запуске командлета.
-Командлет не выполняется.
+Показывает, что произойдет при запуске cmdlet.
+Этот cmdlet не будет выполниться.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -412,23 +412,22 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Этот командлет поддерживает общие параметры:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-of Variable,-out,-PipelineVariable,-Verbose, и-WarningAction. Дополнительные сведения можно найти в разделе [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+Этот cmdlet поддерживает общие параметры: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. Дополнительные сведения см. [в about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)
 
-## ВХОДНЫЕ данные
+## INPUTS
 
-### System. Collections. Hashtable
+### System.Collections.Hashtable
 
-### System. String
+### System.String
 
-## НАПРЯЖЕНИЕ
+## OUTPUTS
 
-### System. Management. Automation. PSObject
+### System.Management.Automation.PSObject
 
-## Пуск
+## ПРИМЕЧАНИЯ
 
-## ДОПОЛНИТЕЛЬНЫЕ ССЫЛКИ
+## СВЯЗАННЫЕ ССЫЛКИ
 
-[Find-AzResource](./Find-AzResource.md)
 
 [Get-AzResource](./Get-AzResource.md)
 
