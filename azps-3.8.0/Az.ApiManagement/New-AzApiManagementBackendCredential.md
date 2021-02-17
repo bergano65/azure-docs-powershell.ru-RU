@@ -5,19 +5,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.apimanagem
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/New-AzApiManagementBackendCredential.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/New-AzApiManagementBackendCredential.md
-ms.openlocfilehash: c1495c505653470f4aa6b818162d57e02893c5e0
-ms.sourcegitcommit: 6a91b4c545350d316d3cf8c62f384478e3f3ba24
+ms.openlocfilehash: 3d9a462a034c5c1e65ff6b22fe92b14421582392
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "94066729"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100401272"
 ---
 # New-AzApiManagementBackendCredential
 
-## КРАТКИй обзор
-Создает новый контракт учетных данных сервера.
+## SYNOPSIS
+Создает новый контракт с учетными данными backend.
 
-## Максимальное
+## СИНТАКСИС
 
 ```
 New-AzApiManagementBackendCredential [-CertificateThumbprint <String[]>] [-Query <Hashtable>]
@@ -25,12 +25,12 @@ New-AzApiManagementBackendCredential [-CertificateThumbprint <String[]>] [-Query
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## NОПИСАНИЕ
-Создает новый контракт учетных данных сервера.
+## ОПИСАНИЕ
+Создает новый контракт с учетными данными backend.
 
-## ИЛЛЮСТРИРУЮТ
+## ПРИМЕРЫ
 
-### Создание серверных учетных данных In-Memory объект
+### Создание учетных данных для In-Memory учетных данных
 ```powershell
 PS C:\>$apimContext = New-AzApiManagementContext -ResourceGroupName "Api-Default-WestUS" -ServiceName "contoso"
 PS C:\>$credential = New-AzApiManagementBackendCredential -AuthorizationHeaderScheme basic -AuthorizationHeaderParameter opensesame -Query @{"sv" = @('xx', 'bb'); "sr" = @('cc')} -Header @{"x-my-1" = @('val1', 'val2')}
@@ -38,12 +38,12 @@ PS C:\>$credential = New-AzApiManagementBackendCredential -AuthorizationHeaderSc
 PS C:\>$backend = New-AzApiManagementBackend -Context  $apimContext -BackendId 123 -Url 'https://contoso.com/awesomeapi' -Protocol http -Title "first backend" -SkipCertificateChainValidation $true -Credential $credential -Description "my backend"
 ```
 
-Создание контракта на серверные учетные данные
+Создание контракта с учетными данными
 
-## ПАРАМЕТРЫ
+## PARAMETERS
 
 ### -AuthorizationHeaderParameter
-Заголовок Authorization, используемый для внутреннего сервера.
+Заглавная авторизация, используемая для backend.
 Этот параметр является необязательным.
 
 ```yaml
@@ -59,7 +59,7 @@ Accept wildcard characters: False
 ```
 
 ### -AuthorizationHeaderScheme
-Схема авторизации, используемая для внутреннего сервера.
+Схема авторизации, используемая для backend.
 Этот параметр является необязательным.
 
 ```yaml
@@ -75,7 +75,7 @@ Accept wildcard characters: False
 ```
 
 ### -CertificateThumbprint
-Отпечатки клиентского сертификата.
+Эскизы сертификата клиента.
 Этот параметр является необязательным.
 
 ```yaml
@@ -105,8 +105,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Верхний колонтитул
-Значения параметров заголовков, принимаемые по внутренней стороне.
+### -Header
+Значения параметров заглавного заглавного заглавия, принятые backend.
 Этот параметр является необязательным.
 
 ```yaml
@@ -122,7 +122,7 @@ Accept wildcard characters: False
 ```
 
 ### -Query
-Значения параметров запроса, принимаемые по внутренней стороне.
+Значения параметров запроса, принятые backend.
 Этот параметр является необязательным.
 
 ```yaml
@@ -138,21 +138,21 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Этот командлет поддерживает общие параметры:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-of Variable,-out,-PipelineVariable,-Verbose, и-WarningAction. Дополнительные сведения можно найти в разделе [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+Этот cmdlet поддерживает общие параметры: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. Дополнительные сведения см. [в about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)
 
-## ВХОДНЫЕ данные
+## INPUTS
 
-### Ничего
+### Нет
 
-## НАПРЯЖЕНИЕ
+## OUTPUTS
 
-### Microsoft. Azure. Commands. ApiManagement. ServiceManagement. Models. PsApiManagementBackendCredential
+### Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementBackendCredential
 
-## Пуск
+## ПРИМЕЧАНИЯ
 
-## ДОПОЛНИТЕЛЬНЫЕ ССЫЛКИ
+## СВЯЗАННЫЕ ССЫЛКИ
 
-[Get-AzApiManagementBackend](./Get-AzApiManagementBackend)
+[Get-AzApiManagementBackend](./Get-AzApiManagementBackend.md)
 
 [New-AzApiManagementBackend](./New-AzApiManagementBackend.md)
 
