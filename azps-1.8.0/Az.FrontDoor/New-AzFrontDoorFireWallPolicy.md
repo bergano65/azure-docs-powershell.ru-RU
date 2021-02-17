@@ -5,19 +5,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.frontdoor/
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/FrontDoor/FrontDoor/help/New-AzFrontDoorFireWallPolicy.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/FrontDoor/FrontDoor/help/New-AzFrontDoorFireWallPolicy.md
-ms.openlocfilehash: 67caf6c97c493ad1d19b95ef00c896cb96a47582
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: 9b1339d138087207b84a7f515c66bd9964420dcd
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93900629"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100401493"
 ---
 # New-AzFrontDoorFireWallPolicy
 
-## КРАТКИй обзор
+## SYNOPSIS
 Создание политики WAF
 
-## Максимальное
+## СИНТАКСИС
 
 ```
 New-AzFrontDoorFireWallPolicy -ResourceGroupName <String> -Name <String> [-EnabledState <PSEnabledState>]
@@ -26,12 +26,12 @@ New-AzFrontDoorFireWallPolicy -ResourceGroupName <String> -Name <String> [-Enabl
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## NОПИСАНИЕ
-Командлет **New-AzFrontDoorFireWallPolicy** создает новую политику WAF Azure в указанной группе ресурсов в разделе текущая подписка
+## ОПИСАНИЕ
+С **помощью cmdlet New-AzFrontDoorFireWallPolicy** в указанной группе ресурсов в текущей подписке создается новая политика Azure WAF.
 
-## ИЛЛЮСТРИРУЮТ
+## ПРИМЕРЫ
 
-### Пример 1: Создание политики WAF
+### Пример 1. Создание политики WAF
 ```powershell
 PS C:\> New-AzFrontDoorFireWallPolicy -Name $policyName -ResourceGroupName $resourceGroupName -Customrule $customRule1,$customRule2 -ManagedRule $managedRule1 -EnabledState Enabled -Mode Prevention -RedirectUrl "https://www.bing.com/" -CustomBlockResponseStatusCode 405 -CustomBlockResponseBody "<html><head><title>You are blocked!</title></head><body></body></html>"
 
@@ -42,10 +42,10 @@ Name         PolicyMode PolicyEnabledState RedirectUrl
 
 Создание политики WAF
 
-## ПАРАМЕТРЫ
+## PARAMETERS
 
 ### -CustomBlockResponseBody
-Настраиваемый текст ответа
+Настраиваемый тело ответа
 
 ```yaml
 Type: System.String
@@ -60,7 +60,7 @@ Accept wildcard characters: False
 ```
 
 ### -CustomBlockResponseStatusCode
-Код состояния настраиваемого ответа
+Пользовательский код состояния ответа
 
 ```yaml
 Type: System.Int32
@@ -75,7 +75,7 @@ Accept wildcard characters: False
 ```
 
 ### -Customrule
-Пользовательские правила в политике
+Настраиваемые правила в политике
 
 ```yaml
 Type: Microsoft.Azure.Commands.FrontDoor.Models.PSCustomRule[]
@@ -105,8 +105,8 @@ Accept wildcard characters: False
 ```
 
 ### -EnabledState
-Состояние политики: включено или отключено.
-Возможные значения: "отключено", "включено"
+Состояние политики (включена или отключена).
+Возможные значения: "Отключено", "Включено"
 
 ```yaml
 Type: Microsoft.Azure.Commands.FrontDoor.Models.PSEnabledState
@@ -136,9 +136,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### Режим
-Описывает, находится ли этот режим в режиме обнаружения или защиты на уровне политики.
-Возможные значения: "Защита", "Обнаружение"
+### -Mode
+В нем описывается, находится ли он в режиме обнаружения или режиме предотвращения на уровне политики.
+Возможные значения: 'Prevention', 'Detection'
 
 ```yaml
 Type: Microsoft.Azure.Commands.FrontDoor.Models.PSMode
@@ -153,8 +153,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Name (имя)
-WebApplicationFireWallPolicy имя.
+### -Name
+Имя WebApplicationFireWallPolicy.
 
 ```yaml
 Type: System.String
@@ -199,7 +199,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
-Запрашивает подтверждение перед запуском командлета.
+Перед запуском cmdlet вам будет предложено подтвердить его.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -214,8 +214,8 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Показывает, что произойдет при запуске командлета.
-Командлет не выполняется.
+Показывает, что произойдет при запуске cmdlet.
+Этот cmdlet не будет выполниться.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -230,22 +230,22 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Этот командлет поддерживает общие параметры:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-of Variable,-out,-PipelineVariable,-Verbose, и-WarningAction. Дополнительные сведения можно найти в разделе [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+Этот cmdlet поддерживает общие параметры: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. Дополнительные сведения см. [в about_CommonParameters.](https://go.microsoft.com/fwlink/?LinkID=113216)
 
-## ВХОДНЫЕ данные
+## INPUTS
 
-### Ничего
+### Нет
 
-## НАПРЯЖЕНИЕ
+## OUTPUTS
 
-### Microsoft. Azure. Commands. FrontDoor. Models. PSPolicy
+### Microsoft.Azure.Commands.FrontDoor.Models.PSPolicy
 
-## Пуск
+## ПРИМЕЧАНИЯ
 
-## ДОПОЛНИТЕЛЬНЫЕ ССЫЛКИ
+## СВЯЗАННЫЕ ССЫЛКИ
 
-[Set-AzFrontDoorFireWallPolicy](./Set-AzFrontDoorFireWallPolicy.md) 
- [Get-AzFrontDoorFireWallPolicy](./Get-AzFrontDoorFireWallPolicy.md) 
+[Get-AzFrontDoorFireWallPolicy](./Get-AzFrontDoorFireWallPolicy.md) 
  [Remove-AzFrontDoorFireWallPolicy](./Remove-AzFrontDoorFireWallPolicy.md) 
+ [Update-AzFrontDoorFireWallPolicy](./Update-AzFrontDoorFireWallPolicy.md) 
  [New-AzFrontDoorManagedRuleObject](./New-AzFrontDoorManagedRuleObject.md) 
  [New-AzFrontDoorCustomRuleObject](./New-AzFrontDoorManagedRuleObject.md)

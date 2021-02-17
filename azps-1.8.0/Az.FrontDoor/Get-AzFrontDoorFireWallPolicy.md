@@ -5,29 +5,29 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.frontdoor/
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/FrontDoor/FrontDoor/help/Get-AzFrontDoorFireWallPolicy.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/FrontDoor/FrontDoor/help/Get-AzFrontDoorFireWallPolicy.md
-ms.openlocfilehash: e8fe8fb59ee56e457c49d959c07db08cad62bb5a
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: 5933d860ca2badce2d9576409dd1553153bb1e84
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93900653"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100401510"
 ---
 # Get-AzFrontDoorFireWallPolicy
 
-## КРАТКИй обзор
-Получение политики WAF
+## SYNOPSIS
+Получить политику WAF
 
-## Максимальное
+## СИНТАКСИС
 
 ```
 Get-AzFrontDoorFireWallPolicy -ResourceGroupName <String> [-Name <String>]
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## NОПИСАНИЕ
-Параметр **Get-AzFrontDoorFireWallPolicy** CMDLETGET получает WAF политику в группе ресурсов в рамках текущей подписки.
+## ОПИСАНИЕ
+Для **get-AzFrontDoorFireWallPolicy** cmdletGet получает политику WAF в группе ресурсов в рамках текущей подписки
 
-## ИЛЛЮСТРИРУЮТ
+## ПРИМЕРЫ
 
 ### Пример 1
 ```powershell
@@ -38,7 +38,7 @@ Name         PolicyMode PolicyEnabledState CustomBlockResponseStatusCode Redirec
 {policyName} Prevention            Enabled                           403 https://www.bing.com/
 ```
 
-Получение WAF политики с именем $policyName в $resourceGroupName
+Получите политику WAF, которая называется $policyName в $resourceGroupName
 
 ### Пример 2
 ```powershell
@@ -51,9 +51,9 @@ Name         PolicyMode PolicyEnabledState CustomBlockResponseStatusCode Redirec
 {policyName} Detection             Enabled                           404
 ```
 
-Получение всех WAF политики в $resourceGroupName
+Получить всю политику WAF в $resourceGroupName
 
-## ПАРАМЕТРЫ
+## PARAMETERS
 
 ### -DefaultProfile
 Учетные данные, учетная запись, клиент и подписка, используемые для связи с Azure.
@@ -70,8 +70,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Name (имя)
-FireWallPolicy имя.
+### -Name
+Имя FireWallPolicy.
 
 ```yaml
 Type: System.String
@@ -101,20 +101,20 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Этот командлет поддерживает общие параметры:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-of Variable,-out,-PipelineVariable,-Verbose, и-WarningAction. Дополнительные сведения можно найти в разделе [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+Этот cmdlet поддерживает общие параметры: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. Дополнительные сведения см. [в about_CommonParameters.](https://go.microsoft.com/fwlink/?LinkID=113216)
 
-## ВХОДНЫЕ данные
+## INPUTS
 
-### Ничего
+### Нет
 
-## НАПРЯЖЕНИЕ
+## OUTPUTS
 
-### Microsoft. Azure. Commands. FrontDoor. Models. PSPolicy
+### Microsoft.Azure.Commands.FrontDoor.Models.PSPolicy
 
-## Пуск
+## ПРИМЕЧАНИЯ
 
-## ДОПОЛНИТЕЛЬНЫЕ ССЫЛКИ
+## СВЯЗАННЫЕ ССЫЛКИ
 
 [New-AzFrontDoorFireWallPolicy](./New-AzFrontDoorFireWallPolicy.md) 
- [Set-AzFrontDoorFireWallPolicy](./Set-AzFrontDoorFireWallPolicy.md) 
- [Remove-AzFrontDoorFireWallPolicy](./Remove-AzFrontDoorFireWallPolicy.md)
+ [Remove-AzFrontDoorFireWallPolicy](./Remove-AzFrontDoorFireWallPolicy.md) 
+ [Update-AzFrontDoorFireWallPolicy](./Update-AzFrontDoorFireWallPolicy.md)

@@ -5,19 +5,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.frontdoor/
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/FrontDoor/FrontDoor/help/New-AzFrontDoorManagedRuleObject.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/FrontDoor/FrontDoor/help/New-AzFrontDoorManagedRuleObject.md
-ms.openlocfilehash: b6035e991b585ba296a9fdc591ccbdb44dd1b089
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: c72573f467377a4ea16fd487a8cee5f0055a5cee
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93900606"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100401459"
 ---
 # New-AzFrontDoorManagedRuleObject
 
-## КРАТКИй обзор
+## SYNOPSIS
 Создание объекта ManagedRule для создания политики WAF
 
-## Максимальное
+## СИНТАКСИС
 
 ```
 New-AzFrontDoorManagedRuleObject -Type <String> -Version <String>
@@ -25,10 +25,10 @@ New-AzFrontDoorManagedRuleObject -Type <String> -Version <String>
  [<CommonParameters>]
 ```
 
-## NОПИСАНИЕ
+## ОПИСАНИЕ
 Создание объекта ManagedRule для создания политики WAF
 
-## ИЛЛЮСТРИРУЮТ
+## ПРИМЕРЫ
 
 ### Пример 1
 ```powershell
@@ -48,7 +48,7 @@ RuleGroupOverrides RuleSetType    RuleSetVersion
 
 Создание объекта ManagedRule
 
-## ПАРАМЕТРЫ
+## PARAMETERS
 
 ### -DefaultProfile
 Учетные данные, учетная запись, клиент и подписка, используемые для связи с Azure.
@@ -66,7 +66,7 @@ Accept wildcard characters: False
 ```
 
 ### -RuleGroupOverride
-Список конфигурации переопределения поставщика управляемых служб Azure
+Список переопределений поставщика, управляемого azure
 
 ```yaml
 Type: Microsoft.Azure.Commands.FrontDoor.Models.PSAzureRuleGroupOverride[]
@@ -80,8 +80,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Type (тип)
-Тип набора правил
+### -Type
+Тип правила
 
 ```yaml
 Type: System.String
@@ -95,8 +95,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Version
-Версия набора правил
+### -Версия
+Версия правила
 
 ```yaml
 Type: System.String
@@ -111,20 +111,20 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Этот командлет поддерживает общие параметры:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-of Variable,-out,-PipelineVariable,-Verbose, и-WarningAction. Дополнительные сведения можно найти в разделе [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+Этот cmdlet поддерживает общие параметры: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. Дополнительные сведения см. [в about_CommonParameters.](https://go.microsoft.com/fwlink/?LinkID=113216)
 
-## ВХОДНЫЕ данные
+## INPUTS
 
-### Ничего
+### Нет
 
-## НАПРЯЖЕНИЕ
+## OUTPUTS
 
-### Microsoft. Azure. Commands. FrontDoor. Models. PSAzureManagedRule
+### Microsoft.Azure.Commands.FrontDoor.Models.PSAzureManagedRule
 
-## Пуск
+## ПРИМЕЧАНИЯ
 
-## ДОПОЛНИТЕЛЬНЫЕ ССЫЛКИ
+## СВЯЗАННЫЕ ССЫЛКИ
 
 [New-AzFrontDoorFireWallPolicy](./New-AzFrontDoorFireWallPolicy.md) 
- [Set-AzFrontDoorFireWallPolicy](./Set-AzFrontDoorFireWallPolicy.md) 
+ [Update-AzFrontDoorFireWallPolicy](./Update-AzFrontDoorFireWallPolicy.md) 
  [New-AzFrontDoorRuleGroupOverrideObject](./New-AzFrontDoorRuleGroupOverrideObject.md)
