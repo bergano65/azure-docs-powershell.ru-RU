@@ -6,19 +6,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.keyvault/g
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/KeyVault/KeyVault/help/Get-AzKeyVaultKey.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/KeyVault/KeyVault/help/Get-AzKeyVaultKey.md
-ms.openlocfilehash: d14b695594d390edf880116d2ab3b5173faada7f
-ms.sourcegitcommit: 6a91b4c545350d316d3cf8c62f384478e3f3ba24
+ms.openlocfilehash: cab778247e6e3ae9db3549beae7fcd7495526757
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "94065160"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100412101"
 ---
 # Get-AzKeyVaultKey
 
-## КРАТКИй обзор
-Получает ключи хранилища ключей.
+## SYNOPSIS
+Получает клавиши сейфа.
 
-## Максимальное
+## СИНТАКСИС
 
 ### ByVaultName (по умолчанию)
 ```
@@ -74,13 +74,13 @@ Get-AzKeyVaultKey [-ResourceId] <String> [-Name] <String> [-IncludeVersions]
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## NОПИСАНИЕ
-Командлет **Get-AzKeyVaultKey** получает ключи Azure Key Vault.
-Этот командлет получает определенный **Microsoft. Azure. Commands. KeyVault. Models. KeyBundle** или список всех объектов **KeyBundle** в хранилище ключей или по версии.
+## ОПИСАНИЕ
+Для получения ключей хранилища Azure задаются **клавиши Get-AzKeyVaultKey.**
+Этот командлет возвращает конкретный **microsoft.Azure.Commands.KeyVault.Models.KeyBundle** или список всех объектов **keyBundle** в хранилище ключа или по версии.
 
-## ИЛЛЮСТРИРУЮТ
+## ПРИМЕРЫ
 
-### Пример 1: получение всех ключей в хранилище ключей
+### Пример 1. Получить все клавиши в хранилище ключей
 ```powershell
 PS C:\> Get-AzKeyVaultKey -VaultName 'contoso'
 
@@ -109,9 +109,9 @@ Purge Disabled : False
 Tags           :
 ```
 
-Эта команда получает все ключи из хранилища ключей contoso.
+Эта команда получает все клавиши в хранилище ключей Contoso.
 
-### Пример 2: получение текущей версии ключа
+### Пример 2. Получить текущую версию ключа
 ```powershell
 PS C:\> Get-AzKeyVaultKey -VaultName 'contoso' -KeyName 'test1'
 
@@ -128,9 +128,9 @@ Purge Disabled : False
 Tags           :
 ```
 
-Эта команда получает текущую версию ключа с именем Test1 в хранилище ключей contoso.
+Эта команда получает текущую версию ключа test1 в хранилище ключей Contoso.
 
-### Пример 3: получение всех версий ключа
+### Пример 3. Получить все версии ключа
 ```powershell
 PS C:\> Get-AzKeyVaultKey -VaultName 'contoso' -KeyName 'test1' -IncludeVersions
 
@@ -159,9 +159,9 @@ Purge Disabled : False
 Tags           :
 ```
 
-Эта команда возвращает все версии Key с именем ITPfx в разделе Key vaultnamed contoso.
+Эта команда получает все версии ключа ITPfx в ключе Contoso.
 
-### Пример 4: получение определенной версии ключа
+### Пример 4. Получить конкретную версию ключа
 ```powershell
 PS C:\> Get-AzKeyVaultKey -VaultName 'contoso' -KeyName 'test1' -Version 'e4e95940e669407fbdb4298bc21a3e1d'
 
@@ -178,10 +178,10 @@ Purge Disabled : False
 Tags           :
 ```
 
-Эта команда возвращает определенную версию ключа test1 в хранилище ключей, именуемом contoso.
-После выполнения этой команды вы можете просматривать различные свойства ключа, перемещаясь по объекту $Key.
+Эта команда получает определенную версию ключа test1 в хранилище ключей с именем Contoso.
+После этого можно проверить различные свойства клавиши, переходя по $Key объекту.
 
-### Пример 5: получение всех ключей, которые были удалены, но не очищены для этого хранилища ключей.
+### Пример 5. Получите все ключи, которые были удалены, но не удалены из этого сейфа.
 ```powershell
 PS C:\> Get-AzKeyVaultKey -VaultName 'contoso' -InRemovedState
 
@@ -199,9 +199,9 @@ Purge Disabled       : False
 Tags                 :
 ```
 
-Эта команда возвращает все разделы, которые были ранее удалены, но не очищены, в хранилище ключей contoso.
+Эта команда получает все ключи, которые были ранее удалены, но не удалены, в хранилище ключей Contoso.
 
-### Пример 6: получение ключа ITPfx, который был удален, но не очищен для этого хранилища ключей.
+### Пример 6. Получает ключ ITPfx, который был удален, но не был удален для этого хранилища ключей.
 ```powershell
 PS C:\> Get-AzKeyVaultKey -VaultName 'contoso' -KeyName 'test3' -InRemovedState
 
@@ -219,10 +219,10 @@ Purge Disabled       : False
 Tags                 :
 ```
 
-Эта команда возвращает клавишу test3, которая была ранее удалена, но не очищена, в хранилище ключей, именуемом contoso.
-Эта команда возвращает метаданные, например дату удаления, и запланированную дату очистки этого удаленного ключа.
+Эта команда получает ключ test3, который ранее был удален, но не был удален, в хранилище ключей Contoso.
+Эта команда возвращает метаданные, такие как дата удаления и запланированная дата удаления этого удаленного ключа.
 
-### Пример 7: получение всех ключей в хранилище ключей с помощью фильтрации
+### Пример 7. Все клавиши в хранилище ключей с помощью фильтрации
 ```powershell
 PS C:\> Get-AzKeyVaultKey -VaultName 'contoso' -KeyName "test*"
 
@@ -251,9 +251,9 @@ Purge Disabled : False
 Tags           :
 ```
 
-Эта команда получает все ключи из хранилища ключей Contoso, которые начинаются с "Test".
+Эта команда получает все ключи в хранилище ключей Contoso, которые начинаются с "test".
 
-## ПАРАМЕТРЫ
+## PARAMETERS
 
 ### -DefaultProfile
 Учетные данные, учетная запись, клиент и подписка, используемые для связи с Azure
@@ -271,10 +271,10 @@ Accept wildcard characters: False
 ```
 
 ### -IncludeVersions
-Указывает на то, что этот командлет получает все версии ключа.
+Указывает на то, что этот cmdlet получает все версии ключа.
 Текущая версия ключа является первой в списке.
-Если указан этот параметр, необходимо также указать параметры *Name* и *VaultName* .
-Если параметр *IncludeVersions* не указан, этот командлет получает текущую версию ключа с указанным *именем*.
+Если вы указали этот параметр, необходимо также указать параметры *Name* и *VaultName.*
+Если не указать параметр *IncludeVersions,* этот cmdlet получит текущую версию ключа с указанным *именем.*
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -304,7 +304,7 @@ Accept wildcard characters: False
 ```
 
 ### -InRemovedState
-Указывает, нужно ли отображать ранее удаленные разделы в выходных данных.
+Указывает, нужно ли показывать ранее удаленные ключи в выходных данных.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -318,8 +318,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Name (имя)
-Указывает имя набора ключей, который требуется получить.
+### -Name
+Имя набора ключей, который нужно получить.
 
 ```yaml
 Type: System.String
@@ -346,7 +346,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceId
-Идентификатор ресурса KeyVault.
+ИД ресурса KeyVault.
 
 ```yaml
 Type: System.String
@@ -361,8 +361,8 @@ Accept wildcard characters: False
 ```
 
 ### -VaultName
-Указывает имя хранилища ключей, из которого этот командлет получает ключи.
-Этот командлет создает полное доменное имя (FQDN) для хранилища ключей, основываясь на имени, указанном этим параметром, и в выбранной среде.
+Указывает имя хранилища ключей, из которого этот cmdlet получает ключи.
+Этот cmdlet конструирует полное доменное имя (FQDN) ключа хранилища на основе имени, указанного этим параметром, и выбранной среды.
 
 ```yaml
 Type: System.String
@@ -376,9 +376,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Version
+### -Версия
 Указывает версию ключа.
-Этот командлет создает полное доменное имя ключа на основе имени хранилища ключей, текущей выбранной среды, имени ключа и версии ключа.
+Этот cmdlet строит FQDN ключа на основе имени ключа хранилища, выбранной среды, имени ключа и версии ключа.
 
 ```yaml
 Type: System.String
@@ -393,27 +393,27 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Этот командлет поддерживает общие параметры:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-of Variable,-out,-PipelineVariable,-Verbose, и-WarningAction. Дополнительные сведения можно найти в разделе [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+Этот cmdlet поддерживает общие параметры: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. Дополнительные сведения см. [в about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)
 
-## ВХОДНЫЕ данные
+## INPUTS
 
-### Microsoft. Azure. Commands. KeyVault. Models. PSKeyVault
+### Microsoft.Azure.Commands.KeyVault.Models.PSKeyVault
 
-### System. String
+### System.String
 
-## НАПРЯЖЕНИЕ
+## OUTPUTS
 
-### Microsoft. Azure. Commands. KeyVault. Models. PSKeyVaultKeyIdentityItem
+### Microsoft.Azure.Commands.KeyVault.Models.PSKeyVaultKeyIdentityItem
 
-### Microsoft. Azure. Commands. KeyVault. Models. PSKeyVaultKey
+### Microsoft.Azure.Commands.KeyVault.Models.PSKeyVaultKey
 
 ### Microsoft.Azure.Commands.KeyVault.Models.PSDeletedKeyVaultKeyIdentityItem
 
 ### Microsoft.Azure.Commands.KeyVault.Models.PSDeletedKeyVaultKey
 
-## Пуск
+## ПРИМЕЧАНИЯ
 
-## ДОПОЛНИТЕЛЬНЫЕ ССЫЛКИ
+## СВЯЗАННЫЕ ССЫЛКИ
 
 [Add-AzKeyVaultKey](./Add-AzKeyVaultKey.md)
 
@@ -421,5 +421,4 @@ Accept wildcard characters: False
 
 [Undo-AzKeyVaultKeyRemoval](./Undo-AzKeyVaultKeyRemoval.md)
 
-[Set-AzKeyVaultKeyAttribute](./Set-AzKeyVaultKeyAttribute.md)
 
