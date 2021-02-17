@@ -6,17 +6,17 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.keyvault/r
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/KeyVault/KeyVault/help/Remove-AzKeyVaultKey.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/KeyVault/KeyVault/help/Remove-AzKeyVaultKey.md
-ms.openlocfilehash: e78b6729061efe5a83f31bd25b9e542c09627ca3
-ms.sourcegitcommit: c05d3d669b5631e526841f47b22513d78495350b
+ms.openlocfilehash: 3c5435d1a472341d0447ead2f384fa892d6e1202
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/09/2021
-ms.locfileid: "100219604"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100404485"
 ---
 # Remove-AzKeyVaultKey
 
 ## SYNOPSIS
-Удаляет ключ из хранилища ключей.
+Удаляет ключ в хранилище ключей.
 
 ## СИНТАКСИС
 
@@ -39,7 +39,7 @@ Remove-AzKeyVaultKey [-InputObject] <PSKeyVaultKeyIdentityItem> [-Force] [-PassT
 ```
 
 ## ОПИСАНИЕ
-Новый Remove-AzKeyVaultKey удаляет ключ из хранилища ключей.
+С Remove-AzKeyVaultKey- и клавиши удаляются из хранилища ключей.
 Если ключ был случайно удален, его можно восстановить с помощью Undo-AzKeyVaultKeyRemoval пользователей со специальными разрешениями на восстановление.
 Этот cmdlet имеет высокое значение для свойства **ConfirmImpact.**
 
@@ -86,7 +86,7 @@ PS C:\> Remove-AzKeyVaultKey -VaultName 'Contoso' -Name 'ITSoftware' -InRemovedS
 PS C:\> Get-AzKeyVaultKey -VaultName 'Contoso' | Where-Object {$_.Attributes.Enabled -eq $False} | Remove-AzKeyVaultKey
 ```
 
-Эта команда получает все клавиши в хранилище с именем Contoso и передает их в командлет **Where-Object** с помощью оператора конвейера.
+Эта команда получает все ключи в хранилище ключей Contoso и передает их в командлет **Where-Object** с помощью оператора конвейера.
 Этот cmdlet передает текущему $False, которые имеют значение $False **Enabled.**
 Этот cmdlet удаляет эти клавиши.
 
@@ -169,7 +169,7 @@ Accept wildcard characters: False
 
 ### -Name
 Указывает имя ключа, который нужно удалить.
-Этот проектлет определяет полное доменное имя ключа на основе имени, указанного этим параметром, имени хранилища ключа и текущей среды.
+Этот cmdlet конструирует полное доменное имя (FQDN) ключа на основе имени, указанного этим параметром, имени хранилища ключа и текущей среды.
 
 ```yaml
 Type: System.String
@@ -216,7 +216,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
-Запрос на подтверждение перед запуском cmdlet.
+Перед запуском cmdlet вам будет предложено подтвердить его.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -266,7 +266,6 @@ Accept wildcard characters: False
 
 [Get-AzKeyVaultKey](./Get-AzKeyVaultKey.md)
 
-[Set-AzKeyVaultKeyAttribute](./Set-AzKeyVaultKeyAttribute.md)
 
 [Undo-AzKeyVaultKeyRemoval](./Undo-AzKeyVaultKeyRemoval.md)
 
