@@ -5,19 +5,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.network/ge
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Get-AzNetworkWatcherNextHop.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Get-AzNetworkWatcherNextHop.md
-ms.openlocfilehash: 7fe316bda1cc6385babad2b5a7cb03d44a6fc128
-ms.sourcegitcommit: 6a91b4c545350d316d3cf8c62f384478e3f3ba24
+ms.openlocfilehash: 2de9b483e6458278da7fcccc942fd7bf0e0e796c
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "93912192"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100408157"
 ---
 # Get-AzNetworkWatcherNextHop
 
-## КРАТКИй обзор
-Получает следующий прыжок от виртуальной машины.
+## SYNOPSIS
+Переход от VM к следующему переходу.
 
-## Максимальное
+## СИНТАКСИС
 
 ### SetByResource (по умолчанию)
 ```
@@ -40,12 +40,12 @@ Get-AzNetworkWatcherNextHop -Location <String> -TargetVirtualMachineId <String> 
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## NОПИСАНИЕ
-Командлет Get-AzNetworkWatcherNextHop получает следующий прыжок от виртуальной машины. Следующий прыжок позволяет просматривать тип ресурса Azure, соответствующий IP-адрес ресурса и правило таблицы маршрутизации, ответственное за маршрут.
+## ОПИСАНИЕ
+Следующий Get-AzNetworkWatcherNextHop-решение получает следующий переход от VM. Следующий переход позволяет просмотреть тип ресурса Azure, его IP-адрес и правило для таблицы маршрутов, за которое отвечает маршрут.
 
-## ИЛЛЮСТРИРУЮТ
+## ПРИМЕРЫ
 
-### Пример 1: получение следующего прыжка при общении с IP-адресом в Интернете
+### Пример 1. Переход на следующий прыжок при общении с IP-адресом в Интернете
 ```
 $nw = Get-AzResource | Where {$_.ResourceType -eq "Microsoft.Network/networkWatchers" -and $_.Location -eq "WestCentralUS" } 
 $networkWatcher = Get-AzNetworkWatcher -Name $nw.Name -ResourceGroupName $nw.ResourceGroupName 
@@ -59,12 +59,12 @@ NextHopIpAddress NextHopType RouteTableId
                  Internet    System Route
 ```
 
-Возвращает следующий прыжок для исходящей связи от основного сетевого интерфейса на указанной виртуальной машине в 204.79.197.200 (www.bing.com).
+Следующий переход для исходящие связи из основного сетевого интерфейса на указанной виртуальной машине до 204.79.197.200 (www.bing.com)
 
-## ПАРАМЕТРЫ
+## PARAMETERS
 
 ### -AsJob
-Выполнить командлет в фоновом режиме
+Запуск cmdlet в фоновом режиме
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -109,7 +109,7 @@ Accept wildcard characters: False
 ```
 
 ### -Location
-Расположение наблюдателя сети.
+Расположение сетевого просмотра.
 
 ```yaml
 Type: System.String
@@ -124,7 +124,7 @@ Accept wildcard characters: False
 ```
 
 ### -NetworkWatcher
-Ресурс сетевого наблюдателя.
+Сетевой ресурс для просмотра.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSNetworkWatcher
@@ -139,7 +139,7 @@ Accept wildcard characters: False
 ```
 
 ### -NetworkWatcherName
-Имя наблюдателя сети.
+Имя сетевого смотритела.
 
 ```yaml
 Type: System.String
@@ -154,7 +154,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-Имя группы ресурсов наблюдателя сети.
+Имя группы ресурсов сетевого watcher.
 
 ```yaml
 Type: System.String
@@ -184,7 +184,7 @@ Accept wildcard characters: False
 ```
 
 ### -TargetNetworkInterfaceId
-Идентификатор целевого сетевого интерфейса.
+ИД целевого сетевого интерфейса.
 
 ```yaml
 Type: System.String
@@ -199,7 +199,7 @@ Accept wildcard characters: False
 ```
 
 ### -TargetVirtualMachineId
-Целевой ИД виртуальной машины.
+ИД целевой виртуальной машины.
 
 ```yaml
 Type: System.String
@@ -214,22 +214,22 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Этот командлет поддерживает общие параметры:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-of Variable,-out,-PipelineVariable,-Verbose, и-WarningAction. Дополнительные сведения можно найти в разделе [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+Этот cmdlet поддерживает общие параметры: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. Дополнительные сведения см. [в about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)
 
-## ВХОДНЫЕ данные
+## INPUTS
 
-### Microsoft. Azure. Commands. Network. Models. PSNetworkWatcher
+### Microsoft.Azure.Commands.Network.Models.PSNetworkWatcher
 
-### System. String
+### System.String
 
-## НАПРЯЖЕНИЕ
+## OUTPUTS
 
-### Microsoft. Azure. Commands. Network. Models. PSNextHopResult
+### Microsoft.Azure.Commands.Network.Models.PSNextHopResult
 
-## Пуск
-Ключевые слова: Azure, azurerm, ARM, Resource, менеджмент, руководитель, сеть, сеть, наблюдатель сети, далее, прыжок 
+## ПРИМЕЧАНИЯ
+Ключевые слова: azure, azurerm, arm, resource, management, manager, network, network, networking, network watcher, next, hop 
 
-## ДОПОЛНИТЕЛЬНЫЕ ССЫЛКИ
+## СВЯЗАННЫЕ ССЫЛКИ
 
 [New-AzNetworkWatcher](./New-AzNetworkWatcher.md)
 
@@ -253,7 +253,7 @@ Accept wildcard characters: False
 
 [Remove-AzNetworkWatcherPacketCapture](./Remove-AzNetworkWatcherPacketCapture.md)
 
-[Остановить-AzNetworkWatcherPacketCapture](./Stop-AzNetworkWatcherPacketCapture.md)
+[Stop-AzNetworkWatcherPacketCapture](./Stop-AzNetworkWatcherPacketCapture.md)
 
 [New-AzNetworkWatcherProtocolConfiguration](./New-AzNetworkWatcherProtocolConfiguration.md)
 
@@ -261,7 +261,7 @@ Accept wildcard characters: False
 
 [Test-AzNetworkWatcherConnectivity](./Test-AzNetworkWatcherConnectivity.md)
 
-[Остановить-AzNetworkWatcherConnectionMonitor](./Stop-AzNetworkWatcherConnectionMonitor.md)
+[Stop-AzNetworkWatcherConnectionMonitor](./Stop-AzNetworkWatcherConnectionMonitor.md)
 
 [Start-AzNetworkWatcherConnectionMonitor](./Start-AzNetworkWatcherConnectionMonitor.md)
 
@@ -281,6 +281,6 @@ Accept wildcard characters: False
 
 [Get-AzNetworkWatcherFlowLogStatus](./Get-AzNetworkWatcherFlowLogStatus.md)
 
-[Get-AzNetworkWatcherConnectionMonitorReport](./Get-AzNetworkWatcherConnectionMonitorReport)
+[Get-AzNetworkWatcherConnectionMonitorReport](./Get-AzNetworkWatcherConnectionMonitorReport.md)
 
-[Get-AzNetworkWatcherConnectionMonitor](./Get-AzNetworkWatcherConnectionMonitor)
+[Get-AzNetworkWatcherConnectionMonitor](./Get-AzNetworkWatcherConnectionMonitor.md)

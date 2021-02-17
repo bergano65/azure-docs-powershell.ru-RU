@@ -6,19 +6,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.network/ge
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Get-AzExpressRouteCircuitRouteTable.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Get-AzExpressRouteCircuitRouteTable.md
-ms.openlocfilehash: fe92609b47cadedd1772b1a75baae33b9fb89e65
-ms.sourcegitcommit: 6a91b4c545350d316d3cf8c62f384478e3f3ba24
+ms.openlocfilehash: b8087721351a834f50a2f3f3b8a9b792f4bfc393
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "94073377"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100408225"
 ---
 # Get-AzExpressRouteCircuitRouteTable
 
-## КРАТКИй обзор
-Возвращает таблицу маршрутов из канала ExpressRoute.
+## SYNOPSIS
+Возвращает таблицу маршрутов из каналов ExpressRoute.
 
-## Максимальное
+## СИНТАКСИС
 
 ```
 Get-AzExpressRouteCircuitRouteTable -ResourceGroupName <String> -ExpressRouteCircuitName <String>
@@ -26,17 +26,17 @@ Get-AzExpressRouteCircuitRouteTable -ResourceGroupName <String> -ExpressRouteCir
  [<CommonParameters>]
 ```
 
-## NОПИСАНИЕ
-Командлет **Get-AzExpressRouteCircuitRouteTable** извлекает детальную таблицу маршрутов канала ExpressRoute. В таблице маршрутов отобразятся все маршруты или их можно отфильтровать, чтобы показать маршруты для определенного типа пиринга. Вы можете использовать таблицу маршрутов для проверки конфигурации и подключения к одноранговым данным.
+## ОПИСАНИЕ
+Cmdlet **Get-AzExpressRouteCircuitRouteTable** извлекает подробную таблицу маршрутов из схемы ExpressRoute. В таблице маршрутов будут отфильтроваться все маршруты или отфильтровать маршруты для определенного типа пиринга. Таблицу маршрутов можно использовать для проверки конфигурации пиринга и подключения.
 
-## ИЛЛЮСТРИРУЮТ
+## ПРИМЕРЫ
 
-### Пример 1: отображение таблицы маршрутов для основного пути
+### Пример 1. Отображение таблицы маршрутов для основного пути
 ```
 Get-AzExpressRouteCircuitRouteTable -ResourceGroupName $RG -ExpressRouteCircuitName $CircuitName -DevicePath 'Primary'
 ```
 
-## ПАРАМЕТРЫ
+## PARAMETERS
 
 ### -DefaultProfile
 Учетные данные, учетная запись, клиент и подписка, используемые для связи с Azure.
@@ -54,7 +54,7 @@ Accept wildcard characters: False
 ```
 
 ### -DevicePath
-Допустимые значения этого параметра: `Primary` или `Secondary`
+Допустимыми значениями для этого параметра являются: `Primary` или `Secondary`
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.DevicePathEnum
@@ -70,7 +70,7 @@ Accept wildcard characters: False
 ```
 
 ### -ExpressRouteCircuitName
-Имя проверяемого канала ExpressRoute.
+Имя проверяемого контура ExpressRoute.
 
 ```yaml
 Type: System.String
@@ -85,7 +85,7 @@ Accept wildcard characters: False
 ```
 
 ### -PeeringType
-Допустимые значения этого параметра: `AzurePrivatePeering` , `AzurePublicPeering` и `MicrosoftPeering`
+Допустимыми значениями для этого параметра являются: `AzurePrivatePeering` `AzurePublicPeering` , и `MicrosoftPeering`
 
 ```yaml
 Type: System.String
@@ -116,22 +116,22 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Этот командлет поддерживает общие параметры:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-of Variable,-out,-PipelineVariable,-Verbose, и-WarningAction. Дополнительные сведения можно найти в разделе [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+Этот cmdlet поддерживает общие параметры: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. Дополнительные сведения см. [в about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)
 
-## ВХОДНЫЕ данные
+## INPUTS
 
-### System. String
+### System.String
 
-## НАПРЯЖЕНИЕ
+## OUTPUTS
 
-### Microsoft. Azure. Commands. Network. Models. PSExpressRouteCircuitRoutesTable
+### Microsoft.Azure.Commands.Network.Models.PSExpressRouteCircuitRoutesTable
 
-## Пуск
+## ПРИМЕЧАНИЯ
 
-## ДОПОЛНИТЕЛЬНЫЕ ССЫЛКИ
+## СВЯЗАННЫЕ ССЫЛКИ
 
 [Get-AzExpressRouteCircuitARPTable](Get-AzExpressRouteCircuitARPTable.md)
 
 [Get-AzExpressRouteCircuitRouteTableSummary](Get-AzExpressRouteCircuitRouteTableSummary.md)
 
-[Get-AzExpressRouteCircuitStats](Get-AzExpressRouteCircuitStats.md)
+[Get-AzExpressRouteCircuitStat](Get-AzExpressRouteCircuitStat.md)
