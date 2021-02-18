@@ -5,19 +5,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.accounts/a
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Accounts/Accounts/help/Add-AzEnvironment.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Accounts/Accounts/help/Add-AzEnvironment.md
-ms.openlocfilehash: ba5a398e21543bc4b19c09309884ceb11fed3197
-ms.sourcegitcommit: 1de2b6c3c99197958fa2101bc37680e7507f91ac
+ms.openlocfilehash: 2db2e90dc1292bdfe67907e5a180b08a09a54718
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "94243769"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100406015"
 ---
 # Add-AzEnvironment
 
-## КРАТКИй обзор
-Добавляет конечные точки и метаданные для экземпляра диспетчера ресурсов Azure.
+## SYNOPSIS
+Добавляет конечные точки и метаданные для экземпляра Azure Resource Manager.
 
-## Максимальное
+## СИНТАКСИС
 
 ### Имя (по умолчанию)
 ```
@@ -51,19 +51,19 @@ Add-AzEnvironment [-Name] <String> [[-StorageEndpoint] <String>] [-ARMEndpoint] 
  [<CommonParameters>]
 ```
 
-### Поиска
+### Обнаружение
 ```
 Add-AzEnvironment -AutoDiscover [-Uri <Uri>] [-Scope {Process | CurrentUser}]
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## NОПИСАНИЕ
-Командлет Add-AzEnvironment добавляет конечные точки и метаданные, чтобы включить командлеты диспетчера ресурсов Azure для соединения с новым экземпляром диспетчера ресурсов Azure.
-Встроенные среды AzureCloud и AzureChinaCloud предназначены для существующих открытых экземпляров диспетчера ресурсов Azure.
+## ОПИСАНИЕ
+Новый Add-AzEnvironment добавляет конечные точки и метаданные, чтобы обеспечить подключение диспетчера ресурсов Azure к новому экземпляру Диспетчера ресурсов Azure.
+Встроенные среды AzureCloud и AzureChinaCloud нацелены на существующие общедоступные экземпляры Диспетчера ресурсов Azure.
 
-## ИЛЛЮСТРИРУЮТ
+## ПРИМЕРЫ
 
-### Пример 1: создание и изменение новой среды
+### Пример 1. Создание и изменение новой среды
 ```
 PS C:\> Add-AzEnvironment -Name TestEnvironment `
         -ActiveDirectoryEndpoint TestADEndpoint `
@@ -113,9 +113,9 @@ ExtendedProperties                                : {}
 BatchEndpointResourceId                           :
 ```
 
-В этом примере мы создаем новую среду Azure с примерами конечных точек с помощью Add-AzEnvironment, а затем изменили значения атрибутов ActiveDirectoryEndpoint и GraphEndpoint для созданной среды с помощью командлета Set-AzEnvironment.
+В этом примере мы создаем новую среду Azure с образцами конечных точек с помощью Add-AzEnvironment, а затем изменяем значение атрибутов ActiveDirectoryEndpoint и GraphEndpoint созданной среды с помощью cmdlet Set-AzEnvironment.
 
-### Пример 2: обнаружение новой среды с помощью URI
+### Пример 2. Обнаружение новой среды с помощью URI
 ```
 <#
 Uri https://configuredmetadata.net returns an array of environment metadata. The following example contains a payload for the AzureCloud default environment.
@@ -162,12 +162,12 @@ Name            Resource Manager Url ActiveDirectory Authority
 TestEnvironment TestRMEndpoint       TestADEndpoint/
 ```
 
-В этом примере мы обнаруживаем новую среду Azure из https://configuredmetadata.net универсального кода ресурса (URI).
+В этом примере мы обнаруживаем новую среду Azure из `https://configuredmetadata.net` URI.
 
-## ПАРАМЕТРЫ
+## PARAMETERS
 
 ### -ActiveDirectoryEndpoint
-Указывает базовый центр проверки подлинности Azure Active Directory.
+Указывает базовый орган проверки подлинности Azure Active Directory.
 
 ```yaml
 Type: System.String
@@ -182,7 +182,7 @@ Accept wildcard characters: False
 ```
 
 ### -ActiveDirectoryServiceEndpointResourceId
-Указывает аудиторию для маркеров, которые проверяют запросы на конечные точки диспетчера ресурсов Azure или службы управления службами (RDFE).
+Определяет аудиторию для маркеров, которые запрашивают проверку подлинности в конечных точках диспетчера ресурсов Azure или службы управления службами.
 
 ```yaml
 Type: System.String
@@ -197,7 +197,7 @@ Accept wildcard characters: False
 ```
 
 ### -AdTenant
-Указывает клиента Active Directory, используемого по умолчанию.
+Определяет клиент Active Directory по умолчанию.
 
 ```yaml
 Type: System.String
@@ -212,7 +212,7 @@ Accept wildcard characters: False
 ```
 
 ### -ARMEndpoint
-Конечная точка диспетчера ресурсов Azure
+Конечная точка Диспетчера ресурсов Azure
 
 ```yaml
 Type: System.String
@@ -226,8 +226,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Автообнаружения
-Среды рассматриваются по умолчанию или настроенной конечной точке.
+### -AutoDiscover
+Обнаружение сред через стандартную или настроенную конечную точку.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -242,7 +242,7 @@ Accept wildcard characters: False
 ```
 
 ### -AzureAnalysisServicesEndpointResourceId
-Идентификатор ресурса для ресурса служб аналитики Azure.
+Идентификатор ресурса Служб Аналитики Azure.
 
 ```yaml
 Type: System.String
@@ -257,7 +257,7 @@ Accept wildcard characters: False
 ```
 
 ### -AzureAnalysisServicesEndpointSuffix
-Конечная точка, используемая при взаимодействии с API аналитических журналов Azure.
+Конечная точка, используемая при общении с azure Log Analytics API.
 
 ```yaml
 Type: System.String
@@ -272,7 +272,7 @@ Accept wildcard characters: False
 ```
 
 ### -AzureAttestationServiceEndpointResourceId
-Идентификатор ресурса службы аттестации Azure, который является получателем запрошенного маркера.
+Идентификатор ресурса службы Azure Attestation, который является получателем запрашиваемого маркера.
 
 ```yaml
 Type: System.String
@@ -287,7 +287,7 @@ Accept wildcard characters: False
 ```
 
 ### -AzureAttestationServiceEndpointSuffix
-DNS-суффикс службы аттестации Azure.
+DNS-суффикс службы Azure Attestation.
 
 ```yaml
 Type: System.String
@@ -302,7 +302,7 @@ Accept wildcard characters: False
 ```
 
 ### -AzureDataLakeAnalyticsCatalogAndJobEndpointSuffix
-DNS-суффикс для задания и службы каталогов Azure Data Lake Analytics
+DNS-суффикс служб Azure Data Lake Analytics и служб каталога
 
 ```yaml
 Type: System.String
@@ -317,7 +317,7 @@ Accept wildcard characters: False
 ```
 
 ### -AzureDataLakeStoreFileSystemEndpointSuffix
-DNS-суффикс для файловой системы Azure Data Lake Store. Пример: azuredatalake.net
+Суффикс DNS для Azure Data Lake Store FileSystem. Пример: azuredatalake.net
 
 ```yaml
 Type: System.String
@@ -332,7 +332,7 @@ Accept wildcard characters: False
 ```
 
 ### -AzureKeyVaultDnsSuffix
-DNS-суффикс службы хранилища ключей Azure. Пример vault-int.azure-int.net
+DNS-суффикс службы хранилища ключей Azure. Пример: vault-int.azure-int.net
 
 ```yaml
 Type: System.String
@@ -347,7 +347,7 @@ Accept wildcard characters: False
 ```
 
 ### -AzureKeyVaultServiceEndpointResourceId
-Идентификатор ресурса службы данных Azure Key Vault, которая является получателем запрошенного маркера.
+Идентификатор ресурса службы данных хранилища ключа Azure, который является получателем запрашиваемого маркера.
 
 ```yaml
 Type: System.String
@@ -362,7 +362,7 @@ Accept wildcard characters: False
 ```
 
 ### -AzureOperationalInsightsEndpoint
-Конечная точка, используемая при взаимодействии с API аналитических журналов Azure.
+Конечная точка, используемая при общении с azure Log Analytics API.
 
 ```yaml
 Type: System.String
@@ -377,7 +377,7 @@ Accept wildcard characters: False
 ```
 
 ### -AzureOperationalInsightsEndpointResourceId
-Аудитория для маркеров, проверяющих подлинность с помощью API аналитических журналов Azure.
+Аудитория для проверки подлинности токенов с помощью API Azure Log Analytics.
 
 ```yaml
 Type: System.String
@@ -392,7 +392,7 @@ Accept wildcard characters: False
 ```
 
 ### -AzureSynapseAnalyticsEndpointResourceId
-Идентификатор ресурса аналитики Azure Synapse Analytics, которая является получателем запрошенного маркера.
+Идентификатор ресурса средства аналитики Azure SynapseAnalytics, который является получателем запрашиваемого маркера.
 
 ```yaml
 Type: System.String
@@ -407,7 +407,7 @@ Accept wildcard characters: False
 ```
 
 ### -AzureSynapseAnalyticsEndpointSuffix
-DNS-суффикс Azure Synapse Analytics.
+DNS-суффикс средства аналитики Azure Synapse.
 
 ```yaml
 Type: System.String
@@ -422,7 +422,7 @@ Accept wildcard characters: False
 ```
 
 ### -BatchEndpointResourceId
-Идентификатор ресурса пакетной службы Azure, которая является получателем запрашиваемого маркера.
+Идентификатор ресурса службы Azure Batch, который является получателем запрашиваемого маркера.
 
 ```yaml
 Type: System.String
@@ -437,7 +437,7 @@ Accept wildcard characters: False
 ```
 
 ### -DataLakeAudience
-Аудитория для маркеров, прошедших проверку подлинности с помощью конечной точки AD Data Lake Services.
+Аудитория маркеров для проверки подлинности с помощью конечной точки служб AD Data Lake services.
 
 ```yaml
 Type: System.String
@@ -467,7 +467,7 @@ Accept wildcard characters: False
 ```
 
 ### -EnableAdfsAuthentication
-Указывает, что локальная проверка подлинности служб федерации Active Directory (ADFS) разрешена.
+Указывает на то, что разрешена проверка локальной проверки подлинности в службах федерации Active Directory (ADFS).
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -482,7 +482,7 @@ Accept wildcard characters: False
 ```
 
 ### -GalleryEndpoint
-Задает конечную точку для коллекции шаблонов развертывания диспетчера ресурсов Azure.
+Указывает конечную точку для коллекции шаблонов развертывания Диспетчера ресурсов Azure.
 
 ```yaml
 Type: System.String
@@ -497,7 +497,7 @@ Accept wildcard characters: False
 ```
 
 ### -GraphAudience
-Аудитория для маркеров, прошедших проверку подлинности с помощью конечной точки AD Graph.
+Аудитория маркеров для проверки подлинности с помощью конечной точки AD Graph.
 
 ```yaml
 Type: System.String
@@ -512,7 +512,7 @@ Accept wildcard characters: False
 ```
 
 ### -GraphEndpoint
-Указывает URL-адрес для запросов Graph (для метаданных Active Directory).
+Url-адрес запросов Graph (метаданных Active Directory).
 
 ```yaml
 Type: System.String
@@ -527,7 +527,7 @@ Accept wildcard characters: False
 ```
 
 ### -ManagementPortalUrl
-Указывает URL-адрес портала управления.
+Url-адрес портала управления.
 
 ```yaml
 Type: System.String
@@ -541,8 +541,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Name (имя)
-Указывает имя среды, которую нужно добавить.
+### -Name
+Указывает имя добавляемой среды.
 
 ```yaml
 Type: System.String
@@ -557,7 +557,7 @@ Accept wildcard characters: False
 ```
 
 ### -PublishSettingsFileUrl
-Указывает URL-адрес, с которого можно загрузить файлы publishsettings.
+Url-адрес, с которого можно скачать файлы Publishsettings.
 
 ```yaml
 Type: System.String
@@ -572,7 +572,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceManagerEndpoint
-Указывает URL-адрес для запросов диспетчера ресурсов Azure.
+URL-адрес запросов Диспетчера ресурсов Azure.
 
 ```yaml
 Type: System.String
@@ -587,7 +587,7 @@ Accept wildcard characters: False
 ```
 
 ### -Scope
-Определяет область изменений контекста, например, применяются ли изменения только к текущему процессу или ко всем сеансам, запускаемым этим пользователем.
+Определяет область изменения контекста, например, применяются ли изменения только к текущему процессу или же к всем сеансам, на которые начал пользователь.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Profile.Common.ContextModificationScope
@@ -603,7 +603,7 @@ Accept wildcard characters: False
 ```
 
 ### -ServiceEndpoint
-Задает конечную точку для запросов на управление службами (RDFE).
+Указывает конечную точку для запросов на управление службами (RDFE).
 
 ```yaml
 Type: System.String
@@ -618,7 +618,7 @@ Accept wildcard characters: False
 ```
 
 ### -SqlDatabaseDnsSuffix
-Указывает суффикс доменных имен для серверов баз данных Azure SQL.
+Определяет суффикс доменного имени для серверов баз данных Azure SQL.
 
 ```yaml
 Type: System.String
@@ -633,7 +633,7 @@ Accept wildcard characters: False
 ```
 
 ### -StorageEndpoint
-Задает конечную точку для хранилища (BLOB-объектов, таблицы, очереди и файла).
+Указывает конечную точку доступа к хранилищу (BLOB-файлу, таблице, очереди и файлу).
 
 ```yaml
 Type: System.String
@@ -648,7 +648,7 @@ Accept wildcard characters: False
 ```
 
 ### -TrafficManagerDnsSuffix
-Задает суффикс доменных имен для служб диспетчера трафика Azure.
+Определяет суффикс доменного имени для служб Azure Traffic Manager.
 
 ```yaml
 Type: System.String
@@ -662,8 +662,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -URI
-Указывает URI интернет-ресурса для выборки сред.
+### -Uri
+Определяет URI интернет-ресурса для выборки среды.
 
 ```yaml
 Type: System.Uri
@@ -678,7 +678,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
-Запрашивает подтверждение перед запуском командлета.
+Перед запуском cmdlet вам будет предложено подтвердить его.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -693,7 +693,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Показывает, что произойдет при запуске командлета. Командлет не выполняется.
+Показывает, что произойдет при запуске cmdlet. Этот cmdlet не будет выполниться.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -708,21 +708,21 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Этот командлет поддерживает общие параметры:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-of Variable,-out,-PipelineVariable,-Verbose, и-WarningAction. Дополнительные сведения можно найти в разделе [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+Этот cmdlet поддерживает общие параметры: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. Дополнительные сведения см. [в about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)
 
-## ВХОДНЫЕ данные
+## INPUTS
 
-### System. String
+### System.String
 
-### System. Management. Automation. SwitchParameter
+### System.Management.Automation.SwitchParameter
 
-## НАПРЯЖЕНИЕ
+## OUTPUTS
 
-### Microsoft. Azure. Commands. Profile. Models. PSAzureEnvironment
+### Microsoft.Azure.Commands.Profile.Models.PSAzureEnvironment
 
-## Пуск
+## ПРИМЕЧАНИЯ
 
-## ДОПОЛНИТЕЛЬНЫЕ ССЫЛКИ
+## СВЯЗАННЫЕ ССЫЛКИ
 
 [Get-AzEnvironment](./Get-AzEnvironment.md)
 

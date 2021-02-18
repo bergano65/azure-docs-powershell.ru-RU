@@ -6,32 +6,32 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.sql/get-az
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Sql/Sql/help/Get-AzSqlServerAdvancedThreatProtectionSettings.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Sql/Sql/help/Get-AzSqlServerAdvancedThreatProtectionSettings.md
-ms.openlocfilehash: 1895fe45f51782cc1a3a54d8b2d0f2da752c2990
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: 38388f4a2d1d88ae668b8a6384ca228a9436ac68
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93906098"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100405913"
 ---
 # Get-AzSqlServerAdvancedThreatProtectionSettings
 
-## КРАТКИй обзор
-Получает параметры расширенной защиты от угроз для сервера.
+## SYNOPSIS
+Получает дополнительные параметры защиты от угроз для сервера.
 
-## Максимальное
+## СИНТАКСИС
 
 ```
 Get-AzSqlServerAdvancedThreatProtectionSettings -ServerName <String> [-ResourceGroupName] <String>
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## NОПИСАНИЕ
-Командлет **Get-AzSqlServerAdvancedThreatProtectionSettings** получает расширенные параметры защиты от угроз для Azure SQL Server.
-Чтобы использовать этот командлет, укажите параметры *ResourceGroupName* и *ServerName* для идентификации сервера, для которого этот командлет получает параметры.
+## ОПИСАНИЕ
+Чтобы **получить дополнительные** параметры защиты от угроз для сервера Azure SQL, можно получить дополнительные параметры защиты от угроз для azure SQL Server.
+Чтобы использовать этот cmdlet, укажите параметры *ResourceGroupName* и *ServerName,* определяя сервер, для которого этот cmdlet получает параметры.
 
-## ИЛЛЮСТРИРУЮТ
+## ПРИМЕРЫ
 
-### Пример 1: получение расширенных параметров защиты от угроз для сервера
+### Пример 1. Расширенные параметры защиты от угроз для сервера
 ```
 PS C:\>Get-AzSqlServerAdvancedThreatProtectionSettings -ResourceGroupName "ResourceGroup11" -ServerName "Server01"
 ResourceGroupName            : ResourceGroup11
@@ -44,10 +44,10 @@ ExcludedDetectionTypes       : {}
 RetentionInDays              : 0
 ```
 
-Эта команда получает дополнительные параметры защиты от угроз для сервера с именем Server01.
-Сервер назначается группе ресурсов ResourceGroup11.
+Эта команда получает расширенные параметры защиты от угроз для сервера с именем Server01.
+Серверу назначена группа ресурсов ResourceGroup11.
 
-## ПАРАМЕТРЫ
+## PARAMETERS
 
 ### -DefaultProfile
 Учетные данные, учетная запись, клиент и подписка, используемые для связи с Azure
@@ -65,7 +65,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-Указывает имя группы ресурсов, к которой принадлежит сервер.
+Имя группы ресурсов, к которой принадлежит сервер.
 
 ```yaml
 Type: System.String
@@ -79,7 +79,7 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -ИмяСервера
+### -ServerName
 Указывает имя сервера.
 
 ```yaml
@@ -95,7 +95,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
-Запрашивает подтверждение перед запуском командлета.
+Перед запуском cmdlet вам будет предложено подтвердить его.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -110,8 +110,8 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Показывает, что произойдет при запуске командлета.
-Командлет не выполняется.
+Показывает, что произойдет при запуске cmdlet.
+Этот cmdlet не будет выполниться.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -126,22 +126,21 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Этот командлет поддерживает общие параметры:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-of Variable,-out,-PipelineVariable,-Verbose, и-WarningAction. Дополнительные сведения можно найти в разделе about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
+Этот cmdlet поддерживает общие параметры: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. Дополнительные сведения см. в about_CommonParameters https://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## ВХОДНЫЕ данные
+## INPUTS
 
-### System. String
+### System.String
 
-## НАПРЯЖЕНИЕ
+## OUTPUTS
 
-### Microsoft. Azure. Commands. SQL. ThreatDetection. Model. ServerAdvancedThreatProtectionSettingsModel
+### Microsoft.Azure.Commands.Sql.ThreatDetection.Model.ServerAdvancedThreatProtectionSettingsModel
 
-## Пуск
+## ПРИМЕЧАНИЯ
 
-## ДОПОЛНИТЕЛЬНЫЕ ССЫЛКИ
+## СВЯЗАННЫЕ ССЫЛКИ
 
-[Remove-AzSqlDatabaseAdvancedThreatProtectionSettings](./Remove-AzSqlDatabaseAdvancedThreatProtectionSettings.md)
 
-[Документация по базам данных SQL](https://docs.microsoft.com/azure/sql-database/)
+[SQL базы данных](https://docs.microsoft.com/azure/sql-database/)
 
 
