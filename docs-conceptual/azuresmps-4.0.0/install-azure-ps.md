@@ -5,18 +5,18 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/06/2017
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 2860d5c7642b137c1cb14a38fa13d59ec2a4123c
-ms.sourcegitcommit: 038cb42a3bd8c009bc57c8c1c252e66fa170c84b
+ms.openlocfilehash: 23ea4bcbd182cf1b063f2ae90921217de74a7044
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2020
-ms.locfileid: "92523212"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100401527"
 ---
 # <a name="installing-the-azure-powershell-service-management-module"></a>Установка модуля управления службами Azure PowerShell
 
 Предпочтительный способ установки Azure PowerShell — из [коллекции PowerShell](https://www.powershellgallery.com/).
 
-## <a name="step-1-install-powershellget"></a>Шаг 1. Проверка установленной версии PowerShellGet
+## <a name="step-1-install-powershellget"></a>Шаг 1. Установка PowerShellGet
 
 Чтобы установить элементы из коллекции PowerShell, требуется модуль PowerShellGet. Убедитесь, что в системе установлена необходимая версия PowerShellGet и что выполнены другие требования к системе. Выполните следующую команду, чтобы определить наличие PowerShellGet в вашей системе:
 
@@ -34,7 +34,7 @@ PowerShellGet 1.0.0.1 C:\Program Files\WindowsPowerShell\Modules\PowerShellGet\1
 
 Если у вас не установлен PowerShellGet, перейдите к разделу [Как получить PowerShellGet](#how-to-get-powershellget).
 
-## <a name="step-2-install-azure-powershell"></a>Шаг 2. Установка Azure PowerShell
+## <a name="step-2-install-azure-powershell"></a>Шаг 2. Установите Azure PowerShell
 
 Войдите в консоль Windows PowerShell с правами администратора и выполните следующую команду:
 
@@ -70,7 +70,7 @@ Add-AzureAccount
 
 Модули Azure PowerShell часто обновляются. Если вы заметили, что онлайн-справка по командлетам содержит командлеты и параметры, которых нет в вашем модуле, скачайте и установите последнюю версию модуля. Чтобы найти версию своего модуля, введите: `(Get-InstalledModule Azure).Version`.
 
-Примеры скриптов, с помощью которых можно автоматизировать некоторые распространенные задачи в Azure, см. в [центре скриптов Microsoft Azure](http://www.windowsazure.com/documentation/scripts/).
+Примеры скриптов, с помощью которых можно автоматизировать некоторые распространенные задачи в Azure, см. в [центре скриптов Microsoft Azure](https://www.windowsazure.com/documentation/scripts/).
 
 Общие сведения об установке, обучении, использовании и настройке Windows PowerShell см. в статье, посвященной [работе со скриптами в Windows PowerShell](/powershell/scripting/learn/ps101/00-introduction).
 
