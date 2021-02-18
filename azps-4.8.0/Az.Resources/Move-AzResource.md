@@ -6,19 +6,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.resources/
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/Move-AzResource.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/Move-AzResource.md
-ms.openlocfilehash: 4f21ce7a14873d201fa18f45c96d508dcd38cb8e
-ms.sourcegitcommit: 1de2b6c3c99197958fa2101bc37680e7507f91ac
+ms.openlocfilehash: 561b19f7eb09d9addfda2b7f3c66c66f2d9f759d
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "94244677"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100415603"
 ---
 # Move-AzResource
 
-## КРАТКИй обзор
-Перемещает ресурс в другую группу ресурсов или подписку.
+## SYNOPSIS
+Перемещение ресурса в другую группу ресурсов или подписку.
 
-## Максимальное
+## СИНТАКСИС
 
 ```
 Move-AzResource -DestinationResourceGroupName <String> [-DestinationSubscriptionId <Guid>]
@@ -26,27 +26,27 @@ Move-AzResource -DestinationResourceGroupName <String> [-DestinationSubscription
  [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## NОПИСАНИЕ
-Командлет **Move-AzResource** перемещает существующие ресурсы в другую группу ресурсов.
-Эта группа ресурсов может входить в другую подписку.
+## ОПИСАНИЕ
+Для перемещения существующих ресурсов в другую **группу перемещается ресурс AzResource.**
+Группа ресурсов может быть в другой подписке.
 
-## ИЛЛЮСТРИРУЮТ
+## ПРИМЕРЫ
 
-### Пример 1: перемещение ресурса в группу ресурсов
+### Пример 1. Перемещение ресурса в группу ресурсов
 ```
 PS C:\>$Resource = Get-AzResource -ResourceType "Microsoft.ClassicCompute/storageAccounts" -ResourceName "ContosoStorageAccount"
 PS C:\> Move-AzResource -ResourceId $Resource.ResourceId -DestinationResourceGroupName "ResourceGroup14"
 ```
 
-Первая команда получает ресурс с именем ContosoStorageAccount с помощью командлета Get-AzResource и сохраняет этот ресурс в переменной $Resource.
+Первая команда получает ресурс с именем ContosoStorageAccount с помощью командлета Get-AzResource, а затем сохраняет его в переменной $Resource.
 Вторая команда перемещает этот ресурс в группу ресурсов с именем ResourceGroup14.
-Команда определяет ресурс для перемещения с помощью свойства **ResourceId** для $Resource.
+Команда определяет ресурс, который нужно переместить, с помощью свойства **ResourceId** $Resource.
 
-## ПАРАМЕТРЫ
+## PARAMETERS
 
 ### -ApiVersion
-Указывает версию используемого API поставщика ресурсов.
-Если вы не укажете версию, этот командлет использует последнюю доступную версию.
+Определяет версию API поставщика ресурсов.
+Если не указать версию, этот cmdlet использует последнюю доступную версию.
 
 ```yaml
 Type: System.String
@@ -76,7 +76,7 @@ Accept wildcard characters: False
 ```
 
 ### -DestinationResourceGroupName
-Указывает имя группы ресурсов, в которую этот командлет перемещает ресурсы.
+Имя группы ресурсов, в которую этот cmdlet перемещает ресурсы.
 
 ```yaml
 Type: System.String
@@ -91,7 +91,7 @@ Accept wildcard characters: False
 ```
 
 ### -DestinationSubscriptionId
-Указывает идентификатор подписки, в которую этот командлет перемещает ресурсы.
+Определяет код подписки, в которую этот cmdlet перемещает ресурсы.
 
 ```yaml
 Type: System.Nullable`1[System.Guid]
@@ -106,7 +106,7 @@ Accept wildcard characters: False
 ```
 
 ### -Force
-Принудительное выполнение команды без запроса подтверждения пользователя.
+Запуск команды без запроса подтверждения.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -121,7 +121,7 @@ Accept wildcard characters: False
 ```
 
 ### -Pre
-Указывает на то, что этот командлет учитывает версии API предварительного выпуска, когда он автоматически определяет, какую версию использовать.
+Указывает на то, что этот cmdlet рассматривает предварительные версии API при автоматическом определении используемой версии.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -136,7 +136,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceId
-Задает массив идентификаторов ресурсов, перемещаемых этим командлетом.
+Определяет массив кодов ресурсов, перемещаемых этим cmdlet.
 
 ```yaml
 Type: System.String[]
@@ -151,7 +151,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
-Запрашивает подтверждение перед запуском командлета.
+Перед запуском cmdlet вам будет предложено подтвердить его.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -166,8 +166,8 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Показывает, что произойдет при запуске командлета.
-Командлет не выполняется.
+Показывает, что произойдет при запуске cmdlet.
+Этот cmdlet не будет выполниться.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -182,23 +182,22 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Этот командлет поддерживает общие параметры:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-of Variable,-out,-PipelineVariable,-Verbose, и-WarningAction. Дополнительные сведения можно найти в разделе [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+Этот cmdlet поддерживает общие параметры: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. Дополнительные сведения см. [в about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)
 
-## ВХОДНЫЕ данные
+## INPUTS
 
-### System. Nullable "1 [[System. GUID, System. Private. CoreLib, Version = 4.0.0.0, культура = Neutral, PublicKeyToken = 7cec85d7bea7798e]]
+### System.Nullable'1[[System.Guid, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]
 
-### System. String []
+### System.String[]
 
-## НАПРЯЖЕНИЕ
+## OUTPUTS
 
-### System. Boolean
+### System.Boolean
 
-## Пуск
+## ПРИМЕЧАНИЯ
 
-## ДОПОЛНИТЕЛЬНЫЕ ССЫЛКИ
+## СВЯЗАННЫЕ ССЫЛКИ
 
-[Find-AzResource](./Find-AzResource.md)
 
 [Get-AzResource](./Get-AzResource.md)
 
