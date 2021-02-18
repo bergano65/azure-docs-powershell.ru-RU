@@ -5,19 +5,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.apimanagem
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/Get-AzApiManagementApiRelease.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/Get-AzApiManagementApiRelease.md
-ms.openlocfilehash: 19395960d3a0026b7a14c4ca8232c18d511af989
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: bb27324c2c8524f36d9f3362dee8968fbfb0cc8c
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93728127"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100409789"
 ---
 # Get-AzApiManagementApiRelease
 
-## КРАТКИй обзор
-Получение выпусков API.
+## SYNOPSIS
+Получите выпуск API.
 
-## Максимальное
+## СИНТАКСИС
 
 ### ContextParameterSet (по умолчанию)
 ```
@@ -31,12 +31,12 @@ Get-AzApiManagementApiRelease -ResourceId <String> [-DefaultProfile <IAzureConte
  [<CommonParameters>]
 ```
 
-## NОПИСАНИЕ
-Командлет **Get-AzApiManagementApiRelease** получает один или несколько выпусков API управления API Azure.
+## ОПИСАНИЕ
+Для получения одного или более выпусков API управления API Azure API возвращается **cmdlet Get-AzApiManagementApiRelease.**
 
-## ИЛЛЮСТРИРУЮТ
+## ПРИМЕРЫ
 
-### Пример 1: получение всех выпусков API
+### Пример 1. Все выпуски API
 ```powershell
 PS C:\>$ApiMgmtContext = New-AzApiManagementContext -ResourceGroupName "Api-Default-WestUS" -ServiceName "contoso"
 PS C:\>Get-AzApiManagementApiRelease -Context $ApiMgmtContext -ApiId 5adf6fbf0faadf3ad8558065
@@ -50,9 +50,9 @@ ResourceGroupName : Api-Default-WestUS
 ServiceName       : contoso
 ```
 
-Эта команда получает все выпуски `echo-api` API для заданного контекста.
+Эта команда возвращает все выпуски `echo-api` API для заданного контекста.
 
-### Пример 2: получение сведений о выпуске конкретного API-интерфейса
+### Пример 2. Сведения о выпуске определенного выпуска API
 ```powershell
 PS C:\>$ApiMgmtContext = New-AzApiManagementContext -ResourceGroupName "Api-Default-WestUS" -ServiceName "contoso"
 PS C:\>Get-AzApiManagementApiRelease -Context $ApiMgmtContext -ApiId 5adf6fbf0faadf3ad8558065 -ReleaseId 5afccaf6b89fd067426d402e
@@ -68,13 +68,13 @@ ResourceGroupName : Api-Default-WestUS
 ServiceName       : contoso
 ```
 
-Эта команда получает сведения о выпусках определенного API с указанным releaseId.
+Эта команда получает сведения о выпуске определенного API с указанным значением releaseId.
 
-## ПАРАМЕТРЫ
+## PARAMETERS
 
 ### -ApiId
-Идентификатор API для поиска.
-Если указано, попытается получить API с помощью идентификатора.
+Идеумный идентификатор API.
+Если он указан, будет пытаться получить API по ИД.
 
 ```yaml
 Type: System.String
@@ -88,9 +88,9 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Context
+### -Контекст
 Экземпляр PsApiManagementContext.
-Этот параметр является обязательным.
+Этот параметр является required(обязательно).
 
 ```yaml
 Type: Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementContext
@@ -135,7 +135,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceId
-Идентификатор ресурса ARM для выпусков API. Если указано, будет предпринята попытка найти выпуск API, выданный идентификатором. Этот параметр является обязательным.
+Идентификатор ресурса Arm для выпуска Api. Если он указан, будет пытаться найти выпуск api по идентификатору. Этот параметр является required(обязательно).
 
 ```yaml
 Type: System.String
@@ -150,24 +150,24 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Этот командлет поддерживает общие параметры:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-of Variable,-out,-PipelineVariable,-Verbose, и-WarningAction. Дополнительные сведения можно найти в разделе [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+Этот cmdlet поддерживает общие параметры: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. Дополнительные сведения см. [в about_CommonParameters.](https://go.microsoft.com/fwlink/?LinkID=113216)
 
-## ВХОДНЫЕ данные
+## INPUTS
 
-### Microsoft. Azure. Commands. ApiManagement. ServiceManagement. Models. PsApiManagementContext
+### Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementContext
 
-### System. String
+### System.String
 
-## НАПРЯЖЕНИЕ
+## OUTPUTS
 
-### Microsoft. Azure. Commands. ApiManagement. ServiceManagement. Models. PsApiManagementApiRelease
+### Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementApiRelease
 
-## Пуск
+## ПРИМЕЧАНИЯ
 
-## ДОПОЛНИТЕЛЬНЫЕ ССЫЛКИ
+## СВЯЗАННЫЕ ССЫЛКИ
 
 [New-AzApiManagementApiRelease](./Get-AzApiManagementApiRelease.md)
 
 [Remove-AzApiManagementApiRelease](./Remove-AzApiManagementApiRelease.md)
 
-[Set-AzApiManagementApiRelease](./Set-AzApiManagementApiRelease.md)
+[Update-AzApiManagementApiRelease](./Update-AzApiManagementApiRelease.md)
