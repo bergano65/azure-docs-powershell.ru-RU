@@ -6,46 +6,46 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.network/re
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Resize-AzVirtualNetworkGateway.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Resize-AzVirtualNetworkGateway.md
-ms.openlocfilehash: b3a468f06db6d75671049b08efcf7970553c5c79
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: e345d64a921d598e610f297a0508df58b45c99a6
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93901858"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100410553"
 ---
 # Resize-AzVirtualNetworkGateway
 
-## КРАТКИй обзор
-Изменение размера существующего шлюза виртуальной сети.
+## SYNOPSIS
+Resizes an existing virtual network gateway.
 
-## Максимальное
+## СИНТАКСИС
 
 ```
 Resize-AzVirtualNetworkGateway -VirtualNetworkGateway <PSVirtualNetworkGateway> -GatewaySku <String>
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## NОПИСАНИЕ
-Командлет **resize-AzVirtualNetworkGateway** позволяет изменить единицу хранения (SKU) для шлюза виртуальной сети.
-SKU определяет возможности шлюза, включая такие аспекты, как пропускная способность и максимальное количество разрешенных IP-туннелей.
-Azure поддерживает базовые, стандартные, высокопроизводительные, VpnGw1, VpnGw2, VpnGw3, VpnGw1AZ, VpnGw2AZ, VpnGw3AZ, ErGw1AZ и ErGw2AZ, ErGw3AZ SKU (иногда называются небольшим, средним и крупными SKU).
-Подробные сведения о возможностях каждого типа SKU можно найти в разделе https://azure.microsoft.com/en-us/documentation/articles/vpn-gateway-about-vpngateways/ .
-Имейте в виду, что номера SKU отличаются в ценах и возможностях.
-Дополнительные сведения можно найти в разделе https://azure.microsoft.com/en-us/pricing/details/vpn-gateway/ .
+## ОПИСАНИЕ
+Командлет **Resize-AzVirtualNetworkGateway** позволяет изменить единицы управления акциями для виртуального сетевого шлюза.
+Номера номеров sk определяют возможности шлюза, в том числе пропускную способность и максимально допустимое количество разрешенных IP-туннельов.
+Azure поддерживает базовые, стандартные, высокоскоростные, VpnGw1, VpnGw2, VpnGw3, VpnGw1AZ, VpnGw2AZ, VpnGw3AZ, ErGw1AZ, ErGw2AZ, ErGw3AZ SKUs (также называются небольшие, средние и большие СКА).
+Подробные сведения о возможностях каждого типа SKU см. в https://azure.microsoft.com/en-us/documentation/articles/vpn-gateway-about-vpngateways/ .
+Помните о том, что цены и возможности СКАЙБ различаются.
+Дополнительные сведения https://azure.microsoft.com/en-us/pricing/details/vpn-gateway/ см. в .
 
-## ИЛЛЮСТРИРУЮТ
+## ПРИМЕРЫ
 
-### Пример 1: изменение размера шлюза виртуальной сети
+### Пример 1. Изменение размера виртуального сетевого шлюза
 ```
 PS C:\>$Gateway = Get-AzVirtualNetworkGateway -Name "ContosoVirtualGateway"
 PS C:\> Resize-AzVirtualNetworkGateway -VirtualNetworkGateway $Gateway -GatewaySku "Basic"
 ```
 
-В этом примере изменяется размер шлюза виртуальной сети с именем ContosoVirtualGateway.
-Первая команда создает ссылку на объект в ContosoVirtualGateway; Эта ссылка на объект хранится в переменной с именем $Gateway.
-Вторая команда использует командлет **resize-AzVirtualNetworkGateway** , чтобы присвоить свойству *GatewaySku* значение Basic.
+В этом примере изменяется размер виртуального сетевого шлюза с именем ContosoVirtualGateway.
+Первая команда создает ссылку на объект ContosoVirtualGateway; эта ссылка на объект хранится в переменной с именем $Gateway.
+Вторая команда затем использует командлет **Resize-AzVirtualNetworkGateway** для свойства *GatewaySku* Basic.
 
-## ПАРАМЕТРЫ
+## PARAMETERS
 
 ### -DefaultProfile
 Учетные данные, учетная запись, клиент и подписка, используемые для связи с Azure.
@@ -64,9 +64,9 @@ Accept wildcard characters: False
 
 ### -GatewaySku
 Указывает новый тип SKU шлюза.
-Для этого параметра допустимы следующие значения:
-- Базового
-- Стандартная
+Допустимые значения этого параметра:
+- Базовая
+- Стандартный
 - Высокая производительность
 - VpnGw1
 - VpnGw2
@@ -92,8 +92,8 @@ Accept wildcard characters: False
 ```
 
 ### -VirtualNetworkGateway
-Указывает ссылку на объект для изменения шлюза виртуальной сети.
-Вы можете создать ссылку на объект, используя Get-AzVirtualNetworkGateway и указав имя шлюза.
+Указывает ссылку на объект на виртуальный сетевой шлюз, который нужно размеризировать.
+Эту ссылку на объект можно создать, указав Get-AzVirtualNetworkGateway имя шлюза.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSVirtualNetworkGateway
@@ -108,22 +108,22 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Этот командлет поддерживает общие параметры:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-of Variable,-out,-PipelineVariable,-Verbose, и-WarningAction. Дополнительные сведения можно найти в разделе about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
+Этот cmdlet поддерживает общие параметры: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. Дополнительные сведения см. в about_CommonParameters https://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## ВХОДНЫЕ данные
+## INPUTS
 
-### Microsoft. Azure. Commands. Network. Models. PSVirtualNetworkGateway
+### Microsoft.Azure.Commands.Network.Models.PSVirtualNetworkGateway
 
-### System. String
+### System.String
 
-## НАПРЯЖЕНИЕ
+## OUTPUTS
 
-### Microsoft. Azure. Commands. Network. Models. PSVirtualNetworkGateway
+### Microsoft.Azure.Commands.Network.Models.PSVirtualNetworkGateway
 
-## Пуск
-В новой конфигурации VpnGw1/VpnGw2/VpnGw3 SKU нельзя изменить размер из базовой/стандартной/HighPerformance SKU. Дальнейшее изменение размера не разрешено для VpnGw1AZ/VpnGw2AZ/VpnGw3AZ или ErGw1AZ/ErGw2AZ/ErGw3AZ. Изменение размера разрешено только в пределах номера SKU, например, VpnGw1AZ можно изменить до и из VpnGw2AZ/VpnGw3AZ и ErGw1AZ можно изменить до/с ErGw2AZ или ErGw3AZ. Для получения инструкций ознакомьтесь с https://docs.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-about-vpngateways инструкциями.
+## ПРИМЕЧАНИЯ
+Вы не можете 34-х новых СКАЙп Базовый, Стандартный или HighPerformance 2. Для erGw1AZ/VpnGw2AZ/VpnGw3AZ или ErGw1AZ/ErGw1AZ/ErGw2AZ/ErGw3AZ не разрешается использовать дополнительные возможности. Размер, допустимый только в рядах SKU, например, размер VPNGw1AZ можно использовать в vpnGw2AZ/VpnGw3AZ и ErGw1AZ, а также в ErGw2AZ/ErGw3AZ. См. https://docs.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-about-vpngateways инструкции.
 
-## ДОПОЛНИТЕЛЬНЫЕ ССЫЛКИ
+## СВЯЗАННЫЕ ССЫЛКИ
 
 [Get-AzVirtualNetworkGateway](./Get-AzVirtualNetworkGateway.md)
 
@@ -131,10 +131,9 @@ Accept wildcard characters: False
 
 [Remove-AzVirtualNetworkGateway](./Remove-AzVirtualNetworkGateway.md)
 
-[Сброс — AzVirtualNetworkGateway](./Reset-AzVirtualNetworkGateway.md)
+[Reset-AzVirtualNetworkGateway](./Reset-AzVirtualNetworkGateway.md)
 
 [Set-AzVirtualNetworkGateway](./Set-AzVirtualNetworkGateway.md)
 
 [Get-AzVpnClientPackage](./Get-AzVpnClientPackage.md)
 
-[Set-AzVirtualNetworkGatewayVpnClientConfig](./Set-AzVirtualNetworkGatewayVpnClientConfig.md)

@@ -6,129 +6,128 @@ Help Version: ''
 Locale: en-US
 content_git_url: https://github.com/Azure/azure-powershell/blob/preview/src/Storage/Commands.Storage/help/Azure.Storage.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/preview/src/Storage/Commands.Storage/help/Azure.Storage.md
-gitcommit: https://github.com/Azure/azure-powershell/blob/89262bc4144696c69376c3fb654c881de55b6450
-ms.openlocfilehash: 7579023c82863b943080553d2c741244b9ae9c0f
-ms.sourcegitcommit: 43f4bdf2a59dd82fd881512aa9761bf72eb5703c
+ms.openlocfilehash: 864398d8af8ac05d7bfad93c195bf0ecb2c5ba1a
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "93554975"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100410384"
 ---
-# Модуль Azure. Storage
-## Nописание
-В этом разделе отображаются разделы справки по командлетам хранилища Azure.
+# Модуль Azure.Storage
+## Описание
+В этой теме вы можете найти разделы справки по cmdlets хранилища Azure.
 
-## Командлеты Azure. Storage
+## Azure.Storage Cmdlets
 ### [Get-AzureStorageBlob](Get-AzureStorageBlob.md)
-Список больших двоичных объектов в контейнере.
+Список BLOB-то в контейнере.
 
 ### [Get-AzureStorageBlobContent](Get-AzureStorageBlobContent.md)
-Загружает большой двоичный объект хранилища.
+Скачивает большой большой объем хранилища.
 
 ### [Get-AzureStorageBlobCopyState](Get-AzureStorageBlobCopyState.md)
-Получает состояние копии большого двоичного объекта хранилища Azure.
+Возвращает состояние копии BLOB-части хранилища Azure.
 
 ### [Get-AzureStorageContainer](Get-AzureStorageContainer.md)
 Список контейнеров хранилища.
 
 ### [Get-AzureStorageContainerStoredAccessPolicy](Get-AzureStorageContainerStoredAccessPolicy.md)
-Получает хранимую политику или политики доступа для контейнера хранилища Azure.
+Возвращает хранимую политику доступа или политики для контейнера хранилища Azure.
 
 ### [Get-AzureStorageCORSRule](Get-AzureStorageCORSRule.md)
 Возвращает правила CORS для типа службы хранилища.
 
 ### [Get-AzureStorageFile](Get-AzureStorageFile.md)
-Перечисление каталогов и файлов для пути.
+Список каталогов и файлов для пути.
 
 ### [Get-AzureStorageFileContent](Get-AzureStorageFileContent.md)
-Загружает содержимое файла.
+Скачивает содержимое файла.
 
 ### [Get-AzureStorageFileCopyState](Get-AzureStorageFileCopyState.md)
-Получает состояние операции копирования.
+Состояние копирования.
 
 ### [Get-AzureStorageQueue](Get-AzureStorageQueue.md)
-Выводит список очередей хранилища.
+Список очередей хранилища.
 
 ### [Get-AzureStorageQueueStoredAccessPolicy](Get-AzureStorageQueueStoredAccessPolicy.md)
-Возвращает политику и политики для сохраненного доступа в очереди хранилища Azure.
+Получает хранимую политику доступа или политики для очереди хранилища Azure.
 
 ### [Get-AzureStorageServiceLoggingProperty](Get-AzureStorageServiceLoggingProperty.md)
-Получение свойств ведения журнала для служб хранилища Azure.
+Получает свойства ведения журнала для служб хранилища Azure.
 
 ### [Get-AzureStorageServiceMetricsProperty](Get-AzureStorageServiceMetricsProperty.md)
-Возвращает свойства метрик для службы хранилища Azure.
+Свойства метрик для службы хранилища Azure.
 
 ### [Get-AzureStorageShare](Get-AzureStorageShare.md)
-Получает список файловых ресурсов общего доступа.
+Возвращает список файловой папки.
 
 ### [Get-AzureStorageShareStoredAccessPolicy](Get-AzureStorageShareStoredAccessPolicy.md)
-Получает хранимые политики доступа для общего доступа к хранилищу.
+Получает хранимые политики доступа для хранилища.
 
 ### [Get-AzureStorageTable](Get-AzureStorageTable.md)
-Список таблиц хранилища.
+Содержит таблицы хранилища.
 
 ### [Get-AzureStorageTableStoredAccessPolicy](Get-AzureStorageTableStoredAccessPolicy.md)
-Возвращает политику и политики для сохраненной или политики доступа для таблицы хранилища Azure.
+Возвращает хранимую политику или политики доступа для таблицы хранилища Azure.
 
 ### [New-AzureStorageAccountSASToken](New-AzureStorageAccountSASToken.md)
-Создание маркера SAS на уровне учетной записи.
+Создает маркер SAS на уровне учетной записи.
 
 ### [New-AzureStorageBlobSASToken](New-AzureStorageBlobSASToken.md)
-Создание маркера SAS для блоба хранилища Azure.
+Создает токен SAS для BLOB-контейнера хранилища Azure.
 
 ### [New-AzureStorageContainer](New-AzureStorageContainer.md)
-Создание контейнера хранилища Azure.
+Создает контейнер хранилища Azure.
 
 ### [New-AzureStorageContainerSASToken](New-AzureStorageContainerSASToken.md)
-Создание маркера SAS для контейнера хранилища Azure.
+Создает токен SAS для контейнера хранилища Azure.
 
 ### [New-AzureStorageContainerStoredAccessPolicy](New-AzureStorageContainerStoredAccessPolicy.md)
-Создание политики сохраненного доступа для контейнера хранилища Azure.
+Создает политику хранимого доступа для контейнера хранилища Azure.
 
 ### [New-AzureStorageContext](New-AzureStorageContext.md)
 Создает контекст хранилища Azure.
 
 ### [New-AzureStorageDirectory](New-AzureStorageDirectory.md)
-Создание каталога.
+Создает каталог.
 
 ### [New-AzureStorageFileSASToken](New-AzureStorageFileSASToken.md)
-Создание маркера подписи общего доступа для файла хранилища.
+Создает маркер подписи общего доступа для файла хранилища.
 
 ### [New-AzureStorageQueue](New-AzureStorageQueue.md)
-Создание очереди хранилища.
+Создается очередь хранилища.
 
 ### [New-AzureStorageQueueSASToken](New-AzureStorageQueueSASToken.md)
-Создание маркера подписи общего доступа для очереди хранилища Azure.
+Создает маркер подписи общего доступа для очереди хранилища Azure.
 
 ### [New-AzureStorageQueueStoredAccessPolicy](New-AzureStorageQueueStoredAccessPolicy.md)
-Создание политики сохраненного доступа для очереди хранилища Azure.
+Создает политику хранимого доступа для очереди хранилища Azure.
 
 ### [New-AzureStorageShare](New-AzureStorageShare.md)
-Создание общего файлового файла.
+Создается файловая папка.
 
 ### [New-AzureStorageShareSASToken](New-AzureStorageShareSASToken.md)
-Создание маркера подписи общего доступа для общей папки хранилища Azure.
+Создание маркера подписи общего доступа для общего доступа к хранилищу Azure.
 
 ### [New-AzureStorageShareStoredAccessPolicy](New-AzureStorageShareStoredAccessPolicy.md)
-Создание политики сохранения для доступа к хранилищу.
+Создает политику доступа к хранилищу.
 
 ### [New-AzureStorageTable](New-AzureStorageTable.md)
-Создание таблицы хранилища.
+Создает таблицу хранилища.
 
 ### [New-AzureStorageTableSASToken](New-AzureStorageTableSASToken.md)
-Создание маркера SAS для таблицы хранилища Azure.
+Создает токен SAS для таблицы хранилища Azure.
 
 ### [New-AzureStorageTableStoredAccessPolicy](New-AzureStorageTableStoredAccessPolicy.md)
-Создание политики сохранения для доступа к таблице хранилища Azure.
+Создает политику хранимого доступа для таблицы хранилища Azure.
 
 ### [Remove-AzureStorageBlob](Remove-AzureStorageBlob.md)
-Удаляет указанный большой двоичный объект хранилища.
+Удаляет указанный BLOB-проект хранилища.
 
 ### [Remove-AzureStorageContainer](Remove-AzureStorageContainer.md)
 Удаляет указанный контейнер хранилища.
 
 ### [Remove-AzureStorageContainerStoredAccessPolicy](Remove-AzureStorageContainerStoredAccessPolicy.md)
-Удаляет политику сохраненного доступа из контейнера хранилища Azure.
+Удаляет хранимую политику доступа из контейнера хранилища Azure.
 
 ### [Remove-AzureStorageCORSRule](Remove-AzureStorageCORSRule.md)
 Удаляет CORS для службы хранилища.
@@ -137,43 +136,43 @@ ms.locfileid: "93554975"
 Удаляет каталог.
 
 ### [Remove-AzureStorageFile](Remove-AzureStorageFile.md)
-Удаление файла.
+Удаляет файл.
 
 ### [Remove-AzureStorageQueue](Remove-AzureStorageQueue.md)
 Удаляет очередь хранилища.
 
 ### [Remove-AzureStorageQueueStoredAccessPolicy](Remove-AzureStorageQueueStoredAccessPolicy.md)
-Удаляет политику сохраненного доступа из очереди хранилища Azure.
+Удаляет хранимую политику доступа из очереди хранилища Azure.
 
 ### [Remove-AzureStorageShare](Remove-AzureStorageShare.md)
-Удаление общей папке.
+Удаляет файловую папку.
 
 ### [Remove-AzureStorageShareStoredAccessPolicy](Remove-AzureStorageShareStoredAccessPolicy.md)
-Удаление политики сохраненного доступа из общей папке хранилища.
+Удаляет хранимую политику доступа из хранилища.
 
 ### [Remove-AzureStorageTable](Remove-AzureStorageTable.md)
 Удаляет таблицу хранилища.
 
 ### [Remove-AzureStorageTableStoredAccessPolicy](Remove-AzureStorageTableStoredAccessPolicy.md)
-Удаляет политику сохраненного доступа из таблицы хранилища Azure.
+Удаляет хранимую политику доступа из таблицы хранилища Azure.
 
 ### [Set-AzureStorageBlobContent](Set-AzureStorageBlobContent.md)
-Передает локальный файл в большой двоичный объект хранилища Azure.
+Отправка локального файла в большой BLOB-файл хранилища Azure.
 
 ### [Set-AzureStorageContainerAcl](Set-AzureStorageContainerAcl.md)
-Задает разрешение Public Access для контейнера хранилища.
+Задает разрешение на общедоступный доступ для контейнера хранилища.
 
 ### [Set-AzureStorageContainerStoredAccessPolicy](Set-AzureStorageContainerStoredAccessPolicy.md)
-Задает политику сохранения для доступа для контейнера хранилища Azure.
+Задает политику хранимого доступа для контейнера хранилища Azure.
 
 ### [Set-AzureStorageCORSRule](Set-AzureStorageCORSRule.md)
 Задает правила CORS для типа службы хранилища.
 
 ### [Set-AzureStorageFileContent](Set-AzureStorageFileContent.md)
-Передача содержимого файла.
+Отправка содержимого файла.
 
 ### [Set-AzureStorageQueueStoredAccessPolicy](Set-AzureStorageQueueStoredAccessPolicy.md)
-Задает политику сохранения для доступа для очереди хранилища Azure.
+Задает политику хранимого доступа для очереди хранилища Azure.
 
 ### [Set-AzureStorageServiceLoggingProperty](Set-AzureStorageServiceLoggingProperty.md)
 Изменяет ведение журнала для служб хранилища Azure.
@@ -182,26 +181,26 @@ ms.locfileid: "93554975"
 Изменяет свойства метрик для службы хранилища Azure.
 
 ### [Set-AzureStorageShareQuota](Set-AzureStorageShareQuota.md)
-Задает емкость хранилища для общего доступа.
+Задает объем хранилища для поделиться.
 
 ### [Set-AzureStorageShareStoredAccessPolicy](Set-AzureStorageShareStoredAccessPolicy.md)
-Обновляет политику доступа на общем хранилище.
+Обновляет хранимую политику доступа к хранилищу.
 
 ### [Set-AzureStorageTableStoredAccessPolicy](Set-AzureStorageTableStoredAccessPolicy.md)
-Задает политику сохранения для доступа к таблице хранилища Azure.
+Задает политику хранимого доступа для таблицы хранилища Azure.
 
 ### [Start-AzureStorageBlobCopy](Start-AzureStorageBlobCopy.md)
-Начинает копирование большого двоичного объекта.
+Начинается копирование BLOB-ля.
 
 ### [Start-AzureStorageBlobIncrementalCopy](Start-AzureStorageBlobIncrementalCopy.md)
-Начните операцию добавочного копирования из моментального снимка большого двоичного объекта страницы до указанного блоба страниц назначения.
+Запуск операции добавоической копии из моментального снимка BLOB-сайта страницы в указанный BLOB-проект страницы.
 
 ### [Start-AzureStorageFileCopy](Start-AzureStorageFileCopy.md)
-Начинается копирование исходного файла.
+Начинается копирование исходных файлов.
 
-### [Остановить-AzureStorageBlobCopy](Stop-AzureStorageBlobCopy.md)
-Останавливает операцию копирования.
+### [Stop-AzureStorageBlobCopy](Stop-AzureStorageBlobCopy.md)
+Остановка операции копирования.
 
-### [Остановить-AzureStorageFileCopy](Stop-AzureStorageFileCopy.md)
-Останавливает операцию копирования в указанном конечном файле.
+### [Stop-AzureStorageFileCopy](Stop-AzureStorageFileCopy.md)
+Остановка операции копирования в указанный файл назначения.
 
