@@ -6,19 +6,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.keyvault/r
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/KeyVault/KeyVault/help/Remove-AzKeyVaultAccessPolicy.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/KeyVault/KeyVault/help/Remove-AzKeyVaultAccessPolicy.md
-ms.openlocfilehash: e084894c26cee1a619f418437986593fe86876bb
-ms.sourcegitcommit: 1de2b6c3c99197958fa2101bc37680e7507f91ac
+ms.openlocfilehash: e19565aa8ae249acf61fce67f0a2b54e20143758
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "94079593"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100410163"
 ---
 # Remove-AzKeyVaultAccessPolicy
 
-## КРАТКИй обзор
+## SYNOPSIS
 Удаляет все разрешения для пользователя или приложения из хранилища ключей.
 
-## Максимальное
+## СИНТАКСИС
 
 ### ByUserPrincipalName (по умолчанию)
 ```
@@ -115,14 +115,14 @@ Remove-AzKeyVaultAccessPolicy [-ResourceId] <String> [-EnabledForDeployment] [-E
  [<CommonParameters>]
 ```
 
-## NОПИСАНИЕ
-Командлет **Remove-AzKeyVaultAccessPolicy** удаляет все разрешения для пользователя или приложения или для всех пользователей и приложений из хранилища ключей.
-Даже если вы удалите все разрешения, владелец подписки Azure, которая имеет хранилище ключей, может добавить разрешения в хранилище ключей.
-Обратите внимание, что хотя указывать группу ресурсов необязательно для этого командлета, вы должны сделать это для лучшей производительности.
+## ОПИСАНИЕ
+**Cmdlet Remove-AzKeyVaultAccessPolicy** удаляет все разрешения для пользователя или приложения или всех пользователей и приложений из хранилища ключа.
+Даже если вы удалите все разрешения, владелец подписки Azure, которая содержит ключевое хранилище, может добавить разрешения в хранилище ключей.
+Обратите внимание на то, что хотя для этого cmdlet не требуется указывать группу ресурсов, это следует сделать для улучшения производительности.
 
-## ИЛЛЮСТРИРУЮТ
+## ПРИМЕРЫ
 
-### Пример 1: удаление разрешений для пользователя
+### Пример 1. Удаление разрешений для пользователя
 ```powershell
 PS C:\> Remove-AzKeyVaultAccessPolicy -VaultName 'Contoso03Vault' -UserPrincipalName 'PattiFuller@contoso.com' -PassThru
 
@@ -158,35 +158,35 @@ Network Rule Set                 :
 Tags                             :
 ```
 
-Эта команда удаляет все разрешения, которые пользователь PattiFuller@contoso.com имеет в хранилище ключей с именем Contoso03Vault.  Если задано значение-PassThru, возвращается объект KeyVault.
+Эта команда удаляет все разрешения пользователя в хранилище ключей PattiFuller@contoso.com Contoso03Vault.  Если задано значение -PassThru, возвращается объект KeyVault.
 
-### Пример 2: удаление разрешений для приложения
+### Пример 2. Удаление разрешений для приложения
 ```powershell
 PS C:\> Remove-AzKeyVaultAccessPolicy -VaultName 'Contoso03Vault' -ServicePrincipalName 'http://payroll.contoso.com'
 ```
 
-Эта команда удаляет все разрешения, которые приложение имеет в хранилище ключей с именем Contoso03Vault.
-В этом примере приложение идентифицируется с использованием имени субъекта-службы, зарегистрированного в Azure Active Directory http://payroll.contoso.com .
+Эта команда удаляет все разрешения приложения в хранилище ключей Contoso03Vault.
+В этом примере приложение идентифицируется с помощью имени директора-службы, зарегистрированного в Azure Active `http://payroll.contoso.com` Directory.
 
-### Пример 3: удаление разрешений для приложения с помощью идентификатора объекта
+### Пример 3. Удаление разрешений для приложения с помощью ИД объекта
 ```powershell
 PS C:\> Remove-AzKeyVaultAccessPolicy -VaultName 'Contoso03Vault' -ObjectID 34595082-9346-41b6-8d6b-295a2808b8db
 ```
 
-Эта команда удаляет все разрешения, которые приложение имеет в хранилище ключей с именем Contoso03Vault.
-В этом примере приложение идентифицируется по ИДЕНТИФИКАТОРу объекта участника-службы.
+Эта команда удаляет все разрешения приложения в хранилище ключей Contoso03Vault.
+В этом примере приложение идентифицируется идентификатором объекта, который является основной службой.
 
-### Пример 4: удаление разрешений для поставщика ресурсов Microsoft. COMPUTE
+### Пример 4. Удаление разрешений для поставщика ресурсов Microsoft.Comput
 ```powershell
 PS C:\> Remove-AzKeyVaultAccessPolicy -VaultName 'Contoso03Vault' -ResourceGroupName 'Group14' -EnabledForDeployment
 ```
 
-Эта команда удаляет разрешения для поставщика ресурсов Microsoft. COMPUTE, чтобы получать секреты из Contoso03Vault.
+Эта команда удаляет разрешение поставщика ресурсов Microsoft.Compute на доступ к секретам Contoso03Vault.
 
-## ПАРАМЕТРЫ
+## PARAMETERS
 
 ### -ApplicationId
-Указывает идентификатор приложения, разрешения которого нужно удалить.
+Определяет ИД приложения, разрешения которого нужно удалить.
 
 ```yaml
 Type: System.Nullable`1[System.Guid]
@@ -216,7 +216,7 @@ Accept wildcard characters: False
 ```
 
 ### -EmailAddress
-Указывает адрес электронной почты пользователя, доступ к которому вы хотите удалить.
+Указывает адрес электронной почты пользователя, доступ которого вы хотите удалить.
 
 ```yaml
 Type: System.String
@@ -231,7 +231,7 @@ Accept wildcard characters: False
 ```
 
 ### -EnabledForDeployment
-Если задано, отключение получения секретных данных от этого ключа в хранилище ключей поставщиком Microsoft. COMPUTE Resource provider при указании ссылки в разделе Создание ресурсов.
+При этом при создании ресурсов отключается инижа секретов из этого ключевого хранилища, заданного поставщиком ресурсов Microsoft.Compute.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -246,7 +246,7 @@ Accept wildcard characters: False
 ```
 
 ### -EnabledForDiskEncryption
-Запрещает получение секретных данных в этом хранилище ключей с помощью шифрования диска Azure.
+При этом отключает иставку секретов из этого хранилища ключа с помощью шифрования диска Azure.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -261,7 +261,7 @@ Accept wildcard characters: False
 ```
 
 ### -EnabledForTemplateDeployment
-Отключает получение секретных данных в этом хранилище с помощью диспетчера ресурсов Azure при указании ссылок в шаблонах.
+При указании в шаблонах отключено инижай секретов из этого сейфа с помощью Диспетчера ресурсов Azure.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -276,7 +276,7 @@ Accept wildcard characters: False
 ```
 
 ### -InputObject
-Объект хранилища ключей.
+Объект Key Vault.
 
 ```yaml
 Type: Microsoft.Azure.Commands.KeyVault.Models.PSKeyVault
@@ -291,7 +291,7 @@ Accept wildcard characters: False
 ```
 
 ### -ObjectId
-Указывает идентификатор объекта пользователя или участника-службы в Azure Active Directory, для которого нужно удалить разрешения.
+Определяет ИД объекта пользователя или основной службы в Azure Active Directory, для которого нужно удалить разрешения.
 
 ```yaml
 Type: System.String
@@ -306,8 +306,8 @@ Accept wildcard characters: False
 ```
 
 ### -PassThru
-Возвращает объект, который представляет собой элемент, с которым вы работаете.
-По умолчанию этот командлет не создает никаких выходных данных.
+Возвращает объект, представляющий элемент, с которым вы работаете.
+По умолчанию этот cmdlet не создает никаких выходных данных.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -322,8 +322,8 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-Указывает имя группы ресурсов, связанной с хранилищем ключей, для которого изменяется политика доступа.
-Если он не указан, этот командлет осуществляет поиск в текущем подписке хранилища ключей.
+Указывает имя группы ресурсов, связанной с хранилищем ключа, для которого была изменена политика доступа.
+Если он не задан, этот cmdlet выполняет поиск ключевого сейфа в текущей подписке.
 
 ```yaml
 Type: System.String
@@ -338,7 +338,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceId
-Идентификатор ресурса KeyVault.
+ИД ресурса KeyVault.
 
 ```yaml
 Type: System.String
@@ -352,9 +352,9 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Намерено
-Указывает имя субъекта-службы для приложения, разрешения которого вы хотите удалить.
-Укажите идентификатор приложения, который также называется ИДЕНТИФИКАТОРом клиента, зарегистрированный для приложения в Azure Active Directory.
+### -ServicePrincipalName
+Указывает имя директора-службы приложения, разрешения которого вы хотите удалить.
+Укажите ИД приложения, также известный как ИД клиента, зарегистрированный для приложения в Azure Active Directory.
 
 ```yaml
 Type: System.String
@@ -369,7 +369,7 @@ Accept wildcard characters: False
 ```
 
 ### -UserPrincipalName
-Задает имя участника-пользователя, доступ к которому вы хотите удалить.
+Указывает имя пользователя, доступ которого вы хотите удалить.
 
 ```yaml
 Type: System.String
@@ -384,8 +384,8 @@ Accept wildcard characters: False
 ```
 
 ### -VaultName
-Указывает имя хранилища ключей.
-Этот командлет удаляет разрешения для хранилища ключей, которое указывает этот параметр.
+Указывает имя сейфа ключа.
+Этот cmdlet удаляет разрешения для хранилища ключей, указанные этим параметром.
 
 ```yaml
 Type: System.String
@@ -400,7 +400,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
-Запрашивает подтверждение перед запуском командлета.
+Перед запуском cmdlet вам будет предложено подтвердить его.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -415,8 +415,8 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Показывает, что произойдет при запуске командлета.
-Командлет не выполняется.
+Показывает, что произойдет при запуске cmdlet.
+Этот cmdlet не будет выполниться.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -431,21 +431,21 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Этот командлет поддерживает общие параметры:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-of Variable,-out,-PipelineVariable,-Verbose, и-WarningAction. Дополнительные сведения можно найти в разделе [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+Этот cmdlet поддерживает общие параметры: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. Дополнительные сведения см. [в about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)
 
-## ВХОДНЫЕ данные
+## INPUTS
 
-### Microsoft. Azure. Commands. KeyVault. Models. PSKeyVault
+### Microsoft.Azure.Commands.KeyVault.Models.PSKeyVault
 
-### System. String
+### System.String
 
-## НАПРЯЖЕНИЕ
+## OUTPUTS
 
-### Microsoft. Azure. Commands. KeyVault. Models. PSKeyVault
+### Microsoft.Azure.Commands.KeyVault.Models.PSKeyVault
 
-## Пуск
+## ПРИМЕЧАНИЯ
 
-## ДОПОЛНИТЕЛЬНЫЕ ССЫЛКИ
+## СВЯЗАННЫЕ ССЫЛКИ
 
 [Set-AzKeyVaultAccessPolicy](./Set-AzKeyVaultAccessPolicy.md)
 
