@@ -3,19 +3,19 @@ external help file: Microsoft.Azure.Commands.RecoveryServicesRdfe.dll-Help.xml
 ms.assetid: 02396628-5E3E-49A6-8377-3F6DC488FEF8
 online version: ''
 schema: 2.0.0
-ms.openlocfilehash: 75a083c2f892b7b4f07c37ef978d1babb1dd0cb0
-ms.sourcegitcommit: 56ed085a868afa8263f8eb0f755b5822f5c29532
+ms.openlocfilehash: ee948161f101b83a4892441286b760a044e64358
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "94075593"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100405828"
 ---
 # Get-AzureSiteRecoveryProtectionContainer
 
-## КРАТКИй обзор
-Получает контейнеры защиты для хранилища сайта для восстановления.
+## SYNOPSIS
+Получает контейнеры защиты для хранилища восстановления сайта.
 
-## Максимальное
+## СИНТАКСИС
 
 ### По умолчанию (по умолчанию)
 ```
@@ -32,14 +32,14 @@ Get-AzureSiteRecoveryProtectionContainer -Id <String> [-Profile <AzureSMProfile>
 Get-AzureSiteRecoveryProtectionContainer -Name <String> [-Profile <AzureSMProfile>] [<CommonParameters>]
 ```
 
-## NОПИСАНИЕ
-Командлет **Get-AzureSiteRecoveryProtectionContainer** получает контейнеры защиты для текущего хранилища Azure Site Recovery.
+## ОПИСАНИЕ
+Чтобы получить контейнеры защиты для текущего хранилища для восстановления сайтов Azure, можно получить с его использованием проектлет **Get-AzureSiteRecoveryProtectionContainer.**
 Контейнер защиты — это логический контейнер для защищенных объектов, таких как виртуальные машины.
-Политики защиты определяют параметры репликации для защищенных элементов и могут быть связаны с контейнером защиты и применяются к защищенному объекту.
+Политики защиты определяют параметры репликации для защищенных элементов и могут быть связаны с контейнером защиты и применены к защищенной сущности.
 
-## ИЛЛЮСТРИРУЮТ
+## ПРИМЕРЫ
 
-### Пример 1: получение защищенных контейнеров
+### Пример 1. Защита контейнеров
 ```
 PS C:\> Get-AzureSiteRecoveryProtectionContainer
 Name                        : PrimaryCloud
@@ -54,10 +54,10 @@ AvailableProtectionProfiles : {ab01dcbe-9da0-4c31-9564-d6904cfadfde, ad388147-83
 
 Эта команда получает защищенные контейнеры для текущего хранилища.
 
-## ПАРАМЕТРЫ
+## PARAMETERS
 
-### -ID
-Указывает идентификатор защищенного контейнера, который требуется получить.
+### -Id
+Определяет ID защищенного контейнера, который требуется получить.
 
 ```yaml
 Type: String
@@ -71,8 +71,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Name (имя)
-Указывает имя контейнера защиты, которое нужно получить.
+### -Name
+Указывает имя контейнера защиты, который нужно получить.
 
 ```yaml
 Type: String
@@ -87,8 +87,8 @@ Accept wildcard characters: False
 ```
 
 ### -Profile
-Указывает профиль Azure, из которого считывается этот командлет.
-Если вы не укажете профиль, этот командлет считывает данные из локального профиля по умолчанию.
+Определяет профиль Azure, для которого читается этот cmdlet.
+Если не указать профиль, этот cmdlet будет читать данные из локального профиля по умолчанию.
 
 ```yaml
 Type: AzureSMProfile
@@ -103,16 +103,16 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Этот командлет поддерживает общие параметры:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-of Variable,-out,-PipelineVariable,-Verbose, и-WarningAction. Дополнительные сведения можно найти в разделе about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
+Этот cmdlet поддерживает общие параметры: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. Дополнительные сведения см. в about_CommonParameters https://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## ВХОДНЫЕ данные
+## INPUTS
 
-## НАПРЯЖЕНИЕ
+## OUTPUTS
 
-## Пуск
+## ПРИМЕЧАНИЯ
 
-## ДОПОЛНИТЕЛЬНЫЕ ССЫЛКИ
+## СВЯЗАННЫЕ ССЫЛКИ
 
-[Командлеты служб Azure Site Recovery](./Azure.SiteRecoveryServices.md)
+
 
 
