@@ -1,17 +1,17 @@
 ---
 title: Знакомство с модулем Azure Az PowerShell
 description: Знакомство с модулем Az PowerShell, рекомендуемым для взаимодействия с Azure вместо модуля AzureRM PowerShell.
-ms.date: 12/1/2020
+ms.date: 02/12/2021
 ms.devlang: powershell
 ms.topic: conceptual
 ms.custom: devx-track-azurepowershell
 ms.service: azure-powershell
-ms.openlocfilehash: 9021a1d8fdc73aedb87b17631f8e67cb8ef79166
-ms.sourcegitcommit: 12bb1a6d1f89789bf2a78992f9b8ca848691a4d7
+ms.openlocfilehash: b52b6995fb50a6ce502d42e7df588ca72340a1e7
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/19/2021
-ms.locfileid: "98573916"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100411268"
 ---
 # <a name="introducing-the-azure-az-powershell-module"></a>Знакомство с модулем Azure Az PowerShell
 
@@ -78,7 +78,9 @@ ms.locfileid: "98573916"
 
 Az — это актуальный модуль PowerShell для Azure. Проблемы или запросы функций можно регистрировать непосредственно в [репозитории GitHub](https://github.com/Azure/azure-powershell) или через службу поддержки Майкрософт, если у вас есть контракт на поддержку. Возможность запроса функций будет реализована в последней версии Az. Функция критических проблем будет реализована в двух последних версиях Az.
 
-В AzureRM больше не будут добавляться новые командлеты или функции. Но модуль AzureRM по-прежнему официально поддерживается. Критические ошибки в нем будут исправляться по февраль 2021 года.
+Так как модули PowerShell Az теперь обладают всеми возможностями модулей PowerShell AzureRM, а также многими другими, 29 февраля 2024 г. мы прекратим поддержку модулей PowerShell AzureRM.
+
+Чтобы избежать прерываний в работе служб, [обновите скрипты](https://aka.ms/azpsmigrate), использующие модули PowerShell AzureRM, для использования модулей PowerShell Az, до 29 февраля 2024 г. Чтобы автоматически обновить скрипты, следуйте инструкциям из [этого краткого руководства](/powershell/azure/quickstart-migrate-azurerm-to-az-automatically).
 
 ## <a name="data-collection"></a>Сбор данных
 
