@@ -1,17 +1,17 @@
 ---
 title: Знакомство с модулем Az для Azure PowerShell
 description: Знакомством с новым модулем Az для Azure PowerShell, который заменяет модуль AzureRM.
-ms.date: 05/10/2019
+ms.date: 02/12/2021
 ms.devlang: powershell
 ms.topic: conceptual
 ms.custom: devx-track-azurepowershell
 ms.service: azure-powershell
-ms.openlocfilehash: 0856748290e2bdea79b9ef845f2c000e9fefcd62
-ms.sourcegitcommit: 2036538797dd088728aee5ac5021472454d82eb2
+ms.openlocfilehash: f6ffd66d20943541c3591d41db7c72861f44204c
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "93408094"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100397821"
 ---
 # <a name="introducing-the-new-azure-powershell-az-module"></a>Знакомство с новым модулем Az для Azure PowerShell
 
@@ -63,6 +63,8 @@ Az — это новый модуль, поэтому нумерация вер
 > [!IMPORTANT]
 > Несмотря на то что для имен командлетов используются псевдонимы, все же могут существовать новые (или переименованные) параметры или измененные возвращаемые значения для командлетов Az. Не ожидайте, что активация псевдонимов обеспечит миграцию для вас. Ознакомьтесь с [полным списком критических изменений](migrate-az-1.0.0.md), чтобы узнать, где в скриптах могут потребоваться обновления.
 
-## <a name="continued-support-for-azurerm"></a>Дальнейшая поддержка AzureRM
+## <a name="support-for-azurerm"></a>Поддержка AzureRM
 
-В AzureRM больше не будут добавляться новые командлеты или функции. Но модуль AzureRM по-прежнему официально поддерживается. В нем будут исправляться ошибки до декабря 2020 года.
+Так как модули PowerShell Az теперь обладают всеми возможностями модулей PowerShell AzureRM, а также многими другими, 29 февраля 2024 г. мы прекратим поддержку модулей PowerShell AzureRM.
+
+Чтобы избежать прерываний в работе служб, [обновите скрипты](https://aka.ms/azpsmigrate), использующие модули PowerShell AzureRM, для использования модулей PowerShell Az, до 29 февраля 2024 г. Чтобы автоматически обновить скрипты, следуйте инструкциям из [этого краткого руководства](/powershell/azure/quickstart-migrate-azurerm-to-az-automatically).
