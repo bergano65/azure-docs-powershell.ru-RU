@@ -5,17 +5,17 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.servicefab
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ServiceFabric/ServiceFabric/help/Update-AzServiceFabricDurability.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ServiceFabric/ServiceFabric/help/Update-AzServiceFabricDurability.md
-ms.openlocfilehash: 1a406ad937a545c9b2599966909809c7552ad7db
-ms.sourcegitcommit: c05d3d669b5631e526841f47b22513d78495350b
+ms.openlocfilehash: 1a0da9869ccfdc6b8344240a8367a4c8dfcd2350
+ms.sourcegitcommit: 608289d079b819df2b8d1a2f7935cc500367a312
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/09/2021
-ms.locfileid: "100223132"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101684885"
 ---
 # Update-AzServiceFabricDurability
 
 ## SYNOPSIS
-Обновление уровня надежности (VMSKU) типа узла в кластере.
+Обновление уровня надежности (VMSKU) типа узла в кластере. При этом также будет обновляться уровень надежности в расширении Service Fabric VM в связанном наборе масштаба виртуальной машины.
 
 ## СИНТАКСИС
 
@@ -35,7 +35,7 @@ Update-AzServiceFabricDurability [-ResourceGroupName] <String> [-Name] <String> 
 PS c:> Update-AzServiceFabricDurability -ResourceGroupName 'Group1' -Name 'Contoso01SFCluster' -DurabilityLevel Silver -NodeType nt1
 ```
 
-Эта команда изменяет уровень надежности nodeType "nt1" на silver.
+Эта команда изменяет уровень надежности уровня NodeType "nt1" на silver.
 
 ## PARAMETERS
 

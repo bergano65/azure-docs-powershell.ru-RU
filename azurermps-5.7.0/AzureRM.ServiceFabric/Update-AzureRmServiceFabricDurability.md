@@ -5,21 +5,21 @@ online version: https://docs.microsoft.com/en-us/powershell/module/azurerm.servi
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/preview/src/ResourceManager/ServiceFabric/Commands.ServiceFabric/help/Update-AzureRmServiceFabricDurability.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/preview/src/ResourceManager/ServiceFabric/Commands.ServiceFabric/help/Update-AzureRmServiceFabricDurability.md
-ms.openlocfilehash: 9c82f0aab38fb5479f5344166a409b9b32f7447c
-ms.sourcegitcommit: f599b50d5e980197d1fca769378df90a842b42a1
+ms.openlocfilehash: aa53d34fcacca6515832eba9a6b302a4e56c7ccf
+ms.sourcegitcommit: 608289d079b819df2b8d1a2f7935cc500367a312
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "93566899"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101685004"
 ---
 # Update-AzureRmServiceFabricDurability
 
-## КРАТКИй обзор
-Обновите уровень устойчивости или VmSku типа узла в кластере.
+## SYNOPSIS
+Обновление уровня надежности (VMSKU) типа узла в кластере. При этом также будет обновляться уровень надежности в расширении Service Fabric VM в связанном наборе масштаба виртуальной машины.
 
 [!INCLUDE [migrate-to-az-banner](../../includes/migrate-to-az-banner.md)]
 
-## Максимальное
+## СИНТАКСИС
 
 ```
 Update-AzureRmServiceFabricDurability [-ResourceGroupName] <String> [-Name] <String> -NodeType <String>
@@ -27,19 +27,19 @@ Update-AzureRmServiceFabricDurability [-ResourceGroupName] <String> [-Name] <Str
  [-Confirm] [<CommonParameters>]
 ```
 
-## NОПИСАНИЕ
-С помощью **Update-AzureRmServiceFabricDurability** обновите устойчивость или SKU кластера.
+## ОПИСАНИЕ
+Используйте **update-AzureRmServiceFabricDurability** для обновления надежности или SKU кластера.
 
-## ИЛЛЮСТРИРУЮТ
+## ПРИМЕРЫ
 
 ### Пример 1
 ```
 PS c:> Update-AzureRmServiceFabricDurability -ResourceGroupName 'Group1' -Name 'Contoso01SFCluster' -DurabilityLevel Silver -NodeType nt1
 ```
 
-Эта команда изменяет уровень устойчивости NodeType "NT1" на "серебр.".
+Эта команда изменяет уровень надежности уровня NodeType "nt1" на silver.
 
-## ПАРАМЕТРЫ
+## PARAMETERS
 
 ### -DefaultProfile
 Учетные данные, учетная запись, клиент и подписка, используемые для связи с Azure.
@@ -57,7 +57,7 @@ Accept wildcard characters: False
 ```
 
 ### -DurabilityLevel
-Укажите уровень устойчивости.
+Укажите уровень надежности.
 
 ```yaml
 Type: DurabilityLevel
@@ -72,7 +72,7 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -Name (имя)
+### -Name
 Укажите имя кластера.
 
 ```yaml
@@ -88,7 +88,7 @@ Accept wildcard characters: False
 ```
 
 ### -NodeType
-Укажите имя типа узла фабрики служб.
+Укажите имя типа узла "Сервисная ткань".
 
 ```yaml
 Type: String
@@ -103,7 +103,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-Указывает имя группы ресурсов.
+Имя группы ресурсов.
 
 ```yaml
 Type: String
@@ -118,7 +118,7 @@ Accept wildcard characters: False
 ```
 
 ### -SKU
-Укажите номер SKU для типа узла.
+Укажите SKU типа узла.
 
 ```yaml
 Type: String
@@ -133,7 +133,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
-Запрашивает подтверждение перед запуском командлета.
+Перед запуском cmdlet вам будет предложено подтвердить его.
 
 ```yaml
 Type: SwitchParameter
@@ -148,7 +148,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Показывает, что произойдет при запуске командлета. Командлет не выполняется.
+Показывает, что произойдет при запуске cmdlet. Этот cmdlet не будет выполниться.
 
 ```yaml
 Type: SwitchParameter
@@ -163,18 +163,18 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Этот командлет поддерживает общие параметры:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-of Variable,-out,-PipelineVariable,-Verbose, и-WarningAction. Дополнительные сведения можно найти в разделе about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
+Этот cmdlet поддерживает общие параметры: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. Дополнительные сведения см. в about_CommonParameters https://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## ВХОДНЫЕ данные
+## INPUTS
 
-### Microsoft. Azure. Commands. ServiceFabric. Models. DurabilityLevel
-System. String
+### Microsoft.Azure.Commands.ServiceFabric.Models.DurabilityLevel
+System.String
 
-## НАПРЯЖЕНИЕ
+## OUTPUTS
 
-### Microsoft. Azure. Commands. ServiceFabric. Models. PsCluster
+### Microsoft.Azure.Commands.ServiceFabric.Models.PsCluster
 
-## Пуск
+## ПРИМЕЧАНИЯ
 
-## ДОПОЛНИТЕЛЬНЫЕ ССЫЛКИ
+## СВЯЗАННЫЕ ССЫЛКИ
 
