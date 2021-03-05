@@ -1,0 +1,214 @@
+---
+external help file: Microsoft.Azure.PowerShell.Cmdlets.FrontDoor.dll-Help.xml
+Module Name: Az.FrontDoor
+online version: https://docs.microsoft.com/powershell/module/az.frontdoor/remove-azfrontdoor
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/FrontDoor/FrontDoor/help/Remove-AzFrontDoor.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/FrontDoor/FrontDoor/help/Remove-AzFrontDoor.md
+ms.openlocfilehash: 79307a12fbcf5be02d9ea356f41398f76e292379
+ms.sourcegitcommit: 4dfb0cc533b83f77afdcfbe2618c1e6c8d221330
+ms.translationtype: MT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102015251"
+---
+# Remove-AzFrontDoor
+
+## SYNOPSIS
+Удаление балансировки передней двери
+
+## СИНТАКСИС
+
+### ByFieldsParameterSet (по умолчанию)
+```
+Remove-AzFrontDoor -ResourceGroupName <String> -Name <String> [-PassThru]
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### ByObjectParameterSet
+```
+Remove-AzFrontDoor -InputObject <PSFrontDoor> [-PassThru] [-DefaultProfile <IAzureContextContainer>] [-WhatIf]
+ [-Confirm] [<CommonParameters>]
+```
+
+### ByResourceIdParameterSet
+```
+Remove-AzFrontDoor -ResourceId <String> [-PassThru] [-DefaultProfile <IAzureContextContainer>] [-WhatIf]
+ [-Confirm] [<CommonParameters>]
+```
+
+## ОПИСАНИЕ
+Для удаления балансиента загрузки Front Door в рамках текущей подписки удаляется **cmdlet Remove-AzFrontDoor.**
+
+## ПРИМЕРЫ
+
+### Пример 1. Удалите frontdoor1 в группе ресурсов "rg1" под текущей подпиской.
+```powershell
+PS C:\> Remove-AzFrontDoor -Name "frontdoor1" -ResourceGroupName "rg1"
+```
+
+Удалите "frontdoor1" в группе ресурсов "rg1" под текущей подпиской.
+
+### Пример 2. Удаление всех frontDoors в группе ресурсов "rg1" в текущей подписке.
+```powershell
+PS C:\> Get-AzFrontDoor -ResourceGroupName "rg1" | Remove-AzFrontDoor
+```
+
+Удалите все frontDoors в группе ресурсов "rg1" в текущей подписке.
+
+### Пример 3. Удаление всех frontDoors в текущей подписке.
+```powershell
+PS C:\> Get-AzFrontDoor | Remove-AzFrontDoor
+```
+
+Удалите все frontDoors в текущей подписке.
+
+### Пример 4. Удалите все frontDoors с именем frontdoor1 в текущей подписке.
+```powershell
+PS C:\> Remove-AzFrontDoor -Name "frontdoor1" | Remove-AzFrontDoor
+```
+
+Удалите все frontDoors с именем frontdoor1 в текущей подписке.
+
+## PARAMETERS
+
+### -DefaultProfile
+Учетные данные, учетная запись, клиент и подписка, используемые для связи с Azure.
+
+```yaml
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzContext, AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -InputObject
+Объект передней двери, который нужно удалить.
+
+```yaml
+Type: Microsoft.Azure.Commands.FrontDoor.Models.PSFrontDoor
+Parameter Sets: ByObjectParameterSet
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### -Name
+Имя передней двери, которое нужно удалить.
+
+```yaml
+Type: System.String
+Parameter Sets: ByFieldsParameterSet
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -PassThru
+Возвращенный объект (если он указан).
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ResourceGroupName
+Группа ресурсов, к которой относится front Door.
+
+```yaml
+Type: System.String
+Parameter Sets: ByFieldsParameterSet
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ResourceId
+ИД ресурса передней двери, который нужно удалить
+
+```yaml
+Type: System.String
+Parameter Sets: ByResourceIdParameterSet
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -Confirm
+Запрос на подтверждение перед запуском cmdlet.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -WhatIf
+Показывает, что произойдет при запуске cmdlet.
+Этот cmdlet не будет выполниться.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### CommonParameters
+Этот cmdlet поддерживает общие параметры: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. Дополнительные сведения см. [в about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)
+
+## INPUTS
+
+### Microsoft.Azure.Commands.FrontDoor.Models.PSFrontDoor
+
+### System.String
+
+## OUTPUTS
+
+### System.Boolean
+
+## ПРИМЕЧАНИЯ
+
+## СВЯЗАННЫЕ ССЫЛКИ
+
+[New-AzFrontDoor](./New-AzFrontDoor.md) 
+ [Get-AzFrontDoor](./Get-AzFrontDoor.md)
