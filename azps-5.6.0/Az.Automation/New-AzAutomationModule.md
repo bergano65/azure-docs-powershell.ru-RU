@@ -1,0 +1,149 @@
+---
+external help file: Microsoft.Azure.PowerShell.Cmdlets.Automation.dll-Help.xml
+Module Name: Az.Automation
+ms.assetid: 2DC97415-D59A-428E-8FFE-56B17B320DAF
+online version: https://docs.microsoft.com/powershell/module/az.automation/new-azautomationmodule
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Automation/Automation/help/New-AzAutomationModule.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Automation/Automation/help/New-AzAutomationModule.md
+ms.openlocfilehash: 093a6f61668f40b43d2f228035132c010e31d426
+ms.sourcegitcommit: 4dfb0cc533b83f77afdcfbe2618c1e6c8d221330
+ms.translationtype: MT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102012728"
+---
+# New-AzAutomationModule
+
+## SYNOPSIS
+Импорт модуля в автоматизацию.
+
+## СИНТАКСИС
+
+```
+New-AzAutomationModule [-Name] <String> [-ContentLinkUri] <Uri> [-ResourceGroupName] <String>
+ [-AutomationAccountName] <String> [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+```
+
+## ОПИСАНИЕ
+Командлет **New-AzAutomationModule** импортирует модуль в автоматизацию Azure.
+Эта команда принимает сжатый файл с расширением ZIP-файла.
+Файл содержит папку, включаемую файл одного из следующих типов: 
+- Windows PowerShell, который имеет расширение PSM1 или DLL 
+- Windows PowerShell модуль с расширением PSD1: имя ZIP-файла, имя папки и имя файла в папке должны быть одинаковыми.
+Укажите ZIP-файл как URL-адрес, доступный службе автоматизации.
+При импорте Windows PowerShell модуля в автоматизацию с помощью этого командлета или Set-AzAutomationModule командлета операция является асинхронной.
+Команда завершает процесс в зависимости от успешного или неудачного завершения импорта.
+Чтобы проверить успешности, запустите следующую команду: `PS C:\\\> $ModuleInstance = Get-AzAutomationModule -Name ` ModuleName Проверьте свойство **ProvisioningState** на значение "Успешно".
+
+## ПРИМЕРЫ
+
+### Пример 1. Импорт модуля
+```
+PS C:\>New-AzAutomationModule -AutomationAccountName "Contoso17" -Name "ContosoModule" -ContentLink "http://contosostorage.blob.core.windows.net/modules/ContosoModule.zip" -ResourceGroupName "ResourceGroup01"
+```
+
+Эта команда импортирует модуль ContosoModule в учетную запись автоматизации с именем Contoso17.
+Модуль хранится в BLOB-проекте Azure в учетной записи хранения contosostorage и контейнере с именами модулей.
+
+## PARAMETERS
+
+### -AutomationAccountName
+Указывает имя учетной записи автоматизации, для которой этот командлет импортирует модуль.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: 1
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -ContentLinkUri
+URL-адрес zip-пакета модуля
+
+```yaml
+Type: System.Uri
+Parameter Sets: (All)
+Aliases: ContentLink
+
+Required: True
+Position: 3
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -DefaultProfile
+Учетные данные, учетная запись, клиент и подписка, используемые для связи с Azure
+
+```yaml
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzContext, AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Name
+Указывает имя модуля, который импортируется этим командлетом.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: 2
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -ResourceGroupName
+Имя группы ресурсов, для которой этот командлет импортирует модуль.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: 0
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### CommonParameters
+Этот cmdlet поддерживает общие параметры: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. Дополнительные сведения см. в about_CommonParameters http://go.microsoft.com/fwlink/?LinkID=113216) .
+
+## INPUTS
+
+### System.String
+
+### System.Uri
+
+## OUTPUTS
+
+### Microsoft.Azure.Commands.Automation.Model.Module
+
+## ПРИМЕЧАНИЯ
+
+## СВЯЗАННЫЕ ССЫЛКИ
+
+[Get-AzAutomationModule](./Get-AzAutomationModule.md)
+
+[Remove-AzAutomationModule](./Remove-AzAutomationModule.md)
+
+[Set-AzAutomationModule](./Set-AzAutomationModule.md)
+
+
