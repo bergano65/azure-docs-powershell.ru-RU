@@ -7,11 +7,11 @@ ms.date: 10/27/2020
 ms.custom: devx-track-azurepowershell
 ms.service: azure-powershell
 ms.openlocfilehash: edfbe14ae3a42bb0b385fe9d6b5fa681a1aa2101
-ms.sourcegitcommit: 608289d079b819df2b8d1a2f7935cc500367a312
+ms.sourcegitcommit: 4dfb0cc533b83f77afdcfbe2618c1e6c8d221330
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101684922"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "101872554"
 ---
 # <a name="migration-guide-for-az-500"></a>Руководство по миграции на Az 5.0.0
 
