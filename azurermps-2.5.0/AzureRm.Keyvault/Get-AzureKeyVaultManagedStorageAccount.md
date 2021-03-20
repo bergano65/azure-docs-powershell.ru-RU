@@ -3,21 +3,21 @@ external help file: Microsoft.Azure.Commands.KeyVault.dll-Help.xml
 Module Name: AzureRM.KeyVault
 online version: https://docs.microsoft.com/en-us/powershell/module/azurerm.keyvault/get-azurekeyvaultmanagedstorageaccount
 schema: 2.0.0
-ms.openlocfilehash: 51e7b941e5dbb4d07b48444196f6e3d3aa830452
-ms.sourcegitcommit: b9b2dea3441d1532a5564ddca3dced45424fe2d6
+ms.openlocfilehash: eeed2361fc092af5ec3b9c61f799373b627b3d15
+ms.sourcegitcommit: 6f0b6059d096600ebff1c8514c35c467d2f482d8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/15/2020
-ms.locfileid: "93914121"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104715623"
 ---
 # Get-AzureKeyVaultManagedStorageAccount
 
-## КРАТКИй обзор
-Получение управляемых учетных записей хранилища Azure для хранилища ключей.
+## SYNOPSIS
+Получает основные учетные записи хранилища Azure.
 
 [!INCLUDE [migrate-to-az-banner](../../includes/migrate-to-az-banner.md)]
 
-## Максимальное
+## СИНТАКСИС
 
 ### ByVaultName (по умолчанию)
 ```
@@ -31,29 +31,29 @@ Get-AzureKeyVaultManagedStorageAccount [-VaultName] <String> [-AccountName] <Str
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## NОПИСАНИЕ
-Возвращает управляемую учетную запись хранилища Azure с основным хранилищем, если указано имя учетной записи, а ключи учетной записи управляются указанным хранилищем. Если имя учетной записи не указано, перечисляются все учетные записи, для которых управление ключами задается указанным хранилищем.
+## ОПИСАНИЕ
+Получает учетную запись хранилища Azure, управлия ключом, если задано имя учетной записи и управление ключами учетной записи происходит в указанном хранилище. Если имя учетной записи не указано, будут перечислены все учетные записи, ключами которых управляет указанный сейф.
 
-## ИЛЛЮСТРИРУЮТ
+## ПРИМЕРЫ
 
-### Пример 1: список всех учетных записей хранения с управляемым хранилищем
+### Пример 1. Список всех ключевых учетных записей хранилища, управляемых хранилищем
 ```
 PS C:\> Get-AzureKeyVaultManagedStorageAccount -VaultName 'myvault'
 ```
 
-Выводит все учетные записи, для которых управление ключами является хранилищем "myvault".
+Список всех учетных записей, ключами которых управляет хранилище Myvault.
 
-### Пример 2: получение учетной записи хранилища с управляемым хранилищем ключей
+### Пример 2. Получить учетную запись управляемого хранилища в key Vault
 ```
 PS C:\> Get-AzureKeyVaultManagedStorageAccount -VaultName 'myvault' -Name 'mystorageaccount'
 ```
 
-Получение сведений об учетной записи хранения ключа управляемого хранилища для "mystorageaccount", если ее ключи управляются хранилищем "myvault"
+Подробные сведения о учетной записи хранилища mystorageaccount, если ключами управляет хранилище "myvault".
 
-## ПАРАМЕТРЫ
+## PARAMETERS
 
-### -Имя_учетной_записи
-Имя учетной записи хранилища с управляемым хранилищем. Командлет создает полное доменное имя управляемой учетной записи хранения из имени хранилища, выбранной в данный момент среды и управляемого имени учетной записи хранения.
+### -AccountName
+Имя учетной записи управляемого хранилища в key Vault. Cmdlet constructs the FQDN of a managed storage account name from vault name, currently selected environment and manged storage account name.
 
 ```yaml
 Type: String
@@ -83,13 +83,13 @@ Accept wildcard characters: False
 ```
 
 ### -VaultName
-Имя хранилища.
-Командлет создает полное доменное имя хранилища на основе имени и выбранной в данный момент среды.
+Имя сейфа.
+Cmdlet constructs the FQDN of a vault based on the name and currently selected environment.
 
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -99,20 +99,19 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Этот командлет поддерживает общие параметры:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-of Variable,-out,-PipelineVariable,-Verbose, и-WarningAction. Дополнительные сведения можно найти в разделе about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
+Этот cmdlet поддерживает общие параметры: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. Дополнительные сведения см. в about_CommonParameters https://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## ВХОДНЫЕ данные
+## INPUTS
 
-### System. String
+### System.String
 
-## НАПРЯЖЕНИЕ
+## OUTPUTS
 
-### System. Collections. Generic. List ' 1 [[Microsoft. Azure. Commands. KeyVault. Models. ManagedStorageAccount, Microsoft. Azure. Commands. KeyVault, Version = 2.5.0.0, Culture = Neutral, PublicKeyToken = NULL]]
-Microsoft. Azure. Commands. KeyVault. Models. ManagedStorageAccount
+### System.Collections.Generic.List'1[[Microsoft.Azure.Commands.KeyVault.Models.ManagedStorageAccount, Microsoft.Azure.Commands.KeyVault, Version=2.5.0.0, Culture=neutral, PublicKeyToken=null]]
+Microsoft.Azure.Commands.KeyVault.Models.ManagedStorageAccount
 
-## Пуск
+## ПРИМЕЧАНИЯ
 
-## ДОПОЛНИТЕЛЬНЫЕ ССЫЛКИ
+## СВЯЗАННЫЕ ССЫЛКИ
 
-[https://msdn.microsoft.com/en-us/library/dn868052.aspx](https://msdn.microsoft.com/en-us/library/dn868052.aspx)
-
+[Cmdlets key Vault Azure](/powershell/module/azurerm.keyvault/)

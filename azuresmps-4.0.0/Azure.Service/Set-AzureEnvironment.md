@@ -3,19 +3,19 @@ external help file: Microsoft.WindowsAzure.Commands.Profile.dll-Help.xml
 ms.assetid: 1094497D-2CBE-41DF-9ED1-8E7D3F14B05A
 online version: ''
 schema: 2.0.0
-ms.openlocfilehash: 82bd806d35f36a07958f2bdeeeda42853cd453b9
-ms.sourcegitcommit: 56ed085a868afa8263f8eb0f755b5822f5c29532
+ms.openlocfilehash: fd1c687005821daa7c779d6bb3db7bbad53c0e28
+ms.sourcegitcommit: 6f0b6059d096600ebff1c8514c35c467d2f482d8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "94075967"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104715560"
 ---
 # Set-AzureEnvironment
 
-## КРАТКИй обзор
+## SYNOPSIS
 Изменяет свойства среды Azure.
 
-## Максимальное
+## СИНТАКСИС
 
 ```
 Set-AzureEnvironment -Name <String> [-PublishSettingsFileUrl <String>] [-ServiceEndpoint <String>]
@@ -27,32 +27,32 @@ Set-AzureEnvironment -Name <String> [-PublishSettingsFileUrl <String>] [-Service
  [-AdTenant <String>] [-Profile <AzureSMProfile>] [<CommonParameters>]
 ```
 
-## NОПИСАНИЕ
-Командлет **Set-AzureEnvironment** изменяет свойства среды Azure.
-Функция возвращает объект, который представляет среду с новыми значениями свойств.
-Используйте параметр **Name** для идентификации среды и других параметров для изменения значений свойств.
-Нельзя использовать **Set-AzureEnvironment** , чтобы изменить имя среды Azure.
+## ОПИСАНИЕ
+С **его использованием** можно изменить свойства среды Azure.
+Она возвращает объект, который представляет среду новыми значениями свойств.
+Используйте параметр **Name,** чтобы определить среду, а другие параметры для изменения значений свойств.
+Изменить имя среды Azure с помощью **Set-AzureEnvironment** невозможно.
 
-Среда Azure является независимым развертыванием Microsoft Azure, например AzureCloud для глобальных Azure и AzureChinaCloud для Azure, предоставляемой компанией 21Vianet в Китае.
-Вы также можете создавать локальные среды Azure с помощью пакета Azure и командлетов WAPack.
-Дополнительные сведения можно найти в [пакете Azure Pack](https://www.microsoft.com/server-cloud/products/windows-azure-pack/default.aspx) ( https://www.microsoft.com/server-cloud/products/windows-azure-pack/default.aspx) .
+Среда Azure — независимое развертывание Microsoft Azure, например AzureCloud для глобального azure и AzureChinaCloud для Azure, управляемый компанией 21Vianet в Китае.
+Вы также можете создавать локально среды Azure с помощью пакетов Azure и cmdlets WAPack.
+Дополнительные сведения см. в [пакете Azure.](/previous-versions/azure/windows-server-azure-pack/)
 
-Примечание. не изменяйте свойства сред AzureCloud и AzureChinaCloud.
-Используйте этот командлет для изменения значений частных сред, которые вы создаете.
+ПРИМЕЧАНИЕ. Не изменяя свойства сред AzureCloud или AzureChinaCloud.
+Используйте этот cmdlet для изменения значений в закрытых средах, которые вы создаете.
 
-## ИЛЛЮСТРИРУЮТ
+## ПРИМЕРЫ
 
-### Пример 1: изменение свойств среды
+### Пример 1. Изменение свойств среды
 ```
 PS C:\> Set-AzureEnvironment -Name ContosoEnv -PublishSettingsFileUrl "https://contoso.com" -StorageEndpoint "contoso.com"
 ```
 
 Эта команда изменяет значения свойств **PublishSettingsFileUrl** и **StorageEndpoint** среды ContosoEnv.
 
-## ПАРАМЕТРЫ
+## PARAMETERS
 
 ### -ActiveDirectoryEndpoint
-Изменяет указанное значение конечной точки для проверки подлинности Azure Active Directory.
+Изменяет конечную точку проверки подлинности Azure Active Directory на указанное значение.
 
 ```yaml
 Type: String
@@ -67,12 +67,12 @@ Accept wildcard characters: False
 ```
 
 ### -ActiveDirectoryServiceEndpointResourceId
-Указывает идентификатор API управления, доступ к которому управляется службой Azure Active Directory.
+Определяет ИД ресурса для API управления, доступ которого управляется Azure Active Directory.
 
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -85,7 +85,7 @@ Accept wildcard characters: False
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -98,7 +98,7 @@ Accept wildcard characters: False
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -111,7 +111,7 @@ Accept wildcard characters: False
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -134,9 +134,9 @@ Accept wildcard characters: False
 ```
 
 ### -GalleryEndpoint
-Изменяет конечную точку для коллекции диспетчера ресурсов Azure указанным значением.
-Конечная точка галереи — это расположение шаблонов коллекции групп ресурсов.
-Дополнительные сведения о группах ресурсов Azure и шаблонах коллекций можно найти в разделе справки по запросу [Get-AzureResourceGroupGalleryTemplate](https://go.microsoft.com/fwlink/?LinkID=393052).
+Изменяет конечную точку коллекции диспетчера ресурсов Azure на указанное значение.
+Конечная точка коллекции — это расположение для шаблонов коллекции ресурсов.
+Дополнительные сведения о группах ресурсов и шаблонах коллекции Azure см. в разделе справки [для Get-AzureResourceGroupGalleryTemplate.](https://go.microsoft.com/fwlink/?LinkID=393052)
 
 ```yaml
 Type: String
@@ -164,12 +164,12 @@ Accept wildcard characters: False
 ```
 
 ### -ManagementPortalUrl
-Изменение URL-адреса портала управления Azure на указанное значение.
+Изменяет URL-адрес портала управления Azure на указанное значение.
 
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -178,16 +178,16 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Name (имя)
-Определяет среду, которую нужно изменить.
-Этот параметр является обязательным.
-Значение параметра задается с учетом регистра.
-Подстановочные знаки не разрешены.
+### -Name
+Определяет меняемую среду.
+Этот параметр является required(обязательно).
+Значение параметра в параметрах в конфиденциальном случае.
+Поддиавные знаки не разрешены.
 
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -197,12 +197,13 @@ Accept wildcard characters: False
 ```
 
 ### -Profile
-Указывает профиль Azure, из которого считывается этот командлет. Если вы не укажете профиль, этот командлет считывает данные из локального профиля по умолчанию.
+Определяет профиль Azure, для которого читается этот cmdlet.
+Если не указать профиль, этот cmdlet будет читать данные из локального профиля по умолчанию.
 
 ```yaml
 Type: AzureSMProfile
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -212,13 +213,13 @@ Accept wildcard characters: False
 ```
 
 ### -PublishSettingsFileUrl
-Изменяет URL-адрес для файлов параметров публикации в указанной среде.
-Файл параметров публикации Azure — это XML-файл, который содержит сведения о вашей учетной записи и сертификате управления, позволяющий Windows PowerShell войти в свою учетную запись Azure от вашего имени.
+Изменяет URL-адрес файлов параметров публикации в указанной среде.
+Файл параметров публикации Azure — это XML-файл, содержащий сведения о вашей учетной записи и сертификат управления, позволяющий Windows PowerShell войти в учетную запись Azure от вашего имени.
 
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -228,8 +229,8 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceManagerEndpoint
-Изменяет конечную точку для данных диспетчера ресурсов Azure, включая данные о группах ресурсов, связанных с учетной записью.
-Дополнительные сведения об диспетчере ресурсов Azure можно найти в [командлетах диспетчера ресурсов Azure](https://go.microsoft.com/fwlink/?LinkID=394765)  ( https://go.microsoft.com/fwlink/?LinkID=394765) и [с помощью Windows PowerShell с диспетчером ресурсов](https://go.microsoft.com/fwlink/?LinkID=394767)  ) ( https://go.microsoft.com/fwlink/?LinkID=394767) .
+Изменение конечной точки для данных Диспетчера ресурсов Azure, включая данные о группах ресурсов, связанных с учетной записью.
+Дополнительные сведения о диспетчере [](https://go.microsoft.com/fwlink/?LinkID=394765) ресурсов Azure https://go.microsoft.com/fwlink/?LinkID=394765) [](https://go.microsoft.com/fwlink/?LinkID=394767) см. в использовании Windows PowerShell диспетчера ресурсов Azure. https://go.microsoft.com/fwlink/?LinkID=394767)
 
 ```yaml
 Type: String
@@ -245,7 +246,7 @@ Accept wildcard characters: False
 
 ### -ServiceEndpoint
 Изменяет URL-адрес конечной точки службы Azure в указанной среде.
-Конечная точка службы Azure определяет, управляет ли ваше приложение глобальной платформой Azure, службой Azure, предоставляемой 21Vianet в Китае, или частным экземпляром Azure.
+Конечная точка службы Azure определяет, управляет ли ваше приложение глобальной платформой Azure, службой Azure, которая управляется компанией 21Vianet в Китае, или частной установкой Azure.
 
 ```yaml
 Type: String
@@ -263,7 +264,7 @@ Accept wildcard characters: False
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -273,7 +274,7 @@ Accept wildcard characters: False
 ```
 
 ### -StorageEndpoint
-Изменяет конечную точку по умолчанию служб хранилища в указанной среде.
+Изменяет конечную точку по умолчанию для служб хранилища в указанной среде.
 
 ```yaml
 Type: String
@@ -291,7 +292,7 @@ Accept wildcard characters: False
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -301,20 +302,20 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Этот командлет поддерживает общие параметры:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-of Variable,-out,-PipelineVariable,-Verbose, и-WarningAction. Дополнительные сведения можно найти в разделе about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
+Этот cmdlet поддерживает общие параметры: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. Дополнительные сведения см. в about_CommonParameters https://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## ВХОДНЫЕ данные
+## INPUTS
 
-### Ничего
-Вы можете передавать входные данные командлету по имени свойства, но не по значению.
+### Нет
+Этот cmdlet можно ввести по имени свойства, но не по значению.
 
-## НАПРЯЖЕНИЕ
+## OUTPUTS
 
-### Microsoft. WindowsAzure. Commands. Utilities. Common. WindowsAzureEnvironment
+### Microsoft.WindowsAzure.Commands.Utilities.Common.WindowsAzureEnvironment
 
-## Пуск
+## ПРИМЕЧАНИЯ
 
-## ДОПОЛНИТЕЛЬНЫЕ ССЫЛКИ
+## СВЯЗАННЫЕ ССЫЛКИ
 
 [Add-AzureEnvironment](./Add-AzureEnvironment.md)
 

@@ -6,12 +6,12 @@ online version: https://docs.microsoft.com/powershell/module/az.compute/new-azvm
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Compute/Compute/help/New-AzVMConfig.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Compute/Compute/help/New-AzVMConfig.md
-ms.openlocfilehash: 71aa555528ff1cdb5748c1a4ac62481ddd17c17c
-ms.sourcegitcommit: 4dfb0cc533b83f77afdcfbe2618c1e6c8d221330
+ms.openlocfilehash: 8c920ba3df8d7ba35ce1677f5d8e30836d96dc5e
+ms.sourcegitcommit: 6f0b6059d096600ebff1c8514c35c467d2f482d8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "101991497"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104715227"
 ---
 # New-AzVMConfig
 
@@ -24,7 +24,7 @@ ms.locfileid: "101991497"
 ```
 New-AzVMConfig [-VMName] <String> [-VMSize] <String> [[-AvailabilitySetId] <String>] [[-LicenseType] <String>]
  [-Zone <String[]>] [-ProximityPlacementGroupId <String>] [-HostId <String>] [-VmssId <String>]
- [-MaxPrice <Double>] [-EvictionPolicy <String>] [-Priority <String>] [-Tags <Hashtable>] [-EnableUltraSSD] 
+ [-MaxPrice <Double>] [-EvictionPolicy <String>] [-Priority <String>] [-Tags <Hashtable>] [-EnableUltraSSD]
  [-EncryptionAtHost] [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
@@ -61,8 +61,8 @@ PS C:\> $VirtualMachine = New-AzVMConfig -VMName "VirtualMachine07" -VMSize "Sta
 Чтобы получить объект набора доступности, воспользуйтесь Get-AzAvailabilitySet управления.
 Объект набора доступности содержит свойство "ИД". <br>
 Для максимального повышения доступности виртуальные машины, указанные в том же наборе доступности, выделены для разных узлов. <br>
-Дополнительные сведения о наборах доступности см. в документе ["Управление доступностью виртуальных машин".](https://docs.microsoft.com/azure/virtual-machines/virtual-machines-windows-manage-availability?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json) <br>
-Дополнительные сведения о запланированном техническом обслуживании Azure см. в сведениях о запланированном техническом обслуживании [виртуальных машин в Azure.](https://docs.microsoft.com/azure/virtual-machines/virtual-machines-windows-planned-maintenance?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json) <br>
+Дополнительные сведения о наборах доступности см. в документе ["Управление доступностью виртуальных машин".](/azure/virtual-machines/availability) <br>
+Дополнительные сведения о запланированном техническом обслуживании Azure см. в сведениях о запланированном техническом обслуживании [виртуальных машин в Azure.](/azure/virtual-machines/maintenance-and-updates?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json) <br>
 В настоящее время VM можно добавить только в набор доступности во время создания. Набор доступности, в который добавляется проектный проект, должен быть в той же группе ресурсов, что и для ресурса, настроенного для доступности. Существующий VM-клиент невозможно добавить в набор доступности. <br>
 Это свойство не может существовать вместе со ссылкой на non-null.virtualMascaleeScaleSet.
 
@@ -176,9 +176,9 @@ Accept wildcard characters: False
 Тип лицензии, который указывает на то, что изображение или диск для виртуальной машины были лицензированы локально.
 Возможные значения для Windows Server:
 - Windows_Client
-- Windows_Server возможности операционной системы Linux Server: 
-- RHEL_BYOS (для RHEL) 
-- SLES_BYOS (для SUSE) 
+- Windows_Server возможности операционной системы Linux Server:
+- RHEL_BYOS (для RHEL)
+- SLES_BYOS (для SUSE)
 
 ```yaml
 Type: System.String
@@ -193,7 +193,7 @@ Accept wildcard characters: False
 ```
 
 ### -MaxPrice
-Указывает максимальную цену, которую вы будете оплачивать для службы VM или VMSS с низким приоритетом. Эта цена в долларах США. Эта цена будет сравниваться с текущей низкой ценой приоритета для размера VM. Кроме того, цены сравниваются во время создания или обновления низкой приоритетной VM-или VMSS и операция будет работать только в том случае, если максимальная цена больше текущей цены с низким приоритетом. Максимальное значение maxPrice также будет использоваться для создания обетовки VM или VMSS с низким приоритетом, если текущая цена с низким приоритетом выходит за пределы максимальной цены после создания VM/VMSS. Возможные значения: любое десятичее значение больше нуля. Пример: 0,01538.  -1 указывает на то, что не следует переумелять VM или VMSS с низким приоритетом по ценам. Кроме того, максимальная цена по умолчанию составляет -1, если она не предоставлена вами.
+Указывает максимальную цену, которую вы будете оплачивать для службы VM или VMSS с низким приоритетом. Эта цена в долларах США. Эта цена будет сравниваться с текущей низкой ценой приоритета для размера VM. Кроме того, цены сравниваются во время создания или обновления низкой приоритетной VM-или VMSS и операция будет работать только в том случае, если максимальная цена больше текущей цены с низким приоритетом. Максимальное значение maxPrice также будет использоваться для создания обетовки VM или VMSS с низким приоритетом, если текущая цена с низким приоритетом выходит за пределы максимальной цены после создания VM/VMSS. Возможные значения: любое десятичее значение больше нуля. Пример: 0,01538.  -1 указывает на то, что не следует захламлять VM или VMSS с низким приоритетом по ценам. Кроме того, максимальная цена по умолчанию составляет -1, если она не предоставлена вами.
 
 ```yaml
 Type: System.Double
@@ -208,12 +208,14 @@ Accept wildcard characters: False
 ```
 
 ### -EncryptionAtHost
-Свойство EncryptionAtHost может использоваться пользователем в запросе для того, чтобы включить или отключить шифрование хоста для набора виртуальных машин или виртуальной машины. Это позволит шифровать все диски, включая диск Resource/Temp на самом хосте. По умолчанию: шифрование на хосте будет отключено, если для этого свойства не установлено значение true для ресурса.
+Свойство EncryptionAtHost может использоваться пользователем в запросе для того, чтобы включить или отключить шифрование хоста для набора масштаба виртуальной машины или виртуальной машины.
+Это позволит шифровать все диски, включая диск Resource/Temp на самом хосте.
+По умолчанию: шифрование на хосте будет отключено, если для этого свойства не установлено значение true для ресурса.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named

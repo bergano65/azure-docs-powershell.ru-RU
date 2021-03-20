@@ -6,12 +6,12 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.compute/se
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Compute/Compute/help/Set-AzVMPlan.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Compute/Compute/help/Set-AzVMPlan.md
-ms.openlocfilehash: 93837ff6618523f71fdd2b0a3b933b50892af429
-ms.sourcegitcommit: c05d3d669b5631e526841f47b22513d78495350b
+ms.openlocfilehash: eed6fb9b5dec9eb7f99f9c1754084993c1431808
+ms.sourcegitcommit: 6f0b6059d096600ebff1c8514c35c467d2f482d8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/09/2021
-ms.locfileid: "100231036"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104716376"
 ---
 # Set-AzVMPlan
 
@@ -50,8 +50,8 @@ Accept wildcard characters: False
 
 ### -Name
 Указывает имя изображения из Marketplace.
-Это то же значение, которое возвращается Get-AzVMImageSku-управления.
-Дополнительные сведения о том, как найти сведения об изображении, см. в документации Microsoft Azure: навигация и выбор изображений виртуальной машины Azure с помощью PowerShell и Azure https://azure.microsoft.com/documentation/articles/resource-groups-vm-searching/ https://azure.microsoft.com/documentation/articles/resource-groups-vm-searching/) CLI.
+Это то же значение, которое возвращается Get-AzVMImageSku..
+Дополнительные сведения о поиске изображений см. в документации Microsoft Azure Azure для поиска и использования [изображений VM Azure Marketplace с помощью Azure PowerShell.](/azure/virtual-machines/windows/cli-ps-findimage)
 
 ```yaml
 Type: System.String
@@ -114,7 +114,7 @@ Accept wildcard characters: False
 
 ### -VM
 Определяет объект виртуальной машины, для которого нужно установить план Marketplace.
-Для получения объекта виртуальной Get-AzVM можно использовать Get-AzVM.
+Для получения объекта Get-AzVM машин можно использовать Get-AzVM.
 Для создания объекта New-AzVMConfig машин можно использовать New-AzVMConfig.
 
 ```yaml

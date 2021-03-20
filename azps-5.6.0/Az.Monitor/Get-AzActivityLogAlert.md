@@ -6,12 +6,12 @@ online version: https://docs.microsoft.com/powershell/module/az.monitor/get-azac
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/Get-AzActivityLogAlert.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/Get-AzActivityLogAlert.md
-ms.openlocfilehash: 526b03fb1d73ab88b43929df143e9825f42c7fdf
-ms.sourcegitcommit: 4dfb0cc533b83f77afdcfbe2618c1e6c8d221330
+ms.openlocfilehash: 07d3d8969595a701794abce3869d4f6e50deb934
+ms.sourcegitcommit: 6f0b6059d096600ebff1c8514c35c467d2f482d8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "101980211"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104715356"
 ---
 # Get-AzActivityLogAlert
 
@@ -134,8 +134,6 @@ Accept wildcard characters: False
 ## СВЯЗАННЫЕ ССЫЛКИ
 
 [Set-AzActivityLogAlert](./Set-AzActivityLogAlert.md)
-
-[Update-AzActivityLogAlert](./Update-AzActivityLogAlert.md)
 
 [Remove-AzActivityLogAlert](./Remove-AzActivityLogAlert.md)
 

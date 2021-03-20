@@ -5,19 +5,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.machinelea
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/MachineLearning/MachineLearning/help/New-AzMlWebService.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/MachineLearning/MachineLearning/help/New-AzMlWebService.md
-ms.openlocfilehash: 5988aed4ca0560daedc1470198e0b02975f18196
-ms.sourcegitcommit: 6a91b4c545350d316d3cf8c62f384478e3f3ba24
+ms.openlocfilehash: 39256c965cfab7cfd0c84042f45ef777366a7715
+ms.sourcegitcommit: 6f0b6059d096600ebff1c8514c35c467d2f482d8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "94074232"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104715208"
 ---
 # New-AzMlWebService
 
-## КРАТКИй обзор
-Создание новой веб-службы.
+## SYNOPSIS
+Создает веб-службу.
 
-## Максимальное
+## СИНТАКСИС
 
 ### CreateFromFile
 ```
@@ -32,27 +32,27 @@ New-AzMlWebService -ResourceGroupName <String> -Location <String> -Name <String>
  [<CommonParameters>]
 ```
 
-## NОПИСАНИЕ
-Создание веб-службы машинного обучения Azure в существующей группе ресурсов.
-Если в группе ресурсов есть веб-служба с таким же именем, вызов выполняет операцию обновления, и существующая веб-служба перезаписывается.
+## ОПИСАНИЕ
+Создает веб-службу машинного обучения Azure в существующей группе ресурсов.
+Если в группе ресурсов есть веб-служба с таким же именем, звонок будет обновяться, а существующая веб-служба будет перезаписана.
 
-## ИЛЛЮСТРИРУЮТ
+## ПРИМЕРЫ
 
-### Пример 1: создание новой службы из определения на основе JSON-файла
+### Пример 1. Создание службы на основе определения Json
 ```
 New-AzMlWebService -ResourceGroupName "myresourcegroup" -Name "mywebservicename" -Location "South Central US" -DefinitionFile "C:\mlservice.json"
 ```
 
-Создание новой веб-службы машинного обучения Azure с именем "mywebservicename" в группе "myresourcegroup" и в Южной Центральной области США в соответствии с определением, представленным в JSON-файле, на который указывает ссылка.
+Создает веб-службу машинного обучения Azure "mywebservicename" в группе myresourcegroup и регионЕ Южный Центр США на основе определения, представленного в файле json, на который имеется ссылка.
 
-### Пример 2: создание новой службы из экземпляра объекта
+### Пример 2. Создание службы из экземпляра объекта
 ```
 New-AzMlWebService -ResourceGroupName "myresourcegroup" -Name "mywebservicename" -Location "South Central US" -NewWebServiceDefinition $serviceDefinitionObject
 ```
 
-Вы можете получить экземпляр объекта веб-службы для настройки перед публикацией как ресурс с помощью командлета Import-AzMlWebService.
+Вы можете получить экземпляр объекта веб-службы, который нужно настроить перед публикацией в качестве ресурса, с помощью Import-AzMlWebService-управления.
 
-## ПАРАМЕТРЫ
+## PARAMETERS
 
 ### -DefaultProfile
 Учетные данные, учетная запись, клиент и подписка, используемые для связи с Azure
@@ -70,8 +70,8 @@ Accept wildcard characters: False
 ```
 
 ### -DefinitionFile
-Задает путь к файлу, содержащему определение формата JSON для веб-службы.
-Последнюю спецификацию для определения веб-службы можно найти в спецификации Swagger ниже https://github.com/Azure/azure-rest-api-specs/tree/master/arm-machinelearning .
+Путь к файлу, содержащего определение формата JSON веб-службы.
+Последнюю спецификацию определения веб-службы можно найти в swagger spec в https://github.com/Azure/azure-rest-api-specs/blob/master/specification/machinelearning/resource-manager/Microsoft.MachineLearning/ области .
 
 ```yaml
 Type: System.String
@@ -86,7 +86,7 @@ Accept wildcard characters: False
 ```
 
 ### -Force
-Не запрашивать подтверждение.
+Не спрашивайте подтверждения.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -101,12 +101,12 @@ Accept wildcard characters: False
 ```
 
 ### -Location
-Область веб-службы.
-Введите регион центра обработки данных Azure, например "Западная часть США" или "Юго-Тихоокеанский регион".
-Вы можете разместить веб-службу в любом регионе, поддерживающем ресурсы такого типа.
-Веб-служба не должна находиться в той же области, что и у подписки Azure, или в той же области, что и ее группа ресурсов.
+Регион веб-службы.
+Введите регион центра обработки данных Azure, например "Запад США" или "Юго-Восточная Азия".
+Вы можете разместить веб-службу в любом регионе, который поддерживает ресурсы такого типа.
+Веб-служба не должна быть в том же регионе, что и в подписке Azure, или в том же регионе, что и группа ресурсов.
 Группы ресурсов могут содержать веб-службы из разных регионов.
-Чтобы определить, какие области поддерживают каждый тип ресурсов, используйте Get-AzResourceProvider с командлетом параметра ProviderNamespace.
+Чтобы определить, в каких регионах поддерживается каждый тип ресурсов, используйте Get-AzResourceProvider с помощью Get-AzResourceProvider параметра ProviderNamespace.
 
 ```yaml
 Type: System.String
@@ -120,7 +120,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Name (имя)
+### -Name
 Имя веб-службы.
 Имя должно быть уникальным в группе ресурсов.
 
@@ -137,9 +137,9 @@ Accept wildcard characters: False
 ```
 
 ### -NewWebServiceDefinition
-Определение новой веб-службы, содержащее все свойства, составляющие службу.
-Этот параметр является обязательным и представляет экземпляр класса Microsoft. Azure. Management. MachineLearning. WebService. WebService.
-Последнюю спецификацию для определения веб-службы можно найти в спецификации Swagger ниже https://github.com/Azure/azure-rest-api-specs/blob/master/arm-machinelearning/2017-01-01/swagger/webservices.json .
+Определение для новой веб-службы, содержащее все свойства, которые ее составляют.
+Этот параметр является required и представляет экземпляр класса Microsoft.Azure.Management.MachineLearning.WebServices.Models.WebService.
+Последнюю спецификацию определения веб-службы можно найти в swagger spec в https://github.com/Azure/azure-rest-api-specs/blob/master/specification/machinelearning/resource-manager/Microsoft.MachineLearning/stable/2017-01-01/webservices.json области .
 
 ```yaml
 Type: Microsoft.Azure.Management.MachineLearning.WebServices.Models.WebService
@@ -154,12 +154,12 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-Группа ресурсов, в которую нужно поместить веб-службу.
-Введите регион центра обработки данных Azure, например "Западная часть США" или "Юго-Тихоокеанский регион".
-Вы можете разместить веб-службу в любом регионе, поддерживающем ресурсы такого типа.
-Веб-служба не должна находиться в той же области, что и у подписки Azure, или в той же области, что и ее группа ресурсов.
+Группа ресурсов, в которую нужно разместить веб-службу.
+Введите регион центра обработки данных Azure, например "Запад США" или "Юго-Восточная Азия".
+Вы можете разместить веб-службу в любом регионе, который поддерживает ресурсы такого типа.
+Веб-служба не должна быть в том же регионе, что и в подписке Azure, или в том же регионе, что и группа ресурсов.
 Группы ресурсов могут содержать веб-службы из разных регионов.
-Чтобы определить, какие области поддерживают каждый тип ресурсов, используйте Get-AzResourceProvider с командлетом параметра ProviderNamespace.
+Чтобы определить, в каких регионах поддерживается каждый тип ресурсов, используйте Get-AzResourceProvider с помощью Get-AzResourceProvider параметра ProviderNamespace.
 
 ```yaml
 Type: System.String
@@ -174,7 +174,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
-Запрашивает подтверждение перед запуском командлета.
+Перед запуском cmdlet вам будет предложено подтвердить его.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -189,8 +189,8 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Показывает, что произойдет при запуске командлета.
-Командлет не выполняется.
+Показывает, что произойдет при запуске cmdlet.
+Этот cmdlet не будет выполниться.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -205,17 +205,17 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Этот командлет поддерживает общие параметры:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-of Variable,-out,-PipelineVariable,-Verbose, и-WarningAction. Дополнительные сведения можно найти в разделе about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .
+Этот cmdlet поддерживает общие параметры: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. Дополнительные сведения см. в about_CommonParameters http://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## ВХОДНЫЕ данные
+## INPUTS
 
-### Microsoft. Azure. Management. MachineLearning. WebService. Models.
+### Microsoft.Azure.Management.MachineLearning.WebServices.Models.WebService
 
-## НАПРЯЖЕНИЕ
+## OUTPUTS
 
-### Microsoft. Azure. Management. MachineLearning. WebService. Models.
+### Microsoft.Azure.Management.MachineLearning.WebServices.Models.WebService
 
-## Пуск
-Ключевые слова: Azure, azurerm, ARM, Resource, Management, Manager, Machine, Machine Learning, azureml
+## ПРИМЕЧАНИЯ
+Ключевые слова: azure, azurerm, arm, resource, management, manager, machine, machine learning, azureml
 
-## ДОПОЛНИТЕЛЬНЫЕ ССЫЛКИ
+## СВЯЗАННЫЕ ССЫЛКИ

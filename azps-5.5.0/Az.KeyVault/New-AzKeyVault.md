@@ -6,12 +6,12 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.keyvault/n
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/KeyVault/KeyVault/help/New-AzKeyVault.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/KeyVault/KeyVault/help/New-AzKeyVault.md
-ms.openlocfilehash: 0da8ce1e7da509c140e5893240fadb37d7852ad8
-ms.sourcegitcommit: c05d3d669b5631e526841f47b22513d78495350b
+ms.openlocfilehash: 274df1c9bd323433cd495d9b7ab86cae9451fee7
+ms.sourcegitcommit: 6f0b6059d096600ebff1c8514c35c467d2f482d8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/09/2021
-ms.locfileid: "100234089"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104715050"
 ---
 # New-AzKeyVault
 
@@ -115,7 +115,7 @@ PS C:\> $ruleSet = New-AzKeyVaultNetworkRuleSetObject -DefaultAction Allow -Bypa
 PS C:\> New-AzKeyVault -ResourceGroupName "myRg" -VaultName "myVault" -NetworkRuleSet $ruleSet
 ```
 
-Создание сейфа ключа и определяет правила сети, позволяющие получить доступ к указанному IP-адресу из виртуальной сети, указанной $myNetworkResId. Дополнительные `New-AzKeyVaultNetworkRuleSetObject` сведения см. в этой информации.
+Создание сейфа ключа и определяет правила сети, позволяющие получить доступ к указанному IP-адресу из виртуальной сети, указанной $myNetworkResId. Дополнительные `New-AzKeyVaultNetworkRuleSetObject` сведения см. в этой области.
 
 ## PARAMETERS
 
@@ -195,7 +195,7 @@ Accept wildcard characters: False
 ```
 
 ### -EnableRbacAuthorization
-Если задан этот вариант, разрешает действия с данными с помощью управления доступом на основе ролей (RBAC), а политики доступа, указанные в свойствах хранилища, будут игнорироваться. Обратите внимание на то, что действия управления всегда разрешены с помощью RBAC.
+Если задан этот вариант, разрешает действия с данными с помощью управления доступом на основе ролей (RBAC), а политики доступа, указанные в свойствах хранилища, будут игнорироваться. Обратите внимание, что действия управления всегда авторизуются с помощью RBAC.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -210,7 +210,7 @@ Accept wildcard characters: False
 ```
 
 ### -Location
-Определяет регион Azure, в котором нужно создать хранилище ключа. Используйте команду [Get-AzLocation,](https://docs.microsoft.com/powershell/module/Azure/Get-AzLocation) чтобы увидеть ваши варианты.
+Определяет регион Azure, в котором нужно создать хранилище ключа. Используйте команду [Get-AzLocation,](/powershell/module/az.resources/get-azlocation) чтобы увидеть ваши варианты.
 
 ```yaml
 Type: System.String
@@ -240,7 +240,7 @@ Accept wildcard characters: False
 ```
 
 ### -NetworkRuleSet
-Набор правил сети для хранилища. Он регулирует специальные возможности ключного хранилища из определенных сетевых мест. Создано `New-AzKeyVaultNetworkRuleSetObject` .
+Набор правил сети для хранилища. Он регулирует специальные возможности ключа хранилища из определенных сетевых мест. Создано `New-AzKeyVaultNetworkRuleSetObject` .
 
 ```yaml
 Type: Microsoft.Azure.Commands.KeyVault.Models.PSKeyVaultNetworkRuleSet
@@ -300,7 +300,7 @@ Accept wildcard characters: False
 ```
 
 ### -Tag
-Пары "ключевое значение" в виде hash table. Например: @{key0="value0";key1=$null;key2="value2"}
+Пары значений ключа в виде hash table. Например: @{key0="value0";key1=$null;key2="value2"}
 
 ```yaml
 Type: System.Collections.Hashtable

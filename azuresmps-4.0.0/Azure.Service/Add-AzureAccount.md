@@ -3,19 +3,19 @@ external help file: Microsoft.WindowsAzure.Commands.Profile.dll-Help.xml
 ms.assetid: 03EAFFB2-EA64-4227-A33B-D24EB4A75F71
 online version: ''
 schema: 2.0.0
-ms.openlocfilehash: ac88bc2494bad975c6169262edd05c7b821061bb
-ms.sourcegitcommit: 56ed085a868afa8263f8eb0f755b5822f5c29532
+ms.openlocfilehash: 8db364a6a8842b701e6018fe960d5b29755542a9
+ms.sourcegitcommit: 6f0b6059d096600ebff1c8514c35c467d2f482d8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "94076396"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104716750"
 ---
 # Add-AzureAccount
 
-## КРАТКИй обзор
-Добавление учетной записи Azure в Windows PowerShell.
+## SYNOPSIS
+Добавляет учетную запись Azure в Windows PowerShell.
 
-## Максимальное
+## СИНТАКСИС
 
 ### Пользователь (по умолчанию)
 ```
@@ -29,50 +29,50 @@ Add-AzureAccount [-Environment <String>] -Credential <PSCredential> [-ServicePri
  [-Profile <AzureSMProfile>] [<CommonParameters>]
 ```
 
-## NОПИСАНИЕ
-Командлет **Add-AzureAccount** делает учетную запись Azure и ее подписки доступными в Windows PowerShell.
-Это напоминает вход в учетную запись Azure в Windows PowerShell.
-Чтобы выйти из учетной записи, используйте командлет **Remove-AzureAccount** .
+## ОПИСАНИЕ
+Благодаря **настройку Add-AzureAccount** ваша учетная запись Azure и ее подписки будут доступны в Windows PowerShell.
+Это похоже на вход в учетную запись Azure в Windows PowerShell.
+Чтобы выйти из учетной записи, используйте **cmdlet Remove-AzureAccount.**
 
-**Add-AzureAccount** загружает сведения о своей учетной записи Azure и сохраняет ее в файле данных подписки в перемещаемом профиле пользователя.
-Кроме того, он получает маркер доступа, который позволяет Windows PowerShell получить доступ к учетной записи Azure от вашего имени.
-После завершения команды вы можете управлять учетной записью Azure в Windows PowerShell.
+**Add-AzureAccount** скачивает сведения об учетной записи Azure и сохраняет ее в файле данных подписки в перемещаемом профиле пользователя.
+Он также получает маркер доступа, позволяющий Windows PowerShell доступ к учетной записи Azure от вашего имени.
+После выполнения команды вы можете управлять своей учетной записью Azure в Windows PowerShell.
 
-Учетную запись Azure можно сделать доступной для Windows PowerShell двумя разными способами.
-Вы можете использовать командлет **Add-AzureAccount** , который использует маркеры доступа для проверки подлинности Azure Active Directory (Azure AD) или **Import-AzurePublishSettingsFile** , который использует сертификат управления.
-Рекомендации по использованию этого метода приведены [в статье инструкции: подключение к подписке](https://azure.microsoft.com/documentation/articles/install-configure-powershell) ( https://azure.microsoft.com/documentation/articles/install-configure-powershell/#Connect) .
+Сделать учетную запись Azure доступной для Windows PowerShell можно двумя Windows PowerShell.
+Вы можете использовать **cmdlet Add-AzureAccount,** который использует маркеры доступа для проверки подлинности Azure Active Directory (Azure AD) или **Import-AzurePublishSettingsFile,** для которого используется сертификат управления.
+Инструкции по использованию см. в инструкциях [по подключению к подписке.](https://azure.microsoft.com/documentation/articles/install-configure-powershell) https://azure.microsoft.com/documentation/articles/install-configure-powershell/#Connect)
 
-При запуске **Add-AzureAccount** открывается интерактивное окно с запросом на вход в учетную запись Azure.
-Этот вход будет действителен, пока не истечет срок действия маркера доступа.
-По истечении срока действия командлетов, которым требуется доступ к вашей учетной записи, будет выдать запрос на повторный запуск **надстройки AzureAccount** .
+При запуске **Add-AzureAccount** отображается интерактивное окно с запросом на вход в учетную запись Azure.
+Этот вход действителен до окончания срока действия маркера доступа.
+По истечении этого срока для работы с учетной записью будет предложено снова запустить **add-AzureAccount.**
 
-В этом разделе описан командлет в версии 0.8.10 модуля Microsoft Azure PowerShell.
-Чтобы получить версию модуля, который вы используете, введите в командной консоли Azure PowerShell `(Get-Module -Name Azure).Version` .
+В этой статье описан командлет в версии 0.8.10 модуля Microsoft Azure PowerShell.
+Чтобы получить версию модуля, который вы используете, в консоли Azure PowerShell введите `(Get-Module -Name Azure).Version` .
 
-## ИЛЛЮСТРИРУЮТ
+## ПРИМЕРЫ
 
-### Пример 1: Добавление учетной записи
+### Пример 1. Добавление учетной записи
 ```
 PS C:\> Add-AzureAccount
 ```
 
 Эта команда добавляет учетную запись Azure в Windows PowerShell.
-При выполнении команды появляется всплывающее окно с запросом имени пользователя и пароля учетной записи.
+При запуске команды появляются окна с запросом имени пользователя и пароля учетной записи.
 
-### Пример 2: использование альтернативного файла данных подписки
+### Пример 2. Использование альтернативного файла данных подписки
 ```
 PS C:\> Add-AzureAccount -SubscriptionDataFile C:\Testing\SDF.xml
 ```
 
-Эта команда использует параметр **SubscriptionDataFile** для прямого **добавления AzureAccount** для хранения данных учетной записи в C:\Testing\SDF.xml файле вместо файла по умолчанию.
+Эта команда использует параметр **SubscriptionDataFile,** чтобы направлять **Add-AzureAccount** на хранение данных учетной записи в C:\Testing\SDF.xml, а не в файле по умолчанию.
 
-## ПАРАМЕТРЫ
+## PARAMETERS
 
 ### -Credential
 ```yaml
 Type: PSCredential
 Parameter Sets: User
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -84,7 +84,7 @@ Accept wildcard characters: False
 ```yaml
 Type: PSCredential
 Parameter Sets: ServicePrincipal
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -93,17 +93,17 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Environment
+### -Среда
 Указывает среду Azure.
 
-Среда Azure является независимым развертыванием Microsoft Azure, например AzureCloud для глобальных Azure и AzureChinaCloud для Azure, предоставляемой компанией 21Vianet в Китае.
-Вы также можете создавать локальные среды Azure с помощью пакета Azure и командлетов WAPack.
-Дополнительные сведения можно найти в [пакете Azure Pack](https://www.microsoft.com/server-cloud/products/windows-azure-pack/default.aspx)  ( https://www.microsoft.com/server-cloud/products/windows-azure-pack/default.aspx) .
+Среда Azure — независимое развертывание Microsoft Azure, например AzureCloud для глобального azure и AzureChinaCloud для Azure, управляемый компанией 21Vianet в Китае.
+Вы также можете создавать локально среды Azure с помощью пакетов Azure и cmdlets WAPack.
+Дополнительные сведения см. в [пакете Azure.](/previous-versions/azure/windows-server-azure-pack/)
 
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -113,12 +113,13 @@ Accept wildcard characters: False
 ```
 
 ### -Profile
-Указывает профиль Azure, из которого считывается этот командлет. Если вы не укажете профиль, этот командлет считывает данные из локального профиля по умолчанию.
+Определяет профиль Azure, для которого читается этот cmdlet.
+Если не указать профиль, этот cmdlet будет читать данные из локального профиля по умолчанию.
 
 ```yaml
 Type: AzureSMProfile
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -131,7 +132,7 @@ Accept wildcard characters: False
 ```yaml
 Type: SwitchParameter
 Parameter Sets: ServicePrincipal
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -140,7 +141,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Клиент
+### -Tenant
 ```yaml
 Type: String
 Parameter Sets: User
@@ -166,24 +167,24 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Этот командлет поддерживает общие параметры:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-of Variable,-out,-PipelineVariable,-Verbose, и-WarningAction. Дополнительные сведения можно найти в разделе about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
+Этот cmdlet поддерживает общие параметры: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. Дополнительные сведения см. в about_CommonParameters https://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## ВХОДНЫЕ данные
+## INPUTS
 
-### Ничего
-Вы не можете передавать входные данные в этот командлет
+### Нет
+Этот cmdlet не может вводиться в канал
 
-## НАПРЯЖЕНИЕ
+## OUTPUTS
 
-### Ничего
-Этот командлет не возвращает никаких выходных данных.
+### Нет
+Этот cmdlet не возвращает результатов.
 
-## Пуск
-* **Надстройка Add-AzureAccount** (и метод проверки подлинности Azure AD) имеет приоритет над параметрами **Import-AzurePublishSettings** (и способом сертификации управления). Если вы используете команду **Add-AzureAccount** даже один раз в своей учетной записи, используется метод проверки подлинности Azure AD, и сертификат управления пропускается. Чтобы удалить маркер Azure AD и восстановить метод сертификата управления, используйте командлет **Remove-AzureAccount** . Для получения дополнительных сведений введите: **Get-Help Remove-AzureAccount**.
-* Ошибка "срок действия ваших учетных данных истек. Для повторного входа используйте Add-AzureAccount. срок действия маркера доступа истек, и Windows PowerShell не может получить доступ к учетной записи Azure. Чтобы восстановить доступ к учетной записи, запустите **надстройку Add-AzureAccount** еще раз.
-* Учетная запись и командлеты подписки Azure PowerShell получают данные из файла данных подписки, а не из действующей учетной записи Azure. Если вы изменяете учетную запись или подписки за пределами Windows PowerShell, например с помощью портала управления Azure, запустите **Add-AzureAccount** еще раз, чтобы обновить файл данных подписки.
+## ПРИМЕЧАНИЯ
+* **Add-AzureAccount** (и метод проверки подлинности Azure AD) имеют приоритет над **import-AzurePublishSettings** (и методом сертификата управления). Если вы используете **Add-AzureAccount** хотя бы один раз в своей учетной записи, используется метод проверки подлинности Azure AD, а сертификат управления игнорируется. Чтобы удалить маркер Azure AD и восстановить метод сертификата управления, используйте **cmdlet Remove-AzureAccount.** Для получения дополнительных сведений введите: **Get-Help Remove-AzureAccount.**
+* Ошибка "Срок действия ваших учетных данных истек. Войдите Add-AzureAccount" указывает на то, что срок действия маркера доступа истек и Windows PowerShell не удается получить доступ к учетной записи Azure. Чтобы восстановить доступ к своей учетной записи, снова **запустите Add-AzureAccount.**
+* С учетной записью и подпиской Azure PowerShell можно получить данные из файла данных подписки, а не из учетной записи Azure Live. Если вы измените учетную запись или подписки за пределами Windows PowerShell, например с помощью портала управления Azure, снова запустите **Add-AzureAccount,** чтобы обновить файл данных подписки.
 
-## ДОПОЛНИТЕЛЬНЫЕ ССЫЛКИ
+## СВЯЗАННЫЕ ССЫЛКИ
 
 [Add-AzureEnvironment](./Add-AzureEnvironment.md)
 

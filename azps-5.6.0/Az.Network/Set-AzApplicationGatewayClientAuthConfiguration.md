@@ -5,12 +5,12 @@ online version: https://docs.microsoft.com/powershell/module/az.network/set-azap
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Set-AzApplicationGatewayClientAuthConfiguration.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Set-AzApplicationGatewayClientAuthConfiguration.md
-ms.openlocfilehash: 79a602047327ef7723da360f0b89743a316d2ec3
-ms.sourcegitcommit: 4dfb0cc533b83f77afdcfbe2618c1e6c8d221330
+ms.openlocfilehash: e5552901ae6888bc0843e5488f46cfad51f4b87d
+ms.sourcegitcommit: 6f0b6059d096600ebff1c8514c35c467d2f482d8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "101964056"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104715187"
 ---
 # Set-AzApplicationGatewayClientAuthConfiguration
 
@@ -36,7 +36,7 @@ PS C:\> $profile  = Get-AzApplicationGatewaySslProfile -Name "SslProfile01" -App
 PS C:\> Set-AzApplicationGatewayClientAuthConfiguration -SslProfile $profile -VerifyClientCertIssuerDN
 ```
 
-Первая команда получает шлюз приложения ApplicationGateway01 в группе ресурсов ResourceGroup01 и сохраняет его в переменной $AppGw ресурса. Вторая команда получает профиль ssl под названием SslProfile01 для $AppGw и сохраняет параметры в $profile переменной. Последняя команда изменяет клиентскую настройку объекта профиля SSL, храняшегося в $profile.
+Первая команда получает шлюз приложения ApplicationGateway01 в группе ресурсов ResourceGroup01 и сохраняет его в $AppGw переменной. Вторая команда получает профиль ssl под названием SslProfile01 для $AppGw и сохраняет параметры в $profile переменной. Последняя команда изменяет конфигурацию клиентской конфигурации объекта профиля SSL, который хранится в $profile.
 
 ## PARAMETERS
 
@@ -99,8 +99,6 @@ Accept wildcard characters: False
 ## ПРИМЕЧАНИЯ
 
 ## СВЯЗАННЫЕ ССЫЛКИ
-
-[Add-AzApplicationGatewayClientAuthConfiguration](./Add-AzApplicationGatewayClientAuthConfiguration.md)
 
 [New-AzApplicationGatewayClientAuthConfiguration](./New-AzApplicationGatewayClientAuthConfiguration.md)
 

@@ -6,12 +6,12 @@ online version: https://docs.microsoft.com/powershell/module/az.network/resize-a
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Resize-AzVirtualNetworkGateway.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Resize-AzVirtualNetworkGateway.md
-ms.openlocfilehash: 4b2963d77d2182821bb4950907ef278950e410f8
-ms.sourcegitcommit: 4dfb0cc533b83f77afdcfbe2618c1e6c8d221330
+ms.openlocfilehash: af02e46cf204d8e13b44d01e64b490c9d371c37b
+ms.sourcegitcommit: 6f0b6059d096600ebff1c8514c35c467d2f482d8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "101958152"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104716546"
 ---
 # Resize-AzVirtualNetworkGateway
 
@@ -30,7 +30,7 @@ Resize-AzVirtualNetworkGateway -VirtualNetworkGateway <PSVirtualNetworkGateway> 
 Номера номеров sk определяют возможности шлюза, в том числе пропускную способность и максимально допустимое количество разрешенных IP-туннельов.
 Azure поддерживает базовые, стандартные, высокоскоростные, VpnGw1, VpnGw2, VpnGw3, VpnGw1AZ, VpnGw2AZ, VpnGw3AZ, ErGw1AZ, ErGw2AZ, ErGw3AZ SKUs (также называются небольшие, средние и большие СКА).
 Подробные сведения о возможностях каждого типа SKU см. в https://azure.microsoft.com/en-us/documentation/articles/vpn-gateway-about-vpngateways/ .
-Помните о том, что цены и возможности СКАЙФ различаются.
+Помните о том, что цены и возможности СКАЙБ различаются.
 Дополнительные сведения https://azure.microsoft.com/en-us/pricing/details/vpn-gateway/ см. в .
 
 ## ПРИМЕРЫ
@@ -71,12 +71,12 @@ Accept wildcard characters: False
 - VpnGw1
 - VpnGw2
 - VpnGw3
-- VpnGw1AZ 
-- VpnGw2AZ 
-- VpnGw3AZ 
-- ErGw1AZ 
-- ErGw2AZ 
-- ErGw3AZ 
+- VpnGw1AZ
+- VpnGw2AZ
+- VpnGw3AZ
+- ErGw1AZ
+- ErGw2AZ
+- ErGw3AZ
 
 ```yaml
 Type: System.String
@@ -92,7 +92,7 @@ Accept wildcard characters: False
 ```
 
 ### -VirtualNetworkGateway
-Указывает ссылку на объект виртуального сетевого шлюза, который нужно размеризировать.
+Указывает ссылку на объект на виртуальный сетевой шлюз, который нужно размеризировать.
 Эту ссылку на объект можно создать, указав Get-AzVirtualNetworkGateway имя шлюза.
 
 ```yaml
@@ -121,7 +121,7 @@ Accept wildcard characters: False
 ### Microsoft.Azure.Commands.Network.Models.PSVirtualNetworkGateway
 
 ## ПРИМЕЧАНИЯ
-С обычных, стандартных и highPerformance на новые СКАйп VpnGw1/VpnGw2/VpnGw3 нельзя 399999999. Возможность дальнейшего перенамерки не разрешена для VPNGw1AZ/VpnGw2AZ/VpnGw3AZ или ErGw1AZ/ErGw2AZ/ErGw3AZ. Размер, допустимый только в рядах SKU, например, размер VPNGw1AZ можно использовать в vpnGw2AZ/VpnGw3AZ и ErGw1AZ, а также в ErGw2AZ/ErGw3AZ. См. https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-about-vpngateways инструкции.
+Вы не можете 34-х новых СКАЙп Базовый, Стандартный или HighPerformance 2. Для erGw1AZ/VpnGw2AZ/VpnGw3AZ или ErGw1AZ/ErGw1AZ/ErGw2AZ/ErGw3AZ не разрешается дополнительное resize.is not allowed from/to VpnGw1AZ/VpnGw2AZ/VpnGw3AZ или ErGw1AZ. Размер, допустимый только в рядах SKU, например, размер VPNGw1AZ можно использовать в vpnGw2AZ/VpnGw3AZ и ErGw1AZ, а также в ErGw2AZ/ErGw3AZ. См. https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-about-vpngateways инструкции.
 
 ## СВЯЗАННЫЕ ССЫЛКИ
 
@@ -136,5 +136,3 @@ Accept wildcard characters: False
 [Set-AzVirtualNetworkGateway](./Set-AzVirtualNetworkGateway.md)
 
 [Get-AzVpnClientPackage](./Get-AzVpnClientPackage.md)
-
-[Set-AzVirtualNetworkGatewayVpnClientConfig](./Set-AzVirtualNetworkGatewayVpnClientConfig.md)

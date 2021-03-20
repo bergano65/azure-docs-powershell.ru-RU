@@ -5,12 +5,12 @@ online version: https://docs.microsoft.com/powershell/module/az.keyvault/get-azk
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/KeyVault/KeyVault/help/Get-AzKeyVaultManagedStorageSasDefinition.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/KeyVault/KeyVault/help/Get-AzKeyVaultManagedStorageSasDefinition.md
-ms.openlocfilehash: acb0e2811f184f7c3162635b87849a35ce9156ac
-ms.sourcegitcommit: 4dfb0cc533b83f77afdcfbe2618c1e6c8d221330
+ms.openlocfilehash: 76cac9267fdfefcb884536e8c5ae36cfa5b3a854
+ms.sourcegitcommit: 6f0b6059d096600ebff1c8514c35c467d2f482d8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "102001475"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104716189"
 ---
 # Get-AzKeyVaultManagedStorageSasDefinition
 
@@ -32,7 +32,7 @@ Get-AzKeyVaultManagedStorageSasDefinition [-InputObject] <PSKeyVaultManagedStora
 ```
 
 ## ОПИСАНИЕ
-Возвращает определение SAS хранилища, управляемое хранилищем, если задано имя определения. Если имя определения не указано, будут перечислены все определения SAS, связанные с указанной учетной записью хранилища, управляемой хранилищем ключа.
+Возвращает определение SAS хранилища, управляемого хранилищем, если задано имя определения. Если имя определения не указано, будут перечислены все определения SAS, связанные с указанной учетной записью хранилища, управляемой хранилищем ключа.
 
 ## ПРИМЕРЫ
 
@@ -176,7 +176,7 @@ Accept wildcard characters: False
 
 ### -VaultName
 Имя сейфа.
-С его учетом именем и выбранной средой строится FQDN хранилища.
+Cmdlet constructs the FQDN of a vault based on the name and currently selected environment.
 
 ```yaml
 Type: System.String
@@ -211,5 +211,5 @@ Accept wildcard characters: False
 
 ## СВЯЗАННЫЕ ССЫЛКИ
 
-[https://msdn.microsoft.com/en-us/library/dn868052.aspx](https://msdn.microsoft.com/en-us/library/dn868052.aspx)
+[Cmdlets Key Vault Azure PowerShell](/powershell/module/az.keyvault/)
 

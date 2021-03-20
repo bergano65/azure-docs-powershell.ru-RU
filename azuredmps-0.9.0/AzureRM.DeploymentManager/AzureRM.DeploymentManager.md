@@ -4,23 +4,23 @@ Module Guid: XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/azurerm.deploymentmanager
 Help Version: 0.0.1.0
 Locale: en-US
-ms.openlocfilehash: b816f6469ae39d05cab2c93e97e64aca148144c0
-ms.sourcegitcommit: 43f4bdf2a59dd82fd881512aa9761bf72eb5703c
+ms.openlocfilehash: bfec608f9663aab0d22e816abcefba122fc641f6
+ms.sourcegitcommit: 6f0b6059d096600ebff1c8514c35c467d2f482d8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "93719882"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104716784"
 ---
-# Модуль AzureRM. DeploymentManager
-## Nописание
-С помощью диспетчера развертывания вы можете использовать безопасные способы развертывания при развертывании службы на нескольких регионах. Диспетчер развертывания Azure открыт в общедоступном предварительном просмотре. Чтобы узнать, как подписаться на предварительный просмотр и использовать диспетчер развертывания Azure, ознакомьтесь с разрешениями [рекомендации по обеспечению безопасности при развертывании с помощью диспетчера развертывания Azure](https://docs.microsoft.com/en-us/azure/azure-resource-manager/deployment-manager-overview). Учебник описан в разделе [Использование диспетчера развертывания Azure с шаблонами диспетчера ресурсов](https://docs.microsoft.com/en-us/azure/azure-resource-manager/deployment-manager-tutorial>). 
+# Модуль AzureRM.DeploymentManager
+## Описание
+Диспетчер развертывания позволяет использовать методики безопасного развертывания при развертывании службы во многих регионах. Диспетчер развертывания Azure находится в открытой предварительной версии. Чтобы узнать, как зарегистрироваться для предварительного просмотра и использовать диспетчер развертывания Azure, см. ссылку "Внедрение с помощью [Диспетчера развертывания Azure" для безопасного развертывания.](https://docs.microsoft.com/en-us/azure/azure-resource-manager/deployment-manager-overview) Учебник см. в шаблонах Диспетчера ресурсов с помощью [диспетчера ресурсов Azure.](https://docs.microsoft.com/en-us/azure/azure-resource-manager/deployment-manager-tutorial)
 
-## Командлеты AzureRM. DeploymentManager
+## AzureRM.DeploymentManager Cmdlets
 ### [Get-AzureRmDeploymentManagerArtifactSource](Get-AzureRmDeploymentManagerArtifactSource.md)
 Возвращает источник артефакта.
 
 ### [Get-AzureRmDeploymentManagerRollout](Get-AzureRmDeploymentManagerRollout.md)
-Получение выпуска.
+Получает разкат.
 
 ### [Get-AzureRmDeploymentManagerService](Get-AzureRmDeploymentManagerService.md)
 Возвращает службу в топологии службы.
@@ -29,22 +29,22 @@ ms.locfileid: "93719882"
 Возвращает топологию службы.
 
 ### [Get-AzureRmDeploymentManagerServiceUnit](Get-AzureRmDeploymentManagerServiceUnit.md)
-Возвращает единицу измерения обслуживания.
+Возвращает единицу обслуживания.
 
 ### [Get-AzureRmDeploymentManagerStep](Get-AzureRmDeploymentManagerStep.md)
-Получает шаг развертывания.
+Получает этап развертывания.
 
 ### [New-AzureRmDeploymentManagerArtifactSource](New-AzureRmDeploymentManagerArtifactSource.md)
-Создание источника артефактов.
+Создает источник артефакта.
 
 ### [New-AzureRmDeploymentManagerService](New-AzureRmDeploymentManagerService.md)
-Создание службы в топологии службы.
+Создает службу в топологии службы.
 
 ### [New-AzureRmDeploymentManagerServiceTopology](New-AzureRmDeploymentManagerServiceTopology.md)
 Создает новую топологию службы.
 
 ### [New-AzureRmDeploymentManagerServiceUnit](New-AzureRmDeploymentManagerServiceUnit.md)
-Создает новый модуль обслуживания для службы в топологии службы.
+Создает новый блок службы в топологии службы.
 
 ### [New-AzureRmDeploymentManagerStep](New-AzureRmDeploymentManagerStep.md)
 Создание нового шага развертывания.
@@ -53,38 +53,38 @@ ms.locfileid: "93719882"
 Удаляет источник артефакта.
 
 ### [Remove-AzureRmDeploymentManagerRollout](Remove-AzureRmDeploymentManagerRollout.md)
-Удаление выпуска.
+Удаляет разетку.
 
 ### [Remove-AzureRmDeploymentManagerService](Remove-AzureRmDeploymentManagerService.md)
-Удаляет службу из топологии служб.
+Удаляет службу в топологии службы.
 
 ### [Remove-AzureRmDeploymentManagerServiceTopology](Remove-AzureRmDeploymentManagerServiceTopology.md)
-Удаление топологии службы и всех ее ресурсов.
+Удаляет топологию службы и все ее ресурсы.
 
 ### [Remove-AzureRmDeploymentManagerServiceUnit](Remove-AzureRmDeploymentManagerServiceUnit.md)
-Удаляет модуль службы в топологии службы.
+Удаляет единицу обслуживания службы в топологии службы.
 
 ### [Remove-AzureRmDeploymentManagerStep](Remove-AzureRmDeploymentManagerStep.md)
-Удаление шага.
+Удаляет шаг.
 
-### [Restarting-AzureRmDeploymentManagerRollout](Restart-AzureRmDeploymentManagerRollout.md)
-Перезапустите развертывание с ошибкой.
+### [Restart-AzureRmDeploymentManagerRollout](Restart-AzureRmDeploymentManagerRollout.md)
+Перезапустите сбой раздатки.
 
 ### [Set-AzureRmDeploymentManagerArtifactSource](Set-AzureRmDeploymentManagerArtifactSource.md)
 Обновляет источник артефакта.
 
 ### [Set-AzureRmDeploymentManagerService](Set-AzureRmDeploymentManagerService.md)
-Обновляет службу в топологии служб.
+Обновляет службу в топологии службы.
 
 ### [Set-AzureRmDeploymentManagerServiceTopology](Set-AzureRmDeploymentManagerServiceTopology.md)
 Обновляет топологию службы.
 
 ### [Set-AzureRmDeploymentManagerServiceUnit](Set-AzureRmDeploymentManagerServiceUnit.md)
-Обновляет модуль обслуживания.
+Обновляет единицу обслуживания.
 
 ### [Set-AzureRmDeploymentManagerStep](Set-AzureRmDeploymentManagerStep.md)
 Обновляет шаг.
 
-### [Остановить-AzureRmDeploymentManagerRollout](Stop-AzureRmDeploymentManagerRollout.md)
-Останавливает процесс развертывания.
+### [Stop-AzureRmDeploymentManagerRollout](Stop-AzureRmDeploymentManagerRollout.md)
+Остановка выполнения разетки.
 

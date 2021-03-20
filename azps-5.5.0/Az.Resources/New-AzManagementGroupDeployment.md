@@ -5,12 +5,12 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.resources/
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/New-AzManagementGroupDeployment.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/New-AzManagementGroupDeployment.md
-ms.openlocfilehash: 95aa46354fb0ea1f2a1883fe7d319acfda220526
-ms.sourcegitcommit: c05d3d669b5631e526841f47b22513d78495350b
+ms.openlocfilehash: d423901bd7d4ab3804541fb8577c5e16b753e99b
+ms.sourcegitcommit: 6f0b6059d096600ebff1c8514c35c467d2f482d8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/09/2021
-ms.locfileid: "100242536"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104714846"
 ---
 # New-AzManagementGroupDeployment
 
@@ -169,8 +169,8 @@ New-AzManagementGroupDeployment [-Name <String>] -ManagementGroupId <String> -Lo
 Значения параметров шаблона, которые вы вводите в командной подсказке, имеют приоритет над значениями в объекте или файле с параметрами шаблона.
 
 Чтобы добавить ресурсы в группу ресурсов, используйте **new-AzResourceGroupDeployment,** которая создает развертывание в группе ресурсов.
-Чтобы добавить ресурсы в подписку, используйте **new-AzSubscriptionDeployment,** который создает развертывание в рамках подписки, которое развертывает ресурсы уровня подписки.
-Чтобы добавить ресурсы в область клиента, используйте **new-AzTenantDeployment,** которая создает развертывание в области клиента.
+Чтобы добавить ресурсы в подписку, используйте **службу New-AzSubscriptionDeployment,** которая создает развертывание в рамках подписки, которое развертывает ресурсы уровня подписки.
+Чтобы добавить ресурсы в область клиента, используйте **new-AzTenantDeployment,** который создает развертывание в области клиента.
 
 ## ПРИМЕРЫ
 
@@ -187,7 +187,7 @@ PS C:\> New-AzManagementGroupDeployment -ManagementGroupId "myMG" -Location "Wes
 PS C:\> New-AzManagementGroupDeployment -ManagementGroupId "myMG" -Location "West US" -TemplateUri "https://example.com/example.json" -QueryString "foo"
 ```
 Эта команда создает развертывание с использованием шаблона TemplateUri, который не является общедоступным и требует на доступ параметра token, который будет предоставляться с помощью параметра QueryString.
-Эта команда будет эффективно работать с шаблоном по https://example.com/example.json?foo URL-адресу.
+Эта команда будет эффективно работать с шаблоном по `https://example.com/example.json?foo` URL-адресу.
 Это может быть использовано, если вы хотите использовать шаблон в учетной записи хранения, предоставляя токен SAS в качестве QueryString.
 
 ### Пример 3. Создание развертывания с помощью настраиваемых объектов шаблонов и файлов параметров
@@ -197,9 +197,9 @@ PS C:\> $TemplateObject = ConvertFrom-Json $TemplateFileText -AsHashtable
 PS C:\> New-AzManagementGroupDeployment -ManagementGroupId "myMG" -Location "West US" -TemplateObject $TemplateObject -TemplateParameterFile "D:\Azure\Templates\OrgParams.json"
 ```
 
-Эта команда создает развертывание в группе управления MyMG на основе настраиваемого шаблона и файла шаблона на диске, преобразованного в формат в памяти.
+Эта команда создает новое развертывание в группе управления MyMG на основе настраиваемого шаблона и файла шаблона на диске, преобразованного в формат в памяти.
 Первые две команды читают текст файла шаблона на диске и преобразуют его в размер памяти.
-Последняя команда использует параметр *TemplateObject* для указания этого параметра hashtable, а *параметр TemplateParameterFile* для указания файла, который содержит параметры и значения параметров.
+Последняя команда использует параметр *TemplateObject* для указания этого параметра hashtable и *TemplateParameterFile* для указания файла, который содержит параметры и значения параметров.
 
 ## PARAMETERS
 
@@ -324,7 +324,7 @@ Accept wildcard characters: False
 ```
 
 ### -SkipTemplateParameterPrompt
-Пропускает динамическую обработку параметров PowerShell, которая проверяет, содержит ли предоставленный параметр шаблона все необходимые параметры, используемые шаблоном.
+Пропускает обработку динамических параметров PowerShell, которая проверяет, содержит ли предоставленный параметр шаблона все необходимые параметры, используемые шаблоном.
 При проверке пользователю будет предложено в качестве значения пропустить отсутствующие параметры, но при этом параметр -SkipTemplateParameterPrompt сразу же проигнорирует этот запрос и выпустит ошибку, если параметр не был привязан к шаблону.
 Для неинтерационных сценариев можно использовать параметр SkipTemplateParameterPrompt, чтобы улучшить сообщение об ошибке в случае, если удовлетворены не все необходимые параметры.
 
@@ -492,7 +492,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
-Запрос на подтверждение перед запуском cmdlet.
+Перед запуском cmdlet вам будет предложено подтвердить его.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter

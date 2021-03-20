@@ -5,12 +5,12 @@ online version: https://docs.microsoft.com/powershell/module/az.recoveryservices
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/RecoveryServices/RecoveryServices/help/Get-AzRecoveryServicesAsrProtectableItem.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/RecoveryServices/RecoveryServices/help/Get-AzRecoveryServicesAsrProtectableItem.md
-ms.openlocfilehash: f26e85684aa6565fed88dcbb79cef8637be258ca
-ms.sourcegitcommit: 4dfb0cc533b83f77afdcfbe2618c1e6c8d221330
+ms.openlocfilehash: cf58ec93acaba129004e666ac592e47f019f3b07
+ms.sourcegitcommit: 6f0b6059d096600ebff1c8514c35c467d2f482d8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "102003240"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104716226"
 ---
 # Get-AzRecoveryServicesAsrProtectableItem
 
@@ -173,6 +173,4 @@ Accept wildcard characters: False
 
 ## СВЯЗАННЫЕ ССЫЛКИ
 
-[Get-AzRecoveryServicesAsrProtectionEntity](./Get-AzRecoveryServicesAsrProtectionEntity.md)
-
-[Set-AzRecoveryServicesAsrProtectionEntity](./Set-AzRecoveryServicesAsrProtectionEntity.md)
+[Cmdlets Azure Recovery Services](/powershell/module/az.recoveryservices)

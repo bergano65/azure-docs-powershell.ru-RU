@@ -6,12 +6,12 @@ online version: https://docs.microsoft.com/powershell/module/az.sql/get-azsqlser
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Sql/Sql/help/Get-AzSqlServerAdvancedThreatProtectionSetting.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Sql/Sql/help/Get-AzSqlServerAdvancedThreatProtectionSetting.md
-ms.openlocfilehash: 705412a560c4d4c0734e8e81a07fb2a85224f8c4
-ms.sourcegitcommit: 4dfb0cc533b83f77afdcfbe2618c1e6c8d221330
+ms.openlocfilehash: c79f6626a51928f76a36746704370d5c24a93a72
+ms.sourcegitcommit: 6f0b6059d096600ebff1c8514c35c467d2f482d8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "101971731"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104716052"
 ---
 # Get-AzSqlServerAdvancedThreatProtectionSetting
 
@@ -95,7 +95,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
-Запрос на подтверждение перед запуском cmdlet.
+Перед запуском cmdlet вам будет предложено подтвердить его.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -140,8 +140,6 @@ Accept wildcard characters: False
 
 ## СВЯЗАННЫЕ ССЫЛКИ
 
-[Remove-AzSqlDatabaseAdvancedThreatProtectionSetting](./Remove-AzSqlDatabaseAdvancedThreatProtectionSetting.md)
+[Cmdlets SQL database Azure](/powershell/module/az.sql/)
 
 [SQL базы данных](https://docs.microsoft.com/azure/sql-database/)
-
-

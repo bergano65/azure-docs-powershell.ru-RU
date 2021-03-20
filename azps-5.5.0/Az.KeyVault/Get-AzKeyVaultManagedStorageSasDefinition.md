@@ -5,12 +5,12 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.keyvault/g
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/KeyVault/KeyVault/help/Get-AzKeyVaultManagedStorageSasDefinition.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/KeyVault/KeyVault/help/Get-AzKeyVaultManagedStorageSasDefinition.md
-ms.openlocfilehash: c09218b960fb6c11b685106a3cb90bfdfd2f546a
-ms.sourcegitcommit: c05d3d669b5631e526841f47b22513d78495350b
+ms.openlocfilehash: d6663ee26a87e2226ba0d079f60f98cfef96fd27
+ms.sourcegitcommit: 6f0b6059d096600ebff1c8514c35c467d2f482d8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/09/2021
-ms.locfileid: "100222241"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104714999"
 ---
 # Get-AzKeyVaultManagedStorageSasDefinition
 
@@ -32,7 +32,7 @@ Get-AzKeyVaultManagedStorageSasDefinition [-InputObject] <PSKeyVaultManagedStora
 ```
 
 ## ОПИСАНИЕ
-Возвращает определение SAS хранилища, управляемое хранилищем, если задано имя определения. Если имя определения не указано, в списке будут перечислены все определения SAS, связанные с указанной учетной записью хранилища, управляемой хранилищем ключа.
+Возвращает определение SAS хранилища, управляемого хранилищем, если задано имя определения. Если имя определения не указано, будут перечислены все определения SAS, связанные с указанной учетной записью хранилища, управляемой хранилищем ключа.
 
 ## ПРИМЕРЫ
 
@@ -52,7 +52,7 @@ Tags        :
 
 Список всех определений SAS, связанных с key Vault Managed Storage Account "mystorageaccount", управляемых хранилищем myvault.
 
-### Пример 2. Получить учетную запись хранения в key Vault
+### Пример 2. Получить учетную запись управляемого хранилища в key Vault
 ```powershell
 PS C:\> Get-AzKeyVaultManagedStorageSasDefinition -VaultName 'myvault' -AccountName 'mystorageaccount' -Name 'accountsas'
 
@@ -211,5 +211,5 @@ Accept wildcard characters: False
 
 ## СВЯЗАННЫЕ ССЫЛКИ
 
-[https://msdn.microsoft.com/en-us/library/dn868052.aspx](https://msdn.microsoft.com/en-us/library/dn868052.aspx)
+[Cmdlets Key Vault Azure PowerShell](/powershell/module/az.keyvault/)
 

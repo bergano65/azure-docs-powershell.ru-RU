@@ -4,21 +4,21 @@ Module Name: AzureRM.Compute
 ms.assetid: 656BE930-E778-40B0-8A75-BFE52DE386CE
 online version: https://docs.microsoft.com/en-us/powershell/module/azurerm.compute/add-azurermvmsssecret
 schema: 2.0.0
-ms.openlocfilehash: 9c31442e1242114572540c23049f26715fc3099e
-ms.sourcegitcommit: b9b2dea3441d1532a5564ddca3dced45424fe2d6
+ms.openlocfilehash: f71af896d99bfcf6227fd805fb6896d4d28180d4
+ms.sourcegitcommit: 6f0b6059d096600ebff1c8514c35c467d2f482d8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/15/2020
-ms.locfileid: "93913695"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104716274"
 ---
 # Add-AzureRmVmssSecret
 
-## КРАТКИй обзор
+## SYNOPSIS
 Добавляет секрет в VMSS.
 
 [!INCLUDE [migrate-to-az-banner](../../includes/migrate-to-az-banner.md)]
 
-## Максимальное
+## СИНТАКСИС
 
 ```
 Add-AzureRmVmssSecret [-VirtualMachineScaleSet] <PSVirtualMachineScaleSet> [[-SourceVaultId] <String>]
@@ -26,15 +26,15 @@ Add-AzureRmVmssSecret [-VirtualMachineScaleSet] <PSVirtualMachineScaleSet> [[-So
  [<CommonParameters>]
 ```
 
-## NОПИСАНИЕ
-Командлет **Add-AzureRmVmssSecret** добавляет секрет в набор масштабов виртуальных машин (VMSS).
+## ОПИСАНИЕ
+Этот cmdlet добавляет секрет в набор масштаба виртуальной машины (VMSS) с использованием **add-AzureRmVmssSEcret.**
 Секрет должен храниться в хранилище ключей Azure.
-Дополнительные сведения о хранилище ключей можно найти в разделе [что такое Azure Key Vault?](https://azure.microsoft.com/en-us/documentation/articles/key-vault-whatis/) (https://azure.microsoft.com/en-us/documentation/articles/key-vault-whatis/).
-Дополнительные сведения о командлетах можно найти в статьях [командлетов Azure Key Vault](https://msdn.microsoft.com/library/azure/dn868052.aspx) ( https://msdn.microsoft.com/library/azure/dn868052.aspx) в сетевой библиотеке разработчиков Microsoft Developer или командлет [Set-AzureKeyVaultSecret](/powershell/module/azurerm.keyvault/set-azurekeyvaultsecret) .
+Дополнительные сведения, связанные с хранилищем ключей, см. в [подмносях "Что такое хранилище ключей Azure"?](https://azure.microsoft.com/en-us/documentation/articles/key-vault-whatis/) (https://azure.microsoft.com/en-us/documentation/articles/key-vault-whatis/).
+Дополнительные сведения о cmdlets см. в Microsoft Developer Network библиотеке ключевых хранилищ [Azure](/powershell/module/azurerm.keyvault/) или в Microsoft Developer Network [Set-AzureKeyVaultSecret.](/powershell/module/azurerm.keyvault/set-azurekeyvaultsecret)
 
-## ИЛЛЮСТРИРУЮТ
+## ПРИМЕРЫ
 
-### Пример 1: Добавление секрета в VMSS
+### Пример 1. Добавление секрета в VMSS
 ```
 PS C:\> $Vault = Get-AzureRmKeyVault -VaultName "ContosoVault"
 PS C:\> $CertConfig = New-AzureRmVmssVaultCertificateConfig -CertificateUrl "http://keyVaultName.vault.contoso.net/secrets/secretName/secretVersion" -CertificateStore "Certificates"
@@ -42,13 +42,13 @@ PS C:\> $VMSS = New-AzureRmVmssConfig
 PS C:\> Add-AzureRmVmssSecret -VirtualMachineScaleSet $VMSS -SourceVaultId $Vault.ResourceId -VaultCertificate $CertConfig
 ```
 
-В этом примере в VMSS добавляется секрет.
-Первая команда использует командлет Get-AzureRmKeyVault для получения секрета из хранилища с именем ContosoVault и сохраняет результат в переменной с именем $Vault.
-Вторая команда использует командлет **New-AzureRmVmssVaultCertificateConfig** для создания конфигурации сертификата хранилища ключей с помощью указанного URL-адреса сертификата из хранилища сертификатов с именем Certificates и сохраняет результаты в переменной с именем $CertConfig.
+В этом примере к службам VMSS добавляется секрет.
+Первая команда использует Get-AzureRmKeyVault для получения секретного сейфа из сейфа ContosoVault и сохраняет результат в переменной с именем $Vault.
+Вторая команда использует командлет **New-AzureRmVmssVaultCertificateConfig** для создания конфигурации сертификата хранилища ключей с использованием указанного URL-адреса сертификата из хранилища сертификатов и хранения результатов в переменной с именем $CertConfig.
 Третья команда использует командлет **New-AzureRmVmssConfig** для создания объекта конфигурации VMSS и сохраняет результат в переменной с именем $VMSS.
-Четвертая команда добавляет секрет в VMSS с помощью секретного ключа хранилища, используя идентификатор ресурса Key и сертификат хранилища, хранящийся в переменных $Vault и $CertConfig.
+Четвертая команда добавляет секрет в VMSS с использованием секрета сейфа, используя ключ ресурса и сертификат хранилища, $Vault и $CertConfig переменных.
 
-## ПАРАМЕТРЫ
+## PARAMETERS
 
 ### -DefaultProfile
 Учетные данные, учетная запись, клиент и подписка, используемые для связи с Azure.
@@ -66,14 +66,14 @@ Accept wildcard characters: False
 ```
 
 ### -SourceVaultId
-Указывает идентификатор ресурса для хранилища ключей, содержащего сертификаты, которые можно добавить на виртуальную машину.
-Это значение также действует в качестве ключа для добавления нескольких сертификатов.
-Это означает, что вы можете использовать одно и то же значение для параметра *SourceVaultId* при добавлении нескольких сертификатов из одного и того же хранилища ключей.
+Определяет ИД ресурса хранилища ключей, который содержит сертификаты, которые можно добавить на виртуальную машину.
+Это значение также является ключом для добавления нескольких сертификатов.
+Это означает, что для параметра *SourceVaultId* можно использовать одно и то же значение при добавлении нескольких сертификатов из одного сейфа ключа.
 
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 1
@@ -83,13 +83,13 @@ Accept wildcard characters: False
 ```
 
 ### -VaultCertificate
-Указывает объект **сертификата** хранилища, который содержит URL-адрес сертификата и имя сертификата.
-Чтобы создать этот объект, можно использовать командлет [New-AzureRmVmssVaultCertificateConfig](./New-AzureRmVmssVaultCertificateConfig.md) .
+Указывает объект **сертификата хранилища,** содержащий URL-адрес сертификата и имя сертификата.
+Для создания этого объекта можно использовать новый для [AzureRmVmssVaultCertificateConfig.](./New-AzureRmVmssVaultCertificateConfig.md)
 
 ```yaml
 Type: VaultCertificate[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 2
@@ -100,12 +100,12 @@ Accept wildcard characters: False
 
 ### -VirtualMachineScaleSet
 Указывает объект VMSS.
-Чтобы создать этот объект, можно использовать командлет [New-AzureRmVmssConfig](./New-AzureRmVmssConfig.md) .
+Для создания этого объекта можно использовать новый [cmdlet AzureRmVmssConfig.](./New-AzureRmVmssConfig.md)
 
 ```yaml
 Type: PSVirtualMachineScaleSet
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -115,7 +115,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
-Запрашивает подтверждение перед запуском командлета.
+Перед запуском cmdlet вам будет предложено подтвердить его.
 
 ```yaml
 Type: SwitchParameter
@@ -130,7 +130,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Показывает, что произойдет при запуске командлета. Командлет не выполняется.
+Показывает, что произойдет при запуске cmdlet. Этот cmdlet не будет выполниться.
 
 ```yaml
 Type: SwitchParameter
@@ -145,21 +145,21 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Этот командлет поддерживает общие параметры:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-of Variable,-out,-PipelineVariable,-Verbose, и-WarningAction. Дополнительные сведения можно найти в разделе about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
+Этот cmdlet поддерживает общие параметры: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. Дополнительные сведения см. в about_CommonParameters https://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## ВХОДНЫЕ данные
+## INPUTS
 
-### VirtualMachineScaleSet
-Параметр "VirtualMachineScaleSet" принимает значение типа "VirtualMachineScaleSet" из конвейера.
+### VirtualMa ветвьScaleSet
+Параметр VirtualMachineScaleSet принимает значение типа VirtualMascaleeScaleSet из конвейера.
 
-## НАПРЯЖЕНИЕ
+## OUTPUTS
 
-### Ничего
-Этот командлет не создает никаких выходных данных.
+### Нет
+Этот cmdlet не создает никаких выходных данных.
 
-## Пуск
+## ПРИМЕЧАНИЯ
 
-## ДОПОЛНИТЕЛЬНЫЕ ССЫЛКИ
+## СВЯЗАННЫЕ ССЫЛКИ
 
 [New-AzureRmVmssVaultCertificateConfig](./New-AzureRmVmssVaultCertificateConfig.md)
 

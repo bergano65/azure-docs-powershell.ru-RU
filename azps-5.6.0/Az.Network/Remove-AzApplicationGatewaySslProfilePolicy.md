@@ -5,12 +5,12 @@ online version: https://docs.microsoft.com/powershell/module/az.network/remove-a
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Remove-AzApplicationGatewaySslProfilePolicy.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Remove-AzApplicationGatewaySslProfilePolicy.md
-ms.openlocfilehash: 88a89a17adc7a05e75865121d2133f723e534fcc
-ms.sourcegitcommit: 4dfb0cc533b83f77afdcfbe2618c1e6c8d221330
+ms.openlocfilehash: 3f39060b4983758313944d96dc2025b94815c2ea
+ms.sourcegitcommit: 6f0b6059d096600ebff1c8514c35c467d2f482d8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "101960296"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104715475"
 ---
 # Remove-AzApplicationGatewaySslProfilePolicy
 
@@ -36,7 +36,7 @@ PS C:\> $profile  = Get-AzApplicationGatewaySslProfile -Name "Profile01" -Applic
 PS C:\> $profile = Remove-AzApplicationGatewaySslProfilePolicy -SslProfile $profile
 ```
 
-Первая команда получает шлюз приложения ApplicationGateway01 в группе ресурсов ResourceGroup01 и сохраняет его в переменной $AppGw ресурса. Вторая команда получает профиль SSL profile01 для $AppGw и сохраняет его в переменной $profile. Последняя команда удаляет политику ssl профиля ssl, храняную в $profile.
+Первая команда получает шлюз приложения ApplicationGateway01 в группе ресурсов ResourceGroup01 и сохраняет его в $AppGw переменной. Вторая команда получает профиль SSL profile01 для $AppGw и сохраняет его в переменной $profile. Последняя команда удаляет политику ssl профиля ssl, храняную в $profile.
 
 ## PARAMETERS
 
@@ -115,10 +115,6 @@ Accept wildcard characters: False
 ## ПРИМЕЧАНИЯ
 
 ## СВЯЗАННЫЕ ССЫЛКИ
-
-[New-AzApplicationGatewaySslProfilePolicy](./New-AzApplicationGatewaySslProfilePolicy.md)
-
-[Add-AzApplicationGatewaySslProfilePolicy](./Add-AzApplicationGatewaySslProfilePolicy.md)
 
 [Get-AzApplicationGatewaySslProfilePolicy](./Get-AzApplicationGatewaySslProfilePolicy.md)
 

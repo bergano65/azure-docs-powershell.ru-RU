@@ -6,12 +6,12 @@ online version: https://docs.microsoft.com/powershell/module/az.operationalinsig
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/OperationalInsights/OperationalInsights/help/New-AzOperationalInsightsWorkspace.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/OperationalInsights/OperationalInsights/help/New-AzOperationalInsightsWorkspace.md
-ms.openlocfilehash: 8d46c16afe8041181916eb25affed58e072798ea
-ms.sourcegitcommit: 4dfb0cc533b83f77afdcfbe2618c1e6c8d221330
+ms.openlocfilehash: 6502001e8a4a315eaf447bce3a30a1f98a810663
+ms.sourcegitcommit: 6f0b6059d096600ebff1c8514c35c467d2f482d8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "101989876"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104715892"
 ---
 # New-AzOperationalInsightsWorkspace
 
@@ -113,7 +113,7 @@ Accept wildcard characters: False
 ```
 
 ### -PublicNetworkAccessForIngestion
-Тип доступа к сети для доступа к рабочей области. Значение должно быть включено или отключено
+Тип сетевого доступа для доступа к рабочему пространству. Значение должно быть включено или отключено
 
 ```yaml
 Type: System.String
@@ -265,7 +265,3 @@ Accept wildcard characters: False
 ## СВЯЗАННЫЕ ССЫЛКИ
 
 [Azure Operational Insights Cmdlets](./Az.OperationalInsights.md)
-
-[Get-AzOperationalInsightsLinkTargets](./Get-AzOperationalInsightsLinkTargets.md)
-
-

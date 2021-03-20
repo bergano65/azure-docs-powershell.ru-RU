@@ -5,12 +5,12 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.keyvault/g
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/KeyVault/KeyVault/help/Get-AzKeyVaultManagedStorageAccount.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/KeyVault/KeyVault/help/Get-AzKeyVaultManagedStorageAccount.md
-ms.openlocfilehash: 89452f2a00aea9d3ab42300c2f28bde67fec0905
-ms.sourcegitcommit: c05d3d669b5631e526841f47b22513d78495350b
+ms.openlocfilehash: e9c3763fe16c9c3e9dd515d71da07fa4e8138dee
+ms.sourcegitcommit: 6f0b6059d096600ebff1c8514c35c467d2f482d8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/09/2021
-ms.locfileid: "100234105"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104715339"
 ---
 # Get-AzKeyVaultManagedStorageAccount
 
@@ -38,7 +38,7 @@ Get-AzKeyVaultManagedStorageAccount [-ResourceId] <String> [-InRemovedState]
 ```
 
 ## ОПИСАНИЕ
-Получает учетную запись хранилища Azure, управлия ключом, если указано имя учетной записи и управление ключами учетной записи происходит в указанном хранилище. Если имя учетной записи не указано, будут перечислены все учетные записи, ключами которых управляет указанный сейф.
+Получает учетную запись хранилища Azure, управлия ключом, если задано имя учетной записи и управление ключами учетной записи происходит в указанном хранилище. Если имя учетной записи не указано, будут перечислены все учетные записи, ключами которых управляет указанный сейф.
 
 ## ПРИМЕРЫ
 
@@ -59,7 +59,7 @@ Tags                :
 
 Список всех учетных записей, ключами которых управляет хранилище Myvault.
 
-### Пример 2. Получить учетную запись хранения в key Vault
+### Пример 2. Получить учетную запись управляемого хранилища в key Vault
 ```powershell
 PS C:\> Get-AzKeyVaultManagedStorageAccount -VaultName 'myvault' -Name 'mystorageaccount'
 
@@ -222,5 +222,5 @@ Accept wildcard characters: False
 
 ## СВЯЗАННЫЕ ССЫЛКИ
 
-[https://msdn.microsoft.com/en-us/library/dn868052.aspx](https://msdn.microsoft.com/en-us/library/dn868052.aspx)
+[Cmdlets Key Vault Azure PowerShell](/powershell/module/az.keyvault/)
 

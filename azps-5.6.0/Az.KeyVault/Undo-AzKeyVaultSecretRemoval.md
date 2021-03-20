@@ -5,12 +5,12 @@ online version: https://docs.microsoft.com/powershell/module/az.keyvault/undo-az
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/KeyVault/KeyVault/help/Undo-AzKeyVaultSecretRemoval.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/KeyVault/KeyVault/help/Undo-AzKeyVaultSecretRemoval.md
-ms.openlocfilehash: dc4c8925d4ddf00cc2e2739d3aa06285f628e423
-ms.sourcegitcommit: 4dfb0cc533b83f77afdcfbe2618c1e6c8d221330
+ms.openlocfilehash: 49a114bfb3af7526f64debe8044cb39c0a4aaf44
+ms.sourcegitcommit: 6f0b6059d096600ebff1c8514c35c467d2f482d8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "101976995"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104716245"
 ---
 # Undo-AzKeyVaultSecretRemoval
 
@@ -169,6 +169,6 @@ Accept wildcard characters: False
 
 [Remove-AzKeyVaultSecret](./Remove-AzKeyVaultSecret.md)
 
-[Add-AzKeyVaultSecret](./Add-AzKeyVaultSecret.md)
+[Set-AzKeyVaultSecret](./Set-AzKeyVaultSecret.md)
 
 [Get-AzKeyVaultSecret](./Get-AzKeyVaultSecret.md)

@@ -5,12 +5,12 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.servicefab
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ServiceFabric/ServiceFabric/help/Add-AzServiceFabricManagedNodeTypeVMSecret.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ServiceFabric/ServiceFabric/help/Add-AzServiceFabricManagedNodeTypeVMSecret.md
-ms.openlocfilehash: 36ed679066d1850851ff0e90f39eb6f9ef8ffa1a
-ms.sourcegitcommit: c05d3d669b5631e526841f47b22513d78495350b
+ms.openlocfilehash: 4f28e97d07120b7878ff88e63adae11024e8eb4e
+ms.sourcegitcommit: 6f0b6059d096600ebff1c8514c35c467d2f482d8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/09/2021
-ms.locfileid: "100235641"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104715033"
 ---
 # Add-AzServiceFabricManagedNodeTypeVMSecret
 
@@ -34,7 +34,7 @@ Add-AzServiceFabricManagedNodeTypeVMSecret [-ResourceGroupName] <String> [-Clust
 ```
 
 ## ОПИСАНИЕ
-Добавьте секрет сертификата к типу узла. Секрет должен храниться в хранилище ключей Azure. Дополнительные сведения, связанные с хранилищем ключей, см. в подмносях "Что такое хранилище ключей Azure"? (https://azure.microsoft.com/en-us/documentation/articles/key-vault-whatis/). Дополнительные сведения о Set-AzKeyVaultSecret см. в Microsoft Developer Network Службе управления ключами https://msdn.microsoft.com/library/azure/dn868052.aspx) Azure.
+Добавьте секрет сертификата к типу узла. Секрет должен храниться в хранилище ключей Azure. Дополнительные сведения, связанные с хранилищем ключей, см. в подмносях "Что такое хранилище ключей Azure"? (https://azure.microsoft.com/en-us/documentation/articles/key-vault-whatis/). Дополнительные сведения о cmdlets см. в Microsoft Developer Network библиотеке или Set-AzKeyVaultSecret Azure [Key Vault.](/powershell/module/az.keyvault/)
 
 ## ПРИМЕРЫ
 
@@ -201,7 +201,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
-Запрос на подтверждение перед запуском cmdlet.
+Перед запуском cmdlet вам будет предложено подтвердить его.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter

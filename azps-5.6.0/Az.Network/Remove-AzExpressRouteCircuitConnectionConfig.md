@@ -6,12 +6,12 @@ online version: https://docs.microsoft.com/powershell/module/az.network/remove-a
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Remove-AzExpressRouteCircuitConnectionConfig.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Remove-AzExpressRouteCircuitConnectionConfig.md
-ms.openlocfilehash: 0fdcf052f366572f0fe90a47452d65972caf573c
-ms.sourcegitcommit: 4dfb0cc533b83f77afdcfbe2618c1e6c8d221330
+ms.openlocfilehash: df9117fc0a2cec69be1957d9a795e37fd1e81624
+ms.sourcegitcommit: 6f0b6059d096600ebff1c8514c35c467d2f482d8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "101996411"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104715458"
 ---
 # Remove-AzExpressRouteCircuitConnectionConfig
 
@@ -26,7 +26,7 @@ Remove-AzExpressRouteCircuitConnectionConfig [-Name] <String> [-ExpressRouteCirc
 ```
 
 ## ОПИСАНИЕ
-С **помощью cmdlet Remove-AzExpressRouteCircuitConnectionConfig** удаляется конфигурация подключения к каналу ExpressRoute, связанная с тем или иным каналом Express Route.
+С **помощью cmdlet Remove-AzExpressRouteCircuitConnectionConfig** удаляется конфигурация подключения к каналу ExpressRoute, связанная с этим каналом Express Route.
 
 ## ПРИМЕРЫ
 
@@ -101,7 +101,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 ### -AddressPrefixType
-Определяет семейство адресов, которое необходимо удалить из config. 
+Определяет семейство адресов, которое необходимо удалить из config.
 
 ```yaml
 Type: System.String
@@ -111,13 +111,13 @@ Accepted values: IPv4, IPv6, All
 
 Required: False
 Position: Named
-Default value: IPv4 
+Default value: IPv4
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -Confirm
-Запрос на подтверждение перед запуском cmdlet.
+Перед запуском cmdlet вам будет предложено подтвердить его.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -168,8 +168,6 @@ Accept wildcard characters: False
 [Add-AzExpressRouteCircuitConnectionConfig](Add-AzExpressRouteCircuitConnectionConfig.md)
 
 [Set-AzExpressRouteCircuitConnectionConfig](Set-AzExpressRouteCircuitConnectionConfig.md)
-
-[New-AzExpressRouteCircuitConnectionConfig](New-AzExpressRouteCircuitConnectionConfig.md)
 
 [Set-AzExpressRouteCircuit](Set-AzExpressRouteCircuit.md)
 

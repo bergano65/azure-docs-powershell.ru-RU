@@ -3,19 +3,19 @@ external help file: Microsoft.WindowsAzure.Commands.HDInsight.dll-Help.xml
 ms.assetid: 0DFCB891-7431-4C00-98DD-263DC2794354
 online version: ''
 schema: 2.0.0
-ms.openlocfilehash: ea6fbc76a76533c07b11935e50e25418d10e38ed
-ms.sourcegitcommit: 56ed085a868afa8263f8eb0f755b5822f5c29532
+ms.openlocfilehash: c5b993f6a3db4db4fc9620ab827aff06a8544e9f
+ms.sourcegitcommit: 6f0b6059d096600ebff1c8514c35c467d2f482d8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "94075917"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104716512"
 ---
 # New-AzureHDInsightHiveJobDefinition
 
-## КРАТКИй обзор
-Определяет новое задание куста для службы HDInsight.
+## SYNOPSIS
+Определяет новое задание для службы HDInsight.
 
-## Максимальное
+## СИНТАКСИС
 
 ```
 New-AzureHDInsightHiveJobDefinition [-Arguments <String[]>] [-Defines <Hashtable>] [-File <String>]
@@ -23,36 +23,36 @@ New-AzureHDInsightHiveJobDefinition [-Arguments <String[]>] [-Defines <Hashtable
  [-Profile <AzureSMProfile>] [<CommonParameters>]
 ```
 
-## NОПИСАНИЕ
-Эта версия Azure PowerShell HDInsight устарела.
-Эти командлеты будут удалены с 1 января 2017 г.
-Пожалуйста, используйте более новую версию Azure PowerShell HDInsight.
+## ОПИСАНИЕ
+Эта версия Azure PowerShell HDInsight не является нужной.
+Эти cmdlets будут удалены до 1 января 2017 г.
+Используйте более новую версию Azure PowerShell HDInsight.
 
-Сведения о том, как использовать новую HDInsight для создания кластера, можно найти в разделе Создание кластеров [на базе Linux в HDInsight с помощью Azure PowerShell](https://azure.microsoft.com/en-us/documentation/articles/hdinsight-hadoop-create-linux-clusters-azure-powershell/) ( https://azure.microsoft.com/en-us/documentation/articles/hdinsight-hadoop-create-linux-clusters-azure-powershell/) .
-Сведения о том, как отправлять задания с помощью Azure PowerShell и другие подходы, приведены [в разделе Отправка заданий Hadoop в HDInsight](https://azure.microsoft.com/en-us/documentation/articles/hdinsight-submit-hadoop-jobs-programmatically/) ( https://azure.microsoft.com/en-us/documentation/articles/hdinsight-submit-hadoop-jobs-programmatically/) .
-Справочные сведения о службе Azure PowerShell HDInsight можно найти в [командлетах Azure hdinsight](https://msdn.microsoft.com/en-us/library/mt438705.aspx) ( https://msdn.microsoft.com/en-us/library/mt438705.aspx) .
+Сведения об использовании новой hdInsight для создания кластеров см. в видео "Создание кластеров на основе Linux" в [HDInsight с помощью Azure PowerShell.](https://azure.microsoft.com/en-us/documentation/articles/hdinsight-hadoop-create-linux-clusters-azure-powershell/) https://azure.microsoft.com/en-us/documentation/articles/hdinsight-hadoop-create-linux-clusters-azure-powershell/)
+Сведения о том, как отправлять задания с помощью Azure PowerShell и других подходов, см. в сведениях о задании [Submit Hadoop в HDInsight](https://azure.microsoft.com/en-us/documentation/articles/hdinsight-submit-hadoop-jobs-programmatically/) . https://azure.microsoft.com/en-us/documentation/articles/hdinsight-submit-hadoop-jobs-programmatically/)
+Справочные сведения о Azure PowerShell HDInsight см. в [cmdlets Azure HDInsight.](/powershell/module/servicemanagement/azure.service/?view=azuresmps-4.0.0#hd-insights)
 
-Командлет **New-AzureHDInsightHiveJobDefinition** определяет задание куста для службы Azure HDInsight.
+Cmdlet **New-AzureHDInsightHiveJobDefinition** определяет задание "Раздел" для службы Azure HDInsight.
 
-## ИЛЛЮСТРИРУЮТ
+## ПРИМЕРЫ
 
-### Пример 1: Создание определения задания куста
+### Пример 1. Создание определения задания "Задания " в качестве примера"
 ```
 PS C:\>$HiveJobDefinition = New-AzureHDInsightHiveJobDefinition -Query $QueryString
 ```
 
-Эта команда создает определение задания куста, которое использует предварительно определенную строку запроса, а затем сохраняет ее в переменной $HiveJobDefinition.
+Эта команда создает задание "$HiveJobDefinition", использующее предопределяемую строку запроса.
 
-## ПАРАМЕТРЫ
+## PARAMETERS
 
 ### -Аргументы
-Задает массив аргументов для задания Hadoop.
-Аргументы передаются в качестве аргументов командной строки для каждой задачи.
+Указывает массив аргументов для задания Hadoop.
+Аргументы передаются каждой задаче в качестве аргументов командной строки.
 
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -61,8 +61,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Определение
-Задает значения конфигурации Hadoop, которые должны быть заданы для выполнения задания.
+### -Определяет
+Определяет значения конфигурации Hadoop, заданные для задания.
 
 ```yaml
 Type: Hashtable
@@ -76,9 +76,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Файл
-Задает путь к файлу, содержащему запрос для запуска.
-Вы можете использовать этот параметр вместо параметра *запроса* .
+### -File
+Путь к файлу, который содержит запрос, который нужно выполнить.
+Этот параметр можно использовать вместо *параметра Query.*
 
 ```yaml
 Type: String
@@ -93,12 +93,12 @@ Accept wildcard characters: False
 ```
 
 ### -Файлы
-Указывает набор файлов, связанных с заданием куста.
+Набор файлов, связанных с заданием "Файл".
 
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -108,8 +108,8 @@ Accept wildcard characters: False
 ```
 
 ### -JobName
-Указывает имя задания куста, которое нужно определить.
-Если этот параметр не указан, используется имя по умолчанию: "куст: \<first 100 characters of query\> ".
+Определяет имя задания "Фамилия", которое нужно определить.
+Если этот параметр не задан, используется стандартное имя: "Фамилия: \<first 100 characters of query\> ".
 
 ```yaml
 Type: String
@@ -124,13 +124,13 @@ Accept wildcard characters: False
 ```
 
 ### -Profile
-Указывает профиль Azure, из которого считывается этот командлет.
-Если вы не укажете профиль, этот командлет считывает данные из локального профиля по умолчанию.
+Определяет профиль Azure, для которого читается этот cmdlet.
+Если не указать профиль, этот cmdlet будет читать данные из локального профиля по умолчанию.
 
 ```yaml
 Type: AzureSMProfile
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -140,7 +140,7 @@ Accept wildcard characters: False
 ```
 
 ### -Query
-Указывает на запрос куста.
+Указывает запрос на это.
 
 ```yaml
 Type: String
@@ -155,15 +155,15 @@ Accept wildcard characters: False
 ```
 
 ### -RunAsFileJob
-Указывает на то, что этот командлет создает файл в учетной записи хранения Azure по умолчанию, в которой будет храниться запрос.
-Этот командлет отправляет задание, которое ссылается на этот файл, как сценарий для запуска.
+Указывает на то, что этот cmdlet создает файл в учетной записи хранилища Azure по умолчанию, в которой будет храниться запрос.
+Этот cmdlet submits the job that references this file as a script to run.
 
-С помощью этой функции можно обрабатывать специальные символы, такие как знак процента (%) Это может привести к сбою отправки задания через Templeton, поскольку Templeton интерпретирует запрос с символом процента в качестве параметра URL-адреса.
+Эта функция позволяет обрабатывать специальные знаки, например знак процента (%). которые не будут работать при отправке задания через Templeton, так как Templeton интерпретирует запрос со знаком процента как URL-параметр.
 
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -173,12 +173,12 @@ Accept wildcard characters: False
 ```
 
 ### -StatusFolder
-Указывает расположение папки, содержащей стандартные выходные данные и выходные ошибки для задания, включая код завершения и журналы задач.
+Определяет расположение папки, которая содержит стандартные выходные данные и результаты ошибок для задания, включая код выхода и журналы задач.
 
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -188,15 +188,15 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Этот командлет поддерживает общие параметры:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-of Variable,-out,-PipelineVariable,-Verbose, и-WarningAction. Дополнительные сведения можно найти в разделе about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
+Этот cmdlet поддерживает общие параметры: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. Дополнительные сведения см. в about_CommonParameters https://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## ВХОДНЫЕ данные
+## INPUTS
 
-## НАПРЯЖЕНИЕ
+## OUTPUTS
 
-## Пуск
+## ПРИМЕЧАНИЯ
 
-## ДОПОЛНИТЕЛЬНЫЕ ССЫЛКИ
+## СВЯЗАННЫЕ ССЫЛКИ
 
 [New-AzureHDInsightMapReduceJobDefinition](./New-AzureHDInsightMapReduceJobDefinition.md)
 

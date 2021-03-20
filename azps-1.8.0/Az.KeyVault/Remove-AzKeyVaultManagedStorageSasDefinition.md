@@ -5,21 +5,21 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.keyvault/r
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/KeyVault/KeyVault/help/Remove-AzKeyVaultManagedStorageSasDefinition.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/KeyVault/KeyVault/help/Remove-AzKeyVaultManagedStorageSasDefinition.md
-ms.openlocfilehash: 0fe20196f805f292ecc6b351fbb9138c6617bb4b
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: aab54c28d771715425eb1c9cb9e259655eaef7ee
+ms.sourcegitcommit: 6f0b6059d096600ebff1c8514c35c467d2f482d8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93900145"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104714897"
 ---
 # Remove-AzKeyVaultManagedStorageSasDefinition
 
-## КРАТКИй обзор
-Удаляет определения SAS из хранилища ключей для управляемых хранилищ Azure.
+## SYNOPSIS
+Удаляет определения SAS хранилища Azure, управляемые хранилищем.
 
-## Максимальное
+## СИНТАКСИС
 
-### ByDefinitionName (по умолчанию)
+### ByDefinitionName (Default)
 ```
 Remove-AzKeyVaultManagedStorageSasDefinition [-VaultName] <String> [-AccountName] <String> [-Name] <String>
  [-Force] [-PassThru] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
@@ -31,12 +31,12 @@ Remove-AzKeyVaultManagedStorageSasDefinition [-InputObject] <PSKeyVaultManagedSt
  [-Force] [-PassThru] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## NОПИСАНИЕ
-Удаляет определения SAS из хранилища ключей для управляемых хранилищ Azure. Кроме того, он удаляет секрет, используемый для получения маркера SAS для этого определения SAS.
+## ОПИСАНИЕ
+Удаляет определения SAS хранилища Azure, управляемые хранилищем. При этом также удаляется секрет, используемый для получения маркера SAS для этого определения SAS.
 
-## ИЛЛЮСТРИРУЮТ
+## ПРИМЕРЫ
 
-### Пример 1: Удаление определения SAS хранилища управляемых хранилищ Azure с помощью хранилища ключей.
+### Пример 1. Удаление определения SAS хранилища Azure, управляемого ключом.
 ```powershell
 PS C:\> Remove-AzKeyVaultManagedStorageAccount -VaultName 'myvault' -AccountName 'mystorageaccount' -Name 'mysasdef' -PassThru
 
@@ -50,9 +50,9 @@ Updated     : 5/24/2018 9:11:08 PM
 Tags        :
 ```
 
-Удаляет из хранилища ключей определение SAS "mysasdef", связанного с учетной записью "mystorageaccount" в хранилище "myvault".
+Удаляет определение SAS хранилища, связанное с учетной записью mystorageaccount в хранилище myvault.
 
-### Пример 2: Удаление определения управляемого хранилища Azure с хранилищем ключей без подтверждения пользователя.
+### Пример 2. Удаление определения SAS хранилища Azure, управляемого хранилищем Azure, без подтверждения пользователем.
 ```powershell
 PS C:\> Remove-AzKeyVaultManagedStorageAccount -VaultName 'myvault' -AccountName 'mystorageaccount' -Name 'mysasdef' -PassThru -Force
 
@@ -66,13 +66,13 @@ Updated     : 5/24/2018 9:11:08 PM
 Tags        :
 ```
 
-Удаляет из хранилища ключей определение SAS "mysasdef", связанного с учетной записью "mystorageaccount" в хранилище "myvault".
+Удаляет определение SAS хранилища, связанное с учетной записью mystorageaccount в хранилище myvault.
 
-## ПАРАМЕТРЫ
+## PARAMETERS
 
-### -Имя_учетной_записи
+### -AccountName
 Имя учетной записи хранения.
-Командлет создает полное доменное имя управляемой учетной записи хранения из имени хранилища, выбранной в данный момент среды и имени учетной записи хранения.
+Cmdlet constructs the FQDN of a managed storage account name from vault name, currently selected environment and storage account name.
 
 ```yaml
 Type: System.String
@@ -102,7 +102,7 @@ Accept wildcard characters: False
 ```
 
 ### -Force
-Не запрашивать подтверждение.
+Не спрашивайте подтверждения.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -131,9 +131,9 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -Name (имя)
-Имя определения SAS хранилища.
-Командлет создает полное доменное имя определения SAS хранилища из имени хранилища, выбранной среды, имени учетной записи хранения и имени определения SAS.
+### -Name
+Имя определения sas хранилища.
+Cmdlet конструировать FQDN определения sas хранилища из имени хранилища, выбранной среды, имени учетной записи хранения и имени определения sas.
 
 ```yaml
 Type: System.String
@@ -148,8 +148,8 @@ Accept wildcard characters: False
 ```
 
 ### -PassThru
-По умолчанию командлет не возвращает объект.
-Если этот параметр указан, командлет возвращает управляемую учетную запись хранения, которая была удалена.
+По умолчанию cmdlet не возвращает объект.
+Если этот переключатель задан, возвращается удаленная учетная запись управляемого хранилища.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -164,8 +164,8 @@ Accept wildcard characters: False
 ```
 
 ### -VaultName
-Имя хранилища.
-Командлет создает полное доменное имя хранилища на основе имени и выбранной в данный момент среды.
+Имя сейфа.
+Cmdlet constructs the FQDN of a vault based on the name and currently selected environment.
 
 ```yaml
 Type: System.String
@@ -180,7 +180,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
-Запрашивает подтверждение перед запуском командлета.
+Перед запуском cmdlet вам будет предложено подтвердить его.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -195,8 +195,8 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Показывает, что произойдет при запуске командлета.
-Командлет не выполняется.
+Показывает, что произойдет при запуске cmdlet.
+Этот cmdlet не будет выполниться.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -211,19 +211,19 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Этот командлет поддерживает общие параметры:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-of Variable,-out,-PipelineVariable,-Verbose, и-WarningAction. Дополнительные сведения можно найти в разделе about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
+Этот cmdlet поддерживает общие параметры: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. Дополнительные сведения см. в about_CommonParameters https://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## ВХОДНЫЕ данные
+## INPUTS
 
-### Microsoft. Azure. Commands. KeyVault. Models. PSKeyVaultManagedStorageSasDefinitionIdentityItem
+### Microsoft.Azure.Commands.KeyVault.Models.PSKeyVaultManagedStorageSasDefinitionIdentityItem
 
-## НАПРЯЖЕНИЕ
+## OUTPUTS
 
 ### Microsoft.Azure.Commands.KeyVault.Models.PSDeletedKeyVaultManagedStorageSasDefinition
 
-## Пуск
+## ПРИМЕЧАНИЯ
 
-## ДОПОЛНИТЕЛЬНЫЕ ССЫЛКИ
+## СВЯЗАННЫЕ ССЫЛКИ
 
-[https://msdn.microsoft.com/en-us/library/dn868052.aspx](https://msdn.microsoft.com/en-us/library/dn868052.aspx)
+[Cmdlets Key Vault Azure PowerShell](/powershell/module/az.keyvault/)
 

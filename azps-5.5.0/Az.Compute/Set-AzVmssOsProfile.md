@@ -6,12 +6,12 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.compute/se
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Compute/Compute/help/Set-AzVmssOsProfile.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Compute/Compute/help/Set-AzVmssOsProfile.md
-ms.openlocfilehash: 71bd8ca26755118a4bb9c075ae89bad765922f3d
-ms.sourcegitcommit: c05d3d669b5631e526841f47b22513d78495350b
+ms.openlocfilehash: b5676217de980aed8581a4a1e5a5ab103c86e753
+ms.sourcegitcommit: 6f0b6059d096600ebff1c8514c35c467d2f482d8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/09/2021
-ms.locfileid: "100238603"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104716359"
 ---
 # Set-AzVmssOsProfile
 
@@ -31,7 +31,7 @@ Set-AzVmssOsProfile [-VirtualMachineScaleSet] <PSVirtualMachineScaleSet> [[-Comp
 ```
 
 ## ОПИСАНИЕ
-**Cmdlet Set-AzVmssOsProfile** задает свойства профиля набора масштаба виртуальной машины для операционной системы.
+Для свойства профиля виртуальной машины **Set-AzVmssOsProfile** задаются свойства профиля виртуальной машины (Scale Set).
 
 ## ПРИМЕРЫ
 
@@ -62,7 +62,7 @@ Accept wildcard characters: False
 ```
 
 ### -AdminPassword
-Пароль администратора, который будет применяться для всех экземпляров виртуальных машин в VMSS.
+Пароль администратора, который будет применяться для всех экземпляров виртуальной машины в VMSS.
 
 ```yaml
 Type: System.String
@@ -77,13 +77,13 @@ Accept wildcard characters: False
 ```
 
 ### -AdminUsername
-Указывает имя учетной записи администратора, которая будет использовать все экземпляры виртуальной машины в VMSS. <br>
-**Ограничение только для Windows:** Не может \" закончиться .\" <br>
-**Деостановимые значения** \" \"администратор, \" \" администратор, \" \" пользователь, \" \" пользователь1, \" \" проверка, \" \" пользователь2, \" \" тест1, \" \" пользователь3, \" \" администратор1, \" \" 1, \" 123, \" a , \" \" \" actuser, \" \" adm, \" \" \" admin2, \" aspnet, \" \" \" backup, \" \" console, \" \" \" david, \" guest, \" \" john, \" \" owner, \" \" root, \" \" server, \" sql, \" support , \" \" \" \" support_388945a0, \" sys, \" \" test2 , \" \" \" test3, \" \" user4, \" user5 \" . <br>
+Указывает имя учетной записи администратора, которая будет применяться для всех экземпляров виртуальной машины в VMSS. <br>
+**Ограничение только для Windows:** Не может закончиться \" .\" <br>
+**Деостановимые значения** \" \"администратор, \" \" администратор, \" \" пользователь, \" \" пользователь1, \" \" проверка, \" \" пользователь2, \" \" тест1, \" \" пользователь3, \" \" администратор1, \" \" 1, \" 123, \" a , \" \" \" actuser, \" \" adm, \" \" \" admin2, \" aspnet, aspnet, \" \" \" backup, \" \" \" \" \" console, david, \" guest, \" \" \" \" owner, \" \" owner, root, \" \" server, \" sql, \" support , \" \" \" \" support_388945a0, \" sys, \" \" test2 , \" \" \" test3, \" \" user4, \" user5 \" . <br>
 **Минимальная длина (Linux):** 1 знак <br>
 **Максимальная длина (Linux):** 64 знака <br>
 **Максимальная длина (Windows):** 20 символов  <br>
-<li> Корневой доступ к Linux VM см. в теме "Использование корневых привилегий на виртуальных машинах [Linux" в Azure.](https://docs.microsoft.com/azure/virtual-machines/virtual-machines-linux-use-root-privileges?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)<br>
+<li> Корневой доступ к Linux VM см. в этом видеоролике об использовании корневых привилегий на виртуальных машинах [Linux в Azure.](https://docs.microsoft.com/azure/virtual-machines/virtual-machines-linux-use-root-privileges?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)<br>
 <li> Список встроенных пользователей системы на Linux, которые не следует использовать в этом поле, см. в поле "Выбор имен пользователей [для Linux" в Azure.](https://docs.microsoft.com/azure/virtual-machines/virtual-machines-linux-usernames?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
 
 ```yaml
@@ -118,7 +118,7 @@ Accept wildcard characters: False
 Указывает строку пользовательских данных с кодом базы 64.
 Он декодироваться в двоичный массив, сохраненный в файле на виртуальной машине.
 Максимальная длина двоичного массива составляет 65 535 тол. <br>
-Чтобы узнать, как использовать cloud-init для своего VM-решения, см. в этой теме использование [cloud-init](https://docs.microsoft.com/azure/virtual-machines/virtual-machines-linux-using-cloud-init?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)для настройки linux VM во время создания.
+Чтобы узнать, как использовать cloud-init для своего VM-решения, см. в этой теме использование cloud-init для настройки [VM-решения Linux во](/azure/virtual-machines/linux/tutorial-automate-vm-deployment)время создания.
 
 ```yaml
 Type: System.String
@@ -212,7 +212,7 @@ Accept wildcard characters: False
 ```
 
 ### -TimeZone
-Определяет часовой пояс виртуальной машины. Например, по \" тихоокеанскому времени. \" <br>
+Определяет часовой пояс виртуальной машины. Например, по \" тихоокеанскому \" времени. <br>
 Возможные значения могут [быть](https://docs.microsoft.com/en-us/dotnet/api/system.timezoneinfo.id?#System_TimeZoneInfo_Id) TimeZoneInfo.Id из часовых поясов, возвращаемых [timeZoneInfo.GetSystemTimeZones.](https://docs.microsoft.com/en-us/dotnet/api/system.timezoneinfo.getsystemtimezones)
 
 ```yaml
@@ -244,7 +244,7 @@ Accept wildcard characters: False
 ```
 
 ### -WindowsConfigurationEnableAutomaticUpdate
-Указывает, включены ли автоматические обновления виртуальных машин в VMSS.
+Указывает, включены ли на виртуальных машинах виртуальные машины для автоматического обновления.
 
 ```yaml
 Type: System.Nullable`1[System.Boolean]
