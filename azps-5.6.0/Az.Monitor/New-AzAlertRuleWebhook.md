@@ -6,12 +6,12 @@ online version: https://docs.microsoft.com/powershell/module/az.monitor/new-azal
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/New-AzAlertRuleWebhook.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/New-AzAlertRuleWebhook.md
-ms.openlocfilehash: 22afc323e827c543150bffb317f1b5db5275d82c
-ms.sourcegitcommit: 4dfb0cc533b83f77afdcfbe2618c1e6c8d221330
+ms.openlocfilehash: ce24d7f98d488de70acf1ee78f5b6cb60d9a8d22
+ms.sourcegitcommit: 6f0b6059d096600ebff1c8514c35c467d2f482d8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "101979880"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104716869"
 ---
 # New-AzAlertRuleWebhook
 
@@ -30,14 +30,14 @@ New-AzAlertRuleWebhook [-ServiceUri] <String> [[-Property] <Hashtable>]
 
 ## ПРИМЕРЫ
 
-### Пример 1. Создание правила оповещения webhook
+### Пример 1. Создание веб-приложения "Правило оповещения"
 ```
 PS C:\>New-AzAlertRuleWebhook -ServiceUri "http://contoso.com"
 ```
 
-Эта команда создает правило оповещения webhook с указанием только URI службы.
+Эта команда создает правило оповещения с указанием только URI службы.
 
-### Пример 2. Создание веб-приложения с одним свойством
+### Пример 2. Создание веб-сайта с одним свойством
 ```
 PS C:\>$Actual = New-AzAlertRuleWebhook -ServiceUri "http://contoso.com" -Property @{prop1 = 'value1'}
 ```
@@ -107,8 +107,6 @@ Accept wildcard characters: False
 ## ПРИМЕЧАНИЯ
 
 ## СВЯЗАННЫЕ ССЫЛКИ
-
-[Add-AzLogAlertRule](./Add-AzLogAlertRule.md)
 
 [Add-AzMetricAlertRule](./Add-AzMetricAlertRule.md)
 

@@ -5,19 +5,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.keyvault/g
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/KeyVault/KeyVault/help/Get-AzKeyVaultManagedStorageAccount.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/KeyVault/KeyVault/help/Get-AzKeyVaultManagedStorageAccount.md
-ms.openlocfilehash: 165419eb13376becedf72b4e44ee17f0c3655ec4
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: ef48e97bb8b74bf89eacb8688b44935d3d3915ac
+ms.sourcegitcommit: 6f0b6059d096600ebff1c8514c35c467d2f482d8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93720660"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104716886"
 ---
 # Get-AzKeyVaultManagedStorageAccount
 
-## КРАТКИй обзор
-Получение управляемых учетных записей хранилища Azure для хранилища ключей.
+## SYNOPSIS
+Получает основные учетные записи хранилища Azure.
 
-## Максимальное
+## СИНТАКСИС
 
 ### ByAccountName (по умолчанию)
 ```
@@ -37,12 +37,12 @@ Get-AzKeyVaultManagedStorageAccount [-ResourceId] <String> [-InRemovedState]
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## NОПИСАНИЕ
-Возвращает управляемую учетную запись хранилища Azure с основным хранилищем, если указано имя учетной записи, а ключи учетной записи управляются указанным хранилищем. Если имя учетной записи не указано, перечисляются все учетные записи, для которых управление ключами задается указанным хранилищем.
+## ОПИСАНИЕ
+Получает учетную запись хранилища Azure, управлия ключом, если задано имя учетной записи и управление ключами учетной записи происходит в указанном хранилище. Если имя учетной записи не указано, будут перечислены все учетные записи, ключами которых управляет указанный сейф.
 
-## ИЛЛЮСТРИРУЮТ
+## ПРИМЕРЫ
 
-### Пример 1: список всех учетных записей хранения с управляемым хранилищем
+### Пример 1. Список всех ключевых учетных записей хранилища, управляемых хранилищем
 ```powershell
 PS C:\> Get-AzKeyVaultManagedStorageAccount -VaultName 'myvault'
 
@@ -57,9 +57,9 @@ Updated             : 4/25/2018 1:50:32 AM
 Tags                :
 ```
 
-Выводит все учетные записи, для которых управление ключами является хранилищем "myvault".
+Список всех учетных записей, ключами которых управляет хранилище Myvault.
 
-### Пример 2: получение учетной записи хранилища с управляемым хранилищем ключей
+### Пример 2. Получить учетную запись управляемого хранилища в key Vault
 ```powershell
 PS C:\> Get-AzKeyVaultManagedStorageAccount -VaultName 'myvault' -Name 'mystorageaccount'
 
@@ -77,9 +77,9 @@ Updated             : 4/25/2018 1:50:32 AM
 Tags                :
 ```
 
-Получение сведений об учетной записи хранения ключа управляемого хранилища для "mystorageaccount", если ее ключи управляются хранилищем "myvault"
+Подробные сведения о учетной записи хранилища mystorageaccount, если ключами управляет хранилище "myvault".
 
-### Пример 3. Перечислите все учетные записи хранилища с управляемым хранилищем с помощью фильтрации.
+### Пример 3. Список всех ключевых учетных записей хранилища, управляемых хранилищем, с помощью фильтрации
 ```powershell
 PS C:\> Get-AzKeyVaultManagedStorageAccount -VaultName 'myvault' -Name "test*"
 
@@ -104,12 +104,12 @@ Updated             : 4/25/2018 1:50:32 AM
 Tags                :
 ```
 
-Список всех учетных записей, чьи ключи управляются хранилищем "myvault" и начинается с "Test".
+Список всех учетных записей, ключами которых управляет хранилище Myvault, которые начинаются с "test"
 
-## ПАРАМЕТРЫ
+## PARAMETERS
 
-### -Имя_учетной_записи
-Имя учетной записи хранилища с управляемым хранилищем. Командлет создает полное доменное имя управляемой учетной записи хранения из имени хранилища, выбранной в данный момент среды и управляемого имени учетной записи хранения.
+### -AccountName
+Имя учетной записи управляемого хранилища в key Vault. Cmdlet constructs the FQDN of a managed storage account name from vault name, currently selected environment and manged storage account name.
 
 ```yaml
 Type: System.String
@@ -139,7 +139,7 @@ Accept wildcard characters: False
 ```
 
 ### -InputObject
-Объект хранилища.
+Объект Vault.
 
 ```yaml
 Type: Microsoft.Azure.Commands.KeyVault.Models.PSKeyVault
@@ -154,7 +154,7 @@ Accept wildcard characters: False
 ```
 
 ### -InRemovedState
-Указывает, нужно ли отображать ранее удаленные учетные записи хранения в выходных данных.
+Указывает, следует ли показывать ранее удаленные учетные записи хранения в выходных данных.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -169,7 +169,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceId
-Идентификатор ресурса хранилища.
+ИД ресурса хранилища.
 
 ```yaml
 Type: System.String
@@ -184,8 +184,8 @@ Accept wildcard characters: False
 ```
 
 ### -VaultName
-Имя хранилища.
-Командлет создает полное доменное имя хранилища на основе имени и выбранной в данный момент среды.
+Имя сейфа.
+Cmdlet constructs the FQDN of a vault based on the name and currently selected environment.
 
 ```yaml
 Type: System.String
@@ -200,27 +200,27 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Этот командлет поддерживает общие параметры:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-of Variable,-out,-PipelineVariable,-Verbose, и-WarningAction. Дополнительные сведения можно найти в разделе [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+Этот cmdlet поддерживает общие параметры: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. Дополнительные сведения см. [в about_CommonParameters.](https://go.microsoft.com/fwlink/?LinkID=113216)
 
-## ВХОДНЫЕ данные
+## INPUTS
 
-### Microsoft. Azure. Commands. KeyVault. Models. PSKeyVault
+### Microsoft.Azure.Commands.KeyVault.Models.PSKeyVault
 
-### System. String
+### System.String
 
-## НАПРЯЖЕНИЕ
+## OUTPUTS
 
-### Microsoft. Azure. Commands. KeyVault. Models. PSKeyVaultManagedStorageAccountIdentityItem
+### Microsoft.Azure.Commands.KeyVault.Models.PSKeyVaultManagedStorageAccountIdentityItem
 
-### Microsoft. Azure. Commands. KeyVault. Models. PSKeyVaultManagedStorageAccount
+### Microsoft.Azure.Commands.KeyVault.Models.PSKeyVaultManagedStorageAccount
 
 ### Microsoft.Azure.Commands.KeyVault.Models.PSDeletedKeyVaultManagedStorageAccountIdentityItem
 
 ### Microsoft.Azure.Commands.KeyVault.Models.PSDeletedKeyVaultManagedStorageAccount
 
-## Пуск
+## ПРИМЕЧАНИЯ
 
-## ДОПОЛНИТЕЛЬНЫЕ ССЫЛКИ
+## СВЯЗАННЫЕ ССЫЛКИ
 
-[https://msdn.microsoft.com/en-us/library/dn868052.aspx](https://msdn.microsoft.com/en-us/library/dn868052.aspx)
+[Cmdlets Key Vault Azure PowerShell](/powershell/module/az.keyvault/)
 

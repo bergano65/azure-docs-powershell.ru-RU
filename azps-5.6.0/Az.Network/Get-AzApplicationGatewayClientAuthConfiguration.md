@@ -5,12 +5,12 @@ online version: https://docs.microsoft.com/powershell/module/az.network/get-azap
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Get-AzApplicationGatewayClientAuthConfiguration.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Get-AzApplicationGatewayClientAuthConfiguration.md
-ms.openlocfilehash: 74fba2cf4e91d939f4e88b66b47d92e0bc5c0730
-ms.sourcegitcommit: 4dfb0cc533b83f77afdcfbe2618c1e6c8d221330
+ms.openlocfilehash: 9fdb7f82b306308c46050fbe0623b031f2487b24
+ms.sourcegitcommit: 6f0b6059d096600ebff1c8514c35c467d2f482d8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "101978307"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104718195"
 ---
 # Get-AzApplicationGatewayClientAuthConfiguration
 
@@ -36,7 +36,7 @@ PS C:\> $SslProfile  = Get-AzApplicationGatewaySslProfile -Name "SslProfile01" -
 PS C:\> $ClientAuthConfig = Get-AzApplicationGatewayClientAuthConfiguration -SslProfile $SslProfile
 ```
 
-Первая команда получает шлюз приложения ApplicationGateway01 в группе ресурсов ResourceGroup01 и сохраняет его в $AppGw переменной. Вторая команда получает профиль SSL с именем SslProfile01 для $AppGw и сохраняет его $SslProfile переменной. Последняя команда получает конфигурацию проверки подлинности клиента из профиля SSL$SslProfile и сохраняет ее в $ClientAuthConfig переменной.
+Первая команда получает шлюз приложения ApplicationGateway01 в группе ресурсов ResourceGroup01 и сохраняет его в $AppGw переменной. Вторая команда получает профиль SSL под названием SslProfile01 для $AppGw и сохраняет его $SslProfile переменной. Последняя команда получает конфигурацию проверки подлинности клиента из профиля SSL$SslProfile и сохраняет ее в $ClientAuthConfig переменной.
 
 ## PARAMETERS
 
@@ -86,8 +86,6 @@ Accept wildcard characters: False
 ## СВЯЗАННЫЕ ССЫЛКИ
 
 [New-AzApplicationGatewayClientAuthConfiguration](./New-AzApplicationGatewayClientAuthConfiguration.md)
-
-[Add-AzApplicationGatewayClientAuthConfiguration](./Add-AzApplicationGatewayClientAuthConfiguration.md)
 
 [Remove-AzApplicationGatewayClientAuthConfiguration](./Remove-AzApplicationGatewayClientAuthConfiguration.md)
 

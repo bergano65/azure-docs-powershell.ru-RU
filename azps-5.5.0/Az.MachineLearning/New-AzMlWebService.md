@@ -5,12 +5,12 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.machinelea
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/MachineLearning/MachineLearning/help/New-AzMlWebService.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/MachineLearning/MachineLearning/help/New-AzMlWebService.md
-ms.openlocfilehash: 5988aed4ca0560daedc1470198e0b02975f18196
-ms.sourcegitcommit: c05d3d669b5631e526841f47b22513d78495350b
+ms.openlocfilehash: 39256c965cfab7cfd0c84042f45ef777366a7715
+ms.sourcegitcommit: 6f0b6059d096600ebff1c8514c35c467d2f482d8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/09/2021
-ms.locfileid: "100224364"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104716937"
 ---
 # New-AzMlWebService
 
@@ -43,7 +43,7 @@ New-AzMlWebService -ResourceGroupName <String> -Location <String> -Name <String>
 New-AzMlWebService -ResourceGroupName "myresourcegroup" -Name "mywebservicename" -Location "South Central US" -DefinitionFile "C:\mlservice.json"
 ```
 
-Создает веб-службу машинного обучения Azure "mywebservicename" в группе myresourcegroup и регионе "Южный центр США" на основе определения, представленного в файле json, на который имеется ссылка.
+Создает веб-службу машинного обучения Azure "mywebservicename" в группе myresourcegroup и регионЕ Южный Центр США на основе определения, представленного в файле json, на который имеется ссылка.
 
 ### Пример 2. Создание службы из экземпляра объекта
 ```
@@ -71,7 +71,7 @@ Accept wildcard characters: False
 
 ### -DefinitionFile
 Путь к файлу, содержащего определение формата JSON веб-службы.
-Последнюю спецификацию определения веб-службы можно найти в swagger spec в https://github.com/Azure/azure-rest-api-specs/tree/master/arm-machinelearning области .
+Последнюю спецификацию определения веб-службы можно найти в swagger spec в https://github.com/Azure/azure-rest-api-specs/blob/master/specification/machinelearning/resource-manager/Microsoft.MachineLearning/ области .
 
 ```yaml
 Type: System.String
@@ -106,7 +106,7 @@ Accept wildcard characters: False
 Вы можете разместить веб-службу в любом регионе, который поддерживает ресурсы такого типа.
 Веб-служба не должна быть в том же регионе, что и в подписке Azure, или в том же регионе, что и группа ресурсов.
 Группы ресурсов могут содержать веб-службы из разных регионов.
-Чтобы определить, какие регионы поддерживают каждый тип ресурсов, используйте Get-AzResourceProvider с Get-AzResourceProvider параметра ProviderNamespace.
+Чтобы определить, в каких регионах поддерживается каждый тип ресурсов, используйте Get-AzResourceProvider с помощью Get-AzResourceProvider параметра ProviderNamespace.
 
 ```yaml
 Type: System.String
@@ -139,7 +139,7 @@ Accept wildcard characters: False
 ### -NewWebServiceDefinition
 Определение для новой веб-службы, содержащее все свойства, которые ее составляют.
 Этот параметр является required и представляет экземпляр класса Microsoft.Azure.Management.MachineLearning.WebServices.Models.WebService.
-Последнюю спецификацию определения веб-службы можно найти в swagger spec в https://github.com/Azure/azure-rest-api-specs/blob/master/arm-machinelearning/2017-01-01/swagger/webservices.json области .
+Последнюю спецификацию определения веб-службы можно найти в swagger spec в https://github.com/Azure/azure-rest-api-specs/blob/master/specification/machinelearning/resource-manager/Microsoft.MachineLearning/stable/2017-01-01/webservices.json области .
 
 ```yaml
 Type: Microsoft.Azure.Management.MachineLearning.WebServices.Models.WebService
@@ -159,7 +159,7 @@ Accept wildcard characters: False
 Вы можете разместить веб-службу в любом регионе, который поддерживает ресурсы такого типа.
 Веб-служба не должна быть в том же регионе, что и в подписке Azure, или в том же регионе, что и группа ресурсов.
 Группы ресурсов могут содержать веб-службы из разных регионов.
-Чтобы определить, какие регионы поддерживают каждый тип ресурсов, используйте Get-AzResourceProvider с Get-AzResourceProvider параметра ProviderNamespace.
+Чтобы определить, в каких регионах поддерживается каждый тип ресурсов, используйте Get-AzResourceProvider с помощью Get-AzResourceProvider параметра ProviderNamespace.
 
 ```yaml
 Type: System.String

@@ -6,12 +6,12 @@ online version: https://docs.microsoft.com/powershell/module/az.network/get-azvp
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Get-AzVpnClientPackage.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Get-AzVpnClientPackage.md
-ms.openlocfilehash: 69fcd4ee3cdcd2692c242a366c7d88545f9641b7
-ms.sourcegitcommit: 4dfb0cc533b83f77afdcfbe2618c1e6c8d221330
+ms.openlocfilehash: 9340f18792cd91e7506c1198e17a5d0df50c4165
+ms.sourcegitcommit: 6f0b6059d096600ebff1c8514c35c467d2f482d8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "102006248"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104716920"
 ---
 # Get-AzVpnClientPackage
 
@@ -33,7 +33,7 @@ Get-AzVpnClientPackage -ResourceGroupName <String> -VirtualNetworkGatewayName <S
 
 ## ПРИМЕРЫ
 
-### Пример 1. Получите сведения о пакете клиента VPN для процессоров
+### Пример 1. Сведения о пакете клиента VPN для процессоров
 ```
 PS C:\>Get-AzVpnClientPackage -ProcessorArchitecture -VirtualNetworkGatewayName "ContosoVirtualNetworkGateway" -ResourceGroupName "ContosoResourceGroup" -ProcessorArchitecture "Amd64"
 ```
@@ -76,7 +76,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-Имя группы ресурсов, назначенной виртуальному сетевому шлюзу.
+Указывает имя группы ресурсов, которая назначена виртуальному сетевому шлюзу.
 Группы ресурсов группируют элементы, чтобы упростить управление запасами и общее администрирование Azure.
 
 ```yaml
@@ -122,7 +122,3 @@ Accept wildcard characters: False
 ## СВЯЗАННЫЕ ССЫЛКИ
 
 [Resize-AzVirtualNetworkGateway](./Resize-AzVirtualNetworkGateway.md)
-
-[Set-AzVirtualNetworkGatewayVpnClientConfig](./Set-AzVirtualNetworkGatewayVpnClientConfig.md)
-
-

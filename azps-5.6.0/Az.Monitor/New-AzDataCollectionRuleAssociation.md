@@ -5,12 +5,12 @@ online version: https://docs.microsoft.com/powershell/module/az.monitor/new-azda
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/New-AzDataCollectionRuleAssociation.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/New-AzDataCollectionRuleAssociation.md
-ms.openlocfilehash: 1086f67bcec4adeef74fe7bf591e61d9d08a90e1
-ms.sourcegitcommit: 4dfb0cc533b83f77afdcfbe2618c1e6c8d221330
+ms.openlocfilehash: fd1b2f4eab7595278fbafe0290b22dce574c4849
+ms.sourcegitcommit: 6f0b6059d096600ebff1c8514c35c467d2f482d8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "101984556"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104718144"
 ---
 # New-AzDataCollectionRuleAssociation
 
@@ -39,15 +39,15 @@ New-AzDataCollectionRuleAssociation
    -AssociationName <string>
    -InputObject <PSDataCollectionRuleResource>
    [-Description <string>]
-   [-DefaultProfile <IAzureContextContainer>]  
-   [-WhatIf]   
-   [-Confirm]   
+   [-DefaultProfile <IAzureContextContainer>]
+   [-WhatIf]
+   [-Confirm]
    [<CommonParameters>]
 ```
 
 
 ## ОПИСАНИЕ
-Для создания связи правил сбора данных (DCRA) будет создаваться **cmdletRuleAssociation New-AzDataCollectionRuleAssociation.**
+Для создания связи правил сбора данных (DCRA) создается **cmdlet New-AzDataCollectionRuleAssociation.**
 
 Чтобы применить DCR к виртуальной машине, необходимо создать связь для виртуальной машины. Виртуальная машина может иметь связь с несколькими DCR, а DCR может иметь несколько виртуальных машин, связанных с ней. Это позволяет определить набор dcrs, каждый из которых соответствует определенному требованию, и применить их только к виртуальным машинам, на которых они применяются. Ниже приводится статья "Настройка сбора данных для агента [Azure Monitor"](https://docs.microsoft.com/azure/azure-monitor/platform/data-collection-rule-azure-monitor-agent) с помощью DCRA.
 
@@ -224,6 +224,5 @@ Accept wildcard characters: False
 
 ## СВЯЗАННЫЕ ССЫЛКИ
 
-[Set-AzDataCollectionRuleAssociation](./Set-AzDataCollectionRuleAssociation.md) 
- [Remove-AzDataCollectionRuleAssociation](./Remove-AzDataCollectionRuleAssociation.md) 
+[Remove-AzDataCollectionRuleAssociation](./Remove-AzDataCollectionRuleAssociation.md) 
  [Get-AzDataCollectionRuleAssociation](./Get-AzDataCollectionRuleAssociation.md)

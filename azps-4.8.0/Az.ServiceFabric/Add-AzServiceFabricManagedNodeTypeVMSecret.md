@@ -5,19 +5,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.servicefab
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ServiceFabric/ServiceFabric/help/Add-AzServiceFabricManagedNodeTypeVMSecret.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ServiceFabric/ServiceFabric/help/Add-AzServiceFabricManagedNodeTypeVMSecret.md
-ms.openlocfilehash: 36ed679066d1850851ff0e90f39eb6f9ef8ffa1a
-ms.sourcegitcommit: 1de2b6c3c99197958fa2101bc37680e7507f91ac
+ms.openlocfilehash: 4f28e97d07120b7878ff88e63adae11024e8eb4e
+ms.sourcegitcommit: 6f0b6059d096600ebff1c8514c35c467d2f482d8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "94078739"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104716954"
 ---
 # Add-AzServiceFabricManagedNodeTypeVMSecret
 
-## КРАТКИй обзор
-Добавьте секретный ключ сертификата в тип узла.
+## SYNOPSIS
+Добавьте секрет сертификата к типу узла.
 
-## Максимальное
+## СИНТАКСИС
 
 ### ByObj (по умолчанию)
 ```
@@ -33,10 +33,10 @@ Add-AzServiceFabricManagedNodeTypeVMSecret [-ResourceGroupName] <String> [-Clust
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## NОПИСАНИЕ
-Добавьте секретный ключ сертификата в тип узла. Секрет должен храниться в хранилище ключей Azure. Дополнительные сведения о хранилище ключей можно найти в разделе что такое Azure Key Vault? (https://azure.microsoft.com/en-us/documentation/articles/key-vault-whatis/). Дополнительные сведения о командлетах можно найти в статьях командлетов Azure Key Vault ( https://msdn.microsoft.com/library/azure/dn868052.aspx) в сетевой библиотеке разработчиков Microsoft Developer или в командлете Set-AzKeyVaultSecret.
+## ОПИСАНИЕ
+Добавьте секрет сертификата к типу узла. Секрет должен храниться в хранилище ключей Azure. Дополнительные сведения, связанные с хранилищем ключей, см. в подмносях "Что такое хранилище ключей Azure"? (https://azure.microsoft.com/en-us/documentation/articles/key-vault-whatis/). Дополнительные сведения о cmdlets см. в Microsoft Developer Network библиотеке или Set-AzKeyVaultSecret Azure [Key Vault.](/powershell/module/az.keyvault/)
 
-## ИЛЛЮСТРИРУЮТ
+## ПРИМЕРЫ
 
 ### Пример 1
 ```powershell
@@ -46,7 +46,7 @@ $NodeTypeName = "nt1"
 Add-AzServiceFabricManagedNodeTypeVMSecret -ResourceGroupName $rgName -ClusterName $clusterName -NodeTypeName $NodeTypeName -SourceVaultId /subscriptions/XXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX/resourceGroups/testRG/providers/Microsoft.KeyVault/vaults/testkv -CertificateUrl https://testskv.vault.azure.net:443/secrets/TestCert/xxxxxxxxxxxxxxxxxxxxxxxx -CertificateStore My -Verbose
 ```
 
-Этот запятыми добавляет секрет сертификата из указанных keyvault и секретного идентификатора.
+Эта запятая добавляет секрет сертификата из заданного ключа и секретного идентификатора.
 
 ### Пример 2
 ```powershell
@@ -58,12 +58,12 @@ $nodeType = Get-AzServiceFabricManagedNodeType -ResourceGroupName $rgName -Clust
 $nodeType | Add-AzServiceFabricManagedNodeTypeVMSecret -SourceVaultId /subscriptions/XXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX/resourceGroups/testRG/providers/Microsoft.KeyVault/vaults/testkv -CertificateUrl https://testskv.vault.azure.net:443/secrets/TestCert/xxxxxxxxxxxxxxxxxxxxxxxx -CertificateStore My -Verbose
 ```
 
-Этот запятыми добавляет секрет сертификата из указанного идентификатора keyvault и секрета с помощью конвейера.
+Эта запятая добавляет секрет сертификата из keyvault и указанного секретного идентификатора с помощью piping.
 
-## ПАРАМЕТРЫ
+## PARAMETERS
 
 ### -AsJob
-Запустите командлет в фоновом режиме и верните задание для отслеживания хода выполнения.
+Запустите его в фоновом режиме и верните задание для отслеживания хода выполнения.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -78,8 +78,8 @@ Accept wildcard characters: False
 ```
 
 ### -CertificateStore
-Определяет хранилище сертификатов на виртуальной машине, на которую нужно добавить сертификат.
-Указанное хранилище сертификатов является неявным в учетной записи LocalMachine.
+Указывает хранилище сертификатов на виртуальной машине, в которую нужно добавить сертификат.
+Указанный магазин сертификатов неявно находится в учетной записи LocalMachine.
 
 ```yaml
 Type: System.String
@@ -94,9 +94,9 @@ Accept wildcard characters: False
 ```
 
 ### -CertificateUrl
-Это URL-адрес сертификата, который был передан в хранилище ключей в качестве секрета.
-Дополнительные сведения о добавлении секрета в хранилище ключей можно найти в разделе \[ Добавление ключа или секрета в хранилище ключей \] ( https://docs.microsoft.com/azure/key-vault/key-vault-get-started/#add) .
-В этом случае необходимо, чтобы ваш сертификат имел кодировку Base64 для следующего объекта JSON, который кодируется в UTF-8: \<br\> \<br\> { \<br\> "Data": " \<Base64-encoded-certificate\> ", "," пароль ":" \<br\> PFX ", \<br\> " Password ":" \<pfx-file-password\> " \<br\> }/
+Это URL-адрес сертификата, который был выложен в хранилище ключей в качестве секретного.
+Чтобы узнать, как добавить секрет в хранилище ключей, см. также: "Добавление ключа или секрета в \[ хранилище \] ключей" https://docs.microsoft.com/azure/key-vault/key-vault-get-started/#add) (.
+В этом случае сертификат должен быть кодировки Base64 для следующего объекта JSON, который закодирован в UTF-8: \<br\> \<br\> { \<br\> "data":" \<Base64-encoded-certificate\> ", \<br\> "dataType":"pfx", \<br\> "password":" \<pfx-file-password\> " \<br\> }/
 
 ```yaml
 Type: System.String
@@ -110,7 +110,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Имя_кластера
+### -ClusterName
 Укажите имя кластера.
 
 ```yaml
@@ -155,7 +155,7 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -Name (имя)
+### -Name
 Укажите имя типа узла.
 
 ```yaml
@@ -186,7 +186,7 @@ Accept wildcard characters: False
 ```
 
 ### -SourceVaultId
-Идентификатор ресурса для хранилища ключей, содержащий сертификаты.
+ИД ресурса хранилища ключа, содержащий сертификаты.
 
 ```yaml
 Type: System.String
@@ -201,7 +201,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
-Запрашивает подтверждение перед запуском командлета.
+Перед запуском cmdlet вам будет предложено подтвердить его.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -216,8 +216,8 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Показывает, что произойдет при запуске командлета.
-Командлет не выполняется.
+Показывает, что произойдет при запуске cmdlet.
+Этот cmdlet не будет выполниться.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -232,16 +232,16 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Этот командлет поддерживает общие параметры:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-of Variable,-out,-PipelineVariable,-Verbose, и-WarningAction. Дополнительные сведения можно найти в разделе [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+Этот cmdlet поддерживает общие параметры: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. Дополнительные сведения см. [в about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)
 
-## ВХОДНЫЕ данные
+## INPUTS
 
-### System. String
+### System.String
 
-## НАПРЯЖЕНИЕ
+## OUTPUTS
 
-### Microsoft. Azure. Commands. ServiceFabric. Models. PSManagedNodeType
+### Microsoft.Azure.Commands.ServiceFabric.Models.PSManagedNodeType
 
-## Пуск
+## ПРИМЕЧАНИЯ
 
-## ДОПОЛНИТЕЛЬНЫЕ ССЫЛКИ
+## СВЯЗАННЫЕ ССЫЛКИ
