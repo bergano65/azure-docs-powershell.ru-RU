@@ -3,19 +3,19 @@ external help file: Microsoft.WindowsAzure.Commands.HDInsight.dll-Help.xml
 ms.assetid: 6818F49E-0A51-4D99-BC3D-5A90F1F30C33
 online version: ''
 schema: 2.0.0
-ms.openlocfilehash: 78caed4ac43f21a1afe21a8901bdcd77ba29e482
-ms.sourcegitcommit: 56ed085a868afa8263f8eb0f755b5822f5c29532
+ms.openlocfilehash: 00805736c616fb808528a95f86f66eceba2f0e30
+ms.sourcegitcommit: 6f0b6059d096600ebff1c8514c35c467d2f482d8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "94075476"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104713469"
 ---
 # Revoke-AzureHDInsightRdpAccess
 
-## КРАТКИй обзор
-Запрещает RDP-доступ к кластеру HDInsight.
+## SYNOPSIS
+Отключает доступ RDP к кластеру HDInsight.
 
-## Максимальное
+## СИНТАКСИС
 
 ```
 Revoke-AzureHDInsightRdpAccess [-Certificate <X509Certificate2>] [-HostedService <String>] [-Endpoint <Uri>]
@@ -23,20 +23,20 @@ Revoke-AzureHDInsightRdpAccess [-Certificate <X509Certificate2>] [-HostedService
  [-Profile <AzureSMProfile>] [<CommonParameters>]
 ```
 
-## NОПИСАНИЕ
-Эта версия Azure PowerShell HDInsight устарела.
-Эти командлеты будут удалены с 1 января 2017 г.
-Пожалуйста, используйте более новую версию Azure PowerShell HDInsight.
+## ОПИСАНИЕ
+Эта версия Azure PowerShell HDInsight не является нужной.
+Эти cmdlets будут удалены до 1 января 2017 г.
+Используйте более новую версию Azure PowerShell HDInsight.
 
-Сведения о том, как использовать новую HDInsight для создания кластера, можно найти в разделе Создание кластеров [на базе Linux в HDInsight с помощью Azure PowerShell](https://azure.microsoft.com/en-us/documentation/articles/hdinsight-hadoop-create-linux-clusters-azure-powershell/) ( https://azure.microsoft.com/en-us/documentation/articles/hdinsight-hadoop-create-linux-clusters-azure-powershell/) .
-Сведения о том, как отправлять задания с помощью Azure PowerShell и другие подходы, приведены [в разделе Отправка заданий Hadoop в HDInsight](https://azure.microsoft.com/en-us/documentation/articles/hdinsight-submit-hadoop-jobs-programmatically/) ( https://azure.microsoft.com/en-us/documentation/articles/hdinsight-submit-hadoop-jobs-programmatically/) .
-Справочные сведения о службе Azure PowerShell HDInsight можно найти в [командлетах Azure hdinsight](https://msdn.microsoft.com/en-us/library/mt438705.aspx) ( https://msdn.microsoft.com/en-us/library/mt438705.aspx) .
+Сведения об использовании новой hdInsight для создания кластеров см. в видео "Создание кластеров на основе Linux" в [HDInsight с помощью Azure PowerShell.](https://azure.microsoft.com/en-us/documentation/articles/hdinsight-hadoop-create-linux-clusters-azure-powershell/) https://azure.microsoft.com/en-us/documentation/articles/hdinsight-hadoop-create-linux-clusters-azure-powershell/)
+Сведения о том, как отправлять задания с помощью Azure PowerShell и других подходов, см. в сведениях о задании [Submit Hadoop в HDInsight](https://azure.microsoft.com/en-us/documentation/articles/hdinsight-submit-hadoop-jobs-programmatically/) . https://azure.microsoft.com/en-us/documentation/articles/hdinsight-submit-hadoop-jobs-programmatically/)
+Справочные сведения о Azure PowerShell HDInsight см. в [cmdlets Azure HDInsight.](/powershell/module/servicemanagement/azure.service/?view=azuresmps-4.0.0#hd-insights)
 
-Командлет **REVOKE-AzureHDInsightRdpAccess** отключает доступ к кластеру Azure HDInsight по протоколу удаленного рабочего стола (RDP).
+С **помощью cmdlet Revoke-AzureHDInsightRdpAccess** можно отключить доступ к кластеру Azure HDInsight.
 
-## ИЛЛЮСТРИРУЮТ
+## ПРИМЕРЫ
 
-## ПАРАМЕТРЫ
+## PARAMETERS
 
 ### -Certificate
 Указывает сертификат управления для подписки Azure.
@@ -53,14 +53,14 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Endpoint
-Задает конечную точку, используемую для подключения к Azure.
-Если этот параметр не указан, этот командлет использует конечную точку по умолчанию.
+### -Конечная точка
+Указывает конечную точку, используемую для подключения к Azure.
+Если этот параметр не задан, используется конечная точка по умолчанию.
 
 ```yaml
 Type: Uri
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -70,8 +70,8 @@ Accept wildcard characters: False
 ```
 
 ### -HostedService
-Задает пространство имен службы HDInsight.
-Если этот параметр не указан, этот командлет использует пространство имен по умолчанию.
+Определяет пространство имен службы HDInsight.
+Если этот параметр не задан, используется пространство имен по умолчанию.
 
 ```yaml
 Type: String
@@ -86,12 +86,12 @@ Accept wildcard characters: False
 ```
 
 ### -IgnoreSslErrors
-Указывает, пропускаются ли ошибки SSL (Secure Socketing Layer).
+Указывает на то, игнорируются ли ошибки SSL.
 
 ```yaml
 Type: Boolean
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -101,12 +101,12 @@ Accept wildcard characters: False
 ```
 
 ### -Location
-Указывает область Azure, в которой находится кластер.
+Определяет регион Azure, в котором находится кластер.
 
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -115,8 +115,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Name (имя)
-Указывает имя кластера Azure HDInsight.
+### -Name
+Название кластера Azure HDInsight.
 
 ```yaml
 Type: String
@@ -131,13 +131,13 @@ Accept wildcard characters: False
 ```
 
 ### -Profile
-Указывает профиль Azure, из которого считывается этот командлет.
-Если вы не укажете профиль, этот командлет считывает данные из локального профиля по умолчанию.
+Определяет профиль Azure, для которого читается этот cmdlet.
+Если не указать профиль, этот cmdlet будет читать данные из локального профиля по умолчанию.
 
 ```yaml
 Type: AzureSMProfile
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -148,7 +148,7 @@ Accept wildcard characters: False
 
 ### -Подписка
 Указывает подписку.
-Этот командлет отклоняет доступ к протоколу RDP для подписки, которую указывает этот параметр.
+Этот cmdlet отзывает доступ к протоколу RDP для подписки, указанной этим параметром.
 
 ```yaml
 Type: String
@@ -163,15 +163,15 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Этот командлет поддерживает общие параметры:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-of Variable,-out,-PipelineVariable,-Verbose, и-WarningAction. Дополнительные сведения можно найти в разделе about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
+Этот cmdlet поддерживает общие параметры: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. Дополнительные сведения см. в about_CommonParameters https://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## ВХОДНЫЕ данные
+## INPUTS
 
-## НАПРЯЖЕНИЕ
+## OUTPUTS
 
-## Пуск
+## ПРИМЕЧАНИЯ
 
-## ДОПОЛНИТЕЛЬНЫЕ ССЫЛКИ
+## СВЯЗАННЫЕ ССЫЛКИ
 
 [Grant-AzureHdinsightRdpAccess](./Grant-AzureHdinsightRdpAccess.md)
 

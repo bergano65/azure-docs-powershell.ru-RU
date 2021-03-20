@@ -5,12 +5,12 @@ online version: https://docs.microsoft.com/powershell/module/az.servicefabric/ad
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ServiceFabric/ServiceFabric/help/Add-AzServiceFabricManagedNodeTypeVMSecret.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ServiceFabric/ServiceFabric/help/Add-AzServiceFabricManagedNodeTypeVMSecret.md
-ms.openlocfilehash: 35d755bc117ccc4379be8d7344d8e7170594d555
-ms.sourcegitcommit: 4dfb0cc533b83f77afdcfbe2618c1e6c8d221330
+ms.openlocfilehash: 361118e10ef5601104e7d79f0f30f9832018ffaf
+ms.sourcegitcommit: 6f0b6059d096600ebff1c8514c35c467d2f482d8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "101969795"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104719317"
 ---
 # Add-AzServiceFabricManagedNodeTypeVMSecret
 
@@ -34,7 +34,7 @@ Add-AzServiceFabricManagedNodeTypeVMSecret [-ResourceGroupName] <String> [-Clust
 ```
 
 ## ОПИСАНИЕ
-Добавьте секрет сертификата к типу узла. Секрет должен храниться в хранилище ключей Azure. Дополнительные сведения, связанные с хранилищем ключей, см. в подмносях "Что такое хранилище ключей Azure"? (https://azure.microsoft.com/en-us/documentation/articles/key-vault-whatis/). Дополнительные сведения о Set-AzKeyVaultSecret см. в Microsoft Developer Network Службе управления ключами https://msdn.microsoft.com/library/azure/dn868052.aspx) Azure.
+Добавьте секрет сертификата к типу узла. Секрет должен храниться в хранилище ключей Azure. Дополнительные сведения, связанные с хранилищем ключей, см. в подмносях "Что такое хранилище ключей Azure"? (https://azure.microsoft.com/en-us/documentation/articles/key-vault-whatis/). Дополнительные сведения о cmdlets см. в Microsoft Developer Network библиотеке или Set-AzKeyVaultSecret Azure [Key Vault.](/powershell/module/az.keyvault/)
 
 ## ПРИМЕРЫ
 
@@ -78,8 +78,8 @@ Accept wildcard characters: False
 ```
 
 ### -CertificateStore
-Указывает хранилище сертификатов на виртуальной машине, в которое нужно добавить сертификат.
-Указанное хранилище сертификатов неявно указывается в учетной записи LocalMachine.
+Указывает хранилище сертификатов на виртуальной машине, в которую нужно добавить сертификат.
+Указанный магазин сертификатов неявно находится в учетной записи LocalMachine.
 
 ```yaml
 Type: System.String
@@ -201,7 +201,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
-Запрос на подтверждение перед запуском cmdlet.
+Перед запуском cmdlet вам будет предложено подтвердить его.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter

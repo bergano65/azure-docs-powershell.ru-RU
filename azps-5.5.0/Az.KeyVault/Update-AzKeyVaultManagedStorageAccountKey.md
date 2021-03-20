@@ -5,12 +5,12 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.keyvault/u
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/KeyVault/KeyVault/help/Update-AzKeyVaultManagedStorageAccountKey.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/KeyVault/KeyVault/help/Update-AzKeyVaultManagedStorageAccountKey.md
-ms.openlocfilehash: b603cff68d2343a683718ca53e900aa5b667dc14
-ms.sourcegitcommit: c05d3d669b5631e526841f47b22513d78495350b
+ms.openlocfilehash: 043870c3a1d07f17c8c09b8f89d4a97dc356d5cc
+ms.sourcegitcommit: 6f0b6059d096600ebff1c8514c35c467d2f482d8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/09/2021
-ms.locfileid: "100219441"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104718995"
 ---
 # Update-AzKeyVaultManagedStorageAccountKey
 
@@ -33,7 +33,7 @@ Update-AzKeyVaultManagedStorageAccountKey [-InputObject] <PSKeyVaultManagedStora
 ```
 
 ## ОПИСАНИЕ
-Повторно создает указанный ключ из key Vault Managed Azure Storage Account и задает его как активный ключ. Ключ сейфа передает вызов диспетчеру ресурсов Azure для повторного сгенерации ключа. Для повторного получения ключей в учетной записи службы хранилища Azure вызываемой вызываемой службе необходимо получить разрешения.
+Повторно создает указанный ключ в управляемой учетной записи хранилища Azure Key Vault и задает его как активный ключ. Ключ сейфа передает вызов диспетчеру ресурсов Azure для повторного сгенерации ключа. Для повторного получения ключей в учетной записи службы хранилища Azure вызываемой вызываемой службе необходимо получить разрешения.
 
 ## ПРИМЕРЫ
 
@@ -55,7 +55,7 @@ Updated             : 5/21/2018 11:55:58 PM
 Tags                :
 ```
 
-Повторно создает "ключ1" учетной записи "mystorageaccount" и задает "key1" в качестве активной учетной записи хранилища Azure, управляемой key Vault.
+Regenerates 'key1' of account 'mystorageaccount' and sets 'key1' as the active of the Key Vault managed Azure Storage Account.
 
 ## PARAMETERS
 
@@ -120,7 +120,7 @@ Accept wildcard characters: False
 ```
 
 ### -KeyName
-Имя ключа учетной записи хранения, который нужно сгенерировать и сделать активным.
+Имя ключа учетной записи хранения, который нужно сгенерировать и активировать.
 
 ```yaml
 Type: System.String
@@ -212,5 +212,5 @@ Accept wildcard characters: False
 
 ## СВЯЗАННЫЕ ССЫЛКИ
 
-[https://msdn.microsoft.com/en-us/library/dn868052.aspx](https://msdn.microsoft.com/en-us/library/dn868052.aspx)
+[Cmdlets Key Vault Azure PowerShell](/powershell/module/az.keyvault/)
 

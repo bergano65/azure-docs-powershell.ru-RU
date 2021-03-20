@@ -5,12 +5,12 @@ online version: https://docs.microsoft.com/powershell/module/az.datafactory/set-
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/DataFactory/DataFactoryV2/help/Set-AzDataFactoryV2DataFlow.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/DataFactory/DataFactoryV2/help/Set-AzDataFactoryV2DataFlow.md
-ms.openlocfilehash: 6827fb627a3d393c8971886cee869c330f7d4099
-ms.sourcegitcommit: 4dfb0cc533b83f77afdcfbe2618c1e6c8d221330
+ms.openlocfilehash: 2e94d5c2ef93997d0a77aa846f911d78d37c3afc
+ms.sourcegitcommit: 6f0b6059d096600ebff1c8514c35c467d2f482d8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "101998497"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104719300"
 ---
 # Set-AzDataFactoryV2DataFlow
 
@@ -157,7 +157,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
-Запрос на подтверждение перед запуском cmdlet.
+Перед запуском cmdlet вам будет предложено подтвердить его.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -203,6 +203,6 @@ Accept wildcard characters: False
 
 ## СВЯЗАННЫЕ ССЫЛКИ
 
-[Get-AzDataFactoryDataFlow](./Get-AzDataFactoryDataFlow.md)
+[Get-AzDataFactoryV2DataFlow](./get-azdatafactoryv2dataflow.md)
 
-[Remove-AzDataFactoryDataFlow](./Remove-AzDataFactoryDataFlow.md)
+[Remove-AzDataFactoryV2DataFlow](./remove-azdatafactoryv2dataflow.md)

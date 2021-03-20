@@ -5,12 +5,12 @@ online version: https://docs.microsoft.com/powershell/module/az.datafactory/remo
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/DataFactory/DataFactoryV2/help/Remove-AzDataFactoryV2DataFlow.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/DataFactory/DataFactoryV2/help/Remove-AzDataFactoryV2DataFlow.md
-ms.openlocfilehash: 66f5cf02c4f50c699f790ec2790080fa37ab166d
-ms.sourcegitcommit: 4dfb0cc533b83f77afdcfbe2618c1e6c8d221330
+ms.openlocfilehash: 0126ab81eb2ff5ddd2182d57c4e76280fc1bfbcc
+ms.sourcegitcommit: 6f0b6059d096600ebff1c8514c35c467d2f482d8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "102009187"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104718937"
 ---
 # Remove-AzDataFactoryV2DataFlow
 
@@ -103,7 +103,7 @@ Accept wildcard characters: False
 ```
 
 ### -InputObject
-Объект потоков данных.
+Объект потока данных.
 
 ```yaml
 Type: Microsoft.Azure.Commands.DataFactoryV2.Models.PSDataset
@@ -228,7 +228,7 @@ Accept wildcard characters: False
 
 ## СВЯЗАННЫЕ ССЫЛКИ
 
-[Get-AzDataFactoryDataFlow](./Get-AzDataFactoryDataFlow.md)
+[Get-AzDataFactoryV2DataFlow](./get-azdatafactoryv2dataflow.md)
 
-[Set-AzDataFactoryDataFlow](./Set-AzDataFactoryDataFlow.md)
+[Set-AzDataFactoryV2DataFlow](./set-azdatafactoryv2dataflow.md)
 

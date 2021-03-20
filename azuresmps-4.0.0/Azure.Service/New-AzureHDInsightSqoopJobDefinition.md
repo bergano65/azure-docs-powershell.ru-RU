@@ -3,49 +3,49 @@ external help file: Microsoft.WindowsAzure.Commands.HDInsight.dll-Help.xml
 ms.assetid: E11AAB11-0CBF-4746-91D7-4D5E64801C29
 online version: ''
 schema: 2.0.0
-ms.openlocfilehash: a6dba4c331a69093f49c95728c028eaaf5d0bdb4
-ms.sourcegitcommit: 56ed085a868afa8263f8eb0f755b5822f5c29532
+ms.openlocfilehash: 6f31fecdc32e69e1c86365784143b27aea70fcfb
+ms.sourcegitcommit: 6f0b6059d096600ebff1c8514c35c467d2f482d8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "94075915"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104718297"
 ---
 # New-AzureHDInsightSqoopJobDefinition
 
-## КРАТКИй обзор
+## SYNOPSIS
 Определяет новое задание Sqoop.
 
-## Максимальное
+## СИНТАКСИС
 
 ```
 New-AzureHDInsightSqoopJobDefinition [-Command <String>] [-File <String>] [-Files <String[]>]
  [-StatusFolder <String>] [-Profile <AzureSMProfile>] [<CommonParameters>]
 ```
 
-## NОПИСАНИЕ
-Эта версия Azure PowerShell HDInsight устарела.
-Эти командлеты будут удалены с 1 января 2017 г.
-Пожалуйста, используйте более новую версию Azure PowerShell HDInsight.
+## ОПИСАНИЕ
+Эта версия Azure PowerShell HDInsight не является нужной.
+Эти cmdlets будут удалены до 1 января 2017 г.
+Используйте более новую версию Azure PowerShell HDInsight.
 
-Сведения о том, как использовать новую HDInsight для создания кластера, можно найти в разделе Создание кластеров [на базе Linux в HDInsight с помощью Azure PowerShell](https://azure.microsoft.com/en-us/documentation/articles/hdinsight-hadoop-create-linux-clusters-azure-powershell/) ( https://azure.microsoft.com/en-us/documentation/articles/hdinsight-hadoop-create-linux-clusters-azure-powershell/) .
-Сведения о том, как отправлять задания с помощью Azure PowerShell и другие подходы, приведены [в разделе Отправка заданий Hadoop в HDInsight](https://azure.microsoft.com/en-us/documentation/articles/hdinsight-submit-hadoop-jobs-programmatically/) ( https://azure.microsoft.com/en-us/documentation/articles/hdinsight-submit-hadoop-jobs-programmatically/) .
-Справочные сведения о службе Azure PowerShell HDInsight можно найти в [командлетах Azure hdinsight](https://msdn.microsoft.com/en-us/library/mt438705.aspx) ( https://msdn.microsoft.com/en-us/library/mt438705.aspx) .
+Сведения об использовании новой hdInsight для создания кластеров см. в видео "Создание кластеров на основе Linux" в [HDInsight с помощью Azure PowerShell.](https://azure.microsoft.com/en-us/documentation/articles/hdinsight-hadoop-create-linux-clusters-azure-powershell/) https://azure.microsoft.com/en-us/documentation/articles/hdinsight-hadoop-create-linux-clusters-azure-powershell/)
+Сведения о том, как отправлять задания с помощью Azure PowerShell и других подходов, см. в сведениях о задании [Submit Hadoop в HDInsight](https://azure.microsoft.com/en-us/documentation/articles/hdinsight-submit-hadoop-jobs-programmatically/) . https://azure.microsoft.com/en-us/documentation/articles/hdinsight-submit-hadoop-jobs-programmatically/)
+Справочные сведения о Azure PowerShell HDInsight см. в [cmdlets Azure HDInsight.](/powershell/module/servicemanagement/azure.service/?view=azuresmps-4.0.0#hd-insights)
 
-Командлет **New-AzureHDInsightSqoopJobDefinition** создает задание Sqoop для выполнения в кластере HDInsight Azure.
+Для запуска задания Sqoop в кластере Azure **HDInsightSqoopJobDefinition** создается задание Sqoop.
 
 Sqoop — это инструмент для передачи данных между кластерами Hadoop и реляционными базами данных.
-Вы можете использовать Sqoop для импорта данных из базы данных SQL Server в распределенную файловую систему Hadoop (HDFS), преобразовать данные с помощью Hadoop MapReduce и затем экспортировать данные из HDFS обратно в базу данных SQL Server.
+С помощью Sqoop можно импортировать данные из базы данных SQL Server в распределенную файловую систему Hadoop (HDFS), преобразовать их с помощью Hadoop MapReduce, а затем экспортировать данные из HDFS обратно в SQL Server базу данных.
 
-## ИЛЛЮСТРИРУЮТ
+## ПРИМЕРЫ
 
-### Пример 1: импорт данных
+### Пример 1. Импорт данных
 ```
 PS C:\>$SqoopJobDef = New-AzureHDInsightSqoopJobDefinition -Command "import --connect jdbc:sqlserver://<SQLDatabaseServerName>.database.windows.net:1433;username=<SQLDatabasUsername>@<SQLDatabaseServerName>; password=<SQLDatabasePassword>; database=<SQLDatabaseDatabaseName> --table <TableName> --target-dir wasb://<ContainerName>@<WindowsAzureStorageAccountName>.blob.core.windows.net/<Path>"
 ```
 
-Эта команда определяет задание Sqoop, которое импортирует все строки в таблице из базы данных сервера AzureSQL в кластер HDInsight, а затем сохраняет определение задания в переменной $SqoopJobDef.
+Эта команда определяет задание Sqoop, которое импортирует все строки таблицы из базы данных AzureSQL Server в кластер HDInsight, а затем сохраняет определение задания в переменной $SqoopJobDef.
 
-## ПАРАМЕТРЫ
+## PARAMETERS
 
 ### -Command
 Указывает команду Sqoop и ее аргументы.
@@ -53,7 +53,7 @@ PS C:\>$SqoopJobDef = New-AzureHDInsightSqoopJobDefinition -Command "import --co
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -62,9 +62,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Файл
-Задает путь к файлу сценария, содержащему команды для выполнения.
-Файл сценария должен находиться на WASB.
+### -File
+Путь к файлу сценария, который содержит команды для запуска.
+Файл сценария должен быть расположен в папке WASB.
 
 ```yaml
 Type: String
@@ -79,12 +79,12 @@ Accept wildcard characters: False
 ```
 
 ### -Файлы
-Указывает коллекцию файлов WASB, необходимых для задания.
+Набор файлов WASB, необходимых для задания.
 
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -94,13 +94,13 @@ Accept wildcard characters: False
 ```
 
 ### -Profile
-Указывает профиль Azure, из которого считывается этот командлет.
-Если вы не укажете профиль, этот командлет считывает данные из локального профиля по умолчанию.
+Определяет профиль Azure, для которого читается этот cmdlet.
+Если не указать профиль, этот cmdlet будет читать данные из локального профиля по умолчанию.
 
 ```yaml
 Type: AzureSMProfile
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -110,12 +110,12 @@ Accept wildcard characters: False
 ```
 
 ### -StatusFolder
-Указывает расположение папки, содержащей стандартные выходные данные и выходные ошибки для задания, включая код завершения и журналы задач.
+Определяет расположение папки, которая содержит стандартные выходные данные и результаты ошибок для задания, включая код выхода и журналы задач.
 
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -125,15 +125,15 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Этот командлет поддерживает общие параметры:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-of Variable,-out,-PipelineVariable,-Verbose, и-WarningAction. Дополнительные сведения можно найти в разделе about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
+Этот cmdlet поддерживает общие параметры: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. Дополнительные сведения см. в about_CommonParameters https://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## ВХОДНЫЕ данные
+## INPUTS
 
-## НАПРЯЖЕНИЕ
+## OUTPUTS
 
-## Пуск
+## ПРИМЕЧАНИЯ
 
-## ДОПОЛНИТЕЛЬНЫЕ ССЫЛКИ
+## СВЯЗАННЫЕ ССЫЛКИ
 
 [New-AzureHDInsightHiveJobDefinition](./New-AzureHDInsightHiveJobDefinition.md)
 

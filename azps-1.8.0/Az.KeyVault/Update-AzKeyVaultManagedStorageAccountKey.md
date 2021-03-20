@@ -5,21 +5,21 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.keyvault/u
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/KeyVault/KeyVault/help/Update-AzKeyVaultManagedStorageAccountKey.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/KeyVault/KeyVault/help/Update-AzKeyVaultManagedStorageAccountKey.md
-ms.openlocfilehash: a49905a508d791b8202cb3457da913c3beeb8c57
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: 2b809af8984dc2fd21347ef0db3990d5dfe96dc2
+ms.sourcegitcommit: 6f0b6059d096600ebff1c8514c35c467d2f482d8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93900057"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104713231"
 ---
 # Update-AzKeyVaultManagedStorageAccountKey
 
-## КРАТКИй обзор
-Повторное создание указанного ключа учетной записи хранения для хранилища ключей из управляемого хранилища Azure.
+## SYNOPSIS
+Повторно сгенерирует указанный ключ из key Vault Managed Azure Storage Account.
 
-## Максимальное
+## СИНТАКСИС
 
-### ByDefinitionName (по умолчанию)
+### ByDefinitionName (Default)
 ```
 Update-AzKeyVaultManagedStorageAccountKey [-VaultName] <String> [-AccountName] <String> [-KeyName] <String>
  [-Force] [-PassThru] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
@@ -32,12 +32,12 @@ Update-AzKeyVaultManagedStorageAccountKey [-InputObject] <PSKeyVaultManagedStora
  [<CommonParameters>]
 ```
 
-## NОПИСАНИЕ
-Повторное создание указанного ключа учетной записи хранилища для управляемого хранилища Azure и задание ключа в качестве активного ключа. Прокси-сервер хранилища ключей. вызов в диспетчере ресурсов Azure для повторного создания ключа. Вызывающий объект должен posses разрешения на повторное создание ключей в указанной учетной записи хранения Azure.
+## ОПИСАНИЕ
+Повторно создает указанный ключ в управляемой учетной записи хранилища Azure Key Vault и задает его как активный ключ. Ключ сейфа передает вызов диспетчеру ресурсов Azure для повторного сгенерации ключа. Для повторного получения ключей в учетной записи службы хранилища Azure вызываемой вызываемой службе необходимо получить разрешения.
 
-## ИЛЛЮСТРИРУЮТ
+## ПРИМЕРЫ
 
-### Пример 1: повторное создание ключа
+### Пример 1. Повторное сгенерировать ключ
 ```powershell
 PS C:\> Update-AzKeyVaultManagedStorageAccountKey -VaultName 'myvault' -AccountName 'mystorageaccount' -KeyName 'key1'
 
@@ -55,12 +55,12 @@ Updated             : 5/21/2018 11:55:58 PM
 Tags                :
 ```
 
-Повторное создание "key1" учетной записи "mystorageaccount" и установка "key1" в качестве активной учетной записи хранения для хранилища ключей в службе хранилища Azure.
+Regenerates 'key1' of account 'mystorageaccount' and sets 'key1' as the active of the Key Vault managed Azure Storage Account.
 
-## ПАРАМЕТРЫ
+## PARAMETERS
 
-### -Имя_учетной_записи
-Имя учетной записи хранилища с управляемым хранилищем. Командлет создает полное доменное имя управляемой учетной записи хранения из имени хранилища, выбранной в данный момент среды и управляемого имени учетной записи хранения.
+### -AccountName
+Имя учетной записи управляемого хранилища в key Vault. Cmdlet constructs the FQDN of a managed storage account name from vault name, currently selected environment and manged storage account name.
 
 ```yaml
 Type: System.String
@@ -90,7 +90,7 @@ Accept wildcard characters: False
 ```
 
 ### -Force
-Не запрашивать подтверждение.
+Не спрашивайте подтверждения.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -120,7 +120,7 @@ Accept wildcard characters: False
 ```
 
 ### -KeyName
-Имя ключа учетной записи хранения, которое нужно повторно создать и сделать активным.
+Имя ключа учетной записи хранения, который нужно сгенерировать и активировать.
 
 ```yaml
 Type: System.String
@@ -135,8 +135,8 @@ Accept wildcard characters: False
 ```
 
 ### -PassThru
-По умолчанию командлет не возвращает объект.
-Если этот параметр указан, командлет возвращает управляемую учетную запись хранения, которая была удалена.
+По умолчанию cmdlet не возвращает объект.
+Если этот переключатель задан, возвращается удаленная учетная запись управляемого хранилища.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -151,8 +151,8 @@ Accept wildcard characters: False
 ```
 
 ### -VaultName
-Имя хранилища.
-Командлет создает полное доменное имя хранилища на основе имени и выбранной в данный момент среды.
+Имя сейфа.
+Cmdlet constructs the FQDN of a vault based on the name and currently selected environment.
 
 ```yaml
 Type: System.String
@@ -167,7 +167,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
-Запрашивает подтверждение перед запуском командлета.
+Перед запуском cmdlet вам будет предложено подтвердить его.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -182,8 +182,8 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Показывает, что произойдет при запуске командлета.
-Командлет не выполняется.
+Показывает, что произойдет при запуске cmdlet.
+Этот cmdlet не будет выполниться.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -198,19 +198,19 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Этот командлет поддерживает общие параметры:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-of Variable,-out,-PipelineVariable,-Verbose, и-WarningAction. Дополнительные сведения можно найти в разделе about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
+Этот cmdlet поддерживает общие параметры: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. Дополнительные сведения см. в about_CommonParameters https://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## ВХОДНЫЕ данные
+## INPUTS
 
-### Microsoft. Azure. Commands. KeyVault. Models. PSKeyVaultManagedStorageAccountIdentityItem
+### Microsoft.Azure.Commands.KeyVault.Models.PSKeyVaultManagedStorageAccountIdentityItem
 
-## НАПРЯЖЕНИЕ
+## OUTPUTS
 
-### Microsoft. Azure. Commands. KeyVault. Models. PSKeyVaultManagedStorageAccount
+### Microsoft.Azure.Commands.KeyVault.Models.PSKeyVaultManagedStorageAccount
 
-## Пуск
+## ПРИМЕЧАНИЯ
 
-## ДОПОЛНИТЕЛЬНЫЕ ССЫЛКИ
+## СВЯЗАННЫЕ ССЫЛКИ
 
-[https://msdn.microsoft.com/en-us/library/dn868052.aspx](https://msdn.microsoft.com/en-us/library/dn868052.aspx)
+[Cmdlets Key Vault Azure PowerShell](/powershell/module/az.keyvault/)
 

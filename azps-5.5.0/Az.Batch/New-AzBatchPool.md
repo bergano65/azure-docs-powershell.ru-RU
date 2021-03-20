@@ -6,12 +6,12 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.batch/new-
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Batch/Batch/help/New-AzBatchPool.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Batch/Batch/help/New-AzBatchPool.md
-ms.openlocfilehash: 3c66893875dedd5e7298b9c6239c3da7ee86212e
-ms.sourcegitcommit: c05d3d669b5631e526841f47b22513d78495350b
+ms.openlocfilehash: 84e89bdb1a62a30eb3c781115fa53dfc82c6a0ac
+ms.sourcegitcommit: 6f0b6059d096600ebff1c8514c35c467d2f482d8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/09/2021
-ms.locfileid: "100231100"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104718484"
 ---
 # New-AzBatchPool
 
@@ -85,7 +85,7 @@ New-AzBatchPool [-Id] <String> -VirtualMachineSize <String> [-DisplayName <Strin
 
 ## ПРИМЕРЫ
 
-### Пример 1. Создание пула с помощью набора параметров TargetDedicated с помощью CloudServiceConfiguration
+### Пример 1. Создание пула с использованием набора параметров TargetDedicated с помощью CloudServiceConfiguration
 ```
 PS C:\>$configuration = New-Object -TypeName "Microsoft.Azure.Commands.Batch.Models.PSCloudServiceConfiguration" -ArgumentList @(4,"*")
 PS C:\>New-AzBatchPool -Id "MyPool" -VirtualMachineSize "STANDARD_D1_V2" -CloudServiceConfiguration $configuration  -TargetDedicatedComputeNodes 3 -BatchContext $Context
@@ -102,7 +102,7 @@ PS C:\>New-AzBatchPool -Id "MyPool" -VirtualMachineSize "STANDARD_D1_V2" -Virtua
 
 Эта команда создает новый пул с ID MyPool с использованием набора параметров TargetDedicated.
 Целевой объем выделения составляет три вычислительных узла.
-Пул настроен для использования на STANDARD_D1_V2 компьютерах с изображением операционной системы Центра обработки данных Windows-2016.
+Пул настроен для использования на STANDARD_D1_V2 компьютерах с изображением операционной системы Windows-2016 Datacenter.
 
 ### Пример 3. Создание пула с использованием набора параметров "Автомасштаб"
 ```
@@ -162,7 +162,7 @@ Accept wildcard characters: False
 ```
 
 ### -AutoScaleEvaluationInterval
-Определяет количество времени (в минутах), которое будет задано до того, как размер пула будет автоматически скорректирован в соответствии с формулой автомасштаби.
+Определяет количество времени (в минутах), которое будет задано до того, как размер пула будет автоматически скорректирован в соответствии с формулой авто шкалы.
 По умолчанию это значение составляет 15 минут, а минимальное — 5 минут.
 
 ```yaml
@@ -194,7 +194,7 @@ Accept wildcard characters: False
 
 ### -BatchContext
 Указывает экземпляр **BatchAccountContext,** который этот cmdlet использует для взаимодействия со службой Batch.
-Если для Get-AzBatchAccount BatchAccountContext используется Get-AzBatchAccount, при взаимодействии со службой пакета будет использоваться проверка подлинности Azure Active Directory. Чтобы использовать проверку подлинности общего ключа, используйте Get-AzBatchAccountKey для получения объекта BatchAccountContext с заполненными ключами доступа. При использовании проверки подлинности общего ключа первичный ключ доступа используется по умолчанию. Чтобы изменить ключ, за установите свойство BatchAccountContext.KeyInUse.
+Если для Get-AzBatchAccount BatchAccountContext используется Get-AzBatchAccount, при взаимодействии со службой batchy будет использоваться проверка подлинности Azure Active Directory. Чтобы использовать проверку подлинности общего ключа, используйте Get-AzBatchAccountKey для получения объекта BatchAccountContext с заполненными ключами доступа. При использовании проверки подлинности общего ключа первичный ключ доступа используется по умолчанию. Чтобы изменить ключ, за установите свойство BatchAccountContext.KeyInUse.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Batch.BatchAccountContext
@@ -210,7 +210,7 @@ Accept wildcard characters: False
 
 ### -CertificateReferences
 Сертификаты, связанные с пулом.
-Пакетная служба устанавливает сертификаты, на которые ссылается эта служба, на каждый вычислительный узел пула.
+Пакетная служба устанавливает сертификаты, на которые ссылается, на каждый вычислительный узел пула.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Batch.Models.PSCertificateReference[]
@@ -270,7 +270,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Определяет ИД созда создаемого пула.
+Определяет ИД создаемого пула.
 
 ```yaml
 Type: System.String
@@ -315,7 +315,7 @@ Accept wildcard characters: False
 ```
 
 ### -Метаданные
-Метаданные в качестве пар ключа и значения, которые нужно добавить в новый пул.
+Метаданные (ключевые и важные), которые нужно добавить в новый пул.
 Ключ — это имя метаданных.
 Значение — это значение метаданных.
 
@@ -362,7 +362,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResizeTimeout
-Время и время,в течение долгого времени, необходимое для узлы на компьютере в пуле.
+Время и время времени, заданное для узлы, на которые будут начислены вычислительные узлы, в пул.
 
 ```yaml
 Type: System.Nullable`1[System.TimeSpan]
@@ -469,7 +469,7 @@ Accept wildcard characters: False
 
 ### -VirtualMachineSize
 Определяет размер виртуальных машин в пуле.
-Дополнительные сведения о размерах виртуальных машин см. в сведениях о размерах виртуальных машин https://azure.microsoft.com/en-us/documentation/articles/virtual-machines-size-specs/ https://azure.microsoft.com/en-us/documentation/articles/virtual-machines-size-specs/) (на сайте Microsoft Azure).
+Дополнительные сведения о размерах виртуальных машин см. в области "Размеры виртуальных машин" для виртуальных машин [на](/virtual-machines/sizes) сайте Microsoft Azure.
 
 ```yaml
 Type: System.String
@@ -484,7 +484,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
-Запрос на подтверждение перед запуском cmdlet.
+Перед запуском cmdlet вам будет предложено подтвердить его.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter

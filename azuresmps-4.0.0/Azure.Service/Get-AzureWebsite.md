@@ -3,54 +3,54 @@ external help file: Microsoft.WindowsAzure.Commands.dll-Help.xml
 ms.assetid: E4B1AA31-1185-4035-86E6-2BB2587285C6
 online version: ''
 schema: 2.0.0
-ms.openlocfilehash: a8273613081ab6bab0c9c3481df90f5b680b3355
-ms.sourcegitcommit: 56ed085a868afa8263f8eb0f755b5822f5c29532
+ms.openlocfilehash: d0eb3f56ff4c14d19493531367c9b29286b8c560
+ms.sourcegitcommit: 6f0b6059d096600ebff1c8514c35c467d2f482d8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "94076274"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104718228"
 ---
 # Get-AzureWebsite
 
-## КРАТКИй обзор
-Получение веб-сайтов Azure в текущей подписке.
+## SYNOPSIS
+Получает веб-сайты Azure в текущей подписке.
 
-## Максимальное
+## СИНТАКСИС
 
 ```
 Get-AzureWebsite [-Name <String>] [-Slot <String>] [-Profile <AzureSMProfile>] [<CommonParameters>]
 ```
 
-## NОПИСАНИЕ
-Командлет **Get-AzureWebsite** получает сведения о веб-сайтах Azure в текущей подписке.
+## ОПИСАНИЕ
+С **его использованием можно получить сведения** о веб-сайтах Azure в текущей подписке.
 
-По умолчанию **Get-AzureWebsite** получает все веб-сайты Azure в текущей подписке и возвращает объект, который предоставляет основные сведения о сайтах.
-При использовании параметра *Name* **Get-AzureWebsite** возвращает объект с подробными сведениями, в том числе с подробными сведениями о конфигурации.
+По умолчанию **get-AzureWebsite** получает все веб-сайты Azure в текущей подписке и возвращает объект, который предоставляет основные сведения о сайтах.
+При использовании параметра *Name* **get-AzureWebsite** возвращает объект с большой информацией, включая сведения о конфигурации.
 
-Текущая подписка — это подписку, обозначенную как "Текущая". Чтобы найти текущую подписку, используйте *текущий* параметр командлета [Get-AzureSubscription](https://go.microsoft.com/fwlink/?LinkID=397623) .
-Чтобы изменить текущую подписку, используйте командлет [SELECT-AzureSubscription](https://go.microsoft.com/fwlink/?LinkID=397628) .
+Текущая подписка — это подписка, которая обозначена как "текущая". Чтобы найти текущую подписку, используйте параметр *Current* для cmdlet [Get-AzureSubscription.](/powershell/module/servicemanagement/azure.service/get-azuresubscription)
+Чтобы изменить текущую подписку, используйте [cmdlet Select-AzureSubscription.](/powershell/module/servicemanagement/azure.service/select-azuresubscription)
 
-В этом разделе описан командлет в версии 0.8.10 модуля Microsoft Azure PowerShell.
-Чтобы получить версию модуля, который вы используете, введите в командной консоли Azure PowerShell `(Get-Module -Name Azure).Version` .
+В этой статье описан командлет в версии 0.8.10 модуля Microsoft Azure PowerShell.
+Чтобы получить версию модуля, который вы используете, в консоли Azure PowerShell введите `(Get-Module -Name Azure).Version` .
 
-## ИЛЛЮСТРИРУЮТ
+## ПРИМЕРЫ
 
-### Пример 1: получение всех веб-сайтов в подписке
+### Пример 1. Получить все веб-сайты в подписке
 ```
 PS C:\> Get-AzureWebsite
 ```
 
 Эта команда получает все веб-сайты Azure в текущей подписке.
 
-### Пример 2: получение веб-сайта по имени
+### Пример 2. Получить веб-сайт по имени
 ```
 PS C:\> Get-AzureWebsite -Name ContosoWeb
 ```
 
 Эта команда получает подробные сведения о веб-сайте ContosoWeb Azure, включая сведения о конфигурации.
-При использовании параметра *Name* **Get-AzureWebsite** возвращает объект **SiteWithConfig** с расширенными сведениями о веб-сайте.
+При использовании параметра *Name* **get-AzureWebsite** возвращает объект **SiteWithConfig** с расширенными сведениями о веб-сайте.
 
-### Пример 3: получение подробных сведений обо всех веб-сайтах
+### Пример 3. Подробные сведения обо всех веб-сайтах
 ```
 PS C:\> Get-AzureWebsite | ForEach-Object {Get-AzureWebsite -Name $_.Name}
 ```
@@ -58,15 +58,15 @@ PS C:\> Get-AzureWebsite | ForEach-Object {Get-AzureWebsite -Name $_.Name}
 Эта команда получает подробные сведения обо всех веб-сайтах в подписке.
 Она использует команду **Get-AzureWebsite** для получения всех веб-сайтов, а затем использует командлет **ForEach-Object** для получения каждого веб-сайта по имени.
 
-### Пример 4: получение сведений о слоте развертывания
+### Пример 4. Сведения о слоте развертывания
 ```
 PS C:\> Get-AzureWebsite -Name ContosoWeb -Slot Staging
 ```
 
-Эта команда получает промежуточный слот развертывания на веб-сайте ContosoWeb.
-Слоты развертывания позволяют тестировать разные версии веб-сайта Azure без их освобождения.
+Эта команда получает слот для промежуточного развертывания веб-сайта ContosoWeb.
+Слоты развертывания можно использовать для тестирования различных версий веб-сайта Azure, не выпуская их для общего использования.
 
-### Пример 5: получение экземпляров веб-сайтов
+### Пример 5. Получить экземпляры веб-сайтов
 ```
 PS C:\>(Get-AzureWebsite -Name ContosoWeb).Instances
 
@@ -79,25 +79,25 @@ PS C:\>(Get-AzureWebsite -Name ContosoWeb).Instances.Count
 2
 ```
 
-Команды в этом примере используют свойство Instances веб-сайта Azure для получения сведений о текущих экземплярах веб-сайта.
-Свойство **Instances** Добавлено в объект **SiteWithConfig** в версии 0.8.3 модуля Azure.
+В этом примере команды используют свойство Instances веб-сайта Azure для получения сведений о текущих экземплярах веб-сайтов.
+Свойство **Instances** было добавлено к объекту **SiteWithConfig** в версии 0.8.3 модуля Azure.
 
-Первая команда получает идентификаторы экземпляров всех запущенных в данный момент экземпляров веб-сайта.
-Вторая команда возвращает число запущенных экземпляров веб-сайта.
-Свойство **Count** можно использовать в любом массиве.
+Первая команда получает все запущенные экземпляры веб-сайта.
+Вторая команда получает количество запущенных экземпляров веб-сайта.
+Свойство **"Количество" можно использовать для** любого массива.
 
-## ПАРАМЕТРЫ
+## PARAMETERS
 
-### -Name (имя)
-Получение подробных сведений о конфигурации указанного веб-сайта.
-Введите имя одного веб-сайта в подписке.
-По умолчанию **Get-AzureWebsite** получает все веб-сайты в текущей подписке.
-Значение *Name* не поддерживает подстановочные знаки.
+### -Name
+Подробные сведения о конфигурации указанного веб-сайта.
+Введите имя одного из веб-сайтов в подписке.
+По умолчанию **get-AzureWebsite** получает все веб-сайты в текущей подписке.
+Значение *"Имя"* не поддерживает поддиавные знаки.
 
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -107,13 +107,13 @@ Accept wildcard characters: False
 ```
 
 ### -Profile
-Указывает профиль Azure, из которого считывается этот командлет.
-Если вы не укажете профиль, этот командлет считывает данные из локального профиля по умолчанию.
+Определяет профиль Azure, для которого читается этот cmdlet.
+Если не указать профиль, этот cmdlet будет читать данные из локального профиля по умолчанию.
 
 ```yaml
 Type: AzureSMProfile
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -123,15 +123,15 @@ Accept wildcard characters: False
 ```
 
 ### -Slot
-Получает указанную область развертывания для веб-сайта.
-Введите имя гнезда, например "промежуточное хранение" или "производство".
-Дополнительные сведения о слотах развертывания можно найти в разделе поэтапное развертывание на веб-сайтах Microsoft Azure https://azure.microsoft.com/en-us/documentation/articles/web-sites-staged-publishing/ .
-Чтобы добавить слот развертывания на существующий веб-сайт Azure, используйте командлет Set-AzureWebsite.
+Получает указанный слот развертывания веб-сайта.
+Введите название слота, например "Промежуточное время" или "Производство".
+Дополнительные сведения о слотах для развертывания см. в сведениях о поэтапном развертывании на веб-сайтах Microsoft https://azure.microsoft.com/en-us/documentation/articles/web-sites-staged-publishing/ Azure.
+Чтобы добавить слот развертывания на существующий веб-сайт Azure, воспользуйтесь Set-AzureWebsite управления.
 
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -141,24 +141,24 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Этот командлет поддерживает общие параметры:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-of Variable,-out,-PipelineVariable,-Verbose, и-WarningAction. Дополнительные сведения можно найти в разделе about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
+Этот cmdlet поддерживает общие параметры: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. Дополнительные сведения см. в about_CommonParameters https://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## ВХОДНЫЕ данные
+## INPUTS
 
-### Ничего
-Вы можете передавать входные данные командлету по имени свойства, но не по значению.
+### Нет
+Этот cmdlet можно ввести по имени свойства, но не по значению.
 
-## НАПРЯЖЕНИЕ
+## OUTPUTS
 
-### Microsoft. WindowsAzure. Commands. Utilities. website. Services. Entities. site
-По умолчанию **Get-AzureWebsite** возвращает массив объектов **сайта** .
+### Microsoft.WindowsAzure.Commands.Utilities.Websites.Services.WebEntities.Site
+По умолчанию **get-AzureWebsite** возвращает массив **объектов** сайта.
 
-### Microsoft. WindowsAzure. Commands. Utilities. website. Services. Entities. SiteWithConfig
-При использовании параметра *Name* **Get-AzureWebsite** возвращает объект **SiteWithConfig** .
+### Microsoft.WindowsAzure.Commands.Utilities.Websites.Services.WebEntities.SiteWithConfig
+При использовании *параметра Name* **get-AzureWebsite** возвращает объект **SiteWithConfig.**
 
-## Пуск
+## ПРИМЕЧАНИЯ
 
-## ДОПОЛНИТЕЛЬНЫЕ ССЫЛКИ
+## СВЯЗАННЫЕ ССЫЛКИ
 
 [New-AzureWebsite](./New-AzureWebsite.md)
 
@@ -166,7 +166,7 @@ Accept wildcard characters: False
 
 [Start-AzureWebsite](./Start-AzureWebsite.md)
 
-[Остановить-AzureWebsite](./Stop-AzureWebsite.md)
+[Stop-AzureWebsite](./Stop-AzureWebsite.md)
 
 [Show-AzureWebsite](./Show-AzureWebsite.md)
 

@@ -5,12 +5,12 @@ online version: https://docs.microsoft.com/powershell/module/az.keyvault/remove-
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/KeyVault/KeyVault/help/Remove-AzKeyVaultManagedStorageAccount.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/KeyVault/KeyVault/help/Remove-AzKeyVaultManagedStorageAccount.md
-ms.openlocfilehash: ab126ee6bfc6a19f4a3a9997a75a01277437e42d
-ms.sourcegitcommit: 4dfb0cc533b83f77afdcfbe2618c1e6c8d221330
+ms.openlocfilehash: bdbb0b462ff6fde4c3bd276e3c950aa71e2bec13
+ms.sourcegitcommit: 6f0b6059d096600ebff1c8514c35c467d2f482d8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "101952515"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104718348"
 ---
 # Remove-AzKeyVaultManagedStorageAccount
 
@@ -33,11 +33,11 @@ Remove-AzKeyVaultManagedStorageAccount [-InputObject] <PSKeyVaultManagedStorageA
 ```
 
 ## ОПИСАНИЕ
-Развязает учетную запись хранения Azure из key Vault. При этом учетная запись хранения Azure не удаляется, но из хранилища ключей Azure не удаляются ключи учетной записи. Удаляются все связанные определения SAS хранилища, связанные с хранилищем.
+Развязает учетную запись хранения Azure из key Vault. При этом учетная запись хранения Azure не удаляется, а из хранилища ключей Azure не удаляются ключи учетной записи. Удаляются все связанные определения SAS хранилища, связанные с хранилищем.
 
 ## ПРИМЕРЫ
 
-### Пример 1. Удаление ключевого хранилища, управляемой учетной записью хранилища Azure, и всех связанных определений SAS.
+### Пример 1. Удаление учетной записи хранилища Azure с управляемым хранилищем Key Vault и всех связанных определений SAS.
 ```powershell
 PS C:\> Remove-AzKeyVaultManagedStorageAccount -VaultName 'myvault' -AccountName 'mystorageaccount' -PassThru
 
@@ -52,7 +52,7 @@ Updated             : 4/25/2018 1:50:32 AM
 Tags                :
 ```
 
-Разсогласовка учетной записи хранения Azure с mystorageaccount из key Vault myvault и остановка управления ключом хранилища. Учетная запись mystorageaccount не будет удалена. Все определения SAS хранилища, связанные с этой учетной записью, будут удалены.
+Разузнает "mystorageaccount" учетной записи хранения Azure из key Vault myvault и больше не будет управлять ключами в хранилище. Учетная запись mystorageaccount не будет удалена. Все определения SAS хранилища, связанные с этой учетной записью, будут удалены.
 
 ### Пример 2. Удаление учетной записи хранилища Azure с управляемым хранилищем Key Vault и всех связанных определений SAS без подтверждения пользователем.
 ```powershell
@@ -69,24 +69,24 @@ Updated             : 4/25/2018 1:50:32 AM
 Tags                :
 ```
 
-Разсогласовка учетной записи хранения Azure с mystorageaccount из key Vault myvault и остановка управления ключом хранилища. Учетная запись mystorageaccount не будет удалена. Все определения SAS хранилища, связанные с этой учетной записью, будут удалены.
+Разузнает "mystorageaccount" учетной записи хранения Azure из key Vault myvault и больше не будет управлять ключами в хранилище. Учетная запись mystorageaccount не будет удалена. Все определения SAS хранилища, связанные с этой учетной записью, будут удалены.
 
-### Пример 3. Окончательное удаление (очистка) учетной записи хранилища Azure с управляемым хранилищем Azure и всех связанных определений SAS из хранилища с поддержкой soft-delete.
+### Пример 3. Окончательное удаление (очистка) учетной записи хранилища Azure с управляемым хранилищем Key Vault и всех связанных определений SAS из хранилища с поддержкой soft-delete.
 ```powershell
-PS C:\> Remove-AzKeyVaultManagedStorageAccount -VaultName 'myvault' -AccountName 'mystorageaccount' 
+PS C:\> Remove-AzKeyVaultManagedStorageAccount -VaultName 'myvault' -AccountName 'mystorageaccount'
 PS C:\> Get-AzKeyVaultManagedStorageAccount -VaultName 'myvault' -AccountName 'mystorageaccount' -InRemovedState
 PS C:\> Remove-AzKeyVaultManagedStorageAccount -VaultName 'myvault' -AccountName 'mystorageaccount' -InRemovedState
 ```
 
-Предполагается, что для этого хранилища включено неявное удаление. Проверьте, так ли это, проверив свойства хранилища или атрибут RecoveryLevel для сущности в сейфе.
-Первый cmdlet disassociates Azure Storage Account 'mystorageaccount' из key Vault 'myvault' и останавливает key Vault from managing its keys. Учетная запись mystorageaccount не будет удалена. Все определения SAS хранилища, связанные с этой учетной записью, будут удалены.
+Предполагается, что для этого хранилища включено неявное удаление. Проверьте, так ли это, проверив свойства сейфа или атрибут RecoveryLevel для сущности в сейфе.
+Первый cmdlet disassociates Azure Storage Account "mystorageaccount" из key Vault 'myvault' и останавливает key Vault from managing its keys. Учетная запись mystorageaccount не будет удалена. Все определения SAS хранилища, связанные с этой учетной записью, будут удалены.
 Второй cmdlet проверяет, что учетная запись хранения удалена, но в состоянии восстановления. Для достижения этого состояния может потребоваться некоторое время. Перед попыткой разрешить около 30 м.
 Третий из них удаляет учетную запись хранения без возможности восстановления.
 
 ## PARAMETERS
 
 ### -AccountName
-Имя учетной записи, управляемой хранилищем Key Vault. Cmdlet constructs the FQDN of a managed storage account name from vault name, currently selected environment and manged storage account name.
+Имя учетной записи управляемого хранилища в key Vault. Cmdlet constructs the FQDN of a managed storage account name from vault name, currently selected environment and manged storage account name.
 
 ```yaml
 Type: System.String
@@ -146,7 +146,7 @@ Accept wildcard characters: False
 ```
 
 ### -InRemovedState
-Окончательное удаление ранее удаленной учетной записи хранения.
+Окончательное удаление удаленной учетной записи хранения.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -238,5 +238,5 @@ Accept wildcard characters: False
 
 ## СВЯЗАННЫЕ ССЫЛКИ
 
-[https://msdn.microsoft.com/en-us/library/dn868052.aspx](https://msdn.microsoft.com/en-us/library/dn868052.aspx)
+[Cmdlets Key Vault Azure PowerShell](/powershell/module/az.keyvault/)
 

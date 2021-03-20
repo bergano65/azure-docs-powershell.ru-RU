@@ -6,12 +6,12 @@ online version: https://docs.microsoft.com/powershell/module/az.keyvault/remove-
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/KeyVault/KeyVault/help/Remove-AzKeyVaultKey.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/KeyVault/KeyVault/help/Remove-AzKeyVaultKey.md
-ms.openlocfilehash: 0d458d6063aa530b1f30f6a79244e7d719080bf6
-ms.sourcegitcommit: 4dfb0cc533b83f77afdcfbe2618c1e6c8d221330
+ms.openlocfilehash: 9456e789a26f69bd2e22341ac0e7e4e473fd369d
+ms.sourcegitcommit: 6f0b6059d096600ebff1c8514c35c467d2f482d8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "101952520"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104719113"
 ---
 # Remove-AzKeyVaultKey
 
@@ -39,8 +39,8 @@ Remove-AzKeyVaultKey [-InputObject] <PSKeyVaultKeyIdentityItem> [-Force] [-PassT
 ```
 
 ## ОПИСАНИЕ
-Новый Remove-AzKeyVaultKey удаляет ключ из хранилища ключей.
-Если ключ был случайно удален, его можно восстановить с помощью Undo-AzKeyVaultKeyRemoval пользователей со специальными разрешениями на восстановление.
+С Remove-AzKeyVaultKey- и клавиши удаляются из хранилища ключей.
+Если ключ был случайно удален, его можно восстановить с помощью Undo-AzKeyVaultKeyRemoval пользователя со специальными разрешениями на восстановление.
 Этот cmdlet имеет высокое значение для свойства **ConfirmImpact.**
 
 ## ПРИМЕРЫ
@@ -71,7 +71,7 @@ PS C:\> Remove-AzKeyVaultKey -VaultName 'Contoso' -Name 'ITSoftware' -Force
 ```
 
 Эта команда удаляет ключ ITSoftware из хранилища ключей Contoso.
-Эта команда определяет параметр *Force,* поэтому командлет не будет запроса на подтверждение.
+Эта команда определяет параметр *Force,* поэтому командлет не будет запросить подтверждение.
 
 ### Пример 3. Окончательное удаление удаленного ключа из хранилища ключей
 ```powershell
@@ -123,7 +123,7 @@ Accept wildcard characters: False
 ```
 
 ### -HsmName
-Имя HSM. Cmdlet constructs the FQDN of a managed HSM based on the name and currently selected environment.
+Имя HSM. С его учетом именем и выбранной средой строится FQDN управляемой HSM- среды.
 
 ```yaml
 Type: System.String
@@ -169,7 +169,7 @@ Accept wildcard characters: False
 
 ### -Name
 Указывает имя ключа, который нужно удалить.
-Этот проектлет определяет полное доменное имя ключа на основе имени, указанного этим параметром, имени хранилища ключа и текущей среды.
+Этот cmdlet конструирует полное доменное имя (FQDN) ключа на основе имени, указанного этим параметром, имени хранилища ключа и текущей среды.
 
 ```yaml
 Type: System.String
@@ -265,8 +265,6 @@ Accept wildcard characters: False
 [Add-AzKeyVaultKey](./Add-AzKeyVaultKey.md)
 
 [Get-AzKeyVaultKey](./Get-AzKeyVaultKey.md)
-
-[Set-AzKeyVaultKeyAttribute](./Set-AzKeyVaultKeyAttribute.md)
 
 [Undo-AzKeyVaultKeyRemoval](./Undo-AzKeyVaultKeyRemoval.md)
 

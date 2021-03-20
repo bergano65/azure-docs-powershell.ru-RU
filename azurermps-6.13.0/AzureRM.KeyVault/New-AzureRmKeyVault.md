@@ -6,21 +6,21 @@ online version: https://docs.microsoft.com/en-us/powershell/module/azurerm.keyva
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/preview/src/ResourceManager/KeyVault/Commands.KeyVault/help/New-AzureRmKeyVault.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/preview/src/ResourceManager/KeyVault/Commands.KeyVault/help/New-AzureRmKeyVault.md
-ms.openlocfilehash: ad129cfb28aed7670a78550df70d0af410d5dfdf
-ms.sourcegitcommit: f599b50d5e980197d1fca769378df90a842b42a1
+ms.openlocfilehash: 04097cbdd59322cded04328b716dc27d2563a48d
+ms.sourcegitcommit: 6f0b6059d096600ebff1c8514c35c467d2f482d8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "93562995"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104719266"
 ---
 # New-AzureRmKeyVault
 
-## КРАТКИй обзор
-Создание хранилища ключей.
+## SYNOPSIS
+Создает хранилище ключей.
 
 [!INCLUDE [migrate-to-az-banner](../../includes/migrate-to-az-banner.md)]
 
-## Максимальное
+## СИНТАКСИС
 
 ```
 New-AzureRmKeyVault [-Name] <String> [-ResourceGroupName] <String> [-Location] <String> [-EnabledForDeployment]
@@ -29,13 +29,13 @@ New-AzureRmKeyVault [-Name] <String> [-ResourceGroupName] <String> [-Location] <
  [<CommonParameters>]
 ```
 
-## NОПИСАНИЕ
-Командлет **New-AzureRmKeyVault** создает хранилище ключей в указанной группе ресурсов. Этот командлет также предоставляет пользователям разрешения на добавление, удаление или перечисление ключей и секретных параметров в хранилище ключей.
-Примечание. Если вы видите сообщение об ошибке **"не зарегистрирована подписка на использование пространства имен" Microsoft. KeyVault "** при попытке создания нового хранилища ключей, выполните команду **Register-AzureRmResourceProvider-ProviderNamespace" Microsoft. KeyVault "** , а затем снова запустите программу **New-AzureRmKeyVault** . Дополнительные сведения можно найти в разделе Register-AzureRmResourceProvider.
+## ОПИСАНИЕ
+С **использованием cmdlet New-AzureRmKeyVault** создается хранилище ключа в указанной группе ресурсов. Этот cmdlet также предоставляет текущим входя в систему пользователю разрешения на добавление, удаление и секрет списков и секретов в хранилище ключей.
+Примечание. Если при попытке создать новое хранилище ключей подписка не зарегистрирована для использования пространства имен **Microsoft.KeyVault,** запустите **register-AzureRmResourceProvider -ProviderNamespace "Microsoft.KeyVault",** а затем повторно запустите команду **New-AzureRmKeyVault.** Дополнительные сведения см. в службе Register-AzureRmResourceProvider.
 
-## ИЛЛЮСТРИРУЮТ
+## ПРИМЕРЫ
 
-### Пример 1: создание стандартного хранилища ключей
+### Пример 1. Создание стандартного хранилища ключей
 ```powershell
 PS C:\> New-AzureRmKeyVault -VaultName 'Contoso03Vault' -ResourceGroupName 'Group14' -Location 'East US'
 
@@ -69,9 +69,9 @@ Access Policies                  :
 Tags                             :
 ```
 
-Эта команда создает хранилище ключей с именем Contoso03Vault в Azure Region East США. Команда добавляет хранилище ключей в группу ресурсов с именем Group14. Поскольку в команде не указано значение параметра *SKU* , создается стандартное хранилище ключа.
+Эта команда создает хранилище с именем Contoso03Vault в регионе Azure East US. Команда добавляет хранилище ключа в группу ресурсов с именем "Группа14". Так как команда не указывает значение параметра *SKU,* она создает стандартный сейф ключей.
 
-### Пример 2: создание хранилища ключей Premium
+### Пример 2. Создание сейфа ключа Premium
 ```powershell
 PS C:\>New-AzureRmKeyVault -VaultName 'Contoso03Vault' -ResourceGroupName 'Group14' -Location 'East US' -Sku 'Premium'
 
@@ -105,9 +105,9 @@ Access Policies                  :
 Tags                             :
 ```
 
-Эта команда создает хранилище ключей, как и в предыдущем примере. Тем не менее, он задает значение Premium для параметра *SKU* для создания хранилища ключей Premium.
+Эта команда создает хранилище ключей, как в предыдущем примере. Однако она указывает значение Premium для параметра *SKU,* чтобы создать хранилище ключей Premium.
 
-## ПАРАМЕТРЫ
+## PARAMETERS
 
 ### -DefaultProfile
 Учетные данные, учетная запись, клиент и подписка, используемые для связи с Azure
@@ -125,7 +125,7 @@ Accept wildcard characters: False
 ```
 
 ### -EnabledForDeployment
-Включает поставщик ресурсов Microsoft. COMPUTE для извлечения секретов из этого ключа, если это временное хранилище ссылается на создание ресурсов (например, при создании виртуальной машины).
+Позволяет поставщику ресурсов Microsoft.Compute извлекать секрет из этого ключевого сейфа, когда на него ссылается создание ресурсов, например при создании виртуальной машины.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -140,7 +140,7 @@ Accept wildcard characters: False
 ```
 
 ### -EnabledForDiskEncryption
-Позволяет службе шифрования дисков Azure получить секретные ключи и их перетекание из этого хранилища ключей.
+Позволяет службе шифрования дисков Azure получать секрет и отобирать ключи из этого key vault.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -155,7 +155,7 @@ Accept wildcard characters: False
 ```
 
 ### -EnabledForTemplateDeployment
-Позволяет диспетчеру ресурсов Azure получать секреты из этого хранилища ключей при ссылке на это хранилище ключей в развертывании шаблона.
+Позволяет Диспетчеру ресурсов Azure получать секрет из этого сейфа ключа, если на этот ключ ссылается развертывание шаблона.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -170,7 +170,7 @@ Accept wildcard characters: False
 ```
 
 ### -EnablePurgeProtection
-Если задано, защита от немедленного удаления включена для этого хранилища; требуется также мягкое удаление.
+При этом для этого хранилища включена защита от немедленного удаления. требуется также мягкий удаление.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -185,8 +185,8 @@ Accept wildcard characters: False
 ```
 
 ### -EnableSoftDelete
-Указывает, что функция мягкого удаления включена для этого хранилища ключей. Если включено мягкое удаление, в течение льготного периода вы можете восстановить это хранилище ключей и его содержимое после удаления.
-Дополнительные сведения об этой функции можно найти в разделе Общие сведения о [мягком удалении для хранилища ключей Azure](https://docs.microsoft.com/azure/key-vault/key-vault-ovw-soft-delete). Инструкции — Узнайте, [как использовать ключевое руководство с мягким удалением с помощью PowerShell](https://docs.microsoft.com/azure/key-vault/key-vault-soft-delete-powershell).
+Указывает, что для этого key vault включена функциональность soft-delete. Если включено soft-delete, в течение льготного периода вы можете восстановить этот сейф ключа и его содержимое после удаления.
+Дополнительные сведения об этой функции см. в обзоре [soft-delete key Vault Azure.](https://docs.microsoft.com/azure/key-vault/key-vault-ovw-soft-delete) Инструкции см. в инструкциях по использованию key [Vault soft-delete с помощью PowerShell.](https://docs.microsoft.com/azure/key-vault/key-vault-soft-delete-powershell)
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -201,7 +201,7 @@ Accept wildcard characters: False
 ```
 
 ### -Location
-Указывает область Azure, в которой нужно создать хранилище ключей. С помощью команды [Get-AzureLocation](https://docs.microsoft.com/powershell/module/Azure/Get-AzureLocation) можно просмотреть варианты выбора.
+Определяет регион Azure, в котором нужно создать хранилище ключа. Используйте команду [Get-AzureRmLocation,](/powershell/module/azurerm.resources/get-azurermlocation) чтобы увидеть ваши варианты.
 
 ```yaml
 Type: System.String
@@ -215,8 +215,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Name (имя)
-Задает имя создаваемого хранилища ключей. Имя может представлять собой любую комбинацию букв, цифр или дефисов. Имя должно начинаться и заканчиваться на букву или цифру. Имя должно быть универсальным уникальным.
+### -Name
+Указывает имя создаемого хранилища ключей. Имя может быть любым сочетанием букв, цифр или дефисов. Имя должно начинаться с буквы или цифры. Имя должно быть универсальным.
 
 ```yaml
 Type: System.String
@@ -246,7 +246,7 @@ Accept wildcard characters: False
 ```
 
 ### -SKU
-Указывает SKU экземпляра хранилища ключей. Сведения о том, какие функции доступны для каждого SKU, можно найти на веб-сайте ценообразования для Azure Key Vault ( https://go.microsoft.com/fwlink/?linkid=512521) .
+Указывает SKU экземпляра key vault. Сведения о том, какие функции доступны для каждого SKU, см. на веб-сайте цены на ключ хранилища Azure ( https://go.microsoft.com/fwlink/?linkid=512521) .
 
 ```yaml
 Type: Microsoft.Azure.Management.KeyVault.Models.SkuName
@@ -261,8 +261,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Тег
-Пары "ключ-значение" в виде хэш-таблицы. Например: @ {Key0 = "value0"; key1 = $null; key2 = "значение2"}
+### -Tag
+Пары значений ключа в виде hash table. Например: @{key0="value0";key1=$null;key2="value2"}
 
 ```yaml
 Type: System.Collections.Hashtable
@@ -277,7 +277,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
-Запрашивает подтверждение перед запуском командлета.
+Перед запуском cmdlet вам будет предложено подтвердить его.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -292,8 +292,8 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Показывает, что произойдет при запуске командлета.
-Командлет не выполняется.
+Показывает, что произойдет при запуске cmdlet.
+Этот cmdlet не будет выполниться.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -308,25 +308,25 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Этот командлет поддерживает общие параметры:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-of Variable,-out,-PipelineVariable,-Verbose, и-WarningAction. Дополнительные сведения можно найти в разделе about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
+Этот cmdlet поддерживает общие параметры: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. Дополнительные сведения см. в about_CommonParameters https://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## ВХОДНЫЕ данные
+## INPUTS
 
-### System. String
+### System.String
 
-### System. Management. Automation. SwitchParameter
+### System.Management.Automation.SwitchParameter
 
-### Microsoft. Azure. Management. KeyVault. Models. SkuName
+### Microsoft.Azure.Management.KeyVault.Models.SkuName
 
-### System. Collections. Hashtable
+### System.Collections.Hashtable
 
-## НАПРЯЖЕНИЕ
+## OUTPUTS
 
-### Microsoft. Azure. Commands. KeyVault. Models. PSKeyVault
+### Microsoft.Azure.Commands.KeyVault.Models.PSKeyVault
 
-## Пуск
+## ПРИМЕЧАНИЯ
 
-## ДОПОЛНИТЕЛЬНЫЕ ССЫЛКИ
+## СВЯЗАННЫЕ ССЫЛКИ
 
 [Get-AzureRmKeyVault](./Get-AzureRmKeyVault.md)
 

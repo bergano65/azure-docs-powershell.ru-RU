@@ -5,21 +5,21 @@ online version: https://docs.microsoft.com/en-us/powershell/module/azurerm.event
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/preview/src/ResourceManager/EventGrid/Commands.EventGrid/help/New-AzureRmEventGridSubscription.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/preview/src/ResourceManager/EventGrid/Commands.EventGrid/help/New-AzureRmEventGridSubscription.md
-ms.openlocfilehash: bb21a7d69d6e2afa810b9df1bb2fa676b6568782
-ms.sourcegitcommit: f599b50d5e980197d1fca769378df90a842b42a1
+ms.openlocfilehash: ae88bb4458880b23e8e41ae9218f9c7a29a9897f
+ms.sourcegitcommit: 6f0b6059d096600ebff1c8514c35c467d2f482d8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "93565447"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104719189"
 ---
 # New-AzureRmEventGridSubscription
 
-## КРАТКИй обзор
-Создает новую подписку на событие сетки событий Azure в разделе, ресурсе Azure, подписке Azure или группе ресурсов.
+## SYNOPSIS
+Создает новую подписку на сетку событий Azure для темы, ресурса Azure, подписки Azure или группы ресурсов.
 
 [!INCLUDE [migrate-to-az-banner](../../includes/migrate-to-az-banner.md)]
 
-## Максимальное
+## СИНТАКСИС
 
 ### ResourceGroupNameParameterSet (по умолчанию)
 ```
@@ -53,35 +53,35 @@ New-AzureRmEventGridSubscription [-EventSubscriptionName] <String> [-Endpoint] <
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## NОПИСАНИЕ
-Создайте новую подписку на событие в разделе сетки событий Azure — поддерживаемом ресурсе Azure, подпиской на Azure или группе ресурсов.
-Чтобы создать подписку на события для выбранной подписки Azure, укажите имя и конечную точку для события.
-Чтобы создать подписку на событие для группы ресурсов, укажите имя группы ресурсов в дополнение к имени подписки на событие и конечной точке назначения.
-Чтобы создать подписку на события в разделе сетки событий Azure, укажите название раздела также.
-Чтобы создать подписку на событие для поддерживаемого ресурса Azure, укажите полный ИД ресурса. Чтобы просмотреть список поддерживаемых типов, выполните командлет Get-AzureRmEventGridTopicType.
+## ОПИСАНИЕ
+Создайте подписку на новое событие для темы сетки событий Azure, поддерживаемых ресурсов Azure, подписки Azure или группы ресурсов.
+Чтобы создать подписку на событие для выбранной подписки Azure, укажите имя подписки на событие и конечную точку.
+Чтобы создать подписку на событие для группы ресурсов, укажите имя группы ресурсов в дополнение к имени подписки на событие и конечной конечной точке.
+Чтобы создать подписку на событие для темы сетки событий Azure, укажите имя темы.
+Чтобы создать подписку на событие для поддерживаемого ресурса Azure, укажите полный ИД ресурса. Чтобы просмотреть список поддерживаемых типов, запустите Get-AzureRmEventGridTopicType..
 
-## ИЛЛЮСТРИРУЮТ
+## ПРИМЕРЫ
 
 ### Пример 1
 ```
 PS C:\> New-AzureRmEventGridSubscription -ResourceGroup MyResourceGroup -TopicName Topic1 -Endpoint https://requestb.in/19qlscd1 -EventSubscriptionName EventSubscription1
 ```
 
-Создает новую подписку \` на событие EventSubscription1 \` на сетку событий Azure, \` элемент1 \` в группе ресурсов \` MyResourceGroupName \` с конечной точкой веб-перехватчика https://requestb.in/19qlscd1 . В этой подписке на события используются фильтры по умолчанию.
+Создает новую подписку на событие EventSubscription1 для темы Azure Event Grid Topic1 в группе ресурсов \` \` \` \` \` MyResourceGroupName с конечной точкой \` `https://requestb.in/19qlscd1` webhook. В этой подписке на события используются фильтры по умолчанию.
 
 ### Пример 2
 ```
 PS C:\> New-AzureRmEventGridSubscription -ResourceGroup MyResourceGroupName -Endpoint https://requestb.in/19qlscd1 -EventSubscriptionName EventSubscription1
 ```
 
-Создает новую подписку на событие \` EventSubscription1 \` к группе ресурсов \` MyResourceGroupName \` с конечной точкой веб-перехватчика https://requestb.in/19qlscd1 . В этой подписке на события используются фильтры по умолчанию.
+Создание подписки на событие EventSubscription1 для группы ресурсов \` \` \` MyResourceGroupName с конечной точкой \` webhook. `https://requestb.in/19qlscd1` В этой подписке на события используются фильтры по умолчанию.
 
 ### Пример 3
 ```
 PS C:\> New-AzureRmEventGridSubscription -Endpoint https://requestb.in/19qlscd1 -EventSubscriptionName EventSubscription1
 ```
 
-Создает новую подписку на \` события \` , EventSubscription1 к текущей выбранной подписке Azure с конечной точкой веб-перехватчика https://requestb.in/19qlscd1 . В этой подписке на события используются фильтры по умолчанию.
+Создает новую подписку на событие EventSubscription1 для выбранной подписки Azure с конечной точкой \` \` webhook. `https://requestb.in/19qlscd1` В этой подписке на события используются фильтры по умолчанию.
 
 ### Пример 4
 ```
@@ -90,23 +90,23 @@ PS C:\> $labels = "Finance", "HR"
 PS C:\> New-AzureRmEventGridSubscription -Endpoint https://requestb.in/19qlscd1 -EventSubscriptionName EventSubscription1 -SubjectBeginsWith "TestPrefix" -SubjectEndsWith "TestSuffix" -IncludedEventType $includedEventTypes -Label $labels
 ```
 
-Создает новую подписку на \` события \` , EventSubscription1 к текущей выбранной подписке Azure с конечной точкой веб-перехватчика https://requestb.in/19qlscd1 . Эта подписка на события указывает дополнительные фильтры для типов событий и субъектов, и только события, соответствующие этим фильтрам, будут доставляться в конечную точку назначения.
+Создает новую подписку на событие EventSubscription1 для выбранной подписки Azure с конечной точкой \` \` webhook. `https://requestb.in/19qlscd1` В этой подписке на событие указаны дополнительные фильтры для типов событий и темы, и только те события, которые соответствуют этим фильтрам, доставляются в конечную точку.
 
 ### Пример 5
 ```
 PS C:\> New-AzureRmEventGridSubscription -EventSubscriptionName EventSubscription1 -EndpointType "eventhub" -Endpoint "/subscriptions/55f3dcd4-cac7-43b4-990b-a139d62a1eb2/resourceGroups/TestRG/providers/Microsoft.EventHub/namespaces/ContosoNamespace/eventhubs/EH1"
 ```
 
-Создает новую подписку на \` событие \` , EventSubscription1 на текущую выбранную подписку Azure с указанным центром событий в качестве места назначения для событий. В этой подписке на события используются фильтры по умолчанию.
+Создает новую подписку \` на событие EventSubscription1 для выбранной в данный момент подписки Azure с указанным центром событий в качестве места \` назначения событий. В этой подписке на события используются фильтры по умолчанию.
 
 ### Пример 6
 ```
 PS C:\> New-AzureRmEventGridSubscription -ResourceId "/subscriptions/55f3dcd4-cac7-43b4-990b-a139d62a1eb2/resourceGroups/TestRG/providers/Microsoft.EventHub/namespaces/ContosoNamespace" -Endpoint https://requestb.in/19qlscd1 -EventSubscriptionName EventSubscription1
 ```
 
-Создает новую подписку \` на событие EventSubscription1 \` в пространство имен EventHub с указанной конечной точкой webhhok https://requestb.in/19qlscd1 . В этой подписке на события используются фильтры по умолчанию.
+Создает новую подписку на событие EventSubscription1 для пространства имен EventHub с указанной конечной точкой \` \` webhhok. `https://requestb.in/19qlscd1` В этой подписке на события используются фильтры по умолчанию.
 
-## ПАРАМЕТРЫ
+## PARAMETERS
 
 ### -DefaultProfile
 Учетные данные, учетная запись, клиент и подписка, используемые для связи с Azure
@@ -123,9 +123,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Endpoint
-Конечная точка подписки на события.
-Это может быть URL-адрес веб-перехватчика или идентификатор ресурса Azure EventHub.
+### -Конечная точка
+Конечная точка назначения подписки на событие.
+Это может быть URL-адрес веб-приложения или ИД ресурса Azure из EventHub.
 
 ```yaml
 Type: System.String
@@ -153,7 +153,7 @@ Accept wildcard characters: False
 
 ### -EndpointType
 Тип конечной точки.
-Это может быть веб-перехватчик или eventhub
+Это может быть webhook или eventhub
 
 ```yaml
 Type: System.String
@@ -182,7 +182,7 @@ Accept wildcard characters: False
 ```
 
 ### -EventSubscriptionName
-Имя подписки на события
+Название подписки на событие
 
 ```yaml
 Type: System.String
@@ -209,7 +209,7 @@ Accept wildcard characters: False
 ```
 
 ### -IncludedEventType
-Фильтр, который задает список типов событий для включения. Если не указано, будут включены все типы событий.
+Фильтр, который определяет список типов событий, которые нужно включить. Если не указано, будут включены все типы событий.
 
 ```yaml
 Type: System.String[]
@@ -236,7 +236,7 @@ Accept wildcard characters: False
 ```
 
 ### -InputObject
-Объект темы EventGrid.
+Объект EventGrid Topic.
 
 ```yaml
 Type: Microsoft.Azure.Commands.EventGrid.Models.PSTopic
@@ -251,7 +251,7 @@ Accept wildcard characters: False
 ```
 
 ### -Label
-Метки для подписки на события
+Метки для подписки на событие
 
 ```yaml
 Type: System.String[]
@@ -278,7 +278,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-Группа ресурсов для темы.
+Группа ресурсов по теме.
 
 ```yaml
 Type: System.String
@@ -305,7 +305,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceId
-Идентификатор ресурса, для которого требуется создать подписку на событие.
+Идентификатор ресурса, для которого создается подписка на событие.
 
 ```yaml
 Type: System.String
@@ -320,8 +320,8 @@ Accept wildcard characters: False
 ```
 
 ### -SubjectBeginsWith
-Фильтр, указывающий на то, что будут включены только события, соответствующие указанному префиксу темы.
-Если не указано, будут включены события со всеми префиксами субъектов.
+Фильтр, который указывает, что будут включены только события, которые соответствуют указанному префиксу темы.
+Если не указано, будут включены события со всеми префиксами темы.
 
 ```yaml
 Type: System.String
@@ -348,8 +348,8 @@ Accept wildcard characters: False
 ```
 
 ### -SubjectCaseSensitive
-Фильтр, указывающий, что поле темы должно сравниваться с учетом регистра.
-Если не указано, тема будет сравниваться без учета регистра.
+Фильтр, который указывает, что поле темы должно быть сравнивается с учетом особенности дела.
+Если не указано иное, то будет сравнена тема без учета дела.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -364,8 +364,8 @@ Accept wildcard characters: False
 ```
 
 ### -SubjectEndsWith
-Фильтр, указывающий, что в него будут включены только события, соответствующие указанному суффиксу темы.
-Если не указано, будут включены события со всеми суффиксами тем.
+Фильтр, который указывает, что будут включены только события, которые соответствуют указанному суффиксу темы.
+Если не указано, будут включены события со всеми суффиксами темы.
 
 ```yaml
 Type: System.String
@@ -392,7 +392,7 @@ Accept wildcard characters: False
 ```
 
 ### -TopicName
-Название темы, на которую следует создать подписку на событие.
+Название темы, для которой нужно создать подписку на событие.
 
 ```yaml
 Type: System.String
@@ -407,7 +407,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
-Запрашивает подтверждение перед запуском командлета.
+Перед запуском cmdlet вам будет предложено подтвердить его.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -422,8 +422,8 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Показывает, что произойдет при запуске командлета.
-Командлет не выполняется.
+Показывает, что произойдет при запуске cmdlet.
+Этот cmdlet не будет выполниться.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -438,21 +438,21 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Этот командлет поддерживает общие параметры:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-of Variable,-out,-PipelineVariable,-Verbose, и-WarningAction. Дополнительные сведения можно найти в разделе about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
+Этот cmdlet поддерживает общие параметры: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. Дополнительные сведения см. в about_CommonParameters https://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## ВХОДНЫЕ данные
+## INPUTS
 
-### System. String
+### System.String
 
-### Microsoft. Azure. Commands. EventGrid. Models. PSTopic
+### Microsoft.Azure.Commands.EventGrid.Models.PSTopic
 Параметры: InputObject (ByValue)
 
-### System. String []
+### System.String[]
 
-## НАПРЯЖЕНИЕ
+## OUTPUTS
 
-### Microsoft. Azure. Commands. EventGrid. Models. PSEventSubscription
+### Microsoft.Azure.Commands.EventGrid.Models.PSEventSubscription
 
-## Пуск
+## ПРИМЕЧАНИЯ
 
-## ДОПОЛНИТЕЛЬНЫЕ ССЫЛКИ
+## СВЯЗАННЫЕ ССЫЛКИ

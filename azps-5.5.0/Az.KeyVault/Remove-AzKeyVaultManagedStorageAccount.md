@@ -5,12 +5,12 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.keyvault/r
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/KeyVault/KeyVault/help/Remove-AzKeyVaultManagedStorageAccount.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/KeyVault/KeyVault/help/Remove-AzKeyVaultManagedStorageAccount.md
-ms.openlocfilehash: c415a7b80609a9e8794df183b2ae1cea73a7f1cd
-ms.sourcegitcommit: c05d3d669b5631e526841f47b22513d78495350b
+ms.openlocfilehash: fb52f30f5220c2def30b3b3db5c3424d5fc039ec
+ms.sourcegitcommit: 6f0b6059d096600ebff1c8514c35c467d2f482d8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/09/2021
-ms.locfileid: "100226428"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104713844"
 ---
 # Remove-AzKeyVaultManagedStorageAccount
 
@@ -33,7 +33,7 @@ Remove-AzKeyVaultManagedStorageAccount [-InputObject] <PSKeyVaultManagedStorageA
 ```
 
 ## ОПИСАНИЕ
-Развязает учетную запись хранения Azure из key Vault. При этом учетная запись хранения Azure не удаляется, но из хранилища ключей Azure не удаляются ключи учетной записи. Удаляются все связанные определения SAS хранилища, связанные с хранилищем.
+Развязает учетную запись хранения Azure из key Vault. При этом учетная запись хранения Azure не удаляется, а из хранилища ключей Azure не удаляются ключи учетной записи. Удаляются все связанные определения SAS хранилища, связанные с хранилищем.
 
 ## ПРИМЕРЫ
 
@@ -52,7 +52,7 @@ Updated             : 4/25/2018 1:50:32 AM
 Tags                :
 ```
 
-Разузнает "mystorageaccount" учетной записи хранилища Azure из key Vault myvault и больше не будет управлять ключами в хранилище. Учетная запись mystorageaccount не будет удалена. Все определения SAS хранилища, связанные с этой учетной записью, будут удалены.
+Разузнает "mystorageaccount" учетной записи хранения Azure из key Vault myvault и больше не будет управлять ключами в хранилище. Учетная запись mystorageaccount не будет удалена. Все определения SAS хранилища, связанные с этой учетной записью, будут удалены.
 
 ### Пример 2. Удаление учетной записи хранилища Azure с управляемым хранилищем Key Vault и всех связанных определений SAS без подтверждения пользователем.
 ```powershell
@@ -69,16 +69,16 @@ Updated             : 4/25/2018 1:50:32 AM
 Tags                :
 ```
 
-Разузнает "mystorageaccount" учетной записи хранилища Azure из key Vault myvault и больше не будет управлять ключами в хранилище. Учетная запись mystorageaccount не будет удалена. Все определения SAS хранилища, связанные с этой учетной записью, будут удалены.
+Разузнает "mystorageaccount" учетной записи хранения Azure из key Vault myvault и больше не будет управлять ключами в хранилище. Учетная запись mystorageaccount не будет удалена. Все определения SAS хранилища, связанные с этой учетной записью, будут удалены.
 
 ### Пример 3. Окончательное удаление (очистка) учетной записи хранилища Azure с управляемым хранилищем Key Vault и всех связанных определений SAS из хранилища с поддержкой soft-delete.
 ```powershell
-PS C:\> Remove-AzKeyVaultManagedStorageAccount -VaultName 'myvault' -AccountName 'mystorageaccount' 
+PS C:\> Remove-AzKeyVaultManagedStorageAccount -VaultName 'myvault' -AccountName 'mystorageaccount'
 PS C:\> Get-AzKeyVaultManagedStorageAccount -VaultName 'myvault' -AccountName 'mystorageaccount' -InRemovedState
 PS C:\> Remove-AzKeyVaultManagedStorageAccount -VaultName 'myvault' -AccountName 'mystorageaccount' -InRemovedState
 ```
 
-Предполагается, что для этого хранилища включено неявное удаление. Проверьте, так ли это, проверив свойства хранилища или атрибут RecoveryLevel для сущности в сейфе.
+Предполагается, что для этого хранилища включено неявное удаление. Проверьте, так ли это, проверив свойства сейфа или атрибут RecoveryLevel для сущности в сейфе.
 Первый cmdlet disassociates Azure Storage Account "mystorageaccount" из key Vault 'myvault' и останавливает key Vault from managing its keys. Учетная запись mystorageaccount не будет удалена. Все определения SAS хранилища, связанные с этой учетной записью, будут удалены.
 Второй cmdlet проверяет, что учетная запись хранения удалена, но в состоянии восстановления. Для достижения этого состояния может потребоваться некоторое время. Перед попыткой разрешить около 30 м.
 Третий из них удаляет учетную запись хранения без возможности восстановления.
@@ -178,7 +178,7 @@ Accept wildcard characters: False
 
 ### -VaultName
 Имя сейфа.
-С его учетом именем и выбранной средой строится FQDN хранилища.
+Cmdlet constructs the FQDN of a vault based on the name and currently selected environment.
 
 ```yaml
 Type: System.String
@@ -238,5 +238,5 @@ Accept wildcard characters: False
 
 ## СВЯЗАННЫЕ ССЫЛКИ
 
-[https://msdn.microsoft.com/en-us/library/dn868052.aspx](https://msdn.microsoft.com/en-us/library/dn868052.aspx)
+[Cmdlets Key Vault Azure PowerShell](/powershell/module/az.keyvault/)
 

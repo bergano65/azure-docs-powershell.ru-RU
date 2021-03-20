@@ -6,12 +6,12 @@ online version: https://docs.microsoft.com/powershell/module/az.sql/Update-AzSql
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Sql/Sql/help/Update-AzSqlDatabaseAdvancedThreatProtectionSetting.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Sql/Sql/help/Update-AzSqlDatabaseAdvancedThreatProtectionSetting.md
-ms.openlocfilehash: 9677f45e772cbcb48190f5792df97e96051180c4
-ms.sourcegitcommit: 4dfb0cc533b83f77afdcfbe2618c1e6c8d221330
+ms.openlocfilehash: 18ab27f8a2e547cf10e12c4ff4c318393c408cb6
+ms.sourcegitcommit: 6f0b6059d096600ebff1c8514c35c467d2f482d8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "101992270"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104718865"
 ---
 # Update-AzSqlDatabaseAdvancedThreatProtectionSetting
 
@@ -92,9 +92,9 @@ Accept wildcard characters: False
 ### -ExcludedDetectionType
 Указывает массив типов обнаружения, которые нужно исключить из параметров.
 Допустимые значения этого параметра:
-- Sql_Injection 
-- Sql_Injection_Vulnerability 
-- Access_Anomaly 
+- Sql_Injection
+- Sql_Injection_Vulnerability
+- Access_Anomaly
 - Нет
 
 ```yaml
@@ -201,7 +201,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
-Запрос на подтверждение перед запуском cmdlet.
+Перед запуском cmdlet вам будет предложено подтвердить его.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -252,10 +252,6 @@ Accept wildcard characters: False
 
 ## СВЯЗАННЫЕ ССЫЛКИ
 
-[Get-AzSqlDatabaseThreatDetectionsettings](./Get-AzSqlServerThreatDetectionsettings.md)
-
-[Remove-AzSqlDatabaseThreatDetectionsettings](./Remove-AzSqlDatabaseThreatDetectionsettings.md)
+[Cmdlets SQL database Azure](/powershell/module/az.sql/)
 
 [SQL базы данных](https://docs.microsoft.com/azure/sql-database/)
-
-

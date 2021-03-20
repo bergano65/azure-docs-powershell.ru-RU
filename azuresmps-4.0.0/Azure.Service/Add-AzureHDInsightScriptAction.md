@@ -3,19 +3,19 @@ external help file: Microsoft.WindowsAzure.Commands.HDInsight.dll-Help.xml
 ms.assetid: 600D35F8-1E3C-4724-9F5E-75CF754F424F
 online version: ''
 schema: 2.0.0
-ms.openlocfilehash: 0809415ea5dfff687c69089e1aeda60c9f3b00ee
-ms.sourcegitcommit: 56ed085a868afa8263f8eb0f755b5822f5c29532
+ms.openlocfilehash: dc2fb7414cdd382572576c6c89e38d791cbc0831
+ms.sourcegitcommit: 6f0b6059d096600ebff1c8514c35c467d2f482d8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "94075720"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104718739"
 ---
 # Add-AzureHDInsightScriptAction
 
-## КРАТКИй обзор
+## SYNOPSIS
 Добавляет действие сценария HDInsight.
 
-## Максимальное
+## СИНТАКСИС
 
 ```
 Add-AzureHDInsightScriptAction -Config <AzureHDInsightConfig> -Name <String>
@@ -23,61 +23,61 @@ Add-AzureHDInsightScriptAction -Config <AzureHDInsightConfig> -Name <String>
  [<CommonParameters>]
 ```
 
-## NОПИСАНИЕ
-Эта версия Azure PowerShell HDInsight устарела.
-Эти командлеты будут удалены с 1 января 2017 г.
-Пожалуйста, используйте более новую версию Azure PowerShell HDInsight.
+## ОПИСАНИЕ
+Эта версия Azure PowerShell HDInsight не является нужной.
+Эти cmdlets будут удалены до 1 января 2017 г.
+Используйте более новую версию Azure PowerShell HDInsight.
 
-Сведения о том, как использовать новую HDInsight для создания кластера, можно найти в разделе Создание кластеров [на базе Linux в HDInsight с помощью Azure PowerShell](https://azure.microsoft.com/en-us/documentation/articles/hdinsight-hadoop-create-linux-clusters-azure-powershell/) ( https://azure.microsoft.com/en-us/documentation/articles/hdinsight-hadoop-create-linux-clusters-azure-powershell/) .
-Сведения о том, как отправлять задания с помощью Azure PowerShell и другие подходы, приведены [в разделе Отправка заданий Hadoop в HDInsight](https://azure.microsoft.com/en-us/documentation/articles/hdinsight-submit-hadoop-jobs-programmatically/) ( https://azure.microsoft.com/en-us/documentation/articles/hdinsight-submit-hadoop-jobs-programmatically/) .
-Справочные сведения о службе Azure PowerShell HDInsight можно найти в [командлетах Azure hdinsight](https://msdn.microsoft.com/en-us/library/mt438705.aspx) ( https://msdn.microsoft.com/en-us/library/mt438705.aspx) .
+Сведения об использовании новой hdInsight для создания кластеров см. в видео "Создание кластеров на основе Linux" в [HDInsight с помощью Azure PowerShell.](https://azure.microsoft.com/en-us/documentation/articles/hdinsight-hadoop-create-linux-clusters-azure-powershell/) https://azure.microsoft.com/en-us/documentation/articles/hdinsight-hadoop-create-linux-clusters-azure-powershell/)
+Сведения о том, как отправлять задания с помощью Azure PowerShell и других подходов, см. в сведениях о задании [Submit Hadoop в HDInsight](https://azure.microsoft.com/en-us/documentation/articles/hdinsight-submit-hadoop-jobs-programmatically/) . https://azure.microsoft.com/en-us/documentation/articles/hdinsight-submit-hadoop-jobs-programmatically/)
+Справочные сведения о Azure PowerShell HDInsight см. в [cmdlets Azure HDInsight.](/powershell/module/servicemanagement/azure.service/?view=azuresmps-4.0.0#hd-insights)
 
-Командлет **Add-AzureHDInsightScriptAction** предоставляет функцию Azure HDInsight, которая используется для установки дополнительного программного обеспечения или для изменения конфигурации приложений, выполняющихся на кластере Hadoop, с помощью сценариев Windows PowerShell.
+С помощью cmdlet **Add-AzureHDInsightScriptAction** можно использовать функции Azure HDInsight, которые используются для установки дополнительного программного обеспечения или изменения конфигурации приложений, которые запускаются на кластере Hadoop с помощью Windows PowerShell сценариев.
 
-Действие сценария выполняется на узлах кластера при развертывании кластеров HDInsight и запускается после завершения настройки HDInsight узлами в кластере.
-Действие сценария запускается с правами учетной записи системного администратора и предоставляет полные права на доступ к узлам кластера.
-Вы можете предоставить каждому кластеру список действий сценария для выполнения в заданной последовательности.
+На узлах кластера выполняется действие сценария при развертывании кластеров HDInsight и после узлов в конфигурации HDInsight кластера.
+Сценарий выполняется в соответствии с правами учетной записи администратора и предоставляет полные права доступа к узлам кластера.
+Вы можете предоставить каждому кластеру список действий сценариев, которые должны запускаться в указанной последовательности.
 
-## ИЛЛЮСТРИРУЮТ
+## ПРИМЕРЫ
 
-### Пример 1: Добавление действия сценария в кластер
+### Пример 1. Добавление действия сценария в кластер
 ```
-PS C:\>$Config = New-AzureHDInsightClusterConfig -ClusterSizeInNodes 4 
+PS C:\>$Config = New-AzureHDInsightClusterConfig -ClusterSizeInNodes 4
 PS C:\> $Config = Add-AzureHDInsightScriptAction -Config $Config -Name "TestScriptAction" -Uri http://test.com/test.ps1 -Parameters "test" -ClusterRoleCollection HeadNode,DataNode
 PS C:\> New-AzureHDInsightCluster -Config $Config
 ```
 
-Первая команда использует командлет **New-AzureHDInsightClusterConfig** для создания конфигурации кластера HDInsight и сохраняет ее в переменной $config.
+Первая команда использует командлет **New-AzureHDInsightClusterConfig** для создания конфигурации кластера HDInsight, а затем сохраняет ее в переменной $Config.
 
-Вторая команда использует командлет **Add-AzureHDInsightScriptAction** , чтобы добавить в $config действие сценария с именем TestScriptAction.
+Вторая команда использует командлет **Add-AzureHDInsightScriptAction** для добавления в $Config действия сценария TestScriptAction.
 
-В последней команде используется командлет **New-AzureHDInsightCluster** для создания нового кластера HDInsight, который запускает действие сценария, сохраненное в $config.
+В последней команде используется командлет **New-AzureHDInsightCluster** для создания нового кластера HDInsight, который выполняет действие сценария, храняное в $Config.
 
-### Пример 2: Добавление нескольких действий сценария в кластер
+### Пример 2. Добавление нескольких действий сценария в кластер
 ```
 PS C:\>$Config = New-AzureHDInsightClusterConfig -ClusterSizeInNodes 4
 PS C:\> $Config = Add-AzureHDInsightScriptAction -Config $Config -Name "TestScriptAction1" -Uri http://test.com/test1.ps1 -Parameters "Test1" -ClusterRoleCollection HeadNode,DataNode | Add-AzureHDInsightScriptAction -Config $Config -Name "TestScriptAction2" -Uri http://test.com/test2.ps1 -ClusterRoleCollection HeadNode
 PS C:\> New-AzureHDInsightCluster -Config $Config
 ```
 
-Первая команда использует командлет **New-AzureHDInsightClusterConfig** для создания конфигурации кластера HDInsight и сохраняет ее в переменной $config.
+Первая команда использует командлет **New-AzureHDInsightClusterConfig** для создания конфигурации кластера HDInsight, а затем сохраняет ее в переменной $Config.
 
-Вторая команда использует командлет **Add-AzureHDInsightScriptAction** , чтобы добавить указанное действие в $config, а затем использует оператор конвейера для передачи **$config на второй раз для добавления второго** действия сценария для $config.
+Вторая команда использует командлет **Add-AzureHDInsightScriptAction** для добавления указанного действия сценария в $Config, а затем с помощью оператора конвейера передает $Config **add-AzureHDInsightScriptAction** еще раз, чтобы добавить второе действие сценария в $Config.
 
-В последней команде используется командлет **New-AzureHDInsightCluster** для создания кластера, запускающего действия сценария в $config.
+В последней команде используется командлет **New-AzureHDInsightCluster** для создания кластера, который выполняет действия сценария в $Config.
 
-## ПАРАМЕТРЫ
+## PARAMETERS
 
 ### -ClusterRoleCollection
-Задает узлы, для которых нужно выполнить сценарий.
-Допустимые значения этого параметра: HeadNode или Node.
+Определяет узлы, для которых нужно выполнить сценарий.
+Допустимыми значениями для этого параметра являются HeadNode или DataNode.
 
-Вы можете указать одно значение или оба значения.
+Можно указать одно или оба значения.
 
 ```yaml
 Type: ClusterNodeType[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -88,12 +88,12 @@ Accept wildcard characters: False
 
 ### -Config
 Указывает объект конфигурации.
-Этот командлет добавляет в объект сведения о действии сценария, который указывает этот параметр.
+Этот cmdlet добавляет сведения о действиях сценария к объекту, указанному этим параметром.
 
 ```yaml
 Type: AzureHDInsightConfig
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -102,13 +102,13 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -Name (имя)
-Задает имя действия сценария.
+### -Name
+Указывает имя действия сценария.
 
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -118,12 +118,12 @@ Accept wildcard characters: False
 ```
 
 ### -Parameters
-Задает параметры, необходимые для действия сценария.
+Параметры, необходимые для действия сценария.
 
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -133,13 +133,13 @@ Accept wildcard characters: False
 ```
 
 ### -Profile
-Указывает профиль Azure, из которого считывается этот командлет.
-Если вы не укажете профиль, этот командлет считывает данные из локального профиля по умолчанию.
+Определяет профиль Azure, для которого читается этот cmdlet.
+Если не указать профиль, этот cmdlet будет читать данные из локального профиля по умолчанию.
 
 ```yaml
 Type: AzureSMProfile
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -148,13 +148,13 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -URI
-Указывает расположение URI для запускаемого сценария.
+### -Uri
+Определяет расположение URI запускаемого сценария.
 
 ```yaml
 Type: Uri
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -164,15 +164,15 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Этот командлет поддерживает общие параметры:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-of Variable,-out,-PipelineVariable,-Verbose, и-WarningAction. Дополнительные сведения можно найти в разделе about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
+Этот cmdlet поддерживает общие параметры: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. Дополнительные сведения см. в about_CommonParameters https://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## ВХОДНЫЕ данные
+## INPUTS
 
-## НАПРЯЖЕНИЕ
+## OUTPUTS
 
-## Пуск
+## ПРИМЕЧАНИЯ
 
-## ДОПОЛНИТЕЛЬНЫЕ ССЫЛКИ
+## СВЯЗАННЫЕ ССЫЛКИ
 
 [New-AzureHDInsightCluster](./New-AzureHDInsightCluster.md)
 
