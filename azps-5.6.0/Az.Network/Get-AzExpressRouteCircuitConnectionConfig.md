@@ -6,12 +6,12 @@ online version: https://docs.microsoft.com/powershell/module/az.network/get-azex
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Get-AzExpressRouteCircuitConnectionConfig.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Get-AzExpressRouteCircuitConnectionConfig.md
-ms.openlocfilehash: c8d35373c2891b9f0d3ac76ded8b4e9808f32f33
-ms.sourcegitcommit: 4dfb0cc533b83f77afdcfbe2618c1e6c8d221330
+ms.openlocfilehash: 38087f668a820c89d5b733263991e192badb085c
+ms.sourcegitcommit: 6f0b6059d096600ebff1c8514c35c467d2f482d8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "101993821"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104714662"
 ---
 # Get-AzExpressRouteCircuitConnectionConfig
 
@@ -110,5 +110,3 @@ Accept wildcard characters: False
 [Remove-AzExpressRouteCircuitConnectionConfig](Remove-AzExpressRouteCircuitConnectionConfig.md)
 
 [Set-AzExpressRouteCircuitConnectionConfig](Set-AzExpressRouteCircuitConnectionConfig.md)
-
-[New-AzExpressRouteCircuitConnectionConfig](New-AzExpressRouteCircuitConnectionConfig.md)

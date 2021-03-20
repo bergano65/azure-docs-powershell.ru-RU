@@ -5,12 +5,12 @@ online version: https://docs.microsoft.com/powershell/module/az.datafactory/get-
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/DataFactory/DataFactoryV2/help/Get-AzDataFactoryV2DataFlow.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/DataFactory/DataFactoryV2/help/Get-AzDataFactoryV2DataFlow.md
-ms.openlocfilehash: 4838ba48d12fa3a4b1fd7d129e63e0a643357a78
-ms.sourcegitcommit: 4dfb0cc533b83f77afdcfbe2618c1e6c8d221330
+ms.openlocfilehash: 9596529fd73b26d3b7f9eba7747cb877b2f0ce86
+ms.sourcegitcommit: 6f0b6059d096600ebff1c8514c35c467d2f482d8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "101975288"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104714722"
 ---
 # Get-AzDataFactoryV2DataFlow
 
@@ -177,6 +177,6 @@ Accept wildcard characters: False
 
 ## СВЯЗАННЫЕ ССЫЛКИ
 
-[Set-AzDataFactoryDataFlow](./Set-AzDataFactoryDataFlow.md)
+[Set-AzDataFactoryV2DataFlow](./set-azdatafactoryv2dataflow.md)
 
-[Remove-AzDataFactoryDataFlow](./Remove-AzDataFactoryDataFlow.md)
+[Remove-AzDataFactoryV2DataFlow](./remove-azdatafactoryv2dataflow.md)

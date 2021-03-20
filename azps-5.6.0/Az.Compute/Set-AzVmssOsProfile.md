@@ -6,12 +6,12 @@ online version: https://docs.microsoft.com/powershell/module/az.compute/set-azvm
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Compute/Compute/help/Set-AzVmssOsProfile.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Compute/Compute/help/Set-AzVmssOsProfile.md
-ms.openlocfilehash: 046812a0339a0dd33df140f29e00ec8b882c91cd
-ms.sourcegitcommit: 4dfb0cc533b83f77afdcfbe2618c1e6c8d221330
+ms.openlocfilehash: f032b3b53b9bcd7b77c7ac453a1f95b9f61fe7e8
+ms.sourcegitcommit: 6f0b6059d096600ebff1c8514c35c467d2f482d8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "101958888"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104717713"
 ---
 # Set-AzVmssOsProfile
 
@@ -83,7 +83,7 @@ Accept wildcard characters: False
 **Минимальная длина (Linux):** 1 знак <br>
 **Максимальная длина (Linux):** 64 знака <br>
 **Максимальная длина (Windows):** 20 символов  <br>
-<li> Корневой доступ к Linux VM см. в теме "Использование корневых привилегий на виртуальных машинах [Linux" в Azure.](https://docs.microsoft.com/azure/virtual-machines/virtual-machines-linux-use-root-privileges?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)<br>
+<li> Корневой доступ к Linux VM см. в этом видеоролике об использовании корневых привилегий на виртуальных машинах [Linux в Azure.](https://docs.microsoft.com/azure/virtual-machines/virtual-machines-linux-use-root-privileges?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)<br>
 <li> Список встроенных пользователей системы на Linux, которые не следует использовать в этом поле, см. в поле "Выбор имен пользователей [для Linux" в Azure.](https://docs.microsoft.com/azure/virtual-machines/virtual-machines-linux-usernames?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
 
 ```yaml
@@ -115,10 +115,10 @@ Accept wildcard characters: False
 ```
 
 ### -CustomData
-Указывает строку пользовательских данных с кодом base-64.
+Указывает строку пользовательских данных с кодом базы 64.
 Он декодироваться в двоичный массив, сохраненный в файле на виртуальной машине.
 Максимальная длина двоичного массива составляет 65 535 тол. <br>
-Чтобы узнать, как использовать cloud-init для своего VM-решения, см. в этой теме использование cloud-init для настройки [VM-решения Linux во](https://docs.microsoft.com/azure/virtual-machines/virtual-machines-linux-using-cloud-init?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)время создания.
+Чтобы узнать, как использовать cloud-init для своего VM-решения, см. в этой теме использование cloud-init для настройки [VM-решения Linux во](/azure/virtual-machines/linux/tutorial-automate-vm-deployment)время создания.
 
 ```yaml
 Type: System.String
@@ -274,7 +274,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
-Запрос на подтверждение перед запуском cmdlet.
+Перед запуском cmdlet вам будет предложено подтвердить его.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter

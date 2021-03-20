@@ -6,32 +6,32 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.compute/se
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Compute/Compute/help/Set-AzVMPlan.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Compute/Compute/help/Set-AzVMPlan.md
-ms.openlocfilehash: 93837ff6618523f71fdd2b0a3b933b50892af429
-ms.sourcegitcommit: 1de2b6c3c99197958fa2101bc37680e7507f91ac
+ms.openlocfilehash: eed6fb9b5dec9eb7f99f9c1754084993c1431808
+ms.sourcegitcommit: 6f0b6059d096600ebff1c8514c35c467d2f482d8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "94078392"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104714506"
 ---
 # Set-AzVMPlan
 
-## КРАТКИй обзор
-Задает сведения о плане рынка на виртуальной машине.
+## SYNOPSIS
+Задает сведения о плане Marketplace на виртуальной машине.
 
-## Максимальное
+## СИНТАКСИС
 
 ```
 Set-AzVMPlan [-VM] <PSVirtualMachine> [-Name] <String> [[-Product] <String>] [[-PromotionCode] <String>]
  [[-Publisher] <String>] [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## NОПИСАНИЕ
-Командлет **Set-AzVMPlan** задает сведения о плане Azure Marketplace для виртуальной машины.
-Прежде чем развертывать изображение Marketplace с помощью командной строки, необходимо включить программный доступ или выполнить развертывание виртуальной машины с помощью портала Azure.
+## ОПИСАНИЕ
+Для виртуальной машины задаются сведения о плане Azure Marketplace с использованием **cmdlet Set-AzVMPlan.**
+Прежде чем развернуть изображение Marketplace с помощью командной строки, необходимо включить программный доступ или развернуть виртуальную машину на портале Azure.
 
-## ИЛЛЮСТРИРУЮТ
+## ПРИМЕРЫ
 
-## ПАРАМЕТРЫ
+## PARAMETERS
 
 ### -DefaultProfile
 Учетные данные, учетная запись, клиент и подписка, используемые для связи с Azure.
@@ -48,10 +48,10 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Name (имя)
+### -Name
 Указывает имя изображения из Marketplace.
-Это то же значение, которое возвращает командлет Get-AzVMImageSku.
-Дополнительные сведения о поиске изображений можно найти в разделе Навигация и выбор образов виртуальных машин Azure с помощью PowerShell и инфраструктуры Azure CLI https://azure.microsoft.com/documentation/articles/resource-groups-vm-searching/ ( https://azure.microsoft.com/documentation/articles/resource-groups-vm-searching/) в документации Microsoft Azure.
+Это то же значение, которое возвращается Get-AzVMImageSku..
+Дополнительные сведения о поиске изображений см. в документации Microsoft Azure Azure для поиска и использования [изображений VM Azure Marketplace с помощью Azure PowerShell.](/azure/virtual-machines/windows/cli-ps-findimage)
 
 ```yaml
 Type: System.String
@@ -66,8 +66,8 @@ Accept wildcard characters: False
 ```
 
 ### -Product
-Определяет произведение изображения на рынке.
-Это та же информация, что и значение **предложения** элемента **imageReference** .
+Определяет продукт изображения из Marketplace.
+Это те же сведения, что и **значение предложения** элемента **imageReference.**
 
 ```yaml
 Type: System.String
@@ -82,7 +82,7 @@ Accept wildcard characters: False
 ```
 
 ### -PromotionCode
-Указывает код рекламной акции.
+Указывает рекламный код.
 
 ```yaml
 Type: System.String
@@ -98,7 +98,7 @@ Accept wildcard characters: False
 
 ### -Publisher
 Указывает издателя изображения.
-Эти сведения можно найти с помощью командлета Get-AzVMImagePublisher.
+Эти сведения можно найти с помощью Get-AzVMImagePublisher управления.
 
 ```yaml
 Type: System.String
@@ -113,9 +113,9 @@ Accept wildcard characters: False
 ```
 
 ### -VM
-Указывает объект виртуальной машины, для которого нужно задать план Marketplace.
-Вы можете использовать командлет Get-AzVM для получения объекта виртуальной машины.
-Вы можете использовать командлет New-AzVMConfig для создания объекта виртуальной машины.
+Определяет объект виртуальной машины, для которого нужно установить план Marketplace.
+Для получения объекта Get-AzVM машин можно использовать Get-AzVM.
+Для создания объекта New-AzVMConfig машин можно использовать New-AzVMConfig.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Compute.Models.PSVirtualMachine
@@ -130,21 +130,21 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Этот командлет поддерживает общие параметры:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-of Variable,-out,-PipelineVariable,-Verbose, и-WarningAction. Дополнительные сведения можно найти в разделе [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+Этот cmdlet поддерживает общие параметры: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. Дополнительные сведения см. [в about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)
 
-## ВХОДНЫЕ данные
+## INPUTS
 
-### Microsoft. Azure. Commands. COMPUTE. Models. PSVirtualMachine
+### Microsoft.Azure.Commands.Compute.Models.PSVirtualMa modelse
 
-### System. String
+### System.String
 
-## НАПРЯЖЕНИЕ
+## OUTPUTS
 
-### Microsoft. Azure. Commands. COMPUTE. Models. PSVirtualMachine
+### Microsoft.Azure.Commands.Compute.Models.PSVirtualMa modelse
 
-## Пуск
+## ПРИМЕЧАНИЯ
 
-## ДОПОЛНИТЕЛЬНЫЕ ССЫЛКИ
+## СВЯЗАННЫЕ ССЫЛКИ
 
 [Get-AzVM](./Get-AzVM.md)
 

@@ -6,12 +6,12 @@ online version: https://docs.microsoft.com/powershell/module/az.keyvault/get-azk
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/KeyVault/KeyVault/help/Get-AzKeyVaultCertificate.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/KeyVault/KeyVault/help/Get-AzKeyVaultCertificate.md
-ms.openlocfilehash: 391c156fea6e8d29bdf5794d1921a790cbefcc06
-ms.sourcegitcommit: 4dfb0cc533b83f77afdcfbe2618c1e6c8d221330
+ms.openlocfilehash: 5796506d2c1d3815fbb06fa01b417d2b4369dba4
+ms.sourcegitcommit: 6f0b6059d096600ebff1c8514c35c467d2f482d8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "102004051"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104714336"
 ---
 # Get-AzKeyVaultCertificate
 
@@ -83,28 +83,28 @@ Cmdlet **Get-AzKeyVaultCertificate** получает указанный сер�
 ```powershell
 PS C:\> Get-AzKeyVaultCertificate -VaultName "ContosoKV01" -Name "TestCert01"
 Name        : testCert01
-Certificate : [Subject] 
+Certificate : [Subject]
                 CN=contoso.com
 
-              [Issuer] 
+              [Issuer]
                 CN=contoso.com
 
-              [Serial Number] 
+              [Serial Number]
                 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-              [Not Before] 
+              [Not Before]
                 2/8/2016 3:11:45 PM
 
-              [Not After] 
+              [Not After]
                 8/8/2016 4:21:45 PM
 
-              [Thumbprint] 
+              [Thumbprint]
                 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
 KeyId       : https://contoso.vault.azure.net:443/keys/TestCert01/XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 SecretId    : https://contoso.vault.azure.net:443/secrets/TestCert01/XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 Thumbprint  : XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-Tags        : 
+Tags        :
 Enabled     : True
 Created     : 2/8/2016 11:21:45 PM
 Updated     : 2/8/2016 11:21:45 PM
@@ -157,7 +157,7 @@ Id                 : https://contoso.vault.azure.net:443/certificates/test2
 
 Эта команда получает все сертификаты, которые были ранее удалены, но не удалены, в хранилище ключей Contoso.
 
-### Пример 4. Возвращает сертификат MyCert, который был удален, но не был удален из этого сейфа ключа.
+### Пример 4. Возвращает сертификат MyCert, который был удален, но не удален для этого хранилища ключей.
 ```powershell
 PS C:\> Get-AzKeyVaultCertificate -VaultName 'contoso' -Name 'test1' -InRemovedState
 
@@ -197,7 +197,7 @@ Version            : 7fe415d5518240c1a6fce89986b8d334
 Id                 : https://contoso.vault.azure.net:443/certificates/test1/7fe415d5518240c1a6fce89986b8d334
 ```
 
-Эта команда получает сертификат MyCert, который ранее был удален, но не был удален, в хранилище ключей Contoso.
+Эта команда получает сертификат MyCert, который ранее был удален, но не удален, в хранилище ключей Contoso.
 Эта команда возвращает метаданные, такие как дата удаления и запланированная дата удаления этого удаленного сертификата.
 
 ### Пример 5. Сертификаты списков с использованием фильтрации
@@ -363,7 +363,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Version
+### -Версия
 Определяет версию сертификата.
 
 ```yaml
@@ -406,5 +406,3 @@ Accept wildcard characters: False
 [Import-AzKeyVaultCertificate](./Import-AzKeyVaultCertificate.md)
 
 [Remove-AzKeyVaultCertificate](./Remove-AzKeyVaultCertificate.md)
-
-[Undo-AzKeyVaultSecretCertificate](./Undo-AzKeyVaultSecretCertificate.md)

@@ -6,19 +6,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.compute/se
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Compute/Compute/help/Set-AzVmssOsProfile.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Compute/Compute/help/Set-AzVmssOsProfile.md
-ms.openlocfilehash: 71bd8ca26755118a4bb9c075ae89bad765922f3d
-ms.sourcegitcommit: 1de2b6c3c99197958fa2101bc37680e7507f91ac
+ms.openlocfilehash: b5676217de980aed8581a4a1e5a5ab103c86e753
+ms.sourcegitcommit: 6f0b6059d096600ebff1c8514c35c467d2f482d8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "94080006"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104714647"
 ---
 # Set-AzVmssOsProfile
 
-## КРАТКИй обзор
+## SYNOPSIS
 Задает свойства профиля операционной системы VMSS.
 
-## Максимальное
+## СИНТАКСИС
 
 ```
 Set-AzVmssOsProfile [-VirtualMachineScaleSet] <PSVirtualMachineScaleSet> [[-ComputerNamePrefix] <String>]
@@ -30,24 +30,24 @@ Set-AzVmssOsProfile [-VirtualMachineScaleSet] <PSVirtualMachineScaleSet> [[-Comp
  [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## NОПИСАНИЕ
-Командлет **Set-AzVmssOsProfile** задает для параметров профиля виртуальной машины параметры, заданные в операционной системе.
+## ОПИСАНИЕ
+Для свойства профиля виртуальной машины **Set-AzVmssOsProfile** задаются свойства профиля виртуальной машины (Scale Set).
 
-## ИЛЛЮСТРИРУЮТ
+## ПРИМЕРЫ
 
-### Пример 1: Настройка свойств профиля операционной системы для VMSS
+### Пример 1. Настройка свойств профиля операционной системы для VMSS
 ```
 PS C:\> Set-AzVmssOSProfile -VirtualMachineScaleSet "ContosoVMSS" -ComputerNamePrefix "Test" -AdminUsername $AdminUsername -AdminPassword $AdminPassword
 ```
 
-Эта команда задает свойства профиля операционной системы для виртуальных машин, которые принадлежат к VMSS с именем ContosoVMSS.
-Команда задает префикс имени компьютера для всех экземпляров виртуальных машин в VMSS для проверки и предоставляет имя пользователя и пароль администратора.
+Эта команда задает свойства профиля операционной системы для виртуальных машин, которые относятся к VMSS с именем ContosoVMSS.
+Эта команда задает префикс имени компьютера для всех экземпляров виртуальной машины в VMSS для проверки и задает имя пользователя и пароль администратора.
 
-## ПАРАМЕТРЫ
+## PARAMETERS
 
 ### -AdditionalUnattendContent
-Указывает объект автоматического содержимого.
-Для создания объекта можно использовать Add-AzVMAdditionalUnattendContent.
+Определяет объект несмежного содержимого.
+С помощью Add-AzVMAdditionalUnattendContent можно создать объект.
 
 ```yaml
 Type: Microsoft.Azure.Management.Compute.Models.AdditionalUnattendContent[]
@@ -62,7 +62,7 @@ Accept wildcard characters: False
 ```
 
 ### -AdminPassword
-Указывает пароль администратора, который будет использоваться для всех экземпляров виртуальных машин в VMSS.
+Пароль администратора, который будет применяться для всех экземпляров виртуальной машины в VMSS.
 
 ```yaml
 Type: System.String
@@ -77,14 +77,14 @@ Accept wildcard characters: False
 ```
 
 ### -AdminUsername
-Указывает имя учетной записи администратора, которое будет использоваться для всех экземпляров виртуальных машин в VMSS. <br>
-**Ограничение только для Windows:** Не может заканчиваться \" .\" <br>
-**Недопустимые значения:** \" Администратор \" , \" Администратор \" , \" пользователь \" , \" Пользователь1 \" , \" Тест \" , \" Пользователь2 \" , \" test1 \" , \" user3 \" , \" admin1 \" , \" 1 \" , \" 123 \" , \" a \" , \" actuser \" , ADM, Admin2, ASPNET, Backup, a,, гость, Петр, владелец, администратор, сервер, сайт,, служба \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" поддержки \" , \" Support_388945a0 \" , \" sys, \" \" Test2 \" \" \" \" \" \" \" , test3, user4. <br>
-**Минимальная длина (Linux):** 1 символ <br>
-**Максимальная-длина (Linux):** 64 символов <br>
+Указывает имя учетной записи администратора, которая будет применяться для всех экземпляров виртуальной машины в VMSS. <br>
+**Ограничение только для Windows:** Не может закончиться \" .\" <br>
+**Деостановимые значения** \" \"администратор, \" \" администратор, \" \" пользователь, \" \" пользователь1, \" \" проверка, \" \" пользователь2, \" \" тест1, \" \" пользователь3, \" \" администратор1, \" \" 1, \" 123, \" a , \" \" \" actuser, \" \" adm, \" \" \" admin2, \" aspnet, aspnet, \" \" \" backup, \" \" \" \" \" console, david, \" guest, \" \" \" \" owner, \" \" owner, root, \" \" server, \" sql, \" support , \" \" \" \" support_388945a0, \" sys, \" \" test2 , \" \" \" test3, \" \" user4, \" user5 \" . <br>
+**Минимальная длина (Linux):** 1 знак <br>
+**Максимальная длина (Linux):** 64 знака <br>
 **Максимальная длина (Windows):** 20 символов  <br>
-<li> Для доступа к корневому доступу к ВМ Linux ознакомьтесь с разрешениями для [виртуальных машин Linux в Azure с помощью корневых привилегий](https://docs.microsoft.com/azure/virtual-machines/virtual-machines-linux-use-root-privileges?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).<br>
-<li> Список встроенных пользователей системы Linux, которые не должны использоваться в этом поле, приведены в разделе [Выбор имен пользователей для Linux в Azure](https://docs.microsoft.com/azure/virtual-machines/virtual-machines-linux-usernames?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).
+<li> Корневой доступ к Linux VM см. в этом видеоролике об использовании корневых привилегий на виртуальных машинах [Linux в Azure.](https://docs.microsoft.com/azure/virtual-machines/virtual-machines-linux-use-root-privileges?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)<br>
+<li> Список встроенных пользователей системы на Linux, которые не следует использовать в этом поле, см. в поле "Выбор имен пользователей [для Linux" в Azure.](https://docs.microsoft.com/azure/virtual-machines/virtual-machines-linux-usernames?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
 
 ```yaml
 Type: System.String
@@ -99,8 +99,8 @@ Accept wildcard characters: False
 ```
 
 ### -ComputerNamePrefix
-Задает префикс имени компьютера для всех экземпляров виртуальных машин в VMSS.
-Имена компьютеров должны содержать от 1 до 15 символов.
+Указывает префикс имени компьютера для всех экземпляров виртуальной машины в VMSS.
+Имена компьютеров должны иметь длину от 1 до 15 знаков.
 
 ```yaml
 Type: System.String
@@ -115,10 +115,10 @@ Accept wildcard characters: False
 ```
 
 ### -CustomData
-Задает строку настраиваемых данных, закодированную в формате 64.
-Этот код декодирован на двоичный массив, сохраненный в виде файла на виртуальной машине.
-Максимальная длина двоичного массива составляет 65535 байт. <br>
-Для использования Cloud-init для виртуальной машины, ознакомьтесь со сведениями о [настройке виртуальной машины Linux во время создания с помощью облака-init](https://docs.microsoft.com/azure/virtual-machines/virtual-machines-linux-using-cloud-init?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).
+Указывает строку пользовательских данных с кодом базы 64.
+Он декодироваться в двоичный массив, сохраненный в файле на виртуальной машине.
+Максимальная длина двоичного массива составляет 65 535 тол. <br>
+Чтобы узнать, как использовать cloud-init для своего VM-решения, см. в этой теме использование cloud-init для настройки [VM-решения Linux во](/azure/virtual-machines/linux/tutorial-automate-vm-deployment)время создания.
 
 ```yaml
 Type: System.String
@@ -148,7 +148,7 @@ Accept wildcard characters: False
 ```
 
 ### -LinuxConfigurationDisablePasswordAuthentication
-Указывает на то, что этот командлет отключает проверку подлинности пароля.
+Указывает на то, что этот cmdlet отключает проверку подлинности паролем.
 
 ```yaml
 Type: System.Nullable`1[System.Boolean]
@@ -162,10 +162,10 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Прослушиватель
-Указывает прослушиватели удаленного управления Windows (WinRM).
-Это позволяет использовать удаленную оболочку Windows PowerShell.
-Для создания прослушивателя можно использовать командлет Add-AzVmssWinRMListener.
+### -Listener
+Указывает, Windows Remote Management (WinRM).
+Это позволит использовать удаленные Windows PowerShell.
+Для создания Add-AzVmssWinRMListener можно использовать Add-AzVmssWinRMListener.
 
 ```yaml
 Type: Microsoft.Azure.Management.Compute.Models.WinRMListener[]
@@ -180,8 +180,8 @@ Accept wildcard characters: False
 ```
 
 ### -PublicKey
-Определяет объект открытого ключа Secure Shell (SSH).
-Для создания объекта можно использовать командлет Add-AzVMSshPublicKey.
+Указывает объект открытого ключа Secure Shell (SSH).
+Для создания объекта Add-AzVMSshPublicKey можно использовать Add-AzVMSshPublicKey.
 
 ```yaml
 Type: Microsoft.Azure.Management.Compute.Models.SshPublicKey[]
@@ -195,9 +195,9 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Secret (секретный)
-Указывает секретный объект, который содержит ссылки на сертификаты для размещения на виртуальной машине.
-Вы можете использовать командлет Add-AzVmssSecret для создания секретного объекта.
+### -Секретная
+Определяет секрет объекта, который содержит ссылки на сертификаты, которые нужно разместить на виртуальной машине.
+С помощью Add-AzVmssSecret можно создать объект секретов.
 
 ```yaml
 Type: Microsoft.Azure.Management.Compute.Models.VaultSecretGroup[]
@@ -211,9 +211,9 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Часовой пояс
-Указывает часовой пояс виртуальной машины. Например, \" тихоокеанское время \" . <br>
-Возможные значения могут быть [TimeZoneInfo.ID](https://docs.microsoft.com/en-us/dotnet/api/system.timezoneinfo.id?#System_TimeZoneInfo_Id) значениями из часовых поясов, возвращаемых [TimeZoneInfo. GetSystemTimeZones](https://docs.microsoft.com/en-us/dotnet/api/system.timezoneinfo.getsystemtimezones).
+### -TimeZone
+Определяет часовой пояс виртуальной машины. Например, по \" тихоокеанскому \" времени. <br>
+Возможные значения могут [быть](https://docs.microsoft.com/en-us/dotnet/api/system.timezoneinfo.id?#System_TimeZoneInfo_Id) TimeZoneInfo.Id из часовых поясов, возвращаемых [timeZoneInfo.GetSystemTimeZones.](https://docs.microsoft.com/en-us/dotnet/api/system.timezoneinfo.getsystemtimezones)
 
 ```yaml
 Type: System.String
@@ -229,7 +229,7 @@ Accept wildcard characters: False
 
 ### -VirtualMachineScaleSet
 Указывает объект VMSS.
-Для создания объекта можно использовать командлет New-AzVmssConfig.
+Для создания объекта New-AzVmssConfig можно использовать New-AzVmssConfig.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Compute.Automation.Models.PSVirtualMachineScaleSet
@@ -244,7 +244,7 @@ Accept wildcard characters: False
 ```
 
 ### -WindowsConfigurationEnableAutomaticUpdate
-Указывает, включены ли для виртуальных машин в VMSS автоматическое обновление.
+Указывает, включены ли на виртуальных машинах виртуальные машины для автоматического обновления.
 
 ```yaml
 Type: System.Nullable`1[System.Boolean]
@@ -259,7 +259,7 @@ Accept wildcard characters: False
 ```
 
 ### -WindowsConfigurationProvisionVMAgent
-Указывает, должен ли агент виртуальной машины быть подготовлен на виртуальных машинах в VMSS.
+Указывает на то, следует ли заказать агент виртуальной машины на виртуальных машинах в VMSS.
 
 ```yaml
 Type: System.Nullable`1[System.Boolean]
@@ -274,7 +274,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
-Запрашивает подтверждение перед запуском командлета.
+Перед запуском cmdlet вам будет предложено подтвердить его.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -289,7 +289,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Показывает, что произойдет при запуске командлета. Командлет не выполняется.
+Показывает, что произойдет при запуске cmdlet. Этот cmdlet не будет выполниться.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -304,31 +304,31 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Этот командлет поддерживает общие параметры:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-of Variable,-out,-PipelineVariable,-Verbose, и-WarningAction. Дополнительные сведения можно найти в разделе [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+Этот cmdlet поддерживает общие параметры: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. Дополнительные сведения см. [в about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)
 
-## ВХОДНЫЕ данные
+## INPUTS
 
-### Microsoft. Azure. Commands. COMPUTE. Automation. Models. PSVirtualMachineScaleSet
+### Microsoft.Azure.Commands.Compute.Automation.Models.PSVirtualMa modelseScaleSet
 
-### System. String
+### System.String
 
-### System. Nullable "1 [[System. Boolean, System. Private. CoreLib, Version = 4.0.0.0, культура = Neutral, PublicKeyToken = 7cec85d7bea7798e]]
+### System.Nullable'1[[System.Boolean, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]
 
-### Microsoft. Azure. Management. COMPUTE. Models. AdditionalUnattendContent []
+### Microsoft.Azure.Management.Compute.Models.AdditionalUnattendContent[]
 
-### Microsoft. Azure. Management. COMPUTE. Models. WinRMListener []
+### Microsoft.Azure.Management.Compute.Models.WinRMListener[]
 
-### Microsoft. Azure. Management. COMPUTE. Models. SshPublicKey []
+### Microsoft.Azure.Management.Compute.Models.SshPublicKey[]
 
-### Microsoft. Azure. Management. COMPUTE. Models. VaultSecretGroup []
+### Microsoft.Azure.Management.Compute.Models.VaultSecretGroup[]
 
-## НАПРЯЖЕНИЕ
+## OUTPUTS
 
-### Microsoft. Azure. Commands. COMPUTE. Automation. Models. PSVirtualMachineScaleSet
+### Microsoft.Azure.Commands.Compute.Automation.Models.PSVirtualMa modelseScaleSet
 
-## Пуск
+## ПРИМЕЧАНИЯ
 
-## ДОПОЛНИТЕЛЬНЫЕ ССЫЛКИ
+## СВЯЗАННЫЕ ССЫЛКИ
 
 [Add-AzVMAdditionalUnattendContent](./Add-AzVMAdditionalUnattendContent.md)
 

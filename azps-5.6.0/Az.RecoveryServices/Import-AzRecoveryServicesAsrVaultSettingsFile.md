@@ -5,17 +5,17 @@ online version: https://docs.microsoft.com/powershell/module/az.recoveryservices
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/RecoveryServices/RecoveryServices/help/Import-AzRecoveryServicesAsrVaultSettingsFile.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/RecoveryServices/RecoveryServices/help/Import-AzRecoveryServicesAsrVaultSettingsFile.md
-ms.openlocfilehash: b287e69093ca748d02cd3f630e3b38fb51cdf8f6
-ms.sourcegitcommit: 4dfb0cc533b83f77afdcfbe2618c1e6c8d221330
+ms.openlocfilehash: ea57a2bc870ba97cf903de14add981418069d4b5
+ms.sourcegitcommit: 6f0b6059d096600ebff1c8514c35c467d2f482d8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "102007672"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104717583"
 ---
 # Import-AzRecoveryServicesAsrVaultSettingsFile
 
 ## SYNOPSIS
-Импортирует указанный файл параметров хранилища ASR, чтобы настроить контекст хранилища (контекст сеанса PowerShell) для последующих операций ASR в сеансе PowerShell. 
+Импортирует указанный файл параметров хранилища ASR, чтобы настроить контекст хранилища (контекст сеанса PowerShell) для последующих операций asR в сеансе PowerShell.
 
 ## СИНТАКСИС
 
@@ -71,7 +71,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
-Запрос на подтверждение перед запуском cmdlet.
+Перед запуском cmdlet вам будет предложено подтвердить его.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -115,4 +115,4 @@ Accept wildcard characters: False
 
 ## СВЯЗАННЫЕ ССЫЛКИ
 
-[Get-AzRecoveryServicesAsrVaultSettingsFile](./Get-AzRecoveryServicesAsrVaultSettingsFile.md)
+[Cmdlets Azure Recovery Services](/powershell/module/az.recoveryservices)

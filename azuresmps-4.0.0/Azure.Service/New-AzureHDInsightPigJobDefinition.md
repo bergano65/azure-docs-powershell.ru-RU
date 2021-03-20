@@ -3,56 +3,56 @@ external help file: Microsoft.WindowsAzure.Commands.HDInsight.dll-Help.xml
 ms.assetid: 227D933A-9272-4C53-89AF-711379B47A74
 online version: ''
 schema: 2.0.0
-ms.openlocfilehash: 9c32a80bec0820123a8ccf1a85f5c99bdac3195d
-ms.sourcegitcommit: 56ed085a868afa8263f8eb0f755b5822f5c29532
+ms.openlocfilehash: dfacea13d57d8b75de5513c07e6252d0daceb88f
+ms.sourcegitcommit: 6f0b6059d096600ebff1c8514c35c467d2f482d8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "94076010"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104714353"
 ---
 # New-AzureHDInsightPigJobDefinition
 
-## КРАТКИй обзор
-Определяет новое задание свинья для службы HDInsight.
+## SYNOPSIS
+Определяет новое задание Pig для службы HDInsight.
 
-## Максимальное
+## СИНТАКСИС
 
 ```
 New-AzureHDInsightPigJobDefinition [-Arguments <String[]>] [-File <String>] [-Files <String[]>]
  [-Query <String>] [-StatusFolder <String>] [-Profile <AzureSMProfile>] [<CommonParameters>]
 ```
 
-## NОПИСАНИЕ
-Эта версия Azure PowerShell HDInsight устарела.
-Эти командлеты будут удалены с 1 января 2017 г.
-Пожалуйста, используйте более новую версию Azure PowerShell HDInsight.
+## ОПИСАНИЕ
+Эта версия Azure PowerShell HDInsight не является нужной.
+Эти cmdlets будут удалены до 1 января 2017 г.
+Используйте более новую версию Azure PowerShell HDInsight.
 
-Сведения о том, как использовать новую HDInsight для создания кластера, можно найти в разделе Создание кластеров [на базе Linux в HDInsight с помощью Azure PowerShell](https://azure.microsoft.com/en-us/documentation/articles/hdinsight-hadoop-create-linux-clusters-azure-powershell/) ( https://azure.microsoft.com/en-us/documentation/articles/hdinsight-hadoop-create-linux-clusters-azure-powershell/) .
-Сведения о том, как отправлять задания с помощью Azure PowerShell и другие подходы, приведены [в разделе Отправка заданий Hadoop в HDInsight](https://azure.microsoft.com/en-us/documentation/articles/hdinsight-submit-hadoop-jobs-programmatically/) ( https://azure.microsoft.com/en-us/documentation/articles/hdinsight-submit-hadoop-jobs-programmatically/) .
-Справочные сведения о службе Azure PowerShell HDInsight можно найти в [командлетах Azure hdinsight](https://msdn.microsoft.com/en-us/library/mt438705.aspx) ( https://msdn.microsoft.com/en-us/library/mt438705.aspx) .
+Сведения об использовании новой hdInsight для создания кластеров см. в видео "Создание кластеров на основе Linux" в [HDInsight с помощью Azure PowerShell.](https://azure.microsoft.com/en-us/documentation/articles/hdinsight-hadoop-create-linux-clusters-azure-powershell/) https://azure.microsoft.com/en-us/documentation/articles/hdinsight-hadoop-create-linux-clusters-azure-powershell/)
+Сведения о том, как отправлять задания с помощью Azure PowerShell и других подходов, см. в сведениях о задании [Submit Hadoop в HDInsight](https://azure.microsoft.com/en-us/documentation/articles/hdinsight-submit-hadoop-jobs-programmatically/) . https://azure.microsoft.com/en-us/documentation/articles/hdinsight-submit-hadoop-jobs-programmatically/)
+Справочные сведения о Azure PowerShell HDInsight см. в [cmdlets Azure HDInsight.](/powershell/module/servicemanagement/azure.service/?view=azuresmps-4.0.0#hd-insights)
 
-**Новый AzureHDInsightPigJobDefinition** определяет задание свинья для службы Azure HDInsight.
+Задание **New-AzureHDInsightPigJobDefinition** определяет задание "Порося" для службы Azure HDInsight.
 
-## ИЛЛЮСТРИРУЮТ
+## ПРИМЕРЫ
 
-### Пример 1: определение нового задания свинья
+### Пример 1. Определение нового задания "Поросяк"
 ```
 PS C:\>$0 = '$0';
 PS C:\> $QueryString =  "LOGS = LOAD 'wasb:///example/data/sample.log';" + "LEVELS = foreach LOGS generate REGEX_EXTRACT($0, '(TRACE|DEBUG|INFO|WARN|ERROR|FATAL)', 1) as LOGLEVEL;" + "FILTEREDLEVELS = FILTER LEVELS by LOGLEVEL is not null;" + "GROUPEDLEVELS = GROUP FILTEREDLEVELS by LOGLEVEL;" + "FREQUENCIES = foreach GROUPEDLEVELS generate group as LOGLEVEL, COUNT(FILTEREDLEVELS.LOGLEVEL) as COUNT;" + "RESULT = order FREQUENCIES by COUNT desc;" + "DUMP RESULT;"
 PS C:\> $PigJobDefinition = New-AzureHDInsightPigJobDefinition -Query $QueryString
 ```
 
-Первая команда объявляет строковое значение, а затем сохраняет его в переменной $0.
+Первая команда объявляет строковые значения, а затем сохраняет в переменной $0.
 
-Вторая команда создает запрос задания свинья и сохраняет его в переменной $QueryString.
+Вторая команда создает запрос на задание Чтобы создать его, а затем $QueryString переменную.
 
-Последняя команда создает определение задания свинья, которое использует запрос в $QueryString, а затем сохраняет определение задания в переменной $PigJobDefinition.
+Конечная команда создает задание "Порося", использующее запрос в $QueryString, а затем сохраняет определение задания в переменной $PigJobDefinition.
 
-## ПАРАМЕТРЫ
+## PARAMETERS
 
 ### -Аргументы
-Задает массив аргументов для задания свинья.
-Аргументы передаются в качестве аргументов командной строки для каждой задачи.
+Указывает массив аргументов для задания "Порося".
+Аргументы передаются каждой задаче в качестве аргументов командной строки.
 
 ```yaml
 Type: String[]
@@ -66,9 +66,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Файл
-Задает путь к файлу, содержащему запрос для запуска.
-Вы можете использовать этот параметр вместо параметра *запроса* .
+### -File
+Путь к файлу, который содержит запрос, который нужно выполнить.
+Этот параметр можно использовать вместо *параметра Query.*
 
 ```yaml
 Type: String
@@ -83,12 +83,12 @@ Accept wildcard characters: False
 ```
 
 ### -Файлы
-Указывает набор файлов, связанных с заданием свинья.
+Набор файлов, связанных с заданием Pig.
 
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -98,13 +98,13 @@ Accept wildcard characters: False
 ```
 
 ### -Profile
-Указывает профиль Azure, из которого считывается этот командлет.
-Если вы не укажете профиль, этот командлет считывает данные из локального профиля по умолчанию.
+Определяет профиль Azure, для которого читается этот cmdlet.
+Если не указать профиль, этот cmdlet будет читать данные из локального профиля по умолчанию.
 
 ```yaml
 Type: AzureSMProfile
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -114,7 +114,7 @@ Accept wildcard characters: False
 ```
 
 ### -Query
-Указывает запрос задания свинья.
+Определяет запрос задания Врося.
 
 ```yaml
 Type: String
@@ -129,12 +129,12 @@ Accept wildcard characters: False
 ```
 
 ### -StatusFolder
-Указывает расположение папки, содержащей стандартные выходные данные и выходные ошибки для задания, включая код завершения и журналы задач.
+Определяет расположение папки, которая содержит стандартные выходные данные и результаты ошибок для задания, включая код выхода и журналы задач.
 
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -144,15 +144,15 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Этот командлет поддерживает общие параметры:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-of Variable,-out,-PipelineVariable,-Verbose, и-WarningAction. Дополнительные сведения можно найти в разделе about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
+Этот cmdlet поддерживает общие параметры: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. Дополнительные сведения см. в about_CommonParameters https://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## ВХОДНЫЕ данные
+## INPUTS
 
-## НАПРЯЖЕНИЕ
+## OUTPUTS
 
-## Пуск
+## ПРИМЕЧАНИЯ
 
-## ДОПОЛНИТЕЛЬНЫЕ ССЫЛКИ
+## СВЯЗАННЫЕ ССЫЛКИ
 
 [New-AzureHDInsightHiveJobDefinition](./New-AzureHDInsightHiveJobDefinition.md)
 

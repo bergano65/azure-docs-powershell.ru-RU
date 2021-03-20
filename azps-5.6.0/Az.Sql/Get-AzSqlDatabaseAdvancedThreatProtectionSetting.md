@@ -6,12 +6,12 @@ online version: https://docs.microsoft.com/powershell/module/az.sql/get-AzSqlDat
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Sql/Sql/help/Get-AzSqlDatabaseAdvancedThreatProtectionSetting.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Sql/Sql/help/Get-AzSqlDatabaseAdvancedThreatProtectionSetting.md
-ms.openlocfilehash: 570b56ab98e8679a47bcb26b36f1bea4d24bd275
-ms.sourcegitcommit: 4dfb0cc533b83f77afdcfbe2618c1e6c8d221330
+ms.openlocfilehash: 6e97e0a293062d44c243fb2c67d44c390ef5410c
+ms.sourcegitcommit: 6f0b6059d096600ebff1c8514c35c467d2f482d8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "101993233"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104717243"
 ---
 # Get-AzSqlDatabaseAdvancedThreatProtectionSetting
 
@@ -27,7 +27,7 @@ Get-AzSqlDatabaseAdvancedThreatProtectionSetting [-ServerName] <String> [-Databa
 ```
 
 ## ОПИСАНИЕ
-Для этого можно получить расширенные параметры защиты от угроз в базе данных Azure **SQL.**
+Для получения дополнительных параметров защиты от угроз в базе данных Azure SQL параметры защиты от **угрозыAdvancedThreatProtectionSetting Get-AzSqlDatabaseAdvancedThreatProtectionSetting.**
 Чтобы использовать этот cmdlet, укажите параметры *ResourceGroupName,* *ServerName* и *DatabaseName,* чтобы определить базу данных, для которой этот cmdlet получает параметры.
 
 ## ПРИМЕРЫ
@@ -157,7 +157,4 @@ Accept wildcard characters: False
 
 ## СВЯЗАННЫЕ ССЫЛКИ
 
-[Remove-AzSqlDatabaseAdvancedThreatProtectionSetting](./Remove-AzSqlDatabaseAdvancedThreatProtectionSetting.md)
-
-
-
+[Cmdlets SQL database Azure](/powershell/module/az.sql/)

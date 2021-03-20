@@ -5,40 +5,40 @@ online version: https://docs.microsoft.com/en-us/powershell/module/Az.keyvault/u
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/Azs-tzl/src/KeyVault/KeyVault/help/Undo-AzKeyVaultKeyRemoval.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/Azs-tzl/src/KeyVault/KeyVault/help/Undo-AzKeyVaultKeyRemoval.md
-ms.openlocfilehash: 5b0e67fbbead536803dba8efeb2c8a61d7f75c5a
-ms.sourcegitcommit: 4c61442a2df1cee633ce93cad9f6bc793803baa2
+ms.openlocfilehash: 272a0462f3817ee849efb326b08aa57fd420880e
+ms.sourcegitcommit: 6f0b6059d096600ebff1c8514c35c467d2f482d8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "93911149"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104713979"
 ---
 # Undo-AzKeyVaultKeyRemoval
 
-## КРАТКИй обзор
-Восстановление удаленного ключа из хранилища ключей в активном состоянии.
+## SYNOPSIS
+Восстановление удаленного ключа в сейфе ключа в активном состоянии.
 
-## Максимальное
+## СИНТАКСИС
 
 ```
 Undo-AzKeyVaultKeyRemoval [-VaultName] <String> [-Name] <String> [-DefaultProfile <IAzureContextContainer>]
  [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## NОПИСАНИЕ
-Командлет **Undo-AzKeyVaultKeyRemoval** восстановит ранее удаленную клавишу.
-Восстановленный ключ будет активен и может использоваться для всех обычных операций с ключами.
-Для выполнения этой операции вызывающему объекту должно быть предоставлено разрешение "Recover".
+## ОПИСАНИЕ
+Для восстановления ранее удаленного ключа будет восстановлен ранее удаленный **cmdlet Undo-AzKeyVaultKeyRemoval.**
+Восстановленный ключ будет активен и может использоваться для всех обычных операций.
+Для выполнения этой операции вызываемму вызываемму звоня необходимо разрешение на восстановление.
 
-## ИЛЛЮСТРИРУЮТ
+## ПРИМЕРЫ
 
 ### Пример 1
 ```
 PS C:\>Undo-AzKeyVaultKeyRemoval -VaultName 'MyKeyVault' -Name 'MyKey'
 ```
 
-Эта команда восстанавливает в активном и рабочем состоянии раздел "MyKey", который был ранее удален.
+Эта команда восстановит ранее удаленный ключ MyKey в активное состояние, которое можно будет активен.
 
-## ПАРАМЕТРЫ
+## PARAMETERS
 
 ### -DefaultProfile
 Учетные данные, учетная запись, клиент и подписка, используемые для связи с Azure
@@ -55,9 +55,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Name (имя)
+### -Name
 Имя ключа.
-Командлет создает полное доменное имя ключа из имени хранилища, выбранной в данный момент среды и имени ключа.
+Cmdlet constructs the FQDN of a key from vault name, currently selected environment and key name.
 
 ```yaml
 Type: String
@@ -72,13 +72,13 @@ Accept wildcard characters: False
 ```
 
 ### -VaultName
-Имя хранилища.
-Командлет создает полное доменное имя хранилища на основе имени и выбранной в данный момент среды.
+Имя сейфа.
+Cmdlet constructs the FQDN of a vault based on the name and currently selected environment.
 
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -88,7 +88,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
-Запрашивает подтверждение перед запуском командлета.
+Перед запуском cmdlet вам будет предложено подтвердить его.
 
 ```yaml
 Type: SwitchParameter
@@ -103,8 +103,8 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Показывает, что произойдет при запуске командлета.
-Командлет не выполняется.
+Показывает, что произойдет при запуске cmdlet.
+Этот cmdlet не будет выполниться.
 
 ```yaml
 Type: SwitchParameter
@@ -119,23 +119,23 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Этот командлет поддерживает общие параметры:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-of Variable,-out,-PipelineVariable,-Verbose, и-WarningAction. Дополнительные сведения можно найти в разделе about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .
+Этот cmdlet поддерживает общие параметры: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. Дополнительные сведения см. в about_CommonParameters http://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## ВХОДНЫЕ данные
+## INPUTS
 
-### System. String
+### System.String
 
-## НАПРЯЖЕНИЕ
+## OUTPUTS
 
-### Microsoft. Azure. Commands. KeyVault. Models. KeyBundle
+### Microsoft.Azure.Commands.KeyVault.Models.KeyBundle
 
-## Пуск
+## ПРИМЕЧАНИЯ
 
-## ДОПОЛНИТЕЛЬНЫЕ ССЫЛКИ
+## СВЯЗАННЫЕ ССЫЛКИ
 
 [Remove-AzKeyVaultKey](./Remove-AzKeyVaultKey.md)
 
-[Add-AzKeyVaultKey](./Add-AzKeyVaultKey.md)
+[Set-AzKeyVaultSecret](./Set-AzKeyVaultSecret.md)
 
 [Get-AzKeyVaultKey](./Get-AzKeyVaultKey.md)
 

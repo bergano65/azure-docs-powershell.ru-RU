@@ -6,12 +6,12 @@ online version: https://docs.microsoft.com/powershell/module/az.keyvault/new-azk
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/KeyVault/KeyVault/help/New-AzKeyVault.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/KeyVault/KeyVault/help/New-AzKeyVault.md
-ms.openlocfilehash: 6af82533540bd93b90847c51b9aaf0bd603dc727
-ms.sourcegitcommit: 4dfb0cc533b83f77afdcfbe2618c1e6c8d221330
+ms.openlocfilehash: a899ed51046946293ee427731f5f64b20539c825
+ms.sourcegitcommit: 6f0b6059d096600ebff1c8514c35c467d2f482d8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "102001379"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104714680"
 ---
 # New-AzKeyVault
 
@@ -68,7 +68,7 @@ Access Policies                  :
 Tags                             :
 ```
 
-Эта команда создает хранилище с именем Contoso03Vault в регионе Azure в восточной части США. Команда добавляет хранилище ключа в группу ресурсов с именем "Группа14". Так как команда не указывает значение параметра *SKU,* она создает стандартный сейф ключей.
+Эта команда создает хранилище с именем Contoso03Vault в регионе Azure East US. Команда добавляет хранилище ключа в группу ресурсов с именем "Группа14". Так как команда не указывает значение параметра *SKU,* она создает стандартный сейф ключей.
 
 ### Пример 2. Создание сейфа ключа Premium
 ```powershell
@@ -195,7 +195,7 @@ Accept wildcard characters: False
 ```
 
 ### -EnableRbacAuthorization
-Если задан этот вариант, разрешает действия с данными с помощью управления доступом на основе ролей (RBAC), а политики доступа, указанные в свойствах хранилища, будут игнорироваться. Обратите внимание на то, что действия управления всегда разрешены с помощью RBAC.
+Если задан этот вариант, разрешает действия с данными с помощью управления доступом на основе ролей (RBAC), а политики доступа, указанные в свойствах хранилища, будут игнорироваться. Обратите внимание, что действия управления всегда авторизуются с помощью RBAC.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -210,7 +210,7 @@ Accept wildcard characters: False
 ```
 
 ### -Location
-Определяет регион Azure, в котором нужно создать хранилище ключей. Используйте команду [Get-AzLocation,](https://docs.microsoft.com/powershell/module/Azure/Get-AzLocation) чтобы увидеть ваши варианты.
+Определяет регион Azure, в котором нужно создать хранилище ключа. Используйте команду [Get-AzLocation,](/powershell/module/az.resources/get-azlocation) чтобы увидеть ваши варианты.
 
 ```yaml
 Type: System.String
@@ -240,7 +240,7 @@ Accept wildcard characters: False
 ```
 
 ### -NetworkRuleSet
-Набор правил сети для хранилища. Он регулирует специальные возможности ключного хранилища из определенных сетевых мест. Создано `New-AzKeyVaultNetworkRuleSetObject` .
+Набор правил сети для хранилища. Он регулирует специальные возможности ключа хранилища из определенных сетевых мест. Создано `New-AzKeyVaultNetworkRuleSetObject` .
 
 ```yaml
 Type: Microsoft.Azure.Commands.KeyVault.Models.PSKeyVaultNetworkRuleSet
@@ -300,7 +300,7 @@ Accept wildcard characters: False
 ```
 
 ### -Tag
-Пары "ключевое значение" в виде hash table. Например: @{key0="value0";key1=$null;key2="value2"}
+Пары значений ключа в виде hash table. Например: @{key0="value0";key1=$null;key2="value2"}
 
 ```yaml
 Type: System.Collections.Hashtable

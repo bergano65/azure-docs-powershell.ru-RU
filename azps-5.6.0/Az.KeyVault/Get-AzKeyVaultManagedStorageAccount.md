@@ -5,12 +5,12 @@ online version: https://docs.microsoft.com/powershell/module/az.keyvault/get-azk
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/KeyVault/KeyVault/help/Get-AzKeyVaultManagedStorageAccount.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/KeyVault/KeyVault/help/Get-AzKeyVaultManagedStorageAccount.md
-ms.openlocfilehash: 552a696a31b8c5fb26a1c6a17434ef53380d0491
-ms.sourcegitcommit: 4dfb0cc533b83f77afdcfbe2618c1e6c8d221330
+ms.openlocfilehash: ae32152d6f4a17322e741fe6db8e2cd9daedf765
+ms.sourcegitcommit: 6f0b6059d096600ebff1c8514c35c467d2f482d8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "102001480"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104717226"
 ---
 # Get-AzKeyVaultManagedStorageAccount
 
@@ -59,7 +59,7 @@ Tags                :
 
 Список всех учетных записей, ключами которых управляет хранилище Myvault.
 
-### Пример 2. Получить учетную запись хранения в key Vault
+### Пример 2. Получить учетную запись управляемого хранилища в key Vault
 ```powershell
 PS C:\> Get-AzKeyVaultManagedStorageAccount -VaultName 'myvault' -Name 'mystorageaccount'
 
@@ -185,7 +185,7 @@ Accept wildcard characters: False
 
 ### -VaultName
 Имя сейфа.
-С его учетом именем и выбранной средой строится FQDN хранилища.
+Cmdlet constructs the FQDN of a vault based on the name and currently selected environment.
 
 ```yaml
 Type: System.String
@@ -222,5 +222,5 @@ Accept wildcard characters: False
 
 ## СВЯЗАННЫЕ ССЫЛКИ
 
-[https://msdn.microsoft.com/en-us/library/dn868052.aspx](https://msdn.microsoft.com/en-us/library/dn868052.aspx)
+[Cmdlets Key Vault Azure PowerShell](/powershell/module/az.keyvault/)
 

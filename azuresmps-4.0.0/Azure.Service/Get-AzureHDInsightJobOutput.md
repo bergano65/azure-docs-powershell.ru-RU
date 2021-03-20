@@ -3,19 +3,19 @@ external help file: Microsoft.WindowsAzure.Commands.HDInsight.dll-Help.xml
 ms.assetid: 0B194605-F6B2-4FBC-ABF8-E49876EC7CFD
 online version: ''
 schema: 2.0.0
-ms.openlocfilehash: b215cfa95c20a2e8d13cfefa9e2ef0b3794a6727
-ms.sourcegitcommit: 56ed085a868afa8263f8eb0f755b5822f5c29532
+ms.openlocfilehash: f87eeafe088dc8d3225f4f7ecd58a59d6358dd7d
+ms.sourcegitcommit: 6f0b6059d096600ebff1c8514c35c467d2f482d8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "94075640"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104713894"
 ---
 # Get-AzureHDInsightJobOutput
 
-## КРАТКИй обзор
-Получает выходные данные журнала для задания.
+## SYNOPSIS
+Возвращает результаты журнала для задания.
 
-## Максимальное
+## СИНТАКСИС
 
 ```
 Get-AzureHDInsightJobOutput [-Certificate <X509Certificate2>] [-HostedService <String>] -Cluster <String>
@@ -24,21 +24,21 @@ Get-AzureHDInsightJobOutput [-Certificate <X509Certificate2>] [-HostedService <S
  [-Profile <AzureSMProfile>] [<CommonParameters>]
 ```
 
-## NОПИСАНИЕ
-Эта версия Azure PowerShell HDInsight устарела.
-Эти командлеты будут удалены с 1 января 2017 г.
-Пожалуйста, используйте более новую версию Azure PowerShell HDInsight.
+## ОПИСАНИЕ
+Эта версия Azure PowerShell HDInsight не является нужной.
+Эти cmdlets будут удалены до 1 января 2017 г.
+Используйте более новую версию Azure PowerShell HDInsight.
 
-Сведения о том, как использовать новую HDInsight для создания кластера, можно найти в разделе Создание кластеров на базе Linux в [HDInsight с помощью Azure PowerShell](https://azure.microsoft.com/en-us/documentation/articles/hdinsight-hadoop-create-linux-clusters-azure-powershell/).
-Сведения о том, как отправлять задания с помощью Azure PowerShell и другие подходы, приведены [в разделе Отправка заданий Hadoop в HDInsight](https://azure.microsoft.com/en-us/documentation/articles/hdinsight-submit-hadoop-jobs-programmatically/).
-Справочные сведения о службе Azure PowerShell HDInsight можно найти в [командлетах Azure hdinsight](https://msdn.microsoft.com/en-us/library/mt438705.aspx).
+Сведения об использовании новой hdInsight для создания кластеров см. в видео "Создание кластеров на основе Linux" в [HDInsight с помощью Azure PowerShell.](https://azure.microsoft.com/en-us/documentation/articles/hdinsight-hadoop-create-linux-clusters-azure-powershell/)
+Сведения о том, как отправлять задания с помощью Azure PowerShell и других подходов, см. в сведениях о задании [Submit Hadoop в HDInsight.](https://azure.microsoft.com/en-us/documentation/articles/hdinsight-submit-hadoop-jobs-programmatically/)
+Справочные сведения о Azure PowerShell HDInsight см. в [cmdlets Azure HDInsight.](/powershell/module/servicemanagement/azure.service/?view=azuresmps-4.0.0#hd-insights)
 
-Командлет **Get-AzureHDInsightJobOutput** получает выходные данные журнала для задания из учетной записи хранения, связанной с кластером.
-Вы можете получать различные типы журналов заданий, включая стандартный вывод, стандартную ошибку, журналы задач и сводку по журналам задач.
+**Cmdlet Get-AzureHDInsightJobOutput** получает результаты журнала для задания из учетной записи хранения, связанной с кластером.
+Вы можете получать журналы различных типов, включая стандартные выходные данные, стандартные ошибки, журналы задач и сводку журналов задач.
 
-## ИЛЛЮСТРИРУЮТ
+## ПРИМЕРЫ
 
-### Пример 1: получение выходных данных задания
+### Пример 1. Получить выходные данные задания
 ```
 PS C:\>$SubId = (Get-AzureSubscription -Current).SubscriptionId
 PS C:\> $ClusterName = "MyCluster"
@@ -48,15 +48,15 @@ PS C:\> $WordCountJob = New-AzureHDInsightMapReduceJobDefinition -JarFile "/Exam
     | Get-AzureHDInsightJobOutput -Cluster $ClusterName -StandardError
 ```
 
-Первая команда получает идентификатор текущей подписки, а затем сохраняет ее в переменной $SubId.
+Первая команда получает ИД текущей подписки, а затем сохраняет его в переменной $SubId.
 
 Вторая команда сохраняет имя MyCluster в переменной $Clustername.
 
-Третья команда создает определение задания MapReduce и сохраняет его в переменной $WordCountJob.
-Команда передает задание в $WordCountJob командлету **Start-AzureHDInsightJob** , чтобы запустить задание.
-Кроме того, он передает $WordCountJob командлету **Wait-AzureHDInsightJob** , чтобы дождаться завершения задания, а затем использует **Get-AzureHDInsightJobOutput** для получения выходных данных задания.
+Третья команда создает определение задания MapReduce, а затем сохраняет его в $WordCountJob переменной.
+Команда передает задание $WordCountJob **командлету Start-AzureHDInsightJob,** чтобы начать задание.
+Он также передает $WordCountJob для получения результата задания с помощью **$WordCountJob-AzureHDInsightJob,** чтобы дождаться завершения задания, а затем использует **get-AzureHDInsightJobOutput.**
 
-## ПАРАМЕТРЫ
+## PARAMETERS
 
 ### -Certificate
 Указывает сертификат управления для подписки Azure.
@@ -73,9 +73,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Cluster
+### -Кластер
 Указывает кластер.
-Этот командлет получает журналы заданий из кластера, которое указывает этот параметр.
+Этот cmdlet получает журналы задания из кластера, указанного этим параметром.
 
 ```yaml
 Type: String
@@ -90,12 +90,12 @@ Accept wildcard characters: False
 ```
 
 ### -DownloadTaskLogs
-Указывает на то, что этот командлет получает журналы задач для задания.
+Указывает на то, что этот cmdlet получает журналы задач для задания.
 
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -104,14 +104,14 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Endpoint
-Задает конечную точку, используемую для подключения к Azure.
-Если этот параметр не указан, этот командлет использует конечную точку по умолчанию.
+### -Конечная точка
+Указывает конечную точку, используемую для подключения к Azure.
+Если этот параметр не задан, используется конечная точка по умолчанию.
 
 ```yaml
 Type: Uri
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -121,7 +121,7 @@ Accept wildcard characters: False
 ```
 
 ### -HostedService
-Указывает пространство имен службы HDInsight, если вы не хотите использовать пространство имен по умолчанию.
+Определяет пространство имен службы HDInsight, если вы не хотите использовать пространство имен по умолчанию.
 
 ```yaml
 Type: String
@@ -136,12 +136,12 @@ Accept wildcard characters: False
 ```
 
 ### -IgnoreSslErrors
-Указывает, пропускаются ли ошибки SSL (Secure Socketing Layer).
+Указывает на то, игнорируются ли ошибки SSL.
 
 ```yaml
 Type: Boolean
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -151,7 +151,7 @@ Accept wildcard characters: False
 ```
 
 ### -JobId
-Указывает ИД задания, которое требуется получить.
+Определяет ИД задания, который нужно получить.
 
 ```yaml
 Type: String
@@ -166,13 +166,13 @@ Accept wildcard characters: False
 ```
 
 ### -Profile
-Указывает профиль Azure, из которого считывается этот командлет.
-Если вы не укажете профиль, этот командлет считывает данные из локального профиля по умолчанию.
+Определяет профиль Azure, для которого читается этот cmdlet.
+Если не указать профиль, этот cmdlet будет читать данные из локального профиля по умолчанию.
 
 ```yaml
 Type: AzureSMProfile
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -182,12 +182,12 @@ Accept wildcard characters: False
 ```
 
 ### -StandardError
-Указывает на то, что этот командлет получает выходные данные StdErr для задания.
+Указывает на то, что этот cmdlet получает результат задания StdErr.
 
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -197,12 +197,12 @@ Accept wildcard characters: False
 ```
 
 ### -StandardOutput
-Указывает на то, что этот командлет получает выходные данные SdtOut для задания.
+Указывает на то, что этот cmdtOut возвращает результат задания.
 
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -212,7 +212,7 @@ Accept wildcard characters: False
 ```
 
 ### -Подписка
-Указывает подписку, которая содержит кластер HDInsight для получения.
+Подписка, которая содержит кластер HDInsight, который нужно получить.
 
 ```yaml
 Type: String
@@ -227,7 +227,7 @@ Accept wildcard characters: False
 ```
 
 ### -TaskLogsDirectory
-Указывает локальную папку для хранения журналов задач.
+Указывает локализованную папку, в которой будут храниться журналы задач.
 
 ```yaml
 Type: String
@@ -242,12 +242,12 @@ Accept wildcard characters: False
 ```
 
 ### -TaskSummary
-Указывает на то, что этот командлет получает сводку журнала задач.
+Указывает на то, что этот cmdlets получает сводку по журналу задач.
 
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -257,15 +257,15 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Этот командлет поддерживает общие параметры:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-of Variable,-out,-PipelineVariable,-Verbose, и-WarningAction. Дополнительные сведения можно найти в разделе about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
+Этот cmdlet поддерживает общие параметры: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. Дополнительные сведения см. в about_CommonParameters https://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## ВХОДНЫЕ данные
+## INPUTS
 
-## НАПРЯЖЕНИЕ
+## OUTPUTS
 
-## Пуск
+## ПРИМЕЧАНИЯ
 
-## ДОПОЛНИТЕЛЬНЫЕ ССЫЛКИ
+## СВЯЗАННЫЕ ССЫЛКИ
 
 [New-AzureHDInsightMapReduceJobDefinition](./New-AzureHDInsightMapReduceJobDefinition.md)
 

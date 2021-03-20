@@ -5,21 +5,21 @@ online version: https://msdn.microsoft.com/en-us/library/dn868052.aspx
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/preview/src/ResourceManager/KeyVault/Commands.KeyVault/help/Get-AzureKeyVaultManagedStorageSasDefinition.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/preview/src/ResourceManager/KeyVault/Commands.KeyVault/help/Get-AzureKeyVaultManagedStorageSasDefinition.md
-ms.openlocfilehash: 63187859a4296f37e5af28880f42a487c018288f
-ms.sourcegitcommit: f599b50d5e980197d1fca769378df90a842b42a1
+ms.openlocfilehash: 8d952442d6478a79e55e66bba442b16b894ca8d2
+ms.sourcegitcommit: 6f0b6059d096600ebff1c8514c35c467d2f482d8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "93559791"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104714730"
 ---
 # Get-AzureKeyVaultManagedStorageSasDefinition
 
-## КРАТКИй обзор
-Получение определений SAS хранилища, управляемого основным хранилищем.
+## SYNOPSIS
+Получает определения SAS хранилища, управляемые ключом хранилища.
 
 [!INCLUDE [migrate-to-az-banner](../../includes/migrate-to-az-banner.md)]
 
-## Максимальное
+## СИНТАКСИС
 
 ### ByAccountName (по умолчанию)
 ```
@@ -33,30 +33,30 @@ Get-AzureKeyVaultManagedStorageSasDefinition [-VaultName] <String> [-AccountName
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## NОПИСАНИЕ
-Возвращает определение SAS хранилища управляемых хранилищ, если указано имя определения. Если имя определения не задано, в списке будут перечислены все определения SAS, связанные с указанной учетной записью в хранилище ключей, управляемой в хранилище.
+## ОПИСАНИЕ
+Возвращает определение SAS хранилища, управляемого хранилищем, если задано имя определения. Если имя определения не указано, будут перечислены все определения SAS, связанные с указанной учетной записью хранилища, управляемой хранилищем ключа.
 
-## ИЛЛЮСТРИРУЮТ
+## ПРИМЕРЫ
 
-### Пример 1: список всех определений SAS хранилища, управляемых основным хранилищем
+### Пример 1. Список всех определений SAS хранилища, управляемого хранилищем
 ```
 PS C:\> Get-AzureKeyVaultManagedStorageSasDefinition -VaultName 'myvault' -AccountName 'mystorageaccount'
 ```
 
-В этой статье перечислены все определения SAS, связанные с учетной записью хранилища с управляемым хранилищем "mystorageaccount", управляемой хранилищем "myvault"
+Список всех определений SAS, связанных с key Vault Managed Storage Account "mystorageaccount", управляемых хранилищем myvault.
 
-### Пример 2: получение учетной записи хранилища с управляемым хранилищем ключей
+### Пример 2. Получить учетную запись управляемого хранилища в key Vault
 ```
 PS C:\> Get-AzureKeyVaultManagedStorageSasDefinition -VaultName 'myvault' -AccountName 'mystorageaccount' -Name 'mysasDef'
 ```
 
-Получает подробные сведения об определении SAS "mysasDef", связанном с учетной записью хранилища с управляемым хранилищем "mystorageaccount", управляемой хранилищем "myvault".
+Получает сведения о определении SAS "mysasDef", связанном с основным хранилищем учетной записи хранения mystorageaccount, управляемой хранилищем myvault.
 
-## ПАРАМЕТРЫ
+## PARAMETERS
 
-### -Имя_учетной_записи
-Имя хранилища.
-Командлет создает полное доменное имя хранилища на основе имени и выбранной в данный момент среды.
+### -AccountName
+Имя сейфа.
+Cmdlet constructs the FQDN of a vault based on the name and currently selected environment.
 
 ```yaml
 Type: System.String
@@ -70,9 +70,9 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Name (имя)
-Имя определения SAS хранилища.
-Командлет создает полное доменное имя определения SAS хранилища из имени хранилища, выбранной среды, имени учетной записи хранения и имени определения SAS.
+### -Name
+Имя определения sas хранилища.
+Cmdlet конструировать FQDN определения sas хранилища из имени хранилища, выбранной среды, имени учетной записи хранения и имени определения sas.
 
 ```yaml
 Type: System.String
@@ -87,13 +87,13 @@ Accept wildcard characters: False
 ```
 
 ### -VaultName
-Имя хранилища.
-Командлет создает полное доменное имя хранилища на основе имени и выбранной в данный момент среды.
+Имя сейфа.
+Cmdlet constructs the FQDN of a vault based on the name and currently selected environment.
 
 ```yaml
 Type: System.String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -118,20 +118,19 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Этот командлет поддерживает общие параметры:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-of Variable,-out,-PipelineVariable,-Verbose, и-WarningAction. Дополнительные сведения можно найти в разделе about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
+Этот cmdlet поддерживает общие параметры: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. Дополнительные сведения см. в about_CommonParameters https://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## ВХОДНЫЕ данные
+## INPUTS
 
-### System. String
+### System.String
 
-## НАПРЯЖЕНИЕ
+## OUTPUTS
 
-### System. Collections. Generic. List ' 1 [[Microsoft. Azure. Commands. KeyVault. Models. ManagedStorageSasDefinitionListItem, Microsoft. Azure. Commands. KeyVault, Version = 2.5.0.0, Culture = Neutral, PublicKeyToken = NULL]]
-Microsoft. Azure. Commands. KeyVault. Models. ManagedStorageSasDefinition
+### System.Collections.Generic.List'1[[Microsoft.Azure.Commands.KeyVault.Models.ManagedStorageSasDefinitionListItem, Microsoft.Azure.Commands.KeyVault, Version=2.5.0.0, Culture=neutral, PublicKeyToken=null]]
+Microsoft.Azure.Commands.KeyVault.Models.ManagedStorageSasDefinition
 
-## Пуск
+## ПРИМЕЧАНИЯ
 
-## ДОПОЛНИТЕЛЬНЫЕ ССЫЛКИ
+## СВЯЗАННЫЕ ССЫЛКИ
 
-[https://msdn.microsoft.com/en-us/library/dn868052.aspx](https://msdn.microsoft.com/en-us/library/dn868052.aspx)
-
+[Cmdlets key Vault Azure](/powershell/module/azurerm.keyvault/)

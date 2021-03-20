@@ -5,12 +5,12 @@ online version: https://docs.microsoft.com/powershell/module/az.network/new-azap
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/New-AzApplicationGatewayClientAuthConfiguration.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/New-AzApplicationGatewayClientAuthConfiguration.md
-ms.openlocfilehash: 002fdabfb01a0b12d36c69b0a8a75ddf91880012
-ms.sourcegitcommit: 4dfb0cc533b83f77afdcfbe2618c1e6c8d221330
+ms.openlocfilehash: ec812360a522f35a7de43aa7bd0e809812ee5353
+ms.sourcegitcommit: 6f0b6059d096600ebff1c8514c35c467d2f482d8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "101965656"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104717637"
 ---
 # New-AzApplicationGatewayClientAuthConfiguration
 
@@ -25,7 +25,7 @@ New-AzApplicationGatewayClientAuthConfiguration [-VerifyClientCertIssuerDN]
 ```
 
 ## ОПИСАНИЕ
-Для профиля SSL создается новая конфигурация проверки подлинности клиента: **New-AzApplicationGatewayClientAuthConfiguration.**
+Для профиля SSL создается новая конфигурация проверки подлинности клиента— **New-AzApplicationGatewayClientAuthConfiguration.**
 
 ## ПРИМЕРЫ
 
@@ -34,7 +34,7 @@ New-AzApplicationGatewayClientAuthConfiguration [-VerifyClientCertIssuerDN]
 PS C:\> $clientAuthConfig = New-AzApplicationGatewayClientAuthConfiguration -VerifyClientCertIssuerDN
 ```
 
-Команда создает новую конфигурацию клиента и сохраняет ее в $clientAuthConfig переменной, которая будет использоваться в профиле SSL. 
+Команда создает новую конфигурацию клиента и сохраняет ее в переменной $clientAuthConfig, которая будет использоваться в профиле SSL.
 
 ## PARAMETERS
 
@@ -82,8 +82,6 @@ Accept wildcard characters: False
 ## ПРИМЕЧАНИЯ
 
 ## СВЯЗАННЫЕ ССЫЛКИ
-
-[Add-AzApplicationGatewayClientAuthConfiguration](./Add-AzApplicationGatewayClientAuthConfiguration.md)
 
 [Get-AzApplicationGatewayClientAuthConfiguration](./Get-AzApplicationGatewayClientAuthConfiguration.md)
 

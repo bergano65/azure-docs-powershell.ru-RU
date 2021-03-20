@@ -6,25 +6,25 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.compute/ne
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Compute/Compute/help/New-AzVMConfig.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Compute/Compute/help/New-AzVMConfig.md
-ms.openlocfilehash: 8c20a6be76f77a74082090d1386054a23b9b9ea0
-ms.sourcegitcommit: 1de2b6c3c99197958fa2101bc37680e7507f91ac
+ms.openlocfilehash: 419c271ab08f7b69de02d68a727ab95bd02b488e
+ms.sourcegitcommit: 6f0b6059d096600ebff1c8514c35c467d2f482d8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "94236888"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104718093"
 ---
 # New-AzVMConfig
 
-## КРАТКИй обзор
-Создание настраиваемого объекта виртуальной машины.
+## SYNOPSIS
+Создает настраиваемый объект виртуальной машины.
 
-## Максимальное
+## СИНТАКСИС
 
 ### DefaultParameterSet (по умолчанию)
 ```
 New-AzVMConfig [-VMName] <String> [-VMSize] <String> [[-AvailabilitySetId] <String>] [[-LicenseType] <String>]
  [-Zone <String[]>] [-ProximityPlacementGroupId <String>] [-HostId <String>] [-VmssId <String>]
- [-MaxPrice <Double>] [-EvictionPolicy <String>] [-Priority <String>] [-Tags <Hashtable>] [-EnableUltraSSD] 
+ [-MaxPrice <Double>] [-EvictionPolicy <String>] [-Priority <String>] [-Tags <Hashtable>] [-EnableUltraSSD]
  [-EncryptionAtHost] [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
@@ -37,34 +37,34 @@ New-AzVMConfig [-VMName] <String> [-VMSize] <String> [[-AvailabilitySetId] <Stri
  [-EncryptionAtHost] [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## NОПИСАНИЕ
-Командлет **New-AzVMConfig** создает настраиваемый локальный объект виртуальной машины для Azure.
+## ОПИСАНИЕ
+С **его использованием** создается настраиваемый объект локальной виртуальной машины для Azure.
 Другие командлеты можно использовать для настройки объекта виртуальной машины, например Set-AzVMOperatingSystem, Set-AzVMSourceImage, Add-AzVMNetworkInterface и Set-AzVMOSDisk.
 
-## ИЛЛЮСТРИРУЮТ
+## ПРИМЕРЫ
 
-### Пример 1: создание объекта виртуальной машины
+### Пример 1. Создание объекта виртуальной машины
 ```
 PS C:\> $AvailabilitySet = Get-AzAvailabilitySet -ResourceGroupName "ResourceGroup11" -Name "AvailabilitySet03"
 PS C:\> $VirtualMachine = New-AzVMConfig -VMName "VirtualMachine07" -VMSize "Standard_A1" -AvailabilitySetID $AvailabilitySet.Id
 ```
 
-Первая команда получает группу доступности с именем AvailabilitySet03 в группе ресурсов с именем ResourceGroup11 и сохраняет этот объект в переменной $AvailabilitySet.
-Вторая команда создает объект виртуальной машины и сохраняет его в переменной $VirtualMachine.
-Команда назначает имя и размер виртуальной машине.
-Виртуальная машина принадлежит к группе доступности, хранящейся в $AvailabilitySet.
+Первая команда получает набор доступности с именем AvailabilitySet03 в группе ресурсов ResourceGroup11, а затем сохраняет этот объект в переменной $AvailabilitySet ресурса.
+Вторая команда создает объект виртуальной машины, а затем сохраняет его в $VirtualMachine переменной.
+Эта команда назначает имя и размер виртуальной машине.
+Виртуальная машину входит в набор доступности, который хранится в $AvailabilitySet.
 
-## ПАРАМЕТРЫ
+## PARAMETERS
 
 ### -AvailabilitySetId
-Указывает идентификатор группы доступности.
-Чтобы получить объект группы доступности, используйте командлет Get-AzAvailabilitySet.
-Объект "набор доступности" имеет свойство ID. <br>
-Виртуальные машины, указанные в одной группе доступности, выделяются на разные узлы для максимизации доступности. <br>
-Дополнительные сведения о наборах доступности можно найти [в разделе Управление доступом виртуальных машин](https://docs.microsoft.com/azure/virtual-machines/virtual-machines-windows-manage-availability?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json). <br>
-Дополнительные сведения о запланированном обслуживании Azure можно найти [в разделе Планирование обслуживания виртуальных машин в Azure](https://docs.microsoft.com/azure/virtual-machines/virtual-machines-windows-planned-maintenance?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json) <br>
-В настоящее время VM может быть добавлена в набор доступности только в момент создания. Группа доступности, на которую добавляется виртуальная машина, должна находиться в той же группе ресурсов, что и ресурс "Настройка доступности". Невозможно добавить существующую виртуальную машину в группу доступности. <br>
-Это свойство не может существовать вместе со свойствами, не являющимися null. ссылка virtualMachineScaleSet.
+Определяет ИД набора доступности.
+Чтобы получить объект набора доступности, воспользуйтесь Get-AzAvailabilitySet управления.
+Объект набора доступности содержит свойство "ИД". <br>
+Для максимального повышения доступности виртуальные машины, указанные в том же наборе доступности, выделены для разных узлов. <br>
+Дополнительные сведения о наборах доступности см. в документе ["Управление доступностью виртуальных машин".](/azure/virtual-machines/availability) <br>
+Дополнительные сведения о запланированном техническом обслуживании Azure см. в сведениях о запланированном техническом обслуживании [виртуальных машин в Azure.](/azure/virtual-machines/maintenance-and-updates?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json) <br>
+В настоящее время VM можно добавить только в набор доступности во время создания. Набор доступности, в который добавляется проектный проект, должен быть в той же группе ресурсов, что и для ресурса, настроенного для доступности. Существующий VM-клиент невозможно добавить в набор доступности. <br>
+Это свойство не может существовать вместе со ссылкой на non-null.virtualMascaleeScaleSet.
 
 ```yaml
 Type: System.String
@@ -93,9 +93,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -EnableUltraSSD
-Позволяет иметь возможность использовать один или несколько дисков управляемых данных с типом учетной записи хранения UltraSSD_LRS на виртуальной машине.
-Управляемые диски с типом учетной записи хранения UltraSSD_LRS можно добавлять на виртуальную машину только в том случае, если включено это свойство.
+### -EnableUltrasSD
+Позволяет использовать один или несколько управляемых дисков данных с учетной записью UltraSSD_LRS типа учетной записи хранения на VM.
+Управляемые диски с типом учетной UltraSSD_LRS можно добавить на виртуальную машину, только если это свойство включено.
 
 
 ```yaml
@@ -110,8 +110,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -EvictionPolicy
-Политика вытеснения для виртуальной машины Azure.  Поддерживаются значения "освободить" и "Удалить".
+### -ВуассионПолиция
+Политика присоединения к виртуальной машине Azure Spot.  Поддерживаются значения Deallocate и Delete.
 
 ```yaml
 Type: System.String
@@ -126,7 +126,7 @@ Accept wildcard characters: False
 ```
 
 ### -HostId
-Идентификатор узла
+ИД хоста
 
 ```yaml
 Type: System.String
@@ -141,8 +141,8 @@ Accept wildcard characters: False
 ```
 
 ### -IdentityId
-Указывает список удостоверений пользователей, связанных с набором масштабов виртуальных машин.
-Ссылки на удостоверения пользователей будут идентификаторами ресурсов ARM в форме "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ManagedIdentity/identities/{identityName}".
+Определяет список удостоверений пользователей, связанных с набором масштаба виртуальной машины.
+Ссылки на удостоверения пользователей будут ARM ресурса в форме: '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ManagedIdentity/identities/{identityName}'
 
 ```yaml
 Type: System.String[]
@@ -173,7 +173,7 @@ Accept wildcard characters: False
 ```
 
 ### -LicenseType
-Тип лицензии, предназначенный для использования собственного сценария лицензирования.
+Тип лицензии, который можно получить для использования собственных лицензий.
 
 ```yaml
 Type: System.String
@@ -188,7 +188,7 @@ Accept wildcard characters: False
 ```
 
 ### -MaxPrice
-Максимальная цена, которую вы хотите заплатить за низкий приоритет ВМ или VMSS. Эта стоимость указана в долларах США. Эта цена будет сравниваться с ценой с низким приоритетом для размера ВМ. Кроме того, цены проверяются во время создания или обновления виртуальной машины или VMSS, а операция будет выполнена только в том случае, если значение maxPrice больше, чем текущая цена с низким приоритетом. MaxPrice также будет использоваться для удаления слабого приоритета ВМ/VMSS, если текущая цена с низким приоритетом выходит за пределы maxPrice после создания VM/VMSS. Возможные значения: Любое десятичное значение больше нуля. Пример: 0,01538.  -1 указывает на то, что низкий приоритет VM/VMSS не следует выключать для целей цены. Кроме того, максимальная цена по умолчанию составляет-1, если она не предоставляется вам.
+Указывает максимальную цену, которую вы будете оплачивать для службы VM или VMSS с низким приоритетом. Эта цена в долларах США. Эта цена будет сравниваться с текущей низкой ценой приоритета для размера VM. Кроме того, цены сравниваются во время создания или обновления низкой приоритетной VM-или VMSS и операция будет работать только в том случае, если максимальная цена больше текущей цены с низким приоритетом. Максимальное значение maxPrice также будет использоваться для создания обетовки VM или VMSS с низким приоритетом, если текущая цена с низким приоритетом выходит за пределы максимальной цены после создания VM/VMSS. Возможные значения: любое десятичее значение больше нуля. Пример: 0,01538.  -1 указывает на то, что не следует захламлять VM или VMSS с низким приоритетом по ценам. Кроме того, максимальная цена по умолчанию составляет -1, если она не предоставлена вами.
 
 ```yaml
 Type: System.Double
@@ -203,12 +203,14 @@ Accept wildcard characters: False
 ```
 
 ### -EncryptionAtHost
-Свойство EncryptionAtHost может использоваться пользователем в запросе для включения или отключения шифрования узла для установленной виртуальной машины или виртуальной машины. Это позволит включить шифрование для всех дисков, включая ресурс/временный диск на узле. По умолчанию: шифрование на узле будет отключено, если это свойство не имеет значение true для ресурса.
+Свойство EncryptionAtHost может использоваться пользователем в запросе для того, чтобы включить или отключить шифрование хоста для набора масштаба виртуальной машины или виртуальной машины.
+Это позволит шифровать все диски, включая диск Resource/Temp на самом хосте.
+По умолчанию: шифрование на хосте будет отключено, если для этого свойства не установлено значение true для ресурса.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -217,11 +219,11 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Priority (приоритет)
-Приоритет виртуальной машины.  Поддерживаются только значения "Regular", "плашка" и "низкий".
-"Regular" предназначен для обычной виртуальной машины.
-"Плашка" — для точечной виртуальной машины.
-"Low" также используется для точечной виртуальной машины, но заменяется на "плашка". Вместо "низкая" используйте "смесевых".
+### -Priority
+Приоритет виртуальной машины.  Поддерживаются только такие значения, как "Обычный", "Spot" и "Низкий".
+"Обычный" — для обычных виртуальных машин.
+Spot — для spot virtual machine.
+"Низкая" также для spot virtual machine, но заменяется spot. Используйте "Spot" вместо "Низкий".
 
 ```yaml
 Type: System.String
@@ -236,7 +238,7 @@ Accept wildcard characters: False
 ```
 
 ### -ProximityPlacementGroupId
-Идентификатор ресурса группы размещения близкого взаимодействия для использования с этой виртуальной машиной.
+ИД ресурса группы расположения близости, который будет использовать с этой виртуальной машиной.
 
 ```yaml
 Type: System.String
@@ -251,7 +253,7 @@ Accept wildcard characters: False
 ```
 
 ### -Теги
-Теги, вложенные в ресурс.
+Теги, прикрепленные к ресурсу.
 
 ```yaml
 Type: System.Collections.Hashtable
@@ -281,7 +283,7 @@ Accept wildcard characters: False
 ```
 
 ### -VMSize
-Задает размер виртуальной машины.
+Определяет размер виртуальной машины.
 
 ```yaml
 Type: System.String
@@ -296,7 +298,7 @@ Accept wildcard characters: False
 ```
 
 ### -VmssId
-Идентификатор набора масштабов виртуальной машины
+The Id of virtual machine scale set
 
 ```yaml
 Type: System.String
@@ -311,7 +313,7 @@ Accept wildcard characters: False
 ```
 
 ### -Zone
-Указывает список зон доступности для виртуальной машины. Допустимые значения зависят от возможностей региона. Допустимые значения: 1, 2, 3.
+Определяет список зон доступности для виртуальной машины. Допустимые значения зависят от возможностей региона. Допустимые значения обычно составляет 1,2,3.
 
 ```yaml
 Type: System.String[]
@@ -326,25 +328,25 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Этот командлет поддерживает общие параметры:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-of Variable,-out,-PipelineVariable,-Verbose, и-WarningAction. Дополнительные сведения можно найти в разделе [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+Этот cmdlet поддерживает общие параметры: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. Дополнительные сведения см. [в about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)
 
-## ВХОДНЫЕ данные
+## INPUTS
 
-### System. String
+### System.String
 
-### System. String []
+### System.String[]
 
-### System. Collections. Hashtable
+### System.Collections.Hashtable
 
-### System. Management. Automation. SwitchParameter
+### System.Management.Automation.SwitchParameter
 
-## НАПРЯЖЕНИЕ
+## OUTPUTS
 
-### Microsoft. Azure. Commands. COMPUTE. Models. PSVirtualMachine
+### Microsoft.Azure.Commands.Compute.Models.PSVirtualMa modelse
 
-## Пуск
+## ПРИМЕЧАНИЯ
 
-## ДОПОЛНИТЕЛЬНЫЕ ССЫЛКИ
+## СВЯЗАННЫЕ ССЫЛКИ
 
 [Update-AzVM](./Update-AzVM.md)
 
