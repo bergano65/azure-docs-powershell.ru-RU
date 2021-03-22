@@ -34,7 +34,7 @@ $PSVersionTable.PSVersion
 Если у вас более старая версия, см. раздел [Обновление существующей версии Windows PowerShell](/powershell/scripting/windows-powershell/install/installing-windows-powershell#upgrading-existing-windows-powershell).
 
 > [!IMPORTANT]
-> Для модуля AzureRM, описанном в этом документе, используется .NET Framework. Из-за этого модуль несовместимым с PowerShell версии 6.0, для которой используется .NET Core. Если вы используете PowerShell 6.0, изучите [инструкции по установке для macOS и Linux](/powershell/azure/install-az-ps).
+> Для модуля AzureRM, описанном в этом документе, используется .NET Framework. Из-за этого модуль не совместим с PowerShell версии 6.0, для которой используется .NET Core. Если вы используете PowerShell 6.0, изучите [инструкции по установке для macOS и Linux](/powershell/azure/install-az-ps).
 
 ## <a name="install-the-azure-powershell-module"></a>Установка модуля Azure PowerShell
 
@@ -49,7 +49,7 @@ Install-Module -Name AzureRM -AllowClobber
 
 По умолчанию коллекция PowerShell не используется как доверенный репозиторий для PowerShellGet. При первом использовании PSGallery отображается следующее сообщение:
 
-```Output
+```Вывод
 Untrusted repository
 
 You are installing the modules from an untrusted repository. If you trust this repository, change
@@ -115,6 +115,6 @@ Import-Module -Name AzureRM -RequiredVersion 2.3.0
 
 Если вы нашли ошибку при работе с Azure Powershell, [сообщите о ней на сайте GitHub](https://github.com/Azure/azure-powershell/issues). Чтобы отправить отзыв из командной строки, используйте командлет [Send-Feedback](/powershell/module/azurerm.profile/send-feedback).
 
-## <a name="next-steps"></a>Next Steps
+## <a name="next-steps"></a>Следующие шаги
 
 Сведения о начале работы с Azure PowerShell см. в [этой статье](get-started-azureps.md). Она содержит более подробную информацию о модуле и его компонентах.
