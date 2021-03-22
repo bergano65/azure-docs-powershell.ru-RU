@@ -66,7 +66,7 @@ ms.locfileid: "98566087"
 $cred = Get-Credential -Message "Enter a username and password for the virtual machine."
 ```
 
-```output
+```Вывод
 Windows PowerShell credential request.
 Enter a username and password for the virtual machine.
 User: localAdmin
@@ -79,7 +79,7 @@ Password for user localAdmin: *********
 New-AzureRmVM -Name SampleVM -Credential $cred
 ```
 
-```output
+```Вывод
 ResourceGroupName        : SampleVM
 Id                       : /subscriptions/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX/resourceGroups/SampleVM/providers/Microsoft.Compute/virtualMachines/SampleVM
 VmId                     : 43f6275d-ce50-49c8-a831-5d5974006e63
@@ -101,7 +101,7 @@ FullyQualifiedDomainName : samplevm-2c0867.eastus.cloudapp.azure.com
 Get-AzureRmResourceGroup | Select-Object ResourceGroupName,Location
 ```
 
-```output
+```Вывод
 ResourceGroupName          Location
 -----------------          --------
 cloud-shell-storage-westus westus
@@ -118,7 +118,7 @@ Get-AzureRmResource |
     Select-Object ResourceGroupName,Location,ResourceType,Name
 ```
 
-```output
+```Вывод
 ResourceGroupName          Location ResourceType                            Name
 -----------------          -------- ------------                            ----
 SAMPLEVM                   eastus   Microsoft.Compute/disks                 SampleVM_OsDisk_1_9b286c54b168457fa1f8c47...
@@ -137,7 +137,7 @@ Get-AzureRmVM -Name SampleVM -ResourceGroupName SampleVM |
     Select-Object -ExpandProperty ImageReference
 ```
 
-```output
+```Вывод
 Publisher : MicrosoftWindowsServer
 Offer     : WindowsServer
 Sku       : 2016-Datacenter
@@ -159,7 +159,7 @@ Id        :
 New-AzureRmResourceGroup -Name 'myResourceGroup' -Location 'westeurope'
 ```
 
-```output
+```Вывод
 ResourceGroupName : myResourceGroup
 Location          : westeurope
 ProvisioningState : Succeeded
@@ -179,7 +179,7 @@ $resourceGroup = "myResourceGroup"
 $location = "westeurope"
 $vmName = "myLinuxVM"
 
-# Definer user name and blank password
+# Define user name and blank password
 $securePassword = ConvertTo-SecureString 'azurepassword' -AsPlainText -Force
 $cred = New-Object System.Management.Automation.PSCredential ("azureuser", $securePassword)
 
@@ -239,7 +239,7 @@ New-AzureRmVM -ResourceGroupName $resourceGroup -Location $location -VM $vmConfi
 ssh xx.xxx.xxx.xxx
 ```
 
-```output
+```Вывод
 Welcome to Ubuntu 14.04.4 LTS (GNU/Linux 3.19.0-65-generic x86_64)
 
  * Documentation:  https://help.ubuntu.com/
@@ -311,7 +311,7 @@ Get-AzureRmResource |
     Select-Object Name,Location,ResourceType
 ```
 
-```output
+```Вывод
 Name                                                  Location   ResourceType
 ----                                                  --------   ------------
 myLinuxVM_OsDisk_1_36ca038791f642ba91270879088c249a   westeurope Microsoft.Compute/disks
@@ -340,7 +340,7 @@ Remove-AzureRmVM -Name myWindowsVM -ResourceGroupName myResourceGroup
 
 Вам будет предложено подтвердить удаление указанного ресурса.
 
-```output
+```Вывод
 Confirm
 Are you sure you want to remove resource group 'myResourceGroup'
 [Y] Yes  [N] No  [S] Suspend  [?] Help (default is "Y"): Y
@@ -353,7 +353,7 @@ Are you sure you want to remove resource group 'myResourceGroup'
 Remove-AzureRmResourceGroup -Name myResourceGroup
 ```
 
-```output
+```Вывод
 Confirm
 Are you sure you want to remove resource group 'myResourceGroup'
 [Y] Yes  [N] No  [S] Suspend  [?] Help (default is "Y"): Y
