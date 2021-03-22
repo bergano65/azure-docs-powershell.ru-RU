@@ -10,5 +10,5 @@ ms.locfileid: "83384818"
 ---
 > [!IMPORTANT]
 >
-> Это содержимое касается модуля Azure PowerShell AzureRM, который сейчас предоставляется в режиме обслуживания только для исправлений.
+> Эта информация касается модуля Azure PowerShell AzureRM, который сейчас предоставляется в режиме обслуживания только для исправлений.
 > Чтобы использовать последнюю версию модуля Azure PowerShell с новыми функциями, переключитесь на [модуль Az](/powershell/azure). См. подробнее о наших планах относительно поддержки AzureRM в руководствах по [использованию модуля Az](/powershell/azure/new-azureps-module-az) и [миграции из AzureRM в Az](/powershell/azure/migrate-from-azurerm-to-az).
